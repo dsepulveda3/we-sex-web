@@ -69,6 +69,10 @@ const Text = styled.p`
     span {
         color: var(--green);
     }
+    @media(min-width: 540px){
+        // margin-left: 2rem;
+        // margin-right: 2rem;
+    }
     @media(max-width: 540px){
         font-size: 2rem;
     }
@@ -177,7 +181,7 @@ const Guides = () => {
             <Container>
                 <Title>Nuestras <span>Guías Premium</span></Title>
                 <Text>
-                    Descripción, descripción descripción descripción descripción .
+                    Página de sabiduría sexual para volverte un experto en el tema y poder aplicarlo en tu vida sexual.
                 </Text>
                 <Row data-aos="fade-left">
                 <Col lg="3" md="4" >

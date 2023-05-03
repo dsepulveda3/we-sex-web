@@ -97,14 +97,17 @@ const ContainerContentGuide = styled.div`
 `;
 
 const AppImageGuia1 = styled.img`
-    width: 60%;
-    margin-left: 0px;
+    width: 40%;
+    margin-top: 1rem;
+    margin-left: 4rem;
+    margin-right: 1rem;
+    
     
     @media(max-width: 540px){
-        width: 60%;
-        margin-top: 1rem;
+        width: 40%;
+        margin-top: 2.3rem;
         // margin-right: 2rem;
-        // margin-left: 2rem;
+        //margin-left: 5rem;
     }
     @media(min-width: 540px){
         // margin-right: 2rem;
@@ -184,7 +187,7 @@ const Guides = () => {
                 <Link href="/masterclass-1">
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia2 src="img/ico/question-mark-draw.png" className="img-fluid"/>
+                            <AppImageGuia1 src="img/ico/masterclass (1).png" className="img-fluid"/>
                             <h3>Master 1</h3>
                         </ContainerContentGuide>
                     </GuideSquare>

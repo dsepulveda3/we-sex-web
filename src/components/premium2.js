@@ -94,25 +94,25 @@ const ContainerContentGuide = styled.div`
     display: flex;
     align-items: center;
     padding-right: 4rem;
-    padding-left: 12rem;
-    padding-top: 8rem;
+    padding-left: 8rem;
+    padding-top: 6rem;
     @media(max-width: 540px){
         padding-right: 2rem;
-        padding-left: 7rem;
-        padding-top: 6rem;
+        padding-left: 4rem;
+        padding-top: 5rem;
     }
 `;
 
 const AppImageGuia1 = styled.img`
-    width: 30%;
+    width: 40%;
     margin-top: 2rem;
     margin-left: 3rem;
     
     @media(max-width: 540px){
-        width: 30%;
-        margin-top: 0.5rem;
+        width: 40%;
+        margin-top: 0.2rem;
         margin-right: 2rem;
-        margin-left: 0rem;
+        margin-left: 2rem;
     }
     @media(min-width: 540px){
         // margin-right: 2rem;
@@ -120,16 +120,16 @@ const AppImageGuia1 = styled.img`
 `;
 
 const AppImageGuia2 = styled.img`
-    width: 30%;
-    // margin-left: 40px;
+    width: 40%;
+    margin-left: 1rem;
     // margin-right: 5px;
-    // margin-top: 18px;   
+    margin-top: 1.2rem;   
     
     @media(max-width: 540px){
-        width: 30%;
-        // margin-top: 2rem;
-        margin-right: 0.5rem;
-        // margin-left: 2rem;
+        width: 40%;
+        margin-top: 0.6rem;
+        margin-right: 1rem;
+        margin-left: 0rem;
     }
     @media(min-width: 540px){
         // margin-right: 2rem;
@@ -194,15 +194,15 @@ const Guides = () => {
             <Container>
                 <Title>Nuestro Material <span>Premium</span></Title>
                 <Text>
-                    Descripción, descripción descripción descripción descripción .
+                    Revoluciona tu vida sexual paso a paso, de la mano de expertos.
                 </Text>
                 <Row data-aos="fade-left">
                 <Col lg="6" md="12" >
                 <Link href="/guides">
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia1 src="img/ico/guide.png" className="img-fluid"/>
-                            <h3>Guías</h3>
+                            <AppImageGuia1 src="img/ico/GuiasGeneral (1).png" className="img-fluid"/>
+                            <h3 style={{marginBottom: "2rem"}}>Guías</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
                     </Link>
@@ -211,7 +211,7 @@ const Guides = () => {
                 <Link href="/masterclasses">
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia2 src="img/ico/webinar.png" className="img-fluid"/>
+                            <AppImageGuia2 src="img/ico/MasterGeneral (1).png" className="img-fluid"/>
                             <h3>Master Classes</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
