@@ -187,7 +187,7 @@ const Guides = () => {
                 <Link href="/masterclass-1">
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia1 src="img/ico/masterclass (1).png" className="img-fluid"/>
+                            <AppImageGuia1 src="img/ico/Masterclass (1).png" className="img-fluid"/>
                             <h3>Master 1</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
