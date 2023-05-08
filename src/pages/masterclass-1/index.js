@@ -19,6 +19,8 @@ import NoLoPienses from '@/components/noLoPienses'
 import Footer from '@/components/footer'
 import SeguisDudando from '@/components/seguisDudando'
 import ComprarMaster1 from '@/components/comprarMaster1'
+import FirstBannerMC from '@/components/firstBannerMC'
+import EsParaVosSi3MC from '@/components/esParaVosSi3MC'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -78,12 +80,19 @@ export default function Home() {
         <AfterDiv />
         <Profesionales />
         <Regalar /> */}
+        <NavBarWS />
+        <FirstBannerMC />
+        <AfterDiv />
+        <EsParaVosSi3MC />
+        <Profesionales />
+        <Dudas />
         <ComprarMaster1 />
+        <AboutWeSex />
         {/* <Dudas />
         <AboutWeSex />
         <SeguisDudando /> */}
         {/* <NoLoPienses /> */}
-        {/* <Footer /> */}
+        <Footer />
       </main>
     </>
   )

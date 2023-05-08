@@ -91,7 +91,7 @@ const Header = () => {
 
   return (
     <StyledHeader bgColor={bgColor} bgImage={bgImage}>
-      <Navbar expand="md" className="fixed-top">
+      <Navbar expand="md" className="fixed-top" >
         <div className="d-flex justify-content-between align-items-center w-100" style={{marginLeft: "20px", marginRight: "20px"}}>
           <NavbarBrand href="/">
             <Title>WeSex</Title>

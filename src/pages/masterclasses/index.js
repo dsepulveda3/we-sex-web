@@ -21,6 +21,7 @@ import SeguisDudando from '@/components/seguisDudando'
 import Header from '@/components/header'
 import Guides from '@/components/guides'
 import MasterClasses from '@/components/masterclasses'
+import Header2 from '@/components/header2'
 
 const inter = Inter({ subsets: ['latin'] })
 
