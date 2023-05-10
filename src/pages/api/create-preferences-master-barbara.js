@@ -11,14 +11,14 @@ export default async function handler(req, res) {
   const preference = {
     items: [
       {
-        title: "MasterSex Class: revoluciona tu vida sexual",
+        title: "B - MasterSex Class: revoluciona tu vida sexual",
         unit_price: 4000,
         quantity: 1,
         currency_id: "ARS",
       },
     ],
     back_urls: {
-      success: "https://payhip.com/b/Sdivh",
+      success: "https://payhip.com/b/ep89k",
       failure: "https://we-sex-web.vercel.app/masterclass-1",
       pending: "https://we-sex-web.vercel.app/masterclass-1",
     },

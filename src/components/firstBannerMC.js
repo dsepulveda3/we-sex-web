@@ -58,6 +58,8 @@ const Text = styled.p`
     font-family: "Karla", sans-serif;
     font-size: 2.2rem;
     margin-bottom: 1rem;
+    margin-top: 1rem;
+
     span {
         color: var(--green);
     }
@@ -126,9 +128,9 @@ const FirstBanner = () => {
                     <Row className="justify-content-between">
                         <Col lg={7} className="align-items-center">
                             <Content>
-                                <Title>Masterclass de <span>encuentros sexuales</span></Title>
+                                <Title><span>MasterSex Class</span> por Bárbara García</Title>
                                 <Text>
-                                    Deja de dudar, regálate herramientas para que realices tus practicas sexuales a otro ritmo y con conciencia plena en las sensaciones.
+                                    <span>Lunes 22/05 a las 20.30 horas (Argentina)</span> <br/>Aprende a disfrutar cada instante de tus momentos sexuales.
                                 </Text>
                                 <Botones>
                                     <BotonArs

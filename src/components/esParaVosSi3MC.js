@@ -86,31 +86,31 @@ const EsParaVosSi3 = () => {
                 >
                     <SwiperSlide>
                         <Text>
-                            👀<br/><span>Cómo y dónde</span> inicio mis encuentros.
+                            🗨️<br/><span>Técnicas de relajación</span> para conectar con el encuentro.
                         </Text>
                         <Text>
-                            🗨️<br/><span>Acuerdos sexuales</span>: sexting, lista de deseos, cómo hacer sexy el consentimiento.
+                            🤟<br/><span>Masajes eróticos:</span> cómo dar y darte placer con masajes.
                         </Text>
                     </SwiperSlide>
                     <SwiperSlide>
                         <Text>
-                            🧼<br/><span>Técnicas de relajación</span> para conectar con el encuentro.
+                            🧼<br/><span>Paja express vs paja flow:</span> cómo disfrutar más la masturbación.
                         </Text>
                         <Text>
-                            🍆<br/><span>Prácticas eróticas</span> sexo oral, vaginal y anal.
+                            🍆<br/><span>Posporno:</span> porno moderno y sano para nuestra sexualidad.
                         </Text>
                     </SwiperSlide>
                     <SwiperSlide>
                         <Text>
-                            💦<br/>Masturbación<span> para sentir más.</span>
+                            💦<br/><span>Acuerdos sexuales:</span> te enseñamos a llevar a cabo tus fantasías con tus parejas.
                         </Text>
-                        <Text>
-                            🤟<br/><span>Masajes eróticos</span> personales y compartidos con y sin ropa.
-                        </Text>
-                    </SwiperSlide>
-                    <SwiperSlide>
                         <Text>
                             👀<br/><span>Respiración</span> orgásmica y no orgásmica.
+                        </Text>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Text>
+                            🤟<br/><span>Técnicas</span> para llevar tus encuentros al siguiente nivel.
                         </Text>
                     </SwiperSlide>
                 </Swiper>
