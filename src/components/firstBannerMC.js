@@ -135,7 +135,7 @@ const FirstBanner = () => {
                                         href="#comprar"
                                     >Comprar</BotonArs>
                                     <BotonUsd
-                                        href="#queVoyAEncontrar"
+                                        href="#paravos"
                                     >¿Qué voy a aprender?</BotonUsd>
                                 </Botones>
                             </Content>
