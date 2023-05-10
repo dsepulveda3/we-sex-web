@@ -45,7 +45,7 @@ const Title = styled.h1`
     span {
         color: var(--green);
         font-weight: bold;
-    font-family: "Averia Libre", sans-serif;
+        font-family: "Averia Libre", sans-serif;
 
     }
     @media(max-width: 540px){
@@ -70,6 +70,9 @@ const AppImage = styled.img`
     width: 60%;
     height: auto;
     margin-left: 6rem;
+    @media(max-width: 540px){
+        margin-right: 6rem;
+    }
 
     
 `;
@@ -123,9 +126,9 @@ const FirstBanner = () => {
                     <Row className="justify-content-between">
                         <Col lg={7} className="align-items-center">
                             <Content>
-                                <Title>Masterclass completísima de <span>encuentros sexuales</span></Title>
+                                <Title>Masterclass de <span>encuentros sexuales</span></Title>
                                 <Text>
-                                    Deja de dudar, regálate herramientas para que realices tus practicas<br/> sexuales a otro ritmo y con conciencia plena en las sensaciones.
+                                    Deja de dudar, regálate herramientas para que realices tus practicas sexuales a otro ritmo y con conciencia plena en las sensaciones.
                                 </Text>
                                 <Botones>
                                     <BotonArs

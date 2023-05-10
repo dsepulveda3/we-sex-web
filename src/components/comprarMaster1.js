@@ -376,12 +376,12 @@ const BotonVioleta = styled(Boton)`
                   <img src="img/mercadopago.webp" />
               </BotonConContorno> */}
               <button className ="pagoMP" id="wallet_container" data-href={initPoint}></button>
-              <Amount>AR$  800</Amount>
+              <Amount>AR$  2000</Amount>
               <Title style={{marginTop: "5rem"}}>Compra internacionalmente</Title>
-              <BotonVioleta className="pagoPH" id="boton-pago" target="_blank" href={`https://payhip.com/b/WKi6V/${affiliate}`}>
+              <BotonVioleta className="pagoPH" id="boton-pago" target="_blank" href={`https://payhip.com/b/FDN0X/${affiliate}`}>
                   Pago en USD
               </BotonVioleta>
-              <Amount>U$D  5</Amount>
+              <Amount>U$D  10</Amount>
           </Container>
       </Background>
   </div>
