@@ -295,7 +295,7 @@ const BotonVioleta = styled(Boton)`
  
    useEffect(() => {
      const createPreference = async () => {
-       const response = await fetch("/api/create-preferences");
+       const response = await fetch("/api/create-preferences-master");
        const data = await response.json();
        setInitPoint(data.initPoint); // Guardar initPoint en el estado
        setPreferenceId(data.preferenceId);
@@ -376,12 +376,12 @@ const BotonVioleta = styled(Boton)`
                   <img src="img/mercadopago.webp" />
               </BotonConContorno> */}
               <button className ="pagoMP" id="wallet_container" data-href={initPoint}></button>
-              <Amount>AR$  2000</Amount>
+              <Amount>AR$  4000</Amount>
               <Title style={{marginTop: "5rem"}}>Compra internacionalmente</Title>
               <BotonVioleta className="pagoPH" id="boton-pago" target="_blank" href={`https://payhip.com/b/FDN0X/${affiliate}`}>
                   Pago en USD
               </BotonVioleta>
-              <Amount>U$D  10</Amount>
+              <Amount>U$D  15</Amount>
           </Container>
       </Background>
   </div>

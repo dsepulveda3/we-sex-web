@@ -12,7 +12,7 @@ export default async function handler(req, res) {
     items: [
       {
         title: "Masterclass encuentros sexuales - WeSex",
-        unit_price: 2000,
+        unit_price: 4000,
         quantity: 1,
         currency_id: "ARS",
       },
