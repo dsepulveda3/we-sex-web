@@ -45,6 +45,7 @@ const Title = styled.h1`
     font-size: 5.5rem;
     font-family: "Averia Libre", sans-serif;
     opacity: 0.85; /* adjust the opacity as needed */
+    color: white;
     span {
         color: var(--green);
         font-weight: bold;
@@ -66,6 +67,7 @@ const Text = styled.p`
     font-size: 2.2rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
+    color: white;
     span {
         color: var(--green);
     }
