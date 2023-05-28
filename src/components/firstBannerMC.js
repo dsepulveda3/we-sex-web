@@ -130,7 +130,7 @@ const FirstBanner = () => {
                             <Content>
                                 <Title><span>MasterSex Class</span> por Bárbara García</Title>
                                 <Text>
-                                    <span>Live: Lunes 22/05 a las 20.30 horas (Argentina)</span> <br/><span> Ondemand: ¡Mira la grabación cuando prefieras!</span> <br/>Aprende a disfrutar cada instante de tus momentos sexuales.
+                                    <span></span>2 hrs de aprendizaje sexual <br/><span> Ondemand: ¡Mira la grabación cuando prefieras!</span> <br/>Aprende a disfrutar cada instante de tus momentos sexuales.
                                 </Text>
                                 <Botones>
                                     <BotonArs
