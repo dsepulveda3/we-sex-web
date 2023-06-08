@@ -76,7 +76,7 @@ const EsParaVosSi3 = () => {
     return (
         <Background id="paravos">
             <Container style={{paddingTop: "5rem", paddingBottom: "5rem"}}>
-                <Title>Esta guía es <span>para ti</span> si buscas</Title>
+                <Title>Esta guía de Sexo Anal es <span>para ti</span> si buscas</Title>
 
                 <Swiper
                     slidesPerView={"auto"}

@@ -69,11 +69,13 @@ const Text = styled.p`
 `;
 
 const AppImage = styled.img`
-    width: 60%;
+    width: 50%;
     height: auto;
-    margin-left: 6rem;
+    margin-left: 12rem;
+    margin-top: 4rem;
     @media(max-width: 540px){
         margin-right: 6rem;
+        margin-left: 7rem;
     }
 
     
@@ -121,16 +123,16 @@ const BotonUsd = styled(Boton)`
     background-color: transparent;
 `;
 
-const FirstBannerMC = () => {
+const FirstBannerGT = () => {
     return (
         <Background>
             <Container>
                     <Row className="justify-content-between">
                         <Col lg={7} className="align-items-center">
                             <Content>
-                                <Title><span>MasterSex Class</span> por Bárbara García</Title>
+                                <Title><span>Tantra</span>, consciencia y energía</Title>
                                 <Text>
-                                    <span></span>2 hrs de aprendizaje sexual <br/><span> Ondemand: ¡Mira la grabación cuando prefieras!</span> <br/>Aprende a disfrutar cada instante de tus momentos sexuales.
+                                    Deja de dudar,<br/>regálate placer y empieza a experimentar orgasmos más intensos.
                                 </Text>
                                 <Botones>
                                     <BotonArs
@@ -144,7 +146,7 @@ const FirstBannerMC = () => {
                         </Col>
                         <Col>
                             <ContentImage>
-                                <AppImage src="img/ico/Masterclass (1).png" />
+                                <AppImage src="img/ico/Tantra (1).png" />
                             </ContentImage>
                         </Col>
                     </Row>
@@ -153,4 +155,4 @@ const FirstBannerMC = () => {
     );
 }
  
-export default FirstBannerMC;
+export default FirstBannerGT;

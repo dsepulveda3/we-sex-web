@@ -43,15 +43,15 @@ export default async function handler(req, res) {
     items: [
       {
         title: "Guía sexo Anal - WeSex",
-        unit_price: 800,
+        unit_price: 1000,
         quantity: 1,
         currency_id: "ARS",
       },
     ],
     back_urls: {
       success: "https://payhip.com/b/G17hj",
-      failure: "https://we-sex-landing-guia-sexo-anal-git-main-lucasadlerstein.vercel.app/",
-      pending: "https://we-sex-landing-guia-sexo-anal-git-main-lucasadlerstein.vercel.app/",
+      failure: "https://we-sex-landing-guia-sexo-anal-git-main-lucasadlerstein.vercel.app/guia-sexo-anal",
+      pending: "https://we-sex-landing-guia-sexo-anal-git-main-lucasadlerstein.vercel.app/guia-sexo-anal",
     },
     auto_return: "approved",
   };

@@ -72,11 +72,11 @@ const Text = styled.p`
 `;
 
 
-const EsParaVosSi3MC = () => {
+const EsParaVosSi3GT = () => {
     return (
         <Background id="paravos">
             <Container style={{paddingTop: "5rem", paddingBottom: "5rem"}}>
-                <Title>Esta Master es <span>para ti</span> si buscas</Title>
+                <Title>Esta guía de Trantra es <span>para ti</span> si buscas</Title>
 
                 <Swiper
                     slidesPerView={"auto"}
@@ -86,26 +86,26 @@ const EsParaVosSi3MC = () => {
                 >
                     <SwiperSlide>
                         <Text>
-                            🗨️<br/><span>Técnicas de relajación</span> para conectar con el encuentro.
+                            💗<br/><span>Entregarte a sentir</span>.
                         </Text>
                         <Text>
-                            🤟<br/><span>Masajes eróticos:</span> cómo dar y darte placer con masajes.
-                        </Text>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Text>
-                            🧼<br/><span>Paja express vs paja flow:</span> cómo disfrutar más la masturbación.
-                        </Text>
-                        <Text>
-                            🍆<br/><span>Posporno:</span> porno moderno y sano para nuestra sexualidad.
+                            ✨<br/>Prácticas de <span>liberación emocional</span>.
                         </Text>
                     </SwiperSlide>
                     <SwiperSlide>
                         <Text>
-                            💦<br/><span>Acuerdos sexuales:</span> te enseñamos a llevar a cabo tus fantasías con tus parejas.
+                            🏋️‍♀️<br/>Ejercicios para la <span>sensibilización de los tejidos</span>.
                         </Text>
                         <Text>
-                            👀<br/><span>Respiración</span> orgásmica y no orgásmica.
+                            🍆<br/>Conocer los<span> tipos de orgasmos</span>.
+                        </Text>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Text>
+                            🤝<br/><span>Acuerdos sexuales:</span> te enseñamos a llevar a cabo tus fantasías con tus parejas.
+                        </Text>
+                        <Text>
+                            🫦<br/>Práctica de <span>tantra con tu pareja</span>.
                         </Text>
                     </SwiperSlide>
                     <SwiperSlide>
@@ -119,4 +119,4 @@ const EsParaVosSi3MC = () => {
     );
 }
  
-export default EsParaVosSi3MC;
+export default EsParaVosSi3GT;

@@ -13,7 +13,7 @@ const Background = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    min-height: 85vh;
+    min-height: 65vh;
     margin-top: .1rem;
     position: relative;
     @media(max-width: 540px){
@@ -121,16 +121,16 @@ const BotonUsd = styled(Boton)`
     background-color: transparent;
 `;
 
-const FirstBannerMC = () => {
+const FirstBannerPack = () => {
     return (
         <Background>
             <Container>
                     <Row className="justify-content-between">
                         <Col lg={7} className="align-items-center">
                             <Content>
-                                <Title><span>MasterSex Class</span> por Bárbara García</Title>
+                                <Title>Guía <span>Sexo Anal</span> +  <span>Tantra</span></Title>
                                 <Text>
-                                    <span></span>2 hrs de aprendizaje sexual <br/><span> Ondemand: ¡Mira la grabación cuando prefieras!</span> <br/>Aprende a disfrutar cada instante de tus momentos sexuales.
+                                    Compra el pack a un <span>increible descuento</span>.
                                 </Text>
                                 <Botones>
                                     <BotonArs
@@ -142,15 +142,15 @@ const FirstBannerMC = () => {
                                 </Botones>
                             </Content>
                         </Col>
-                        <Col>
+                        {/* <Col>
                             <ContentImage>
                                 <AppImage src="img/ico/Masterclass (1).png" />
                             </ContentImage>
-                        </Col>
+                        </Col> */}
                     </Row>
             </Container>
         </Background>
     );
 }
  
-export default FirstBannerMC;
+export default FirstBannerPack;
