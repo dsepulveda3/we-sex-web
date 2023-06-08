@@ -13,7 +13,7 @@ const Background = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    min-height: 65vh;
+    min-height: 85vh;
     margin-top: .1rem;
     position: relative;
     @media(max-width: 540px){
