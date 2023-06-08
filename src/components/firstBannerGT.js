@@ -40,7 +40,7 @@ const ContentImage = styled.div`
 `;
 
 const Title = styled.h1`
-    font-size: 6.5rem;
+    font-size: 4.5rem;
     font-family: "Averia Libre", sans-serif;
     span {
         color: var(--green);
@@ -56,7 +56,7 @@ const Title = styled.h1`
 
 const Text = styled.p`
     font-family: "Karla", sans-serif;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     margin-bottom: 1rem;
     margin-top: 1rem;
 
@@ -69,10 +69,10 @@ const Text = styled.p`
 `;
 
 const AppImage = styled.img`
-    width: 50%;
+    width: 45%;
     height: auto;
     margin-left: 12rem;
-    margin-top: 4rem;
+    margin-top: 2rem;
     @media(max-width: 540px){
         margin-right: 6rem;
         margin-left: 7rem;
@@ -132,7 +132,7 @@ const FirstBannerGT = () => {
                             <Content>
                                 <Title><span>Tantra</span>, consciencia y energía</Title>
                                 <Text>
-                                    Deja de dudar,<br/>regálate placer y empieza a experimentar orgasmos más intensos.
+                                    Te enseñamos de 0 a 100,<br/>cómo aplicar el tantra a tu vida sexual.
                                 </Text>
                                 <Botones>
                                     <BotonArs

@@ -20,7 +20,7 @@ const Background = styled.div`
 `;
 
 const Title = styled.h4`
-    font-size: 3.4rem;
+    font-size: 3.0rem;
     font-family: "Averia Libre", sans-serif;
     color: var(--green);
     font-weight: bold;
@@ -45,7 +45,7 @@ const Dots = styled.p`
 
 const Text = styled.p`
     font-family: "Averia Libre", sans-serif;
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 5rem;
     span {
         color: var(--green);
@@ -57,7 +57,7 @@ const Text = styled.p`
 
 const BigText = styled(Text)`
     font-family: "Karla", sans-serif;
-    font-size: 8rem;
+    font-size: 6rem;
     font-weight: bold;
     margin-bottom: 0;
     @media(max-width: 540px){

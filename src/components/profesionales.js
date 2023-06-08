@@ -7,7 +7,7 @@ const Background = styled.div`
 `;
 
 const Title = styled.h4`
-    font-size: 5rem;
+    font-size: 4.0rem;
     font-family: "Averia Libre", sans-serif;
     color: var(--violet);
     span {
@@ -31,20 +31,20 @@ const Text = styled.p`
 
 const Name = styled(Text)`
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     @media(min-width: 540px){
         font-size: 3rem;
     }
 `;
 const SubTitle = styled(Text)`
-    font-size: 2rem;
+    font-size: 1.8rem;
     @media(min-width: 540px){
         font-size: 2rem;
     }
 `;
 
 const RowPers = styled(Row)`
-    margin-top: 4rem;
+    margin-top: 3.7rem;
     @media(min-width: 768px){
         margin: 5rem auto;
         margin-top: 5rem;

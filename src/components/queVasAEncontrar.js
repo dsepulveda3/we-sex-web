@@ -19,7 +19,7 @@ const Background = styled.div`
 `;
 
 const Title = styled.h4`
-    font-size: 5rem;
+    font-size: 4.0rem;
     font-family: "Averia Libre", sans-serif;
     color: white;
     span {
@@ -38,7 +38,7 @@ const Title = styled.h4`
 
 const Text = styled.p`
     font-family: "Karla", sans-serif;
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin-bottom: 2rem;
     padding-bottom: 2rem;
     color: white;

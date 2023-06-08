@@ -11,7 +11,7 @@ const Background = styled.div`
 `;
 
 const Title = styled.p`
-    font-size: 7rem;
+    font-size: 5rem;
     font-family: "Averia Libre", sans-serif;
     color: white;
     font-weight: bold;
@@ -29,7 +29,7 @@ const Title = styled.p`
 
 const Text = styled.p`
     font-family: "Karla", sans-serif;
-    font-size: 2.6rem;
+    font-size: 2.2rem;
     margin-bottom: 2rem;
     color: white;
     @media(min-width: 540px){

@@ -14,7 +14,7 @@ const Background = styled.div`
 `;
 
 const Title = styled.p`
-    font-size: 4rem;
+    font-size: 3rem;
     font-family: "Karla", sans-serif;
     color: var(--violet);
     font-weight: bold;
@@ -376,7 +376,7 @@ const BotonVioleta = styled(Boton)`
                   <img src="img/mercadopago.webp" />
               </BotonConContorno> */}
               <button className ="pagoMP" id="wallet_container" data-href={initPoint}></button>
-              <Amount>AR$  800</Amount>
+              <Amount>AR$  1000</Amount>
               <Title style={{marginTop: "5rem"}}>Compra internacionalmente</Title>
               <BotonVioleta className="pagoPH" id="boton-pago" target="_blank" href={`https://payhip.com/b/WKi6V/${affiliate}`}>
                   Pago en USD

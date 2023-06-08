@@ -24,7 +24,7 @@ const Background = styled.div`
 
 
 const Title = styled.h4`
-    font-size: 5rem;
+    font-size: 4.0rem;
     font-family: "Averia Libre", sans-serif;
     text-align: center;
     span {
@@ -43,7 +43,7 @@ const Title = styled.h4`
 
 const Text = styled.p`
     font-family: "Karla", sans-serif;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     text-align:center;
     margin-bottom: 1.5rem;
     padding: .5rem 1rem;

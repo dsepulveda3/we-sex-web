@@ -40,7 +40,7 @@ const ContentImage = styled.div`
 `;
 
 const Title = styled.h1`
-    font-size: 6.5rem;
+    font-size: 4.5rem;
     font-family: "Averia Libre", sans-serif;
     span {
         color: var(--green);
@@ -56,7 +56,7 @@ const Title = styled.h1`
 
 const Text = styled.p`
     font-family: "Karla", sans-serif;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     margin-bottom: 1rem;
     span {
         color: var(--green);
@@ -67,7 +67,7 @@ const Text = styled.p`
 `;
 
 const AppImage = styled.img`
-    width: 90%;
+    width: 80%;
     height: auto;
 
     

@@ -14,7 +14,7 @@ const Background = styled.div`
 `;
 
 const Title = styled.p`
-    font-size: 4rem;
+    font-size: 3rem;
     font-family: "Karla", sans-serif;
     color: var(--violet);
     font-weight: bold;

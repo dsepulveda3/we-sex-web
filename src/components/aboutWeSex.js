@@ -28,7 +28,7 @@ const Content = styled.div`
 `;
 
 const Title = styled.p`
-    font-size: 5rem;
+    font-size: 4.0rem;
     font-family: "Averia Libre", sans-serif;
     span {
         color: var(--green);
@@ -44,7 +44,7 @@ const Title = styled.p`
 
 const Text = styled.p`
     font-family: "Karla", sans-serif;
-    font-size: 3rem;
+    font-size: 2.2rem;
     margin-bottom: 1rem;
     margin-top: 3rem;
     span {

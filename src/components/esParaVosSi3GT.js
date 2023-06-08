@@ -24,7 +24,7 @@ const Background = styled.div`
 
 
 const Title = styled.h4`
-    font-size: 5rem;
+    font-size: 4.0rem;
     font-family: "Averia Libre", sans-serif;
     text-align: center;
     span {
@@ -43,7 +43,7 @@ const Title = styled.h4`
 
 const Text = styled.p`
     font-family: "Karla", sans-serif;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     text-align:center;
     margin-bottom: 1.5rem;
     padding: .5rem 1rem;
@@ -86,26 +86,26 @@ const EsParaVosSi3GT = () => {
                 >
                     <SwiperSlide>
                         <Text>
-                            💗<br/><span>Entregarte a sentir</span>.
+                            💗<br/><span>Introducirte el tanta</span> y aplicarlo en tu vida sexual.
                         </Text>
                         <Text>
-                            ✨<br/>Prácticas de <span>liberación emocional</span>.
-                        </Text>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Text>
-                            🏋️‍♀️<br/>Ejercicios para la <span>sensibilización de los tejidos</span>.
-                        </Text>
-                        <Text>
-                            🍆<br/>Conocer los<span> tipos de orgasmos</span>.
+                            ✨<br/>Tener orgasmos <span>más profundos y duraderos</span>.
                         </Text>
                     </SwiperSlide>
                     <SwiperSlide>
                         <Text>
+                            🏋️‍♀️<br/>Practicar <span>tantra con tu pareja</span>.
+                        </Text>
+                        <Text>
+                            🍆<br/>Incrementar las sensaciones de<span> placer en tu vida</span>.
+                        </Text>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        {/* <Text>
                             🤝<br/><span>Acuerdos sexuales:</span> te enseñamos a llevar a cabo tus fantasías con tus parejas.
-                        </Text>
+                        </Text> */}
                         <Text>
-                            🫦<br/>Práctica de <span>tantra con tu pareja</span>.
+                            🫦<br/>Técnicas de <span>liberación emocional</span>.
                         </Text>
                     </SwiperSlide>
                     <SwiperSlide>

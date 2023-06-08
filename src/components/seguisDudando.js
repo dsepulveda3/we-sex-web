@@ -40,8 +40,9 @@ const ContentImage = styled.div`
 `;
 
 const Title = styled.h1`
-    font-size: 6.5rem;
+    font-size: 4.0rem;
     font-family: "Averia Libre", sans-serif;
+    margin-bottom: 2rem;
     span {
         color: var(--green);
         font-weight: bold;
