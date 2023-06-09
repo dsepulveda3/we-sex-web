@@ -104,7 +104,7 @@ const Pack = () => {
                 {/* <Text>
                     puedes adquirirla y que le llegue directo<br/><span>a esa persona</span> que se merece TANTO PLACER
                 </Text> */}
-                <BotonVerde href="/guia-pack-anal-tantra">Ver oferta !</BotonVerde>
+                <BotonVerde href="/premium-material/guides/guia-pack-anal-tantra">Ver oferta !</BotonVerde>
             </Container>
         </Background>
     );

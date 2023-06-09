@@ -144,7 +144,7 @@ const FirstBannerMC = () => {
                         </Col>
                         <Col>
                             <ContentImage>
-                                <AppImage src="img/ico/Masterclass (1).png" />
+                                <AppImage src="../../img/ico/Masterclass (1).png" />
                             </ContentImage>
                         </Col>
                     </Row>

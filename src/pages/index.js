@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '@/components/header';
+import Header3 from '@/components/header3';
 import NavBarWS from '@/components/navbar'
 import Hola from '@/components/hola';
 import EsParaVosSi from '@/components/esParaVosSi';
@@ -19,7 +20,7 @@ import Contactus from '@/components/contactus';
 const Home = () => {
   return (
     <div>
-      <Header />
+      <Header3 />
       <Hola />
       <Stadistics />
       <Temas2 />

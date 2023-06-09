@@ -1,15 +1,16 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import FirstBannerGT from '@/components/firstBannerGT'
+import FirstBannerPack from '@/components/firstBannerPack'
 import EsParaVosSi from '@/components/esParaVosSi'
 import EsParaVosSi2 from '@/components/esParaVosSi2'
+import EsParaVosSi3 from '@/components/esParaVosSi3'
 import EsParaVosSi3GT from '@/components/esParaVosSi3GT'
 import EsParaVosSi4 from '@/components/esParaVosSi4'
 import EsParaVosSi5 from '@/components/esParaVosSi5'
 import QueVasAEncontrar from '@/components/queVasAEncontrar'
 import Regalar from '@/components/regalar'
-import ComprarTantra from '@/components/comprarTantra'
+import ComprarPack from '@/components/comprarPack'
 import Dudas from '@/components/dudas'
 import AboutWeSex from '@/components/aboutWeSex'
 import AfterDiv from '@/components/afterDiv'
@@ -18,7 +19,7 @@ import Profesionales from '@/components/profesionales'
 import NoLoPienses from '@/components/noLoPienses'
 import Footer from '@/components/footer'
 import SeguisDudando from '@/components/seguisDudando'
-import Pack from '@/components/pack'
+import Header from '@/components/header'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -27,7 +28,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Guía de tantra: orgasmos más profundos- WeSex</title>
+        <title>Guía Tantra + Sexo Anal - WeSex</title>
         <meta name="description" content="Aprende todo lo que necesitas saber sobre sexo anal con nuestra guía completa. Si es la primera vez que tienes sexo anal, si no pudiste experimentarlo por dolor, por higiene, o simplemente quieres dominar esta práctica, en esta guía te enseñamos todo para que solo te preocupes por disfrutar." /> 
         <meta name="keywords" content="sexo anal, guía de sexo anal, masaje anal, consejos para sexo anal, técnicas para sexo anal, preparación para sexo anal, lubricantes anales, experiencia placentera, Que juguetes usar en el sexo anal, higiene sexo anal, dolor en el sexo anal" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -71,18 +72,20 @@ export default function Home() {
       />
       <main>
         <NavBarWS />
-        <FirstBannerGT />
+        {/* <Header /> */}
+        <FirstBannerPack />
+        <AfterDiv />
+        <EsParaVosSi3 />
         <AfterDiv />
         <EsParaVosSi3GT />
-        {/* <QueVasAEncontrar /> */}
+        {/* <QueVasAEncontrar />
         <AfterDiv />
         <Profesionales />
-        <Regalar />
-        <ComprarTantra />
-        <Pack/>
-        <Dudas />
+        <Regalar /> */}
+        <ComprarPack />
+        {/* <Dudas />
         <AboutWeSex />
-        {/* <SeguisDudando /> */}
+        <SeguisDudando /> */}
         {/* <NoLoPienses /> */}
         <Footer />
       </main>

@@ -198,7 +198,7 @@ const Guides = () => {
                 </Text>
                 <Row data-aos="fade-left">
                 <Col lg="6" md="12" >
-                <Link href="/guides">
+                <Link href="/premium-material/guides">
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageGuia1 src="img/ico/GuiasGeneral (1).png" className="img-fluid"/>
@@ -208,7 +208,7 @@ const Guides = () => {
                     </Link>
                 </Col>
                 <Col lg="6" md="12" >
-                <Link href="/masterclasses">
+                <Link href="/premium-material/masters">
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageGuia2 src="img/ico/MasterGeneral (1).png" className="img-fluid"/>

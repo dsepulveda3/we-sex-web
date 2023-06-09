@@ -138,7 +138,7 @@ const FirstBanner = () => {
                         </Col>
                         <Col>
                             <ContentImage>
-                                <AppImage src="img/como-nunca-antes-gozado.png" alt="Sexo Anal, como nunca antes gozado." />
+                                <AppImage src="../../img/como-nunca-antes-gozado.png" alt="Sexo Anal, como nunca antes gozado." />
                             </ContentImage>
                         </Col>
                     </Row>

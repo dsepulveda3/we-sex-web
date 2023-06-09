@@ -19,9 +19,6 @@ import NoLoPienses from '@/components/noLoPienses'
 import Footer from '@/components/footer'
 import SeguisDudando from '@/components/seguisDudando'
 import Header from '@/components/header'
-import Guides from '@/components/guides'
-import MasterClasses from '@/components/masterclasses'
-import Header2 from '@/components/header2'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -73,8 +70,21 @@ export default function Home() {
         }}
       />
       <main>
-        <Header />
-        <MasterClasses />
+        <NavBarWS />
+        {/* <Header /> */}
+        <FirstBanner />
+        <AfterDiv />
+        <EsParaVosSi3 />
+        <QueVasAEncontrar />
+        <AfterDiv />
+        <Profesionales />
+        <Regalar />
+        <Comprar />
+        <Dudas />
+        <AboutWeSex />
+        <SeguisDudando />
+        {/* <NoLoPienses /> */}
+        <Footer />
       </main>
     </>
   )

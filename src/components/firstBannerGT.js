@@ -146,7 +146,7 @@ const FirstBannerGT = () => {
                         </Col>
                         <Col>
                             <ContentImage>
-                                <AppImage src="img/ico/Tantra (1).png" />
+                                <AppImage src="../../img/ico/Tantra (1).png" />
                             </ContentImage>
                         </Col>
                     </Row>

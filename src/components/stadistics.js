@@ -116,34 +116,40 @@ const Stadistics = () => {
   return (
     <section id="about" className="about" style={{padding: "30px 0px"}}>
         <Container>
-            <Row style={{justifyContent: "center"}}>
-                <Col xl="7" lg="6" className="icon-boxes d-flex flex-column flex-lg-row justify-content-center align-items-center px-lg-5"  >
-                    <Stadistic>
-                    <AppImageDownload src="img/ico/Descargas.png" alt="" />
-                    <Number>+135.000</Number>
-                    <TextSubtitleCharacteristics>Usuarios</TextSubtitleCharacteristics>
-                    </Stadistic>
+        <Row>
+            <Col sm="6" md="3" className="icon-boxes d-flex flex-column justify-content-center align-items-center px-lg-5">
+                <Stadistic>
+                <AppImageDownload src="img/ico/Descargas.png" alt="" />
+                <Number>+135.000</Number>
+                <TextSubtitleCharacteristics>Usuarios</TextSubtitleCharacteristics>
+                </Stadistic>
+            </Col>
 
-                    <Stadistic>
-                    <AppImageArticles src="img/ico/Articulos.png" alt="" />
-                    <Number>+160</Number>
-                    <TextSubtitleCharacteristics>Articulos</TextSubtitleCharacteristics>
-                    </Stadistic>
+            <Col sm="6" md="3" className="icon-boxes d-flex flex-column justify-content-center align-items-center px-lg-5">
+                <Stadistic>
+                <AppImageArticles src="img/ico/Articulos.png" alt="" />
+                <Number>+160</Number>
+                <TextSubtitleCharacteristics>Articulos</TextSubtitleCharacteristics>
+                </Stadistic>
+            </Col>
 
-                    <Stadistic>
-                    <AppImageDebates src="img/ico/Debates.png" alt="" />
-                    <Number>+14.000</Number>
-                    <TextSubtitleCharacteristics>Debates</TextSubtitleCharacteristics>
-                    </Stadistic>
+            <Col sm="6" md="3" className="icon-boxes d-flex flex-column justify-content-center align-items-center px-lg-5">
+                <Stadistic>
+                <AppImageDebates src="img/ico/Debates.png" alt="" />
+                <Number>+14.000</Number>
+                <TextSubtitleCharacteristics>Debates</TextSubtitleCharacteristics>
+                </Stadistic>
+            </Col>
 
-                    <Stadistic>
-                    <AppImageInstagram src="img/ico/Instagram.png" alt="" />
-                    <Number>+43.000</Number>
-                    <TextSubtitleCharacteristics>Seguidores</TextSubtitleCharacteristics>
-                    </Stadistic>
-                </Col>
-            </Row>
-        </Container>
+            <Col sm="6" md="3" className="icon-boxes d-flex flex-column justify-content-center align-items-center px-lg-5">
+                <Stadistic>
+                <AppImageInstagram src="img/ico/Instagram.png" alt="" />
+                <Number>+43.000</Number>
+                <TextSubtitleCharacteristics>Seguidores</TextSubtitleCharacteristics>
+                </Stadistic>
+            </Col>
+        </Row>
+    </Container>
     </section>
 
 

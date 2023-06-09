@@ -70,7 +70,7 @@ const Profesionales = () => {
                         <Card style={{borderRadius: "4rem", marginBottom: "5rem"}}>
                             <img
                                 alt="Lic. Cecilia Ce"
-                                src="img/cecilia-ce-profesional-wesex.jpg"
+                                src="../../img/cecilia-ce-profesional-wesex.jpg"
                                 style={{
                                     borderTopLeftRadius: "4rem",
                                     borderTopRightRadius: "4rem"
@@ -81,10 +81,10 @@ const Profesionales = () => {
                                 <SubTitle>Psicóloga, sexóloga clínica, escritora y comunicadora formada en el Modelo Sistémico.</SubTitle>
                                 <Redes>
                                     <a href="https://www.instagram.com/lic.ceciliace" target="_blank">
-                                        <img src="img/instagram.png" alt="Instagram Logo" />
+                                        <img src="../../img/instagram.png" alt="Instagram Logo" />
                                     </a>
                                     <a href="https://www.ceciliace.com" target="_blank">
-                                        <img src="img/website.png" alt="Website Logo" />
+                                        <img src="../../img/website.png" alt="Website Logo" />
                                     </a>
                                 </Redes>
                             </CardBody>
@@ -95,7 +95,7 @@ const Profesionales = () => {
                         <Card style={{borderRadius: "4rem", marginBottom: "5rem"}}>
                             <img
                                 alt="Dra. Bárbara García"
-                                src="img/dra-barbara-garcia-profesional-wesex.jpg"
+                                src="../../img/dra-barbara-garcia-profesional-wesex.jpg"
                                 style={{
                                     borderTopLeftRadius: "4rem",
                                     borderTopRightRadius: "4rem"
@@ -110,10 +110,10 @@ const Profesionales = () => {
                                 </CardText>
                                 <Redes>
                                     <a href="https://www.instagram.com/sexualidadeslibres/" target="_blank">
-                                        <img src="img/instagram.png" alt="Instagram Logo" />
+                                        <img src="../../img/instagram.png" alt="Instagram Logo" />
                                     </a>
                                     <a href="https://www.sexualidadeslibres.com" target="_blank">
-                                        <img src="img/website.png" alt="Website Logo" />
+                                        <img src="../../img/website.png" alt="Website Logo" />
                                     </a>
                                 </Redes>
                             </CardBody>

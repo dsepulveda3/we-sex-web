@@ -104,16 +104,16 @@ const AboutWeSex = () => {
                                 <SmallText>Desde educación sexual hasta debates calientes, con WeSex aprendes a disfrutar más de tu sexualidad de la mano de los mejores expertos y una comunidad wesexer.</SmallText>
                                 <Stores>
                                     <a  target="_blank" rel="noreferrer" href="https://play.google.com/store/apps/details?id=com.wesx">
-                                        <img src="img/bt_playstore_off.png" alt="Descarga WeSex en PlayStore para Android" />
+                                        <img src="../../img/bt_playstore_off.png" alt="Descarga WeSex en PlayStore para Android" />
                                     </a>
                                     <a  target="_blank" href="https://apps.apple.com/us/app/wesex/id1526063508" rel="noreferrer">
-                                        <img src="img/bt_appstore_off.png" alt="Descarga WeSex en AppStore para iPhone" />
+                                        <img src="../../img/bt_appstore_off.png" alt="Descarga WeSex en AppStore para iPhone" />
                                     </a>
                                 </Stores>
                             </Content>
                         </Col>
                         <Col>
-                            <AppImage src="img/app.png" alt="Sexo Anal, como nunca antes gozado." />
+                            <AppImage src="../../img/app.png" alt="Sexo Anal, como nunca antes gozado." />
                         </Col>
                     </Row>
             </Container>

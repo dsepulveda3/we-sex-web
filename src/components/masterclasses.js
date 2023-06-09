@@ -31,7 +31,7 @@ const GuideSquare = styled.div`
     height: 0;
     padding-bottom: 50%;
     position: relative;
-    margin-top: 5rem;
+    margin-top: 2rem;
     margin-right: 1rem;
     margin-left: 1rem;
     border-radius: 10px;
@@ -186,10 +186,10 @@ const Guides = () => {
                 </Text>
                 <Row data-aos="fade-left">
                 <Col lg="3" md="4" >
-                <Link href="/masterclass-1">
+                <Link href="/premium-material/masters/masterclass-1">
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia1 src="img/ico/Masterclass (1).png" className="img-fluid"/>
+                            <AppImageGuia1 src="../img/ico/Masterclass (1).png" className="img-fluid"/>
                             <h3>Master 1</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
@@ -198,7 +198,7 @@ const Guides = () => {
                 <Col lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia2 src="img/ico/question-mark-draw.png" className="img-fluid"/>
+                            <AppImageGuia2 src="../img/ico/question-mark-draw.png" className="img-fluid"/>
                             <h3>Pronto</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
@@ -206,7 +206,7 @@ const Guides = () => {
                 <Col lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia2 src="img/ico/question-mark-draw.png" className="img-fluid"/>
+                            <AppImageGuia2 src="../img/ico/question-mark-draw.png" className="img-fluid"/>
                             <h3>Pronto</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
@@ -214,7 +214,7 @@ const Guides = () => {
                 <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia2 src="img/ico/question-mark-draw.png" className="img-fluid"/>
+                            <AppImageGuia2 src="../img/ico/question-mark-draw.png" className="img-fluid"/>
                             <h3>Pronto</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
@@ -222,7 +222,7 @@ const Guides = () => {
                 <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia2 src="img/ico/question-mark-draw.png" className="img-fluid"/>
+                            <AppImageGuia2 src="../img/ico/question-mark-draw.png" className="img-fluid"/>
                             <h3>Pronto</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
@@ -230,7 +230,7 @@ const Guides = () => {
                 <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia2 src="img/ico/question-mark-draw.png" className="img-fluid"/>
+                            <AppImageGuia2 src="../img/ico/question-mark-draw.png" className="img-fluid"/>
                             <h3>Pronto</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
@@ -238,7 +238,7 @@ const Guides = () => {
                 <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia2 src="img/ico/question-mark-draw.png" className="img-fluid"/>
+                            <AppImageGuia2 src="../img/ico/question-mark-draw.png" className="img-fluid"/>
                             <h3>Pronto</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
@@ -246,7 +246,7 @@ const Guides = () => {
                 <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia2 src="img/ico/question-mark-draw.png" className="img-fluid"/>
+                            <AppImageGuia2 src="../img/ico/question-mark-draw.png" className="img-fluid"/>
                             <h3>Pronto</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
