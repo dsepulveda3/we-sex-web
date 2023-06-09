@@ -19,7 +19,7 @@ import NoLoPienses from '@/components/noLoPienses'
 import Footer from '@/components/footer'
 import SeguisDudando from '@/components/seguisDudando'
 import Header from '@/components/header'
-import Header3 from '@/components/header'
+import Header3 from '@/components/header3'
 
 const inter = Inter({ subsets: ['latin'] })
 
