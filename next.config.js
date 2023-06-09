@@ -4,7 +4,7 @@ const nextConfig = {
   // output: 'export',
   // distDir: 'build'
   experimental: {
-    reactRefresh: false,
+    // reactRefresh: false,
   },
 }
 
