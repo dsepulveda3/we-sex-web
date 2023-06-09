@@ -21,7 +21,7 @@ import SeguisDudando from '@/components/seguisDudando'
 import ComprarMaster1 from '@/components/comprarMaster1'
 import FirstBannerMC from '@/components/firstBannerMC'
 import EsParaVosSi3MC from '@/components/esParaVosSi3MC'
-import Header3 from '@/components/header3';
+import HeaderPremium from '@/components/headerPremium';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -82,7 +82,7 @@ export default function Home() {
         <Profesionales />
         <Regalar /> */}
         {/* <NavBarWS /> */}
-        <Header3/>
+        <HeaderPremium/>
         <FirstBannerMC />
         <AfterDiv />
         <EsParaVosSi3MC />

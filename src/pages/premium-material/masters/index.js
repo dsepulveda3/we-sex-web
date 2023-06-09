@@ -21,7 +21,7 @@ import SeguisDudando from '@/components/seguisDudando'
 import Header from '@/components/header'
 import Guides from '@/components/guides'
 import Masterclasses from '@/components/masterclasses'
-import Header3 from '@/components/header3'
+import HeaderPremium from '@/components/headerPremium'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -73,7 +73,7 @@ export default function Home() {
         }}
       />
       <main>
-        <Header3 />
+        <HeaderPremium />
         <Masterclasses />
       </main>
     </>

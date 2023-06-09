@@ -23,14 +23,14 @@ const StyledHeader = styled.header`
         position: fixed;
         top: 0;
         left: 0;
-        height: 40vh;
+        height: 20vh;
         width: 100vw;
         background-color: violet;
         background-image: url("/img/cta-bg.jpg");
         z-index: 1;  /* set the z-index of the navbar-collapse */
       }
       .navbar-nav {
-        padding-top: 50px; /* adjust this value as needed to add space at the top */
+        padding-top: 70px; /* adjust this value as needed to add space at the top */
       }
       .navbar-nav .nav-link {
         color: black;
@@ -144,88 +144,8 @@ const Header = () => {
           <Collapse isOpen={isOpen} navbar>
             <Nav navbar>
             <NavItem>
-                <NavLink onClick={toggleNavbar} style={{ color: "white"}} css={{ "&:hover": {textDecoration: "underline"}}} className="nav-link scrollto active" href="/#hola">
-                  Hola!
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink  className="nav-link scrollto" 
-                href="/#features" style={{color: "white"}}
-                onClick={(e) => {
-                  e.preventDefault();
-                  toggleNavbar();
-                  const el = document.getElementById('features');
-                  window.scrollTo({
-                    top: el.offsetTop - 70, // Adjust this value as needed
-                    behavior: 'smooth',
-                  });
-                }}
-                >
-                  Temas
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink className="nav-link scrollto" 
-                href="/#community" style={{color: "white"}}
-                onClick={(e) => {
-                  e.preventDefault();
-                  toggleNavbar();
-                  const el = document.getElementById('community');
-                  window.scrollTo({
-                    top: el.offsetTop - 70, // Adjust this value as needed
-                    behavior: 'smooth',
-                  });
-                }}
-                >
-                  Comunidad
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink className="nav-link scrollto" 
-                href="/#about" style={{color: "white"}}
-                onClick={(e) => {
-                  e.preventDefault();
-                  toggleNavbar();
-                  const el = document.getElementById('about');
-                  window.scrollTo({
-                    top: el.offsetTop - 70, // Adjust this value as needed
-                    behavior: 'smooth',
-                  });
-                }}
-                >
-                  Profesionales
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink className="nav-link scrollto" 
-                href="/#questions" style={{color: "white"}}
-                onClick={(e) => {
-                  e.preventDefault();
-                  toggleNavbar();
-                  const el = document.getElementById('questions');
-                  window.scrollTo({
-                    top: el.offsetTop - 70, // Adjust this value as needed
-                    behavior: 'smooth',
-                  });
-                }}
-                >
-                  FAQ
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink className="nav-link scrollto" 
-                href="/#contact" style={{color: "white"}}
-                onClick={(e) => {
-                  e.preventDefault();
-                  toggleNavbar();
-                  const el = document.getElementById('contact');
-                  window.scrollTo({
-                    top: el.offsetTop - 70, // Adjust this value as needed
-                    behavior: 'smooth',
-                  });
-                }}
-                >
-                  Contacto
+                <NavLink onClick={toggleNavbar} style={{ color: "white"}} css={{ "&:hover": {textDecoration: "underline"}}} className="nav-link scrollto active" href="/">
+                  Sobre WeSex!
                 </NavLink>
               </NavItem>
               <NavItem>

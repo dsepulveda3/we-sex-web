@@ -20,7 +20,7 @@ import NoLoPienses from '@/components/noLoPienses'
 import Footer from '@/components/footer'
 import SeguisDudando from '@/components/seguisDudando'
 import Header from '@/components/header'
-import Header3 from '@/components/header3';
+import HeaderPremium from '@/components/headerPremium';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -73,7 +73,7 @@ export default function Home() {
       />
       <main>
         {/* <NavBarWS /> */}
-        <Header3 />
+        <HeaderPremium />
         <FirstBannerPack />
         <AfterDiv />
         <EsParaVosSi3 />
