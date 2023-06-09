@@ -196,9 +196,9 @@ const Guides = () => {
     <Section id="guides">
         <Background>
             <Container>
-                <Title>Nuestras <span>Guías Premium</span></Title>
+                <Title>Nuestras <span>guías Premium</span></Title>
                 <Text>
-                    Página de sabiduría sexual para volverte un experto en el tema y poder aplicarlo en tu vida sexual.
+                    Páginas de sabiduría sexual para volverte un experto en el tema y poder aplicarlo en tu vida sexual.
                 </Text>
                 <Row data-aos="fade-left">
                 <Col lg="3" md="4" >

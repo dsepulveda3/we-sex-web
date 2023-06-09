@@ -86,7 +86,7 @@ const EsParaVosSi3GT = () => {
                 >
                     <SwiperSlide>
                         <Text>
-                            💗<br/><span>Introducirte el tanta</span> y aplicarlo en tu vida sexual.
+                            💗<br/><span>Introducirte al tanta</span> y aplicarlo en tu vida sexual.
                         </Text>
                         <Text>
                             ✨<br/>Tener orgasmos <span>más profundos y duraderos</span>.

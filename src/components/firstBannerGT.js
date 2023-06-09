@@ -130,7 +130,7 @@ const FirstBannerGT = () => {
                     <Row className="justify-content-between">
                         <Col lg={7} className="align-items-center">
                             <Content>
-                                <Title><span>Tantra</span>, consciencia y energía</Title>
+                                <Title><span>Guía de tantra: </span>orgasmos más profundos</Title>
                                 <Text>
                                     Te enseñamos de 0 a 100,<br/>cómo aplicar el tantra a tu vida sexual.
                                 </Text>
