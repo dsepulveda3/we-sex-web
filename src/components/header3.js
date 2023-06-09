@@ -149,27 +149,82 @@ const Header = () => {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink onClick={toggleNavbar} className="nav-link scrollto" href="/#features" style={{color: "white"}}>
+                <NavLink  className="nav-link scrollto" 
+                href="/#features" style={{color: "white"}}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleNavbar();
+                  const el = document.getElementById('features');
+                  window.scrollTo({
+                    top: el.offsetTop - 70, // Adjust this value as needed
+                    behavior: 'smooth',
+                  });
+                }}
+                >
                   Temas
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink onClick={toggleNavbar} className="nav-link scrollto" href="/#community" style={{color: "white"}}>
+                <NavLink className="nav-link scrollto" 
+                href="/#community" style={{color: "white"}}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleNavbar();
+                  const el = document.getElementById('community');
+                  window.scrollTo({
+                    top: el.offsetTop - 70, // Adjust this value as needed
+                    behavior: 'smooth',
+                  });
+                }}
+                >
                   Comunidad
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink onClick={toggleNavbar} className="nav-link scrollto" href="/#profesionales" style={{color: "white"}}>
+                <NavLink className="nav-link scrollto" 
+                href="/#about" style={{color: "white"}}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleNavbar();
+                  const el = document.getElementById('about');
+                  window.scrollTo({
+                    top: el.offsetTop - 70, // Adjust this value as needed
+                    behavior: 'smooth',
+                  });
+                }}
+                >
                   Profesionales
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink onClick={toggleNavbar} className="nav-link scrollto" href="/#questions" style={{color: "white"}}>
+                <NavLink className="nav-link scrollto" 
+                href="/#questions" style={{color: "white"}}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleNavbar();
+                  const el = document.getElementById('questions');
+                  window.scrollTo({
+                    top: el.offsetTop - 70, // Adjust this value as needed
+                    behavior: 'smooth',
+                  });
+                }}
+                >
                   FAQ
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink onClick={toggleNavbar} className="nav-link scrollto" href="/#contact" style={{color: "white"}}>
+                <NavLink className="nav-link scrollto" 
+                href="/#contact" style={{color: "white"}}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleNavbar();
+                  const el = document.getElementById('contact');
+                  window.scrollTo({
+                    top: el.offsetTop - 70, // Adjust this value as needed
+                    behavior: 'smooth',
+                  });
+                }}
+                >
                   Contacto
                 </NavLink>
               </NavItem>

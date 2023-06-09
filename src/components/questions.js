@@ -110,7 +110,7 @@ const TarjetaDesplegable = () => {
 
   return (
     <section id="questions">
-    <Container style={{padding: "30px 0px"}}>
+    <Container style={{padding: "30px"}}>
         <TextOverTitle>FAQ</TextOverTitle>
         <Title>Dudas frequentes</Title>
         <Row data-aos="fade-left">

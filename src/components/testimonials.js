@@ -142,32 +142,26 @@ const Testimonials = () => {
                 data-aos="fade-up"
                 data-aos-delay="100"
                 pagination={{ clickable: true }}
-                
+                centeredSlides={true} // Center the slides
+                slidesPerView={1} // Show only one slide at a time
                 >
-                    <StyledSwiperSlide>
                     <SwiperSlide>
-                        
                         <ContainerImage>
                             <Image src= "img/testimonials/testimonials-1.jpg" />
                         </ContainerImage>
                         <Name>Romina</Name>
                         <Age>24 años</Age>
                         <Description>Desde que descargamos la app con mi novio, nuestra sexualidad pasó a otro nivel.</Description>
-                        
                     </SwiperSlide>
-                    </StyledSwiperSlide>
-                    <StyledSwiperSlide>
-                    <SwiperSlide >
-                        
+
+                    <SwiperSlide>
                         <ContainerImage>
                             <Image src= "img/testimonials/testimonials-6.jpg" />
                         </ContainerImage>
                         <Name>Nadia</Name>
                         <Age>26 años</Age>
                         <Description>Pude conocer y chatear con gente que tenía los mismos gustos sexuales que yo, eso me encantó.</Description>
-                        
                     </SwiperSlide>
-                    </StyledSwiperSlide>
                 </Swiper>
             </Container>
         </Background>
@@ -175,3 +169,4 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
+

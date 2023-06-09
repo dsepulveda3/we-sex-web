@@ -89,28 +89,18 @@ const AppImageInstagram = styled.img`
     }
 `;
 
-const Stadistic = styled.p`
+const Stadistic = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-right: 100px;
-    margin-left: 100px;
+    margin-right: 20px;
+    margin-left: 20px;
 
-
-    
     @media(max-width: 540px){
         margin-top: 20px;
         margin-bottom: 20px;
     }
-    @media(min-width: 540px){
-       
-    }
 `;
-
-
-
-
-
 
 const Stadistics = () => {
   return (
@@ -151,8 +141,6 @@ const Stadistics = () => {
         </Row>
     </Container>
     </section>
-
-
   );
 };
 

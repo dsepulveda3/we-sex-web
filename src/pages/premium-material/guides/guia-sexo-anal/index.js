@@ -70,8 +70,8 @@ export default function Home() {
         }}
       />
       <main>
-        <NavBarWS />
-        {/* <Header /> */}
+        {/* <NavBarWS /> */}
+        <Header3 />
         <FirstBanner />
         <AfterDiv />
         <EsParaVosSi3 />

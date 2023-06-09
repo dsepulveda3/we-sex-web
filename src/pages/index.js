@@ -13,6 +13,7 @@ import Community from '@/components/community';
 import Ceciliace from '@/components/ceciliace';
 import Testimonials from '@/components/testimonials';
 import Stadistics from '@/components/stadistics';
+import Stadistics2 from '@/components/stadistics2';
 import Questions from '@/components/questions';
 import Contactus from '@/components/contactus';
 
@@ -22,14 +23,13 @@ const Home = () => {
     <div>
       <Header3 />
       <Hola />
-      <Stadistics />
+      <Stadistics2 />
       <Temas2 />
       <Community />
       <Ceciliace />
-      <Testimonials />
-      {/* <Questions/> */}
-      {/* <Contactus/> */}
-      {/* Other page content */}
+      {/* <Testimonials /> */}
+      <Questions/>
+      <Contactus/>
     </div>
   );
 };

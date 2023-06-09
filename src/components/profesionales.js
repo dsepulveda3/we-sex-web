@@ -62,7 +62,8 @@ const Redes = styled.div`
 
 const Profesionales = () => {
     return (
-        <Background id="profesionales">
+        <section id="profesional">
+        <Background>
             <Container style={{paddingTop: "5rem", paddingBottom: "1rem", textAlign: "center"}}>
                 <Title>Profesionales detrás de WeSex</Title>
                 <RowPers>
@@ -122,6 +123,7 @@ const Profesionales = () => {
                 </RowPers>
             </Container>
         </Background>
+        </section>
     );
 }
  

@@ -20,6 +20,7 @@ import Footer from '@/components/footer'
 import SeguisDudando from '@/components/seguisDudando'
 import Pack from '@/components/pack'
 import Header from '@/components/header'
+import Header3 from '@/components/header3';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -71,8 +72,8 @@ export default function Home() {
         }}
       />
       <main>
-        <NavBarWS />
-        {/* <Header /> */}
+        {/* <NavBarWS /> */}
+        <Header3 />
         <FirstBannerGT />
         <AfterDiv />
         <EsParaVosSi3GT />

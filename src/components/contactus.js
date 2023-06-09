@@ -61,7 +61,7 @@ const AppImageWhatsApp = styled.img`
     }
 `;
 
-const ContactChannel = styled.p`
+const ContactChannel = styled.a`
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -180,13 +180,13 @@ const Contactus = () => {
                         </ContainerTitle>
                         <ContainerContact>
                             <Col xl="7" lg="6" className="icon-boxes d-flex flex-column flex-lg-row  align-items-center px-lg-5"  >
-                                <ContactChannel>
+                                <ContactChannel href="mailto:info@wesex.com.ar">
                                     <AppImageMail src="img/ico/Mail.png" alt="" />
                                     <TextSubtitleCharacteristics>Mail</TextSubtitleCharacteristics>
                                     <Number>info@wesex.com.ar</Number>
                                 </ContactChannel>
 
-                                <ContactChannel>
+                                <ContactChannel href="https://wa.me/5491140678698">
                                     <AppImageWhatsApp src="img/ico/Whatsapp.png" alt="" />
                                     <TextSubtitleCharacteristics>Whatsapp</TextSubtitleCharacteristics>
                                     <Number>+5491140678698</Number>
