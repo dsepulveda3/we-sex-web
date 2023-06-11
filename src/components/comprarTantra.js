@@ -219,7 +219,7 @@ const BotonVerde = styled(Boton)`
       if (sdkLoaded && isVisible && preferenceId) {
           initMercadoPago();
         }
-      }, [sdkLoaded, isVisible, preferenceId, initMercadoPago]);
+      }, [sdkLoaded, isVisible, preferenceId]);
 
    const initMercadoPago = () => {
     const mp = new MercadoPago("APP_USR-fda56132-1ed4-444a-b4d7-174220277f4a");
