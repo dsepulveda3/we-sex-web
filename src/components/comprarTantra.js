@@ -3,8 +3,6 @@ import {Row, Col, Container} from 'reactstrap';
 import Head from 'next/head'
 import styled from '@emotion/styled';
 
-// import { createPreference } from "/API/mercadopago.js";
-
 const Background = styled.div`
     background-color: #f5f5f5;
     @media(max-width: 540px){
@@ -190,22 +188,7 @@ const BotonVerde = styled(Boton)`
      }
    }, [sdkLoaded]);
  
-  //  useEffect(() => {
-  //   if (botonPagoRef.current) {
-  //     botonPagoRef.current.addEventListener("click", () => {
-  //       if (window.dataLayer) {
-  //         window.gtag("event", "click", {
-  //           event_category: "PayHip",
-  //           event_label: "Botón de Pago en USD",
-  //           event_callback: function () {
-  //             console.log("Evento PH enviado correctamente");
-  //           },
-  //         });
-  //       }
-  //     });
-  //   }
-  // }, [botonPagoRef.current]);
-
+  
   useEffect(() => {
     const button = botonPagoRef.current;
     const handleClick = () => {
@@ -236,46 +219,7 @@ const BotonVerde = styled(Boton)`
       if (sdkLoaded && isVisible && preferenceId) {
           initMercadoPago();
         }
-      }, [sdkLoaded, isVisible, preferenceId]);
-
-  //  const initMercadoPago = () => {
-  //    const mp = new MercadoPago("APP_USR-fda56132-1ed4-444a-b4d7-174220277f4a");
-  //    const bricksBuilder = mp.bricks();
- 
-  //    bricksBuilder
-  //      .create("wallet", "wallet_container", {
-  //        initialization: {
-  //          preferenceId: preferenceId,
-  //        },
-         
-  //      })
-  //      .then(function () {
-  //        console.log("Checkout iniciado correctamente");
-
-  //        // Agregando el controlador de eventos aquí
-         
-  //        const walletContainer = document.getElementById("wallet_container");
-  //        walletContainer.addEventListener("click", () => {
-  //          if (window.dataLayer) {
-  //            window.gtag("event", "click", {
-  //               "gtm.elementId": "wallet_container",
-  //               "gtm.clickId": "pagoMP",
-  //              event_category: "Mercado Pago",
-  //              event_label: "Botón de Pagar",
-  //              event_callback: function () {
-  //               console.log("Evento MP enviado correctamente");
-  //             },
-  //            });
-  //          }
-  //        });
-
-  //        console.log(walletContainer);
-  //      })
-       
-  //      .catch(function (error) {
-  //        console.log(error);
-  //      });
-  //  };
+      }, [sdkLoaded, isVisible, preferenceId, initMercadoPago]);
 
    const initMercadoPago = () => {
     const mp = new MercadoPago("APP_USR-fda56132-1ed4-444a-b4d7-174220277f4a");
