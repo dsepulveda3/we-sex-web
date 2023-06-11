@@ -277,9 +277,9 @@ const BotonVerde = styled(Boton)`
                 
             )}
             {/* <BotonVerde >Comprar guía <span>tantra</span> + <span>sexo anal</span></BotonVerde> */}
-            <a href="/premium-material/guides/guia-pack-anal-tantra">
+            <Link href="/premium-material/guides/guia-pack-anal-tantra">
               <Text3>O llevate la <span>guía de tantra</span> + la <span>guía de sexo anal</span> a un precio orgásmico</Text3>
-            </a>
+            </Link>
 
         </Container>
       </Background>
