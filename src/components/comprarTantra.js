@@ -2,6 +2,7 @@ import React, {useState, useEffect, useRef } from 'react';
 import {Row, Col, Container} from 'reactstrap';
 import Head from 'next/head'
 import styled from '@emotion/styled';
+import Link from 'next/link';
 
 const Background = styled.div`
     background-color: #f5f5f5;
@@ -285,9 +286,9 @@ const BotonVerde = styled(Boton)`
                 
             )}
             {/* <BotonVerde >Comprar guía <span>tantra</span> + <span>sexo anal</span></BotonVerde> */}
-            <a href="/premium-material/guides/guia-pack-anal-tantra">
+            <Link href="/premium-material/guides/guia-pack-anal-tantra">
               <Text3>O llevate la <span>guía de tantra</span> + la <span>guía de sexo anal</span> a un precio orgásmico</Text3>
-            </a>
+            </Link>
 
         </Container>
       </Background>
