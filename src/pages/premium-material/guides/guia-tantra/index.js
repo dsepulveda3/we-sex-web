@@ -80,9 +80,9 @@ export default function Home() {
         {/* <QueVasAEncontrar /> */}
         <AfterDiv />
         <Profesionales />
+        <Pack/>
         <Regalar />
         <ComprarTantra />
-        {/* <Pack/> */}
         <Dudas />
         <AboutWeSex />
         {/* <SeguisDudando /> */}

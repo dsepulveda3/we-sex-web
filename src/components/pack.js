@@ -20,7 +20,7 @@ const Background = styled.div`
 `;
 
 const Title = styled.h4`
-    font-size: 3.4rem;
+    font-size: 3rem;
     font-family: "Averia Libre", sans-serif;
     color: white;
     font-weight: bold;
@@ -97,7 +97,7 @@ const Pack = () => {
     return (
         <Background id="regalar">
             <Container className="text-center">
-                <Title>O compra nuestra guía de <span>Tantra</span> + <span>Sexo Anal</span> a un precio inigualable.</Title>
+                <Title>Llevate la guía de <span>Tantra</span> + guia de <span>Sexo Anal</span> a un precio orgásmico.</Title>
                 {/* <Dots>😮</Dots> */}
                 {/* <BigText>REGALARLA</BigText> */}
                 {/* <Dots style={{margin: "1rem 0"}}>👇</Dots> */}
