@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef } from 'react';
 import {Row, Col, Container} from 'reactstrap';
 import Head from 'next/head'
 import styled from '@emotion/styled';
@@ -14,7 +14,7 @@ const Background = styled.div`
 `;
 
 const Title = styled.p`
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-family: "Karla", sans-serif;
     color: var(--violet);
     font-weight: bold;
@@ -25,7 +25,7 @@ const Title = styled.p`
     font-family: "Karla", sans-serif;
     }
     @media(max-width: 540px){
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 `;
 
@@ -70,6 +70,35 @@ const Text = styled.p`
     }
 `;
 
+const Text2 = styled.p`
+    font-family: "Averia Libre", sans-serif;
+    font-size: 2.0rem;
+    margin-bottom: 2.5rem;
+    color: var(--green);
+    span {
+        color: var(--green);
+    }
+    @media(max-width: 540px){
+        font-size: 2.8rem;
+    }
+`;
+
+const Text3 = styled.p`
+    font-family: "Averia Libre", sans-serif;
+    font-size: 2.0rem;
+    margin-top: 3rem;
+    color: var(--violet);
+    text-decoration: underline;
+
+    span {
+        color: var(--green);
+    }
+    @media(max-width: 540px){
+        font-size: 2.0rem;
+    }
+`;
+
+
 const Boton = styled.a`
     border-radius: 4rem;
     padding: 1rem 3rem;
@@ -111,172 +140,27 @@ const BotonVioleta = styled(Boton)`
     }
 `;
 
-
-// const Comprar = () => {
-//     const [affiliate, setAffiliate] = useState("");
-//     useEffect(() => {
-//         const queryString = window.location.search;
-//         const urlParams = new URLSearchParams(queryString);
-//         const aff = urlParams.get('aff');
-//         if(aff && aff !== '') {
-//             setAffiliate(aff)
-//         }
-//         // eslint-disable-next-line
-//     }, [])
-//     return (
-        // <Background id="comprar">
-        //     <Container style={{paddingTop: "5rem", paddingBottom: "6rem", textAlign: "center"}}>
-        //         <Title>Compra desde Argentina</Title>
-        //         <BotonConContorno target="_blank" href="https://mpago.la/12RtQEf">
-        //             <img src="img/mercadopago.webp" />
-        //         </BotonConContorno>
-        //         <Amount>AR$  800</Amount>
-        //         <Title style={{marginTop: "5rem"}}>Compra internacionalmente</Title>
-        //         <BotonVioleta target="_blank" href={`https://payhip.com/b/WKi6V/${affiliate}`}>
-        //             Pago en USD
-        //         </BotonVioleta>
-        //         <Amount>U$D  5</Amount>
-        //     </Container>
-        // </Background>
-//     );
-// }
-
-// checkout.js
-
-
-
-// async function Comprar() {
-//     const response = await fetch('/api/mercadopago');
-//     const data = await response.json();
-
-//     const preferenceId = await createPreference();; // Reemplaza "ID_DE_LA_PREFERENCIA_GENERADA_EN_EL_BACKEND" con el ID de la preferencia generada en el backend
-
-//   useEffect(() => {
-//     const script = document.createElement("script");
-//     script.src = "https://sdk.mercadopago.com/js/v2";
-//     script.type = "text/javascript";
-//     script.onload = () => {
-//       const mp = new window.MercadoPago("TEST-ac8a77ee-fcb4-46b8-8f75-6cfb5ddb0d58");
-//       const checkout = mp.checkout({
-//         preference: {
-//           id: preferenceId,
-//         },
-//       });
-//       checkout.render({
-//         container: ".checkout-container",
-//       });
-//     };
-//     document.getElementsByTagName("head")[0].appendChild(script);
-//   }, []);
-
-//   return (
-//     <>
-//       <Head>
-//         <script src="https://sdk.mercadopago.com/js/v2"></script>
-//       </Head>
-
-//       <div className="checkout-container"></div>
-//     </>
-//   );
-// }
-
- 
-// export default Comprar;
-
-
- //CODIGO ANTES BIEN
-// export default function PaymentButton() {
-//   const [preferenceId, setPreferenceId] = useState(null);
-//   const [sdkLoaded, setSdkLoaded] = useState(false);
-//   const [affiliate, setAffiliate] = useState("");
-
-//   useEffect(() => {
-//     const script = document.createElement("script");
-//     script.src = "https://sdk.mercadopago.com/js/v2";
-//     script.type = "text/javascript";
-//     script.async = true;
-//     script.onload = () => {
-//       setSdkLoaded(true);
-//     };
-//     document.body.appendChild(script);
-
-//     return () => {
-//       document.body.removeChild(script);
-//     };
-//   }, []);
-
-//   useEffect(() => {
-//     const createPreference = async () => {
-//       const response = await fetch("/api/create-preferences");
-//       const data = await response.json();
-//       setPreferenceId(data.preferenceId);
-//     };
-
-//     if (sdkLoaded) {
-//       createPreference();
-//     }
-//   }, [sdkLoaded]);
-
-//   useEffect(() => {
-//     if (sdkLoaded && preferenceId) {
-//       initMercadoPago();
-//     }
-//   }, [sdkLoaded, preferenceId]);
-
-//   const initMercadoPago = () => {
-//     const mp = new MercadoPago("APP_USR-fda56132-1ed4-444a-b4d7-174220277f4a");
-//     const bricksBuilder = mp.bricks();
-
-//     bricksBuilder
-//       .create("wallet", "wallet_container", {
-//         initialization: {
-//           preferenceId: preferenceId,
-//         },
-//       })
-//       .then(function () {
-//         console.log("Checkout iniciado correctamente");
-//       })
-//       .catch(function (error) {
-//         console.log(error);
-//       });
-//   };
-
-//   return (
-//     <div>
-//       {/* <div id="wallet_container"></div> */}
-//       <Background id="comprar">
-//             <Container style={{paddingTop: "5rem", paddingBottom: "6rem", textAlign: "center"}}>
-//                 <Title>Compra desde Argentina</Title>
-//                 {/* <BotonConContorno target="_blank" href="https://mpago.la/12RtQEf">
-//                     <img src="img/mercadopago.webp" />
-//                 </BotonConContorno> */}
-//                 <div id="wallet_container"></div>
-//                 <Amount>AR$  800</Amount>
-//                 <Title style={{marginTop: "5rem"}}>Compra internacionalmente</Title>
-//                 <BotonVioleta target="_blank" href={`https://payhip.com/b/WKi6V/${affiliate}`}>
-//                     Pago en USD
-//                 </BotonVioleta>
-//                 <Amount>U$D  5</Amount>
-//             </Container>
-//         </Background>
-//     </div>
-//   );
-// }
-
- //CODIGO ANTES BIEN
-
- function handlePayButtonClick() {
-    gtag("event", "pay_button_click", {
-      event_category: "MercadoPago",
-      event_label: "Checkout PRO",
-    });
-  }  
+const BotonVerde = styled(Boton)`
+    margin-top: 5rem!important;
+    color: white;
+    background-color: black;
+    span {
+      color: var(--violet);
+  }
+  
+`;
 
  export default function PaymentButton() {
    const [preferenceId, setPreferenceId] = useState(null);
    const [initPoint, setInitPoint] = useState(null); // Agregar estado para initPoint
    const [sdkLoaded, setSdkLoaded] = useState(false);
    const [affiliate, setAffiliate] = useState("");
+   const [isVisible, setIsVisible] = useState(false);
+   const botonPagoRef = useRef(null);
+   
+   const handleClick = () => {
+    setIsVisible(!isVisible);
+  }
  
    useEffect(() => {
      const script = document.createElement("script");
@@ -307,26 +191,27 @@ const BotonVioleta = styled(Boton)`
    }, [sdkLoaded]);
  
    useEffect(() => {
-     if (sdkLoaded && preferenceId) {
-        initMercadoPago();
+    if (botonPagoRef.current) {
+      botonPagoRef.current.addEventListener("click", () => {
+        if (window.dataLayer) {
+          window.gtag("event", "click", {
+            event_category: "PayHip",
+            event_label: "Botón de Pago en USD",
+            event_callback: function () {
+              console.log("Evento PH enviado correctamente");
+            },
+          });
+        }
+      });
+    }
+  }, [botonPagoRef.current]);
 
-        const botonPago = document.getElementById("boton-pago");
-        botonPago.addEventListener("click", () => {
-          if (window.dataLayer) {
-            window.gtag("event", "click", {
-              event_category: "PayHip",
-              event_label: "Botón de Pago en USD",
-              event_callback: function () {
-                console.log("Evento PH enviado correctamente");
-              },
-              
-            });
-          }
-        });
+  useEffect(() => {
+      if (sdkLoaded && isVisible && preferenceId) {
+          initMercadoPago();
+        }
+      }, [sdkLoaded, isVisible, preferenceId]);
 
-     }
-   }, [sdkLoaded, preferenceId]);
- 
    const initMercadoPago = () => {
      const mp = new MercadoPago("APP_USR-fda56132-1ed4-444a-b4d7-174220277f4a");
      const bricksBuilder = mp.bricks();
@@ -368,50 +253,36 @@ const BotonVioleta = styled(Boton)`
  
    return (
     <div>
-    {/* <div id="wallet_container"></div> */}
-    <Background id="comprar">
-          <Container style={{paddingTop: "5rem", paddingBottom: "6rem", textAlign: "center"}}>
-              <Title>Compra desde Argentina</Title>
-              {/* <BotonConContorno target="_blank" href="https://mpago.la/12RtQEf">
-                  <img src="img/mercadopago.webp" />
-              </BotonConContorno> */}
-              <button className ="pagoMP" id="wallet_container" data-href={initPoint}></button>
-              <Amount>AR$  1000</Amount>
-              <Title style={{marginTop: "5rem"}}>Compra internacionalmente</Title>
-              <BotonVioleta className="pagoPH" id="boton-pago" target="_blank" href={`https://payhip.com/b/MiWzq/${affiliate}`}>
-                  Pago en USD
-              </BotonVioleta>
-              <Amount>U$D  5</Amount>
-          </Container>
+      <Background id="comprar">
+      <Container style={{ paddingBottom: "6rem", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center"}}>
+            {!isVisible && (
+                <BotonVerde onClick={handleClick}>Comprar solo guía tantra</BotonVerde>
+            )}
+            {isVisible && (
+              
+                <div style={{ paddingTop: "5rem"}}>
+                  <Text2> Estás comprando solo la guía de Tantra </Text2>
+                  <Title>Compra desde Argentina</Title>
+                  {/* <BotonConContorno target="_blank" href="https://mpago.la/12RtQEf">
+                      <img src="img/mercadopago.webp" />
+                  </BotonConContorno> */}
+                  <button className ="pagoMP" id="wallet_container" data-href={initPoint}></button>
+                  <Amount>AR$  1000</Amount>
+                  <Title style={{marginTop: "5rem"}}>Compra internacionalmente</Title>
+                  <BotonVioleta className="pagoPH" ref={botonPagoRef} id="boton-pago" target="_blank" href={`https://payhip.com/b/dgnYh${affiliate}`}>
+                      Pago en USD
+                  </BotonVioleta>
+                  <Amount>U$D  5</Amount>
+                </div>
+                
+            )}
+            {/* <BotonVerde >Comprar guía <span>tantra</span> + <span>sexo anal</span></BotonVerde> */}
+            <a href="/premium-material/guides/guia-pack-anal-tantra">
+              <Text3>O llevate la <span>guía de tantra</span> + la <span>guía de sexo anal</span> a un precio orgásmico</Text3>
+            </a>
+
+        </Container>
       </Background>
-  </div>
-    );
+    </div>
+  );
 }
-      
- 
-
-
-
-  
-
-// Otro código
-
-//   const initMercadoPago = () => {
-//     // Inicializa el checkout
-//     const mp = new MercadoPago("TEST-ac8a77ee-fcb4-46b8-8f75-6cfb5ddb0d58");
-//     const bricksBuilder = mp.bricks();
-
-//     bricksBuilder
-//       .create("wallet", "wallet_container", {
-//         initialization: {
-//           preferenceId: preferenceId,
-//         },
-//       })
-//       .then(function () {
-//         console.log("Checkout iniciado correctamente");
-//       })
-//       .catch(function (error) {
-//         console.log(error);
-//         console.log(document.body)
-//       });
-//   };

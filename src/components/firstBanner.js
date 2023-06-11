@@ -124,6 +124,7 @@ const FirstBanner = () => {
                             <Content>
                                 <Title>Guía completísima de <span>sexo anal</span></Title>
                                 <Text>
+                                    <span><strong>AR$ 1.000  /  U$D 5</strong></span> <br/>
                                     Deja de dudar,<br/>regálate placer y empieza a experimentar con esta maravillosa práctica.
                                 </Text>
                                 <Botones>

@@ -82,7 +82,7 @@ export default function Home() {
         <Profesionales />
         <Regalar />
         <ComprarTantra />
-        <Pack/>
+        {/* <Pack/> */}
         <Dudas />
         <AboutWeSex />
         {/* <SeguisDudando /> */}

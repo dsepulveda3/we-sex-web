@@ -68,6 +68,7 @@ const Text = styled.p`
     }
 `;
 
+
 const AppImage = styled.img`
     width: 60%;
     height: auto;
@@ -130,7 +131,8 @@ const FirstBannerPack = () => {
                             <Content>
                                 <Title>Guía <span>Sexo Anal</span> +  <span>Tantra</span></Title>
                                 <Text>
-                                    Compra el pack a un <span>increible descuento</span>.
+                                    <span><strong>AR$ 1.600  /  U$D 8</strong></span> <br/>
+                                    Compra el pack a un <span>precio orgásmico</span>.
                                 </Text>
                                 <Botones>
                                     <BotonArs

@@ -280,6 +280,7 @@ export default function PaymentButton() {
    const [initPoint, setInitPoint] = useState(null); // Agregar estado para initPoint
    const [sdkLoaded, setSdkLoaded] = useState(false);
    const [affiliate, setAffiliate] = useState("");
+   
  
    useEffect(() => {
      const script = document.createElement("script");
