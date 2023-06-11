@@ -190,21 +190,47 @@ const BotonVerde = styled(Boton)`
      }
    }, [sdkLoaded]);
  
-   useEffect(() => {
-    if (botonPagoRef.current) {
-      botonPagoRef.current.addEventListener("click", () => {
-        if (window.dataLayer) {
-          window.gtag("event", "click", {
-            event_category: "PayHip",
-            event_label: "Botón de Pago en USD",
-            event_callback: function () {
-              console.log("Evento PH enviado correctamente");
-            },
-          });
-        }
-      });
+  //  useEffect(() => {
+  //   if (botonPagoRef.current) {
+  //     botonPagoRef.current.addEventListener("click", () => {
+  //       if (window.dataLayer) {
+  //         window.gtag("event", "click", {
+  //           event_category: "PayHip",
+  //           event_label: "Botón de Pago en USD",
+  //           event_callback: function () {
+  //             console.log("Evento PH enviado correctamente");
+  //           },
+  //         });
+  //       }
+  //     });
+  //   }
+  // }, [botonPagoRef.current]);
+
+  useEffect(() => {
+    const button = botonPagoRef.current;
+    const handleClick = () => {
+      if (window.dataLayer) {
+        window.gtag("event", "click", {
+          event_category: "PayHip",
+          event_label: "Botón de Pago en USD",
+          event_callback: function () {
+            console.log("Evento PH enviado correctamente");
+          },
+        });
+      }
+    };
+
+    if (button) {
+      button.addEventListener("click", handleClick);
     }
-  }, [botonPagoRef.current]);
+
+    // Cleanup function to remove the listener when component unmounts
+    return () => {
+      if (button) {
+        button.removeEventListener("click", handleClick);
+      }
+    };
+  }, []);  // [] as the dependency array ensures the effect runs only on mount and unmount
 
   useEffect(() => {
       if (sdkLoaded && isVisible && preferenceId) {
@@ -212,44 +238,85 @@ const BotonVerde = styled(Boton)`
         }
       }, [sdkLoaded, isVisible, preferenceId]);
 
-   const initMercadoPago = () => {
-     const mp = new MercadoPago("APP_USR-fda56132-1ed4-444a-b4d7-174220277f4a");
-     const bricksBuilder = mp.bricks();
+  //  const initMercadoPago = () => {
+  //    const mp = new MercadoPago("APP_USR-fda56132-1ed4-444a-b4d7-174220277f4a");
+  //    const bricksBuilder = mp.bricks();
  
-     bricksBuilder
-       .create("wallet", "wallet_container", {
-         initialization: {
-           preferenceId: preferenceId,
-         },
+  //    bricksBuilder
+  //      .create("wallet", "wallet_container", {
+  //        initialization: {
+  //          preferenceId: preferenceId,
+  //        },
          
-       })
-       .then(function () {
-         console.log("Checkout iniciado correctamente");
+  //      })
+  //      .then(function () {
+  //        console.log("Checkout iniciado correctamente");
 
-         // Agregando el controlador de eventos aquí
+  //        // Agregando el controlador de eventos aquí
          
-         const walletContainer = document.getElementById("wallet_container");
-         walletContainer.addEventListener("click", () => {
-           if (window.dataLayer) {
-             window.gtag("event", "click", {
-                "gtm.elementId": "wallet_container",
-                "gtm.clickId": "pagoMP",
-               event_category: "Mercado Pago",
-               event_label: "Botón de Pagar",
-               event_callback: function () {
+  //        const walletContainer = document.getElementById("wallet_container");
+  //        walletContainer.addEventListener("click", () => {
+  //          if (window.dataLayer) {
+  //            window.gtag("event", "click", {
+  //               "gtm.elementId": "wallet_container",
+  //               "gtm.clickId": "pagoMP",
+  //              event_category: "Mercado Pago",
+  //              event_label: "Botón de Pagar",
+  //              event_callback: function () {
+  //               console.log("Evento MP enviado correctamente");
+  //             },
+  //            });
+  //          }
+  //        });
+
+  //        console.log(walletContainer);
+  //      })
+       
+  //      .catch(function (error) {
+  //        console.log(error);
+  //      });
+  //  };
+
+   const initMercadoPago = () => {
+    const mp = new MercadoPago("APP_USR-fda56132-1ed4-444a-b4d7-174220277f4a");
+    const bricksBuilder = mp.bricks();
+  
+    bricksBuilder
+      .create("wallet", "wallet_container", {
+        initialization: {
+          preferenceId: preferenceId,
+        },
+      })
+      .then(function () {
+        console.log("Checkout iniciado correctamente");
+  
+        const walletContainer = document.getElementById("wallet_container");
+        const handleWalletContainerClick = () => {
+          if (window.dataLayer) {
+            window.gtag("event", "click", {
+              "gtm.elementId": "wallet_container",
+              "gtm.clickId": "pagoMP",
+              event_category: "Mercado Pago",
+              event_label: "Botón de Pagar",
+              event_callback: function () {
                 console.log("Evento MP enviado correctamente");
               },
-             });
-           }
-         });
-
-         console.log(walletContainer);
-       })
-       
-       .catch(function (error) {
-         console.log(error);
-       });
-   };
+            });
+          }
+        };
+  
+        walletContainer.addEventListener("click", handleWalletContainerClick);
+  
+        // Cleanup function to remove the listener when component unmounts
+        return () => {
+          walletContainer.removeEventListener("click", handleWalletContainerClick);
+        };
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+  
  
    return (
     <div>
@@ -277,9 +344,9 @@ const BotonVerde = styled(Boton)`
                 
             )}
             {/* <BotonVerde >Comprar guía <span>tantra</span> + <span>sexo anal</span></BotonVerde> */}
-            <Link href="/premium-material/guides/guia-pack-anal-tantra">
+            <a href="/premium-material/guides/guia-pack-anal-tantra">
               <Text3>O llevate la <span>guía de tantra</span> + la <span>guía de sexo anal</span> a un precio orgásmico</Text3>
-            </Link>
+            </a>
 
         </Container>
       </Background>
