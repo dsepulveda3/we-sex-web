@@ -1,6 +1,7 @@
 import React from 'react';
 import {Row, Col, Container} from 'reactstrap';
 import styled from '@emotion/styled';
+import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink } from 'reactstrap';
 
 const Background = styled.div`
 
@@ -137,7 +138,15 @@ const FirstBannerGT = () => {
                                 </Text>
                                 <Botones>
                                     <BotonArs
-                                        href="#comprar"
+                                        href="comprar"
+                                        onClick={(e) => {
+                                        e.preventDefault();
+                                        const el = document.getElementById('comprar');
+                                        window.scrollTo({
+                                            top: el.offsetTop - 70, // Adjust this value as needed
+                                            behavior: 'smooth',
+                                        });
+                                        }}
                                     >Comprar</BotonArs>
                                     <BotonUsd
                                         href="#paravos"

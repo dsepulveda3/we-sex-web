@@ -142,7 +142,7 @@ const BotonVioleta = styled(Boton)`
 const BotonVerde = styled(Boton)`
     margin-top: 5rem!important;
     color: white;
-    background-color: black;
+    background-color: var(--green);
     span {
       color: var(--violet);
   }

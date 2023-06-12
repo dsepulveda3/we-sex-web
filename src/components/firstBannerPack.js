@@ -136,7 +136,15 @@ const FirstBannerPack = () => {
                                 </Text>
                                 <Botones>
                                     <BotonArs
-                                        href="#comprar"
+                                        href="comprar"
+                                        onClick={(e) => {
+                                        e.preventDefault();
+                                        const el = document.getElementById('comprar');
+                                        window.scrollTo({
+                                            top: el.offsetTop - 70, // Adjust this value as needed
+                                            behavior: 'smooth',
+                                        });
+                                        }}
                                     >Comprar</BotonArs>
                                     <BotonUsd
                                         href="#paravos"
