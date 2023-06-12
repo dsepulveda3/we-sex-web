@@ -143,7 +143,7 @@ const FirstBannerGT = () => {
                                         e.preventDefault();
                                         const el = document.getElementById('comprar');
                                         window.scrollTo({
-                                            top: el.offsetTop - 70, // Adjust this value as needed
+                                            top: el.offsetTop - 90, // Adjust this value as needed
                                             behavior: 'smooth',
                                         });
                                         }}

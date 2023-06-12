@@ -8,7 +8,8 @@ const Background = styled.div`
     background-color: #f5f5f5;
     @media(max-width: 540px){
         text-align: center;
-        /* padding-bottom:3rem; */
+        min-height: 35vh;
+        padding-top: 4rem;
     }
 `;
 
