@@ -25,7 +25,7 @@ const StyledHeader = styled.header`
         left: 0;
         height: 20vh;
         width: 100vw;
-        background-color: violet;
+        background-color: var(--violet);
         background-image: url("/img/cta-bg.jpg");
         z-index: 1;  /* set the z-index of the navbar-collapse */
       }

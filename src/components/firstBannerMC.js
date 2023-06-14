@@ -130,7 +130,7 @@ const FirstBannerMC = () => {
                             <Content>
                                 <Title><span>MasterSex Class</span> por Bárbara García</Title>
                                 <Text>
-                                    <span></span>2 hrs de aprendizaje sexual <br/><span> Ondemand: ¡Mira la grabación cuando prefieras!</span> <br/>Aprende a disfrutar cada instante de tus momentos sexuales.
+                                    <span></span>2 hrs de aprendizaje sexual <br/><span> Ondemand: ¡Mira la clase cuando prefieras!</span> <br/>Aprende a disfrutar cada instante de tus momentos sexuales.
                                 </Text>
                                 <Botones>
                                     <BotonArs
