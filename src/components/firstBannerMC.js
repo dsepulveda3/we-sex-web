@@ -121,6 +121,21 @@ const BotonUsd = styled(Boton)`
     background-color: transparent;
 `;
 
+const Video = styled.div`
+    position: relative; 
+    padding-top: 18rem;
+    padding-left: 4rem;
+    height: 0;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    @media(max-width: 540px){
+        padding-top: 6rem;
+        padding-left: 0rem;
+    }
+`;
+
 const FirstBannerMC = () => {
     return (
         <Background>
@@ -143,9 +158,11 @@ const FirstBannerMC = () => {
                             </Content>
                         </Col>
                         <Col>
-                            <ContentImage>
+                            <Video><iframe src="https://jumpshare.com/embed/u37eETh6sUpMkZJ2zl6A" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                            </Video>
+                            {/* <ContentImage>
                                 <AppImage src="../../img/ico/Masterclass (1).png" />
-                            </ContentImage>
+                            </ContentImage> */}
                         </Col>
                     </Row>
             </Container>
