@@ -124,6 +124,21 @@ const BotonUsd = styled(Boton)`
     background-color: transparent;
 `;
 
+const Text4 = styled.p`
+    font-family: "Averia Libre", sans-serif;
+    font-size: 1.05em;
+    margin-top: 0.5rem;
+    color: white;
+    font-style: italic;
+
+    span {
+        color: var(--green);
+    }
+    @media(max-width: 540px){
+        font-size: 2.0rem;
+    }
+`;
+
 const FirstBannerGT = () => {
     return (
         <Background>
@@ -135,7 +150,10 @@ const FirstBannerGT = () => {
                                 <Text>
                                     <span><strong>AR$ 1.000  /  U$D 5</strong></span> <br/>
                                     Te enseñamos de 0 a 100,<br/>cómo aplicar el tantra a tu vida sexual.
+
+                                    <Text4>Con la compra de esta guía te llevas un audio con una meditación guiada.</Text4>
                                 </Text>
+
                                 <Botones>
                                     <BotonArs
                                         href="comprar"

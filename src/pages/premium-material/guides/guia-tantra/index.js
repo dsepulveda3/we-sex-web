@@ -14,7 +14,7 @@ import Dudas from '@/components/dudas'
 import AboutWeSex from '@/components/aboutWeSex'
 import AfterDiv from '@/components/afterDiv'
 import NavBarWS from '@/components/navbar'
-import Profesionales from '@/components/profesionales'
+import ProfesionalesGT from '@/components/profesionalesGT'
 import NoLoPienses from '@/components/noLoPienses'
 import Footer from '@/components/footer'
 import SeguisDudando from '@/components/seguisDudando'
@@ -79,7 +79,7 @@ export default function Home() {
         <EsParaVosSi3GT />
         {/* <QueVasAEncontrar /> */}
         <AfterDiv />
-        <Profesionales />
+        <ProfesionalesGT />
         <Pack/>
         <Regalar />
         <ComprarTantra />
