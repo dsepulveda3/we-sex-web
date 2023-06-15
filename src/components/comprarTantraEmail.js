@@ -149,6 +149,21 @@ const BotonVerde = styled(Boton)`
   
 `;
 
+const Text4 = styled.p`
+    font-family: "Averia Libre", sans-serif;
+    font-size: 1.05em;
+    margin-top: 3rem;
+    color: var(--violet);
+    font-style: italic;
+
+    span {
+        color: var(--green);
+    }
+    @media(max-width: 540px){
+        font-size: 2.0rem;
+    }
+`;
+
  export default function PaymentButton() {
    const [preferenceId, setPreferenceId] = useState(null);
    const [initPoint, setInitPoint] = useState(null); // Agregar estado para initPoint
@@ -267,6 +282,7 @@ const BotonVerde = styled(Boton)`
     <div>
       <Background id="comprar">
       <Container style={{ paddingBottom: "6rem", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center"}}>
+        <Text4>Luego de comprar la guía la recibirás por email</Text4>
             {!isVisible && (
                 <BotonVerde onClick={handleClick}>Comprar solo guía tantra</BotonVerde>
             )}

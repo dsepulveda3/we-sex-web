@@ -82,10 +82,10 @@ const Profesionales = () => {
                 <SubTitle>Profesora, investigadora y divulgadora de Tantra.</SubTitle>
                 <div style={{marginTop: "auto"}}>
                 <Redes>
-                    <a href="https://www.instagram.com/lic.ceciliace" target="_blank">
+                    <a href="https://www.instagram.com/fabivillalba.tantra/" target="_blank">
                     <img src="../../img/instagram.png" alt="Instagram Logo" />
                     </a>
-                    <a href="https://www.ceciliace.com" target="_blank">
+                    <a href="https://bio.site/fabivillalba" target="_blank">
                     <img src="../../img/website.png" alt="Website Logo" />
                     </a>
                 </Redes>
@@ -136,10 +136,10 @@ const Profesionales = () => {
             <SubTitle>Médica Ginecóloga, Obstetra, Especialista en Sexualidad Humana.</SubTitle>
             <div style={{marginTop: "auto"}}>
               <Redes>
-                <a href="https://www.instagram.com/lic.ceciliace" target="_blank">
+                <a href="https://www.instagram.com/docbarbaragarcia/" target="_blank">
                   <img src="../../img/instagram.png" alt="Instagram Logo" />
                 </a>
-                <a href="https://www.ceciliace.com" target="_blank">
+                <a href="https://www.sexualidadeslibres.com/" target="_blank">
                   <img src="../../img/website.png" alt="Website Logo" />
                 </a>
               </Redes>

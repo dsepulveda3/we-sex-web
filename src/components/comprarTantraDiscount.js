@@ -114,6 +114,21 @@ const BotonVioleta = styled(Boton)`
     }
 `;
 
+const Text4 = styled.p`
+    font-family: "Averia Libre", sans-serif;
+    font-size: 1.05em;
+    margin-top: 3rem;
+    color: var(--violet);
+    font-style: italic;
+
+    span {
+        color: var(--green);
+    }
+    @media(max-width: 540px){
+        font-size: 2.0rem;
+    }
+`;
+
 
  function handlePayButtonClick() {
     gtag("event", "pay_button_click", {
@@ -221,6 +236,7 @@ const BotonVioleta = styled(Boton)`
     {/* <div id="wallet_container"></div> */}
     <Background id="comprar">
           <Container style={{paddingTop: "5rem", paddingBottom: "6rem", textAlign: "center"}}>
+            <Text4>Luego de comprar la guía la recibirás por email</Text4>
               <Title>Compra desde Argentina</Title>
               {/* <BotonConContorno target="_blank" href="https://mpago.la/12RtQEf">
                   <img src="img/mercadopago.webp" />
