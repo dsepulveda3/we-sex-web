@@ -1,24 +1,24 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import FirstBannerGT from '@/components/firstBannerGT'
+import FirstBannerPack from '@/components/firstBannerPack'
 import EsParaVosSi from '@/components/esParaVosSi'
 import EsParaVosSi2 from '@/components/esParaVosSi2'
+import EsParaVosSi3 from '@/components/esParaVosSi3'
 import EsParaVosSi3GT from '@/components/esParaVosSi3GT'
 import EsParaVosSi4 from '@/components/esParaVosSi4'
 import EsParaVosSi5 from '@/components/esParaVosSi5'
 import QueVasAEncontrar from '@/components/queVasAEncontrar'
 import Regalar from '@/components/regalar'
-import ComprarTantra from '@/components/comprarTantra'
+import ComprarPackEmailC from '@/components/comprarPackEmailC'
 import Dudas from '@/components/dudas'
 import AboutWeSex from '@/components/aboutWeSex'
 import AfterDiv from '@/components/afterDiv'
 import NavBarWS from '@/components/navbar'
-import ProfesionalesGT from '@/components/profesionalesGT'
+import Profesionales from '@/components/profesionales'
 import NoLoPienses from '@/components/noLoPienses'
 import Footer from '@/components/footer'
 import SeguisDudando from '@/components/seguisDudando'
-import Pack from '@/components/pack'
 import Header from '@/components/header'
 import HeaderPremium from '@/components/headerPremium';
 
@@ -29,8 +29,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Guía de tantra: orgasmos más profundos- WeSex</title>
-        <meta name="description" content="Guía de tantra: orgasmos más profundos- WeSex" /> 
+        <title>Guía Tantra + Sexo Anal - WeSex</title>
+        <meta name="description" content="Guía Tantra + Sexo Anal - WeSex" /> 
         <meta name="keywords" content="" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -74,19 +74,19 @@ export default function Home() {
       <main>
         {/* <NavBarWS /> */}
         <HeaderPremium />
-        <FirstBannerGT />
+        <FirstBannerPack />
         <AfterDiv />
-        <Pack/>
+        <EsParaVosSi3 />
         <AfterDiv />
         <EsParaVosSi3GT />
-        <Dudas />
-        {/* <QueVasAEncontrar /> */}
+        {/* <QueVasAEncontrar />
         <AfterDiv />
-        <ProfesionalesGT />
-        <Regalar />
-        <ComprarTantra />
+        <Profesionales />
+        <Regalar /> */}
+        <ComprarPackEmailC />
+        {/* <Dudas />
         <AboutWeSex />
-        {/* <SeguisDudando /> */}
+        <SeguisDudando /> */}
         {/* <NoLoPienses /> */}
         <Footer />
       </main>
