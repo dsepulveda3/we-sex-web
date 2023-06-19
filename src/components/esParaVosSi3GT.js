@@ -112,6 +112,9 @@ const EsParaVosSi3GT = () => {
                         <Text>
                             🤟<br/><span>Técnicas</span> para llevar tus encuentros al siguiente nivel.
                         </Text>
+                        <Text>
+                            🧘<br/>Con la compra de esta guía te llevas un <span>audio con una meditación guiada</span>.
+                        </Text>
                     </SwiperSlide>
                 </Swiper>
             </Container>

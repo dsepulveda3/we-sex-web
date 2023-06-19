@@ -150,8 +150,6 @@ const FirstBannerGT = () => {
                                 <Text>
                                     <span><strong>AR$ 1.000  /  U$D 5</strong></span> <br/>
                                     Te enseñamos de 0 a 100,<br/>cómo aplicar el tantra a tu vida sexual.
-
-                                    <Text4>Con la compra de esta guía te llevas un audio con una meditación guiada.</Text4>
                                 </Text>
 
                                 <Botones>
