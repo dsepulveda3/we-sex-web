@@ -107,13 +107,16 @@ const EsParaVosSi3GT = () => {
                         <Text>
                             🫦<br/>Técnicas de <span>liberación emocional</span>.
                         </Text>
-                    </SwiperSlide>
-                    <SwiperSlide>
                         <Text>
                             🤟<br/><span>Técnicas</span> para llevar tus encuentros al siguiente nivel.
                         </Text>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        {/* <Text>
+                            🤟<br/><span>Técnicas</span> para llevar tus encuentros al siguiente nivel.
+                        </Text> */}
                         <Text>
-                            🧘<br/>Con la compra de esta guía te llevas un <span>audio con una meditación guiada</span>.
+                            🧘<br/>Una <span>meditación guiada</span> vía audio.
                         </Text>
                     </SwiperSlide>
                 </Swiper>
