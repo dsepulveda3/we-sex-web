@@ -19,8 +19,8 @@ export default async function handler(req, res) {
     ],
     back_urls: {
       success: "https://payhip.com/b/SnTLd",
-      failure: "https://we-sex-landing-guia-sexo-anal-git-main-lucasadlerstein.vercel.app/guia-tantra",
-      pending: "https://we-sex-landing-guia-sexo-anal-git-main-lucasadlerstein.vercel.app/guia-tantra",
+      failure: "https://we.sex/premium-material/guides/guia-tantra",
+      pending: "https://we.sex/premium-material/guides/guia-tantra",
     },
     auto_return: "approved",
   };

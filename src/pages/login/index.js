@@ -1,37 +1,16 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import EsParaVosSi from '@/components/old/esParaVosSi'
-import EsParaVosSi2 from '@/components/old/esParaVosSi2'
-import EsParaVosSi3 from '@/components/old/esParaVosSi3'
-import EsParaVosSi4 from '@/components/old/esParaVosSi4'
-import EsParaVosSi5 from '@/components/old/esParaVosSi5'
-import QueVasAEncontrar from '@/components/queVasAEncontrar'
-import Regalar from '@/components/regalar'
-import Comprar from '@/components/old/comprar'
-import Dudas from '@/components/dudas'
-import AboutWeSex from '@/components/aboutWeSex'
-import AfterDiv from '@/components/afterDiv'
-import NavBarWS from '@/components/navbar'
-import Profesionales from '@/components/old/profesionales'
-import NoLoPienses from '@/components/noLoPienses'
-import Footer from '@/components/footer'
-import SeguisDudando from '@/components/seguisDudando'
-import Header from '@/components/header'
-import Guides from '@/components/guides'
-import Premium from '@/components/premium'
-import Premium2 from '@/components/premium2'
-import HeaderPremium from '@/components/headerPremium'
+import Login from '@/components/login'
 
-const inter = Inter({ subsets: ['latin'] })
+
 
 export default function Home() {
   
   return (
     <>
       <Head>
-        <title>Material Premium</title>
-        <meta name="description" content="Material Premium" /> 
+        <title>Login - WeSex</title>
+        <meta name="description" content="Guía de tantra: orgasmos más profundos- WeSex" /> 
         <meta name="keywords" content="" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -73,8 +52,7 @@ export default function Home() {
         }}
       />
       <main>
-        <HeaderPremium />
-        <Premium2 />
+        <Login/>
       </main>
     </>
   )

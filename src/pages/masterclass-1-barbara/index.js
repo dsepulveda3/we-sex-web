@@ -1,27 +1,22 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import FirstBanner from '@/components/firstBanner'
-import EsParaVosSi from '@/components/esParaVosSi'
-import EsParaVosSi2 from '@/components/esParaVosSi2'
-import EsParaVosSi3 from '@/components/esParaVosSi3'
-import EsParaVosSi4 from '@/components/esParaVosSi4'
-import EsParaVosSi5 from '@/components/esParaVosSi5'
+import EsParaVosSiUniversal from '@/components/esParaVosSiUniversal'
 import QueVasAEncontrar from '@/components/queVasAEncontrar'
 import Regalar from '@/components/regalar'
-import Comprar from '@/components/comprar'
+import Comprar from '@/components/old/comprar'
 import Dudas from '@/components/dudas'
 import AboutWeSex from '@/components/aboutWeSex'
 import AfterDiv from '@/components/afterDiv'
 import NavBarWS from '@/components/navbar'
-import Profesionales from '@/components/profesionales'
+import ProfesionalesUniversal from '@/components/profesionalesUniversal'
 import NoLoPienses from '@/components/noLoPienses'
 import Footer from '@/components/footer'
 import SeguisDudando from '@/components/seguisDudando'
-import ComprarMaster1 from '@/components/comprarMaster1'
-import ComprarMaster1Barbara from '@/components/comprarMaster1Barbara'
-import FirstBannerMC from '@/components/firstBannerMC'
-import EsParaVosSi3MC from '@/components/esParaVosSi3MC'
+import ComprarMaster1 from '@/components/old/comprarMaster1'
+import ComprarUniversal from '@/components/comprarUniversal'
+import FirstBannerUniversal from '@/components/firstBannerUniversal'
+import EsParaVosSi3MC from '@/components/old/esParaVosSi3MC'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -73,21 +68,25 @@ export default function Home() {
         }}
       />
       <main>
-        {/* <NavBarWS />
-        <FirstBanner />
-        <AfterDiv />
-        <EsParaVosSi3 />
-        <QueVasAEncontrar />
-        <AfterDiv />
-        <Profesionales />
-        <Regalar /> */}
         <NavBarWS />
-        <FirstBannerMC />
+        <FirstBannerUniversal titleText='MasterSex Class por' titleSpan='Barbara García' price='AR$ 4.000  /  U$D 15' description1='2 horas de aprendizaje sexual.' 
+          descriptionSpan='Ondemand: ¡Mira la clase cuando prefieras!' description2='Aprende a disfrutar de cada instante de tus momentos sexuales.' 
+          imageVisibility={false} video="https://jumpshare.com/embed/u37eETh6sUpMkZJ2zl6A" videoVisibility={true} />
         <AfterDiv />
-        <EsParaVosSi3MC />
-        <Profesionales />
+        <EsParaVosSiUniversal title1_1='Esta MasterSex Class es ' title1Span='para ti' title1_2=' si buscas' 
+          emoji1='🗨️' text1_1='' text1Span='Técnicas de relajación ' text1_2='para conectar con el encuentro.'
+          emoji2='🤟' text2_1='' text2Span='Masajes eróticos: ' text2_2='cómo dar y darte placer con masajes.' 
+          emoji3='🧼' text3_1='' text3Span='Paja express v/s paja flow: ' text3_2='cómo disfrutar más la masturbación.' 
+          emoji4='🍆' text4_1='' text4Span='Posporno: ' text4_2 = 'porno y sano para nuestra sexualidad.'
+          emoji5='💦' text5_1='' text5Span='Acuerdos sexuales: ' text5_2='te enseñamos a llevar a cabo tus fantasías con tus parejas.' 
+          emoji6='👀' text6_1='' text6Span='Respiración  ' text6_2='orgásmica y no orgásmica.'
+          emoji7='🤟' text7_1='' text7Span='Técnicas ' text7_2='para llevar tus encuentros al siguiente nivel' />
+        <ProfesionalesUniversal fabiVisibility={false} ceciliaVisibility={false} barbaraVisibility={true}/>
         <Dudas />
-        <ComprarMaster1Barbara />
+        <ComprarUniversal title_mp='B - MasterSex Class: revoluciona tu vida sexual' unit_price_mp= {4000} quantity_mp={1} currency_id_mp='ARS'
+          price_ARG='AR$  4000' price_USD='U$D  15' redirection_succesful_mp='https://payhip.com/b/ep89k' 
+          redirection_failed_mp='https://we.sex/masterclass-1-barbara'
+          link_payhip_usd='https://payhip.com/b/259bn' has_promo={false}/>
         <AboutWeSex />
         {/* <Dudas />
         <AboutWeSex />

@@ -212,23 +212,33 @@ const Guides = () => {
                     </Link>
                 </Col>
                 <Col lg="3" md="4" >
-                <Link href="/premium-material/guides/guia-tantra">
-                    <GuideSquare>
-                        <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia2 src="../img/ico/Tantra (1).png" className="img-fluid"/>
-                            <h3>Tantra</h3>
-                        </ContainerContentGuide>
-                    </GuideSquare>
+                    <Link href="/premium-material/guides/guia-tantra">
+                        <GuideSquare>
+                            <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                                <AppImageGuia2 src="../img/ico/Tantra (1).png" className="img-fluid"/>
+                                <h3>Tantra</h3>
+                            </ContainerContentGuide>
+                        </GuideSquare>
                     </Link>
                 </Col>
-                <Col lg="3" md="4" >
+                {/* <Col lg="3" md="4" >
+                    <Link href="/premium-material/guides/guia-zonas-erogenas">
+                        <GuideSquare>
+                            <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                                <AppImageGuia2 src="../img/ico/Tantra (1).png" className="img-fluid"/>
+                                <h3>Zonas Erogenas</h3>
+                            </ContainerContentGuide>
+                        </GuideSquare>
+                    </Link>
+                </Col> */}
+                <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageGuiaQuestion src="../img/ico/question-mark-draw.png" className="img-fluid"/>
                             <h3>Pronto</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
-                </Col>
+                </ColHideOnPhone>
                 <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">

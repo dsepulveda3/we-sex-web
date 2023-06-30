@@ -3,11 +3,11 @@ import Header from '@/components/header';
 import HeaderLanding from '@/components/headerLanding';
 import NavBarWS from '@/components/navbar'
 import Hola from '@/components/hola';
-import EsParaVosSi from '@/components/esParaVosSi';
-import EsParaVosSi2 from '@/components/esParaVosSi2';
-import EsParaVosSi3 from '@/components/esParaVosSi3';
-import EsParaVosSi4 from '@/components/esParaVosSi4';
-import EsParaVosSi5 from '@/components/esParaVosSi5';
+import EsParaVosSi from '@/components/old/esParaVosSi';
+import EsParaVosSi2 from '@/components/old/esParaVosSi2';
+import EsParaVosSi3 from '@/components/old/esParaVosSi3';
+import EsParaVosSi4 from '@/components/old/esParaVosSi4';
+import EsParaVosSi5 from '@/components/old/esParaVosSi5';
 import Temas2 from '@/components/temas2';
 import Community from '@/components/community';
 import Ceciliace from '@/components/ceciliace';

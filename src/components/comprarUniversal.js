@@ -33,6 +33,9 @@ const Amount = styled(Title)`
     font-size: 2rem!important;
     margin-top: 2rem;
     margin-bottom: 0;
+    span {
+      text-decoration: line-through;
+    }
 `;
 
 const Text = styled.p`
@@ -166,12 +169,20 @@ const BotonVerde = styled(Boton)`
   
 `;
 
- export default function PaymentButton() {
+// {}
+
+
+ export default function PaymentButton({title_mp, unit_price_mp, quantity_mp, currency_id_mp,
+  redirection_succesful_mp, redirection_failed_mp, price_before_ARG, price_ARG, price_before_USD, price_USD, link_payhip_usd, 
+  has_promo, buy_just, reminder_buy_just, link_promo,
+  text_promo1_1, text_promo1Span, text_promo1_2}) {
    const [preferenceId, setPreferenceId] = useState(null);
    const [initPoint, setInitPoint] = useState(null); // Agregar estado para initPoint
    const [sdkLoaded, setSdkLoaded] = useState(false);
    const [affiliate, setAffiliate] = useState("");
    const [isVisible, setIsVisible] = useState(false);
+   const [hasPromo, setHasPromo] = useState(has_promo);
+
    const botonPagoRef = useRef(null);
    
    const handleClick = () => {
@@ -194,12 +205,30 @@ const BotonVerde = styled(Boton)`
    }, []);
  
    useEffect(() => {
-     const createPreference = async () => {
-       const response = await fetch("/api/create-preferences-tantra");
-       const data = await response.json();
-       setInitPoint(data.initPoint); // Guardar initPoint en el estado
-       setPreferenceId(data.preferenceId);
-     };
+    const createPreference = async () => {
+      const response = await fetch("/api/create-preferences" , {
+       method: 'POST',
+       headers: {
+         'Content-Type': 'application/json',
+       },
+       body: JSON.stringify({
+         // Passing props data here
+         title_mp: title_mp,
+         unit_price_mp: unit_price_mp,
+         quantity_mp: quantity_mp,
+         currency_id_mp: currency_id_mp,
+         redirection_succesful_mp: redirection_succesful_mp,
+         redirection_failed_mp: redirection_failed_mp,
+         // title: 'Guía Sexo Anal - WeSex',
+         // unit_price: 1000,
+         // quantity: 1,
+         // currency_id: 'ARS',
+       }),
+     });
+      const data = await response.json();
+      setInitPoint(data.initPoint); // Guardar initPoint en el estado
+      setPreferenceId(data.preferenceId);
+    };
  
      if (sdkLoaded) {
        createPreference();
@@ -237,7 +266,10 @@ const BotonVerde = styled(Boton)`
       if (sdkLoaded && isVisible && preferenceId) {
           initMercadoPago();
         }
-      }, [sdkLoaded, isVisible, preferenceId]);
+      else if (sdkLoaded && !hasPromo && preferenceId) {
+        initMercadoPago();
+      }
+      }, [sdkLoaded, isVisible, preferenceId, hasPromo]);
 
    const initMercadoPago = () => {
     const mp = new MercadoPago("APP_USR-fda56132-1ed4-444a-b4d7-174220277f4a");
@@ -283,32 +315,50 @@ const BotonVerde = styled(Boton)`
    return (
     <div>
       <Background id="comprar">
-      <Container style={{ paddingBottom: "6rem", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center"}}>
-      <Text4>Luego de comprar la guía la recibirás por email</Text4>
+
+        {!hasPromo && (
+          <Container style={{paddingTop: "5rem", paddingBottom: "6rem", textAlign: "center"}}>
+          <Text4 style={{marginTop: '0rem', marginBottom: '2rem'}}>Luego de comprar la guía la recibirás por email</Text4>
+          <Title>Compra desde Argentina</Title>
+          {/* <BotonConContorno target="_blank" href="https://mpago.la/12RtQEf">
+              <img src="img/mercadopago.webp" />
+          </BotonConContorno> */}
+          <button className ="pagoMP" id="wallet_container" data-href={initPoint}></button>
+          <Amount><span>{price_before_ARG}</span>  {price_ARG}</Amount>
+          <Title style={{marginTop: "5rem"}}>Compra internacionalmente</Title>
+          <BotonVioleta className="pagoPH" id="boton-pago" target="_blank" href={link_payhip_usd}>
+              Pago en USD
+          </BotonVioleta>
+          <Amount><span>{price_before_USD}</span>  {price_USD}</Amount>
+        </Container>    
+        )}
+
+        {hasPromo && (
+          <Container style={{ paddingBottom: "6rem", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center"}}>
+            <Text4>Luego de comprar la guía la recibirás por email</Text4>
             {!isVisible && (
-                <BotonVerde onClick={handleClick}>Comprar solo guía tantra</BotonVerde>
+                <BotonVerde onClick={handleClick}>{buy_just}</BotonVerde>
             )}
             {isVisible && (
-              
-                <div style={{ paddingTop: "5rem"}}>
-                  <Text2> Estás comprando solo la guía de Tantra </Text2>
-                  <Title>Compra desde Argentina</Title>
-                  <button className ="pagoMP" id="wallet_container" data-href={initPoint}></button>
-                  <Amount>AR$  1000</Amount>
-                  <Title style={{marginTop: "5rem"}}>Compra internacionalmente</Title>
-                  <BotonVioleta className="pagoPH" ref={botonPagoRef} id="boton-pago" target="_blank" href={`https://payhip.com/b/MiWzq${affiliate}`}>
-                      Pago en USD
-                  </BotonVioleta>
-                  <Amount>U$D  5</Amount>
-                </div>
-                
+              <div style={{ paddingTop: "5rem"}}>
+                <Text2> {reminder_buy_just} </Text2>
+                <Title>Compra desde Argentina</Title>
+                <button className ="pagoMP" id="wallet_container" data-href={initPoint}></button>
+                <Amount><span>{price_before_ARG}</span>  {price_ARG}</Amount>
+                <Title style={{marginTop: "5rem"}}>Compra internacionalmente</Title>
+                <BotonVioleta className="pagoPH" ref={botonPagoRef} id="boton-pago" target="_blank" href={`https://payhip.com/b/MiWzq${affiliate}`}>
+                    Pago en USD
+                </BotonVioleta>
+                <Amount><span>{price_before_USD}</span>  {price_USD}</Amount>
+              </div>
             )}
-            {/* <BotonVerde >Comprar guía <span>tantra</span> + <span>sexo anal</span></BotonVerde> */}
-            <Link href="/premium-material/guides/guia-pack-anal-tantra">
-              <Text3>O llevate la <span>guía de tantra</span> + la <span>guía de sexo anal</span> a un precio orgásmico</Text3>
+            <Link href={link_promo}>
+              <Text3>{text_promo1_1}<span>{text_promo1Span}</span> {text_promo1_2}</Text3>
             </Link>
+          </Container>
+        )}
 
-        </Container>
+        
       </Background>
     </div>
   );

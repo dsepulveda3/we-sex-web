@@ -1,20 +1,15 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import FirstBannerGT from '@/components/firstBannerGT'
-import EsParaVosSi from '@/components/esParaVosSi'
-import EsParaVosSi2 from '@/components/esParaVosSi2'
-import EsParaVosSi3GT from '@/components/esParaVosSi3GT'
-import EsParaVosSi4 from '@/components/esParaVosSi4'
-import EsParaVosSi5 from '@/components/esParaVosSi5'
-import QueVasAEncontrar from '@/components/queVasAEncontrar'
+import FirstBannerUniversal from '@/components/firstBannerUniversal'
+import EsParaVosSiUniversal from '@/components/esParaVosSiUniversal'
+import ProfesionalesUniversal from '@/components/profesionalesUniversal'
 import Regalar from '@/components/regalar'
-import ComprarTantraDiscount from '@/components/comprarTantraDiscount'
+import ComprarUniversal from '@/components/comprarUniversal'
 import Dudas from '@/components/dudas'
 import AboutWeSex from '@/components/aboutWeSex'
 import AfterDiv from '@/components/afterDiv'
 import NavBarWS from '@/components/navbar'
-import ProfesionalesGT from '@/components/profesionalesGT'
 import NoLoPienses from '@/components/noLoPienses'
 import Footer from '@/components/footer'
 import SeguisDudando from '@/components/seguisDudando'
@@ -74,15 +69,30 @@ export default function Home() {
       <main>
         {/* <NavBarWS /> */}
         <HeaderPremium />
-        <FirstBannerGT />
+        <FirstBannerUniversal titleText='Guía de tantra:' titleSpan='orgasmos más profundos' price='AR$ 1.000  /  U$D 5' description1='Te enseñamos de 0 a 100,' 
+          description2='cómo aplicar el tantra a tu vida sexual.' imageVisibility={true} 
+          videoVisibility={false} image='../../img/ico/Tantra (1).png' widthImage={'45%'}/>
         <AfterDiv />
-        <EsParaVosSi3GT />
+        <EsParaVosSiUniversal title1_1='Esta guía de Tantra es ' title1Span='para ti' title1_2=' si buscas' 
+          emoji1='💗' text1_1='' text1Span='Inducirte al tantra' text1_2=' y aplicarlo en tu vida sexual.'
+          emoji2='✨' text2_1='Tener orgasmos ' text2Span='más profundos y duraderos.' text2_2='' 
+          emoji3='🏋️‍♀️' text3_1='Practicar ' text3Span='tantra con tu pareja.' text3_2='' 
+          emoji4='🍆' text4_1 ='Incrementar las sensaciones de ' text4Span='placer en tu vida.' text4_2 = ''
+          emoji5='🫦' text5_1='Técnicas de' text5Span='liberación emocional.' text5_2='' 
+          emoji6='🤟' text6_1='' text6Span='Técnicas  ' text6_2='para llevar tus encuentros al siguiente nivel.'
+          emoji7='🧘' text7_1='Una ' text7Span='meditación guiada' text7_2=' vía audio.' />
         {/* <QueVasAEncontrar /> */}
         <AfterDiv />
-        <ProfesionalesGT />
+        <ProfesionalesUniversal fabiVisibility={true} ceciliaVisibility={true} barbaraVisibility={true}/>
         <Pack/>
         <Regalar />
-        <ComprarTantraDiscount />
+        <ComprarUniversal title_mp='Discount - Guía Tantra - WeSex' unit_price_mp= {500} quantity_mp={1} currency_id_mp='ARS'
+          price_before_ARG='AR$  1000' price_ARG='AR$  500' price_before_USD='U$D  5' price_USD='U$D  2.5' redirection_succesful_mp='https://payhip.com/b/bweh6' 
+          redirection_failed_mp='https://www.we.sex/premium-material/guides/guia-tantra-discount'
+          link_payhip_usd='https://payhip.com/b/Ewx6b/' has_promo={true}
+          buy_just='Comprar solo guía tantra' reminder_buy_just='Estás comprando solo la guía de Tantra' 
+          link_promo='/premium-material/guides/guia-pack-anal-tantra' text_promo1_1='O llevate la '
+          text_promo1Span='guía de tantra + la guía de sexo anal' text_promo1_2=' a un precio orgásmico'/>
         <Dudas />
         <AboutWeSex />
         {/* <SeguisDudando /> */}

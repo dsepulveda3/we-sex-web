@@ -1,27 +1,21 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import EsParaVosSi from '@/components/old/esParaVosSi'
-import EsParaVosSi2 from '@/components/old/esParaVosSi2'
-import EsParaVosSi3 from '@/components/old/esParaVosSi3'
-import EsParaVosSi4 from '@/components/old/esParaVosSi4'
-import EsParaVosSi5 from '@/components/old/esParaVosSi5'
-import QueVasAEncontrar from '@/components/queVasAEncontrar'
+import FirstBannerUniversal from '@/components/firstBannerUniversal'
+import EsParaVosSiUniversal from '@/components/esParaVosSiUniversal'
+import ProfesionalesUniversal from '@/components/profesionalesUniversal'
 import Regalar from '@/components/regalar'
-import Comprar from '@/components/old/comprar'
+import ComprarTantra from '@/components/old/comprarTantra'
 import Dudas from '@/components/dudas'
 import AboutWeSex from '@/components/aboutWeSex'
 import AfterDiv from '@/components/afterDiv'
 import NavBarWS from '@/components/navbar'
-import Profesionales from '@/components/old/profesionales'
 import NoLoPienses from '@/components/noLoPienses'
 import Footer from '@/components/footer'
 import SeguisDudando from '@/components/seguisDudando'
+import Pack from '@/components/pack'
 import Header from '@/components/header'
-import Guides from '@/components/guides'
-import Premium from '@/components/premium'
-import Premium2 from '@/components/premium2'
-import HeaderPremium from '@/components/headerPremium'
+import HeaderPremium from '@/components/headerPremium';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -30,8 +24,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Material Premium</title>
-        <meta name="description" content="Material Premium" /> 
+        <title>Guía de zonas erogenas - WeSex</title>
+        <meta name="description" content="Guía de zonas erogenas WeSex" /> 
         <meta name="keywords" content="" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -73,8 +67,30 @@ export default function Home() {
         }}
       />
       <main>
+        {/* <NavBarWS /> */}
         <HeaderPremium />
-        <Premium2 />
+        <FirstBannerUniversal titleText='Guía de' titleSpan='zonas erógenas' price='AR$ 1.000  /  U$D 5' description1='Deja de dudar,' 
+          description2='regálate placer y empieza a experimentar con esta maravillosa práctica.' imageVisibility={true} 
+          videoVisibility={false} image='../../img/ico/Tantra (1).png' widthImage={'45%'}/>
+        <AfterDiv />
+        <EsParaVosSiUniversal title1_1='Esta guía de Zonas Erógenas es ' title1Span='para ti' title1_2=' si buscas' 
+          emoji1='' text1_1='' text1Span='' text1_2=''
+          emoji2='' text2_1='' text2Span='' text2_2='' 
+          emoji3='' text3_1='' text3Span='' text3_2='' 
+          emoji4='' text4_1='' text4Span='' text4_2=''
+          emoji5='' text5_1='' text5Span='' text5_2='' 
+          emoji6='' text6_1='' text6Span='' text6_2=''
+          emoji7='' text7_1='' text7Span='' text7_2='' />
+        <AfterDiv />
+        <ProfesionalesUniversal fabiVisibility={true} ceciliaVisibility={true} barbaraVisibility={true}/>
+        <Pack/>
+        <Regalar />
+        <ComprarTantra />
+        <Dudas />
+        <AboutWeSex />
+        {/* <SeguisDudando /> */}
+        {/* <NoLoPienses /> */}
+        <Footer />
       </main>
     </>
   )

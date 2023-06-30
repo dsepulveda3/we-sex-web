@@ -160,9 +160,6 @@ const FirstBannerMC = () => {
                         <Col>
                             <Video><iframe src="https://jumpshare.com/embed/u37eETh6sUpMkZJ2zl6A" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                             </Video>
-                            {/* <ContentImage>
-                                <AppImage src="../../img/ico/Masterclass (1).png" />
-                            </ContentImage> */}
                         </Col>
                     </Row>
             </Container>
