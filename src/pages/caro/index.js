@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import FirstBannerUniversal from '@/components/old/firstBannerUniversal'
+import FirstBannerUniversal from '@/components/firstBannerUniversal'
 import EsParaVosSiUniversal from '@/components/esParaVosSiUniversal'
 import QueVasAEncontrar from '@/components/queVasAEncontrar'
 import ProfesionalesUniversal from '@/components/profesionalesUniversal'
