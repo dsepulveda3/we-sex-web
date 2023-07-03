@@ -199,7 +199,7 @@ const Guides = () => {
                 </Text>
                 <Row data-aos="fade-left">
                 {/* <Col lg="4" md="12" > */}
-                <Col lg="6" md="12" >
+                <Col lg="4" md="12" >
                 <Link href="/premium-material/guides">
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
@@ -210,7 +210,7 @@ const Guides = () => {
                     </Link>
                 </Col>
                 {/* <Col lg="4" md="12" > */}
-                <Col lg="6" md="12" >
+                <Col lg="4" md="12" >
                 <Link href="/premium-material/masters">
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
@@ -220,7 +220,7 @@ const Guides = () => {
                     </GuideSquare>
                 </Link>
                 </Col>
-                {/* <Col lg="4" md="12" >
+                <Col lg="4" md="12" >
                 <Link href="/premium-material/packs">
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
@@ -229,7 +229,7 @@ const Guides = () => {
                         </ContainerContentGuide>
                     </GuideSquare>
                 </Link>
-                </Col> */}
+                </Col>
             </Row>
         </Container>
       </Background>
