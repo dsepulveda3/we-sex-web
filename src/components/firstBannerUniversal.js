@@ -186,7 +186,7 @@ const FirstBanner = ({titleText, titleSpan, price, description1, descriptionSpan
                             )}
                             {videoIsVisible && (
                                 <Video>
-                                    <iframe src={video} frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                    <iframe src={video} frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen></iframe>
                                 </Video>
                             )}
                         </Col>

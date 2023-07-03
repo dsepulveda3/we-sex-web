@@ -154,7 +154,7 @@ const Header = () => {
                 onClick={(e) => {
                   e.preventDefault();
                   toggleNavbar();
-                  const el = document.getElementById('/#features');
+                  const el = document.getElementById('features');
                   window.scrollTo({
                     top: el.offsetTop - 70, // Adjust this value as needed
                     behavior: 'smooth',

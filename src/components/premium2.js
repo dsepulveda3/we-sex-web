@@ -94,8 +94,10 @@ const ContainerContentGuide = styled.div`
     display: flex;
     align-items: center;
     padding-right: 4rem;
-    padding-left: 8rem;
-    padding-top: 6rem;
+    // padding-left: 7rem; // para 3x1
+    // padding-top: 5.2rem; // para 3x1
+    padding-left: 12rem;
+    padding-top: 8.2rem;
     @media(max-width: 540px){
         padding-right: 2rem;
         padding-left: 4rem;
@@ -105,8 +107,8 @@ const ContainerContentGuide = styled.div`
 
 const AppImageGuia1 = styled.img`
     width: 40%;
-    margin-top: 2rem;
-    margin-left: 3rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
     
     @media(max-width: 540px){
         width: 40%;
@@ -121,9 +123,8 @@ const AppImageGuia1 = styled.img`
 
 const AppImageGuia2 = styled.img`
     width: 40%;
-    margin-left: 1rem;
-    // margin-right: 5px;
-    margin-top: 1.2rem;   
+    margin-left: 0rem;
+    margin-top: 0rem;   
     
     @media(max-width: 540px){
         width: 40%;
@@ -155,7 +156,7 @@ const Section = styled.section`
     color: var(--violet);
     text-align: left;
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 2.2rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
     margin-left: 3rem;
@@ -197,6 +198,7 @@ const Guides = () => {
                     Revoluciona tu vida sexual paso a paso, de la mano de expertos.
                 </Text>
                 <Row data-aos="fade-left">
+                {/* <Col lg="4" md="12" > */}
                 <Col lg="6" md="12" >
                 <Link href="/premium-material/guides">
                     <GuideSquare>
@@ -207,6 +209,7 @@ const Guides = () => {
                     </GuideSquare>
                     </Link>
                 </Col>
+                {/* <Col lg="4" md="12" > */}
                 <Col lg="6" md="12" >
                 <Link href="/premium-material/masters">
                     <GuideSquare>
@@ -217,8 +220,18 @@ const Guides = () => {
                     </GuideSquare>
                 </Link>
                 </Col>
+                {/* <Col lg="4" md="12" >
+                <Link href="/premium-material/packs">
+                    <GuideSquare>
+                        <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                            <AppImageGuia2 src="img/ico/MasterGeneral (1).png" className="img-fluid"/>
+                            <h3>Packs Orgásmicos</h3>
+                        </ContainerContentGuide>
+                    </GuideSquare>
+                </Link>
+                </Col> */}
             </Row>
-                </Container>
+        </Container>
       </Background>
     </Section>
   );
