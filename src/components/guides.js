@@ -132,6 +132,23 @@ const AppImageGuia2 = styled.img`
     }
 `;
 
+
+const AppImageGuia3 = styled.img`
+    width: 32%;
+    margin-left: 40px;
+    margin-right: 3rem;
+    margin-top: 21px;   
+    
+    @media(max-width: 540px){
+        width: 35%;
+        margin-top: 2.5rem;
+        margin-right: 3rem;
+        // margin-left: 2rem;
+    }
+    @media(min-width: 540px){
+        // margin-right: 2rem;
+    }
+`;
 const AppImageGuiaQuestion = styled.img`
     width: 40%;
     margin-left: 40px;
@@ -202,13 +219,13 @@ const Guides = () => {
                 </Text>
                 <Row data-aos="fade-left">
                 <Col lg="3" md="4" >
-                <Link href="/premium-material/guides/guia-sexo-anal">
-                    <GuideSquare>
-                        <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia1 src="../img/como-nunca-antes-gozado.png" className="img-fluid"/>
-                            <h3>Guía Sexo Anal</h3>
-                        </ContainerContentGuide>
-                    </GuideSquare>
+                    <Link href="/premium-material/guides/guia-zonas-erogenas">
+                        <GuideSquare>
+                            <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                                <AppImageGuia3 src="../img/ico/ZonasErogenas (1).png" className="img-fluid"/>
+                                <h3>Zonas Erógenas</h3>
+                            </ContainerContentGuide>
+                        </GuideSquare>
                     </Link>
                 </Col>
                 <Col lg="3" md="4" >
@@ -221,6 +238,16 @@ const Guides = () => {
                         </GuideSquare>
                     </Link>
                 </Col>
+                <Col lg="3" md="4" >
+                <Link href="/premium-material/guides/guia-sexo-anal">
+                    <GuideSquare>
+                        <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                            <AppImageGuia1 src="../img/como-nunca-antes-gozado.png" className="img-fluid"/>
+                            <h3>Guía Sexo Anal</h3>
+                        </ContainerContentGuide>
+                    </GuideSquare>
+                    </Link>
+                </Col>
                 {/* <Col lg="3" md="4" >
                     <Link href="/premium-material/guides/guia-zonas-erogenas">
                         <GuideSquare>
@@ -231,14 +258,7 @@ const Guides = () => {
                         </GuideSquare>
                     </Link>
                 </Col> */}
-                <ColHideOnPhone lg="3" md="4" >
-                    <GuideSquare>
-                        <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuiaQuestion src="../img/ico/question-mark-draw.png" className="img-fluid"/>
-                            <h3>Pronto</h3>
-                        </ContainerContentGuide>
-                    </GuideSquare>
-                </ColHideOnPhone>
+                
                 <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">

@@ -75,7 +75,7 @@ const Profesionales = ({fabiVisibility, ceciliaVisibility, barbaraVisibility}) =
                 
                 {FabiIsVisible && (
                   <Col xl={4} lg={4} md={4} xs={12} sm={12} style={{marginBottom: "5rem"}}>
-                  <Card style={{borderRadius: "4rem", minHeight: "60vh", display: "flex", flexDirection: "column"}}>
+                  <Card style={{borderRadius: "4rem", minHeight: "63.5vh", display: "flex", flexDirection: "column"}}>
                       <img
                           alt="Fabi Villalba"
                           src="../../img/fabi_villalba2.jpeg"
@@ -104,7 +104,7 @@ const Profesionales = ({fabiVisibility, ceciliaVisibility, barbaraVisibility}) =
 
                 {CeciliaIsVisible && (
                   <Col xl={4} lg={4} md={4} xs={12} sm={12} style={{marginBottom: "5rem"}}>
-                  <Card style={{borderRadius: "4rem", minHeight: "60vh", display: "flex", flexDirection: "column"}}>
+                  <Card style={{borderRadius: "4rem", minHeight: "63.5vh", display: "flex", flexDirection: "column"}}>
                     <img
                       alt="Lic. Cecilia Ce"
                       src="../../img/cecilia-ce-profesional-wesex.jpg"
@@ -133,7 +133,7 @@ const Profesionales = ({fabiVisibility, ceciliaVisibility, barbaraVisibility}) =
 
                 {BarbaraIsVisible && (
                   <Col xl={4} lg={4} md={4} xs={12} sm={12} style={{marginBottom: "5rem"}}>
-                  <Card style={{borderRadius: "4rem", minHeight: "60vh", display: "flex", flexDirection: "column"}}>
+                  <Card style={{borderRadius: "4rem", minHeight: "63.5vh", display: "flex", flexDirection: "column"}}>
                     <img
                       alt="Dra. Bárbara García"
                       src="../../img/dra-barbara-garcia-profesional-wesex.jpg"

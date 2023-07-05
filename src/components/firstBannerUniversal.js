@@ -145,9 +145,15 @@ const Video = styled.div`
     }
 `;
 
+const PriceBefore = styled.span`
+  text-decoration: line-through;
+  color: white;
+`;
+
 // {}
 
-const FirstBanner = ({titleText, titleSpan, price, description1, descriptionSpan, description2, image, widthImage, imageVisibility, video, videoVisibility}) => {
+const FirstBanner = ({titleText, titleSpan, titleText2, titleSpan2, price_before, price, description1, 
+    descriptionSpan, description2, image, widthImage, imageVisibility, video, videoVisibility}) => {
     const [imageIsVisible, setImageIsVisible] = useState(imageVisibility);
     const [videoIsVisible, setVideoIsVisible] = useState(videoVisibility);
 
@@ -157,10 +163,10 @@ const FirstBanner = ({titleText, titleSpan, price, description1, descriptionSpan
                     <Row className="justify-content-between">
                         <Col lg={7} className="align-items-center">
                             <Content>
-                                <Title>{titleText} <span>{titleSpan}</span></Title>
+                                <Title>{titleText} <span>{titleSpan}</span> {titleText2} <span>{titleSpan2}</span></Title>
                                 <Text>
                                     <span><strong>{price}</strong></span> <br/>
-                                    {description1}
+                                    {description1} <PriceBefore>{price_before}  </PriceBefore>
                                 </Text>
                                 <Text>
                                     <span>{descriptionSpan}</span>
@@ -181,7 +187,7 @@ const FirstBanner = ({titleText, titleSpan, price, description1, descriptionSpan
                         <Col>
                             {imageIsVisible && (
                                 <ContentImage>
-                                    <AppImage src={image} width={widthImage} alt="Zonas erógenas" />
+                                    <AppImage src={image} width={widthImage} alt="" />
                                 </ContentImage>
                             )}
                             {videoIsVisible && (

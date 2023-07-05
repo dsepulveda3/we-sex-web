@@ -83,14 +83,32 @@ const TextGuide = styled.p`
     color: var(--violet);
     text-align: left;
     font-weight: bold;
-    font-size: 1.8rem;
-    margin-top: 2rem;
+    font-size: 1.6rem;
+    margin-top: 4rem;
     margin-bottom: 1rem;
     span {
         color: var(--green);
     }
     @media(max-width: 540px){
-        
+        font-size: 1.8rem;
+        margin-top: 7rem;
+    }
+`;
+
+const TextGuide2 = styled.p`
+    font-family: "Karla", sans-serif;
+    color: var(--violet);
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin-top: 5.5rem;
+    margin-bottom: 1rem;
+    span {
+        color: var(--green);
+    }
+    @media(max-width: 540px){
+        font-size: 1.8rem;
+        margin-top: 7rem;
     }
 `;
 
@@ -98,6 +116,9 @@ const ContainerContentGuide = styled.div`
     display: flex;
     align-items: center;
     padding-right: 2rem;
+    span {
+        color: var(--green);
+    }
 `;
 
 const AppImageGuia1 = styled.img`
@@ -149,6 +170,40 @@ const AppImageGuiaQuestion = styled.img`
     }
 `;
 
+const AppImageGiftBox = styled.img`
+    width: 43%;
+    padding-left: 3.5rem;
+    padding-right: 2rem;
+    padding-top: 2.5rem;
+    
+    @media(max-width: 540px){
+        width: 42%;
+        margin-top: 3rem;
+        // margin-right: 2rem;
+        // margin-left: 2rem;
+    }
+    @media(min-width: 540px){
+        // margin-right: 2rem;
+    }
+`;
+
+const AppImageGiftBox2 = styled.img`
+    width: 43%;
+    padding-left: 3.5rem;
+    padding-right: 2rem;
+    padding-top: 3.8rem;
+    
+    @media(max-width: 540px){
+        width: 42%;
+        margin-top: 1rem;
+        // margin-right: 2rem;
+        // margin-left: 2rem;
+    }
+    @media(min-width: 540px){
+        // margin-right: 2rem;
+    }
+`;
+
 const Section = styled.section`
   
 
@@ -181,7 +236,7 @@ const Section = styled.section`
     color: var(--green);
     font-weight: bold;
     transform: scale(1.01);
-  }
+    
 `;
 
 const ColHideOnPhone = styled(Col)`
@@ -190,8 +245,10 @@ const ColHideOnPhone = styled(Col)`
   }
 `;
 
+// {}
 
 const Packs = () => {
+
   return (
     <Section id="guides">
         <Background>
@@ -202,22 +259,22 @@ const Packs = () => {
                 </Text>
                 <Row data-aos="fade-left">
                 <Col lg="3" md="4" >
-                <Link href="/premium-material/guides/guia-sexo-anal">
-                    <GuideSquare>
-                        <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia1 src="../img/como-nunca-antes-gozado.png" className="img-fluid"/>
-                            <h3>Guía Sexo Anal</h3>
-                        </ContainerContentGuide>
-                    </GuideSquare>
+                    <Link href="/premium-material/packs/pack1">
+                        <GuideSquare>
+                            <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                                <AppImageGiftBox src="../img/ico/giftbox.png" className="img-fluid"/>
+                                <TextGuide>Guía <span>Zonas Erógenas</span> + <span>Anal</span> + <span>Tantra</span></TextGuide>
+                             </ContainerContentGuide>
+                        </GuideSquare>
                     </Link>
                 </Col>
                 <Col lg="3" md="4" >
-                    <Link href="/premium-material/guides/guia-tantra">
+                    <Link href="/premium-material/packs/pack2">
                         <GuideSquare>
                             <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                                <AppImageGuia2 src="../img/ico/Tantra (1).png" className="img-fluid"/>
-                                <h3>Tantra</h3>
-                            </ContainerContentGuide>
+                                <AppImageGiftBox2 src="../img/ico/giftbox.png" className="img-fluid"/>
+                                <TextGuide2 >Guía <span>Zonas Erógenas</span> + <span>Tantra</span></TextGuide2>
+                             </ContainerContentGuide>
                         </GuideSquare>
                     </Link>
                 </Col>
@@ -231,14 +288,16 @@ const Packs = () => {
                         </GuideSquare>
                     </Link>
                 </Col> */}
-                <ColHideOnPhone lg="3" md="4" >
-                    <GuideSquare>
-                        <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuiaQuestion src="../img/ico/question-mark-draw.png" className="img-fluid"/>
-                            <h3>Pronto</h3>
-                        </ContainerContentGuide>
-                    </GuideSquare>
-                </ColHideOnPhone>
+                <Col lg="3" md="4" >
+                    <Link href="/premium-material/packs/pack3">
+                        <GuideSquare>
+                            <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                                <AppImageGiftBox src="../img/ico/giftbox.png" className="img-fluid"/>
+                                <TextGuide>Guía <span>Zonas Erógenas</span> + Masterclass <span>Barbi</span></TextGuide>
+                             </ContainerContentGuide>
+                        </GuideSquare>
+                    </Link>
+                </Col>
                 <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">

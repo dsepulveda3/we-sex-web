@@ -94,10 +94,10 @@ const ContainerContentGuide = styled.div`
     display: flex;
     align-items: center;
     padding-right: 4rem;
-    // padding-left: 7rem; // para 3x1
-    // padding-top: 5.2rem; // para 3x1
-    padding-left: 12rem;
-    padding-top: 8.2rem;
+    padding-left: 7rem; // para 3x1
+    padding-top: 5.2rem; // para 3x1
+    // padding-left: 12rem;
+    // padding-top: 8.2rem;
     @media(max-width: 540px){
         padding-right: 2rem;
         padding-left: 4rem;
@@ -124,13 +124,13 @@ const AppImageGuia1 = styled.img`
 const AppImageGuia2 = styled.img`
     width: 40%;
     margin-left: 0rem;
-    margin-top: 0rem;   
+    margin-top: 0.7rem;   
     
     @media(max-width: 540px){
         width: 40%;
         margin-top: 0.6rem;
         margin-right: 1rem;
-        margin-left: 0rem;
+        margin-left: 1.5rem;
     }
     @media(min-width: 540px){
         // margin-right: 2rem;
@@ -224,7 +224,7 @@ const Guides = () => {
                 <Link href="/premium-material/packs">
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia2 src="img/ico/MasterGeneral (1).png" className="img-fluid"/>
+                            <AppImageGuia2 src="img/ico/packs (1).png" className="img-fluid"/>
                             <h3>Packs Orgásmicos</h3>
                         </ContainerContentGuide>
                     </GuideSquare>

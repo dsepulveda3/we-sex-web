@@ -71,16 +71,16 @@ export default function Home() {
         <HeaderPremium />
         <FirstBannerUniversal titleText='Guía de' titleSpan='zonas erógenas' price='AR$ 1.000  /  U$D 5' description1='Deja de dudar,' 
           description2='regálate placer y empieza a experimentar con esta maravillosa práctica.' imageVisibility={true} 
-          videoVisibility={false} image='../../img/ico/Tantra (1).png' widthImage={'45%'}/>
+          videoVisibility={false} image='../../img/ico/ZonasErogenas (1).png' widthImage={'45%'}/>
         <AfterDiv />
-        <EsParaVosSiUniversal title1_1='Esta guía de Zonas Erógenas es ' title1Span='para ti' title1_2=' si buscas' 
-          emoji1='' text1_1='' text1Span='' text1_2=''
-          emoji2='' text2_1='' text2Span='' text2_2='' 
-          emoji3='' text3_1='' text3Span='' text3_2='' 
-          emoji4='' text4_1='' text4Span='' text4_2=''
-          emoji5='' text5_1='' text5Span='' text5_2='' 
-          emoji6='' text6_1='' text6Span='' text6_2=''
-          emoji7='' text7_1='' text7Span='' text7_2='' />
+        <EsParaVosSiUniversal title1_1='Esta guía de Zonas Erógenas ' title1Span='para ti' title1_2=' si buscas' 
+          emoji1='✨' text1_1='La magia de combinar diferentes zonas y técnicas para ' text1Span='alcanzar un placer extremo.' text1_2=''
+          emoji2='👀' text2_1='Cómo ' text2Span='romper con el coitocentrismo' text2_2=' y explorar nuevas prácticas sexuales.' 
+          emoji3='💦' text3_1='Formas de minimizar ' text3Span='relacionados con la eyaculación precoz' text3_2=' y la falta de erección.' 
+          emoji4='💗' text4_1 ='La importancia de ' text4Span='disfrutar el placer' text4_2 = ' más allá de la penetración vaginal.'
+          emoji5='🤟' text5_1='' text5Span='Técnicas de ' text5_2='masajes eróticos.' 
+          emoji6='😋' text6_1='' text6Span='Cómo estimular cada parte del cuerpo' text6_2=', de pies a cabeza.'
+          emoji7='🫦' text7_1='' text7Span='Variadas técnicas de estimulación' text7_2='desde suaves mordiscos hasta succiones.' />
         <AfterDiv />
         <ProfesionalesUniversal fabiVisibility={true} ceciliaVisibility={true} barbaraVisibility={true}/>
         <Pack/>
