@@ -33,6 +33,7 @@ const Home = () => {
       <Community />
       <Ceciliace />
       {/* <Testimonials /> */}
+      {/* <Testimonials /> */}
       <Questions/>
       <Contactus/>
     </div>
