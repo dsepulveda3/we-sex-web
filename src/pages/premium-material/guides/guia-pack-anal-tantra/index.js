@@ -101,6 +101,7 @@ export default function Home() {
         <AboutWeSex />
         <SeguisDudando /> */}
         {/* <NoLoPienses /> */}
+        {/* yes */}
         <Footer />
       </main>
     </>
