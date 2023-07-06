@@ -3,7 +3,7 @@
 import mercadopago from "mercadopago";
 
 mercadopago.configure({
-  access_token: "APP_USR-3747621044357775-041222-835e45a75ffa66abc6841d32e44bcf1a-76482650",
+  access_token: "APP_USR-3400648491412129-070613-9a4023c198fc82d82745a51f64db1cec-250071994",
 });
 
 export default async function handler(req, res) {
