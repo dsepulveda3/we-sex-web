@@ -208,7 +208,7 @@ const DiscussionsWithTabs = () => {
               ) : (
                 discussions.slice(0, 7).map((d) => {
                   return (
-                    <CustomSwiperSlide>
+                    <CustomSwiperSlide key={d._id}>
                       <DiscussionClosed discussion={d} />
                     </CustomSwiperSlide>
                   );
