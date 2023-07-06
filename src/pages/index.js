@@ -16,8 +16,8 @@ import Stadistics from '@/components/stadistics';
 import Stadistics2 from '@/components/stadistics2';
 import Questions from '@/components/questions';
 import Contactus from '@/components/contactus';
-import Articles from '@/components/Articles/articlesWithTabs'
-import Debates from '@/components/Debates/discussionsWithTabs'
+// import Articles from '@/components/Articles/articlesWithTabs'
+// import Debates from '@/components/Debates/discussionsWithTabs'
 
 
 
@@ -27,8 +27,8 @@ const Home = () => {
       <HeaderLanding />
       <Hola />
       <Stadistics2 />
-      <Articles/>
-      <Debates/>
+      {/* <Articles/>
+      <Debates/> */}
       <Temas2 />
       <Community />
       <Ceciliace />
