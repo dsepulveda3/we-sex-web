@@ -272,7 +272,7 @@ const BotonVerde = styled(Boton)`
       }, [sdkLoaded, isVisible, preferenceId, hasPromo]);
 
    const initMercadoPago = () => {
-    const mp = new MercadoPago("APP_USR-fda56132-1ed4-444a-b4d7-174220277f4a");
+    const mp = new MercadoPago("APP_USR-4a74ea09-0b8a-4ed4-a727-ef745049d75f");
     const bricksBuilder = mp.bricks();
   
     bricksBuilder
