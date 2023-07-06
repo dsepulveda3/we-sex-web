@@ -94,7 +94,9 @@ export default function Home() {
           link_payhip_usd='https://payhip.com/b/jR26I' has_promo={true}
           buy_just='Comprar solo guía tantra' reminder_buy_just='Estás comprando solo la guía de Tantra' 
           link_promo='/premium-material/guides/guia-pack-anal-tantra-email-c' text_promo1_1='O llevate la '
-          text_promo1Span='guía de tantra + la guía de sexo anal' text_promo1_2=' a un precio orgásmico'/>
+          text_promo1Span='guía de tantra + la guía de sexo anal' text_promo1_2=' a un precio orgásmico'
+          link_promo2='' text_promo2_1=''
+          text_promo2Span='' text_promo2_2=''/>
         <AboutWeSex />
         {/* <SeguisDudando /> */}
         {/* <NoLoPienses /> */}
