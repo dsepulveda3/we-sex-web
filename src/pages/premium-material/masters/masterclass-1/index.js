@@ -65,7 +65,7 @@ export default function Home() {
       />
       <main>
         <HeaderPremium/>
-        <FirstBannerUniversal titleText='MasterSex Class por' titleSpan='Barbara García' price='AR$ 4.000  /  U$D 15' description1='2 horas de aprendizaje sexual.' 
+        <FirstBannerUniversal titleText='MasterSex Class por' titleSpan='Barbara García' price='AR$ 4.500  /  U$D 15' description1='2 horas de aprendizaje sexual.' 
           descriptionSpan='Ondemand: ¡Mira la clase cuando prefieras!' description2='Aprende a disfrutar de cada instante de tus momentos sexuales.' 
           imageVisibility={false} video="https://jumpshare.com/embed/u37eETh6sUpMkZJ2zl6A" videoVisibility={true} />
         <AfterDiv />
@@ -79,8 +79,8 @@ export default function Home() {
           emoji7='🤟' text7_1='' text7Span='Técnicas ' text7_2='para llevar tus encuentros al siguiente nivel' />
         <ProfesionalesUniversal fabiVisibility={false} ceciliaVisibility={false} barbaraVisibility={true}/>
         <Dudas />
-        <ComprarUniversal title_mp='MasterSex Class: revoluciona tu vida sexual' unit_price_mp= {4000} quantity_mp={1} currency_id_mp='ARS'
-          price_ARG='AR$  4000' price_USD='U$D  15' redirection_succesful_mp='https://payhip.com/b/Sdivh' 
+        <ComprarUniversal title_mp='MasterSex Class: revoluciona tu vida sexual' unit_price_mp= {4500} quantity_mp={1} currency_id_mp='ARS'
+          price_ARG='AR$  4500' price_USD='U$D  15' redirection_succesful_mp='https://payhip.com/b/Sdivh' 
           redirection_failed_mp='https://we.sex/premium-material/masters/masterclass-1'
           link_payhip_usd='https://payhip.com/b/FDN0X' has_promo={false}/>
         <AboutWeSex />
