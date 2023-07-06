@@ -68,8 +68,8 @@ export default function Home() {
       <main>
         {/* <NavBarWS /> */}
         <HeaderPremium />
-        <FirstBannerUniversal titleText='Guía completísima de' titleSpan='sexo anal' price='AR$ 1.000  /  U$D 5' description1='Dejate de dudar,' 
-          description2='regalate placer y empieza a experimentar con esta maravillosa práctica' 
+        <FirstBannerUniversal titleText='Guía de ' titleSpan='Sexo Anal + Tantra' price='AR$ 2500  /  U$D 10' description1='Compra el pack' 
+          description2='a un precio orgásmico.' 
           videoVisibility={false} imageVisibility={false}/>
         <AfterDiv />
         <EsParaVosSiUniversal title1_1='Esta guía de Sexo Anal es ' title1Span='para ti' title1_2=' si buscas' 
@@ -93,8 +93,8 @@ export default function Home() {
         <AfterDiv />
         <Profesionales />
         <Regalar /> */}
-        <ComprarUniversal title_mp='F - Guía Sexo Anal + Tantra - WeSex' unit_price_mp= {1600} quantity_mp={1} currency_id_mp='ARS'
-          price_before_ARG='AR$  2000' price_ARG='AR$  1600' price_before_USD='U$D  10' price_USD='U$D  8' redirection_succesful_mp='https://payhip.com/b/pKQrT' 
+        <ComprarUniversal title_mp='F - Guía Sexo Anal + Tantra - WeSex' unit_price_mp= {2500} quantity_mp={1} currency_id_mp='ARS'
+          price_before_ARG='AR$  3000' price_ARG='AR$  2500' price_before_USD='U$D  12' price_USD='U$D  10' redirection_succesful_mp='https://payhip.com/b/pKQrT' 
           redirection_failed_mp='https://www.we.sex/premium-material/guides/guia-pack-anal-tantra-fabi'
           link_payhip_usd='https://payhip.com/b/elOD7' has_promo={false}
         />

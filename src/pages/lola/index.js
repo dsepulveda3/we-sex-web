@@ -67,9 +67,9 @@ export default function Home() {
       />
       <main>
         <NavBarWS />
-        <FirstBannerUniversal titleText='Guía completísima de' titleSpan='sexo anal' price='AR$ 1.000  /  U$D 5' description1='Dejate de dudar,' 
-          description2='regalate placer y empieza a experimentar con esta maravillosa práctica' image='../../img/como-nunca-antes-gozado.png'
-          widthImage={'80%'}/>
+        <FirstBannerUniversal titleText='Guía completísima de' titleSpan='sexo anal' price='AR$ 1500  /  U$D 6' description1='Dejate de dudar,' 
+          description2='regalate placer y empieza a experimentar con esta maravillosa práctica' imageVisibility={true}
+          videoVisibility={false} image='../../img/como-nunca-antes-gozado.png' widthImage={'80%'}/>
         <AfterDiv />
         <EsParaVosSiUniversal title1_1='Esta guía de Sexo Anal es ' title1Span='para ti' title1_2=' si buscas' 
           emoji1='🤟' text1_1='Un ' text1Span='paso a paso' text1_2=' sobre cómo tener una experiencia anal placentera.'
@@ -83,8 +83,8 @@ export default function Home() {
         <AfterDiv />
         <ProfesionalesUniversal fabiVisibility={false} ceciliaVisibility={true} barbaraVisibility={true}/>
         <Regalar />
-        <ComprarUniversal title_mp='L - Guía sexo Anal - WeSex (R: Lola)' unit_price_mp= {1000} quantity_mp={1} currency_id_mp='ARS'
-          price_ARG='AR$  1000' price_USD='U$D  5' redirection_succesful_mp='https://payhip.com/b/PpF2K' 
+        <ComprarUniversal title_mp='Guía Sexo Anal - WeSex' unit_price_mp= {1500} quantity_mp={1} currency_id_mp='ARS'
+          price_ARG='AR$  1500' price_USD='U$D  6' redirection_succesful_mp='https://payhip.com/b/PpF2K' 
           redirection_failed_mp='https://we.sex/lola'
           link_payhip_usd='https://payhip.com/b/mOT3Q' has_promo={false}/>
         <Dudas />

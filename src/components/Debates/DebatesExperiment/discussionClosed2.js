@@ -2,12 +2,14 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { Row, Col } from 'reactstrap';
 import { useRouter } from 'next/router';
-import { downloadAppAlert } from '../../../helpers';
+import { downloadAppAlert } from '../../../../helpers';
 
 const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin-right: -20px; /* Add negative margin to offset card spacing */
+  width: 60rem;
+  
+  // margin-right: -20px; /* Add negative margin to offset card spacing */
   
 
   @media (max-width: 540px) {
@@ -15,19 +17,25 @@ const CardContainer = styled.div`
   }
 `;
 
+const DiscussionContainer = styled.div`
+  width: 600px;
+`;
+
 const Discussion = styled.div`
   // background-color: var(--lightGrey);
-  background-image: url("/img/cta-bg.jpg");
+  background-color: white;
+  border: 1px solid var(--violet);
   border-radius: 1.5rem;
   padding: 1.5rem;
   color: var(--violet);
   transition: all 0.5s ease;
   margin-top: 12px;
-  width: 30rem;
-  height: 200px;
-  border: 5px solid transparent;
+  width: 600px;
+  height: 180px;
+  // border: 5px solid transparent;
   margin-bottom: 12px;
-  margin-right: 20px; /* Add space between cards */
+  // margin-right: 20px; /* Add space between cards */
+  margin-left: 0px;
   -webkit-box-shadow: -11px 7px 15px -15px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: -11px 7px 15px -15px rgba(0, 0, 0, 0.1);
   box-shadow: -11px 7px 15px -15px rgba(0, 0, 0, 0.1);
@@ -51,9 +59,9 @@ const Discussion = styled.div`
 
 
 const Title = styled.p`
+  color: black;
   font-weight: bold;
   font-size: 2rem;
-  color: white;
   margin-bottom: 0 !important;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -67,10 +75,10 @@ const Title = styled.p`
 `;
 
 const Text = styled.p`
+  color: black;
   margin-bottom: 0.5rem;
   margin-top: 1rem;
   font-size: 1.5rem;
-  color: white;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -84,13 +92,14 @@ const Text = styled.p`
 
 const Interaction = styled.p`
   margin-bottom: 0;
-  color: white;
+  color: black;
 `;
 
 const Comments = styled.img`
    /* Set the desired width */
   height: 8px; /* Set the desired height */
   transform: scale(2); /* Set the desired scale factor */
+  
 `;
 
 const Likes = styled.img`
@@ -103,16 +112,25 @@ const Likes = styled.img`
 
 
 
-const ArticleClosed = ({ discussion, onClick = false }) => {
+const DiscussionClosed = ({ discussion, onClick = false }) => {
   const router = useRouter();
+
   const handleClick = () => {
     downloadAppAlert(); // Call the downloadAppAlert function
   };
 
   return (
     <CardContainer>
+      
     <Discussion
-      onClick={handleClick}
+      
+      onClick={() =>
+        router.push(
+          onClick ? `${discussion._id}` : `home/discussion/discussionsDetail/${discussion._id}`
+        )
+      }
+    
+      // onClick={handleClick}
       // onClick={() =>
       //   router.push(
       //     onClick ? `${discussion._id}` : `discussionDetail/${discussion._id}`
@@ -127,7 +145,7 @@ const ArticleClosed = ({ discussion, onClick = false }) => {
         <Col xs={6} sm={3}>
           <Row>
             <Col xs={4} className='d-flex align-items-center'>
-              <Comments src='/img/ico/white_comment.png' alt='Comments' />
+              <Comments src='/img/ico/comment.png' alt='Comments' />
             </Col>
             <Col xs={8} className='d-flex align-items-center'>
               <Interaction>{discussion?.comments}</Interaction>
@@ -137,7 +155,7 @@ const ArticleClosed = ({ discussion, onClick = false }) => {
         <Col xs={6} sm={3}>
           <Row>
             <Col xs={4} className='d-flex align-items-center'>
-              <Likes src='/img/ico/white_heart.png' alt='Likes' />
+              <Likes src='/img/ico/heart.png' alt='Likes' />
             </Col>
             <Col xs={8} className='d-flex align-items-center'>
               <Interaction>{discussion?.likes}</Interaction>
@@ -150,4 +168,5 @@ const ArticleClosed = ({ discussion, onClick = false }) => {
   );
 };
 
-export default ArticleClosed;
+export default DiscussionClosed;
+

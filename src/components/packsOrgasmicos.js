@@ -112,6 +112,23 @@ const TextGuide2 = styled.p`
     }
 `;
 
+const TextPack = styled.p`
+    font-family: "Karla", sans-serif;
+    color: var(--violet);
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin-top: 5.5rem;
+    margin-bottom: 1rem;
+    span {
+        color: var(--green);
+    }
+    @media(max-width: 540px){
+        font-size: 1.8rem;
+        margin-top: 7rem;
+    }
+`;
+
 const ContainerContentGuide = styled.div`
     display: flex;
     align-items: center;
@@ -204,6 +221,23 @@ const AppImageGiftBox2 = styled.img`
     }
 `;
 
+const AppImagePack = styled.img`
+    width: 43%;
+    padding-left: 3.5rem;
+    padding-right: 2rem;
+    padding-top: 4.0rem;
+    
+    @media(max-width: 540px){
+        width: 42%;
+        margin-top: 1rem;
+        // margin-right: 2rem;
+        // margin-left: 2rem;
+    }
+    @media(min-width: 540px){
+        // margin-right: 2rem;
+    }
+`;
+
 const Section = styled.section`
   
 
@@ -262,8 +296,9 @@ const Packs = () => {
                     <Link href="/premium-material/packs/pack1">
                         <GuideSquare>
                             <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                                <AppImageGiftBox src="../img/ico/giftbox.png" className="img-fluid"/>
-                                <TextGuide>Guía <span>Zonas Erógenas</span> + <span>Anal</span> + <span>Tantra</span></TextGuide>
+                                <AppImagePack src="../img/ico/giftbox.png" className="img-fluid"/>
+                                {/* <TextGuide>Guía <span>Zonas Erógenas</span> + <span>Anal</span> + <span>Tantra</span></TextGuide> */}
+                                <TextPack>Pack <span>Experto</span> 2 x 3</TextPack>
                              </ContainerContentGuide>
                         </GuideSquare>
                     </Link>
@@ -272,8 +307,9 @@ const Packs = () => {
                     <Link href="/premium-material/packs/pack2">
                         <GuideSquare>
                             <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                                <AppImageGiftBox2 src="../img/ico/giftbox.png" className="img-fluid"/>
-                                <TextGuide2 >Guía <span>Zonas Erógenas</span> + <span>Tantra</span></TextGuide2>
+                                <AppImagePack src="../img/ico/giftbox.png" className="img-fluid"/>
+                                {/* <TextGuide2 >Guía <span>Zonas Erógenas</span> + <span>Tantra</span></TextGuide2> */}
+                                <TextPack>Pack <span>Placer</span></TextPack>
                              </ContainerContentGuide>
                         </GuideSquare>
                     </Link>

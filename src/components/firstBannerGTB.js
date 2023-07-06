@@ -148,7 +148,7 @@ const FirstBannerGT = () => {
                             <Content>
                                 <Title><span>Guía de tantra: </span>orgasmos más profundos</Title>
                                 <Text>
-                                    <span><strong>AR$ 1.000  /  U$D 5</strong></span> <br/>
+                                    <span><strong>AR$ 1.500  /  U$D 6</strong></span> <br/>
                                     Te enseñamos de 0 a 100,<br/>cómo aplicar el tantra a tu vida sexual.
                                 </Text>
 

@@ -67,7 +67,7 @@ export default function Home() {
       <main>
         {/* <NavBarWS /> */}
         <HeaderPremium />
-        <FirstBannerUniversal titleText='Guía de ' titleSpan='Sexo Anal + Tantra' price='AR$ 1.000  /  U$D 5' description1='Compra el pack' 
+        <FirstBannerUniversal titleText='Guía de ' titleSpan='Sexo Anal + Tantra' price='AR$ 2500  /  U$D 10' description1='Compra el pack' 
           description2='a un precio orgásmico.' 
           videoVisibility={false} imageVisibility={false}/>
         <AfterDiv />
@@ -92,8 +92,8 @@ export default function Home() {
         <AfterDiv />
         <Profesionales />
         <Regalar /> */}
-        <ComprarUniversal title_mp='EMB - Guía Sexo Anal + Tantra - WeSex' unit_price_mp= {1600} quantity_mp={1} currency_id_mp='ARS'
-          price_before_ARG='AR$  2000' price_ARG='AR$  1600' price_before_USD='U$D  10' price_USD='U$D  8' redirection_succesful_mp='https://payhip.com/b/XZHqP' 
+        <ComprarUniversal title_mp='EMB - Guía Sexo Anal + Tantra - WeSex' unit_price_mp= {2500} quantity_mp={1} currency_id_mp='ARS'
+          price_before_ARG='AR$  3000' price_ARG='AR$  2500' price_before_USD='U$D  12' price_USD='U$D  10' redirection_succesful_mp='https://payhip.com/b/XZHqP' 
           redirection_failed_mp='https://www.we.sex/premium-material/guides/guia-pack-anal-tantra-email-b'
           link_payhip_usd='https://payhip.com/b/Op7HD' has_promo={false}
         />

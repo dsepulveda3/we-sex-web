@@ -102,9 +102,9 @@ export default function Home() {
         <Profesionales />
         <Regalar /> */}
         <ComprarUniversal title_mp='Guía Zonas Erógenas + Anal + Tantra - WeSex' unit_price_mp= {3000} quantity_mp={1} currency_id_mp='ARS'
-          price_before_ARG='AR$  4500' price_ARG='AR$  3000' price_before_USD='U$D  15' price_USD='U$D  12' redirection_succesful_mp='' 
+          price_before_ARG='AR$  4500' price_ARG='AR$  3000' price_before_USD='U$D  15' price_USD='U$D  12' redirection_succesful_mp='https://payhip.com/b/5nCsU' 
           redirection_failed_mp='https://www.we.sex/packs/pack1'
-          link_payhip_usd='' has_promo={false}
+          link_payhip_usd='https://payhip.com/b/NMTbU' has_promo={false}
         />
         {/* <Dudas />
         <AboutWeSex />

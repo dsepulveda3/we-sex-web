@@ -67,7 +67,7 @@ export default function Home() {
       <main>
         {/* <NavBarWS /> */}
         <HeaderPremium />
-        <FirstBannerUniversal titleText='Guía ' titleSpan='Zonas Erógenas' titleText2='+ Masterclass ' titleSpan2='Barbi García' price_before= '' price='AR$ 2.400  /  U$D 8' description1='Compra el pack' 
+        <FirstBannerUniversal titleText='Guía ' titleSpan='Zonas Erógenas' titleText2='+ Masterclass ' titleSpan2='Barbi García' price_before= '' price='AR$ 5.000  /  U$D 18' description1='Compra el pack' 
           description2='a un precio orgásmico.' 
           videoVisibility={false} imageVisibility={false}/>
           <AfterDiv />
@@ -92,10 +92,10 @@ export default function Home() {
         <AfterDiv />
         <Profesionales />
         <Regalar /> */}
-        <ComprarUniversal title_mp='Guía Zonas Erógenas + Anal + Tantra - WeSex' unit_price_mp= {2400} quantity_mp={1} currency_id_mp='ARS'
-          price_before_ARG='AR$  3000' price_ARG='AR$  2400' price_before_USD='U$D  10' price_USD='U$D  8' redirection_succesful_mp='' 
+        <ComprarUniversal title_mp='Guía Zonas Erógenas + Anal + Tantra - WeSex' unit_price_mp= {5000} quantity_mp={1} currency_id_mp='ARS'
+          price_before_ARG='AR$  6500' price_ARG='AR$  5000' price_before_USD='U$D  20' price_USD='U$D  18' redirection_succesful_mp='https://payhip.com/b/qaROb' 
           redirection_failed_mp='https://www.we.sex/packs/pack3'
-          link_payhip_usd='' has_promo={false}
+          link_payhip_usd='https://payhip.com/b/XacYv' has_promo={false}
         />
         {/* <Dudas />
         <AboutWeSex />

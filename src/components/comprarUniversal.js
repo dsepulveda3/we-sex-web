@@ -174,8 +174,8 @@ const BotonVerde = styled(Boton)`
 
  export default function PaymentButton({title_mp, unit_price_mp, quantity_mp, currency_id_mp,
   redirection_succesful_mp, redirection_failed_mp, price_before_ARG, price_ARG, price_before_USD, price_USD, link_payhip_usd, 
-  has_promo, buy_just, reminder_buy_just, link_promo,
-  text_promo1_1, text_promo1Span, text_promo1_2}) {
+  has_promo, buy_just, reminder_buy_just, link_promo, text_promo1_1, text_promo1Span, text_promo1_2,
+  link_promo2, text_promo2_1, text_promo2Span, text_promo2_2}) {
    const [preferenceId, setPreferenceId] = useState(null);
    const [initPoint, setInitPoint] = useState(null); // Agregar estado para initPoint
    const [sdkLoaded, setSdkLoaded] = useState(false);
@@ -354,6 +354,9 @@ const BotonVerde = styled(Boton)`
             )}
             <Link href={link_promo}>
               <Text3>{text_promo1_1}<span>{text_promo1Span}</span> {text_promo1_2}</Text3>
+            </Link>
+            <Link href={link_promo2}>
+              <Text3>{text_promo2_1}<span>{text_promo2Span}</span> {text_promo2_2}</Text3>
             </Link>
           </Container>
         )}

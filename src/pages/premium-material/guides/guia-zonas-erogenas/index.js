@@ -5,7 +5,7 @@ import FirstBannerUniversal from '@/components/firstBannerUniversal'
 import EsParaVosSiUniversal from '@/components/esParaVosSiUniversal'
 import ProfesionalesUniversal from '@/components/profesionalesUniversal'
 import Regalar from '@/components/regalar'
-import ComprarTantra from '@/components/old/comprarTantra'
+import ComprarUniversal from '@/components/comprarUniversal'
 import Dudas from '@/components/dudas'
 import AboutWeSex from '@/components/aboutWeSex'
 import AfterDiv from '@/components/afterDiv'
@@ -69,7 +69,7 @@ export default function Home() {
       <main>
         {/* <NavBarWS /> */}
         <HeaderPremium />
-        <FirstBannerUniversal titleText='Guía de' titleSpan='zonas erógenas' price='AR$ 1.000  /  U$D 5' description1='Deja de dudar,' 
+        <FirstBannerUniversal titleText='Guía de' titleSpan='zonas erógenas' price='AR$ 1500  /  U$D 6' description1='Deja de dudar,' 
           description2='regálate placer y empieza a experimentar con esta maravillosa práctica.' imageVisibility={true} 
           videoVisibility={false} image='../../img/ico/ZonasErogenas (1).png' widthImage={'45%'}/>
         <AfterDiv />
@@ -83,9 +83,18 @@ export default function Home() {
           emoji7='🫦' text7_1='' text7Span='Variadas técnicas de estimulación' text7_2='desde suaves mordiscos hasta succiones.' />
         <AfterDiv />
         <ProfesionalesUniversal fabiVisibility={true} ceciliaVisibility={true} barbaraVisibility={true}/>
-        <Pack/>
+        {/* <Pack/> */}
         <Regalar />
-        <ComprarTantra />
+        <ComprarUniversal title_mp='Guía Zonas Erógenas - WeSex' unit_price_mp= {1500} quantity_mp={1} currency_id_mp='ARS'
+          price_ARG='AR$  1500' price_USD='U$D  6' redirection_succesful_mp='https://payhip.com/b/FOwpx' 
+          redirection_failed_mp='https://www.we.sex/premium-material/guides/guia-zonas-erogenas'
+          link_payhip_usd='https://payhip.com/b/yUYAi' has_promo={true}
+          buy_just='Comprar solo guía zonas erógenas' reminder_buy_just='Estás comprando solo la guía de zonas erógenas' 
+          link_promo='/premium-material/packs/pack1' text_promo1_1='O llevate la '
+          text_promo1Span='guía de zonas erógenas + tantra + sexo anal' text_promo1_2=' a un precio orgásmico'
+          link_promo2='/premium-material/packs/pack2' text_promo2_1='O llevate la '
+          text_promo2Span='guía de zonas erógenas + tantra' text_promo2_2=' a un precio orgásmico'
+          />
         <Dudas />
         <AboutWeSex />
         {/* <SeguisDudando /> */}
