@@ -15,6 +15,8 @@ import SeguisDudando from '@/components/seguisDudando'
 import Header from '@/components/header'
 import HeaderPremium from '@/components/headerPremium';
 
+// heey 
+
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
