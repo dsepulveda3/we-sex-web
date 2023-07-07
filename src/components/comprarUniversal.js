@@ -318,7 +318,7 @@ const BotonVerde = styled(Boton)`
 
         {!hasPromo && (
           <Container style={{paddingTop: "5rem", paddingBottom: "6rem", textAlign: "center"}}>
-          <Text4 style={{marginTop: '0rem', marginBottom: '2rem'}}>Luego de comprar la guía la recibirás por email</Text4>
+          <Text4 style={{marginTop: '0rem', marginBottom: '2rem'}}>Cualquier producto comprado será enviado a tu email</Text4>
           <Title>Compra desde Argentina</Title>
           {/* <BotonConContorno target="_blank" href="https://mpago.la/12RtQEf">
               <img src="img/mercadopago.webp" />
@@ -335,7 +335,7 @@ const BotonVerde = styled(Boton)`
 
         {hasPromo && (
           <Container style={{ paddingBottom: "6rem", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center"}}>
-            <Text4>Luego de comprar la guía la recibirás por email</Text4>
+            <Text4>Cualquier producto comprado será enviado a tu email</Text4>
             {!isVisible && (
                 <BotonVerde onClick={handleClick}>{buy_just}</BotonVerde>
             )}

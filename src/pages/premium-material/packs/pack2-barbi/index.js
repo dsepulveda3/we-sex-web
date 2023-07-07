@@ -92,7 +92,7 @@ export default function Home() {
         <AfterDiv />
         <Profesionales />
         <Regalar /> */}
-        <ComprarUniversal title_mp='B - Guía Zonas Erógenas + Anal + Tantra - WeSex' unit_price_mp= {2200} quantity_mp={1} currency_id_mp='ARS'
+        <ComprarUniversal title_mp='B - Guía Zonas Erógenas + Tantra - WeSex' unit_price_mp= {2200} quantity_mp={1} currency_id_mp='ARS'
           price_before_ARG='AR$  3000' price_ARG='AR$  2400' price_before_USD='U$D  10' price_USD='U$D  8' redirection_succesful_mp='https://payhip.com/b/01A9D' 
           redirection_failed_mp='https://www.we.sex/packs/pack2-barbi'
           link_payhip_usd='https://payhip.com/b/5rBMa' has_promo={false}

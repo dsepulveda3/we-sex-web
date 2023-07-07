@@ -13,7 +13,7 @@ import NavBarWS from '@/components/navbar'
 import NoLoPienses from '@/components/noLoPienses'
 import Footer from '@/components/footer'
 import SeguisDudando from '@/components/seguisDudando'
-import Pack from '@/components/pack'
+import Pack2 from '@/components/pack2'
 import Header from '@/components/header'
 import HeaderPremium from '@/components/headerPremium';
 
@@ -73,8 +73,8 @@ export default function Home() {
           description2='Te enseñamos a estimular cada parte del cuerpo, de pies a cabeza.' imageVisibility={true} 
           videoVisibility={false} image='../../img/ico/2ZonasErogenas (1).png' widthImage={'45%'}/>
         <AfterDiv />
-        <EsParaVosSiUniversal title1_1='Esta guía de Zonas Erógenas ' title1Span='para ti' title1_2=' si buscas' 
-          emoji1='✨' text1_1='La magia de combinar diferentes ' text1Span='zonas y técnicas para alcanzar un placer extremo.' text1_2=''
+        <EsParaVosSiUniversal title1_1='Esta guía de Zonas Erógenas es' title1Span='para ti' title1_2=' si buscas' 
+          emoji1='✨' text1_1='La magia de combinar diferentes zonas y ' text1Span='técnicas para alcanzar un placer extremo.' text1_2=''
           emoji2='👀' text2_1='Cómo ' text2Span='romper con el coitocentrismo' text2_2=' y explorar nuevas prácticas sexuales.' 
           emoji3='💦' text3_1='Minimizar conflictos ' text3Span='relacionados con la eyaculación precoz' text3_2=' y la falta de erección.' 
           emoji4='💗' text4_1 ='La importancia de ' text4Span='disfrutar el placer' text4_2 = ' más allá de la penetración vaginal.'
@@ -83,6 +83,7 @@ export default function Home() {
           emoji7='🫦' text7_1='' text7Span='Variadas técnicas de estimulación' text7_2=' desde suaves mordiscos hasta succiones.' />
         <AfterDiv />
         <ProfesionalesUniversal fabiVisibility={true} ceciliaVisibility={true} barbaraVisibility={true}/>
+        <Pack2/>
         {/* <Pack/> */}
         <Regalar />
         <ComprarUniversal title_mp='Guía Zonas Erógenas - WeSex' unit_price_mp= {1500} quantity_mp={1} currency_id_mp='ARS'
@@ -90,8 +91,8 @@ export default function Home() {
           redirection_failed_mp='https://www.we.sex/premium-material/guides/guia-zonas-erogenas'
           link_payhip_usd='https://payhip.com/b/yUYAi' has_promo={true}
           buy_just='Comprar solo guía zonas erógenas' reminder_buy_just='Estás comprando solo la guía de zonas erógenas' 
-          link_promo='/premium-material/packs/pack1' text_promo1_1='O llevate la '
-          text_promo1Span='guía de zonas erógenas + tantra + sexo anal' text_promo1_2=' a un precio orgásmico'
+          link_promo='' text_promo1_1=''
+          text_promo1Span='' text_promo1_2=''
           link_promo2='/premium-material/packs/pack2' text_promo2_1='O llevate la '
           text_promo2Span='guía de zonas erógenas + tantra' text_promo2_2=' a un precio orgásmico'
           />

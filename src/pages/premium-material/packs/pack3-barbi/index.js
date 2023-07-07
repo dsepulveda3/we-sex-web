@@ -72,13 +72,13 @@ export default function Home() {
           videoVisibility={false} imageVisibility={false}/>
           <AfterDiv />
         <EsParaVosSiUniversal title1_1='Esta guía de Zonas Erógenas ' title1Span='para ti' title1_2=' si buscas' 
-        emoji1='✨' text1_1='La magia de combinar diferentes zonas y técnicas para ' text1Span='alcanzar un placer extremo.' text1_2=''
-        emoji2='👀' text2_1='Cómo ' text2Span='romper con el coitocentrismo' text2_2=' y explorar nuevas prácticas sexuales.' 
-        emoji3='💦' text3_1='Formas de minimizar ' text3Span='relacionados con la eyaculación precoz' text3_2=' y la falta de erección.' 
-        emoji4='💗' text4_1 ='La importancia de ' text4Span='disfrutar el placer' text4_2 = ' más allá de la penetración vaginal.'
-        emoji5='🤟' text5_1='' text5Span='Técnicas de ' text5_2='masajes eróticos.' 
-        emoji6='😋' text6_1='' text6Span='Cómo estimular cada parte del cuerpo' text6_2=', de pies a cabeza.'
-        emoji7='🫦' text7_1='' text7Span='Variadas técnicas de estimulación' text7_2='desde suaves mordiscos hasta succiones.' />
+          emoji1='✨' text1_1='La magia de combinar diferentes zonas y técnicas para ' text1Span='alcanzar un placer extremo.' text1_2=''
+          emoji2='👀' text2_1='Cómo ' text2Span='romper con el coitocentrismo' text2_2=' y explorar nuevas prácticas sexuales.' 
+          emoji3='💦' text3_1='Formas de minimizar ' text3Span='relacionados con la eyaculación precoz' text3_2=' y la falta de erección.' 
+          emoji4='💗' text4_1 ='La importancia de ' text4Span='disfrutar el placer' text4_2 = ' más allá de la penetración vaginal.'
+          emoji5='🤟' text5_1='' text5Span='Técnicas de ' text5_2='masajes eróticos.' 
+          emoji6='😋' text6_1='' text6Span='Cómo estimular cada parte del cuerpo' text6_2=', de pies a cabeza.'
+          emoji7='🫦' text7_1='' text7Span='Variadas técnicas de estimulación' text7_2='desde suaves mordiscos hasta succiones.' />
         <AfterDiv />
         <EsParaVosSiUniversal title1_1='Esta MasterSex Class es ' title1Span='para ti' title1_2=' si buscas' 
           emoji1='🗨️' text1_1='' text1Span='Técnicas de relajación ' text1_2='para conectar con el encuentro.'
@@ -92,11 +92,17 @@ export default function Home() {
         <AfterDiv />
         <Profesionales />
         <Regalar /> */}
+        
         <ComprarUniversal title_mp='Guía Zonas Erógenas +  Masterclass Barbi - WeSex' unit_price_mp= {5000} quantity_mp={1} currency_id_mp='ARS'
-          price_before_ARG='AR$  6500' price_ARG='AR$  5000' price_before_USD='U$D  20' price_USD='U$D  18' redirection_succesful_mp='https://payhip.com/b/qaROb' 
-          redirection_failed_mp='https://www.we.sex/packs/pack3'
-          link_payhip_usd='https://payhip.com/b/XacYv' has_promo={false}
-        />
+          price_before_ARG='AR$  6500' price_ARG='AR$  5000' price_before_USD='U$D  20' price_USD='U$D  18' redirection_succesful_mp='https://payhip.com/b/MdeF1' 
+          redirection_failed_mp='https://www.we.sex/packs/pack3-barbi'
+          link_payhip_usd='https://payhip.com/b/LH2cp' has_promo={true}
+          buy_just='Comprar pack' reminder_buy_just='Estás comprando la guía de zonas erógenas + la masterclass' 
+          link_promo='/masterclass-1-barbara' text_promo1_1='O llevate '
+          text_promo1Span='solo la masterclass de Barbi' text_promo1_2=''
+          link_promo2='' text_promo2_1=''
+          text_promo2Span='' text_promo2_2=''
+          />
         {/* <Dudas />
         <AboutWeSex />
         <SeguisDudando /> */}

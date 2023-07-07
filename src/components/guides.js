@@ -222,7 +222,7 @@ const Guides = () => {
                     <Link href="/premium-material/guides/guia-zonas-erogenas">
                         <GuideSquare>
                             <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                                <AppImageGuia3 src="../img/ico/ZonasErogenas (1).png" className="img-fluid"/>
+                                <AppImageGuia3 src="../img/ico/2ZonasErogenas (1).png" className="img-fluid"/>
                                 <h3>Zonas Erógenas</h3>
                             </ContainerContentGuide>
                         </GuideSquare>
