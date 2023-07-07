@@ -177,7 +177,7 @@ const BotonVerde = styled(Boton)`
   has_promo, buy_just, reminder_buy_just, link_promo, text_promo1_1, text_promo1Span, text_promo1_2,
   link_promo2, text_promo2_1, text_promo2Span, text_promo2_2}) {
    const [preferenceId, setPreferenceId] = useState(null);
-   const [initPoint, setInitPoint] = useState(null); // Agregar estado para initPoint
+   const [initPoint, setInitPoint] = useState(null); 
    const [sdkLoaded, setSdkLoaded] = useState(false);
    const [affiliate, setAffiliate] = useState("");
    const [isVisible, setIsVisible] = useState(false);
