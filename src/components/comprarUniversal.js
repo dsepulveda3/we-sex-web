@@ -346,7 +346,7 @@ const BotonVerde = styled(Boton)`
                 <button className ="pagoMP" id="wallet_container" data-href={initPoint}></button>
                 <Amount><span>{price_before_ARG}</span>  {price_ARG}</Amount>
                 <Title style={{marginTop: "5rem"}}>Compra internacionalmente</Title>
-                <BotonVioleta className="pagoPH" ref={botonPagoRef} id="boton-pago" target="_blank" href={`https://payhip.com/b/MiWzq${affiliate}`}>
+                <BotonVioleta className="pagoPH" ref={botonPagoRef} id="boton-pago" target="_blank" href={link_payhip_usd}>
                     Pago en USD
                 </BotonVioleta>
                 <Amount><span>{price_before_USD}</span>  {price_USD}</Amount>

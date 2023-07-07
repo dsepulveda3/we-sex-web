@@ -69,8 +69,8 @@ export default function Home() {
       <main>
         {/* <NavBarWS /> */}
         <HeaderPremium />
-        <FirstBannerUniversal titleText='Guía de' titleSpan='zonas erógenas' price='AR$ 1500  /  U$D 6' description1='Deja de dudar,' 
-          description2='regálate placer y empieza a experimentar con esta maravillosa práctica.' imageVisibility={true} 
+        <FirstBannerUniversal titleText='Guía de Zonas Erógenas:' titleSpan=' aprende a dar más placer' price='AR$ 1500  /  U$D 6' description1='' 
+          description2='Te enseñamos a estimular cada parte del cuerpo, de pies a cabeza' imageVisibility={true} 
           videoVisibility={false} image='../../img/ico/ZonasErogenas (1).png' widthImage={'45%'}/>
         <AfterDiv />
         <EsParaVosSiUniversal title1_1='Esta guía de Zonas Erógenas ' title1Span='para ti' title1_2=' si buscas' 

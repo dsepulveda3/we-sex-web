@@ -179,7 +179,7 @@ const FirstBanner = ({titleText, titleSpan, titleText2, titleSpan2, price_before
                                         href="#comprar"
                                     >Comprar</BotonArs>
                                     <BotonUsd
-                                        href="#queVoyAEncontrar"
+                                        href="#paravos"
                                     >¿Qué voy a aprender?</BotonUsd>
                                 </Botones>
                             </Content>
