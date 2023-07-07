@@ -13,7 +13,7 @@ import NavBarWS from '@/components/navbar'
 import NoLoPienses from '@/components/noLoPienses'
 import Footer from '@/components/footer'
 import SeguisDudando from '@/components/seguisDudando'
-import Pack from '@/components/pack'
+import Pack2Barbi from '@/components/pack2Barbi'
 import Header from '@/components/header'
 import HeaderPremium from '@/components/headerPremium';
 
@@ -83,6 +83,7 @@ export default function Home() {
           emoji7='🫦' text7_1='' text7Span='Variadas técnicas de estimulación' text7_2=' desde suaves mordiscos hasta succiones.' />
         <AfterDiv />
         <ProfesionalesUniversal fabiVisibility={true} ceciliaVisibility={true} barbaraVisibility={true}/>
+        <Pack2Barbi/>
         {/* <Pack/> */}
         <Regalar />
         <ComprarUniversal title_mp='B - Guía Zonas Erógenas - WeSex' unit_price_mp= {1500} quantity_mp={1} currency_id_mp='ARS'
@@ -90,8 +91,8 @@ export default function Home() {
           redirection_failed_mp='https://www.we.sex/premium-material/guides/guia-zonas-erogenas-barbi'
           link_payhip_usd='https://payhip.com/b/OIuPk' has_promo={true}
           buy_just='Comprar solo guía zonas erógenas' reminder_buy_just='Estás comprando solo la guía de zonas erógenas' 
-          link_promo='/premium-material/packs/pack1-barbi' text_promo1_1='O llevate la '
-          text_promo1Span='guía de zonas erógenas + tantra + sexo anal' text_promo1_2=' a un precio orgásmico'
+          link_promo='' text_promo1_1=''
+          text_promo1Span='' text_promo1_2=''
           link_promo2='/premium-material/packs/pack2-barbi' text_promo2_1='O llevate la '
           text_promo2Span='guía de zonas erógenas + tantra' text_promo2_2=' a un precio orgásmico'
           />
