@@ -71,7 +71,7 @@ export default function Home() {
         <HeaderPremium />
         <FirstBannerUniversal titleText='Guía de Zonas Erógenas:' titleSpan=' aprende a dar más placer' price='AR$ 1500  /  U$D 6' description1='' 
           description2='Te enseñamos a estimular cada parte del cuerpo, de pies a cabeza.' imageVisibility={true} 
-          videoVisibility={false} image='../../img/ico/ZonasErogenas (1).png' widthImage={'45%'}/>
+          videoVisibility={false} image='../../img/ico/2ZonasErogenas (1).png' widthImage={'45%'}/>
         <AfterDiv />
         <EsParaVosSiUniversal title1_1='Esta guía de Zonas Erógenas es ' title1Span='para ti' title1_2=' si buscas' 
           emoji1='✨' text1_1='La magia de combinar diferentes zonas y ' text1Span='técnicas para alcanzar un placer extremo.' text1_2=''
