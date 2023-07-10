@@ -93,6 +93,8 @@ const BotonVerde = styled(Boton)`
     background-color: var(--green);
 `;
 
+//
+
 const Pack = () => {
     return (
         <Background id="regalar">
