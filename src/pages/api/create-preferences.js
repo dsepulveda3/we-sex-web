@@ -6,6 +6,8 @@ mercadopago.configure({
   access_token: "APP_USR-3400648491412129-070613-9a4023c198fc82d82745a51f64db1cec-250071994",
 });
 
+//vercel domain we-sex-web udpated to main
+
 export default async function handler(req, res) {
   const { title_mp, unit_price_mp, quantity_mp, 
     currency_id_mp, redirection_succesful_mp,
