@@ -97,7 +97,7 @@ const Pack = () => {
     return (
         <Background id="regalar">
             <Container className="text-center">
-                <Title><span>2 x 3:</span> por 3.000 llevate las 3 guías de WeSex:  <span>Zonas Erógenas</span> + 
+                <Title><span>2 x 3 </span> por 3.000 llevate las 3 guías de WeSex:  <span>Zonas Erógenas</span> + 
                 <span>Tantra</span> + <span>Sexo Anal</span></Title>
                 {/* <Dots>😮</Dots> */}
                 {/* <BigText>REGALARLA</BigText> */}

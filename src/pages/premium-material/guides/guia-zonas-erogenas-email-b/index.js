@@ -71,7 +71,7 @@ export default function Home() {
         <HeaderPremium />
         <FirstBannerGZB/>
         <AfterDiv />
-        <EsParaVosSiUniversal title1_1='Esta guía de Zonas Erógenas es' title1Span='para ti' title1_2=' si buscas' 
+        <EsParaVosSiUniversal title1_1='Esta guía de Zonas Erógenas es ' title1Span='para ti' title1_2=' si buscas' 
           emoji1='✨' text1_1='La magia de combinar diferentes zonas y ' text1Span='técnicas para alcanzar un placer extremo.' text1_2=''
           emoji2='👀' text2_1='Cómo ' text2Span='romper con el coitocentrismo' text2_2=' y explorar nuevas prácticas sexuales.' 
           emoji3='💦' text3_1='Minimizar conflictos ' text3Span='relacionados con la eyaculación precoz' text3_2=' y la falta de erección.' 

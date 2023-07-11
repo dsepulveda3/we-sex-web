@@ -73,14 +73,14 @@ export default function Home() {
           description2='Compra el pack a un precio orgásmico.' 
           videoVisibility={false} imageVisibility={false}/>
           <AfterDiv />
-        <EsParaVosSiUniversal title1_1='Esta guía de Zonas Erógenas ' title1Span='para ti' title1_2=' si buscas' 
+        <EsParaVosSiUniversal title1_1='Esta guía de Zonas Erógenas es ' title1Span='para ti' title1_2=' si buscas' 
         emoji1='✨' text1_1='La magia de combinar diferentes zonas y técnicas para ' text1Span='alcanzar un placer extremo.' text1_2=''
         emoji2='👀' text2_1='Cómo ' text2Span='romper con el coitocentrismo' text2_2=' y explorar nuevas prácticas sexuales.' 
         emoji3='💦' text3_1='Formas de minimizar ' text3Span='relacionados con la eyaculación precoz' text3_2=' y la falta de erección.' 
         emoji4='💗' text4_1 ='La importancia de ' text4Span='disfrutar el placer' text4_2 = ' más allá de la penetración vaginal.'
         emoji5='🤟' text5_1='' text5Span='Técnicas de ' text5_2='masajes eróticos.' 
         emoji6='😋' text6_1='' text6Span='Cómo estimular cada parte del cuerpo' text6_2=', de pies a cabeza.'
-        emoji7='🫦' text7_1='' text7Span='Variadas técnicas de estimulación' text7_2='desde suaves mordiscos hasta succiones.' />
+        emoji7='🫦' text7_1='' text7Span='Variadas técnicas de estimulación ' text7_2='desde suaves mordiscos hasta succiones.' />
         <AfterDiv />
         <EsParaVosSiUniversal title1_1='Esta guía de Sexo Anal es ' title1Span='para ti' title1_2=' si buscas' 
         emoji1='🤟' text1_1='Un ' text1Span='paso a paso' text1_2=' sobre cómo tener una experiencia anal placentera.'
@@ -110,7 +110,7 @@ export default function Home() {
           buy_just='Comprar pack 2x3' reminder_buy_just='Estás comprando el pack 2x3' 
           link_promo='' text_promo1_1=''
           text_promo1Span='' text_promo1_2=''
-          link_promo2='/premium-material/guides/guia-zonas-erogenas-email-d' text_promo2_1='O llevate solo la'
+          link_promo2='/premium-material/guides/guia-zonas-erogenas-email-d' text_promo2_1='O llevate solo la '
           text_promo2Span='guía de zonas erógenas' text_promo2_2=''
         />
         {/* <Dudas />
