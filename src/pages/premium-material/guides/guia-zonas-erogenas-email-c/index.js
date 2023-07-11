@@ -83,7 +83,7 @@ export default function Home() {
           emoji7='🫦' text7_1='' text7Span='Variadas técnicas de estimulación' text7_2=' desde suaves mordiscos hasta succiones.' />
         <AfterDiv />
         <Pack2C/>
-        <ComprarUniversal title_mp='Guía Zonas Erógenas - WeSex' unit_price_mp= {1500} quantity_mp={1} currency_id_mp='ARS'
+        <ComprarUniversal title_mp='EMC - Guía Zonas Erógenas - WeSex' unit_price_mp= {1500} quantity_mp={1} currency_id_mp='ARS'
           price_ARG='AR$  1500' price_USD='U$D  6' redirection_succesful_mp='https://payhip.com/b/ATYyK' 
           redirection_failed_mp='https://www.we.sex/premium-material/guides/guia-zonas-erogenas'
           link_payhip_usd='https://payhip.com/b/0qgyt' has_promo={true}

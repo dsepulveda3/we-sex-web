@@ -86,7 +86,7 @@ export default function Home() {
         <Pack2A/>
         {/* <Pack/> */}
         <Regalar />
-        <ComprarUniversal title_mp='Guía Zonas Erógenas - WeSex' unit_price_mp= {1500} quantity_mp={1} currency_id_mp='ARS'
+        <ComprarUniversal title_mp='EMA - Guía Zonas Erógenas - WeSex' unit_price_mp= {1500} quantity_mp={1} currency_id_mp='ARS'
           price_ARG='AR$  1500' price_USD='U$D  6' redirection_succesful_mp='https://payhip.com/b/qIhzN' 
           redirection_failed_mp='https://www.we.sex/premium-material/guides/guia-zonas-erogenas-email-a'
           link_payhip_usd='https://payhip.com/b/i25BO' has_promo={true}
