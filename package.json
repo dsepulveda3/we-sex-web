@@ -15,6 +15,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "body-parser": "^1.20.2",
     "bootstrap": "^5.2.3",
     "browser": "^0.2.6",
     "eslint": "8.36.0",
@@ -30,5 +31,10 @@
     "request": "^2.88.2",
     "swiper": "^9.1.1",
     "tls": "^0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.1",
+    "@types/react": "^18.2.14",
+    "typescript": "^5.1.6"
   }
 }

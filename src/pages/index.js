@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '@/components/header';
 import HeaderLanding from '@/components/headerLanding';
 import NavBarWS from '@/components/navbar'
 import Hola from '@/components/hola';
