@@ -42,8 +42,10 @@ export default async function handler(req, res) {
     console.log('Body', payload);
     console.log('Email:', payload.email);
     console.log('Signature:', payload.signature);
+    console.log('Calculated Signature', calculatedSignature);
 
     if (isSignatureValid) {
+      console.log("Inisde Valid Signature");
       // Process the payload
       // Example: Accessing the email and product name
       const email = payload.email;
