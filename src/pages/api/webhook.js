@@ -20,6 +20,17 @@ function post_perfit(account, listId, contactData, axiosConfig) {
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     const payload = req.body;
+    
+    // const payload = JSON.parse(req.body);
+
+    // Verify the signature (if required)
+    // const apiKeyPayHip = 'e8d8578359860447414fbcaefec9fd179fb48de5'; // Replace with your actual API key
+    
+    
+
+    const account = 'wesex';
+    const apiKeyPerfit = 'wesex-UnDzvCG44TVzuajb7g8bbybtyDuiKIRw';
+    const axiosConfig = { headers: { Authorization: `Bearer ${apiKeyPerfit}` } };
 
     console.log('Body', payload);
     console.log('Email:', payload.email);
