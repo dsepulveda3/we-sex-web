@@ -1,12 +1,6 @@
 import crypto from 'crypto';
 import axios from 'axios';
 
-function hash(algorithm, apiKeyPayHip) {
-  const hmac = crypto.createHmac(algorithm, apiKeyPayHip);
-  const hash = hmac.digest('hex');
-  return hash;
-};
-
 function post_perfit(account, listId, contactData, axiosConfig) {
   axios
           .post(
@@ -26,65 +20,48 @@ function post_perfit(account, listId, contactData, axiosConfig) {
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     const payload = req.body;
-    // const payload = JSON.parse(req.body);
-
-    // Verify the signature (if required)
-    const signature = payload.signature;
-    const apiKeyPayHip = 'e8d8578359860447414fbcaefec9fd179fb48de5'; // Replace with your actual API key
-    const calculatedSignature = hash('sha256', apiKeyPayHip); // Calculate the expected signature
-    // const calculatedSignature = '59e178bd522471f152be2d629be31f0860a60146f090906184397c4977d83442';
-    const isSignatureValid = signature === calculatedSignature;
-
-    const account = 'wesex';
-    const apiKeyPerfit = 'wesex-UnDzvCG44TVzuajb7g8bbybtyDuiKIRw';
-    const axiosConfig = { headers: { Authorization: `Bearer ${apiKeyPerfit}` } };
 
     console.log('Body', payload);
     console.log('Email:', payload.email);
     console.log('Signature:', payload.signature);
-    console.log('Calculated Signature', calculatedSignature);
 
-    if (isSignatureValid) {
-      console.log("Inisde Valid Signature");
-      // Process the payload
-      // Example: Accessing the email and product name
-      const email = payload.email;
-      const productName = payload.items[0].product_name;
-      
+    // Process the payload
+    // Example: Accessing the email and product name
+    const email = payload.email;
+    const productName = payload.items[0].product_name;
 
-      // Perform your desired actions with the payload data
-      // Example: Send an email notification, add to a database, etc.
+    // Perform your desired actions with the payload data
+    // Example: Send an email notification, add to a database, etc.
+    if (
+      productName === 'Guía Zonas Erógenas - Aprende a dar placer' ||
+      productName ===
+        '¡GRACIAS! Presioná el botón "Descargar ahora" para recibir la guía de zonas erógenas por mail y empezar a disfrutar.' ||
+      productName === 'Another Product Name' ||
+      productName === 'Another Product Name'
+    ) {
+      const listId = 71; // lista Perfit Zonas Erógenas
+      const contactData = {
+        email: email,
+      };
 
-      if (productName === 'Guía Zonas Erógenas - Aprende a dar placer' 
-      || productName === '¡GRACIAS! Presioná el botón "Descargar ahora" para recibir la guía de zonas erógenas por mail y empezar a disfrutar.'
-      || productName === 'Another Product Name' || productName === 'Another Product Name') {
-        const listId = 71; // lista Perfit Zonas Erógenas
-        const contactData = {
-          email: email,
-        };
+      post_perfit(account, listId, contactData, axiosConfig);
+    } else if (productName === 'Guía Tantra - Orgasmos más profundos') {
+      const listId = 72; // lista Perfit Zonas Erógenas
+      const contactData = {
+        email: email,
+      };
 
-        post_perfit(account, listId, contactData, axiosConfig);
-      }
-      else if (productName === 'Guía Tantra - Orgasmos más profundos'){
-        const listId = 72; // lista Perfit Zonas Erógenas
-        const contactData = {
-          email: email,
-        };
-
-        post_perfit(account, listId, contactData, axiosConfig);
-      }
-
-      console.log('Signature is valid, successful request');
-      res.status(200).end(); // Return a 200 status code to acknowledge the webhook request
-    } else {
-      console.log('Signature is not valid');
-      res.status(401).end(); // Return a 401 status code if the signature is not valid
+      post_perfit(account, listId, contactData, axiosConfig);
     }
+
+    console.log('Successful request');
+    res.status(200).end(); // Return a 200 status code to acknowledge the webhook request
   } else {
     console.log('Unsupported method');
     res.status(405).json({ message: 'Unsupported method' });
   }
 }
+
 
 
 // FOR TESTING WITH POSTMAN. HERE WE USE JSON.parse, that is not needed when hitting endpoint directly from PayHip.
