@@ -1,21 +1,43 @@
-
 import crypto from 'crypto';
+import axios from 'axios';
 
-function hash(algorithm, apiKey) {
-  const hmac = crypto.createHmac(algorithm, apiKey);
+function hash(algorithm, apiKeyPayHip) {
+  const hmac = crypto.createHmac(algorithm, apiKeyPayHip);
   const hash = hmac.digest('hex');
   return hash;
-}
+};
+
+function post_perfit(account, listId, contactData, axiosConfig) {
+  axios
+          .post(
+            `https://api.myperfit.com/v2/${account}/lists/${listId}/contacts`,
+            contactData,
+            axiosConfig
+          )
+          .then((response) => {
+            const contact = response.data.data;
+            console.log('Contacto creado/actualizado', contact);
+          })
+          .catch((error) => {
+            console.error('Error creating/updating contact:', error);
+          });
+};
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     const payload = req.body;
+    // const payload = JSON.parse(req.body);
 
     // Verify the signature (if required)
     const signature = payload.signature;
-    const apiKey = 'e8d8578359860447414fbcaefec9fd179fb48de5'; // Replace with your actual API key
-    const calculatedSignature = hash('sha256', apiKey); // Calculate the expected signature
+    const apiKeyPayHip = 'e8d8578359860447414fbcaefec9fd179fb48de5'; // Replace with your actual API key
+    const calculatedSignature = hash('sha256', apiKeyPayHip); // Calculate the expected signature
+    // const calculatedSignature = '59e178bd522471f152be2d629be31f0860a60146f090906184397c4977d83442';
     const isSignatureValid = signature === calculatedSignature;
+
+    const account = 'wesex';
+    const apiKeyPerfit = 'wesex-UnDzvCG44TVzuajb7g8bbybtyDuiKIRw';
+    const axiosConfig = { headers: { Authorization: `Bearer ${apiKeyPerfit}` } };
 
     console.log('Body', payload);
     console.log('Email:', payload.email);
@@ -26,11 +48,29 @@ export default async function handler(req, res) {
       // Example: Accessing the email and product name
       const email = payload.email;
       const productName = payload.items[0].product_name;
-      console.log('Email:', email);
-      console.log('Signature:', signature);
+      
 
       // Perform your desired actions with the payload data
       // Example: Send an email notification, add to a database, etc.
+
+      if (productName === 'Guía Zonas Erógenas - Aprende a dar placer' 
+      || productName === '¡GRACIAS! Presioná el botón "Descargar ahora" para recibir la guía de zonas erógenas por mail y empezar a disfrutar.'
+      || productName === 'Another Product Name' || productName === 'Another Product Name') {
+        const listId = 71; // lista Perfit Zonas Erógenas
+        const contactData = {
+          email: email,
+        };
+
+        post_perfit(account, listId, contactData, axiosConfig);
+      }
+      else if (productName === 'Guía Tantra - Orgasmos más profundos'){
+        const listId = 72; // lista Perfit Zonas Erógenas
+        const contactData = {
+          email: email,
+        };
+
+        post_perfit(account, listId, contactData, axiosConfig);
+      }
 
       console.log('Signature is valid, successful request');
       res.status(200).end(); // Return a 200 status code to acknowledge the webhook request
