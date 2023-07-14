@@ -22,12 +22,8 @@ export default async function handler(req, res) {
     const payload = req.body;
     
     // const payload = JSON.parse(req.body);
-
-    // Verify the signature (if required)
+    
     // const apiKeyPayHip = 'e8d8578359860447414fbcaefec9fd179fb48de5'; // Replace with your actual API key
-    
-    
-
     const account = 'wesex';
     const apiKeyPerfit = 'wesex-UnDzvCG44TVzuajb7g8bbybtyDuiKIRw';
     const axiosConfig = { headers: { Authorization: `Bearer ${apiKeyPerfit}` } };
@@ -47,23 +43,183 @@ export default async function handler(req, res) {
       productName === 'Guía Zonas Erógenas - Aprende a dar placer' ||
       productName ===
         '¡GRACIAS! Presioná el botón "Descargar ahora" para recibir la guía de zonas erógenas por mail y empezar a disfrutar.' ||
-      productName === 'Another Product Name' ||
-      productName === 'Another Product Name'
+      productName === 'EMA - Guía Zonas Erógenas - Aprende a dar placer' ||
+      productName === 
+        'EMA - ¡GRACIAS! Presioná el botón "Descargar ahora" para recibir la guía de zonas erógenas por mail y empezar a disfrutar.' ||
+      productName === 'EMB - Guía Zonas Erógenas - Aprende a dar placer' ||
+      productName === 
+        'EMB - ¡GRACIAS! Presiona el botón "Descargar ahora" para recibir la guía de zonas erógenas por mail y empezar a disfrutar.' ||
+      productName === 'EMC - Guía Zonas Erógenas - Aprende a dar placer' ||
+      productName === 
+        'EMC - ¡GRACIAS! Presiona el botón "Descargar ahora" para recibir la guía de zonas erógenas por mail y empezar a disfrutar.' ||
+      productName === 'EMD - Guía Zonas Erógenas - Aprende a dar placer' ||
+      productName === 
+        'EMD - ¡GRACIAS! Presiona el botón "Descargar ahora" para recibir la guía de zonas erógenas por mail y empezar a disfrutar.'
     ) {
-      const listId = 71; // lista Perfit Zonas Erógenas
+      const listId = 71; // lista Perfit guía Zonas Erógenas
       const contactData = {
         email: email,
       };
 
       post_perfit(account, listId, contactData, axiosConfig);
-    } else if (productName === 'Guía Tantra - Orgasmos más profundos') {
-      const listId = 72; // lista Perfit Zonas Erógenas
+
+    } else if (
+      productName === 'Guía Tantra - Orgasmos más profundos' ||
+      productName ===
+        '¡GRACIAS! Presioná el botón "Descargar ahora" para recibir la guía de tantra por mail y empezar a disfrutar.' ||
+      productName === 'F - Guía Tantra - Orgasmos más profundos' ||
+      productName === 
+        'F - ¡GRACIAS! Presioná el botón "Descargar ahora" para recibir la guía de tantra por mail y empezar a disfrutar.' ||
+      productName === 'EMA - Guía Tantra - Orgasmos más profundos' ||
+      productName === 
+        'EMA - ¡GRACIAS! Presioná el botón "Descargar ahora" para recibir la guía de tantra por mail y empezar a disfrutar.' ||
+      productName === 'EMB - Guía Tantra - Orgasmos más profundos' ||
+      productName === 
+        'EMB - ¡GRACIAS! Presioná el botón "Descargar ahora" para recibir la guía de tantra por mail y empezar a disfrutar.' ||
+      productName === 'EMC - Guía Tantra - Orgasmos más profundos' ||
+      productName === 
+        'EMC - ¡GRACIAS! Presioná el botón "Descargar ahora" para recibir la guía de tantra por mail y empezar a disfrutar.'
+    ) {
+      const listId = 72; // lista Perfit guía Tantra
       const contactData = {
         email: email,
       };
 
       post_perfit(account, listId, contactData, axiosConfig);
-    }
+    
+
+  } else if (
+    productName === 'Guía de Sexo Anal - De cero a placer extremo' ||
+    productName ===
+      '¡GRACIAS! Presioná el boton "Descargar ahora" para recibir la guía por mail y empezar a disfrutar.' ||
+    productName === 'B - Guía de Sexo Anal - De cero a placer extremo' ||
+    productName === 
+      'B - ¡GRACIAS! Presioná el boton "Descargar ahora" para recibir la guía por mail y empezar a disfrutar.' ||
+    productName === 'C - Guía de Sexo Anal - De cero a placer extremo' ||
+    productName === 
+      'C - ¡GRACIAS! Presioná el boton "Descargar ahora" para recibir la guía por mail y empezar a disfrutar.' ||
+    productName === 'L - Guía de Sexo Anal - De cero a placer extremo' ||
+    productName === 
+      'L - ¡GRACIAS! Presioná el boton "Descargar ahora" para recibir la guía por mail y empezar a disfrutar.'
+  ) {
+    const listId = 73; // lista Perfit guía Sexo Anal
+    const contactData = {
+      email: email,
+    };
+
+    post_perfit(account, listId, contactData, axiosConfig);
+
+  } else if (
+    productName === 'MasterSex class - Técnicas para relajarte y sentir más en el sexo' ||
+    productName ===
+      '¡GRACIAS! Presioná el botón "Descargar ahora" para obtener la masterclass' ||
+    productName === 'B - MasterSex class - Técnicas para relajarte y sentir más en el sexo' ||
+    productName === 
+      'B - ¡GRACIAS! Presioná el botón "Descargar ahora" para recibir la información sobre la masterclass.' 
+  ) {
+    const listId = 74; // lista Perfit master barbi
+    const contactData = {
+      email: email,
+    };
+
+    post_perfit(account, listId, contactData, axiosConfig);
+  
+
+}else if (
+  productName === 'Guía de Sexo Anal + Tantra' ||
+  productName ===
+    '¡GRACIAS! Presioná el botón "Descargar ahora" para recibir la guía de sexo anal + tantra por mail y empezar a disfrutar.' ||
+  productName === 'F - Guía de Sexo Anal + Tantra' ||
+  productName === 
+    'F - ¡GRACIAS! Presioná el botón "Descargar ahora" para recibir la guía de sexo anal + tantra por mail y empezar a disfrutar.' ||
+  productName === 'EMA - Guía de Sexo Anal + Tantra' ||
+  productName === 
+    'EMA - ¡GRACIAS! Presioná el botón "Descargar ahora" para recibir la guía de sexo anal + tantra por mail y empezar a disfrutar.' ||
+  productName === 'EMB - Guía de Sexo Anal + Tantra' ||
+  productName === 
+    'EMB - ¡GRACIAS! Presioná el botón "Descargar ahora" para recibir la guía de sexo anal + tantra por mail y empezar a disfrutar.' ||
+  productName === 'EMC - Guía de Sexo Anal + Tantra' ||
+  productName === 
+    'EMC - ¡GRACIAS! Presioná el botón "Descargar ahora" para recibir la guía de sexo anal + tantra por mail y empezar a disfrutar.'
+) {
+  const listId = 75; // lista Perfit guía Tantra + Anal
+  const contactData = {
+    email: email,
+  };
+
+  post_perfit(account, listId, contactData, axiosConfig);
+
+
+} else if (
+  productName === 'Guía de Zonas Erógenas + Sexo Anal + Tantra' ||
+  productName ===
+    '¡GRACIAS! Presioná el botón "Descargar ahora" para recibir la guía de zonas erógenas + sexo anal + tantra por mail y empezar a disfrutar.' ||
+  productName === 'B - Guía de Zonas Erógenas + Sexo Anal + Tantra' ||
+  productName === 
+    'B - ¡GRACIAS! Presioná el botón "Descargar ahora" para recibir la guía de zonas erógenas + sexo anal + tantra por mail y empezar a disfrutar.' ||
+  productName === 'EMA - Guía de Zonas Erógenas + Sexo Anal + Tantra' ||
+  productName === 
+    'EMA - ¡GRACIAS! PresionA el botón "Descargar ahora" para recibir la guía de zonas erógenas + sexo anal + tantra por mail y empezar a disfrutar.' ||
+  productName === 'EMB - Guía de Zonas Erógenas + Sexo Anal + Tantra' ||
+  productName === 
+    'EMB - ¡GRACIAS! PresionA el botón "Descargar ahora" para recibir la guía de zonas erógenas + sexo anal + tantra por mail y empezar a disfrutar.' ||
+  productName === 'EMC - Guía de Zonas Erógenas + Sexo Anal + Tantra' ||
+  productName === 
+    'EMC - ¡GRACIAS! PresionA el botón "Descargar ahora" para recibir la guía de zonas erógenas + sexo anal + tantra por mail y empezar a disfrutar.' ||
+  productName === 'EMD - Guía de Zonas Erógenas + Sexo Anal + Tantra' ||
+  productName === 
+    'EMD - ¡GRACIAS! Presiona el botón "Descargar ahora" para recibir la guía de zonas erógenas + sexo anal + tantra por mail y empezar a disfrutar.'
+) {
+  const listId = 76; // lista Perfit pack 2x3 zonas erógenas + tantra + anal
+  const contactData = {
+    email: email,
+  };
+
+  post_perfit(account, listId, contactData, axiosConfig);
+
+
+} else if (
+  productName === 'Guía de Zonas Erógenas + Tantra' ||
+  productName ===
+    '¡GRACIAS! Presioná el botón "Descargar ahora" para recibir la guía de zonas erógenas + tantra por mail y empezar a disfrutar.' ||
+  productName === 'B - Guía de Zonas Erógenas + Tantra' ||
+  productName === 
+    'B - ¡GRACIAS! Presioná el botón "Descargar ahora" para recibir la guía de zonas erógenas + tantra por mail y empezar a disfrutar.' ||
+  productName === 'EMA - Guía de Zonas Erógenas + Tantra' ||
+  productName === 
+    'EMA - ¡GRACIAS! Presiona el botón "Descargar ahora" para recibir la guía de zonas erógenas + tantra por mail y empezar a disfrutar.' ||
+  productName === 'EMB - Guía de Zonas Erógenas + Tantra' ||
+  productName === 
+    'EMB - ¡GRACIAS! Presiona el botón "Descargar ahora" para recibir la guía de zonas erógenas + tantra por mail y empezar a disfrutar.' ||
+  productName === 'EMC - Guía de Zonas Erógenas + Tantra' ||
+  productName === 
+    'EMC - ¡GRACIAS! Presiona el botón "Descargar ahora" para recibir la guía de zonas erógenas + tantra por mail y empezar a disfrutar.'
+) {
+  const listId = 77; // lista Perfit pack 2 zonas erógenas + tantra
+  const contactData = {
+    email: email,
+  };
+
+  post_perfit(account, listId, contactData, axiosConfig);
+
+
+} else if (
+  productName === 'Guía Zonas Erógenas + Masterclass Barbi' ||
+  productName ===
+    '¡GRACIAS! Presioná el botón "Descargar ahora" para obtener la guia de zonas erógenas + la masterclass de Barbi' ||
+  productName === 'B - Guía Zonas Erógenas + Masterclass Barbi' ||
+  productName === 
+    'B - ¡GRACIAS! Presioná el botón "Descargar ahora" para obtener la guia de zonas erógenas + la masterclass de Barbi'
+) {
+  const listId = 78; // lista Perfit pack 3 masterclass + guía zonas erógenas
+  const contactData = {
+    email: email,
+  };
+
+  post_perfit(account, listId, contactData, axiosConfig);
+
+
+}
 
     console.log('Successful request');
     res.status(200).end(); // Return a 200 status code to acknowledge the webhook request
