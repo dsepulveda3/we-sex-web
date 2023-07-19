@@ -255,13 +255,13 @@ const ArticleDetail = ({ articleItem }) => {
                 {articleItem.content?.map((item, index) => {
                   if (item.type === 'text') {
                     return (
-                      <div dangerouslySetInnerHTML={{ __html: item.value }} key={index} />
+                      <div dangerouslySetInnerHTML={{ __html: item.value }} key={index.toString()} />
                     );
                   } else if (item.type === 'image') {
                     return (
                       <img
                         src={item.value}
-                        key={item.value+index}
+                        key={item.value + index}
                         style={{
                           maxWidth: '50%',
                           width: '100%',
@@ -273,7 +273,7 @@ const ArticleDetail = ({ articleItem }) => {
                     return (
                       <iframe
                         src={item.value}
-                        key={item.value}
+                        key={item.value + index}
                         style={{
                           maxWidth: '50%',
                           maxHeight: '100%',
@@ -285,7 +285,7 @@ const ArticleDetail = ({ articleItem }) => {
                   } else if (item.type === 'embed') {
                     return (
                       <Links>
-                        <a key={item.value} href={item.value}>
+                        <a key={item.value + index} href={item.value}>
                           {item.value}
                         </a>
                       </Links>
