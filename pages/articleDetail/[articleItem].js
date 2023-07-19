@@ -20,6 +20,8 @@ import { downloadAppAlert } from '../../helpers';
 import { RWebShare } from 'react-web-share';
 import clienteAxios from '../../config/axios';
 
+//
+
 // Generar un enlace por cada slug
 export async function getStaticPaths() {
   const slugs = await clienteAxios.get('/articles/all-public');
