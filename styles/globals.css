@@ -1,0 +1,392 @@
+:root {
+  --violet: #562f8b;
+  --lila: #ebe6ff;
+  --green: #09d08c;
+  --darkGrey: #696969;
+  --lightGrey: #ebedeb;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.8rem;
+  background-color: white !important;
+  /* font-family: 'Poppins', sans-serif!important; */
+  /* margin-top: 10rem!important; */
+  color: white;
+  overflow-x: hidden;
+}
+p,
+a {
+  font-size: 1.8rem;
+}
+
+h1 {
+  font-size: 4rem !important;
+}
+h2 {
+  font-size: 3.5rem !important;
+}
+
+@media (max-width: 540px) {
+  h1 {
+    font-size: 4rem !important;
+  }
+  h2 {
+    font-size: 3rem !important;
+  }
+}
+
+@media (max-width: 540px) {
+  body {
+    text-align: center;
+  }
+  div {
+    text-align: center;
+  }
+  .hide-mobile {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .hide-desktop {
+    display: none;
+  }
+}
+.green-line {
+  border-top: 5px solid var(--green);
+}
+
+.nav-item-ws {
+  cursor: pointer;
+}
+
+@media (max-width: 540px) {
+  .ldes-cmob {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  a {
+    font-size: 1.8rem;
+  }
+}
+
+.ldes-cmob {
+  text-align: left;
+}
+
+.w-15 {
+  width: 15%;
+  max-width: 10rem !important;
+}
+
+.w-30 {
+  width: 30%;
+  max-width: 10rem !important;
+}
+
+a,
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+svg {
+  fill: var(--violet);
+}
+
+.text-bold {
+  font-weight: bold;
+}
+.text-wesx {
+  color: var(--violet);
+}
+.text-left {
+  text-align: left !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h2 {
+  font-size: 2.5rem !important;
+  color: var(--violet);
+  font-weight: bold;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a {
+  font-family: 'Karla', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h4,
+h5 {
+  font-size: 2rem;
+}
+
+@font-face {
+  font-family: 'Karla';
+  src: url('../public/fonts/Karla-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Karla';
+  src: url('../public/fonts/Karla-Bold.ttf');
+  font-weight: 600;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: 'Averia Libre';
+  src: url('../public/fonts/AveriaLibre-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Averia Libre';
+  src: url('../public/fonts/AveriaLibre-Bold.ttf');
+  font-weight: 600;
+  font-style: bold;
+}
+@font-face {
+  font-family: 'Averia Libre';
+  src: url('../public/fonts/AveriaLibre-Light.ttf');
+  font-weight: 200;
+  font-style: light;
+}
+
+.bg-violet {
+  background-color: var(--violet);
+}
+
+.py-7 {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.sec-title {
+  background-color: var(--violet);
+  border-top: white solid 0.1rem;
+  padding: 1.5rem 0;
+  color: white;
+  margin-bottom: 2rem;
+  /* font-size: 3.5rem; */
+}
+.sec-subtitle {
+  font-size: 2rem;
+}
+
+@media (max-width: 540px) {
+  .sec-title {
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+  }
+}
+
+.sex-search {
+  /* border-radius: 24px; */
+  padding: 0.2rem;
+  outline: none;
+  /* width: 100%; */
+  font-size: 1.8rem;
+  height: 100%;
+  max-width: 40rem;
+  width: fit-content;
+  background-color: transparent;
+  border: none !important;
+  border-bottom: 1px solid white !important;
+  -webkit-appearance: none;
+  color: white;
+}
+.sex-search:focus {
+  outline: none;
+}
+.sex-search::placeholder {
+  color: rgba(255, 255, 255, 0.578);
+}
+.search-content {
+  font-size: 2rem;
+}
+.w-fit-content {
+  width: fit-content !important;
+}
+@media (max-width: 540px) {
+  .mb-100 {
+    width: 100% !important;
+  }
+  .sex-search {
+    text-align: center;
+  }
+}
+
+.first-uppercase {
+  text-transform: capitalize;
+}
+
+/* 
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+} */
+
+/* Discussions */
+.d-selected-category {
+  background-color: white;
+  color: var(--violet);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.d-selected-category:hover {
+  background-color: var(--violet);
+  color: white;
+}
+
+.d-selected-category-primary,
+.d-selected-category-primary:hover {
+  background-color: var(--violet) !important;
+  color: var(--violet) !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.a-selected-category-primary,
+.a-selected-category-primary:hover {
+  background-color: var(--green) !important;
+  color: var(--green) !important;
+  cursor: pointer;
+}
+
+/* Colors */
+
+.color-green {
+  color: var(--green);
+}
+
+.font-weight-bold {
+  font-weight: bold;
+}
+
+.a-selected-category {
+  background-color: var(--green) !important;
+  color: white !important;
+}
+
+.violet-divisor {
+  height: 0.5rem;
+  background-color: var(--violet);
+  width: 100%;
+}
+
+/* FAQS */
+.accordion-button {
+  font-size: 1.8rem;
+}
+.accordion-button:not(.collapsed) {
+  background-color: var(--lila);
+  color: black;
+  font-weight: bold;
+}
+.accordion-button:not(.collapsed)::after {
+  color: black;
+  fill: black;
+}
+.accordion-body {
+  font-size: 1.8rem;
+  color: black;
+  margin-left: 2rem;
+}
+.accordion-button:focus {
+  border-color: var(--violet);
+}
+
+/* SWIPER */
+@media (max-width: 768px) {
+}
+
+.swiper-slide {
+  width: fit-content !important;
+  /* min-width: 150px; */
+}
+
+@media (min-width: 991px) {
+  .swiper-wrapper {
+    /* justify-content: center; */
+  }
+}
+
+@media (max-width: 540px) {
+  .accordion-body {
+    text-align: left;
+    margin-left: 0;
+  }
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: #282c34;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.results-wrapper {
+  margin: 1rem 1rem 1rem 0;
+  padding: 0.5rem;
+}
+
+.result-span {
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: block;
+  padding: 0.5rem 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #09d08c !important;
+}
