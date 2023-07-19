@@ -287,10 +287,8 @@ const ArticleDetail = ({ articleItem }) => {
                     );
                   } else if (item.type === 'embed') {
                     return (
-                      <Links>
-                        <a key={item.value} href={item.value}>
-                          {item.value}
-                        </a>
+                      <Links key={item.value}>
+                        <a href={item.value}>{item.value}</a>
                       </Links>
                     );
                   }
