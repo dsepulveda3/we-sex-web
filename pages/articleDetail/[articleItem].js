@@ -252,12 +252,15 @@ const ArticleDetail = ({ articleItem }) => {
               </ArticleTitle>
               <p>{articleItem.subtitle}</p>
               <Col>
-                {articleItem.content?.map((item, index) => {
-                  if (item.type === 'text') {
-                    return (
-                      <div dangerouslySetInnerHTML={{ __html: item.value }} key={index.toString()} />
-                    );
-                  } else if (item.type === 'image') {
+              {articleItem.content?.map((item, index) => {
+                if (item.type === 'text') {
+                  return (
+                    <div
+                      dangerouslySetInnerHTML={{ __html: item.value }}
+                      key={`text-${index}`} // Use a unique key by concatenating "text-" with the index
+                    />
+                  );
+                } else if (item.type === 'image') {
                     return (
                       <img
                         src={item.value}
