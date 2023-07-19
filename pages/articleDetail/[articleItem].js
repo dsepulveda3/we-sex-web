@@ -328,9 +328,10 @@ const ArticleDetail = ({ articleItem }) => {
               {Number(comments?.count) > 0 ? (
                 <>
                   <CommentsTitle>Opina la comunidad:</CommentsTitle>
-                  {comments?.results?.map((comment) => (
-                    <Comment comment={comment} key={comment._id} />
-                  ))}
+                  {comments?.results?.map((comment, index) => (
+                  <Comment comment={comment} key={`comment-${index}`} />
+                ))}
+
                 </>
               ) : (
                 <>
