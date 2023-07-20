@@ -238,7 +238,7 @@ const DiscussionDetail = ({ discussionItem }) => {
               </DiscussionTitle>
               <p>{discussionItem?.subtitle}</p>
               <Published>
-                {discussionItem.anonymus ? (
+                {discussionItem?.anonymus ? (
                   <>Debate creado anónimamente</>
                 ) : (
                   <>
