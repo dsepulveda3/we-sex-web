@@ -74,27 +74,32 @@ const Comment = ({ comment }) => {
             src='/img/articles/article-background.jpg'
             alt='Profile picture'
           />
-          <Link href={`/perfil/${comment.user.user}`}>
-            <a>@{comment.user.user}</a>
+          <Link href={`/perfil/${comment?.user?.user}`}>
+            <a>@{comment?.user?.user}</a>
           </Link>
         </Col>
         <Col xs={4}>
-          <TimeStamp>{comment.createdAt.slice(0, 10)}</TimeStamp>
-          <TimeStamp>{comment.createdAt.slice(11, 19)}</TimeStamp>
+          <TimeStamp>{comment?.createdAt?.slice(0, 10)}</TimeStamp>
+          <TimeStamp>{comment?.createdAt?.slice(11, 19)}</TimeStamp>
         </Col>
       </Row>
-        {comment?.media && (
-          <div style={{maxHeight: "100px"}}>
-            <img src={comment?.media.url} width={"auto"} height={"100%"} alt='imágen del comentario' />
-          </div>
-        )}
-      <CommentComent>{comment.comment}</CommentComent>
+      {comment?.media && (
+        <div style={{ maxHeight: '100px' }}>
+          <img
+            src={comment?.media.url}
+            width='auto'
+            height='100%'
+            alt='imágen del comentario'
+          />
+        </div>
+      )}
+      <CommentComent>{comment?.comment}</CommentComent>
       <Row className='mt-3'>
         <Icon xs={6}>
           <button onClick={() => downloadAppAlert()}>
             <img src='/img/icons/heart-outline.svg' />
           </button>
-          {comment.likes}
+          {comment?.likes}
         </Icon>
         <Icon
           xs={6}
