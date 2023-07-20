@@ -50,7 +50,7 @@ const PrivacyPolicy = () => (
                 <bdt className="block-component" />
               </span>
             </span>{" "}
-            ("
+            (&quot;
             <span style={{ color: "rgb(89, 89, 89)" }}>
               <span data-custom-class="body_text">
                 <bdt className="block-component" />
@@ -1167,7 +1167,7 @@ const PrivacyPolicy = () => (
                     pages and files viewed, searches and other actions you take
                     such as which features you use), device event information
                     (such as system activity, error reports (sometimes called
-                    'crash dumps') and hardware settings).
+                      &apos;crash dumps&apos;) and hardware settings).
                     <span style={{ fontSize: 15 }}>
                       <span style={{ color: "rgb(89, 89, 89)" }}>
                         <span data-custom-class="body_text">
@@ -1401,7 +1401,7 @@ const PrivacyPolicy = () => (
                           send you push notifications regarding your account or
                           certain features of the App. If you wish to opt-out
                           from receiving these types of communications, you may
-                          turn them off in your device's settings.
+                          turn them off in your device&apos;s settings.
                           <span style={{ fontSize: 15 }}>
                             <span style={{ color: "rgb(89, 89, 89)" }}>
                               <span data-custom-class="body_text">
@@ -1962,7 +1962,7 @@ const PrivacyPolicy = () => (
                               To enable user-to-user communications.
                             </strong>{" "}
                             We may use your information in order to enable
-                            user-to-user communications with each user's
+                            user-to-user communications with each user&apos;s
                             consent.
                             <span
                               style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}
@@ -2306,7 +2306,7 @@ const PrivacyPolicy = () => (
                                     , subscribing to marketing or otherwise
                                     contacting us, we will collect personal
                                     information from you. You can opt-out of our
-                                    marketing emails at any time (see the "&quot;
+                                    marketing emails at any time (see the &quot;
                                     <a
                                       data-custom-class="link"
                                       href="#privacyrights"
