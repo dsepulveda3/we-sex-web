@@ -228,7 +228,7 @@ const ArticleDetail = ({ articleItem }) => {
   return (
     <>
       <Head>
-        <title>{`${articleItem.title} | WeSex`}</title>
+        <title>{`${articleItem?.title} | WeSex`}</title>
         
         <meta name='description' content={''} />
         <meta name='keywords' content={''} />
@@ -253,7 +253,7 @@ const ArticleDetail = ({ articleItem }) => {
                 />
                 <h1>{articleItem?.title}</h1>
               </ArticleTitle>
-              <p>{articleItem.subtitle}</p>
+              <p>{articleItem?.subtitle}</p>
               <Col>
               {articleItem.content?.map((item, index) => {
                 if (item.type === 'text') {

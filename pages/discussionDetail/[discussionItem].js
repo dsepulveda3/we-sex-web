@@ -214,7 +214,7 @@ const DiscussionDetail = ({ discussionItem }) => {
   return (
     <>
       <Head>
-        <title>{`${discussionItem.title} | WeSex`}</title>
+        <title>{`${discussionItem?.title} | WeSex`}</title>
         <meta name='description' content={''} />
         <meta name='keywords' content={''} />
       </Head>
@@ -236,7 +236,7 @@ const DiscussionDetail = ({ discussionItem }) => {
                 />
                 <h1>{discussionItem?.title}</h1>
               </DiscussionTitle>
-              <p>{discussionItem.subtitle}</p>
+              <p>{discussionItem?.subtitle}</p>
               <Published>
                 {discussionItem.anonymus ? (
                   <>Debate creado anónimamente</>
