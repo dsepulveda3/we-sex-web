@@ -5,7 +5,7 @@ const PrivacyPolicy = () => (
   <style
     dangerouslySetInnerHTML={{
       __html:
-        "\n  [data-custom-class='body'], [data-custom-class='body'] * {\n          background: transparent !important;\n        }\n[data-custom-class='title'], [data-custom-class='title'] * {\n          font-family: Arial !important;\nfont-size: 26px !important;\ncolor: '#000000' !important;\n        }\n[data-custom-class='subtitle'], [data-custom-class='subtitle'] * {\n          font-family: Arial !important;\ncolor: '#595959' !important;\nfont-size: 14px !important;\n        }\n[data-custom-class='heading_1'], [data-custom-class='heading_1'] * {\n          font-family: Arial !important;\nfont-size: 19px !important;\ncolor: '#000000' !important;\n        }\n[data-custom-class='heading_2'], [data-custom-class='heading_2'] * {\n          font-family: Arial !important;\nfont-size: 17px !important;\ncolor: '#000000' !important;\n        }\n[data-custom-class='body_text'], [data-custom-class='body_text'] * {\n          color: '#595959' !important;\nfont-size: 14px !important;\nfont-family: Arial !important;\n        }\n[data-custom-class='link'], [data-custom-class='link'] * {\n          color: '#3030F1' !important;\nfont-size: 14px !important;\nfont-family: Arial !important;\nword-break: break-word !important;\n        }\n"
+        "\n  [data-custom-class='body'], [data-custom-class='body'] * {\n          background: transparent !important;\n        }\n[data-custom-class='title'], [data-custom-class='title'] * {\n          font-family: Arial !important;\nfont-size: 26px !important;\ncolor: #000000 !important;\n        }\n[data-custom-class='subtitle'], [data-custom-class='subtitle'] * {\n          font-family: Arial !important;\ncolor: #595959 !important;\nfont-size: 14px !important;\n        }\n[data-custom-class='heading_1'], [data-custom-class='heading_1'] * {\n          font-family: Arial !important;\nfont-size: 19px !important;\ncolor: #000000 !important;\n        }\n[data-custom-class='heading_2'], [data-custom-class='heading_2'] * {\n          font-family: Arial !important;\nfont-size: 17px !important;\ncolor: #000000 !important;\n        }\n[data-custom-class='body_text'], [data-custom-class='body_text'] * {\n          color: #595959 !important;\nfont-size: 14px !important;\nfont-family: Arial !important;\n        }\n[data-custom-class='link'], [data-custom-class='link'] * {\n          color: #3030F1 !important;\nfont-size: 14px !important;\nfont-family: Arial !important;\nword-break: break-word !important;\n        }\n"
     }}
   />
   <div data-custom-class="body">
@@ -72,8 +72,8 @@ const PrivacyPolicy = () => (
             </span>
           </span>
           <span data-custom-class="body_text">
-            ," "<strong>we</strong>," "<strong>us</strong>," or "
-            <strong>our</strong>"). We are committed to protecting your personal
+            ,&quot; &quot;<strong>we</strong>,&quot; &quot;<strong>us</strong>,&quot; or &quot;
+            <strong>our</strong>&quot;). We are committed to protecting your personal
             information and your right to privacy. If you have any questions or
             concerns about this privacy notice or our practices with regard to
             your personal information, please contact us at{" "}
@@ -309,7 +309,7 @@ const PrivacyPolicy = () => (
               <span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
                 <span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
                   <span data-custom-class="body_text">
-                    "<strong>App</strong>," we are referring to any application
+                  &quot;<strong>App</strong>,&quot; we are referring to any application
                     of ours that references or links to this policy, including
                     any listed above
                   </span>
