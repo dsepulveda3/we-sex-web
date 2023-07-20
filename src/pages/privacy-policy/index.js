@@ -356,7 +356,7 @@ const PrivacyPolicy = () => (
               <span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
                 <span style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}>
                   <span data-custom-class="body_text">
-                    "<strong>Services</strong>," we are referring to our
+                  &quot;<strong>Services</strong>,&quot; we are referring to our
                     <span style={{ fontSize: 15 }}>
                       <span style={{ color: "rgb(127, 127, 127)" }}>
                         <span data-custom-class="body_text">
@@ -943,7 +943,7 @@ const PrivacyPolicy = () => (
                   social media account details, like your Facebook, Twitter or
                   other social media account. If you choose to register in this
                   way, we will collect the information described in the section
-                  called "
+                  called &quot;
                   <span style={{ fontSize: 15 }}>
                     <span data-custom-class="body_text">
                       <span style={{ fontSize: 15 }}>
@@ -955,7 +955,7 @@ const PrivacyPolicy = () => (
                       </span>
                     </span>
                   </span>
-                  " below.
+                  &quot; below.
                   <span style={{ fontSize: 15 }}>
                     <bdt className="statement-end-if-in-editor">
                       <bdt className="statement-end-if-in-editor" />
@@ -1602,7 +1602,7 @@ const PrivacyPolicy = () => (
                                 &nbsp;
                               </span>
                             </span>
-                            See the section below headed "
+                            See the section below headed &quot;
                             <span
                               style={{ color: "rgb(89, 89, 89)", fontSize: 15 }}
                             >
@@ -1619,7 +1619,7 @@ const PrivacyPolicy = () => (
                                 </a>
                               </span>
                             </span>
-                            " for further information.
+                            &quot; for further information.
                             <span
                               style={{ fontSize: 15, color: "rgb(89, 89, 89)" }}
                             >
@@ -2306,7 +2306,7 @@ const PrivacyPolicy = () => (
                                     , subscribing to marketing or otherwise
                                     contacting us, we will collect personal
                                     information from you. You can opt-out of our
-                                    marketing emails at any time (see the "
+                                    marketing emails at any time (see the "&quot;
                                     <a
                                       data-custom-class="link"
                                       href="#privacyrights"
@@ -2319,7 +2319,7 @@ const PrivacyPolicy = () => (
                                         </span>
                                       </span>
                                     </a>
-                                    " below).
+                                    &quot; below).
                                     <span
                                       style={{
                                         fontSize: 15,
@@ -3714,7 +3714,7 @@ const PrivacyPolicy = () => (
                                                   revoke your consent, please
                                                   contact us using the contact
                                                   details provided in the
-                                                  section below titled "
+                                                  section below titled &quot;
                                                   <span
                                                     style={{
                                                       fontSize: 15,
@@ -3746,7 +3746,7 @@ const PrivacyPolicy = () => (
                                                       </span>
                                                     </span>
                                                   </span>
-                                                  ".
+                                                  &quot;.
                                                 </span>
                                               </span>
                                             </span>
@@ -5880,7 +5880,7 @@ const PrivacyPolicy = () => (
                                               Most web browsers and some mobile
                                               operating systems and mobile
                                               applications include a
-                                              Do-Not-Track ("DNT") feature or
+                                              Do-Not-Track (&quot;DNT&quot;) feature or
                                               setting you can activate to signal
                                               your privacy preference not to
                                               have data about your online
@@ -6001,8 +6001,8 @@ const PrivacyPolicy = () => (
                                           >
                                             <span data-custom-class="body_text">
                                               California Civil Code Section
-                                              1798.83, also known as the "Shine
-                                              The Light" law, permits our users
+                                              1798.83, also known as the &quot;Shine
+                                              The Light&quot; law, permits our users
                                               who are California residents to
                                               request and obtain from us, once a
                                               year and free of charge,
@@ -6229,7 +6229,7 @@ const PrivacyPolicy = () => (
                                                     <span data-custom-class="body_text">
                                                       The California Code of
                                                       Regulations defines a
-                                                      "resident" as:
+                                                      &quot;resident&quot; as:
                                                     </span>
                                                   </span>
                                                 </span>
@@ -6314,7 +6314,7 @@ const PrivacyPolicy = () => (
                                           >
                                             <span data-custom-class="body_text">
                                               All other individuals are defined
-                                              as "non-residents."
+                                              as &quot;non-residents.&quot;
                                             </span>
                                           </span>
                                         </span>
@@ -6336,7 +6336,7 @@ const PrivacyPolicy = () => (
                                             }}
                                           >
                                             <span data-custom-class="body_text">
-                                              If this definition of "resident"
+                                              If this definition of &quot;resident&quot;
                                               applies to you, we must adhere to
                                               certain rights and obligations
                                               regarding your personal
@@ -8861,7 +8861,7 @@ const PrivacyPolicy = () => (
                                               internal research for
                                               technological development and
                                               demonstration. This is not
-                                              considered to be "selling" of your
+                                              considered to be &quot;selling&quot; of your
                                               personal data.
                                               <span
                                                 style={{
@@ -9172,7 +9172,7 @@ const PrivacyPolicy = () => (
                                                       disclosed personal
                                                       information for a business
                                                       or commercial purpose can
-                                                      be found under "
+                                                      be found under &quot;
                                                       <span
                                                         style={{ fontSize: 15 }}
                                                       >
@@ -9241,7 +9241,7 @@ const PrivacyPolicy = () => (
                                                                               "rgb(89, 89, 89)"
                                                                           }}
                                                                         >
-                                                                          "
+                                                                          &quot;
                                                                         </span>
                                                                       </span>
                                                                     </span>
@@ -11473,7 +11473,7 @@ const PrivacyPolicy = () => (
                                                       notice from time to time.
                                                       The updated version will
                                                       be indicated by an updated
-                                                      "Revised" date and the
+                                                      &quot;Revised&quot; date and the
                                                       updated version will be
                                                       effective as soon as it is
                                                       accessible. If we make
