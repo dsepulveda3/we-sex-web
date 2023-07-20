@@ -21,6 +21,106 @@ import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 import clienteAxios from '../../config/axios';
 import { useRouter } from 'next/router';
 
+const StyledHeader = styled.header`
+  .navbar {
+    background-image: url(${({ bgImage }) => bgImage});
+    background-size: cover;
+    background-position: center;
+
+    .navbar-toggler {
+      border-color: white;
+      color: white;
+      z-index: 2;  /* set the z-index of the navbar-toggler */
+    }
+
+    @media (max-width: 768px) {
+      .navbar-toggler {
+        float: right;
+      }
+      .navbar-collapse {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 40vh;
+        width: 100vw;
+        background-color: violet;
+        background-image: url("/img/landing/cta-bg.jpg");
+        z-index: 1;  /* set the z-index of the navbar-collapse */
+      }
+      .navbar-nav {
+        padding-top: 70px; /* adjust this value as needed to add space at the top */
+      }
+      .navbar-nav .nav-link {
+        color: black;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .ml-auto {
+        margin-left: auto !important;
+      }
+      .navbar-nav {
+        margin-left: auto !important;
+      }
+    }
+  }
+  
+  .backgroundClick {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: transparent;
+    z-index: 1;  /* set the z-index of the background click */
+  }
+`;
+
+const Title = styled.h1`
+  font-size: 5.5rem;
+  color: white;
+  font-family: "Averia Libre", sans-serif;
+  opacity: 1;
+  margin-left: 4px;
+  margin-top: 4px;
+
+  @media(max-width: 540px){
+    color: white;
+    font-size: 5.5rem;
+    margin-bottom:1.5rem;
+  }
+`;
+
+const PremiumMaterialButton = styled(NavLink)`
+  background-color: var(--green);
+  border-radius: 30px;
+  //padding: 10px 20px;
+  padding-right: 10px;
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: var(--green-darken);
+    color: white;
+  }
+`;
+
+const StyledNavbarToggler = styled(NavbarToggler)`
+  background-image: url(${'/img/icons/navbar-icon.png'});
+  background-size: cover;
+  background-position: center;
+  border: none;
+  
+  &:focus {
+    outline: none;
+  }
+
+  &::after {
+    display: none;
+  }
+`;
+
 const NavbarW = styled(Navbar)`
   background-color: var(--violet);
   /* padding: 1rem; */
@@ -50,7 +150,7 @@ const formatResult = (item) => {
   );
 };
 
-const Header = () => {
+const Header = ({type}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchString, setSearchString] = useState('');
   const [discussionsToSearch, setDiscussionsToSearch] = useState([]);
@@ -59,24 +159,42 @@ const Header = () => {
   const toggle = () => setIsOpen(!isOpen);
   const router = useRouter();
 
+  const [bgColor, setBgColor] = useState('transparent');
+  const [bgImage, setBgImage] = useState('/img/landing/cta-bg.jpg');
+
+  useEffect(() => {
+    if (type === 'landing') {
+      setBgImage('');
+    }
+    
+  }, [type]);
+  
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 0) {
+        setBgColor('#000000');
+      } else {
+        setBgColor('transparent');
+      }
+      setBgImage('/img/landing/cta-bg.jpg');
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+
+  const toggleNavbar = () => {
+    setIsOpen(!isOpen);
+  };
+
   function handleOnSearch(string, results) {
     setSearchString(string);
   }
 
   function handleOnSelect(item) {
-    // const url = window.location.href.split('/');
-
-    // if (articlesToSearch.map((a) => a._id).includes(item._id)) {
-    //   router.push(
-    //     url[3] === 'articleDetail' ? `${item._id}` : `articleDetail/${item._id}`
-    //   );
-    // } else if (discussionsToSearch.map((a) => a._id).includes(item._id)) {
-    //   router.push(
-    //     url[3] === 'discussionDetail'
-    //       ? `${item._id}`
-    //       : `discussionDetail/${item._id}`
-    //   );
-    // }
     window.open(
       `/buscar?search=${item.title
         .normalize('NFD')
@@ -118,63 +236,142 @@ const Header = () => {
   }
 
   return (
-    <div style={{ backgroundColor: 'var(--violet)' }}>
-      <Container>
-        <NavbarW expand='lg' dark>
-          <NavbarBrand
-            style={{ color: 'white', fontSize: '2.8rem', marginBottom: '0' }}
-            href='/'
-          >
-            WeSex
+    <StyledHeader bgColor={bgColor} bgImage={bgImage}>
+      <Navbar expand="md" className="fixed-top" >
+      <div className="d-flex justify-content-between align-items-center w-100" style={{marginLeft: "20px", marginRight: "20px"}}>
+          <NavbarBrand href="/">
+            <Title>WeSex</Title>
           </NavbarBrand>
-          <NavbarToggler onClick={toggle} />
+          <StyledNavbarToggler aria-controls="basielc-navbar-nav" onClick={toggleNavbar} />
           <Collapse isOpen={isOpen} navbar>
-            <Nav className='me-auto' navbar>
+            <Nav navbar>
+            <NavItem>
+                <NavLink onClick={toggleNavbar} style={{ color: "white"}} css={{ "&:hover": {textDecoration: "underline"}}} className="nav-link scrollto active" href="/">
+                  Home
+                </NavLink>
+              </NavItem>
               <NavItem>
-                <NavLink href='/articulos' className='nav-item-ws'>
+                <NavLink  className="nav-link scrollto" 
+                href="/articulos" style={{color: "white"}}>
                   Articulos
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href='/debates' className='nav-item-ws'>
+                <NavLink className="nav-link scrollto" 
+                href="/debates" style={{color: "white"}}
+                >
                   Debates
                 </NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink href='/sexionario' className='nav-item-ws'>
-                  Sexionario
+              {/* <NavItem>
+                <NavLink className="nav-link scrollto" 
+                href="/#about" style={{color: "white"}}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleNavbar();
+                  const el = document.getElementById('about');
+                  window.scrollTo({
+                    top: el.offsetTop - 70, // Adjust this value as needed
+                    behavior: 'smooth',
+                  });
+                }}
+                >
+                  Profesionales
                 </NavLink>
-              </NavItem>
+              </NavItem> */}
+              
               <NavItem>
-                <NavLink href='/sexfaqs' className='nav-item-ws'>
-                  SexFaqs
-                </NavLink>
+                <PremiumMaterialButton onClick={toggleNavbar} className="nav-link scrollto" href="/premium-material" style={{color: "white"}}>
+                  Premium Material
+                </PremiumMaterialButton>
               </NavItem>
-            </Nav>
 
+              
+            </Nav>
             <NavbarText style={{ width: 300, marginLeft: 20, marginRight: 20 }}>
-              <ReactSearchAutocomplete
-                items={itemsToSearch}
-                maxResults={15}
-                onSearch={handleOnSearch}
-                onSelect={handleOnSelect}
-                // onHover={handleOnHover}
-                // onFocus={handleOnFocus}
-                // onClear={handleOnClear}
-                showNoResultsText={searchString}
-                resultStringKeyName='title' // String to display in the results
-                formatResult={formatResult}
-                fuseOptions={{
-                  keys: ['title', 'description', 'keywords'],
-                }} // Search in the description text as well
-                styling={{ zIndex: 3 }} // To display it on top of the search box below
-              />
-            </NavbarText>
+                <ReactSearchAutocomplete
+                  items={itemsToSearch}
+                  maxResults={15}
+                  onSearch={handleOnSearch}
+                  onSelect={handleOnSelect}
+                  showNoResultsText={searchString}
+                  resultStringKeyName='title'
+                  formatResult={formatResult}
+                  fuseOptions={{
+                    keys: ['title', 'description', 'keywords'],
+                  }} 
+                  styling={{ zIndex: 3 }} 
+                />
+              </NavbarText>
           </Collapse>
-        </NavbarW>
-      </Container>
-    </div>
+        </div>
+      </Navbar>
+      {isOpen && <div className="backgroundClick" onClick={toggleNavbar}></div>}
+    </StyledHeader>
   );
 };
 
 export default Header;
+
+
+// return (
+//   <div style={{ backgroundColor: 'var(--violet)' }}>
+//     <StyledHeader>
+//       <NavbarW expand='lg' dark>
+//         <NavbarBrand
+//           style={{ color: 'white', fontSize: '2.8rem', marginBottom: '0' }}
+//           href='/'
+//         >
+//           WeSex
+//         </NavbarBrand>
+//         <NavbarToggler onClick={toggle} />
+//         <Collapse isOpen={isOpen} navbar>
+//           <Nav className='me-auto' navbar>
+//             <NavItem>
+//               <NavLink href='/articulos' className='nav-item-ws'>
+//                 Articulos
+//               </NavLink>
+//             </NavItem>
+//             <NavItem>
+//               <NavLink href='/debates' className='nav-item-ws'>
+//                 Debates
+//               </NavLink>
+//             </NavItem>
+//             <NavItem>
+//               <NavLink href='/sexionario' className='nav-item-ws'>
+//                 Sexionario
+//               </NavLink>
+//             </NavItem>
+//             <NavItem>
+//               <NavLink href='/sexfaqs' className='nav-item-ws'>
+//                 SexFaqs
+//               </NavLink>
+//             </NavItem>
+//           </Nav>
+
+//           <NavbarText style={{ width: 300, marginLeft: 20, marginRight: 20 }}>
+//             <ReactSearchAutocomplete
+//               items={itemsToSearch}
+//               maxResults={15}
+//               onSearch={handleOnSearch}
+//               onSelect={handleOnSelect}
+//               // onHover={handleOnHover}
+//               // onFocus={handleOnFocus}
+//               // onClear={handleOnClear}
+//               showNoResultsText={searchString}
+//               resultStringKeyName='title' // String to display in the results
+//               formatResult={formatResult}
+//               fuseOptions={{
+//                 keys: ['title', 'description', 'keywords'],
+//               }} // Search in the description text as well
+//               styling={{ zIndex: 3 }} // To display it on top of the search box below
+//             />
+//           </NavbarText>
+//         </Collapse>
+//       </NavbarW>
+//     </StyledHeader>
+//   </div>
+// );
+// };
+
+// export default Header;

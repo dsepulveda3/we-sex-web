@@ -36,6 +36,7 @@ const ArticlesHome = () => {
   const [searchString, setSearchString] = useState('');
   const [articlesItems, setArticlesItems] = useState([]);
   const [articlesCategories, setArticlesCategories] = useState([]);
+
   useEffect(() => {
     getArticlesCategories();
   }, []);
@@ -47,8 +48,8 @@ const ArticlesHome = () => {
 
   return (
     <>
-      <Container>
-        <Title>Artículos</Title>
+      <Container >
+        <Title >Artículos</Title>
         <Subtitle>Aprende de los mejores expertos en sexualidad</Subtitle>
         <Row>
           <Col className='mb-4' xl={12} xs={12} sm={12} md={12}>

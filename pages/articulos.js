@@ -115,7 +115,7 @@ export default function Articulos() {
         <meta name='keywords' content={''} />
       </Head>
       <Layout>
-        <div className='sec-title'>
+        {/* <div className='sec-title'>
           <Container>
             <h1>Artículos</h1>
             <p className='sec-subtitle first-uppercase'>
@@ -124,8 +124,24 @@ export default function Articulos() {
                 : null}
             </p>
           </Container>
-        </div>
+        </div> */}
         <Container>
+            <h1 >Artículos</h1>
+            <p className='sec-subtitle first-uppercase'>
+              {selectedCategory
+                ? articlesCategoriesTitle[selectedCategory]
+                : null}
+            </p>
+          </Container>
+        <Container>
+          <div>
+          <h1 style={{color: "black"}}>Artículos</h1>
+            <p className='sec-subtitle first-uppercase'>
+              {selectedCategory
+                ? articlesCategoriesTitle[selectedCategory]
+                : null}
+            </p>
+          </div>
           <div>
             <Title>Categorías</Title>
             <RowPers className='mx-auto text-center'>
