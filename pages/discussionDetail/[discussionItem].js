@@ -234,7 +234,7 @@ const DiscussionDetail = ({ discussionItem }) => {
                   src='/img/icons/quote.svg'
                   alt='Quote symbol'
                 />
-                <h1>{discussionItem.title}</h1>
+                <h1>{discussionItem?.title}</h1>
               </DiscussionTitle>
               <p>{discussionItem.subtitle}</p>
               <Published>

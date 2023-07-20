@@ -229,6 +229,7 @@ const ArticleDetail = ({ articleItem }) => {
     <>
       <Head>
         <title>{`${articleItem.title} | WeSex`}</title>
+        
         <meta name='description' content={''} />
         <meta name='keywords' content={''} />
       </Head>
@@ -250,7 +251,7 @@ const ArticleDetail = ({ articleItem }) => {
                   src='/img/icons/quote.svg'
                   alt='Quote symbol'
                 />
-                <h1>{articleItem.title}</h1>
+                <h1>{articleItem?.title}</h1>
               </ArticleTitle>
               <p>{articleItem.subtitle}</p>
               <Col>
