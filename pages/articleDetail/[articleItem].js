@@ -255,7 +255,7 @@ const ArticleDetail = ({ articleItem }) => {
               </ArticleTitle>
               <p>{articleItem?.subtitle}</p>
               <Col>
-              {articleItem.content?.map((item, index) => {
+              {articleItem?.content?.map((item, index) => {
                 if (item.type === 'text') {
                   return (
                     <div
@@ -303,8 +303,8 @@ const ArticleDetail = ({ articleItem }) => {
                 ) : (
                   <>
                     Publicado por
-                    <Link href={`/perfil/${articleItem.user.user}`}>
-                      <a>@{articleItem.user.user}</a>
+                    <Link href={`/perfil/${articleItem?.user.user}`}>
+                      <a>@{articleItem?.user.user}</a>
                     </Link>
                   </>
                 )}

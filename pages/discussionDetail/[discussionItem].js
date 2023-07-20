@@ -243,8 +243,8 @@ const DiscussionDetail = ({ discussionItem }) => {
                 ) : (
                   <>
                     Publicado por
-                    <Link href={`/perfil/${discussionItem.user.user}`}>
-                      <a>@{discussionItem.user.user}</a>
+                    <Link href={`/perfil/${discussionItem?.user.user}`}>
+                      <a>@{discussionItem?.user.user}</a>
                     </Link>
                   </>
                 )}
