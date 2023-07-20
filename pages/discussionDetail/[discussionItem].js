@@ -252,11 +252,11 @@ const DiscussionDetail = ({ discussionItem }) => {
               <Links>
                 <button onClick={() => downloadAppAlert()}>
                   <img src='/img/icons/heart-outline.svg' alt='Likes' />
-                  {discussionItem.likes}
+                  {discussionItem?.likes}
                 </button>
                 <button onClick={() => downloadAppAlert()}>
                   <img src='/img/icons/comments.svg' alt='Comments' />
-                  {discussionItem.comments}
+                  {discussionItem?.comments}
                 </button>
                 <button onClick={() => downloadAppAlert()}>
                   <img src='/img/icons/share.svg' alt='Likes' />

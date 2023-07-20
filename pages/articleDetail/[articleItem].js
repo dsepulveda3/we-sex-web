@@ -312,11 +312,11 @@ const ArticleDetail = ({ articleItem }) => {
               <Links>
                 <button onClick={() => downloadAppAlert()}>
                   <img src='/img/icons/heart-outline.svg' alt='Likes' />
-                  {articleItem.likes}
+                  {articleItem?.likes}
                 </button>
                 <button onClick={() => downloadAppAlert()}>
                   <img src='/img/icons/comments.svg' alt='Comments' />
-                  {articleItem.comments}
+                  {articleItem?.comments}
                 </button>
                 <button onClick={() => downloadAppAlert()}>
                   <img src='/img/icons/share.svg' alt='Likes' />
