@@ -39,8 +39,11 @@ const Perfil = () => {
 
   useEffect(() => {
     const currentUrl = window.location.pathname.split('/')[2];
-    getProfile(currentUrl);
-  }, [window.location.pathname]);
+    if (typeof window !== 'undefined') {
+      getProfile(currentUrl);
+    }
+  }, []);
+  
 
   async function getProfile(user) {
     await clienteAxios.get(`/users/public/${user}`).then((response) => {
