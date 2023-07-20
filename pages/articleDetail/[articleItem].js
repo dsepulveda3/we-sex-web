@@ -207,7 +207,7 @@ const ArticleDetail = ({ articleItem }) => {
 
   async function getNewArticles() {
     await clienteAxios
-      .get(`/articles/public/${articleItem.category}`)
+      .get(`/articles/public/${articleItem?.category}`)
       .then((response) => {
         setNewArticles(
           response.data.results
@@ -237,9 +237,9 @@ const ArticleDetail = ({ articleItem }) => {
         <ArticleTitle>
           <span className='hide-mobile'>Articulo de la categoría </span>
           <Link
-            href={`/articulos?categoria=${articleItem.category.toLowerCase()}`}
+            href={`/articulos?categoria=${articleItem?.category.toLowerCase()}`}
           >
-            <a>{articlesCategoriesTitle[articleItem.category]}</a>
+            <a>{articlesCategoriesTitle[articleItem?.category]}</a>
           </Link>
         </ArticleTitle>
         <Container className='py-4'>
@@ -298,7 +298,7 @@ const ArticleDetail = ({ articleItem }) => {
                 })}
               </Col>
               <Published>
-                {articleItem.anonymus ? (
+                {articleItem?.anonymus ? (
                   <>Debate creado anónimamente</>
                 ) : (
                   <>
