@@ -93,7 +93,7 @@ export default function Home() {
         <Profesionales />
         <Regalar /> */}
         <ComprarUniversal title_mp='EMA - Guía Zonas Erógenas + Tantra - WeSex' unit_price_mp= {2200} quantity_mp={1} currency_id_mp='ARS'
-          price_before_ARG='AR$  3000' price_ARG='AR$  2400' price_before_USD='U$D  10' price_USD='U$D  8' redirection_succesful_mp='https://payhip.com/b/bUCD6' 
+          price_before_ARG='AR$  3000' price_ARG='AR$  2200' price_before_USD='U$D  10' price_USD='U$D  8' redirection_succesful_mp='https://payhip.com/b/bUCD6' 
           redirection_failed_mp='https://www.we.sex/packs/pack2-email-a'
           link_payhip_usd='https://payhip.com/b/yR7lQ' has_promo={false}
         />
