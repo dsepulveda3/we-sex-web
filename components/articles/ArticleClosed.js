@@ -36,6 +36,8 @@ const ArticleClosedStyle = styled.button`
   }
 `;
 
+
+
 const Category = styled.a`
   background-color: var(--green);
   padding: 0.5rem 1.5rem;

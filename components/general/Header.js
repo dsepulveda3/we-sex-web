@@ -107,10 +107,12 @@ const PremiumMaterialButton = styled(NavLink)`
 `;
 
 const StyledNavbarToggler = styled(NavbarToggler)`
-  background-image: url(${'/img/icons/navbar-icon.png'});
+  background-image: url(${'/img/icons/search-bold.svg'});
+  padding: 0.2px;
   background-size: cover;
   background-position: center;
   border: none;
+  filter: invert(1); /* Add this line to make the SVG white */
   
   &:focus {
     outline: none;
@@ -135,6 +137,15 @@ const NavbarW = styled(Navbar)`
     &:hover {
       border: white solid;
     }
+  }
+`;
+
+const NavItemHideOnPhone = styled(NavItem)`
+  &:hover {
+  text-decoration: underline;
+  }
+  @media (max-width: 767px) {
+    display: none;
   }
 `;
 
@@ -245,24 +256,29 @@ const Header = ({type}) => {
           <StyledNavbarToggler aria-controls="basielc-navbar-nav" onClick={toggleNavbar} />
           <Collapse isOpen={isOpen} navbar>
             <Nav navbar>
-            <NavItem>
+
+            
+              <NavItemHideOnPhone>
                 <NavLink onClick={toggleNavbar} style={{ color: "white"}} css={{ "&:hover": {textDecoration: "underline"}}} className="nav-link scrollto active" href="/">
                   Home
                 </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink  className="nav-link scrollto" 
-                href="/articulos" style={{color: "white"}}>
-                  Articulos
-                </NavLink>
-              </NavItem>
-              <NavItem>
+              </NavItemHideOnPhone>
+
+              <NavItemHideOnPhone>
                 <NavLink className="nav-link scrollto" 
                 href="/debates" style={{color: "white"}}
                 >
                   Debates
                 </NavLink>
-              </NavItem>
+              </NavItemHideOnPhone>
+
+              <NavItemHideOnPhone>
+                <NavLink  className="nav-link scrollto" 
+                href="/articulos" style={{color: "white"}}>
+                  Articulos
+                </NavLink>
+              </NavItemHideOnPhone>
+
               {/* <NavItem>
                 <NavLink className="nav-link scrollto" 
                 href="/#about" style={{color: "white"}}
@@ -280,11 +296,11 @@ const Header = ({type}) => {
                 </NavLink>
               </NavItem> */}
               
-              <NavItem>
+              <NavItemHideOnPhone>
                 <PremiumMaterialButton onClick={toggleNavbar} className="nav-link scrollto" href="/premium-material" style={{color: "white"}}>
                   Premium Material
                 </PremiumMaterialButton>
-              </NavItem>
+              </NavItemHideOnPhone>
 
               
             </Nav>

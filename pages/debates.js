@@ -7,7 +7,6 @@ import { Container, Row, Col } from 'reactstrap';
 import HeadInfo from '../components/general/HeadInfo';
 import Header from '../components/general/Header';
 import Footer from '../components/general/Footer';
-import Title from '../components/general/Title';
 import DiscussionClosed from '../components/debates/DiscussionClosed';
 import DiscussionsWithTabs from '../components/debates/DiscussionsWithTabs';
 import { discussionCategoriesTitle, discussionsCategories } from '../data';
@@ -73,6 +72,19 @@ const CategoryButton = styled.button`
   /* max-width: 150px!important; */
 `;
 
+const TitleContainer = styled.div`
+    margin-top: 6.7rem;
+    background-color: var(--green);
+  }
+`;
+
+const Title = styled.div`
+    font-size: 3.5rem;
+    font-family: "Averia Libre", sans-serif;
+  }
+`;
+
+
 export default function Debates() {
   const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState('');
@@ -129,16 +141,16 @@ export default function Debates() {
         <meta name='keywords' content={''} />
       </Head>
       <Layout>
-        <div className='sec-title'>
+        <TitleContainer className='sec-title'>
           <Container>
-            <h1>Debates</h1>
+            <Title>Debates</Title>
             <p className='sec-subtitle first-uppercase'>
               {selectedCategory
                 ? discussionCategoriesTitle[selectedCategory]
                 : null}
             </p>
           </Container>
-        </div>
+        </TitleContainer>
         <Container>
           {/* <h3 className="text-bold text-wesx mb-4 mt-4">Categorías</h3> */}
           <div className='mx-auto text-center mt-5'>
