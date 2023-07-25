@@ -1,6 +1,18 @@
+import { Global, css } from '@emotion/react'; // Import `css` from '@emotion/react'
 import Head from 'next/head';
 import '../styles/bootstrap.min.css';
 import '../styles/globals.css';
+
+// Rest of your code remains unchanged
+
+
+const globalStyles = css`
+  html {
+    scroll-behavior: smooth; /* Enable smooth scrolling for the entire page */
+    overscroll-behavior-y: contain; /* Prevent overscrolling on the vertical axis */
+  }
+`;
+
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -19,6 +31,7 @@ function MyApp({ Component, pageProps }) {
           }}
         />
       </Head>
+      <Global styles={globalStyles} />
       <Component {...pageProps} />
     </>
   );

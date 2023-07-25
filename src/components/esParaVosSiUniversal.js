@@ -34,7 +34,7 @@ const Title = styled.h4`
     }
     @media(max-width: 540px){
         margin-bottom:1.5rem;
-        font-size: 4rem;
+        font-size: 3rem;
     }
     @media(min-width: 540px){
         margin-bottom: 3rem;

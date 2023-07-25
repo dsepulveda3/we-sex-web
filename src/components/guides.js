@@ -207,6 +207,28 @@ const ColHideOnPhone = styled(Col)`
   }
 `;
 
+const StyledH3 = styled.h3`
+  font-family: "Karla", sans-serif;
+  color: var(--violet);
+  text-align: left;
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+
+  span {
+    color: var(--violet); /* Default color for the <span> elements */
+  }
+
+  &:hover {
+    color: var(--green); /* Change the color of the whole <h3> on hover */
+    span {
+      color: var(--green); /* Change the color of the <span> elements on hover */
+    }
+  }
+`;
+
+
 
 const Guides = () => {
   return (
@@ -215,7 +237,7 @@ const Guides = () => {
             <Container>
                 <Title>Nuestras <span>guías Premium</span></Title>
                 <Text>
-                    Páginas de sabiduría sexual para volverte un experto en el tema y poder aplicarlo en tu vida sexual.
+                    Páginas de sabiduría sexual para volverte un experto en cada tema.
                 </Text>
                 <Row data-aos="fade-left">
 
@@ -224,7 +246,7 @@ const Guides = () => {
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageGuia2 src="../img/ico/salir_rutina.png" className="img-fluid"/>
-                            <h3>Salir de la rutina con tu pareja</h3>
+                            <StyledH3>Salir <span>de la</span> rutina <span>con tu</span> pareja</StyledH3>
                         </ContainerContentGuide>
                     </GuideSquare>
                     </Link>
