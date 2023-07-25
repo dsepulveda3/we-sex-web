@@ -293,7 +293,7 @@ const Packs = () => {
                 </Text>
                 <Row data-aos="fade-left">
 
-                {/* <Col lg="3" md="4" >
+                <Col lg="3" md="4" >
                     <Link href="/premium-material/packs/pack6-rutina-zonas-tantra-anal">
                         <GuideSquare>
                             <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
@@ -313,7 +313,7 @@ const Packs = () => {
                              </ContainerContentGuide>
                         </GuideSquare>
                     </Link>
-                </Col> */}
+                </Col>
 
                 <Col lg="3" md="4" >
                     <Link href="/premium-material/packs/pack1">
@@ -358,7 +358,7 @@ const Packs = () => {
                     </Link>
                 </Col>
 
-                <ColHideOnPhone lg="3" md="4" >
+                {/* <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageGuiaQuestion src="../img/ico/question-mark-draw.png" className="img-fluid"/>
@@ -373,7 +373,7 @@ const Packs = () => {
                             <h3>Pronto</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
-                </ColHideOnPhone>
+                </ColHideOnPhone> */}
 
                 <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
