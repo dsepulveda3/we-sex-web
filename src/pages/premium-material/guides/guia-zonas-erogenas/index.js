@@ -69,11 +69,11 @@ export default function Home() {
       <main>
         {/* <NavBarWS /> */}
         <HeaderPremium />
-        <FirstBannerUniversal titleText='Guía de Zonas Erógenas:' titleSpan=' aprende a dar más placer' price='AR$ 1500  /  U$D 6' description1='' 
+        <FirstBannerUniversal titleText='Guía de Zonas Erógenas:' titleSpan=' aprende a dar más placer' price='AR$ 1600  /  U$D 6' description1='' 
           description2='Te enseñamos a estimular cada parte del cuerpo, de pies a cabeza.' imageVisibility={true} 
           videoVisibility={false} image='../../img/ico/2ZonasErogenas (1).png' widthImage={'45%'}/>
         <AfterDiv />
-        <EsParaVosSiUniversal title1_1='Esta guía de Zonas Erógenas es' title1Span='para ti' title1_2=' si buscas' 
+        <EsParaVosSiUniversal title1_1='Esta guía de Zonas Erógenas es ' title1Span='para ti' title1_2=' si buscas' 
           emoji1='✨' text1_1='La magia de combinar diferentes zonas y ' text1Span='técnicas para alcanzar un placer extremo.' text1_2=''
           emoji2='👀' text2_1='Cómo ' text2Span='romper con el coitocentrismo' text2_2=' y explorar nuevas prácticas sexuales.' 
           emoji3='💦' text3_1='Minimizar conflictos ' text3Span='relacionados con la eyaculación precoz' text3_2=' y la falta de erección.' 
@@ -86,8 +86,8 @@ export default function Home() {
         <Pack2/>
         {/* <Pack/> */}
         <Regalar />
-        <ComprarUniversal title_mp='Guía Zonas Erógenas - WeSex' unit_price_mp= {1500} quantity_mp={1} currency_id_mp='ARS'
-          price_ARG='AR$  1500' price_USD='U$D  6' redirection_succesful_mp='https://payhip.com/b/FOwpx' 
+        <ComprarUniversal title_mp='Guía Zonas Erógenas - WeSex' unit_price_mp= {1600} quantity_mp={1} currency_id_mp='ARS'
+          price_ARG='AR$  1600' price_USD='U$D  6' redirection_succesful_mp='https://payhip.com/b/FOwpx' 
           redirection_failed_mp='https://www.we.sex/premium-material/guides/guia-zonas-erogenas'
           link_payhip_usd='https://payhip.com/b/yUYAi' has_promo={true}
           buy_just='Comprar solo guía zonas erógenas' reminder_buy_just='Estás comprando solo la guía de zonas erógenas' 

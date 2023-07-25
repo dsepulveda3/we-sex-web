@@ -218,6 +218,16 @@ const Guides = () => {
                     Páginas de sabiduría sexual para volverte un experto en el tema y poder aplicarlo en tu vida sexual.
                 </Text>
                 <Row data-aos="fade-left">
+                {/* <Col lg="3" md="4" >
+                <Link href="/premium-material/guides/guia-salir-rutina">
+                    <GuideSquare>
+                        <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                            <AppImageGuia2 src="../img/ico/salir_rutina.png" className="img-fluid"/>
+                            <h3>Salir de la rutina con tu pareja</h3>
+                        </ContainerContentGuide>
+                    </GuideSquare>
+                    </Link>
+                </Col> */}
                 <Col lg="3" md="4" >
                     <Link href="/premium-material/guides/guia-zonas-erogenas">
                         <GuideSquare>
@@ -258,7 +268,6 @@ const Guides = () => {
                         </GuideSquare>
                     </Link>
                 </Col> */}
-                
                 <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">

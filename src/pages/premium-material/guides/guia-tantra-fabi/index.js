@@ -69,7 +69,7 @@ export default function Home() {
       <main>
         {/* <NavBarWS /> */}
         <HeaderPremium />
-        <FirstBannerUniversal titleText='Guía de tantra:' titleSpan='orgasmos más profundos' price='AR$ 1.500  /  U$D 6' description1='Te enseñamos de 0 a 100,' 
+        <FirstBannerUniversal titleText='Guía de tantra:' titleSpan='orgasmos más profundos' price='AR$ 1.600  /  U$D 6' description1='Te enseñamos de 0 a 100,' 
           description2='cómo aplicar el tantra a tu vida sexual.'  imageVisibility={true} 
           videoVisibility={false} image='../../img/ico/Tantra (1).png' widthImage={'45%'}/>
         <AfterDiv />
@@ -86,8 +86,8 @@ export default function Home() {
         <ProfesionalesUniversal fabiVisibility={true} ceciliaVisibility={true} barbaraVisibility={true}/>
         <Pack/>
         <Regalar />
-        <ComprarUniversal title_mp='F - Guía Tantra- WeSex' unit_price_mp= {1500} quantity_mp={1} currency_id_mp='ARS'
-          price_ARG='AR$  1500' price_USD='U$D  6' redirection_succesful_mp='https://payhip.com/b/lqoxY' 
+        <ComprarUniversal title_mp='F - Guía Tantra- WeSex' unit_price_mp= {1600} quantity_mp={1} currency_id_mp='ARS'
+          price_ARG='AR$  1600' price_USD='U$D  6' redirection_succesful_mp='https://payhip.com/b/lqoxY' 
           redirection_failed_mp='https://www.we.sex/premium-material/guides/guia-tantra-fabi'
           link_payhip_usd='https://payhip.com/b/wrBYp' has_promo={true}
           buy_just='Comprar solo guía tantra' reminder_buy_just='Estás comprando solo la guía de Tantra' 

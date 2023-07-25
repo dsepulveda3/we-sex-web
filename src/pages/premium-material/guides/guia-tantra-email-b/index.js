@@ -84,8 +84,8 @@ export default function Home() {
         <ProfesionalesUniversal fabiVisibility={true} ceciliaVisibility={true} barbaraVisibility={true}/>
         <Pack/>
         <Regalar />
-        <ComprarUniversal title_mp='EMB - Guía Tantra- WeSex' unit_price_mp= {1500} quantity_mp={1} currency_id_mp='ARS'
-          price_ARG='AR$  1500' price_USD='U$D  6' redirection_succesful_mp='https://payhip.com/b/vZLSt' 
+        <ComprarUniversal title_mp='EMB - Guía Tantra- WeSex' unit_price_mp= {1600} quantity_mp={1} currency_id_mp='ARS'
+          price_ARG='AR$  1600' price_USD='U$D  6' redirection_succesful_mp='https://payhip.com/b/vZLSt' 
           redirection_failed_mp='https://www.we.sex/premium-material/guides/guia-tantra-email-b'
           link_payhip_usd='https://payhip.com/b/XH6QS' has_promo={true}
           buy_just='Comprar solo guía tantra' reminder_buy_just='Estás comprando solo la guía de Tantra' 
