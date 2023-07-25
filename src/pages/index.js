@@ -17,7 +17,7 @@ import Questions from '@/components/questions';
 import Contactus from '@/components/contactus';
 // import Articles from '@/components/Articles/articlesWithTabs'
 // import Debates from '@/components/Debates/discussionsWithTabs'
-
+//
 
 
 const Home = () => {
