@@ -24,8 +24,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Guía de zonas erogenas - WeSex</title>
-        <meta name="description" content="Guía de zonas erogenas WeSex" /> 
+        <title>Guía para salir de la rutina con tu pareja - WeSex</title>
+        <meta name="description" content="Guía para salir de la rutina con tu pareja - WeSex" /> 
         <meta name="keywords" content="" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 

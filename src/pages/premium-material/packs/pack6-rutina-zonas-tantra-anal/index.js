@@ -25,7 +25,7 @@ export default function Home() {
     <>
       <Head>
         <title>Pack Premium 3 x 4 - WeSex</title>
-        <meta name="description" content="Guía Tantra + Sexo Anal - WeSex" /> 
+        <meta name="description" content="Guía Salir de la rutina + Zonas Erógenas + Tantra + Sexo Anal - WeSex" /> 
         <meta name="keywords" content="" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
