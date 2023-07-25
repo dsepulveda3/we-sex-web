@@ -69,7 +69,7 @@ export default function Home() {
       <main>
         {/* <NavBarWS /> */}
         <HeaderPremium />
-        <FirstBannerUniversal titleText='Guía de Zonas Erógenas:' titleSpan=' aprende a dar más placer' price='AR$ 1500  /  U$D 6' description1='' 
+        <FirstBannerUniversal titleText='Guía de Zonas Erógenas:' titleSpan=' aprende a dar más placer' price='AR$ 1600  /  U$D 6' description1='' 
           description2='Te enseñamos a estimular cada parte del cuerpo, de pies a cabeza.' imageVisibility={true} 
           videoVisibility={false} image='../../img/ico/2ZonasErogenas (1).png' widthImage={'45%'}/>
         <AfterDiv />
@@ -86,8 +86,8 @@ export default function Home() {
         <Pack2D/>
         {/* <Pack/> */}
         <Regalar />
-        <ComprarUniversal title_mp='EMD - Guía Zonas Erógenas - WeSex' unit_price_mp= {1500} quantity_mp={1} currency_id_mp='ARS'
-          price_ARG='AR$  1500' price_USD='U$D  6' redirection_succesful_mp='https://payhip.com/b/kcw3q' 
+        <ComprarUniversal title_mp='EMD - Guía Zonas Erógenas - WeSex' unit_price_mp= {1600} quantity_mp={1} currency_id_mp='ARS'
+          price_ARG='AR$  1600' price_USD='U$D  6' redirection_succesful_mp='https://payhip.com/b/kcw3q' 
           redirection_failed_mp='https://www.we.sex/premium-material/guides/guia-zonas-erogenas-email-d'
           link_payhip_usd='https://payhip.com/b/1jCvi' has_promo={false}
           // buy_just='Comprar solo guía zonas erógenas' reminder_buy_just='Estás comprando solo la guía de zonas erógenas' 

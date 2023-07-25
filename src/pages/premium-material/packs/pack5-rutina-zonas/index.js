@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Guías de Salir de la rutina + Zonas Erógenas - WeSex</title>
+        <title>Pack Explorador - WeSex</title>
         <meta name="description" content="Guías Salir de la rutina + Zonas Erógenas - WeSex" /> 
         <meta name="keywords" content="" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1" />

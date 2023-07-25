@@ -84,7 +84,7 @@ export default function Home() {
         <AfterDiv />
         <ProfesionalesUniversal fabiVisibility={true} ceciliaVisibility={true} barbaraVisibility={true}/>
         <PackUniversal title1_1='2 x 3' title1_2=' por 3.000 llevate las 3 guías de WeSex: ' 
-        title1_3='Salir de la rutina + Tantra + Anal' link_promo='/premium-material/packs/pack4' />
+        title1_3='Salir de la rutina + Tantra + Anal' link_promo='/premium-material/packs/pack4-rutina-tantra-anal' />
         {/* <Pack/> */}
         <Regalar />
         <ComprarUniversal title_mp='Guía para salir de la rutina - WeSex' unit_price_mp= {1600} quantity_mp={1} currency_id_mp='ARS'
@@ -94,7 +94,7 @@ export default function Home() {
           buy_just='Comprar solo guía para salir de la rutina' reminder_buy_just='Estás comprando solo la guía para salir de la rutina' 
           link_promo='https://payhip.com/b/cqspx' text_promo1_1=''
           text_promo1Span='' text_promo1_2=''
-          link_promo2='/premium-material/packs/pack5' text_promo2_1='O llevate la '
+          link_promo2='/premium-material/packs/pack5-rutina-zonas' text_promo2_1='O llevate la '
           text_promo2Span='guía para salir de la rutina + zonas erógenas' text_promo2_2=' a un precio orgásmico'
           />
         <Dudas />

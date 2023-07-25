@@ -69,7 +69,7 @@ export default function Home() {
       <main>
         {/* <NavBarWS /> */}
         <HeaderPremium />
-        <FirstBannerUniversal titleText='Guías de ' titleSpan='Zonas Erógenas + Anal + Tantra' price_before= 'AR$ 4500  /  U$D 15' price='AR$ 3.000  /  U$D 12' description1='Llevate 3, paga 2 :) .' 
+        <FirstBannerUniversal titleText='Guías de ' titleSpan='Zonas Erógenas + Anal + Tantra' price_before= 'AR$ 4800  /  U$D 18' price='AR$ 3200  /  U$D 12' description1='Llevate 3, paga 2 :) .' 
           description2='Compra el pack a un precio orgásmico.' 
           videoVisibility={false} imageVisibility={false}/>
           <AfterDiv />
@@ -103,8 +103,8 @@ export default function Home() {
         <AfterDiv />
         <Profesionales />
         <Regalar /> */}
-        <ComprarUniversal title_mp='EMB - Guía Zonas Erógenas + Anal + Tantra - WeSex' unit_price_mp= {3000} quantity_mp={1} currency_id_mp='ARS'
-          price_before_ARG='AR$  4500' price_ARG='AR$  3000' price_before_USD='U$D  15' price_USD='U$D  12' redirection_succesful_mp='https://payhip.com/b/XwZTB' 
+        <ComprarUniversal title_mp='EMB - Guía Zonas Erógenas + Anal + Tantra - WeSex' unit_price_mp= {3200} quantity_mp={1} currency_id_mp='ARS'
+          price_before_ARG='AR$  4800' price_ARG='AR$  3200' price_before_USD='U$D  18' price_USD='U$D  12' redirection_succesful_mp='https://payhip.com/b/XwZTB' 
           redirection_failed_mp='https://www.we.sex/packs/pack1-email-b'
           link_payhip_usd='https://payhip.com/b/Gutc2' has_promo={false}
         />

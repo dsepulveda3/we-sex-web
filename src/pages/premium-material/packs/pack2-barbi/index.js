@@ -67,7 +67,7 @@ export default function Home() {
       <main>
         {/* <NavBarWS /> */}
         <HeaderPremium />
-        <FirstBannerUniversal titleText='Guías de ' titleSpan='Zonas Erógenas + Tantra' price_before= '' price='AR$ 2.200  /  U$D 10' description1='Compra el pack' 
+        <FirstBannerUniversal titleText='Guías de ' titleSpan='Zonas Erógenas + Tantra' price_before= '' price='AR$ 2400  /  U$D 10' description1='Compra el pack' 
           description2='a un precio orgásmico.' 
           videoVisibility={false} imageVisibility={false}/>
           <AfterDiv />
@@ -92,8 +92,8 @@ export default function Home() {
         <AfterDiv />
         <Profesionales />
         <Regalar /> */}
-        <ComprarUniversal title_mp='B - Guía Zonas Erógenas + Tantra - WeSex' unit_price_mp= {2200} quantity_mp={1} currency_id_mp='ARS'
-          price_before_ARG='AR$  3000' price_ARG='AR$  2200' price_before_USD='U$D  10' price_USD='U$D  8' redirection_succesful_mp='https://payhip.com/b/01A9D' 
+        <ComprarUniversal title_mp='B - Guía Zonas Erógenas + Tantra - WeSex' unit_price_mp= {2400} quantity_mp={1} currency_id_mp='ARS'
+          price_before_ARG='AR$  3200' price_ARG='AR$  2400' price_before_USD='U$D  12' price_USD='U$D  10' redirection_succesful_mp='https://payhip.com/b/01A9D' 
           redirection_failed_mp='https://www.we.sex/packs/pack2-barbi'
           link_payhip_usd='https://payhip.com/b/5rBMa' has_promo={false}
         />

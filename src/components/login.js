@@ -178,8 +178,8 @@ const Login = () => {
                 <GoogleImage src="../../img/ico/google2.png" />
                 Entrar con Google
             </BotonArs>
-            <ForgotPasswordLink href="/forgot-password">Recuperar contraseña</ForgotPasswordLink>
-            <SignUpLink href="/signup">Aún no tienes cuenta</SignUpLink>
+            <ForgotPasswordLink href="/login/forgot-password">Recuperar contraseña</ForgotPasswordLink>
+            <SignUpLink href="/login/signup">Aún no tienes cuenta</SignUpLink>
         </Content>
       </LoginContainer>
     </Background>

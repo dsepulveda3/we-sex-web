@@ -292,6 +292,29 @@ const Packs = () => {
                     Páginas de sabiduría sexual para volverte un experto en el tema y poder aplicarlo en tu vida sexual.
                 </Text>
                 <Row data-aos="fade-left">
+
+                {/* <Col lg="3" md="4" >
+                    <Link href="/premium-material/packs/pack6-rutina-zonas-tantra-anal">
+                        <GuideSquare>
+                            <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                                <AppImagePack src="../img/ico/giftbox.png" className="img-fluid"/>
+                                <TextPack>Pack <span>Premium</span> 3 x 4</TextPack>
+                             </ContainerContentGuide>
+                        </GuideSquare>
+                    </Link>
+                </Col>
+                    
+                <Col lg="3" md="4" >
+                    <Link href="/premium-material/packs/pack5-rutina-zonas">
+                        <GuideSquare>
+                            <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                                <AppImagePack src="../img/ico/giftbox.png" className="img-fluid"/>
+                                <TextPack>Pack <span>Explorador</span></TextPack>
+                             </ContainerContentGuide>
+                        </GuideSquare>
+                    </Link>
+                </Col> */}
+
                 <Col lg="3" md="4" >
                     <Link href="/premium-material/packs/pack1">
                         <GuideSquare>
@@ -334,6 +357,7 @@ const Packs = () => {
                         </GuideSquare>
                     </Link>
                 </Col>
+
                 <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
@@ -350,6 +374,7 @@ const Packs = () => {
                         </ContainerContentGuide>
                     </GuideSquare>
                 </ColHideOnPhone>
+
                 <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">

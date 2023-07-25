@@ -67,7 +67,7 @@ export default function Home() {
       />
       <main>
         <NavBarWS />
-        <FirstBannerUniversal titleText='Guía completísima de' titleSpan='sexo anal' price='AR$ 1500  /  U$D 6' description1='Dejate de dudar,' 
+        <FirstBannerUniversal titleText='Guía completísima de' titleSpan='sexo anal' price='AR$ 1600  /  U$D 6' description1='Dejate de dudar,' 
           description2='regalate placer y empieza a experimentar con esta maravillosa práctica' imageVisibility={true}
           videoVisibility={false} image='../../img/como-nunca-antes-gozado.png' widthImage={'80%'}/>
         <AfterDiv />
@@ -83,8 +83,8 @@ export default function Home() {
         <AfterDiv />
         <ProfesionalesUniversal fabiVisibility={false} ceciliaVisibility={true} barbaraVisibility={true}/>
         <Regalar />
-        <ComprarUniversal title_mp='Guía Sexo Anal - WeSex' unit_price_mp= {1500} quantity_mp={1} currency_id_mp='ARS'
-          price_ARG='AR$  1500' price_USD='U$D  6' redirection_succesful_mp='https://payhip.com/b/aycOF' 
+        <ComprarUniversal title_mp='Guía Sexo Anal - WeSex' unit_price_mp= {1600} quantity_mp={1} currency_id_mp='ARS'
+          price_ARG='AR$  1600' price_USD='U$D  6' redirection_succesful_mp='https://payhip.com/b/aycOF' 
           redirection_failed_mp='https://we.sex/caro'
           link_payhip_usd='https://payhip.com/b/us2mB/' has_promo={false}/>
         <Dudas />

@@ -148,7 +148,7 @@ const FirstBannerGT = () => {
                             <Content>
                                 <Title><span>Guía de Zonas Erógenas: </span>aprende a dar más placer</Title>
                                 <Text>
-                                    <span><strong>AR$ 1.500  /  U$D 6</strong></span> <br/>
+                                    <span><strong>AR$ 1.600  /  U$D 6</strong></span> <br/>
                                     Te enseñamos a estimular cada parte del cuerpo, de pies a cabeza.
                                 </Text>
 
