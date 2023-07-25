@@ -1,9 +1,7 @@
-import { Global, css } from '@emotion/react'; // Import `css` from '@emotion/react'
+import { Global, css } from '@emotion/react';
 import Head from 'next/head';
 import '../styles/bootstrap.min.css';
 import '../styles/globals.css';
-
-// Rest of your code remains unchanged
 
 
 const globalStyles = css`
