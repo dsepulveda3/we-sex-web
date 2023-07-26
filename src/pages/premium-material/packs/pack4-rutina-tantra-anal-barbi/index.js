@@ -103,7 +103,7 @@ export default function Home() {
         <AfterDiv />
         <Profesionales />
         <Regalar /> */}
-        <ComprarUniversal title_mp='Guía Salir de la rutina + Tantra + Anal - WeSex' unit_price_mp= {3200} quantity_mp={1} currency_id_mp='ARS'
+        <ComprarUniversal title_mp='B - Guía Salir de la rutina + Tantra + Anal - WeSex' unit_price_mp= {3200} quantity_mp={1} currency_id_mp='ARS'
           price_before_ARG='AR$  4800' price_ARG='AR$  3200' price_before_USD='U$D  18' price_USD='U$D  12' redirection_succesful_mp='https://payhip.com/b/tqYc1' 
           redirection_failed_mp='https://www.we.sex/packs/pack4-rutina-tantra-anal-barbi'
           link_payhip_usd='https://payhip.com/b/iVwD4' has_promo={false}
