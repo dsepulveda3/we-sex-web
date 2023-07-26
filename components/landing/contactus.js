@@ -162,6 +162,7 @@ const Background = styled.div`
         background-attachment: scroll;
         text-align: center;
         padding-bottom:3rem;
+        margin-bottom: 5rem;
     }
 `;
 

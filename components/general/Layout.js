@@ -11,7 +11,7 @@ const Layout = ({children, type}) => {
             <HeadInfo />
             <Header type={type}/>
             {children}
-            <Footer />
+            {/* <Footer /> */}
             <MobileNavigation />
             
         </>

@@ -28,10 +28,13 @@ const Discussion = styled.div`
     border: 5px solid var(--green);
   }
 
+  
+
   @media (max-width: 540px) {
+    
     margin-top: 7px;
     margin-bottom: 7px;
-    margin-right: 0px; /* Reset margin for mobile view */
+    
     width: 100%; /* Adjust width for mobile view */
   }
 `;
@@ -46,8 +49,10 @@ const Title = styled.p`
   display: -webkit-box;
   -webkit-line-clamp: 2; /* Number of lines to show */
   -webkit-box-orient: vertical;
+  font-family: "Averia Libre", sans-serif;
   
   @media (max-width: 540px) {
+    font-size: 2.2rem;
     text-align: left;
   }
 `;
@@ -62,8 +67,10 @@ const Text = styled.p`
   display: -webkit-box;
   -webkit-line-clamp: 2; /* Number of lines to show */
   -webkit-box-orient: vertical;
+  font-family: "Averia Libre", sans-serif;
   
   @media (max-width: 540px) {
+    font-size: 1.8rem;
     text-align: left;
   }
 `;
@@ -74,6 +81,8 @@ const Interaction = styled.p`
 `;
 
 const Comments = styled.img`
+  padding-left: 1rem;
+  padding-right: 1rem;
    /* Set the desired width */
   height: 8px; /* Set the desired height */
   transform: scale(2); /* Set the desired scale factor */
@@ -81,6 +90,8 @@ const Comments = styled.img`
 `;
 
 const Likes = styled.img`
+  padding-left: 1rem;
+  padding-right: 1rem;
   /* Set the desired width */
   height: 8px; /* Set the desired height */
   transform: scale(2); /* Set the desired scale factor */
@@ -100,26 +111,14 @@ const DiscussionClosed = ({ discussion, onClick = false }) => {
     >
       <Title>{discussion?.title}</Title>
       <Text>{discussion?.subtitle}</Text>
-      <Row>
-        <Col xs={12} sm={3}>
-          <Row>
-            <Col xs={4} className='d-flex align-items-center'>
-              <Comments src='/img/icons/debate2-icon-white.svg' alt='Comments' />
-            </Col>
-            <Col xs={8} className='d-flex align-items-center'>
-              <Interaction>{discussion?.comments}</Interaction>
-            </Col>
-          </Row>
+      <Row className="align-items-center">
+        <Col xs={3} className='d-flex align-items-center'>
+          <Likes src='/img/icons/heart-icon.svg' alt='Likes' />
+          <Interaction>{discussion?.likes}</Interaction>
         </Col>
-        <Col xs={12} sm={3}>
-          <Row>
-            <Col xs={4} className='d-flex align-items-center'>
-              <Likes src='/img/icons/heart-icon.svg' alt='Likes' />
-            </Col>
-            <Col xs={8} className='d-flex align-items-center'>
-              <Interaction>{discussion?.likes}</Interaction>
-            </Col>
-          </Row>
+        <Col xs={3} className='d-flex align-items-center'>
+          <Comments src='/img/icons/debate2-icon-white.svg' alt='Comments' />
+          <Interaction>{discussion?.comments}</Interaction>
         </Col>
       </Row>
     </Discussion>

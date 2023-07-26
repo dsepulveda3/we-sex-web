@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Layout from '../components/general/Layout';
@@ -75,6 +75,10 @@ const CategoryButton = styled.button`
 const TitleContainer = styled.div`
     margin-top: 6.7rem;
     background-color: var(--green);
+    @media (max-width: 540px) {
+      margin-top: 8rem;
+    }
+
   }
 `;
 
@@ -84,6 +88,29 @@ const Title = styled.div`
   }
 `;
 
+const Button = styled.a`
+    font-family: "Karla", sans-serif;
+    border-radius: 4rem;
+    padding: 1rem 3rem;
+    font-weight: bold;
+    margin: 1rem auto;
+    border: none;
+    transition: all .5s ease;
+    background-color: var(--green);
+    color: white;
+    font-size: 2.1rem;
+    &:hover {
+        background-color: var(--violet);
+    }
+
+    margin-bottom: 10rem;
+
+`;
+
+const DiscussionContainer = styled(Container)`
+  margin-bottom: 2rem;
+`;
+
 
 export default function Debates() {
   const router = useRouter();
@@ -91,6 +118,21 @@ export default function Debates() {
   const [discussionCategories, setDiscussionCategories] = useState([]);
   const [discussions, setDiscussions] = useState([]);
   const [searchString, setSearchString] = useState('');
+  const [displayedDiscussions, setDisplayedDiscussions] = useState(8); // Number of discussions to show initially
+  const discussionsPerPage = 8;
+
+  const containerRef = useRef(null);
+
+  const handleLoadMore = () => {
+    // Increase the number of displayed discussions by the discussionsPerPage value
+    setDisplayedDiscussions(displayedDiscussions + discussionsPerPage);
+  
+    // Scroll the button into view after a slight delay
+    setTimeout(() => {
+      containerRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    }, 100); // Adjust the delay time as needed (e.g., 100ms).
+  };
+
   useEffect(() => {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -133,6 +175,7 @@ export default function Debates() {
 
   return (
     <>
+      {/* Head */}
       <Head>
         <title>
           {'Debates | WeSex - La app para hablar y aprender de sexo'}
@@ -140,65 +183,73 @@ export default function Debates() {
         <meta name='description' content={''} />
         <meta name='keywords' content={''} />
       </Head>
+      {/* Layout */}
       <Layout>
-        <TitleContainer className='sec-title'>
-          <Container>
-            <Title>Debates</Title>
-            <p className='sec-subtitle first-uppercase'>
-              {selectedCategory
-                ? discussionCategoriesTitle[selectedCategory]
-                : null}
-            </p>
-          </Container>
-        </TitleContainer>
-        <Container>
-          {/* <h3 className="text-bold text-wesx mb-4 mt-4">Categorías</h3> */}
-          <div className='mx-auto text-center mt-5'>
-            <Swiper
-              // loop={true}
-              slidesPerView={'auto'}
-              spaceBetween={3}
-              // pagination={{
-              //     clickable: true,
-              // }}
-              modules={[Pagination]}
-              className='mySwiper'
-            >
-              {discussionCategories.map((category) => (
-                <SwiperSlide key={category.order}>
-                  <CategoryButton
-                    onClick={() => clickNewCategory(category.name)}
-                    key={category.order}
-                  >
-                    <Image
-                      src={`/img/discussions/${
-                        discussionsCategories[category.order - 1].img
-                      }`}
-                      alt={category.name}
-                      width='100%'
-                      height='100%'
-                      className={
-                        selectedCategory === category?.name.toLowerCase()
-                          ? 'd-selected-category-primary'
-                          : null
-                      }
-                    />
-                    <p>{discussionCategoriesTitle[category.name]}</p>
-                  </CategoryButton>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-          <Row className='mt-4'>
-            {discussions.map((discussion) => {
-              return (
-                <Col xl={3} lg={4} md={6} xs={12} key={discussion._id}>
-                  <DiscussionClosed discussion={discussion} />
-                </Col>
-              );
-            })}
+        <div style={{ minHeight: 'calc(100vh - 160px)', paddingBottom: '10rem', overflowY: 'auto' }}>
+          {/* Title Container */}
+          <TitleContainer className='sec-title'>
+            <Container>
+              {/* Title */}
+              <Title>Debates</Title>
+              {/* Subtitle */}
+              <p className='sec-subtitle first-uppercase'>
+                {selectedCategory
+                  ? discussionCategoriesTitle[selectedCategory]
+                  : null}
+              </p>
+            </Container>
+          </TitleContainer>
+          <DiscussionContainer>
+            {/* Swiper Carousel */}
+            <div className='mx-auto text-center mt-5'>
+              <Swiper
+                slidesPerView={'auto'}
+                spaceBetween={3}
+                modules={[Pagination]}
+                className='mySwiper'
+              >
+                {/* Category Buttons */}
+                {discussionCategories.map((category) => (
+                  <SwiperSlide key={category.order}>
+                    <CategoryButton
+                      onClick={() => clickNewCategory(category.name)}
+                      key={category.order}
+                    >
+                      <Image
+                        src={`/img/discussions/${
+                          discussionsCategories[category.order - 1].img
+                        }`}
+                        alt={category.name}
+                        width='100%'
+                        height='100%'
+                        className={
+                          selectedCategory === category?.name.toLowerCase()
+                            ? 'd-selected-category-primary'
+                            : null
+                        }
+                      />
+                      <p>{discussionCategoriesTitle[category.name]}</p>
+                    </CategoryButton>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+            <Row className='mt-4'>
+            {/* Displayed Discussions */}
+            {discussions.slice(0, displayedDiscussions).map((discussion) => (
+              <Col xl={3} lg={4} md={6} xs={12} key={discussion._id}>
+                <DiscussionClosed discussion={discussion} />
+              </Col>
+            ))}
           </Row>
-        </Container>
+          </DiscussionContainer>
+          {/* Load More Button */}
+          <div style={{ padding: '10px 0', textAlign: 'center' }}>
+          <Button onClick={handleLoadMore} ref={containerRef}>Load More
+            </Button>
+          
+        </div>
+        </div>
       </Layout>
     </>
   );

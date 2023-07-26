@@ -46,10 +46,27 @@ const RowPers = styled(Row)`
   }
 `;
 
-const Title = styled.h2`
+const SubTitle = styled.h2`
   margin-bottom: 0.5rem;
+  font-family: "Averia Libre", sans-serif;
   @media (max-width: 540px) {
     margin-bottom: 0.3rem;
+  }
+`;
+
+const TitleContainer = styled.div`
+    margin-top: 6.7rem;
+    @media (max-width: 540px) {
+      margin-top: 8rem;
+    }
+
+  }
+`;
+
+const Title = styled.div`
+    font-size: 4.5rem;
+    color: var(--violet);
+    font-family: "Averia Libre", sans-serif;
   }
 `;
 
@@ -125,25 +142,19 @@ export default function Articulos() {
             </p>
           </Container>
         </div> */}
+        
         <Container>
-            <h1 >Artículos</h1>
+          <TitleContainer>
+          <Title>Artículos</Title>
             <p className='sec-subtitle first-uppercase'>
               {selectedCategory
                 ? articlesCategoriesTitle[selectedCategory]
                 : null}
             </p>
-          </Container>
-        <Container>
+          </TitleContainer>
+          
           <div>
-          <h1 style={{color: "black"}}>Artículos</h1>
-            <p className='sec-subtitle first-uppercase'>
-              {selectedCategory
-                ? articlesCategoriesTitle[selectedCategory]
-                : null}
-            </p>
-          </div>
-          <div>
-            <Title>Categorías</Title>
+            <SubTitle>Categorías</SubTitle>
             <RowPers className='mx-auto text-center'>
               <Swiper
                 slidesPerView={'auto'}
