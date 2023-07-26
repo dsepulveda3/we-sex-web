@@ -1,5 +1,6 @@
 import {Container} from 'reactstrap';
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
 export const Background = styled.div`
     padding-top: 7.5rem;
@@ -95,6 +96,7 @@ export const Boton = styled.a`
         color: white;
         cursor: pointer;
     }
+    
     @media(max-width: 540px){
         margin: 1rem auto;
         display:block;
@@ -121,6 +123,20 @@ export const Input = styled.input`
   padding: 1rem;
   border-radius: 10px;
   border: 1px solid white;
+  ::placeholder {
+    color: ${(props) => (props.hasError ? '#FF9800' : 'initial')};
+  }
+`;
+
+export const ErrorMsg = styled.div`
+  position: absolute;
+  color: #FF9800;
+  font-size: 1.5rem;
+`;
+
+export const InputWrapper = styled.div`
+  position: relative;
+  width: 100%;
   margin-bottom: 3rem;
 `;
 
@@ -136,16 +152,20 @@ export const GoogleImage = styled.img`
 `;
 
 export const ForgotPasswordLink = styled.a`
-  color: white;
-  margin-top: 1rem;
-  text-decoration: underline;
-  cursor: pointer;
+    color: white;
+    margin-top: 1rem;
+    text-decoration: underline;
+    cursor: pointer;
 `;
 
 export const SignUpLink = styled.a`
-  color: white;
-  margin-top: 1rem;
-  margin-bottom: 6rem;
-  text-decoration: underline;
-  cursor: pointer;
+    color: white;
+    margin-top: 1rem;
+    margin-bottom: 6rem;
+    text-decoration: underline;
+    cursor: pointer;
+`;
+
+export const FormWrapper = styled.form`
+    width: 100%; 
 `;
