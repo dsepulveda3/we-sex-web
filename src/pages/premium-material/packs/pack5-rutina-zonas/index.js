@@ -96,7 +96,7 @@ export default function Home() {
         <Regalar /> */}
         <ComprarUniversal title_mp='Guía Salir de la rutina + Zonas Erógenas - WeSex' unit_price_mp= {2400} quantity_mp={1} currency_id_mp='ARS'
           price_before_ARG='AR$  3200' price_ARG='AR$  2400' price_before_USD='U$D  12' price_USD='U$D  10' redirection_succesful_mp='https://payhip.com/b/kcSsq' 
-          redirection_failed_mp='https://www.we.sex/packs/pack5'
+          redirection_failed_mp='https://www.we.sex/packs/pack5-rutina-zonas'
           link_payhip_usd='https://payhip.com/b/l76c4' has_promo={false}
         />
         {/* <Dudas />
