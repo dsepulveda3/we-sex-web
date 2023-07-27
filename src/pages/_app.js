@@ -4,6 +4,7 @@ import '../styles/bootstrap.min.css';
 import '../styles/globals.css';
 
 
+
 const globalStyles = css`
   html {
     scroll-behavior: smooth; /* Enable smooth scrolling for the entire page */
