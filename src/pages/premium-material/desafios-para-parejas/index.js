@@ -5,7 +5,7 @@ import Intro from '@/components/desafios/intro'
 import Explicacion2 from '@/components/desafios/explicacion2'
 import Explicacion from '@/components/desafios/explicacion'
 import ComoFunciona from '@/components/desafios/comoFunciona'
-import Plans from '@/components/desafios/plans'
+import Plan2 from '@/components/desafios/plan2'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -16,7 +16,7 @@ export default function Home() {
     <>
       <Head>
         <title>Desafio para parejas - WeSex</title>
-        <meta name="description" content="Guía Tantra + Sexo Anal - WeSex" /> 
+        <meta name="description" content="Reavivar la llama con tu pareja - WeSex" /> 
         <meta name="keywords" content="" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -62,7 +62,7 @@ export default function Home() {
         <Intro />
         <Explicacion2 />
         <ComoFunciona />
-        <Plans />
+        <Plan2 />
         <Explicacion />
         
         

@@ -194,24 +194,24 @@ const Plans = () => {
           <Subtitle>Elige entre nuestros 3 planes</Subtitle>
           <ClickSwiper>
             <Swiper
-              direction="horizontal" // Set direction to horizontal
-              slidesPerView={1} // Show 1 card at a time
-              spaceBetween={20}
-              navigation={{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }}
-            >
-              {discussions.length === 0 ? (
-                <Col>No hay planes disponibles</Col>
-              ) : (
-                discussions.slice(0, 3).map((d) => {
-                  return (
-                    <SwiperSlide key={d._id}>
-                      <CustomSwiperSlide>
-                        <Plan discussion={d} />
-                      </CustomSwiperSlide>
-                    </SwiperSlide>
-                  );
-                })
-              )}
+                direction="horizontal"
+                slidesPerView={1} // Show 1 card at a time on mobile
+                spaceBetween={20}
+                centeredSlides={true} // Center the active slide
+                >
+                {discussions.length === 0 ? (
+                    <Col>No hay planes disponibles</Col>
+                ) : (
+                    discussions.slice(0, 3).map((d) => {
+                    return (
+                        <SwiperSlide key={d._id}>
+                        <CustomSwiperSlide>
+                            <Plan discussion={d} />
+                        </CustomSwiperSlide>
+                        </SwiperSlide>
+                    );
+                    })
+                )}
             </Swiper>
             {/* <CustomNextArrow src="/img/ico/next_button_violet.png" className="swiper-button-next" onClick={handleNext} />
             <CustomPrevArrow src="/img/ico/previous_button_violet.png" className="swiper-button-prev" onClick={handlePrev} /> */}
