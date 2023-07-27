@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import { 
   getAuth, 
   signInWithRedirect,
+  signInWithPopup,
   GoogleAuthProvider, 
   signInWithEmailAndPassword, 
   createUserWithEmailAndPassword,
@@ -31,6 +32,7 @@ export default function useFirebaseAuth() {
         }
         setLoading(true)
         var formattedUser = formatAuthUser(authState);
+        console.log(formattedUser);
         setAuthUser(formattedUser);
         setLoading(false);
     };
@@ -43,7 +45,6 @@ export default function useFirebaseAuth() {
     const signInWithCredentials = async (email, password) =>
         signInWithEmailAndPassword(auth, email, password)
         .then(() => {
-            router.push('/');
             toast.success('Bienvenido de nuevo!');
         })
         .catch((error) => {
@@ -71,7 +72,6 @@ export default function useFirebaseAuth() {
 
     const signOutAndClear = () =>
         signOut(auth).then(() => {
-            router.push('/');
             toast.success('Cierre de sesión exitoso');
             clear();
         }).catch((error) => {
@@ -80,8 +80,14 @@ export default function useFirebaseAuth() {
 
     const signInWithGoogle = async () => {
       const provider = new GoogleAuthProvider();
-      signInWithRedirect(auth, provider);
-      router.push('/');
+      signInWithPopup(auth, provider)
+      .then(() => {
+        toast.success('Bienvenido de nuevo!');
+        })
+        .catch((error) => {
+            console.log(error);
+            toast.error('Hubo un error al iniciar sesión');
+        });
     };
 
     useEffect(() => {
