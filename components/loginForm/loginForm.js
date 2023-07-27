@@ -1,8 +1,9 @@
-import React, {useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';  
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useAuth } from '../../context/authUserContext';
+import GoogleSignInButton from '../googleSignInButton/googleSignInButton';
 import {
   Background,
   LoginContainer,
@@ -12,7 +13,6 @@ import {
   BotonArs,
   Input,
   Or,
-  GoogleImage,
   ForgotPasswordLink,
   SignUpLink,
   ErrorMsg,
@@ -24,11 +24,10 @@ const LoginForm = () => {
   const {
     loading,
     authUser,
-    user,
     signInWithCredentials,
-    signInWithGoogle,
   } = useAuth();
   const router = useRouter();
+  const [submittedByEnter, setSubmittedByEnter] = useState(false);
 
   useEffect(() => {
     if (!loading && authUser)
@@ -45,10 +44,6 @@ const LoginForm = () => {
     password: Yup.string().required('Campo requerido'),
   });
 
-  const handleSignInWithGoogle = () => {
-    signInWithGoogle();
-  };
-
   const handleSubmitWithCredentials = (values) => {
     signInWithCredentials(values.email, values.password);
   };
@@ -58,6 +53,16 @@ const LoginForm = () => {
     validationSchema,
     onSubmit: handleSubmitWithCredentials,
   });
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      setSubmittedByEnter(true);
+      e.preventDefault();
+      if (formik.isValid && formik.values.email && formik.values.password){
+        handleSubmitWithCredentials(formik.values);
+      }
+    }
+  };
 
   return (
     <Background>
@@ -76,8 +81,9 @@ const LoginForm = () => {
                 value={formik.values.email}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
+                onKeyDown={handleKeyDown}
               />
-              {formik.touched.email && formik.errors.email && (
+              {(submittedByEnter || formik.touched.email) && formik.errors.email && (
                 <ErrorMsg>{formik.errors.email}</ErrorMsg>
               )}
             </InputWrapper>
@@ -91,22 +97,20 @@ const LoginForm = () => {
                 value={formik.values.password}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
+                onKeyDown={handleKeyDown}
               />
-              {formik.touched.password && formik.errors.password && (
+              {(submittedByEnter ||formik.touched.password) && formik.errors.password && (
                 <ErrorMsg>{formik.errors.password}</ErrorMsg>
               )}
             </InputWrapper>
             <BotonArs type="submit" onClick={formik.handleSubmit}>Entrar</BotonArs>
           </FormWrapper>
           <Or>o</Or>
-          <BotonArs onClick={handleSignInWithGoogle}>
-            <GoogleImage src="img/auth/google.png" />
-            Entrar con Google
-          </BotonArs>
+          <GoogleSignInButton />
           <ForgotPasswordLink href="/forgot-password">
             Recuperar contraseña
           </ForgotPasswordLink>
-          <SignUpLink href="/sign-up">Aún no tienes cuenta</SignUpLink>
+          <SignUpLink href="/register">Aún no tienes cuenta</SignUpLink>
         </Content>
       </LoginContainer>
     </Background>

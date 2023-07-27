@@ -54,7 +54,9 @@ export default function useFirebaseAuth() {
 
     const fetchUserFromDB = async () => {
         const response = await getUser();
-        setUser(response.data);
+        if (response.data) {
+            setUser(response.data);
+        }
     };
 
     const clear = () => {
