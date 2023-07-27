@@ -24,6 +24,7 @@ const LoginForm = () => {
   const {
     loading,
     authUser,
+    user,
     signInWithCredentials,
     signInWithGoogle,
   } = useAuth();
@@ -31,7 +32,7 @@ const LoginForm = () => {
 
   useEffect(() => {
     if (!loading && authUser)
-      router.push('/')
+      router.push('/');
   }, [authUser, loading])
 
   const initialValues = {
