@@ -1,6 +1,6 @@
 import {Container} from 'reactstrap';
 import styled from '@emotion/styled';
-import { css } from '@emotion/react';
+
 
 export const Background = styled.div`
     padding-top: 7.5rem;
@@ -168,4 +168,12 @@ export const SignUpLink = styled.a`
 
 export const FormWrapper = styled.form`
     width: 100%; 
+`;
+
+export const EyeIcon = styled.a`
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
 `;

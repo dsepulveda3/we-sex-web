@@ -1,5 +1,6 @@
-import {Container} from 'reactstrap';
+import { Container } from 'reactstrap';
 import styled from '@emotion/styled';
+import { icons } from 'react-icons';
 
 export const Background = styled.div`
     padding-top: 7.5rem;
@@ -10,9 +11,7 @@ export const Background = styled.div`
     // background-color: var(--violet);
     background-image: url("/img/auth/cta-bg.jpg");
     background-position: center;
-    background-size: 100% 100%;
-    
-    
+    background-size: 100% 100%;    
     min-height: 85vh;
     position: relative;
     
@@ -32,7 +31,7 @@ export const LoginContainer = styled(Container)`
     // border: 1px solid white;
     /* Set width and height if needed */
     width: 550px;
-    height: 690px;
+    height: 700px;
     //   background-color: lightgray;
     padding: 5rem 5rem 5rem 5rem;
 
@@ -122,9 +121,6 @@ export const Input = styled.input`
   padding: 1rem;
   border-radius: 10px;
   border: 1px solid white;
-  ::placeholder {
-    color: ${(props) => (props.hasError ? '#FF9800' : 'initial')};
-  }
 `;
 
 export const Or = styled.p`
@@ -162,10 +158,38 @@ export const InputWrapper = styled.div`
     margin-bottom: 3rem;
 `;
 
-export const EyeIcon = styled.a`
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
+export const ImageInputContainer = styled.label`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  margin-bottom: 3rem;
+`;
+
+export const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+`;
+
+export const FileInput = styled.input`
+  display: none;
+`;
+
+export const PencilContainer = styled.div`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  border-radius: 20%;
+  padding: 5px;
 `;

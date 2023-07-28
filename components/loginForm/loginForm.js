@@ -4,6 +4,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useAuth } from '../../context/authUserContext';
 import GoogleSignInButton from '../googleSignInButton/googleSignInButton';
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import {
   Background,
   LoginContainer,
@@ -17,17 +18,20 @@ import {
   SignUpLink,
   ErrorMsg,
   InputWrapper,
-  FormWrapper
+  FormWrapper,
+  EyeIcon
 } from './loginFormStyles';
 
 const LoginForm = () => {
   const {
     loading,
     authUser,
+    user,
     signInWithCredentials,
   } = useAuth();
   const router = useRouter();
   const [submittedByEnter, setSubmittedByEnter] = useState(false);
+  const [passwordVisible, setPasswordVisible] = useState(false);
 
   useEffect(() => {
     if (!loading && authUser)
@@ -64,6 +68,10 @@ const LoginForm = () => {
     }
   };
 
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
+
   return (
     <Background>
       <LoginContainer>
@@ -89,7 +97,7 @@ const LoginForm = () => {
             </InputWrapper>
             <InputWrapper>
               <Input
-                type="password"
+                type={passwordVisible ? 'text' : 'password'}
                 name="password"
                 placeholder="Contraseña"
                 required
@@ -99,6 +107,9 @@ const LoginForm = () => {
                 onBlur={formik.handleBlur}
                 onKeyDown={handleKeyDown}
               />
+              <EyeIcon onClick={togglePasswordVisibility}>
+                {passwordVisible ?  <AiOutlineEye size={25} /> : <AiOutlineEyeInvisible size={25} />}
+              </EyeIcon>
               {(submittedByEnter ||formik.touched.password) && formik.errors.password && (
                 <ErrorMsg>{formik.errors.password}</ErrorMsg>
               )}

@@ -142,6 +142,17 @@ export default function useFirebaseAuth() {
             toast.error('Hubo un error al crear la cuenta');
         });
 
+    const emailIsInUse = (email) =>
+        fetchSignInMethodsForEmail(auth, email).then((signInMethods) => {
+            if (signInMethods.length > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }).catch((error) => {
+            return true;
+        });
+
     const executeCreateUserWithCredentials = (email, password) =>
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -173,6 +184,7 @@ export default function useFirebaseAuth() {
         signInWithCredentials,
         signInWithGoogle,
         createUserWithCredentials,
-        signOutAndClear
+        signOutAndClear,
+        emailIsInUse
     };
 }

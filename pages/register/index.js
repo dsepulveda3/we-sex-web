@@ -1,10 +1,14 @@
 import React from 'react';
 import RegisterForm from '../../components/registerForm';
+import { RegisterProvider } from '../../context/registerContext';
+
 
 
 function Register(){
     return (
-        <RegisterForm />
+        <RegisterProvider>
+            <RegisterForm />
+        </RegisterProvider>
     )
 }
 
