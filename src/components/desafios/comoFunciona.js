@@ -96,6 +96,10 @@ const Text = styled.p`
         font-size: 2rem;
     }
     @media(min-width: 540px){
+        border: 2px solid var(--violet);
+        padding: 2rem;
+        border-radius: 3rem;
+        transition: all 2s ease;
         strong {
             font-size: 2.2rem;
         }
@@ -175,7 +179,7 @@ const ComoFunciona = () => {
                 <CenteredContainer>
                 <Circle>3</Circle> 
                 </CenteredContainer>
-                <span>Todas las semanas</span>, van a empezar a recibir <span>desafíos y actividades</span> para hacer en pareja. Muchas veces son planes copados y divertidos para salir de la rutina, otras, cosas para charlar o actividades para hacer en su tiempo libre.
+                <span>Todas las semanas</span>, van a recibir <span>desafíos y actividades</span> para hacer en pareja. Muchas veces son planes copados y divertidos para salir de la rutina, otras, cosas para charlar o actividades para hacer en su tiempo libre.
               </Text>
             </Col>
             <Col xl={12} lg={12} md={12} xs={12} sm={12} className="align-items-center">
@@ -211,11 +215,11 @@ const ComoFunciona = () => {
                 <CenteredContainer>
                 <Circle>7</Circle> 
                 </CenteredContainer>
-                En 2 meses, van a estar <span>disfrutando más que nunca.</span>
+                <span>En 1 mes</span> van a estar <span> follando mejor que nunca.</span>
               </Text>
             </Col>
           </Row>
-          <BotonVerde href="#comprar">Comprar</BotonVerde>
+          <BotonVerde href="#comprar">Comenzar</BotonVerde>
         </Container>
         
       </Background>

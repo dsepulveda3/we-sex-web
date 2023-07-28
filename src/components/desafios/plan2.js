@@ -210,11 +210,11 @@ const BotonArs = styled(Boton)`
     background-color: #00AEEF;
     text-align: center;
     margin-top: 2rem;
-    margin-left: 5rem;
+    margin-left: 2.5rem;
     
     @media(max-width: 540px){
-        margin-top: 3rem;
-        margin-left: 2.5rem;
+        margin-top: 2rem;
+        margin-left: 0.6rem;
     }
     @media(min-width: 540px){
     }
@@ -225,11 +225,11 @@ const BotonUsd = styled(Boton)`
     background-color: black;
     text-align: center;
     margin-top: 2rem;
-    margin-left: 5rem;
+    margin-left: 2.5rem;
     
     @media(max-width: 540px){
-        margin-top: 3rem;
-        margin-left: 2.5rem;
+        margin-top: 2rem;
+        margin-left: 0.6rem;
     }
     @media(min-width: 540px){
         
@@ -257,14 +257,14 @@ const InfoSuscription = styled.div`
 `;
 
 const PriceText = styled.div`
-    margin-left: 4rem;
+    margin-left: 2rem;
     font-family: "Averia Libre", sans-serif;
     background-color: var(--violet); /* Set the background color to green */
     padding: 0.5rem 4rem; /* Add padding to make the background visible */
     color: white; /* Set the text color to white */
 
     @media(max-width: 540px){
-        margin-left: 2rem;
+        margin-left: 0.7rem;
     }
 `;
 
@@ -333,13 +333,23 @@ const InfoText = styled.div`
 const PopupContent = () => {
     return (
       <>
+        <br />
         <InfoText>
-          <span>Acceso a guías:</span> Podrás leer todas nuestras guías premium sin necesidad de pagar por cada una 😉
+          <span>Seguimiento:</span> Soporte y respuestas a todas sus dudas en el proceso. 
+        </InfoText>
+        <br />
+        <InfoText>
+          <span>Acceso material premium:</span> Podrás acceder a todo nuestro contenido premium tales como guías y masterclasses sin necesidad de pagar por cada una 😉.
         </InfoText>
         <br />
         <InfoText>
           <span>Cajita WeSexer:</span> El último fin de semana de cada mes les mandaremos una caja sorpresa para que exploren y se diviertan MUCHO😉
         </InfoText>
+        <br />
+        <InfoText>
+          <span>Sesión 1/mes sexologa:</span> Podrás tener una consulta de 30 minutos al mes con una sexologa junto a tu pareja.
+        </InfoText>
+        <br />
         {/* Add more content as needed */}
       </>
     );
@@ -353,7 +363,7 @@ const Plans = () => {
     const [showPopup, setShowPopup] = useState(false);
 
     return (
-        <Background id="paravos">
+        <Background id="comprar">
             <Container style={{paddingTop: "5rem", paddingBottom: "5rem"}}>
                 <Title><span>Precios</span></Title>
                 <SlideHeader>
@@ -394,11 +404,11 @@ const Plans = () => {
                                 </InsideText>
                                 <InsideText>
                                     <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
-                                    Soporte 24/7
+                                    Seguimiento
                                 </InsideText>
                                 <InsideText>
                                     <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
-                                    Acceso a guías
+                                    Acceso material premium
                                 </InsideText>
                                 <InsideText>
                                     <AppImageCross src="../img/ico/cross.png" className="img-fluid" alt="" />
@@ -406,17 +416,17 @@ const Plans = () => {
                                 </InsideText>
                                 <InsideText>
                                     <AppImageCross src="../img/ico/cross.png" className="img-fluid" alt="" />
-                                    <TextDescription>Sesión 30min/mes con sexologa</TextDescription>
+                                    <TextDescription>Sesion 1/mes con sexologa</TextDescription>
                                 </InsideText>
                                 <InsideText>
                                     {selectedOption === 'Argentina' && (
                                     <InfoSuscription>
-                                        <PriceText>15,600 ARS</PriceText>
+                                        <PriceText>15,600 ARS/pareja</PriceText>
                                         <BotonArs href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848997590c01899b67d39f0136">Sucribirme</BotonArs>
                                     </InfoSuscription>)}
                                     {selectedOption === 'Otro País' && (
                                     <InfoSuscription>
-                                        <PriceText>30 USD</PriceText>
+                                        <PriceText>30 USD/pareja</PriceText>
                                         <BotonUsd href="https://buy.stripe.com/3cs02I5BDaD3gMMbIK">Sucribirme</BotonUsd>
                                     </InfoSuscription>)}
                                 </InsideText>
@@ -445,11 +455,11 @@ const Plans = () => {
                                 </InsideText>
                                 <InsideText>
                                     <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
-                                    Soporte 24/7
+                                    Seguimiento
                                 </InsideText>
                                 <InsideText>
                                     <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
-                                    Acceso a guías
+                                    Acceso material premium
                                 </InsideText>
                                 <InsideText>
                                     <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
@@ -457,17 +467,17 @@ const Plans = () => {
                                 </InsideText>
                                 <InsideText>
                                     <AppImageCross src="../img/ico/cross.png" className="img-fluid" alt="" />
-                                    <TextDescription>Sesión 30min/mes con sexologa</TextDescription>
+                                    <TextDescription>Sesion 1/mes con sexologa</TextDescription>
                                 </InsideText>
                                 <InsideText>
                                     {selectedOption === 'Argentina' && (
                                     <InfoSuscription>
-                                        <PriceText>20,000 ARS</PriceText>
+                                        <PriceText>20,000 ARS/pareja</PriceText>
                                         <BotonArs href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848997590c01899b6adafb0137">Sucribirme</BotonArs>
                                     </InfoSuscription>)}
                                     {selectedOption === 'Otro País' && (
                                     <InfoSuscription>
-                                        <PriceText>38 USD</PriceText>
+                                        <PriceText>38 USD/pareja</PriceText>
                                         <BotonUsd href="https://buy.stripe.com/6oE3eU0hjeTj688dQT">Sucribirme</BotonUsd>
                                     </InfoSuscription>)}
                                 </InsideText>
@@ -493,11 +503,11 @@ const Plans = () => {
                                 </InsideText>
                                 <InsideText>
                                     <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
-                                    Soporte 24/7
+                                    Seguimiento
                                 </InsideText>
                                 <InsideText>
                                     <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
-                                    Acceso a guías
+                                    Acceso material premium
                                 </InsideText>
                                 <InsideText>
                                     <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
@@ -505,17 +515,17 @@ const Plans = () => {
                                 </InsideText>
                                 <InsideText>
                                     <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
-                                    <TextDescription>Sesión 30min/mes con sexologa</TextDescription>
+                                    <TextDescription>Sesion 1/mes con sexologa</TextDescription>
                                 </InsideText>
                                 <InsideText>
                                     {selectedOption === 'Argentina' && (
                                     <InfoSuscription>
-                                        <PriceText>27,000 ARS</PriceText>
+                                        <PriceText>27,000 ARS/pareja</PriceText>
                                         <BotonArs href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848997590c01899b6be6110138">Sucribirme</BotonArs>
                                     </InfoSuscription>)}
                                     {selectedOption === 'Otro País' && (
                                     <InfoSuscription>
-                                        <PriceText>54 USD</PriceText>
+                                        <PriceText>54 USD/pareja</PriceText>
                                         <BotonUsd href="https://buy.stripe.com/8wM8zec01fXn7cc5ko">Sucribirme</BotonUsd>
                                     </InfoSuscription>)}
                                 </InsideText>

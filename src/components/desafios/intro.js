@@ -181,17 +181,17 @@ const Hola = () => {
                     <Row className="justify-content-between">
                         <Col lg={7} className="align-items-center">
                             <Content>
-                                <Title>Programa de <span>parejas</span></Title>
+                                <Title>Programa para <span>innovar en pareja</span></Title>
                                 <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle>
                                 <Text>
-                                    ¿Quieren experimentar la sexualidad juntos? ¿Probar nuevas cosas? ¿Están juntos desde hace mucho tiempo y de a poco fueron cayendo en la monotonía?
+                                ¿Quieren experimentar la sexualidad juntos? ¿Probar nuevas cosas? ¿Están juntos desde hace mucho tiempo y quieren innovar en la cama (o en cualquier lado 😉)?
                                 </Text>
                                 <Botones>
                                     <BotonArs
                                         href="#comprar"
-                                    >Comprar</BotonArs>
+                                    >Comenzar</BotonArs>
                                     <BotonUsd
-                                        href="#paravos"
+                                        href="#queVoyAEncontrar"
                                     >¿Cómo funciona?</BotonUsd>
                                 </Botones>
                             </Content>

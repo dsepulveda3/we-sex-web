@@ -5,6 +5,7 @@ import Intro from '@/components/desafios/intro'
 import Explicacion2 from '@/components/desafios/explicacion2'
 import Explicacion from '@/components/desafios/explicacion'
 import ComoFunciona from '@/components/desafios/comoFunciona'
+import Dudas from '@/components/dudas'
 import Plan2 from '@/components/desafios/plan2'
 
 
@@ -62,6 +63,7 @@ export default function Home() {
         <Intro />
         <Explicacion2 />
         <ComoFunciona />
+        <Dudas />
         <Plan2 />
         <Explicacion />
         

@@ -87,6 +87,7 @@ const Text2 = styled.p`
     color: white;
     @media(min-width: 540px){
         margin-bottom: 3rem;
+    }
     
     span {
         font-weight: bold;
@@ -95,7 +96,7 @@ const Text2 = styled.p`
         padding: 0.5rem 1rem; /* Add padding to make the background visible */
         color: white; /* Set the text color to white */
     }
-    }
+    
 `;
 const AppImage = styled.img`
     
@@ -127,36 +128,10 @@ const Dudas = () => {
                 <ContainerText2>
                     <AppImage src="../img/bomb.png" alt="Bomba" />
                     <Text2>
-                        Vamos a combinar los beneficios de estar en pareja, la confianza para comunicar y el amor que se tienen, con la picantez y adrenalina de los primeros días.
+                        Vamos a combinar los beneficios de estar en pareja, la confianza para comunicar y el amor que se tienen, con la <span>picantez y adrenalina</span> de los primeros días.
                         <br /> <br /> <br /> Vamos a ayudarlos a dejar <span>espacios para ustedes solos</span> y a proponerles desafíos interactivos todas las semanas.
                     </Text2>
-                        
-                    
                 </ContainerText2>
-                {/* <ContainerText2>
-                    <AppImage src="../img/bomb.png" alt="Bomba" />
-                    <Text2>
-                        Vamos a ayudarlos a dejar espacios para ustedes solos y a proponerles desafíos interactivos todas las semanas.
-                    </Text2>
-                </ContainerText2>
-
-                <Row className="justify-content-center">
-                        <Col xl={6} lg={6} md={6} xs={12} sm={12} className="align-items-center">
-                        
-                            <AppImage src="../img/bomb.png" alt="Bomba" />
-                            <Text2>
-                                Vamos a combinar los beneficios de estar en pareja, la confianza para comunicar y el amor que se tienen, con la picantez y adrenalina de los primeros días.
-                            </Text2>
-                        
-                        </Col>
-                        <Col xl={6} lg={6} md={6} xs={12} sm={12} className="align-items-center">
-                            <Text2>
-                                🧘🏼‍♂️<br/>
-                                <strong>Técnicas de respiración y meditación guiada:</strong><br/> una técnica para ayudar a la persona que recibe la penetración a relajarse y liberar la tensión en el cuerpo.
-                            </Text2>
-                        </Col>
-                    </Row> */}
-  
             </Container>
         </Background>
     );
