@@ -87,7 +87,7 @@ const SubTitle = styled.h2`
     }
     
     @media(max-width: 540px){
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         padding-top: 0rem;
         padding-bottom: 0rem;
     }
