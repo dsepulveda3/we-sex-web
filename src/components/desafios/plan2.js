@@ -84,7 +84,7 @@ const Text = styled.p`
     color: var(--violet);
     /* vertical-align: middle; */
     font-weight: bold;
-    height: 48vh;
+    
 
     transition: all 1s ease;
 
@@ -108,6 +108,7 @@ const Text = styled.p`
         margin-bottom: 1rem;
         font-size: 2rem;
     }
+    
 `;
 
 const InsideText = styled.p`
@@ -117,9 +118,8 @@ const InsideText = styled.p`
     color: var(--violet);
     display: flex;
     align-items: center; /* Center elements vertically */
-   
-    
 `;
+
 
 const TextDescription = styled.p`
     text-align: left;
@@ -139,10 +139,15 @@ const CenteredContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
+
+  @media(min-width: 540px){
+    margin-left: 15rem;
+}
+
 `;
 
 const FullScreenSwiper = styled(Swiper)`
-  width: 120vh; /* Set the height of the Swiper to full viewport height */
+  width: 140vh; /* Set the height of the Swiper to full viewport height */
   
   
 `;
@@ -177,6 +182,38 @@ const AppImageCross = styled.img`
     }
 `;
 
+const Boton = styled.a`
+    border-radius: 4rem;
+    padding: 1rem 3rem;
+    font-weight: bold;
+    border: none;
+    transition: all .5s ease;
+    &:hover {
+        background-color: var(--green);
+        color: white;
+        cursor: pointer;
+    }
+    @media(max-width: 540px){
+        margin: 1rem auto;
+        display:block;
+        min-width: 80%;    
+    }
+`;
+
+const BotonArs = styled(Boton)`
+    color: white;
+    background-color: var(--green);
+    text-align: center;
+    margin-top: 2rem;
+    margin-left: 5rem;
+    
+    @media(max-width: 540px){
+        margin-top: 3rem;
+    }
+    @media(min-width: 540px){
+        
+    }
+`;
 
 
 
@@ -200,7 +237,7 @@ const Plans = () => {
                     <Slide>
                         <Text>
                             
-                            <span>Programa para parejas</span>
+                            <span>Básico</span>
                             <ContainerInsideText>
                                 <InsideText>
                                     <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
@@ -225,6 +262,9 @@ const Plans = () => {
                                 <InsideText>
                                     <AppImageCross src="../img/ico/cross.png" className="img-fluid" alt="" />
                                     <TextDescription>Sesión 30min/mes con sexologa</TextDescription>
+                                </InsideText>
+                                <InsideText>
+                                    <BotonArs href="/">Sucribirme</BotonArs>
                                 </InsideText>
                             </ContainerInsideText>
                         </Text>
@@ -234,7 +274,7 @@ const Plans = () => {
                     </Slide>
                     <Slide>
                         <Text>
-                            <span>Programa para pajeras Plus</span>
+                            <span>Estandar</span>
                             <ContainerInsideText>
                                 <InsideText>
                                     <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
@@ -260,12 +300,15 @@ const Plans = () => {
                                     <AppImageCross src="../img/ico/cross.png" className="img-fluid" alt="" />
                                     <TextDescription>Sesión 30min/mes con sexologa</TextDescription>
                                 </InsideText>
+                                <InsideText>
+                                    <BotonArs href="/">Sucribirme</BotonArs>
+                                </InsideText>
                             </ContainerInsideText>
                         </Text>
                     </Slide>
                     <Slide>
                         <Text>
-                            <span>Programa premium</span>
+                            <span>Premium</span>
                             <ContainerInsideText>
                                 <InsideText>
                                     <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
@@ -290,6 +333,9 @@ const Plans = () => {
                                 <InsideText>
                                     <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
                                     <TextDescription>Sesión 30min/mes con sexologa</TextDescription>
+                                </InsideText>
+                                <InsideText>
+                                    <BotonArs href="/">Sucribirme</BotonArs>
                                 </InsideText>
                             </ContainerInsideText>
                         </Text>
