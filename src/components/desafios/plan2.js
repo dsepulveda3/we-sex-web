@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Row, Col, Container} from 'reactstrap';
 import styled from '@emotion/styled';
 import "swiper/css";
@@ -52,7 +52,7 @@ const Title = styled.h1`
         font-size: 4rem;
     }
     @media(min-width: 540px){
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
     }
 `;
 
@@ -70,17 +70,17 @@ const SubTitle = styled.p`
         font-size: 2rem;
     }
     @media(min-width: 540px){
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
     }
 `;
 
 
 const Text = styled.p`
     font-family: "Karla", sans-serif;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     text-align:center;
-    margin-bottom: 1.5rem;
-    padding: .5rem 1rem;
+    margin-bottom: 0rem;
+    padding: .1rem .1rem;
     color: var(--violet);
     /* vertical-align: middle; */
     font-weight: bold;
@@ -105,7 +105,7 @@ const Text = styled.p`
         color: white; /* Set the text color to white */
     }
     @media(max-width: 540px){
-        margin-bottom: 1rem;
+        margin-bottom: 0rem;
         font-size: 2rem;
     }
     
@@ -114,7 +114,7 @@ const Text = styled.p`
 const InsideText = styled.p`
     margin-top: 1rem;
     font-family: "Karla", sans-serif;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: var(--violet);
     display: flex;
     align-items: center; /* Center elements vertically */
@@ -124,6 +124,7 @@ const InsideText = styled.p`
 const TextDescription = styled.p`
     text-align: left;
     font-weight: bold;
+    font-size: 1.6rem;
    
     
 `;
@@ -194,7 +195,7 @@ const Boton = styled.a`
         cursor: pointer;
     }
     @media(max-width: 540px){
-        margin: 1rem auto;
+        
         display:block;
         min-width: 80%;    
     }
@@ -202,29 +203,88 @@ const Boton = styled.a`
 
 const BotonArs = styled(Boton)`
     color: white;
-    background-color: var(--green);
+    background-color: #00AEEF;
     text-align: center;
     margin-top: 2rem;
     margin-left: 5rem;
     
     @media(max-width: 540px){
         margin-top: 3rem;
+        margin-left: 2.5rem;
+    }
+    @media(min-width: 540px){
+    }
+`;
+
+const BotonUsd = styled(Boton)`
+    color: white;
+    background-color: black;
+    text-align: center;
+    margin-top: 2rem;
+    margin-left: 5rem;
+    
+    @media(max-width: 540px){
+        margin-top: 3rem;
+        margin-left: 2.5rem;
     }
     @media(min-width: 540px){
         
     }
 `;
 
+const SelectorButtonContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+`;
 
+const SelectorButton = styled.select`
+    border-radius: 4rem;
+    padding: 1rem 1rem 1rem 1rem;
+    
+`;
+
+const InfoSuscription = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+const PriceText = styled.div`
+    margin-left: 4rem;
+    font-family: "Averia Libre", sans-serif;
+    background-color: var(--violet); /* Set the background color to green */
+    padding: 0.5rem 4rem; /* Add padding to make the background visible */
+    color: white; /* Set the text color to white */
+
+    @media(max-width: 540px){
+        margin-left: 2rem;
+    }
+
+
+
+`;
 
 
 
 const Plans = () => {
+
+    const [selectedOption, setSelectedOption] = useState('Argentina');
+
     return (
         <Background id="paravos">
             <Container style={{paddingTop: "5rem", paddingBottom: "5rem"}}>
                 <Title><span>Precios</span></Title>
                 <SubTitle>Elige uno de nuestros 3 planes</SubTitle>
+
+                <SelectorButtonContainer>
+                    <SelectorButton onChange={(e) => setSelectedOption(e.target.value)}>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Otro País">Otro País</option>
+                    </SelectorButton>
+                </SelectorButtonContainer>
 
                 <CenteredContainer>
                 <FullScreenSwiper
@@ -264,7 +324,16 @@ const Plans = () => {
                                     <TextDescription>Sesión 30min/mes con sexologa</TextDescription>
                                 </InsideText>
                                 <InsideText>
-                                    <BotonArs href="/">Sucribirme</BotonArs>
+                                    {selectedOption === 'Argentina' && (
+                                    <InfoSuscription>
+                                        <PriceText>15,600 ARS</PriceText>
+                                        <BotonArs href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848997590c01899b67d39f0136">Sucribirme</BotonArs>
+                                    </InfoSuscription>)}
+                                    {selectedOption === 'Otro País' && (
+                                    <InfoSuscription>
+                                        <PriceText>30 USD</PriceText>
+                                        <BotonUsd href="https://buy.stripe.com/3cs02I5BDaD3gMMbIK">Sucribirme</BotonUsd>
+                                    </InfoSuscription>)}
                                 </InsideText>
                             </ContainerInsideText>
                         </Text>
@@ -301,7 +370,16 @@ const Plans = () => {
                                     <TextDescription>Sesión 30min/mes con sexologa</TextDescription>
                                 </InsideText>
                                 <InsideText>
-                                    <BotonArs href="/">Sucribirme</BotonArs>
+                                    {selectedOption === 'Argentina' && (
+                                    <InfoSuscription>
+                                        <PriceText>20,000 ARS</PriceText>
+                                        <BotonArs href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848997590c01899b6adafb0137">Sucribirme</BotonArs>
+                                    </InfoSuscription>)}
+                                    {selectedOption === 'Otro País' && (
+                                    <InfoSuscription>
+                                        <PriceText>38 USD</PriceText>
+                                        <BotonUsd href="https://buy.stripe.com/6oE3eU0hjeTj688dQT">Sucribirme</BotonUsd>
+                                    </InfoSuscription>)}
                                 </InsideText>
                             </ContainerInsideText>
                         </Text>
@@ -335,7 +413,16 @@ const Plans = () => {
                                     <TextDescription>Sesión 30min/mes con sexologa</TextDescription>
                                 </InsideText>
                                 <InsideText>
-                                    <BotonArs href="/">Sucribirme</BotonArs>
+                                    {selectedOption === 'Argentina' && (
+                                    <InfoSuscription>
+                                        <PriceText>27,000 ARS</PriceText>
+                                        <BotonArs href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848997590c01899b6be6110138">Sucribirme</BotonArs>
+                                    </InfoSuscription>)}
+                                    {selectedOption === 'Otro País' && (
+                                    <InfoSuscription>
+                                        <PriceText>54 USD</PriceText>
+                                        <BotonUsd href="https://buy.stripe.com/8wM8zec01fXn7cc5ko">Sucribirme</BotonUsd>
+                                    </InfoSuscription>)}
                                 </InsideText>
                             </ContainerInsideText>
                         </Text>
