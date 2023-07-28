@@ -13,6 +13,7 @@ const Background = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    
     /* min-height: 85vh; */
     /* margin-top: 3rem; */
     position: relative;
@@ -60,14 +61,17 @@ const SubTitle = styled.p`
     font-size: 2.0rem;
     font-family: "Averia Libre", sans-serif;
     text-align: center;
+    margin-top: .4rem;
+    margin-right: 10px;
     span {
         color: var(--green);
         font-weight: bold;
         font-family: "Averia Libre", sans-serif;
     }
     @media(max-width: 540px){
-        margin-bottom:1.5rem;
+        margin-bottom: 0.4rem;
         font-size: 2rem;
+        margin-top: 0rem;
     }
     @media(min-width: 540px){
         margin-bottom: 1rem;
@@ -262,22 +266,100 @@ const PriceText = styled.div`
     @media(max-width: 540px){
         margin-left: 2rem;
     }
-
-
-
 `;
 
+const InfoButton = styled.a`
+    font-size: 20px;
+    cursor: pointer;
+`;
+
+const PopupContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Ensure the pop-up is on top of other elements */
+`;
+
+const PopupDialog = styled.div`
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+  position: relative; /* Added to position the CloseButton */
+`;
+
+const CloseButton = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+`;
+
+
+const SlideHeader = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
+
+const SlideTitle = styled.span`
+    margin-right: 10px;
+`;
+
+const InfoText = styled.div`
+    color: black;
+    font-size: 1.3rem;
+    font-family: "Averia Libre", sans-serif;
+
+    span {
+        font-weight: bold;
+        font-family: "Averia Libre", sans-serif;
+        background-color: var(--green); /* Set the background color to green */
+        padding: 0.5rem 1rem; /* Add padding to make the background visible */
+        color: white; /* Set the text color to white */
+`;
+
+const PopupContent = () => {
+    return (
+      <>
+        <InfoText>
+          <span>Acceso a guías:</span> Podrás leer todas nuestras guías premium sin necesidad de pagar por cada una 😉
+        </InfoText>
+        <br />
+        <InfoText>
+          <span>Cajita WeSexer:</span> El último fin de semana de cada mes les mandaremos una caja sorpresa para que exploren y se diviertan MUCHO😉
+        </InfoText>
+        {/* Add more content as needed */}
+      </>
+    );
+  };
+  
 
 
 const Plans = () => {
 
     const [selectedOption, setSelectedOption] = useState('Argentina');
+    const [showPopup, setShowPopup] = useState(false);
 
     return (
         <Background id="paravos">
             <Container style={{paddingTop: "5rem", paddingBottom: "5rem"}}>
                 <Title><span>Precios</span></Title>
-                <SubTitle>Elige uno de nuestros 3 planes</SubTitle>
+                <SlideHeader>
+                    <SubTitle>Elige uno de nuestros 3 planes</SubTitle>
+                    <InfoButton onClick={() => setShowPopup(true)}>ℹ️</InfoButton>
+                </SlideHeader>
 
                 <SelectorButtonContainer>
                     <SelectorButton onChange={(e) => setSelectedOption(e.target.value)}>
@@ -297,7 +379,10 @@ const Plans = () => {
                     <Slide>
                         <Text>
                             
-                            <span>Básico</span>
+                            <SlideHeader>
+                                <SlideTitle>Básico</SlideTitle>
+                                <InfoButton onClick={() => setShowPopup(true)}>ℹ️</InfoButton>
+                            </SlideHeader>
                             <ContainerInsideText>
                                 <InsideText>
                                     <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
@@ -337,13 +422,18 @@ const Plans = () => {
                                 </InsideText>
                             </ContainerInsideText>
                         </Text>
+
                         
+                                            
                         
 
                     </Slide>
                     <Slide>
                         <Text>
-                            <span>Estandar</span>
+                            <SlideHeader>
+                                <SlideTitle>Estandar</SlideTitle>
+                                <InfoButton onClick={() => setShowPopup(true)}>ℹ️</InfoButton>
+                            </SlideHeader>
                             <ContainerInsideText>
                                 <InsideText>
                                     <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
@@ -383,10 +473,15 @@ const Plans = () => {
                                 </InsideText>
                             </ContainerInsideText>
                         </Text>
+                        
                     </Slide>
                     <Slide>
                         <Text>
-                            <span>Premium</span>
+                            <SlideHeader>
+                                <SlideTitle>Premium</SlideTitle>
+                                <InfoButton onClick={() => setShowPopup(true)}>ℹ️</InfoButton>
+                            </SlideHeader>
+                            
                             <ContainerInsideText>
                                 <InsideText>
                                     <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
@@ -426,8 +521,19 @@ const Plans = () => {
                                 </InsideText>
                             </ContainerInsideText>
                         </Text>
+                        
                     </Slide>
+                    
                 </FullScreenSwiper>
+                {showPopup && (
+                            <PopupContainer>
+                            <PopupDialog>
+                                <CloseButton onClick={() => setShowPopup(false)}>✕</CloseButton>
+                                {PopupContent()}
+                                
+                            </PopupDialog>
+                            </PopupContainer>
+                        )}
                 </CenteredContainer>
             </Container>
         </Background>
