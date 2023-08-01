@@ -69,13 +69,6 @@ const CustomPrevArrow = styled.img`
 }
 `;
 
-const TitleContainer = styled.div`
-    display: flex; /* Set display to flex */
-    align-items: center; /* Align items vertically in the center */
-    justify-content: space-between; /* Arrange items with space between */
-    margin-left: 3rem;
-    margin-right: 3rem;
-`;
 
 const Title = styled.div`
     font-size: 2.5rem;
@@ -127,9 +120,6 @@ const VioletWrap = styled.div `
 `;
 
 
-
-
-
 const SwiperWrap = styled(Swiper) `
     position: relative;
     padding-right: 0px;
@@ -141,7 +131,7 @@ const LineStyled = styled.div`
     margin: 0 auto; /* Center the component horizontally */
 `;
 
-const ArticlesWithTabs = () => {
+const SurveyWithTabs = () => {
   const [selected, setSelected] = useState('last');
   const [articles, setArticles] = useState([]);
   const [swiper, setSwiper] = useState(null);
@@ -220,4 +210,4 @@ const ArticlesWithTabs = () => {
   );
 };
 
-export default ArticlesWithTabs;
+export default SurveyWithTabs;

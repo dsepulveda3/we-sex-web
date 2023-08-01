@@ -104,7 +104,7 @@ const VerticalLine = styled.div`
   height: 50%; /* Set the height of the line */
 `;
 
-const ArticleClosed = ({ article, icon, onClick = false }) => {
+const SurveyClosed = ({ article, icon, onClick = false }) => {
   const router = useRouter();
   return (
     <SurveyClosedStyle
@@ -126,6 +126,6 @@ const ArticleClosed = ({ article, icon, onClick = false }) => {
   );
 };
 
-export default ArticleClosed;
+export default SurveyClosed;
 
 
