@@ -40,15 +40,10 @@ const StepTwo = () => {
     date: Yup.date()
       .required('Campo requerido')
       .test('valid-age', 'Debes ser mayor de 18 años', function (value) {
-        if (!value) return false; // Don't proceed if the value is null or undefined
-
+        if (!value) return false;
         const currentDate = new Date();
         const birthDate = new Date(value);
-
-        // Calculate the difference between the current date and the birth date in years
         const age = currentDate.getFullYear() - birthDate.getFullYear();
-
-        // Check if the age is at least 18 years old
         return age >= 18;
       }),
   });

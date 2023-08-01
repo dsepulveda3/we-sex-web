@@ -8,7 +8,8 @@ import {
   GoogleAuthProvider, 
   signInWithEmailAndPassword, 
   createUserWithEmailAndPassword,
-  signOut
+  signOut,
+  OAuthProvider,
 } from 'firebase/auth';
 import firebase from '../config/firebase';
 import {
@@ -99,6 +100,18 @@ export default function useFirebaseAuth() {
                 handleSocialAuth(result.user);
             })
             .catch((error) => {
+                toast.error('Hubo un error al iniciar sesión');
+            });
+    };
+
+    const signInWithApple = async () => {
+        const provider = new OAuthProvider('apple.com');
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                handleSocialAuth(result.user);
+            })
+            .catch((error) => {
+                console.log(error);
                 toast.error('Hubo un error al iniciar sesión');
             });
     };
@@ -203,6 +216,7 @@ export default function useFirebaseAuth() {
         loading,
         signInWithCredentials,
         signInWithGoogle,
+        signInWithApple,
         registerUserWithFormData,
         signOutAndClear,
         emailIsInUse

@@ -4,6 +4,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useAuth } from '../../context/authUserContext';
 import GoogleSignInButton from '../googleSignInButton/googleSignInButton';
+import AppleSingInButton from '../appleSignInButton/appleSignInButton';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import {
   Background,
@@ -118,6 +119,7 @@ const LoginForm = () => {
           </FormWrapper>
           <Or>o</Or>
           <GoogleSignInButton />
+          <AppleSingInButton />
           <ForgotPasswordLink href="/forgot-password">
             Recuperar contraseña
           </ForgotPasswordLink>

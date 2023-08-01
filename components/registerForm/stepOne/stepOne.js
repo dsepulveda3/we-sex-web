@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import GoogleSignInButton from '../../googleSignInButton/googleSignInButton';
+import AppleSingInButton from '../../appleSignInButton/appleSignInButton';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import {
   Background,
@@ -100,6 +101,7 @@ const StepOne = () => {
           <Title>WeSex</Title>
           <Text>Crea tu cuenta en 1 minuto 🤝</Text>
           <GoogleSignInButton />
+          <AppleSingInButton />
           <Or>o</Or>
 
           <FormWrapper>

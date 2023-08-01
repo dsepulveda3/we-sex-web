@@ -32,7 +32,7 @@ export const LoginContainer = styled(Container)`
     // border: 1px solid white;
     /* Set width and height if needed */
     width: 550px;
-    height: 730px;
+    height: 800px;
     //   background-color: lightgray;
     padding: 5rem 5rem 5rem 5rem;
 
