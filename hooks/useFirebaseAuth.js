@@ -10,14 +10,15 @@ import {
   createUserWithEmailAndPassword,
   signOut,
   OAuthProvider,
+  sendPasswordResetEmail,
 } from 'firebase/auth';
 import firebase from '../config/firebase';
 import {
-    registerUser,
-    sendSocialAuthUser,
-    submitConfirmationCode,
-    sendConfirmationCode,
-    getUser
+  registerUser,
+  sendSocialAuthUser,
+  submitConfirmationCode,
+  sendConfirmationCode,
+  getUser
 } from '../requests/authService';
 
 const formatAuthUser = (user) => ({
@@ -171,6 +172,7 @@ export default function useFirebaseAuth() {
             if (response.status === 201) {
                 toast.success('Cuenta creada exitosamente');
                 router.push('/');
+                setUser(response.data);
             }
         }).catch((error) => {
             toast.error('Hubo un error al crear la cuenta');
@@ -196,11 +198,29 @@ export default function useFirebaseAuth() {
         }).catch((error) => {
             return true;
         });
+    
+    const submitVerificationCode = (code, setModalStatus) => {
+        submitConfirmationCode({ code }).then((response) => {
+            if (response.status === 200) {
+                toast.success('Cuenta verificada exitosamente');
+                setModalStatus(false);
+            }
+        }).catch((error) => {
+            if(error.response.data.messageId === 'Invalid code')
+            {
+                toast.error('Código invalido');
+            }
+            else {
+                toast.error('Hubo un error al verificar la cuenta');
+            }
+        });
+    };
 
     const signOutAndClear = () =>
         signOut(auth).then(() => {
             toast.success('Cierre de sesión exitoso');
             clear();
+            router.push('/');
         }).catch((error) => {
             toast.error('Hubo un error al cerrar sesión');
         });
@@ -219,6 +239,8 @@ export default function useFirebaseAuth() {
         signInWithApple,
         registerUserWithFormData,
         signOutAndClear,
-        emailIsInUse
+        emailIsInUse,
+        submitVerificationCode,
+        sendResetPasswordEmail,
     };
 }

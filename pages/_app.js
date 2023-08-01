@@ -1,6 +1,7 @@
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import { AuthUserProvider } from '../context/authUserContext';
 import { ToastContainer } from 'react-toastify';
+import CodeInputModal from "../components/codeInputModal"
 import 'react-toastify/dist/ReactToastify.css';
 import '../styles/bootstrap.min.css'
 import '../styles/globals.css'
@@ -16,6 +17,7 @@ function MyApp({ Component, pageProps }) {
         closeOnClick
         pauseOnHover
     />
+    <CodeInputModal />
   </AuthUserProvider>
   )
 }

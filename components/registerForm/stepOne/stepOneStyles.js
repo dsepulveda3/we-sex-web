@@ -13,7 +13,7 @@ export const Background = styled.div`
     background-size: 100% 100%;
     
     
-    min-height: 85vh;
+    min-height: 100vh;
     position: relative;
     
     @media(max-width: 540px){

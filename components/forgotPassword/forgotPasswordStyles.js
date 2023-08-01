@@ -1,6 +1,6 @@
-import { Container } from 'reactstrap';
 import styled from '@emotion/styled';
-import { icons } from 'react-icons';
+import {Container} from 'reactstrap';
+
 
 export const Background = styled.div`
     padding-top: 7.5rem;
@@ -11,7 +11,10 @@ export const Background = styled.div`
     // background-color: var(--violet);
     background-image: url("/img/auth/cta-bg.jpg");
     background-position: center;
-    background-size: 100% 100%;    
+    background-size: 100% 100%;
+    background-repeat: repeat;
+    
+    
     min-height: 100vh;
     position: relative;
     
@@ -27,12 +30,7 @@ export const LoginContainer = styled(Container)`
     display: flex;
     align-items: center;
     justify-content: center;
-    // border-radius: 20px;
-    // border: 1px solid white;
-    /* Set width and height if needed */
     width: 550px;
-    height: 750px;
-    //   background-color: lightgray;
     padding: 5rem 5rem 5rem 5rem;
 
     @media(min-width: 540px){
@@ -51,7 +49,6 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
 `;
 
 export const Title = styled.h1`
@@ -72,15 +69,27 @@ export const Title = styled.h1`
     }
 `;
 
-export const Text = styled.p`
+export const SubTitleText = styled.p`
     font-family: "Karla", sans-serif;
-    font-size: 2.0rem;
-    margin-bottom: 4rem;
+    font-size: 2.8rem;
     span {
         color: var(--green);
     }
     @media(max-width: 540px){
         font-size: 2rem;
+    }
+`;
+
+export const CenteredText = styled.p`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Karla", sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 4rem;
+    @media(max-width: 540px){
+        font-size: 1rem;
     }
 `;
 
@@ -95,6 +104,7 @@ export const Boton = styled.a`
         color: white;
         cursor: pointer;
     }
+    
     @media(max-width: 540px){
         margin: 1rem auto;
         display:block;
@@ -115,81 +125,32 @@ export const BotonArs = styled(Boton)`
   }
 `;
 
+export const HomeLink = styled.a`
+    color: white;
+    margin-top: 1rem;
+    margin-bottom: 6rem;
+    text-decoration: underline;
+    cursor: pointer;
+`;
 
 export const Input = styled.input`
   width: 100%;
   padding: 1rem;
   border-radius: 10px;
   border: 1px solid white;
-`;
-
-export const Or = styled.p`
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-`;
-
-export const GoogleImage = styled.img`
-    width: 6%;
-    margin-right: 2rem;
-    height: auto;
-`;
-
-export const LoginLink = styled.a`
-  color: white;
-  margin-top: 1rem;
-  margin-bottom: 6rem;
-  text-decoration: underline;
-  cursor: pointer;
-`;
-
-export const FormWrapper = styled.form`
-    width: 100%; 
+  ::placeholder {
+    color: ${(props) => (props.hasError ? '#FF9800' : 'initial')};
+  }
 `;
 
 export const ErrorMsg = styled.div`
-    position: absolute;
-    color: #FF9800;
-    font-size: 1.5rem;
+  position: absolute;
+  color: #FF9800;
+  font-size: 1.5rem;
 `;
 
 export const InputWrapper = styled.div`
-    position: relative;
-    width: 100%;
-    margin-bottom: 3rem;
-`;
-
-export const ImageInputContainer = styled.label`
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  border: 2px solid #ccc;
-  cursor: pointer;
-  margin-bottom: 3rem;
-`;
-
-export const Image = styled.img`
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  border-radius: 50%;
-  top: 0;
-  left: 0;
-`;
-
-export const FileInput = styled.input`
-  display: none;
-`;
-
-export const PencilContainer = styled.div`
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  background-color: #fff;
-  border-radius: 20%;
-  padding: 5px;
+  margin-bottom: 3rem;
 `;

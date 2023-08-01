@@ -10,7 +10,9 @@ const authUserContext = createContext({
     signInWithApple: async () => {},
     createUserWithEmailAndPassword: async () => {},
     emailIsInUse: async () => {},
-    signOut: async () => {}
+    signOutAndClear: async () => {},
+    submitVerificationCode: async () => {},
+    sendResetPasswordEmail: async () => {},
 });
 
 export function AuthUserProvider({ children }) {

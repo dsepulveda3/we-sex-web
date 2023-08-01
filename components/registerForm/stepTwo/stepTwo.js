@@ -81,18 +81,19 @@ const StepTwo = () => {
   });
 
   const handleKeyDown = (e) => {
-    if (
-      e.key === 'Enter' && 
-      formik.isValid && 
-      formik.values.date &&
-      formik.values.firstName &&
-      formik.values.lastName &&
-      formik.values.username
-      ) {
+    if (e.key === 'Enter'){
       setSubmittedByEnter(true);
       e.preventDefault();
-      handleSubmit(formik.values);
-    }
+      if (formik.isValid && 
+        formik.values.date &&
+        formik.values.firstName &&
+        formik.values.lastName &&
+        formik.values.username
+        )
+      {
+        handleSubmit(formik.values);
+      }
+    } 
   };
 
   const handleAvatarChange = (e) => {
