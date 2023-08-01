@@ -20,6 +20,7 @@ import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 // import { itemsToSearch } from '../../data';
 import clienteAxios from '../../config/axios';
 import { useRouter } from 'next/router';
+import HeaderLanding from '../general/HeaderLanding'
 
 const StyledHeader = styled.header`
   .navbar {
@@ -123,22 +124,7 @@ const StyledNavbarToggler = styled(NavbarToggler)`
   }
 `;
 
-const NavbarW = styled(Navbar)`
-  background-color: var(--violet);
-  /* padding: 1rem; */
-  .nav-item-ws {
-    color: White !important;
-    padding: 0.5rem 1rem !important;
-    font-size: 2.2rem;
-    margin: 0 0 0 1rem;
-    border: transparent solid;
-    border-radius: 3rem;
-    transition: all 1s ease;
-    &:hover {
-      border: white solid;
-    }
-  }
-`;
+
 
 const NavItemHideOnPhone = styled(NavItem)`
   &:hover {
@@ -247,7 +233,9 @@ const Header = ({type}) => {
   }
 
   return (
-    <StyledHeader bgColor={bgColor} bgImage={bgImage}>
+    <>
+    {type === 'landing' ? (<HeaderLanding />): (
+      <StyledHeader bgColor={bgColor} bgImage={bgImage}>
       <Navbar expand="md" className="fixed-top" >
       <div className="d-flex justify-content-between align-items-center w-100" style={{marginLeft: "20px", marginRight: "20px"}}>
           <NavbarBrand href="/">
@@ -256,10 +244,8 @@ const Header = ({type}) => {
           <StyledNavbarToggler aria-controls="basielc-navbar-nav" onClick={toggleNavbar} />
           <Collapse isOpen={isOpen} navbar>
             <Nav navbar>
-
-            
               <NavItemHideOnPhone>
-                <NavLink onClick={toggleNavbar} style={{ color: "white"}} css={{ "&:hover": {textDecoration: "underline"}}} className="nav-link scrollto active" href="/">
+                <NavLink onClick={toggleNavbar} style={{ color: "white"}} css={{ "&:hover": {textDecoration: "underline"}}} className="nav-link scrollto active" href="/inicio">
                   Home
                 </NavLink>
               </NavItemHideOnPhone>
@@ -278,23 +264,6 @@ const Header = ({type}) => {
                   Articulos
                 </NavLink>
               </NavItemHideOnPhone>
-
-              {/* <NavItem>
-                <NavLink className="nav-link scrollto" 
-                href="/#about" style={{color: "white"}}
-                onClick={(e) => {
-                  e.preventDefault();
-                  toggleNavbar();
-                  const el = document.getElementById('about');
-                  window.scrollTo({
-                    top: el.offsetTop - 70, // Adjust this value as needed
-                    behavior: 'smooth',
-                  });
-                }}
-                >
-                  Profesionales
-                </NavLink>
-              </NavItem> */}
               
               <NavItemHideOnPhone>
                 <PremiumMaterialButton onClick={toggleNavbar} className="nav-link scrollto" href="/premium-material" style={{color: "white"}}>
@@ -324,6 +293,9 @@ const Header = ({type}) => {
       </Navbar>
       {isOpen && <div className="backgroundClick" onClick={toggleNavbar}></div>}
     </StyledHeader>
+    )}
+      
+    </>
   );
 };
 

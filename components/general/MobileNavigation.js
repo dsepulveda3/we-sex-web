@@ -22,6 +22,7 @@ const Fondo = styled.div`
     max-height: 2.5rem;
     width: 100%;
   }
+  z-index: 999; /* Set a high value for the z-index */
 `;
 
 const Icon = styled.img`
@@ -38,7 +39,7 @@ const BoldText = styled.span`
   font-weight: bold;
 `;
 
-const MobileNavigation = () => {
+const MobileNavigation = ({type}) => {
   const [activeLink, setActiveLink] = useState('/');
   const [clickedIcons, setClickedIcons] = useState({
     home: false,
@@ -62,7 +63,7 @@ const MobileNavigation = () => {
     setActiveLink(router.pathname);
     setClickedIcons(prevState => ({
       ...prevState,
-      home: router.pathname === '/',
+      home: router.pathname === '/inicio',
       debates: router.pathname === '/debates',
       articulos: router.pathname === '/articulos',
       premium: router.pathname === '/premium',
@@ -70,14 +71,16 @@ const MobileNavigation = () => {
   }, [router.pathname]);
 
   return (
-    <Fondo className="hide-desktop">
+    <>
+    { type === 'landing' ? (<></>): (
+      <Fondo className="hide-desktop">
       <Container>
         <Row className="pb-1 pt-1">
           <Col xs={3} sm={3}>
-            <Link href="/">
-              <a onClick={() => handleIconClick('/', 'home')}>
-                <Icon src={clickedIcons.home ? '/img/icons/home2-icon-black.svg' : '/img/icons/home2-icon-white.svg'} active={activeLink === '/'} />
-                {activeLink === '/' ? <BoldText>Inicio</BoldText> : 'Inicio'}
+            <Link href="/inicio">
+              <a onClick={() => handleIconClick('/inicio', 'inicio')}>
+                <Icon src={clickedIcons.home ? '/img/icons/home2-icon-black.svg' : '/img/icons/home2-icon-white.svg'} active={activeLink === '/inicio'} />
+                {activeLink === '/inicio' ? <BoldText>Inicio</BoldText> : 'Inicio'}
               </a>
             </Link>
           </Col>
@@ -110,6 +113,9 @@ const MobileNavigation = () => {
         </Row>
       </Container>
     </Fondo>
+    )}
+    
+    </>
   );
 };
 

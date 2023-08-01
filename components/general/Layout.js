@@ -5,14 +5,14 @@ import Footer from './Footer';
 import MobileNavigation from './MobileNavigation';
 
 const Layout = ({children, type}) => {
-    
     return (
         <> 
             <HeadInfo />
             <Header type={type}/>
             {children}
             {/* <Footer /> */}
-            <MobileNavigation />
+            
+            <MobileNavigation type={type}/>
             
         </>
     );

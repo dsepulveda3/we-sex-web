@@ -4,18 +4,19 @@ import { Row, Col } from 'reactstrap';
 import { useRouter } from 'next/router';
 
 const Discussion = styled.div`
-  // background-color: var(--lightGrey);
-  background-image: url("/img/landing/cta-bg.jpg");
+  background-color: var(--violet);
+  // background-image: url("/img/landing/cta-bg.jpg");
   border-radius: 1.5rem;
   padding: 1.5rem;
   color: var(--violet);
   transition: all 0.5s ease;
   margin-top: 12px;
-  width: 30rem;
+  width: 30rem; /* Set a fixed width for the discussion card */
+  min-width: 30rem; /* Set a minimum width for the discussion card */
   height: 200px;
   border: 5px solid transparent;
   margin-bottom: 12px;
-  margin-right: 20px; /* Add space between cards */
+  margin-right: 0px; /* Add space between cards */
   -webkit-box-shadow: -11px 7px 15px -15px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: -11px 7px 15px -15px rgba(0, 0, 0, 0.1);
   box-shadow: -11px 7px 15px -15px rgba(0, 0, 0, 0.1);
@@ -31,11 +32,11 @@ const Discussion = styled.div`
   
 
   @media (max-width: 540px) {
-    
     margin-top: 7px;
     margin-bottom: 7px;
-    
-    width: 100%; /* Adjust width for mobile view */
+
+    width: ${props => props.type === 'debatessection' ? '35rem' : '30rem'};
+    min-width: auto;
   }
 `;
 
@@ -60,14 +61,14 @@ const Title = styled.p`
 const Text = styled.p`
   margin-bottom: 0.5rem;
   margin-top: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   color: white;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2; /* Number of lines to show */
   -webkit-box-orient: vertical;
-  font-family: "Averia Libre", sans-serif;
+  font-family: "Karla", sans-serif;
   
   @media (max-width: 540px) {
     font-size: 1.8rem;
@@ -98,11 +99,14 @@ const Likes = styled.img`
   filter: invert(1);
 `;
 
-const DiscussionClosed = ({ discussion, onClick = false }) => {
+const DiscussionClosed = ({ type, discussion, onClick = false }) => {
   const router = useRouter();
+
+  console.log(type);
 
   return (
     <Discussion
+      type={type}
       onClick={() =>
         router.push(
           onClick ? `${discussion._id}` : `discussionDetail/${discussion._id}`

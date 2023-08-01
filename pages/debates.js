@@ -74,7 +74,8 @@ const CategoryButton = styled.button`
 
 const TitleContainer = styled.div`
     margin-top: 6.7rem;
-    background-color: var(--green);
+    // background-color: var(--green);
+    background-color: white;
     @media (max-width: 540px) {
       margin-top: 8rem;
     }
@@ -84,9 +85,36 @@ const TitleContainer = styled.div`
 
 const Title = styled.div`
     font-size: 3.5rem;
-    font-family: "Averia Libre", sans-serif;
+    font-weight: bold;
+    font-family: "Karla", sans-serif;
+    color: black;
+
   }
 `;
+
+const Subtitle = styled.p`
+    font-size: 2.0rem;
+    color: black;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    margin-left: 0rem;
+    font-family: "Karla", sans-serif;
+    span {
+        color: var(--green);
+        font-weight: bold;
+        font-family: "Averia Libre", sans-serif;
+
+    }
+    @media(max-width: 540px){
+        font-size: 1.5rem;
+        margin-bottom:2rem;
+        text-align: left;
+        
+        margin-right: 3rem;
+        margin-left: 3rem;
+    }
+`;
+
 
 const Button = styled.a`
     font-family: "Karla", sans-serif;
@@ -108,7 +136,16 @@ const Button = styled.a`
 `;
 
 const DiscussionContainer = styled(Container)`
-  margin-bottom: 2rem;
+    padding-left: 0; /* Set left padding to 0 */
+    padding-right: 0; /* Set right padding to 0 */
+    margin-bottom: 2rem;
+`;
+
+const CenteredRow = styled(Row)`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0px;
 `;
 
 
@@ -190,13 +227,13 @@ export default function Debates() {
           <TitleContainer className='sec-title'>
             <Container>
               {/* Title */}
-              <Title>Debates</Title>
+              <Title>DEBATES</Title>
               {/* Subtitle */}
-              <p className='sec-subtitle first-uppercase'>
+              <Subtitle className='sec-subtitle first-uppercase'>
                 {selectedCategory
                   ? discussionCategoriesTitle[selectedCategory]
                   : null}
-              </p>
+              </Subtitle>
             </Container>
           </TitleContainer>
           <DiscussionContainer>
@@ -234,14 +271,14 @@ export default function Debates() {
                 ))}
               </Swiper>
             </div>
-            <Row className='mt-4'>
+            <CenteredRow className='mt-4' style={{justifyContent: "center", flexWrap: "wrap"}}>
             {/* Displayed Discussions */}
             {discussions.slice(0, displayedDiscussions).map((discussion) => (
-              <Col xl={3} lg={4} md={6} xs={12} key={discussion._id}>
-                <DiscussionClosed discussion={discussion} />
+              <Col xl={3} lg={4} md={6} xs={12} key={discussion._id} style={{ flex: '0 0 280px' }}>
+                <DiscussionClosed discussion={discussion} type= 'debatessection' />
               </Col>
             ))}
-          </Row>
+          </CenteredRow>
           </DiscussionContainer>
           {/* Load More Button */}
           <div style={{ padding: '10px 0', textAlign: 'center' }}>

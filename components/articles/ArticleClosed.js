@@ -8,41 +8,57 @@ import { useRouter } from 'next/router';
 import { articlesCategoriesTitle } from '../../data';
 
 const ArticleClosedStyle = styled.button`
-  text-align: left;
-  color: white;
-  background-image: url('/img/articles/article-background.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 2rem;
-  border-radius: 2rem;
-  margin-top: 0.1rem;
-  margin-bottom: 0.1rem;
-  max-width: 30rem;
-  width: 100%;
-  transition: all 0.5s ease;
-  min-height: 15rem !important;
-  /* margin-bottom: 3rem; */
-  &:hover {
-    transform: scale(1.05);
-  }
-  @media (max-width: 540px) {
-    text-align: center;
-    min-height: 15rem !important;
-    max-width: 100%;
+    // background-color: var(--lightGrey);
+      background-image: url('/img/articles/article-background.jpg');
+      background-position: center;
+      border-radius: 1.5rem;
+      padding: 2rem;
 
-    &:hover {
-      transform: scale(1.05);
-    }
-  }
+      color: var(--violet);
+      transition: all 0.5s ease;
+      margin-top: 12px;
+      width: 30rem; /* Set a fixed width for the discussion card */
+      min-width: 30rem; /* Set a minimum width for the discussion card */
+      height: 150px;
+      border: 5px solid transparent;
+      margin-bottom: 12px;
+      margin-right: 0px; /* Add space between cards */
+      -webkit-box-shadow: -11px 7px 15px -15px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: -11px 7px 15px -15px rgba(0, 0, 0, 0.1);
+      box-shadow: -11px 7px 15px -15px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Align children horizontally at the center */
+
+      &:hover {
+        border: 5px solid var(--green);
+      }
+
+      
+
+      @media (max-width: 540px) {
+        margin-top: 7px;
+        margin-bottom: 7px;
+
+        width: ${props => props.type === 'debatessection' ? '35rem' : '30rem'};
+        min-width: auto;
+      }
 `;
 
 
 
 const Category = styled.a`
   background-color: var(--green);
+  color: white;
+  font-weight: bold;
   padding: 0.5rem 1.5rem;
   border-radius: 5rem;
   font-size: 1.6rem;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: "Averia Libre", sans-serif;
   @media (max-width: 540px) {
     display: block;
     width: fit-content;
@@ -53,11 +69,20 @@ const Category = styled.a`
     margin-left: auto;
   }
 `;
-const Title = styled.h3`
-  margin-top: 1rem;
-  font-size: 2.2rem;
+const Title = styled.div`
+  text-align: center;
+  color: white;
+  margin-top: 1.5rem;
+  font-size: 1.6rem;
   font-weight: bold;
-  margin-bottom: 0;
+  margin-bottom: 0;overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+  font-family: "Averia Libre", sans-serif;
+  
+
   @media (max-width: 540px) {
     margin-top: 1rem;
     font-size: 2.1rem;
