@@ -19,8 +19,17 @@ export function RegisterProvider({ children }) {
     setFormData((prevData) => ({ ...prevData, ...data }));
   };
 
+
+  const resetFormData = () => {
+    setFormData({
+      email: '',
+      password: '',
+      confirmPassword: '',
+    });
+  }
+
   return (
-    <RegisterContext.Provider value={{ formData, updateFormData, stepOneCompleted, setStepOneCompleted }}>
+    <RegisterContext.Provider value={{ formData, updateFormData, resetFormData, stepOneCompleted, setStepOneCompleted }}>
       {children}
     </RegisterContext.Provider>
   );

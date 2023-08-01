@@ -32,7 +32,7 @@ export const LoginContainer = styled(Container)`
     // border: 1px solid white;
     /* Set width and height if needed */
     width: 550px;
-    height: 690px;
+    height: 730px;
     //   background-color: lightgray;
     padding: 5rem 5rem 5rem 5rem;
 
@@ -167,5 +167,21 @@ export const EyeIcon = styled.a`
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
+    cursor: pointer;
+`;
+
+export const StyledLabel = styled.label`
+  display: block;
+  margin-bottom: 8px;
+`;
+
+export const StyledCheckbox = styled.input`
+  margin-right: 8px;
+`;
+export const StyledTosLink = styled.a`
+    color: white;
+    margin-top: 1rem;
+    margin-bottom: 6rem;
+    text-decoration: underline;
     cursor: pointer;
 `;

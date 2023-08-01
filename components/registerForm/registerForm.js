@@ -4,17 +4,11 @@ import StepOne from './stepOne';
 import StepTwo from './stepTwo';
 
 const RegisterForm = () => {
-  const { stepOneCompleted, formData } = useRegisterContext();
-
-  useEffect(() => {
-    console.log("data:", formData);
-    console.log(stepOneCompleted);
-  }, [formData]);
+  const { stepOneCompleted } = useRegisterContext();
 
   return (
     <div>
-      {/* {stepOneCompleted ? <StepTwo /> : <StepOne />} */}
-      <StepTwo />
+      {stepOneCompleted ? <StepTwo /> : <StepOne />}
     </div>
   );
 };

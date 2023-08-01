@@ -16,7 +16,10 @@ import {
   InputWrapper,
   FormWrapper,
   ErrorMsg,
-  EyeIcon
+  EyeIcon,
+  StyledLabel,
+  StyledCheckbox,
+  StyledTosLink
 } from './stepOneStyles.js';
 import { toast } from 'react-toastify';
 import { useRegisterContext } from '../../../context/registerContext';
@@ -40,12 +43,14 @@ const StepOne = () => {
     confirmPassword: Yup.string()
       .oneOf([Yup.ref('password'), null], 'Las contraseñas deben coincidir')
       .required('Campo requerido'),
+    acceptedTos: Yup.boolean().oneOf([true], 'Debes aceptar los términos y condiciones'),
   });
 
   const initialValues = {
     email: '',
     password: '',
     confirmPassword: '',
+    acceptedTos: false,
   };
 
   const handleSubmit = async (values) => {
@@ -72,7 +77,8 @@ const StepOne = () => {
         formik.isValid &&
         formik.values.email &&
         formik.values.password &&
-        formik.values.confirmPassword
+        formik.values.confirmPassword &&
+        formik.values.acceptedTos === true
       ) {
         handleSubmit(formik.values);
       }
@@ -152,6 +158,21 @@ const StepOne = () => {
               {(submittedByEnter || formik.touched.confirmPassword) && formik.errors.confirmPassword && (
                 <ErrorMsg>{formik.errors.confirmPassword}</ErrorMsg>
               )}
+            </InputWrapper>
+
+            <InputWrapper>
+              {/* Checkbox input for accepting TOS */}
+              <StyledLabel>
+                <StyledCheckbox
+                  type="checkbox"
+                  id="aacceptedTos"
+                  name="acceptedTos"
+                  checked={formik.values.acceptedTos}
+                  onChange={formik.handleChange}
+                />
+                Acepto los <StyledTosLink href="https://we.sex/privacy-policy">términos, condiciones y politicas de privacidad</StyledTosLink>
+              </StyledLabel>
+              {formik.touched.acceptedTos && formik.errors.acceptedTos && <ErrorMsg>{formik.errors.acceptedTos}</ErrorMsg>}
             </InputWrapper>
 
             <BotonArs type="submit" onClick={formik.handleSubmit}>

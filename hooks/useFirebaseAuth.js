@@ -131,16 +131,47 @@ export default function useFirebaseAuth() {
         }); 
     };
 
-    const createUserWithCredentials = (email) => 
-        fetchSignInMethodsForEmail(auth, email).then((signInMethods) => {
+    const registerUserWithFormData = (formData) => 
+        fetchSignInMethodsForEmail(auth, formData.email).then((signInMethods) => {
             if (signInMethods.length > 0) {
                 toast.error('Ya existe una cuenta registrada con este correo');
             } else {
-                executeCreateUserWithCredentials(email, password);
+                executeCreateUserWithCredentials(formData);
             }
         }).catch((error) => {
             toast.error('Hubo un error al crear la cuenta');
         });
+
+    const executeCreateUserWithCredentials = (formData) =>
+        createUserWithEmailAndPassword(auth, formData.email, formData.password)
+            .then((userCredential) => {
+                createUserInBackend({...formData, firebaseId: userCredential.user.uid});
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log("error", errorMessage)
+        });
+    
+    const createUserInBackend = async (formData) => {
+        registerUser(formData).then((response) => {
+            if (response.status === 201) {
+                toast.success('Cuenta creada exitosamente');
+                router.push('/');
+            }
+        }).catch((error) => {
+            toast.error('Hubo un error al crear la cuenta');
+            auth.currentUser.delete()
+                .then(() => {
+                    signOut(auth);
+                    clear();
+                }
+            ).catch((error) => {
+                console.log("error", error)
+            });
+        }
+    )
+    };
 
     const emailIsInUse = (email) =>
         fetchSignInMethodsForEmail(auth, email).then((signInMethods) => {
@@ -151,17 +182,6 @@ export default function useFirebaseAuth() {
             }
         }).catch((error) => {
             return true;
-        });
-
-    const executeCreateUserWithCredentials = (email, password) =>
-        createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                console.log("Registered")
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log("error", errorMessage)
         });
 
     const signOutAndClear = () =>
@@ -183,7 +203,7 @@ export default function useFirebaseAuth() {
         loading,
         signInWithCredentials,
         signInWithGoogle,
-        createUserWithCredentials,
+        registerUserWithFormData,
         signOutAndClear,
         emailIsInUse
     };

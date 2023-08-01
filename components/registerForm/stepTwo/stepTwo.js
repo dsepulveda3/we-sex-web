@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import {
@@ -16,38 +16,67 @@ import {
   PencilContainer,
   ErrorMsg,
   InputWrapper,
+  LoginLink
 } from './stepTwoStyles';
 import { BsPencil } from 'react-icons/bs';
+import { useRegisterContext } from '../../../context/registerContext';
+import { useAuth } from '../../../context/authUserContext';
 
 const StepTwo = () => {
   const defaultImageURL = '/img/auth/no-avatar.jpg';
+  const [submittedByEnter, setSubmittedByEnter] = useState(false);
+  const [avatar, setAvatar] = useState(null);
+  const { formData, resetFormData, setStepOneCompleted } = useRegisterContext();
+  const { registerUserWithFormData } = useAuth();
 
   const validationSchema = Yup.object().shape({
-    image: Yup.mixed(),
-    firstname: Yup.string().required('Campo requerido'),
-    lastname: Yup.string().required('Campo requerido'),
-    username: Yup.string().required('Campo requerido'),
-    date: Yup.date().required('Campo requerido'),
+    avatar: Yup.string().nullable(),
+    firstName: Yup.string().min(2).required('Campo requerido'),
+    lastName: Yup.string()
+      .min(2).required('Campo requerido'),
+    username: Yup.string()
+      .min(2)
+      .required('Campo requerido'),
+    date: Yup.date()
+      .required('Campo requerido')
+      .test('valid-age', 'Debes ser mayor de 18 años', function (value) {
+        if (!value) return false; // Don't proceed if the value is null or undefined
+
+        const currentDate = new Date();
+        const birthDate = new Date(value);
+
+        // Calculate the difference between the current date and the birth date in years
+        const age = currentDate.getFullYear() - birthDate.getFullYear();
+
+        // Check if the age is at least 18 years old
+        return age >= 18;
+      }),
   });
 
   const initialValues = {
-    image: null,
-    firstname: '',
-    lastname: '',
+    avatar: null,
+    firstName: '',
+    lastName: '',
     username: '',
     date: '',
   };
 
-  const handleSubmit = (values) => {
-    const imageToSubmit = values.image ? values.image : defaultImageURL;
-
-    console.log('Form Values:', {
-      image: imageToSubmit,
-      firstname: values.firstname,
-      lastname: values.lastname,
-      username: values.username,
-      date: values.date,
+  const handleSubmit = async (values) => {
+    await registerUserWithFormData({
+      avatar: values.avatar ? values.avatar : '',
+      firstName: values.firstName,
+      lastName: values.lastName,
+      user: values.username,
+      birthDate: values.date,
+      email: formData.email,
+      password: formData.password,
+      acceptedTos: formData.acceptedTos,
     });
+  };
+
+  const handleBackPress = () => {
+    resetFormData();
+    setStepOneCompleted(false);
   };
 
   const formik = useFormik({
@@ -57,18 +86,28 @@ const StepTwo = () => {
   });
 
   const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
+    if (
+      e.key === 'Enter' && 
+      formik.isValid && 
+      formik.values.date &&
+      formik.values.firstName &&
+      formik.values.lastName &&
+      formik.values.username
+      ) {
+      setSubmittedByEnter(true);
       e.preventDefault();
       handleSubmit(formik.values);
     }
   };
 
-  const handleImageChange = (e) => {
+  const handleAvatarChange = (e) => {
     const file = e.target.files[0];
     const reader = new FileReader();
 
     reader.onloadend = () => {
-      formik.setFieldValue('image', file);
+      const base64ImageString = reader.result;
+      formik.setFieldValue('avatar', base64ImageString);
+      setAvatar(file)
     };
 
     if (file) {
@@ -84,27 +123,27 @@ const StepTwo = () => {
           <Text>One last step 🤝</Text>
 
           <ImageInputContainer>
-            <Image src={formik.values.image ? URL.createObjectURL(formik.values.image) : defaultImageURL} alt="Profile" />
+            <Image src={formik.values.avatar ? URL.createObjectURL(avatar) : defaultImageURL} alt="Profile" />
             <PencilContainer>
               <BsPencil onClick={() => document.getElementById('fileInput').click()} />
             </PencilContainer>
-            <FileInput type="file" id="fileInput" accept="image/*" onChange={handleImageChange} />
+            <FileInput type="file" id="fileInput" accept="image/*" onChange={handleAvatarChange} />
           </ImageInputContainer>
 
           <FormWrapper>
             <InputWrapper>
               <Input
                 type="text"
-                name="firstname"
+                name="firstName"
                 placeholder="Nombre"
                 required
-                hasError={formik.touched.firstname && formik.errors.firstname}
-                value={formik.values.firstname}
+                hasError={formik.touched.firstName && formik.errors.firstName}
+                value={formik.values.firstName}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 onKeyDown={handleKeyDown}
               />
-              {(formik.touched.firstname && formik.errors.firstname) && (
+              {(formik.touched.firstName && formik.errors.firstName) && (
                 <ErrorMsg>{formik.errors.firstname}</ErrorMsg>
               )}
             </InputWrapper>
@@ -112,17 +151,17 @@ const StepTwo = () => {
           <InputWrapper>
             <Input
               type="text"
-              name="lastname"
+              name="lastName"
               placeholder="Apellido"
               required
-              hasError={formik.touched.lastname && formik.errors.lastname}
-              value={formik.values.lastname}
+              hasError={formik.touched.lastName && formik.errors.lastName}
+              value={formik.values.lastName}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               onKeyDown={handleKeyDown}
             />
-            {(formik.touched.lastname && formik.errors.lastname) && (
-              <ErrorMsg>{formik.errors.lastname}</ErrorMsg>
+            {(formik.touched.lastName && formik.errors.lastName) && (
+              <ErrorMsg>{formik.errors.lastName}</ErrorMsg>
             )}
           </InputWrapper>
 
@@ -164,6 +203,7 @@ const StepTwo = () => {
               Comenzar
             </BotonArs>
           </FormWrapper>
+          <LoginLink onClick={handleBackPress}>Volver al paso anterior</LoginLink>
         </Content>
       </LoginContainer>
     </Background>
