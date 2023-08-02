@@ -1,17 +1,13 @@
-
 // next.config.js
+const withPWA = require('next-pwa')({
+  dest: 'public'
+  // disable: process.env.NODE_ENV === 'development',
+  // register: true,
+  // scope: '/app',
+  // sw: 'service-worker.js',
+  //...
+})
 
-
-module.exports = {
-  // Other Next.js configurations can go here...
-  // ...
-  pwa: {
-    dest: 'public',
-    register: true,
-    skipWaiting: true,
-    sw: 'sw.js',
-    // Add the path to your manifest file here
-    // The manifest file should be located in the public folder
-    manifest: '/manifest.json',
-  },
-};
+module.exports = withPWA({
+  // next.js config
+})
