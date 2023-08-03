@@ -77,10 +77,10 @@ export default function Home() {
           emoji1='😋' text1_1='Dejar de hacer siempre lo mismo a la hora de ' text1Span='darse placer.' text1_2=''
           emoji2='💑' text2_1='Juegos prácticos para ' text2Span=' experimentar' text2_2=' con tu pareja.' 
           emoji3='✨' text3_1='' text3Span='Explorar tu sexualidad' text3_2=' más allá de lo convencional.' 
-          emoji4='🏓' text4_1 ='Ping pong de ' text4Span='preguntas para hablar' text4_2 = ' de sexo en pareja.'
+          emoji4='🏓' text4_1 ='Ping pong de ' text4Span='preguntas para hablar' text4_2 = ' en sus encuentros.'
           emoji5='🧸' text5_1='Incorporar' text5Span=' juguetes sexuales' text5_2=' en la pareja.' 
           emoji6='🧚‍♀️' text6_1='Llevar a cabo' text6Span=' tus fantasías.' text6_2=''
-          emoji7='👅' text7_1='Explorar' text7Span=' tus sentidos.' text7_2='' />
+          emoji7='👅' text7_1='Reavivar la llama' text7Span=' como si fuera la primera vez.' text7_2='' />
         <AfterDiv />
         <EsParaVosSiUniversal title1_1='Esta guía de Zonas Erógenas es ' title1Span='para ti' title1_2=' si buscas' 
           emoji1='✨' text1_1='La magia de combinar diferentes zonas y ' text1Span='técnicas para alcanzar un placer extremo.' text1_2=''
@@ -96,7 +96,7 @@ export default function Home() {
         <Regalar /> */}
         <ComprarUniversal title_mp='Guía Salir de la rutina + Zonas Erógenas - WeSex' unit_price_mp= {2400} quantity_mp={1} currency_id_mp='ARS'
           price_before_ARG='AR$  3200' price_ARG='AR$  2400' price_before_USD='U$D  12' price_USD='U$D  10' redirection_succesful_mp='https://payhip.com/b/kcSsq' 
-          redirection_failed_mp='https://www.we.sex/packs/pack5'
+          redirection_failed_mp='https://www.we.sex/packs/pack5-rutina-zonas'
           link_payhip_usd='https://payhip.com/b/l76c4' has_promo={false}
         />
         {/* <Dudas />

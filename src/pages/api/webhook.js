@@ -219,15 +219,67 @@ export default async function handler(req, res) {
   post_perfit(account, listId, contactData, axiosConfig);
 
 
-}
+} else if (
+  productName === 'Guía para salir de la rutina - Reavivar la llama' ||
+  productName ===
+    '¡GRACIAS! Presiona el botón "Descargar ahora" para recibir la guía para salir de la rutina por mail y empezar a disfrutar.'
+) {
+  const listId = 79; // lista Perfit guía para salir de la rutina con tu pareja
+  const contactData = {
+    email: email,
+  };
+
+  post_perfit(account, listId, contactData, axiosConfig);
+
+
+} else if (
+  productName === 'Guía salir de la rutina + Sexo Anal + Tantra' ||
+  productName ===
+    '¡GRACIAS! PresionA el botón "Descargar ahora" para recibir la guía salir de la rutina + Tantra + Anal por mail y empezar a disfrutar.'
+) {
+  const listId = 80; // lista Perfit guía para salir de la rutina + Sexo Anal + Tantra
+  const contactData = {
+    email: email,
+  };
+
+  post_perfit(account, listId, contactData, axiosConfig);
+
+
+} else if (
+  productName === 'Guía para salir de la rutina + Zonas Erógenas' ||
+  productName ===
+    '¡GRACIAS! PresionA el botón "Descargar ahora" para recibir la guía salir de la rutina + zonas erógenas por mail y empezar a disfrutar.'
+) {
+  const listId = 81; // lista Perfit guía para salir de la rutina con tu pareja
+  const contactData = {
+    email: email,
+  };
+
+  post_perfit(account, listId, contactData, axiosConfig);
+
+
+} else if (
+  productName === 'Guía salir de la rutina + Zonas Erógenas + Sexo Anal + Tantra' ||
+  productName ===
+    '¡GRACIAS! PresionA el botón "Descargar ahora" para recibir la guía salir de la rutina con tu pareja + zonas erógenas + sexo anal + tantra por mail y empezar a disfrutar.'
+) {
+  const listId = 82; // lista Perfit guía para salir de la rutina con tu pareja
+  const contactData = {
+    email: email,
+  };
+
+  post_perfit(account, listId, contactData, axiosConfig);
+
+
+} 
 
     console.log('Successful request');
     res.status(200).end(); // Return a 200 status code to acknowledge the webhook request
   } else {
     console.log('Unsupported method');
     res.status(405).json({ message: 'Unsupported method' });
-  }
-}
+  } 
+} 
 
 
 

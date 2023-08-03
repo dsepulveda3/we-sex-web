@@ -103,10 +103,10 @@ export default function Home() {
         <AfterDiv />
         <Profesionales />
         <Regalar /> */}
-        <ComprarUniversal title_mp='Guía Salir de la rutina + Tantra + Anal - WeSex' unit_price_mp= {3200} quantity_mp={1} currency_id_mp='ARS'
-          price_before_ARG='AR$  4800' price_ARG='AR$  3200' price_before_USD='U$D  18' price_USD='U$D  12' redirection_succesful_mp='https://payhip.com/b/EfNDw' 
-          redirection_failed_mp='https://www.we.sex/packs/pack4-rutina-tantra-anal'
-          link_payhip_usd='https://payhip.com/b/sEZuw' has_promo={false}
+        <ComprarUniversal title_mp='EMC - Guía Salir de la rutina + Tantra + Anal - WeSex' unit_price_mp= {3200} quantity_mp={1} currency_id_mp='ARS'
+          price_before_ARG='AR$  4800' price_ARG='AR$  3200' price_before_USD='U$D  18' price_USD='U$D  12' redirection_succesful_mp='https://payhip.com/b/D7s5Q' 
+          redirection_failed_mp='https://www.we.sex/packs/pack4-rutina-tantra-anal-email-c'
+          link_payhip_usd='https://payhip.com/b/btkug' has_promo={false}
         />
         {/* <Dudas />
         <AboutWeSex />

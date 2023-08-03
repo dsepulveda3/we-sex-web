@@ -20,6 +20,24 @@ const Background = styled.div`
 `;
 
 const Title = styled.h4`
+    font-size: 3.3rem;
+    font-family: "Averia Libre", sans-serif;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 4rem;
+    align-items:center;
+    text-align:center;
+    span {
+        color: var(--green);
+        font-family: "Averia Libre", sans-serif;
+    }
+    @media(max-width: 540px){
+        /* margin-bottom:1.5rem; */
+        font-size: 3.3rem;
+    }
+`;
+
+const SubTitle = styled.h4`
     font-size: 3rem;
     font-family: "Averia Libre", sans-serif;
     color: white;
@@ -33,7 +51,7 @@ const Title = styled.h4`
     }
     @media(max-width: 540px){
         /* margin-bottom:1.5rem; */
-        font-size: 3.2rem;
+        font-size: 2.8rem;
     }
 `;
 
@@ -97,7 +115,8 @@ const Pack = ({title1_1, title1_2, title1_3, link_promo}) => {
     return (
         <Background id="regalar">
             <Container className="text-center">
-                <Title><span>{title1_1}</span>{title1_2}<span>{title1_3}</span></Title>
+                <Title><span>{title1_1}</span></Title>
+                <SubTitle>{title1_2}<span>{title1_3}</span></SubTitle>
                 <BotonVerde href={link_promo}>Ver oferta !</BotonVerde>
             </Container>
         </Background>

@@ -24,8 +24,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Guías de Salir de la rutina + Tantra + Anal - WeSex</title>
-        <meta name="description" content="Guías Salir de la rutina + Tantra + Anal - WeSex" /> 
+        <title>Pack Premium 3 x 4 - WeSex</title>
+        <meta name="description" content="Guía Salir de la rutina + Zonas Erógenas + Tantra + Sexo Anal - WeSex" /> 
         <meta name="keywords" content="" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -69,18 +69,27 @@ export default function Home() {
       <main>
         {/* <NavBarWS /> */}
         <HeaderPremium />
-        <FirstBannerUniversal titleText='Guías ' titleSpan='Salir de la rutina + Tantra + Anal' price_before= 'AR$ 4800  /  U$D 18' price='AR$ 3.200  /  U$D 12' description1='Llevate 3, paga 2 :) .' 
+        <FirstBannerUniversal titleText='Guías' titleSpan='Salir de la rutina con tu pareja + Zonas Erógenas + Anal + Tantra' price_before= 'AR$ 6400  /  U$D 24' price='AR$ 4800  /  U$D 18' description1='Llevate 4, paga 3 :) .' 
           description2='Compra el pack a un precio orgásmico.' 
           videoVisibility={false} imageVisibility={false}/>
-          <AfterDiv />
+        <AfterDiv />
         <EsParaVosSiUniversal title1_1='Esta guía para salir de la rutina es ' title1Span='para ti' title1_2=' si buscas' 
           emoji1='😋' text1_1='Dejar de hacer siempre lo mismo a la hora de ' text1Span='darse placer.' text1_2=''
           emoji2='💑' text2_1='Juegos prácticos para ' text2Span=' experimentar' text2_2=' con tu pareja.' 
           emoji3='✨' text3_1='' text3Span='Explorar tu sexualidad' text3_2=' más allá de lo convencional.' 
-          emoji4='🏓' text4_1 ='Ping pong de ' text4Span='preguntas para hablar' text4_2 = ' de sexo en pareja.'
+          emoji4='🏓' text4_1 ='Ping pong de ' text4Span='preguntas para hablar' text4_2 = ' en sus encuentros.'
           emoji5='🧸' text5_1='Incorporar' text5Span=' juguetes sexuales' text5_2=' en la pareja.' 
           emoji6='🧚‍♀️' text6_1='Llevar a cabo' text6Span=' tus fantasías.' text6_2=''
-          emoji7='👅' text7_1='Explorar' text7Span=' tus sentidos.' text7_2='' />
+          emoji7='👅' text7_1='Reavivar la llama' text7Span=' como si fuera la primera vez.' text7_2='' />
+        <AfterDiv />
+        <EsParaVosSiUniversal title1_1='Esta guía de Zonas Erógenas ' title1Span='para ti' title1_2=' si buscas' 
+          emoji1='✨' text1_1='La magia de combinar diferentes zonas y técnicas para ' text1Span='alcanzar un placer extremo.' text1_2=''
+          emoji2='👀' text2_1='Cómo ' text2Span='romper con el coitocentrismo' text2_2=' y explorar nuevas prácticas sexuales.' 
+          emoji3='💦' text3_1='Formas de minimizar ' text3Span='relacionados con la eyaculación precoz' text3_2=' y la falta de erección.' 
+          emoji4='💗' text4_1 ='La importancia de ' text4Span='disfrutar el placer' text4_2 = ' más allá de la penetración vaginal.'
+          emoji5='🤟' text5_1='' text5Span='Técnicas de ' text5_2='masajes eróticos.' 
+          emoji6='😋' text6_1='' text6Span='Cómo estimular cada parte del cuerpo' text6_2=', de pies a cabeza.'
+          emoji7='🫦' text7_1='' text7Span='Variadas técnicas de estimulación' text7_2='desde suaves mordiscos hasta succiones.' />
         <AfterDiv />
         <EsParaVosSiUniversal title1_1='Esta guía de Tantra es ' title1Span='para ti' title1_2=' si buscas' 
           emoji1='💗' text1_1='' text1Span='Inducirte al tantra' text1_2=' y aplicarlo en tu vida sexual.'
@@ -103,10 +112,15 @@ export default function Home() {
         <AfterDiv />
         <Profesionales />
         <Regalar /> */}
-        <ComprarUniversal title_mp='Guía Salir de la rutina + Tantra + Anal - WeSex' unit_price_mp= {3200} quantity_mp={1} currency_id_mp='ARS'
-          price_before_ARG='AR$  4800' price_ARG='AR$  3200' price_before_USD='U$D  18' price_USD='U$D  12' redirection_succesful_mp='https://payhip.com/b/EfNDw' 
-          redirection_failed_mp='https://www.we.sex/packs/pack4-rutina-tantra-anal'
-          link_payhip_usd='https://payhip.com/b/sEZuw' has_promo={false}
+        <ComprarUniversal title_mp='EMD - Guía Salir de la rutina + Zonas Erógenas + Anal + Tantra - WeSex' unit_price_mp= {4800} quantity_mp={1} currency_id_mp='ARS'
+          price_before_ARG='AR$  6400' price_ARG='AR$  4800' price_before_USD='U$D  24' price_USD='U$D  18' redirection_succesful_mp='https://payhip.com/b/L4yz8' 
+          redirection_failed_mp='https://www.we.sex/packs/pack6-rutina-zonas-tantra-anal-email-c'
+          link_payhip_usd='https://payhip.com/b/nYqEa' has_promo={true}
+          buy_just='Comprar pack 3x4' reminder_buy_just='Estás comprando el pack 3x4' 
+          link_promo='' text_promo1_1=''
+          text_promo1Span='' text_promo1_2=''
+          link_promo2='/premium-material/guides/guia-salir-rutina-email-d' text_promo2_1='O llevate solo la '
+          text_promo2Span='guía de guía para salir de la rutina' text_promo2_2=''
         />
         {/* <Dudas />
         <AboutWeSex />
