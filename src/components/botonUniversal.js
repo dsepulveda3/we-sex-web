@@ -22,12 +22,12 @@ const BotonClasico = styled.a`
 
 
 
-const BotonUniversal = () => {
+const BotonUniversal = ({link_redireccion, text}) => {
     return (
                 <BotonClasico
-                    href="https://wa.me/5491140678698"
+                    href={link_redireccion}
                     target="_blank"
-                >Contactar por WhatsApp</BotonClasico>
+                >{text}</BotonClasico>
     );
 }
  
