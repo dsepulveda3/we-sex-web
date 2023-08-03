@@ -116,18 +116,23 @@ const Boton = styled.a`
     font-size:2.3rem;
 `;
 
-const BotonVerde = styled(Boton)`
-    margin-top: 1rem!important;
+
+const BotonWsp = styled(Boton)`
     color: white;
     background-color: var(--green);
-    border: 2px solid transparent;
-    &:hover {
-        background-color: white;
-        color: var(--violet);
-        border: 2px solid var(--violet);
-        cursor: pointer;
-    }
+    text-align: center;
+    font-size: 2.0rem;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
     
+    
+    @media(max-width: 540px){
+        margin-top: 2rem;
+    
+    }
+    @media(min-width: 540px){
+    }
 `;
 
 const CenteredContainer = styled.div`
@@ -219,7 +224,8 @@ const ComoFunciona = () => {
               </Text>
             </Col>
           </Row>
-          <BotonVerde href="https://wa.me/5491140678698?text=Hola!%20Quiero%20más%20info%20sobre%20el%20programa%20para%20innovar%20en%20pareja">Quiero más info</BotonVerde>
+          <BotonWsp href="https://wa.me/5491140678698?
+          text=Hola!%20Quiero%20más%20info%20sobre%20el%20programa%20para%20innovar%20en%20pareja">Quiero más info</BotonWsp>
         </Container>
         
       </Background>
