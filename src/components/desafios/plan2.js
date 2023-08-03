@@ -265,7 +265,7 @@ const BotonUsd = styled(Boton)`
     }
 `;
 
-const BotonWsp = styled(Boton)`
+const BotonWsp = styled.a`
     color: white;
     background-color: var(--green);
     text-align: center;
