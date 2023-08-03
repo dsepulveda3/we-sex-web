@@ -21,9 +21,10 @@ const BotonClasico = styled.a`
 `;
 
 
-const BotonUniversal = ({link_redireccion, text, textColor, bgColor, bgColorHover}) => {
+const BotonUniversal = ({link_redireccion, text, textColor, bgColor, bgColorHover, style}) => {
     return (
                 <BotonClasico
+                    style ={style}
                     href={link_redireccion}
                     target="_blank"
                     textColor={textColor}

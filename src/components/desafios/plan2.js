@@ -6,6 +6,7 @@ import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import CookieManager from 'browser/CookieManager';
+import BotonUniversal from '../botonUniversal';
 
 const Background = styled.div`
     background-image: url("/img/ws-background.jpg");
@@ -469,12 +470,26 @@ const Plans = () => {
                                     {selectedOption === 'Argentina' && (
                                     <InfoSuscription>
                                         <PriceText>15,600 ARS/pareja</PriceText>
-                                        <BotonArs href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848997590c01899b67d39f0136">Sucribirme</BotonArs>
+                                        <BotonUniversal 
+                                        style={{fontSize: "1.8rem", margin: "2rem 0rem 0rem 2rem" }}
+                                        link_redireccion='https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848997590c01899b67d39f0136'
+                                        text="Suscribirme"
+                                        textColor='white'
+                                        bgColor='#00AEEF'
+                                        bgColorHover='var(--green)'
+                                        />
                                     </InfoSuscription>)}
                                     {selectedOption === 'Otro País' && (
                                     <InfoSuscription>
                                         <PriceText>30 USD/pareja</PriceText>
-                                        <BotonUsd href="https://buy.stripe.com/3cs02I5BDaD3gMMbIK">Sucribirme</BotonUsd>
+                                        <BotonUniversal
+                                        style={{fontSize: "1.8rem", margin: "2rem 0rem 0rem 4rem" }}
+                                        link_redireccion='https://buy.stripe.com/3cs02I5BDaD3gMMbIK'
+                                        text="Suscribirme"
+                                        textColor='white'
+                                        bgColor='black'
+                                        bgColorHover='var(--green)'
+                                        />
                                     </InfoSuscription>)}
                                 </InsideText>
                             </ContainerInsideText>
@@ -520,12 +535,26 @@ const Plans = () => {
                                     {selectedOption === 'Argentina' && (
                                     <InfoSuscription>
                                         <PriceText>20,000 ARS/pareja</PriceText>
-                                        <BotonArs href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848997590c01899b6adafb0137">Sucribirme</BotonArs>
+                                        <BotonUniversal 
+                                        style={{fontSize: "1.8rem", margin: "2rem 0rem 0rem 2rem" }}
+                                        link_redireccion='https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848997590c01899b6adafb0137'
+                                        text="Suscribirme"
+                                        textColor='white'
+                                        bgColor='#00AEEF'
+                                        bgColorHover='var(--green)'
+                                        />
                                     </InfoSuscription>)}
                                     {selectedOption === 'Otro País' && (
                                     <InfoSuscription>
                                         <PriceText>38 USD/pareja</PriceText>
-                                        <BotonUsd href="https://buy.stripe.com/6oE3eU0hjeTj688dQT">Sucribirme</BotonUsd>
+                                        <BotonUniversal
+                                        style={{fontSize: "1.8rem", margin: "2rem 0rem 0rem 4rem" }}
+                                        link_redireccion='https://buy.stripe.com/6oE3eU0hjeTj688dQ'
+                                        text="Suscribirme"
+                                        textColor='white'
+                                        bgColor='black'
+                                        bgColorHover='var(--green)'
+                                        />
                                     </InfoSuscription>)}
                                 </InsideText>
                             </ContainerInsideText>
@@ -568,12 +597,26 @@ const Plans = () => {
                                     {selectedOption === 'Argentina' && (
                                     <InfoSuscription>
                                         <PriceText>27,000 ARS/pareja</PriceText>
-                                        <BotonArs href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848997590c01899b6be6110138">Sucribirme</BotonArs>
+                                        <BotonUniversal 
+                                        style={{fontSize: "1.8rem", margin: "2rem 0rem 0rem 2rem" }}
+                                        link_redireccion='https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848997590c01899b6be6110138'
+                                        text="Suscribirme"
+                                        textColor='white'
+                                        bgColor='#00AEEF'
+                                        bgColorHover='var(--green)'
+                                        />
                                     </InfoSuscription>)}
                                     {selectedOption === 'Otro País' && (
                                     <InfoSuscription>
                                         <PriceText>54 USD/pareja</PriceText>
-                                        <BotonUsd href="https://buy.stripe.com/8wM8zec01fXn7cc5ko">Sucribirme</BotonUsd>
+                                        <BotonUniversal
+                                        style={{fontSize: "1.8rem", margin: "2rem 0rem 0rem 4rem" }}
+                                        link_redireccion='https://buy.stripe.com/8wM8zec01fXn7cc5ko'
+                                        text="Suscribirme"
+                                        textColor='white'
+                                        bgColor='black'
+                                        bgColorHover='var(--green)'
+                                        />
                                     </InfoSuscription>)}
                                 </InsideText>
                             </ContainerInsideText>
@@ -594,7 +637,14 @@ const Plans = () => {
                 </CenteredContainer>
                 <DudasContainer>
                 <DudasText><span>¿Tienes dudas?</span> Escribenos por Whatsapp y ten una llamada gratis con el equipo de WeSex antes de subscribirte al programa</DudasText>
-                <BotonWsp href="https://wa.me/5491140678698?text=Hola!%20Quiero%20más%20info%20sobre%20el%20programa%20para%20innovar%20en%20pareja">Contactar WhatsApp</BotonWsp>
+
+                <BotonUniversal link_redireccion='https://wa.me/5491140678698?
+                text=Hola!%20Quiero%20más%20info%20sobre%20el%20programa%20para%20innovar%20en%20pareja'
+                text="Contactar Whatsapp"
+                textColor='white'
+                bgColor='var(--green)'
+                bgColorHover='var(--violet)'
+                />
                 </DudasContainer>
                 
             </Container>
