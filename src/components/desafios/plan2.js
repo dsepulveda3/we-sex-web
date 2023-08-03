@@ -636,7 +636,7 @@ const Plans = () => {
                         )}
                 </CenteredContainer>
                 <DudasContainer>
-                <DudasText><span>¿Tienes dudas?</span> Escribenos por Whatsapp y ten una llamada gratis con el equipo de WeSex antes de subscribirte al programa</DudasText>
+                <DudasText><span>¿Tienes dudas?</span> Escribenos por Whatsapp y ten una llamada gratis con el equipo de WeSex antes de suscribirte al programa</DudasText>
 
                 <BotonUniversal link_redireccion='https://wa.me/5491140678698?
                 text=Hola!%20Quiero%20más%20info%20sobre%20el%20programa%20para%20innovar%20en%20pareja'

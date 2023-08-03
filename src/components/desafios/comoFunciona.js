@@ -154,7 +154,7 @@ const ComoFunciona = () => {
                 <CenteredContainer>
                 <Circle>1</Circle> 
                 </CenteredContainer>
-                Primero les vamos a enviar un <span>breve formulario</span> a cada uno, en donde vamos a aprender más sobre su situación actual.
+                Primero les vamos a enviar un <span>breve formulario</span>, en donde vamos a aprender más sobre su situación actual.
               </Text>
             </Col>
             <Col xl={12} lg={12} md={12} xs={12} sm={12} className="align-items-center">
