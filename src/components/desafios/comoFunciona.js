@@ -1,6 +1,7 @@
 import React from 'react';
 import {Row, Col, Container} from 'reactstrap';
 import styled from '@emotion/styled';
+import BotonUniversal from '../botonUniversal';
 
 const Background = styled.div`
     // background-color: var(--violet);
@@ -107,27 +108,19 @@ const Text = styled.p`
 `;
 
 const Boton = styled.a`
+    font-family: "Karla", sans-serif;
     border-radius: 4rem;
     padding: 1rem 3rem;
     font-weight: bold;
-    width: fit-content;
+    margin: 1rem auto;
     border: none;
     transition: all .5s ease;
-    font-size:2.3rem;
-`;
-
-const BotonVerde = styled(Boton)`
-    margin-top: 1rem!important;
     color: white;
     background-color: var(--green);
-    border: 2px solid transparent;
+    font-size: 2.1rem;
     &:hover {
-        background-color: white;
-        color: var(--violet);
-        border: 2px solid var(--violet);
-        cursor: pointer;
+        background-color: var(--green);
     }
-    
 `;
 
 const CenteredContainer = styled.div`
@@ -179,7 +172,7 @@ const ComoFunciona = () => {
                 <CenteredContainer>
                 <Circle>3</Circle> 
                 </CenteredContainer>
-                <span>Todas las semanas</span>, van a recibir <span>desafíos y actividades</span> para hacer en pareja. Muchas veces son planes divertidos para salir de la rutina, y otras, cosas para charlar o actividades para hacer en su tiempo libre.
+                <span>Todas las semanas</span>, van a recibir <span>desafíos y actividades</span> para hacer en pareja. Muchas veces son planes copados y divertidos para salir de la rutina, otras, cosas para charlar o actividades para hacer en su tiempo libre.
               </Text>
             </Col>
             <Col xl={12} lg={12} md={12} xs={12} sm={12} className="align-items-center">
@@ -219,9 +212,16 @@ const ComoFunciona = () => {
               </Text>
             </Col>
           </Row>
-          <BotonVerde href="#comprar">Comenzar</BotonVerde>
+          {/* <Boton href="https://wa.me/5491140678698?
+          text=Hola!%20Quiero%20más%20info%20sobre%20el%20programa%20para%20innovar%20en%20pareja">Quiero saber más</Boton> */}
+          <BotonUniversal link_redireccion='https://wa.me/5491140678698?
+          text=Hola!%20Quiero%20más%20info%20sobre%20el%20programa%20para%20innovar%20en%20pareja'
+          text="Quiero saber más"
+          textColor='white'
+          bgColor='var(--green)'
+          bgColorHover='var(--violet)'
+          />
         </Container>
-        
       </Background>
     );
   }

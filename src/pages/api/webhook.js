@@ -250,7 +250,7 @@ export default async function handler(req, res) {
   productName ===
     '¡GRACIAS! PresionA el botón "Descargar ahora" para recibir la guía salir de la rutina + zonas erógenas por mail y empezar a disfrutar.'
 ) {
-  const listId = 81; // lista Perfit guía para salir de la rutina + Zonas Erógenas
+  const listId = 81; // lista Perfit guía para salir de la rutina con tu pareja
   const contactData = {
     email: email,
   };
@@ -263,7 +263,7 @@ export default async function handler(req, res) {
   productName ===
     '¡GRACIAS! PresionA el botón "Descargar ahora" para recibir la guía salir de la rutina con tu pareja + zonas erógenas + sexo anal + tantra por mail y empezar a disfrutar.'
 ) {
-  const listId = 82; // lista Perfit guía para salir de la rutina + Zonas Erógenas + Sexo Anal + Tantra
+  const listId = 82; // lista Perfit guía para salir de la rutina con tu pareja
   const contactData = {
     email: email,
   };
