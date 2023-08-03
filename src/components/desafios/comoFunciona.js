@@ -219,7 +219,7 @@ const ComoFunciona = () => {
               </Text>
             </Col>
           </Row>
-          <BotonVerde href="#comprar">Comenzar</BotonVerde>
+          <BotonVerde href="https://wa.me/5491140678698?text=Hola!%20Quiero%20más%20info%20sobre%20el%20programa%20para%20innovar%20en%20pareja">Quiero más info</BotonVerde>
         </Container>
         
       </Background>

@@ -81,7 +81,11 @@ const Text = styled.p`
     margin-bottom: 4rem;
     color: white;
     span {
-        color: var(--green);
+        font-weight: bold;
+        font-family: "Averia Libre", sans-serif;
+        background-color: var(--green); /* Set the background color to green */
+        padding: 0.5rem 1rem; /* Add padding to make the background visible */
+        color: white; /* Set the text color to white */
     }
     @media(max-width: 540px){
         font-size: 1.8rem;
@@ -169,6 +173,7 @@ const BotonArs = styled(Boton)`
     color: white;
     background-color: var(--green);
     text-align: center;
+    font-size: 2rem;
     
     
     @media(max-width: 540px){
@@ -177,25 +182,6 @@ const BotonArs = styled(Boton)`
     @media(min-width: 540px){
         
     }
-`;
-
-const BotonUsd = styled(Boton)`
-    color: white;
-    border: 3px solid white;
-    background-color: transparent;
-`;
-
-const ContainerCongrats = styled(Boton)`
-    color: white;
-    border: 3px solid var(--violet);
-    background-color: transparent;
-
-`;
-
-const ContainerPlan = styled(Boton)`
-    color: white;
-    border: 3px solid white;
-    background-color: transparent;
 `;
 
 
@@ -223,10 +209,11 @@ const Suscribed = () => {
                 <SubTitle>
                     <span>Estamos muy contentos por acompañarlos en este proceso de exploración!</span>
                 </SubTitle>
-                <Text>
+                <Text>Haz click aquí para comenzar el programa para parejas. <span>Solicita el paso 1 a nuestro equipo.</span></Text>
+                <BotonArs href="https://wa.me/5491140678698?text=Hola!%20Estoy%20listo%20para%20recibir%20el%20paso%201%20del%20programa%20">Comenzar</BotonArs>
+                {/* <Text>
                     Puedes cancelar tu suscripción cuando lo desees ....
-                </Text>
-                <BotonArs href="/">Volver a WeSex</BotonArs>
+                </Text> */}
             </Content>
 
           </ContainerInfo>

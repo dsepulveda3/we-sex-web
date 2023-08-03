@@ -1,7 +1,12 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import HeaderPremium from '@/components/headerPremium';
-import Suscribed from '@/components/desafios/suscribed'
+import Intro from '@/components/desafios/intro'
+import Explicacion2 from '@/components/desafios/explicacion2'
+import Explicacion from '@/components/desafios/explicacion'
+import ComoFunciona from '@/components/desafios/comoFunciona'
+import Dudas from '@/components/dudas'
+import Plan2 from '@/components/desafios/plan2'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -54,7 +59,14 @@ export default function Home() {
         }}
       />
       <main>
-        <Suscribed />
+        <HeaderPremium />
+        <Intro />
+        <div style={{color: "black", textAlign: "center", fontSize: "3rem", fontWeight: "bold"}}>TESTING A</div>
+        <Explicacion2 />
+        <ComoFunciona />
+        <Dudas />
+        <Plan2 />
+        <Explicacion />
         
         
       </main>
