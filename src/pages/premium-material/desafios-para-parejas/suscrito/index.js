@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import HeaderPremium from '@/components/headerPremium';
 import Suscribed from '@/components/desafios/Suscribed';
 
+// 
 
 const inter = Inter({ subsets: ['latin'] })
 
