@@ -12,21 +12,23 @@ const BotonClasico = styled.a`
     margin: 1rem auto;
     border: none;
     transition: all .5s ease;
-    color: var(--green);
-    background-color: white;
+    color: ${props => props.textColor || 'var(--green)'};
+    background-color: ${props => props.bgColor || 'white'};
     font-size: 2.1rem;
     &:hover {
-        background-color: var(--violet);
+        background-color: ${props => props.bgColorHover || 'var(--violet)'};
     }
 `;
 
 
-
-const BotonUniversal = ({link_redireccion, text}) => {
+const BotonUniversal = ({link_redireccion, text, textColor, bgColor, bgColorHover}) => {
     return (
                 <BotonClasico
                     href={link_redireccion}
                     target="_blank"
+                    textColor={textColor}
+                    bgColor={bgColor}
+                    bgColorHover={bgColorHover}
                 >{text}</BotonClasico>
     );
 }
