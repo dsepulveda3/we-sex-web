@@ -132,7 +132,7 @@ export default function useFirebaseAuth() {
         sendPasswordResetEmail(auth, email).then(() => {
             toast.success('Se ha enviado un correo para restablecer tu contraseña');
         }).catch((error) => {
-            errorCode = error.code;
+            const errorCode = error.code;
             if (errorCode === 'auth/user-not-found'){
                 toast.error('No existe una cuenta con este correo');
             }

@@ -120,7 +120,7 @@ const LoginForm = () => {
           <Or>o</Or>
           <GoogleSignInButton />
           <AppleSingInButton />
-          <ForgotPasswordLink href="/forgot-password">
+          <ForgotPasswordLink href="/forgotPassword">
             Recuperar contraseña
           </ForgotPasswordLink>
           <SignUpLink href="/register">Aún no tienes cuenta</SignUpLink>
