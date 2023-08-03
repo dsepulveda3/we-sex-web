@@ -443,27 +443,27 @@ const Plans = () => {
                             </SlideHeader>
                             <ContainerInsideText>
                                 <InsideText>
-                                    <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
+                                    <AppImageChecksito src="../../img/ico/checksito (1).png" className="img-fluid" alt="" />
                                     Plan personalizado
                                 </InsideText>
                                 <InsideText>
-                                    <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
+                                    <AppImageChecksito src="../../img/ico/checksito (1).png" className="img-fluid" alt="" />
                                     Desafios semanales
                                 </InsideText>
                                 <InsideText>
-                                    <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
+                                    <AppImageChecksito src="../../img/ico/checksito (1).png" className="img-fluid" alt="" />
                                     Seguimiento
                                 </InsideText>
                                 <InsideText>
-                                    <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
+                                    <AppImageChecksito src="../../img/ico/checksito (1).png" className="img-fluid" alt="" />
                                     Acceso material premium
                                 </InsideText>
                                 <InsideText>
-                                    <AppImageCross src="../img/ico/cross.png" className="img-fluid" alt="" />
+                                    <AppImageCross src="../../img/ico/cross.png" className="img-fluid" alt="" />
                                     Cajita WeSexer
                                 </InsideText>
                                 <InsideText>
-                                    <AppImageCross src="../img/ico/cross.png" className="img-fluid" alt="" />
+                                    <AppImageCross src="../../img/ico/cross.png" className="img-fluid" alt="" />
                                     <TextDescription>Sesion 1/mes con sexologa</TextDescription>
                                 </InsideText>
                                 <InsideText>
@@ -508,27 +508,27 @@ const Plans = () => {
                             </SlideHeader>
                             <ContainerInsideText>
                                 <InsideText>
-                                    <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
+                                    <AppImageChecksito src="../../img/ico/checksito (1).png" className="img-fluid" alt="" />
                                     Plan personalizado
                                 </InsideText>
                                 <InsideText>
-                                    <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
+                                    <AppImageChecksito src="../../img/ico/checksito (1).png" className="img-fluid" alt="" />
                                     Desafios semanales
                                 </InsideText>
                                 <InsideText>
-                                    <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
+                                    <AppImageChecksito src="../../img/ico/checksito (1).png" className="img-fluid" alt="" />
                                     Seguimiento
                                 </InsideText>
                                 <InsideText>
-                                    <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
+                                    <AppImageChecksito src="../../img/ico/checksito (1).png" className="img-fluid" alt="" />
                                     Acceso material premium
                                 </InsideText>
                                 <InsideText>
-                                    <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
+                                    <AppImageChecksito src="../../img/ico/checksito (1).png" className="img-fluid" alt="" />
                                     Cajita WeSexer
                                 </InsideText>
                                 <InsideText>
-                                    <AppImageCross src="../img/ico/cross.png" className="img-fluid" alt="" />
+                                    <AppImageCross src="../../img/ico/cross.png" className="img-fluid" alt="" />
                                     <TextDescription>Sesion 1/mes con sexologa</TextDescription>
                                 </InsideText>
                                 <InsideText>
@@ -570,27 +570,27 @@ const Plans = () => {
                             
                             <ContainerInsideText>
                                 <InsideText>
-                                    <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
+                                    <AppImageChecksito src="../../img/ico/checksito (1).png" className="img-fluid" alt="" />
                                     Plan personalizado
                                 </InsideText>
                                 <InsideText>
-                                    <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
+                                    <AppImageChecksito src="../../img/ico/checksito (1).png" className="img-fluid" alt="" />
                                     Desafios semanales
                                 </InsideText>
                                 <InsideText>
-                                    <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
+                                    <AppImageChecksito src="../../img/ico/checksito (1).png" className="img-fluid" alt="" />
                                     Seguimiento
                                 </InsideText>
                                 <InsideText>
-                                    <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
+                                    <AppImageChecksito src="../../img/ico/checksito (1).png" className="img-fluid" alt="" />
                                     Acceso material premium
                                 </InsideText>
                                 <InsideText>
-                                    <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
+                                    <AppImageChecksito src="../../img/ico/checksito (1).png" className="img-fluid" alt="" />
                                     Cajita WeSexer
                                 </InsideText>
                                 <InsideText>
-                                    <AppImageChecksito src="../img/ico/checksito (1).png" className="img-fluid" alt="" />
+                                    <AppImageChecksito src="../../img/ico/checksito (1).png" className="img-fluid" alt="" />
                                     <TextDescription>Sesion 1/mes con sexologa</TextDescription>
                                 </InsideText>
                                 <InsideText>
