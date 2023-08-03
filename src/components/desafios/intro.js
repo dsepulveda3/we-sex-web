@@ -173,7 +173,8 @@ const BotonUsd = styled(Boton)`
     background-color: transparent;
 `;
 
-const Hola = () => {
+const Intro = ({subtitle1_1, subtitle1_2}) => {
+    console.log(subtitle1_1)
     return (
         <section id="hola">
         <Background>
@@ -182,7 +183,9 @@ const Hola = () => {
                         <Col lg={7} className="align-items-center">
                             <Content>
                                 <Title>Programa para <span>innovar en pareja</span></Title>
-                                <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle>
+                                <SubTitle>{subtitle1_1}<span>{subtitle1_2}</span></SubTitle>
+                                {/* <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle> */}
+
                                 <Text>
                                 ¿Quieren experimentar la sexualidad juntos? ¿Probar nuevas cosas? ¿Están juntos desde hace mucho tiempo y quieren innovar en la cama (o en cualquier lado 😉)?
                                 </Text>
@@ -208,4 +211,4 @@ const Hola = () => {
     );
 }
  
-export default Hola;
+export default Intro;

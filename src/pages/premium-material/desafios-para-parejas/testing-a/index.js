@@ -60,8 +60,8 @@ export default function Home() {
       />
       <main>
         <HeaderPremium />
-        <Intro />
-        <div style={{color: "black", textAlign: "center", fontSize: "3rem", fontWeight: "bold"}}>TESTING A</div>
+        <Intro subtitle1_1='Desafios para ' subtitle1_2='reavivar la llama' />
+        {/* <div style={{color: "black", textAlign: "center", fontSize: "3rem", fontWeight: "bold"}}>TESTING A</div> */}
         <Explicacion2 />
         <ComoFunciona />
         <Dudas />
