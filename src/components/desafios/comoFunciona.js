@@ -107,31 +107,18 @@ const Text = styled.p`
 `;
 
 const Boton = styled.a`
+    font-family: "Karla", sans-serif;
     border-radius: 4rem;
     padding: 1rem 3rem;
     font-weight: bold;
-    width: fit-content;
+    margin: 1rem auto;
     border: none;
     transition: all .5s ease;
-    font-size:2.3rem;
-`;
-
-
-const BotonWsp = styled(Boton)`
     color: white;
     background-color: var(--green);
-    text-align: center;
-    font-size: 2.0rem;
-    margin-top: 2rem;
-    margin-left: auto;
-    margin-right: auto;
-    
-    
-    @media(max-width: 540px){
-        margin-top: 2rem;
-    
-    }
-    @media(min-width: 540px){
+    font-size: 2.1rem;
+    &:hover {
+        background-color: var(--green);
     }
 `;
 
@@ -224,8 +211,8 @@ const ComoFunciona = () => {
               </Text>
             </Col>
           </Row>
-          <BotonWsp href="https://wa.me/5491140678698?
-          text=Hola!%20Quiero%20más%20info%20sobre%20el%20programa%20para%20innovar%20en%20pareja">Quiero saber más</BotonWsp>
+          <Boton href="https://wa.me/5491140678698?
+          text=Hola!%20Quiero%20más%20info%20sobre%20el%20programa%20para%20innovar%20en%20pareja">Quiero saber más</Boton>
         </Container>
         
       </Background>
