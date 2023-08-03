@@ -1,6 +1,7 @@
 import React from 'react';
 import {Row, Col, Container} from 'reactstrap';
 import styled from '@emotion/styled';
+import BotonUniversal from '../botonUniversal';
 
 const Background = styled.div`
     // background-color: var(--violet);
@@ -211,8 +212,9 @@ const ComoFunciona = () => {
               </Text>
             </Col>
           </Row>
-          <Boton href="https://wa.me/5491140678698?
-          text=Hola!%20Quiero%20más%20info%20sobre%20el%20programa%20para%20innovar%20en%20pareja">Quiero saber más</Boton>
+          {/* <Boton href="https://wa.me/5491140678698?
+          text=Hola!%20Quiero%20más%20info%20sobre%20el%20programa%20para%20innovar%20en%20pareja">Quiero saber más</Boton> */}
+          <BotonUniversal />
         </Container>
         
       </Background>
