@@ -17,10 +17,12 @@ import {
 import Link from 'next/link';
 import styled from '@emotion/styled';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
+import AuthToggleLinks from './AuthToggleLinks';
 // import { itemsToSearch } from '../../data';
 import clienteAxios from '../../config/axios';
 import { useRouter } from 'next/router';
 import HeaderLanding from '../general/HeaderLanding'
+import { useAuth } from '../../context/authUserContext';
 
 const StyledHeader = styled.header`
   .navbar {
@@ -107,6 +109,16 @@ const PremiumMaterialButton = styled(NavLink)`
   }
 `;
 
+const SingUpButton = styled.a`
+    display: inline-block;
+    background-color: var(--bs-red);
+    border-radius: 30px;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    white-space: nowrap; 
+`;
+
 const StyledNavbarToggler = styled(NavbarToggler)`
   background-image: url(${'/img/icons/search-bold.svg'});
   padding: 0.2px;
@@ -153,11 +165,19 @@ const Header = ({type}) => {
   const [discussionsToSearch, setDiscussionsToSearch] = useState([]);
   const [articlesToSearch, setArticlesToSearch] = useState([]);
   const [itemsToSearch, setItemsToSearch] = useState([]);
+  const { authUser, loading } = useAuth();
+  const [loggedIn, setLoggedIn] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
   const router = useRouter();
 
   const [bgColor, setBgColor] = useState('transparent');
   const [bgImage, setBgImage] = useState('/img/landing/cta-bg.jpg');
+
+  useEffect(() => {
+    if (!loading && authUser){
+     setLoggedIn(true)
+    }
+  }, [authUser, loading]);
 
   useEffect(() => {
     if (type === 'landing') {
@@ -273,7 +293,7 @@ const Header = ({type}) => {
 
               
             </Nav>
-            <NavbarText style={{ width: 300, marginLeft: 20, marginRight: 20 }}>
+            <NavbarText style={{ width: 300, marginLeft: 20 }}>
                 <ReactSearchAutocomplete
                   items={itemsToSearch}
                   maxResults={15}
@@ -290,6 +310,11 @@ const Header = ({type}) => {
               </NavbarText>
           </Collapse>
         </div>
+        {loggedIn? <AuthToggleLinks setLoginStatus={setLoggedIn} /> : (
+          <SingUpButton href='/login'>
+                Iniciar sesión
+          </SingUpButton>
+        )}
       </Navbar>
       {isOpen && <div className="backgroundClick" onClick={toggleNavbar}></div>}
     </StyledHeader>

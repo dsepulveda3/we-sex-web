@@ -6,7 +6,7 @@ const clienteAxios = axios.create({
     timeout: process.env.NEXT_PUBLIC_TIMEOUT || 10000,
     headers: { 
         'Content-Type': 'application/json',
-        'Authorization': process.env.NEXT_PUBLIC_USER_TOKEN,
+        'Authorization': process.env.NEXT_PUBLIC_USER_TOKEN, //Por que hardcodeado este jwt? 
         'Accept': 'application/json, text/plain, */*'
     },
 });
