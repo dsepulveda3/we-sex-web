@@ -45,7 +45,7 @@ const ContentImage = styled.div`
 `;
 
 const Title = styled.h1`
-    font-size: 5.5rem;
+    font-size: 4.5rem;
     font-family: "Averia Libre", sans-serif;
     opacity: 0.85; /* adjust the opacity as needed */
     span {
@@ -82,12 +82,12 @@ const SubTitle = styled.h2`
         font-weight: bold;
     font-family: "Averia Libre", sans-serif;
     background-color: var(--green); /* Set the background color to green */
-    padding: 0.5rem 1rem; /* Add padding to make the background visible */
+    padding: 0.3rem 0.5rem; /* Add padding to make the background visible */
     color: white; /* Set the text color to white */
     }
     
     @media(max-width: 540px){
-        font-size: 2.2rem;
+        font-size: 1.8rem;
         padding-top: 0rem;
         padding-bottom: 0rem;
     }
@@ -174,7 +174,6 @@ const BotonUsd = styled(Boton)`
 `;
 
 const Intro = ({subtitle1_1, subtitle1_2}) => {
-    console.log(subtitle1_1)
     return (
         <section id="hola">
         <Background>
