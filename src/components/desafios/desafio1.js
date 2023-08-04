@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import {Row, Col, Container, Card, CardHeader, CardBody, Collapse, Button} from 'reactstrap';
 import styled from '@emotion/styled';
 import * as PIXI from 'pixi.js';
@@ -294,82 +294,86 @@ const Desafio1 = () => {
     const [showAnimation, setShowAnimation] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
+    const appRef = useRef(null); // Create a ref to hold the PIXI application
 
     useEffect(() => {
-        const app = new PIXI.Application({ background: '#5f32a2', resizeTo: window });
-        document.body.appendChild(app.view);
-
-        // Create a PIXI.Text element
-
-        const style = new PIXI.TextStyle({
+        let app = null;
+    
+        if (showAnimation) {
+          app = new PIXI.Application({ background: '#5f32a2', resizeTo: window });
+          document.body.appendChild(app.view);
+          appRef.current = app; // Save the PIXI application to the ref
+    
+          // Set the canvas width and height to match the screen dimensions
+          app.view.style.width = `${window.innerWidth}px`;
+          app.view.style.height = `${window.innerHeight}px`;
+    
+          // Create a PIXI.Text element
+          const style = new PIXI.TextStyle({
             fontFamily: 'Arial',
             fontSize: 30,
             fontStyle: 'italic',
             fontWeight: 'bold',
-            
             fill: ['white', 'white'], // gradient
-            dropShadow: true,
-            dropShadowColor: '#000000',
-            dropShadowBlur: 4,
-            dropShadowAngle: Math.PI / 6,
             
-            wordWrap: true,
-            wordWrapWidth: 440,
-            
-            
-        });
-        
-        const richText = new PIXI.Text('Cargando Desafio 1 ...', style);
-        
-        richText.x = 50;
-        richText.y = 220;
-
-        richText.anchor.set(0.5);
-        richText.x = app.screen.width / 2;
-        richText.y = app.screen.height / 2 - 180;
-        
-        app.stage.addChild(richText);
-
-        PIXI.Assets.load('https://pixijs.com/assets/spritesheet/fighter.json').then(() => {
-
-          // Create an array of textures from the spritesheet
-          const frames = [];
-    
-          for (let i = 0; i < 30; i++) {
-            const val = i < 10 ? `0${i}` : i;
-            frames.push(PIXI.Texture.from(`rollSequence00${val}.png`));
-          }
-    
-          // create an AnimatedSprite
-          const anim = new PIXI.AnimatedSprite(frames);
-    
-          anim.x = app.screen.width / 2;
-          anim.y = app.screen.height / 2;
-          anim.anchor.set(0.5);
-          anim.animationSpeed = 0.5;
-          anim.play();
-    
-          app.stage.addChild(anim);
-    
-          // Animate the rotation
-          app.ticker.add(() => {
-            anim.rotation += 0.01;
           });
     
-          // Set a timeout to hide the animation after 3 seconds
-          setTimeout(() => {
-            setShowAnimation(false);
-          }, 3500);
-        });
-      }, []);
+          const richText = new PIXI.Text('Cargando Desafio 1 ...', style);
+          richText.x = 50;
+          richText.y = 220;
+          richText.anchor.set(0.5);
+          richText.x = app.screen.width / 2;
+          richText.y = app.screen.height / 2 - 180;
+          app.stage.addChild(richText);
+    
+          // Load the spritesheet
+          PIXI.Assets.load('https://pixijs.com/assets/spritesheet/fighter.json').then(() => {
+            // Create an AnimatedSprite
+            const frames = [];
+            for (let i = 0; i < 30; i++) {
+              const val = i < 10 ? `0${i}` : i;
+              frames.push(PIXI.Texture.from(`rollSequence00${val}.png`));
+            }
+            const anim = new PIXI.AnimatedSprite(frames);
+            anim.x = app.screen.width / 2;
+            anim.y = app.screen.height / 2;
+            anim.anchor.set(0.5);
+            anim.animationSpeed = 0.5;
+            anim.play();
+            app.stage.addChild(anim);
+    
+            // Animate the rotation
+            app.ticker.add(() => {
+              anim.rotation += 0.01;
+            });
+    
+            // Set a timeout to hide the animation after 3 seconds
+            setTimeout(() => {
+              // Stop the animation and remove PIXI elements from the stage
+              anim.stop();
+              app.stage.removeChild(richText);
+              app.stage.removeChild(anim);
+              setShowAnimation(false);
+            }, 3500);
+          });
+        } else if (appRef.current) {
+          appRef.current.view.style.display = 'none'; // If showAnimation is false, hide the PIXI canvas
+        }
+    
+        return () => {
+          if (app) {
+            document.body.removeChild(app.view); // Remove PIXI canvas from the DOM
+          }
+        };
+      }, [showAnimation]);
+    
     
       return (
         <section>
-          {showAnimation ? (
-            <FullscreenCanvas>
-              {/* You can add any styles to this div to make it fullscreen */}
-            </FullscreenCanvas>
-          ) : (
+            <FullscreenCanvas style={{ zIndex: showAnimation ? 1 : -1 }}>
+        {/* Ship animation and PIXI canvas content here */}
+      </FullscreenCanvas>
+      {!showAnimation && (
             <Background>
               <Container>
                     <Row className="justify-content-between">   
