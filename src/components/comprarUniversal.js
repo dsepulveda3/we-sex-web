@@ -343,7 +343,7 @@ const BotonVerde = styled(Boton)`
               <div style={{ paddingTop: "5rem"}}>
                 <Text2> {reminder_buy_just} </Text2>
                 <Title>Compra desde Argentina</Title>
-                <button className ="pagoMP" id="wallet_container" data-href={initPoint}></button>
+                <a className ="pagoMP" id="wallet_container" data-href={initPoint}></a>
                 <Amount><span>{price_before_ARG}</span>  {price_ARG}</Amount>
                 <Title style={{marginTop: "5rem"}}>Compra internacionalmente</Title>
                 <BotonVioleta className="pagoPH" ref={botonPagoRef} id="boton-pago" target="_blank" href={link_payhip_usd}>
