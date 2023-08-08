@@ -46,6 +46,16 @@ export async function getStaticProps({ params }) {
   };
 }
 
+const ContainerAll = styled.div`
+  padding-top: 6.8rem;
+
+  @media (max-width: 540px){
+    padding-top: 8.5rem;
+    padding-bottom: 8rem;
+
+  }
+`;
+
 const ArticleTitle = styled.div`
   margin-top: 0.1rem;
   padding: 1rem;
@@ -233,7 +243,8 @@ const ArticleDetail = ({ articleItem }) => {
         <meta name='description' content={''} />
         <meta name='keywords' content={''} />
       </Head>
-      <Layout>
+      <Layout type={'nothidden'}>
+        <ContainerAll>
         <ArticleTitle>
           <span className='hide-mobile'>Articulo de la categoría </span>
           <Link
@@ -362,6 +373,7 @@ const ArticleDetail = ({ articleItem }) => {
             </Col>
           </Row>
         </Container>
+        </ContainerAll>
       </Layout>
     </>
   );

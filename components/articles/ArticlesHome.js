@@ -48,7 +48,7 @@ const ArticlesHome = () => {
 
   return (
     <>
-      <Container >
+      <Container>
         <Title >Artículos</Title>
         <Subtitle>Aprende de los mejores expertos en sexualidad</Subtitle>
         <Row>

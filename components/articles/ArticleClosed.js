@@ -29,17 +29,16 @@ const ArticleClosedStyle = styled.button`
       cursor: pointer;
       display: flex;
       flex-direction: column;
-      align-items: center; /* Align children horizontally at the center */
+      justify-content: space-between;
 
       &:hover {
         border: 5px solid var(--green);
       }
 
-      
-
       @media (max-width: 540px) {
-        margin-top: 7px;
-        margin-bottom: 7px;
+        margin: 0 auto; /* Center the card horizontally */
+        margin-top: 0px;
+        margin-bottom: 0px;
 
         width: ${props => props.type === 'debatessection' ? '35rem' : '30rem'};
         min-width: auto;

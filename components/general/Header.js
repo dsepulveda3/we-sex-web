@@ -25,6 +25,9 @@ import HeaderLanding from '../general/HeaderLanding'
 import { useAuth } from '../../context/authUserContext';
 
 const StyledHeader = styled.header`
+    z-index: 1000;  /* Higher z-index value */
+    position: sticky;
+    top: 0;
   .navbar {
     background-image: url(${({ bgImage }) => bgImage});
     background-size: cover;
@@ -44,7 +47,7 @@ const StyledHeader = styled.header`
         position: fixed;
         top: 0;
         left: 0;
-        height: 40vh;
+        height: 30vh;
         width: 100vw;
         background-color: violet;
         background-image: url("/img/landing/cta-bg.jpg");
@@ -117,15 +120,21 @@ const SingUpButton = styled.a`
     color: white;
     cursor: pointer;
     white-space: nowrap; 
+
+    @media(max-width: 540px){
+      margin-top: 2rem;
+
+    }
+
 `;
 
 const StyledNavbarToggler = styled(NavbarToggler)`
-  background-image: url(${'/img/icons/search-bold.svg'});
+  background-image: url(${'/img/icons/navbar-icon.png'});
   padding: 0.2px;
   background-size: cover;
   background-position: center;
   border: none;
-  filter: invert(1); /* Add this line to make the SVG white */
+   /* Add this line to make the SVG white */
   
   &:focus {
     outline: none;
@@ -171,7 +180,7 @@ const Header = ({type}) => {
   const router = useRouter();
 
   const [bgColor, setBgColor] = useState('transparent');
-  const [bgImage, setBgImage] = useState('/img/landing/cta-bg.jpg');
+  const [bgImage, setBgImage] = useState('');
 
   useEffect(() => {
     if (!loading && authUser){
@@ -183,18 +192,26 @@ const Header = ({type}) => {
     if (type === 'landing') {
       setBgImage('');
     }
+    else if(type === 'nothidden') {
+      setBgImage('/img/landing/cta-bg.jpg');
+    }
     
   }, [type]);
   
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.pageYOffset > 0) {
+      if (window.pageYOffset >= 0) {
         setBgColor('#000000');
+        if (type === 'nothidden') {
+          setBgImage('/img/landing/cta-bg.jpg');
+        } else {
+          setBgImage('');
+        }
       } else {
         setBgColor('transparent');
+        setBgImage('');
       }
-      setBgImage('/img/landing/cta-bg.jpg');
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -218,38 +235,6 @@ const Header = ({type}) => {
         .replace(/[\u0300-\u036f]/g, '')
         .toLowerCase()}`
     );
-  }
-
-  useEffect(() => {
-    getDiscussionsToSearch();
-    getArticlesToSearch();
-    setItemsToSearch([...discussionsToSearch, ...articlesToSearch]);
-  }, [searchString]);
-
-  async function getDiscussionsToSearch() {
-    await clienteAxios
-      .get('search/public-discussions', {
-        query: { queryString: searchString },
-      })
-      .then((response) => {
-        setDiscussionsToSearch(response.data.results);
-      });
-  }
-
-  async function getArticlesToSearch() {
-    await clienteAxios
-      .get('search/articles', { query: { queryString: searchString } })
-      .then((response) => {
-        setArticlesToSearch(response.data.results);
-      });
-  }
-
-  async function getUsersToSearch() {
-    await clienteAxios
-      .get('search/users', { query: { queryString: searchString } })
-      .then((response) => {
-        setUsersToSearch(response.data.results);
-      });
   }
 
   return (
@@ -293,7 +278,10 @@ const Header = ({type}) => {
 
               
             </Nav>
-            <NavbarText style={{ width: 300, marginLeft: 20 }}>
+
+            
+
+            <NavbarText style={{ width: 300, marginLeft: 20, marginRight: 20 }}>
                 <ReactSearchAutocomplete
                   items={itemsToSearch}
                   maxResults={15}
@@ -308,13 +296,16 @@ const Header = ({type}) => {
                   styling={{ zIndex: 3 }} 
                 />
               </NavbarText>
+
+              {loggedIn? <AuthToggleLinks setLoginStatus={setLoggedIn} /> : (
+                <SingUpButton href='/login' >
+                      Iniciar sesión
+                </SingUpButton>
+              )}
+              
           </Collapse>
         </div>
-        {loggedIn? <AuthToggleLinks setLoginStatus={setLoggedIn} /> : (
-          <SingUpButton href='/login'>
-                Iniciar sesión
-          </SingUpButton>
-        )}
+        
       </Navbar>
       {isOpen && <div className="backgroundClick" onClick={toggleNavbar}></div>}
     </StyledHeader>

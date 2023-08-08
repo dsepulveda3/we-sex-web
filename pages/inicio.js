@@ -21,14 +21,15 @@ export default function Home() {
         <meta name='description' content={''} />
         <meta name='keywords' content={''} />
       </Head>
-      <Layout>
+      <main>
+      <Layout type={'nothidden'}>
+        <div style={{paddingBottom: '5rem'}}>
         <SurveysHorizontal />
         <ArticlesHorizontal />
         <DebatesHorizontal />
-        
-
-        
+        </div>
       </Layout>
+      </main>
     </>
   );
 }

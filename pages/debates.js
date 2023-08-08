@@ -107,8 +107,8 @@ const Subtitle = styled.p`
     }
     @media(max-width: 540px){
         font-size: 1.5rem;
-        margin-bottom:2rem;
-        text-align: left;
+        margin-bottom:0rem;
+        text-align: center;
         
         margin-right: 3rem;
         margin-left: 3rem;
@@ -221,7 +221,7 @@ export default function Debates() {
         <meta name='keywords' content={''} />
       </Head>
       {/* Layout */}
-      <Layout>
+      <Layout type={'nothidden'}>
         <div style={{ minHeight: 'calc(100vh - 160px)', paddingBottom: '10rem', overflowY: 'auto' }}>
           {/* Title Container */}
           <TitleContainer className='sec-title'>

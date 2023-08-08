@@ -218,7 +218,8 @@ const DiscussionDetail = ({ discussionItem }) => {
         <meta name='description' content={''} />
         <meta name='keywords' content={''} />
       </Head>
-      <Layout>
+      <Layout type={'nothidden'}>
+        <div style={{paddingTop: '6.8rem'}}>
         <ArticleTitle>
           <span className='hide-mobile'>Debate de la categoría</span>
           <Link href={`/debates?categoria=${discussionItem?.category?.name}`}>
@@ -301,6 +302,7 @@ const DiscussionDetail = ({ discussionItem }) => {
             </Col>
           </Row>
         </Container>
+        </div>
       </Layout>
     </>
   );

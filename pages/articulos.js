@@ -46,16 +46,34 @@ const RowPers = styled(Row)`
   }
 `;
 
-const SubTitle = styled.h2`
-  margin-bottom: 0.5rem;
-  font-family: "Averia Libre", sans-serif;
-  @media (max-width: 540px) {
-    margin-bottom: 0.3rem;
-  }
+const Subtitle = styled.p`
+    font-size: 2.0rem;
+    font-weight: bold;
+    color: black;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    margin-left: 0rem;
+    font-family: "Karla", sans-serif;
+    span {
+        color: var(--green);
+        font-weight: bold;
+        font-family: "Averia Libre", sans-serif;
+
+    }
+    @media(max-width: 540px){
+        font-size: 1.8rem;
+        margin-bottom:1rem;
+        text-align: left;
+        
+        margin-right: 3rem;
+        margin-left: 3rem;
+    }
 `;
 
 const TitleContainer = styled.div`
     margin-top: 6.7rem;
+    // background-color: var(--green);
+    background-color: white;
     @media (max-width: 540px) {
       margin-top: 8rem;
     }
@@ -64,9 +82,10 @@ const TitleContainer = styled.div`
 `;
 
 const Title = styled.div`
-    font-size: 4.5rem;
-    color: var(--violet);
-    font-family: "Averia Libre", sans-serif;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: black;
+    font-family: "Karla", sans-serif;
   }
 `;
 
@@ -131,7 +150,7 @@ export default function Articulos() {
         <meta name='description' content={''} />
         <meta name='keywords' content={''} />
       </Head>
-      <Layout>
+      <Layout type={'nothidden'}>
         {/* <div className='sec-title'>
           <Container>
             <h1>Artículos</h1>
@@ -143,9 +162,9 @@ export default function Articulos() {
           </Container>
         </div> */}
         
-        <Container>
+        <Container style={{paddingTop: '2rem', paddingBottom: '5rem'}}>
           <TitleContainer>
-          <Title>Artículos</Title>
+          <Title>ARTÍCULOS</Title>
             <p className='sec-subtitle first-uppercase'>
               {selectedCategory
                 ? articlesCategoriesTitle[selectedCategory]
@@ -154,7 +173,7 @@ export default function Articulos() {
           </TitleContainer>
           
           <div>
-            <SubTitle>Categorías</SubTitle>
+            <Subtitle>Categorías</Subtitle>
             <RowPers className='mx-auto text-center'>
               <Swiper
                 slidesPerView={'auto'}

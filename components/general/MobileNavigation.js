@@ -66,7 +66,7 @@ const MobileNavigation = ({type}) => {
       home: router.pathname === '/inicio',
       debates: router.pathname === '/debates',
       articulos: router.pathname === '/articulos',
-      premium: router.pathname === '/premium',
+      premium: router.pathname === '/premium-material',
     }));
   }, [router.pathname]);
 
@@ -101,12 +101,12 @@ const MobileNavigation = ({type}) => {
             </Link>
           </Col>
           <Col xs={3} sm={3}>
-          <Link href="/premium">
+          <Link href="/premium-material">
             {/* <Link href="/buscar?autofocus=true"> */}
-            <a onClick={() => handleIconClick('/premium', 'premium')}>
+            <a onClick={() => handleIconClick('/premium-material', 'premium-material')}>
               {/* <a onClick={() => handleIconClick('/buscar?autofocus=true', 'premium')}> */}
-                <Icon src={clickedIcons.premium ? '/img/icons/premium2-icon-black.svg' : '/img/icons/premium2-icon-white.svg'} active={activeLink === '/buscar?autofocus=true'} />
-                {activeLink === '/buscar' ? <BoldText>Premium</BoldText> : 'Premium'}
+                <Icon src={clickedIcons.premium ? '/img/icons/premium2-icon-black.svg' : '/img/icons/premium2-icon-white.svg'} active={activeLink === 'premium-material'} />
+                {activeLink === '/premium-matrial' ? <BoldText>Premium</BoldText> : 'Premium'}
               </a>
             </Link>
           </Col>

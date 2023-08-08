@@ -3,6 +3,7 @@ import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink } f
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
+
 const StyledHeader = styled.header`
   .navbar {
     background-image: url(${({ bgImage }) => bgImage});
@@ -118,6 +119,7 @@ const Header = () => {
       if (window.pageYOffset > 0) {
         setBgColor('#000000');
         setBgImage('/img/landing/cta-bg.jpg');
+        
       } else {
         setBgColor('transparent');
         setBgImage('');
