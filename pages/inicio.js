@@ -8,7 +8,7 @@ import SurveysHorizontal from '../components/surveys/surveysHorizontal'
 import DebatesHorizontal from '../components/debates/DebatesHorizontal'
 import ArticlesHorizontal from '../components/articles/ArticlesHorizontal'
 
-
+//
 
 export default function Home() {
 
