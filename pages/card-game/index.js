@@ -1,13 +1,4 @@
 import Head from 'next/head'
-import FirstBannerUniversal from '../../../../components/premiumMaterial/firstBannerUniversal'
-import EsParaVosSiUniversal from '../../../../components/premiumMaterial/esParaVosSiUniversal'
-import ProfesionalesUniversal from '../../../../components/premiumMaterial/profesionalesUniversal'
-import Regalar from '../../../../components/premiumMaterial/regalar'
-import ComprarUniversal from '../../../../components/premiumMaterial/comprarUniversal'
-import Dudas from '../../../../components/premiumMaterial/dudas'
-import AfterDiv from '../../../../components/premiumMaterial/afterDiv'
-import Footer from '../../../../components/premiumMaterial/footer'
-import Layout from '../../../../components/general/Layout';
 
 
 export default function Home() {
