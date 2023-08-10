@@ -73,18 +73,10 @@ const SubTitle = styled.h2`
     opacity: 1; /* adjust the opacity as needed */
     color: white;
     span {
-        // color: var(--green);
-        // font-weight: bold;
-        // font-family: "Averia Libre", sans-serif;
-        // text-decoration: underline;
-        // text-decoration-color: var(--green);
-        // text-underline-offset: 1rem; /* ajusta la separación */
-        // text-decoration-thickness: 0.3rem; /* ajusta el grosor */
-        font-weight: bold;
-    font-family: "Averia Libre", sans-serif;
-    background-color: var(--green); /* Set the background color to green */
-    padding: 0.3rem 0.5rem; /* Add padding to make the background visible */
-    color: white; /* Set the text color to white */
+        font-family: "Averia Libre", sans-serif;
+        background-color: var(--green); /* Set the background color to green */
+        padding: 0.3rem 0.5rem; /* Add padding to make the background visible */
+        color: white; /* Set the text color to white */
     }
     
     @media(max-width: 540px){
