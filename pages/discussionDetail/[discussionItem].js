@@ -210,6 +210,7 @@ const DiscussionDetail = ({ discussionItem }) => {
       );
     });
   }
+  
 
   async function getComments() {
     await clienteAxios
