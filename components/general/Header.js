@@ -182,6 +182,9 @@ const Header = ({type}) => {
   const [bgColor, setBgColor] = useState('transparent');
   const [bgImage, setBgImage] = useState('');
 
+  // Get the history object from the useHistory hook
+  
+
   useEffect(() => {
     if (!loading && authUser){
      setLoggedIn(true)
@@ -197,6 +200,16 @@ const Header = ({type}) => {
     }
     
   }, [type]);
+
+  const handleLogin = () => {
+    // Your login logic here
+
+    // Update the state to reflect the user being logged in
+    setLoggedIn(true);
+
+    // Navigate to the desired page using Next.js routing
+    router.push('/'); // Change this to the desired route
+  };
   
 
   useEffect(() => {
@@ -298,7 +311,7 @@ const Header = ({type}) => {
               </NavbarText>
 
               {loggedIn? <AuthToggleLinks setLoginStatus={setLoggedIn} /> : (
-                <SingUpButton href='/login' >
+                <SingUpButton href='/login' onClick={handleLogin}>
                       Iniciar sesión
                 </SingUpButton>
               )}

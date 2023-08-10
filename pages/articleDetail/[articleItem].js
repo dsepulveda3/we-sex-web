@@ -329,9 +329,19 @@ const ArticleDetail = ({ articleItem }) => {
                   <img src='/img/icons/comments.svg' alt='Comments' />
                   {articleItem?.comments}
                 </button>
-                <button onClick={() => downloadAppAlert()}>
+                <RWebShare
+                  data={{
+                    text: `Check out this article: ${articleItem?.title}`,
+                    url: `https://we-sex-web-eze.vercel.app//articleDetail/${articleItem?._id}`,
+                  }}
+                >
+                  <button>
+                    <img src='/img/icons/share.svg' alt='Share' />
+                  </button>
+                </RWebShare>
+                {/* <button onClick={() => downloadAppAlert()}>
                   <img src='/img/icons/share.svg' alt='Likes' />
-                </button>
+                </button> */}
                 <button onClick={() => downloadAppAlert()}>
                   <img src='/img/icons/bookmark-outlined.svg' alt='Likes' />
                 </button>

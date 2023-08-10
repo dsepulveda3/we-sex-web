@@ -184,6 +184,14 @@ const DiscussionTitle = styled.div`
   }
 `;
 
+const ContainerAll = styled.div`
+  padding-top: 6.8rem;
+
+  @media (max-width: 540px){
+    padding-top: 8.5rem;
+  }
+`;
+
 const DiscussionDetail = ({ discussionItem }) => {
   const [trendingDiscussions, setTrendingDiscussions] = useState([]);
   const [comments, setComments] = useState();
@@ -219,7 +227,7 @@ const DiscussionDetail = ({ discussionItem }) => {
         <meta name='keywords' content={''} />
       </Head>
       <Layout type={'nothidden'}>
-        <div style={{paddingTop: '6.8rem'}}>
+        <ContainerAll>
         <ArticleTitle>
           <span className='hide-mobile'>Debate de la categoría</span>
           <Link href={`/debates?categoria=${discussionItem?.category?.name}`}>
@@ -302,7 +310,7 @@ const DiscussionDetail = ({ discussionItem }) => {
             </Col>
           </Row>
         </Container>
-        </div>
+        </ContainerAll>
       </Layout>
     </>
   );
