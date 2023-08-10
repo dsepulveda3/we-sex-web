@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import styled from '@emotion/styled';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, NavLink } from 'reactstrap';
 import Layout from '../../components/general/Layout';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -19,6 +19,7 @@ import {
   discussionCategoriesTitle,
 } from '../../data';
 import { downloadAppAlert } from '../../helpers';
+import { RWebShare } from 'react-web-share';
 import clienteAxios from '../../config/axios';
 
 // Generar un enlace por cada slug
@@ -192,6 +193,33 @@ const ContainerAll = styled.div`
   }
 `;
 
+const ShareButton = styled(NavLink)`
+  background-color: var(--green);
+  border-radius: 30px;
+  //padding: 10px 20px;
+  padding-right: 10px;
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  alignItems: 'center';
+  &:hover {
+    background-color: var(--green-darken);
+    color: black;
+  }
+  
+`;
+
+const Buttons = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  @media (max-width: 540px){
+    justify-content: center;
+  }
+`;
+
 const DiscussionDetail = ({ discussionItem }) => {
   const [trendingDiscussions, setTrendingDiscussions] = useState([]);
   const [comments, setComments] = useState();
@@ -210,7 +238,7 @@ const DiscussionDetail = ({ discussionItem }) => {
       );
     });
   }
-  
+
 
   async function getComments() {
     await clienteAxios
@@ -260,6 +288,7 @@ const DiscussionDetail = ({ discussionItem }) => {
                 )}
               </Published>
               <Links>
+              <Buttons>
                 <button onClick={() => downloadAppAlert()}>
                   <img src='/img/icons/heart-outline.svg' alt='Likes' />
                   {discussionItem?.likes}
@@ -268,13 +297,27 @@ const DiscussionDetail = ({ discussionItem }) => {
                   <img src='/img/icons/comments.svg' alt='Comments' />
                   {discussionItem?.comments}
                 </button>
-                <button onClick={() => downloadAppAlert()}>
+                {/* <button onClick={() => downloadAppAlert()}>
                   <img src='/img/icons/share.svg' alt='Likes' />
-                </button>
-                <button onClick={() => downloadAppAlert()}>
+                </button> */}
+                <RWebShare
+                  data={{
+                    text: `Mira este debate de WeSex: ${discussionItem?.title}`,
+                    url: `https://we-sex-web-eze.vercel.app/discussionDetail/${discussionItem?._id}`,
+                  }}
+                >
+                  <ShareButton>
+                    <img src='/img/icons/share.svg' alt='Share' style={{ marginRight: '0.5rem', marginTop: "0.1rem"}} />
+                    <div style={{ fontSize: '1.5rem' }}>Compartir</div>
+                  </ShareButton>
+
+                </RWebShare>
+                {/* <button onClick={() => downloadAppAlert()}>
                   <img src='/img/icons/bookmark-outlined.svg' alt='Likes' />
-                </button>
+                </button> */}
+                </Buttons>
               </Links>
+              
               <p className='green-line w-30 ldes-cmob'></p>
               {Number(comments?.count) > 0 ? (
                 <>

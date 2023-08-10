@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styled from '@emotion/styled';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, NavLink } from 'reactstrap';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -153,6 +153,28 @@ const CommentsTitle = styled.p`
   }
 `;
 
+const Title = styled.h2`
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    font-size: 2.7rem;
+    font-family: "Averia Libre", sans-serif;
+    opacity: 1; /* adjust the opacity as needed */
+    color: white;
+    span {
+        font-family: "Averia Libre", sans-serif;
+        background-color: var(--violet); /* Set the background color to green */
+        padding: 0.3rem 0.5rem; /* Add padding to make the background visible */
+        padding-bottom: 1rem;
+        color: white; /* Set the text color to white */
+    }
+    
+    @media(max-width: 540px){
+        font-size: 1.8rem;
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+    }
+`;
+
 const ArticleText = styled(Col)`
   color: black;
   margin-bottom: 3rem;
@@ -206,6 +228,32 @@ const Articulo = styled(Col)`
   }
 `;
 
+const ShareButton = styled(NavLink)`
+  background-color: var(--green);
+  border-radius: 30px;
+  //padding: 10px 20px;
+  padding-right: 10px;
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  alignItems: 'center';
+  &:hover {
+    background-color: var(--green-darken);
+    color: white;
+  }
+`;
+
+const Buttons = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  @media (max-width: 540px){
+    justify-content: center;
+  }
+`;
+
 const ArticleDetail = ({ articleItem }) => {
   const [newArticles, setNewArticles] = useState([]);
   const [comments, setComments] = useState();
@@ -256,14 +304,14 @@ const ArticleDetail = ({ articleItem }) => {
         <Container className='py-4'>
           <Row>
             <Articulo lg={8}>
-              <ArticleTitle className='d-title'>
+              <div className='d-title'>
                 <img
                   className='hide-desktop'
                   src='/img/icons/quote.svg'
                   alt='Quote symbol'
                 />
-                <h1>{articleItem?.title}</h1>
-              </ArticleTitle>
+                <Title><span>{articleItem?.title}</span></Title>
+              </div>
               <p>{articleItem?.subtitle}</p>
               <Col>
               {articleItem?.content?.map((item, index) => {
@@ -272,6 +320,7 @@ const ArticleDetail = ({ articleItem }) => {
                     <div
                       dangerouslySetInnerHTML={{ __html: item.value }}
                       key={`text-${index}`} // Use a unique key by concatenating "text-" with the index
+                      style={{ textAlign: 'justify' }}
                     />
                   );
                 } else if (item.type === 'image') {
@@ -321,6 +370,7 @@ const ArticleDetail = ({ articleItem }) => {
                 )}
               </Published>
               <Links>
+              <Buttons>
                 <button onClick={() => downloadAppAlert()}>
                   <img src='/img/icons/heart-outline.svg' alt='Likes' />
                   {articleItem?.likes}
@@ -329,22 +379,25 @@ const ArticleDetail = ({ articleItem }) => {
                   <img src='/img/icons/comments.svg' alt='Comments' />
                   {articleItem?.comments}
                 </button>
+                {/* <button onClick={() => downloadAppAlert()}>
+                  <img src='/img/icons/bookmark-outlined.svg' alt='Likes' />
+                </button> */}
                 <RWebShare
                   data={{
-                    text: `Check out this article: ${articleItem?.title}`,
-                    url: `https://we-sex-web-eze.vercel.app//articleDetail/${articleItem?._id}`,
+                    text: `Mira este articulo de WeSex: ${articleItem?.title}`,
+                    url: `https://we-sex-web-eze.vercel.app/articleDetail/${articleItem?._id}`,
                   }}
                 >
-                  <button>
-                    <img src='/img/icons/share.svg' alt='Share' />
-                  </button>
+                  <ShareButton>
+                    <img src='/img/icons/share.svg' alt='Share' style={{ marginRight: '0.5rem', marginTop: "0.1rem"}} />
+                    <div style={{ fontSize: '1.5rem' }}>Compartir</div>
+                  </ShareButton>
+
                 </RWebShare>
                 {/* <button onClick={() => downloadAppAlert()}>
                   <img src='/img/icons/share.svg' alt='Likes' />
                 </button> */}
-                <button onClick={() => downloadAppAlert()}>
-                  <img src='/img/icons/bookmark-outlined.svg' alt='Likes' />
-                </button>
+                </Buttons>
               </Links>
               <p className='green-line w-30 ldes-cmob'></p>
               {Number(comments?.count) > 0 ? (

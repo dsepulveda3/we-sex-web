@@ -86,8 +86,15 @@ const Title = styled.div`
     font-weight: bold;
     color: black;
     font-family: "Karla", sans-serif;
+    span {
+      font-family: "Averia Libre", sans-serif;
+      background-color: var(--violet); /* Set the background color to green */
+      padding: 0.3rem 0.5rem; /* Add padding to make the background visible */
+      color: white; /* Set the text color to white */
+  }
   }
 `;
+
 
 const CarouselPers = styled(Carousel)`
   .carousel .slide {
