@@ -524,7 +524,7 @@ const Desafio1 = () => {
                                 <br/>
                                 <span>3. Interacción:</span>
                                 <br/>
-                                _______ (primer nombre/personaje) se acerca y dice: &quot;_______ (frase inicial, como &quot;Hace tiempo que no nos veíamos&quot;, &quot;Escuché que necesitas mi ayuda'&quot;, &quot;Me dijeron que estarías aquí&quot;, etc.)&quot;.
+                                _______ (primer nombre/personaje) se acerca y dice: &quot;_______ (frase inicial, como &quot;Hace tiempo que no nos veíamos&quot;, &quot;Escuché que necesitas mi ayuda&quot;, &quot;Me dijeron que estarías aquí&quot;, etc.)&quot;.
                                 <br/>
                                 _______ (segundo nombre/personaje) levanta la vista y responde: &quot;_______ (respuesta inicial, como &quot;No esperaba verte aquí&quot;, &quot;Si, tengo un problema y tú eres la única persona que puede ayudarme&quot;, &quot;¿Y qué te trae por aquí?&quot;, etc.)&quot;.
                                 <br/>
