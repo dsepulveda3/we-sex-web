@@ -460,7 +460,7 @@ const Desafio1 = () => {
                                 <CardHeader onClick={toggle} style={{backgroundColor: "white "}}>
                                 <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
                                     
-                                    <TitleQuestion style={{marginLeft: '2rem'}}>Te dejamos aqui una guia para realizar el mejor masaje erotico 😉</TitleQuestion>
+                                    <TitleQuestion style={{marginLeft: '2rem'}}>Te dejamos aquí una guía para realizar el mejor masaje erótico 😉</TitleQuestion>
                                 </div>
                                 <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
                                 </CardHeader>
