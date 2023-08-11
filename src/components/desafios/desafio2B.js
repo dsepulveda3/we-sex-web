@@ -419,7 +419,7 @@ const Desafio1 = () => {
                         {/* <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle> */}
 
                         <Text>
-                        <span>Objetivo:</span> Pasar un momento divertido juntos, fortaleciendo la conexión y compartiendo risas.
+                        <span>Objetivo:</span> Pasar un momento divertido juntos y fortalecer la conexión  en la pareja.
                         <br/>
                         <br/>
                         <span>Cena y cocina juntos:</span>
