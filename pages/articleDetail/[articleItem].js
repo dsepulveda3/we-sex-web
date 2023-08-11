@@ -320,7 +320,7 @@ const ArticleDetail = ({ articleItem }) => {
                     <div
                       dangerouslySetInnerHTML={{ __html: item.value }}
                       key={`text-${index}`} // Use a unique key by concatenating "text-" with the index
-                      style={{ textAlign: 'justify' }}
+                      style={{ textAlign: 'justify', paddingLeft: "2rem", paddingRight: "2rem" }}
                     />
                   );
                 } else if (item.type === 'image') {
