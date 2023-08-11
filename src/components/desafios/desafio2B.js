@@ -428,7 +428,7 @@ const Desafio1 = () => {
                         <span>1:</span> Piensen en un plato que los identifique. Algún plato que les guste a ambos, que los remonte a un recuerdo, a una cita, a un viaje que hayan hecho.
                         <br/>
                         <br/>
-                        <span>2:</span> Armemos el listado de compras y vayan juntos a conseguir los ingredientes.
+                        <span>2:</span> Armen el listado de compras y vayan juntos a conseguir los ingredientes.
                         <br/>
                         <br/>
                         <span>3:</span> Llegada la noche, el plan será cocinar, tomar algo y disfrutar de la cena.
@@ -438,9 +438,6 @@ const Desafio1 = () => {
                         <br/>
                         <br/>
                         </Text>
-                        
-
-                        
                     </Row>
                     <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
                             <ContentTitle2>
@@ -449,10 +446,10 @@ const Desafio1 = () => {
                             </ContentTitle2>
                         
                             <Text2>
-                                Puedes preguntarle a Julia cómo le gustaría que sea el masaje, pero igualmente…
-                                <br/>
-                                <br/>
                                 <span>Lucho, hoy te toca realizar un masaje relajante y/o erótico a Julia. Sin expectativas de que lleve a algo más, simplemente para que ella se sienta bien y relajada.</span>
+                                <br/>
+                                <br/>
+                                Puedes preguntarle a Julia cómo le gustaría que sea el masaje, pero igualmente…
                                 <br/>
                             </Text2>
                             <Col xs="12" lg="12" md="3">
@@ -541,6 +538,11 @@ const Desafio1 = () => {
                                 </Collapse>
                             </Card>
                         </Col>
+                    </Row>
+                    <Row className="justify-content-between">   
+                        <Text>
+                            <span>NOTA FINAL:</span>  Recuerden que el objetivo es divertirse y tener un espacio para ustedes. No hay expectativas de que el desafío conduzca a un acto sexual, dejense llevar por el momento y el disfrute. 
+                        </Text>
                     </Row>
             </Container>
             </Background>
