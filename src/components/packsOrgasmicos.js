@@ -316,6 +316,17 @@ const Packs = () => {
                 </Col>
 
                 <Col lg="3" md="4" >
+                    <Link href="/premium-material/packs/pack4-rutina-tantra-anal">
+                        <GuideSquare>
+                            <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                                <AppImagePack src="../img/ico/giftbox.png" className="img-fluid"/>
+                                <TextPack>Pack <span>Aventura</span></TextPack>
+                             </ContainerContentGuide>
+                        </GuideSquare>
+                    </Link>
+                </Col>
+
+                <Col lg="3" md="4" >
                     <Link href="/premium-material/packs/pack1">
                         <GuideSquare>
                             <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
@@ -375,14 +386,14 @@ const Packs = () => {
                     </GuideSquare>
                 </ColHideOnPhone> */}
 
-                <ColHideOnPhone lg="3" md="4" >
+                {/* <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageGuiaQuestion src="../img/ico/question-mark-draw.png" className="img-fluid"/>
                             <h3>Pronto</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
-                </ColHideOnPhone>
+                </ColHideOnPhone> */}
                 <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
