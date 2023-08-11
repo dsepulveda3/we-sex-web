@@ -524,16 +524,16 @@ const Desafio1 = () => {
                                 <br/>
                                 <span>3. Interacción:</span>
                                 <br/>
-                                _______ (primer nombre/personaje) se acerca y dice: "_______ (frase inicial, como 'Hace tiempo que no nos veíamos', 'Escuché que necesitas mi ayuda', 'Me dijeron que estarías aquí', etc.)".
+                                _______ (primer nombre/personaje) se acerca y dice: &quot;_______ (frase inicial, como &quot;Hace tiempo que no nos veíamos&quot;, &quot;Escuché que necesitas mi ayuda'&quot;, &quot;Me dijeron que estarías aquí&quot;, etc.)&quot;.
                                 <br/>
-                                _______ (segundo nombre/personaje) levanta la vista y responde: "_______ (respuesta inicial, como 'No esperaba verte aquí', 'Si, tengo un problema y tú eres la única persona que puede ayudarme', '¿Y qué te trae por aquí?', etc.)".
+                                _______ (segundo nombre/personaje) levanta la vista y responde: &quot;_______ (respuesta inicial, como &quot;No esperaba verte aquí&quot;, &quot;Si, tengo un problema y tú eres la única persona que puede ayudarme&quot;, &quot;¿Y qué te trae por aquí?&quot;, etc.)&quot;.
                                 <br/>
                                 <br/>
                                 <span>4. Desarrollo:</span>
                                 <br/>
-                                _______ (primer nombre/personaje) sonríe/parece sorprendido/se muestra curioso y pregunta: "_______ (pregunta o comentario que puede dar pie a una conversación más amplia o a la acción siguiente, como '¿Qué ha cambiado desde la última vez?', 'Siempre supe que este día llegaría', '¿Por qué crees que yo soy la solución?', etc.)".
+                                _______ (primer nombre/personaje) sonríe/parece sorprendido/se muestra curioso y pregunta: &quot;_______ (pregunta o comentario que puede dar pie a una conversación más amplia o a la acción siguiente, como &quot;¿Qué ha cambiado desde la última vez?&quot;, &quot;Siempre supe que este día llegaría&quot;, &quot;¿Por qué crees que yo soy la solución?&quot;, etc.)&quot;.
                                 <br/>
-                                _______ (segundo nombre/personaje) toma un respiro/se muestra nervioso/sonríe coquetamente y comenta: "_______ (respuesta o comentario que genera tensión o interés, como 'Hay cosas que deberías saber', 'No es tan simple como parece', 'Había esperado este momento durante mucho tiempo', etc.)".
+                                _______ (segundo nombre/personaje) toma un respiro/se muestra nervioso/sonríe coquetamente y comenta: &quot;_______ (respuesta o comentario que genera tensión o interés, como &quot;Hay cosas que deberías saber&quot;, &quot;No es tan simple como parece&quot;, &quot;Había esperado este momento durante mucho tiempo&quot;, etc.)&quot;.
                                 <br/>
                                 <br/>
                                 <span>5. Transición:</span> A partir de este punto, la conversación o las acciones pueden seguir de forma libre, permitiendo que la imaginación y la dinámica de la pareja decidan el rumbo de la historia. Que se diviertan ;) 
