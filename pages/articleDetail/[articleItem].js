@@ -440,7 +440,7 @@ const ArticleDetail = ({ articleItem }) => {
               </h5>
               {newArticles.map((article) => (
                 
-                  <ArticleCard>
+                  <ArticleCard key={article._id}>
                     <ArticleClosed
                       key={article._id}
                       article={article}
