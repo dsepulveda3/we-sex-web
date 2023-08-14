@@ -241,13 +241,49 @@ const Header = ({type}) => {
     setSearchString(string);
   }
 
+  
+
   function handleOnSelect(item) {
-    window.open(
-      `/buscar?search=${item.title
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '')
-        .toLowerCase()}`
-    );
+    const isDiscussion = ['hot', 'sexual-preferences', 'fantasy', 'doubts', 'entertainment', 'relationships', 'sexual-habits', 'bizarre', 'first-times', 'hookups', 'wesexsers-sos', 'random'].includes(item.category.name);
+  
+    if (isDiscussion) {
+      router.push(`/discussionDetail/${item._id}`); // Push to the discussion detail route
+    } else {
+      router.push(`/articleDetail/${item._id}`); // Push to the article detail route
+    }
+  }
+
+
+  useEffect(() => {
+    getDiscussionsToSearch();
+    getArticlesToSearch();
+    setItemsToSearch([...discussionsToSearch, ...articlesToSearch]);
+  }, [searchString]);
+
+  async function getDiscussionsToSearch() {
+    await clienteAxios
+      .get('search/public-discussions', {
+        query: { queryString: searchString },
+      })
+      .then((response) => {
+        setDiscussionsToSearch(response.data.results);
+      });
+  }
+
+  async function getArticlesToSearch() {
+    await clienteAxios
+      .get('search/articles', { query: { queryString: searchString } })
+      .then((response) => {
+        setArticlesToSearch(response.data.results);
+      });
+  }
+
+  async function getUsersToSearch() {
+    await clienteAxios
+      .get('search/users', { query: { queryString: searchString } })
+      .then((response) => {
+        setUsersToSearch(response.data.results);
+      });
   }
 
   return (
@@ -288,8 +324,6 @@ const Header = ({type}) => {
                   Premium Material
                 </PremiumMaterialButton>
               </NavItemHideOnPhone>
-
-              
             </Nav>
 
             
@@ -310,11 +344,11 @@ const Header = ({type}) => {
                 />
               </NavbarText>
 
-              {loggedIn? <AuthToggleLinks setLoginStatus={setLoggedIn} /> : (
+              {/* {loggedIn? <AuthToggleLinks setLoginStatus={setLoggedIn} /> : (
                 <SingUpButton href='/login' onClick={handleLogin}>
                       Iniciar sesión
                 </SingUpButton>
-              )}
+              )} */}
               
           </Collapse>
         </div>

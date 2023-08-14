@@ -2,6 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import styled from '@emotion/styled';
 import Image from 'next/image';
+import { downloadAppAlert } from '../../helpers';
 
 const SurveyClosedStyle = styled.button`
   background-color: var(--green);
@@ -104,16 +105,17 @@ const VerticalLine = styled.div`
   height: 50%; /* Set the height of the line */
 `;
 
-const SurveyClosed = ({ article, icon, onClick = false }) => {
+const SurveyClosed = ({ survey, icon, onClick = false }) => {
   const router = useRouter();
   return (
     <SurveyClosedStyle
       onClick={() =>
-        router.push(onClick ? `${article._id}` : `articleDetail/${article._id}`)
+        downloadAppAlert()
+        // router.push(onClick ? `${article._id}` : `articleDetail/${article._id}`)
       }
     >
       <WrapTitle>
-        <Title>{article.title}</Title>
+        <Title>{survey.title}</Title>
       </WrapTitle>
       <WrapOptionsWrap>
         <OptionsWrap>

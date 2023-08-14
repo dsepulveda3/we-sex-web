@@ -220,6 +220,23 @@ const Buttons = styled.div`
   }
 `;
 
+
+const DiscussionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the discussion cards horizontally */
+  gap: 1rem; /* Add gap between discussion cards */
+  margin-bottom: 0.5rem; /* Add margin at the bottom for spacing */
+  @media (max-width: 540px) {
+    margin-left: 5rem;
+  }
+`;
+
+const DiscussionCard = styled.div`
+  width: 100%;
+`;
+
+
 const DiscussionDetail = ({ discussionItem }) => {
   const [trendingDiscussions, setTrendingDiscussions] = useState([]);
   const [comments, setComments] = useState();
@@ -344,13 +361,16 @@ const DiscussionDetail = ({ discussionItem }) => {
               >
                 Debates tendencia
               </h5>
-              {trendingDiscussions.map((discussion) => (
-                <DiscussionClosed
-                  key={discussion._id}
-                  discussion={discussion}
-                  onClick={true}
-                />
-              ))}
+              <DiscussionContainer>
+                  {trendingDiscussions.map((discussion) => (
+                    <DiscussionCard key={discussion._id}>
+                      <DiscussionClosed
+                        discussion={discussion}
+                        onClick={true}
+                      />
+                    </DiscussionCard>
+                  ))}
+                </DiscussionContainer>
             </Col>
           </Row>
         </Container>

@@ -245,6 +245,7 @@ export default function Debates() {
                 modules={[Pagination]}
                 className='mySwiper'
               >
+                
                 {/* Category Buttons */}
                 {discussionCategories.map((category) => (
                   <SwiperSlide key={category.order}>

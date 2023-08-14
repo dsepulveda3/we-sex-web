@@ -254,6 +254,18 @@ const Buttons = styled.div`
   }
 `;
 
+const ArticleContainer = styled.div`
+  display: flex;
+  justify-content: center; /* Center the article cards horizontally */
+  gap: 1rem; /* Add gap between article cards */
+  margin-bottom: 0.5rem; /* Add margin at the bottom for spacing */
+`;
+
+const ArticleCard = styled.div`
+  width: 100%;
+`;
+
+
 const ArticleDetail = ({ articleItem }) => {
   const [newArticles, setNewArticles] = useState([]);
   const [comments, setComments] = useState();
@@ -427,11 +439,14 @@ const ArticleDetail = ({ articleItem }) => {
                 Otros articulos de la categoria
               </h5>
               {newArticles.map((article) => (
-                <ArticleClosed
-                  key={article._id}
-                  article={article}
-                  onClick={true}
-                />
+                
+                  <ArticleCard>
+                    <ArticleClosed
+                      key={article._id}
+                      article={article}
+                      onClick={true}
+                    />
+                  </ArticleCard>
               ))}
             </Col>
           </Row>

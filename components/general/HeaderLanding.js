@@ -96,6 +96,7 @@ const PremiumMaterialButton = styled(NavLink)`
 
 const StyledNavbarToggler = styled(NavbarToggler)`
   background-image: url(${'/img/icons/navbar-icon.png'});
+  padding: 0.2px;
   background-size: cover;
   background-position: center;
   border: none;
