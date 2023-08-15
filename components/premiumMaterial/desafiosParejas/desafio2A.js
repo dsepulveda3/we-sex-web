@@ -96,7 +96,7 @@ const Title2 = styled.div`
         margin-right: 2rem;
     
     @media(max-width: 540px){
-        font-size: 4rem;
+        font-size: 3rem;
         padding-top: 1.5rem;
         padding-bottom: 1rem;
 
@@ -413,27 +413,29 @@ const Desafio1 = () => {
                     <TitleWeSex>WeSex</TitleWeSex>
                     <Row className="justify-content-between">   
                         <ContentTitle>
-                            <Title>Desafío 1:</Title>
+                            <Title>Desafío 2:</Title>
                             <SubTitle><span>Hablemos de sexo</span></SubTitle>
                         </ContentTitle>
                         {/* <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle> */}
 
                         <Text>
-                        Una de las claves para una relación sana, tanto sexual como vincular, es la comunicación. Por eso para este sábado los vamos a invitar a salir de cita y a charlar de sexo. Porque darse espacios para salir de cita en pareja es fundamental. 
+                        Para el desafío de este fin de semana, los vamos a invitar a jugar y divertirse ;)
                         <br/>
                         <br/>
-                        Nuestra única duda es si van a aguantar la calentura de hablar de sexo en el bar toda la noche.
+                        Queremos que saquen a la luz su actor interior y se animen a un juego de roles.
                         <br/>
                         <br/>
-                        <span>Paso 1: Vístanse para una cita y salgan. ¿A dónde? A donde quieran. Les proponemos algún bar de la zona que les guste y tenga onda. Tal vez alguno que les traiga buenos recuerdos, que les divierta. También puede ser un café, una plaza o el lugar que deseen.</span>
+                        Abajo les dejaremos un guion para que puedan utilizar como base en el juego de roles.
+                        <span>En este desafío, quien elegirá la fantasía será Fernando.</span> Es tu turno, Fer, de decidir cuál te gustaría 
+                        llevar a cabo. ¿Serás vos el que se disfrace, los dos o será Vane? ¿Te gustaría que se disfrace de abogada, 
+                        profesora, médica? Hoy, elegís y propones vos. Vane podrá evaluar si se siente cómoda con esa fantasía y, 
+                        en caso de que no la acepte, podrás pensar en otra, hasta que lleguen a una con la que ambos se sientan cómodos. 
+                        Siempre mantenemos el consentimiento y la comunicación como base para todos los desafíos.
                         <br/>
                         <br/>
-                        <span>Paso 2: Una vez lleguen al lugar elegido para la cita, el siguiente paso es jugar a un ping-pong de preguntas que les dejamos aquí abajo:</span>
-                        <br/>
-                        <br/>
-                        PingPong sex: Dense tiempo para charlar. Dejen que la conversación fluya a donde tenga que ir, y siempre tendrán el listado de preguntas para volver a la siguiente.
+                        ¡Que se disfruten!
                         </Text>
-                        <Col xs="12" lg="6" md="3">
+                        {/* <Col xs="12" lg="6" md="3">
                             <Card style={{margin:"10px 10px 10px 10px"}}>
                                 <CardHeader onClick={toggle} style={{backgroundColor: "white "}}>
                                 <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
@@ -503,23 +505,39 @@ const Desafio1 = () => {
                                     </CardBody>
                                 </Collapse>
                             </Card>
-                        </Col>
+                        </Col> */}
 
                         
                     </Row>
                     <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
                             <ContentTitle2>
-                                <Title2>BONUS</Title2>
+                                <Title2>GUIÓN BASE PARA JUEGO DE ROLES</Title2>
                                 <AppImage src="../../img/bomb.png" alt="Bomba" />
                             </ContentTitle2>
                         
                             <Text2>
-                                Por si la manija de este primer día los deja con ganas de más, les dejamos una propuesta para cuando se vayan del bar 😉 (O para cuando quieran):
+                                <span>1. Escenario:</span> En un lugar de _______ (puede ser una oficina, un bar, una biblioteca, un consultorio, etc.)
                                 <br/>
                                 <br/>
-                                <span>La bomba del tiempo</span>
+                                <span>2. Entrada:</span> _______ (nombre/personaje, por ejemplo: Juan/el jefe, María/la secretaria, etc.) entra por la puerta y observa detenidamente a su alrededor. Se percata de la presencia de _______ (otro nombre/personaje).
                                 <br/>
-                                <TextBombNormal>Este juego consiste en poner un temporizador, una cuenta regresiva, en la cual no podrán realizar penetración hasta que 
+                                <br/>
+                                <span>3. Interacción:</span>
+                                <br/>
+                                _______ (primer nombre/personaje) se acerca y dice: &quot;_______ (frase inicial, como &quot;Hace tiempo que no nos veíamos&quot;, &quot;Escuché que necesitas mi ayuda&quot;, &quot;Me dijeron que estarías aquí&quot;, etc.)&quot;.
+                                <br/>
+                                _______ (segundo nombre/personaje) levanta la vista y responde: &quot;_______ (respuesta inicial, como &quot;No esperaba verte aquí&quot;, &quot;Si, tengo un problema y tú eres la única persona que puede ayudarme&quot;, &quot;¿Y qué te trae por aquí?&quot;, etc.)&quot;.
+                                <br/>
+                                <br/>
+                                <span>4. Desarrollo:</span>
+                                <br/>
+                                _______ (primer nombre/personaje) sonríe/parece sorprendido/se muestra curioso y pregunta: &quot;_______ (pregunta o comentario que puede dar pie a una conversación más amplia o a la acción siguiente, como &quot;¿Qué ha cambiado desde la última vez?&quot;, &quot;Siempre supe que este día llegaría&quot;, &quot;¿Por qué crees que yo soy la solución?&quot;, etc.)&quot;.
+                                <br/>
+                                _______ (segundo nombre/personaje) toma un respiro/se muestra nervioso/sonríe coquetamente y comenta: &quot;_______ (respuesta o comentario que genera tensión o interés, como &quot;Hay cosas que deberías saber&quot;, &quot;No es tan simple como parece&quot;, &quot;Había esperado este momento durante mucho tiempo&quot;, etc.)&quot;.
+                                <br/>
+                                <br/>
+                                <span>5. Transición:</span> A partir de este punto, la conversación o las acciones pueden seguir de forma libre, permitiendo que la imaginación y la dinámica de la pareja decidan el rumbo de la historia. Que se diviertan ;) 
+                                {/* <TextBombNormal>Este juego consiste en poner un temporizador, una cuenta regresiva, en la cual no podrán realizar penetración hasta que 
                                 la cuenta regresiva llegue a 0. Esto les ayudará a explorar otras prácticas y salir de la penetración. 
                                 Podrán explorar zonas erógenas, descubrir áreas de placer inesperadas y, además, aumentar la tensión y la excitación al jugar con el tiempo hasta llegar a 0.
                                 </TextBombNormal>
@@ -535,7 +553,7 @@ const Desafio1 = () => {
                                 ¿Aguantarán la tensión sexual hasta que el cronómetro llegue a 0...?
                                 <br/>
                                 <br/>
-                                ¡Que se disfruten!
+                                ¡Que se disfruten! */}
                             </Text2>
                     </Row>
             </Container>

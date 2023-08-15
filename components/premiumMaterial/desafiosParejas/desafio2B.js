@@ -198,8 +198,8 @@ const AppImage = styled.img`
         margin-top: 1rem;
         margin-left: 0rem;
         margin-right: 0rem;
-        width: 15%;
-        height: 80%;
+        width: 18%;
+        height: 70%;
     }
     @media(min-width: 540px){
         margin-right: 2rem;
@@ -413,130 +413,136 @@ const Desafio1 = () => {
                     <TitleWeSex>WeSex</TitleWeSex>
                     <Row className="justify-content-between">   
                         <ContentTitle>
-                            <Title>Desafío 1:</Title>
-                            <SubTitle><span>Hablemos de sexo</span></SubTitle>
+                            <Title>Desafío 2:</Title>
+                            <SubTitle><span>Cocina y masajes</span></SubTitle>
                         </ContentTitle>
                         {/* <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle> */}
 
                         <Text>
-                        Una de las claves para una relación sana, tanto sexual como vincular, es la comunicación. Por eso para este sábado los vamos a invitar a salir de cita y a charlar de sexo. Porque darse espacios para salir de cita en pareja es fundamental. 
+                        <span>Objetivo:</span> Pasar un momento divertido juntos y fortalecer la conexión  en la pareja.
                         <br/>
                         <br/>
-                        Nuestra única duda es si van a aguantar la calentura de hablar de sexo en el bar toda la noche.
+                        <span>Cena y cocina juntos:</span>
                         <br/>
                         <br/>
-                        <span>Paso 1: Vístanse para una cita y salgan. ¿A dónde? A donde quieran. Les proponemos algún bar de la zona que les guste y tenga onda. Tal vez alguno que les traiga buenos recuerdos, que les divierta. También puede ser un café, una plaza o el lugar que deseen.</span>
+                        <span>1:</span> Piensen en un plato que los identifique. Algún plato que les guste a ambos, que los remonte a un recuerdo, a una cita, a un viaje que hayan hecho.
                         <br/>
                         <br/>
-                        <span>Paso 2: Una vez lleguen al lugar elegido para la cita, el siguiente paso es jugar a un ping-pong de preguntas que les dejamos aquí abajo:</span>
+                        <span>2:</span> Armen el listado de compras y vayan juntos a conseguir los ingredientes.
                         <br/>
                         <br/>
-                        PingPong sex: Dense tiempo para charlar. Dejen que la conversación fluya a donde tenga que ir, y siempre tendrán el listado de preguntas para volver a la siguiente.
+                        <span>3:</span> Llegada la noche, el plan será cocinar, tomar algo y disfrutar de la cena.
+                        <br/>
+                        <br/>
+                        <span>4:</span> Asegúrense de poder tener esa noche solos.
+                        <br/>
+                        <br/>
                         </Text>
-                        <Col xs="12" lg="6" md="3">
+                    </Row>
+                    <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
+                            <ContentTitle2>
+                                <Title2 style={{textAlign: 'left'}}>LUEGO DE LA CENA</Title2>
+                                <AppImage src="../../img/bomb.png" alt="Bomba" />
+                            </ContentTitle2>
+                        
+                            <Text2>
+                                <span>Lucho, hoy te toca realizar un masaje relajante y/o erótico a Julia. Sin expectativas de que lleve a algo más, simplemente para que ella se sienta bien y relajada.</span>
+                                <br/>
+                                <br/>
+                                Puedes preguntarle a Julia cómo le gustaría que sea el masaje, pero igualmente…
+                                <br/>
+                            </Text2>
+                            <Col xs="12" lg="12" md="3">
                             <Card style={{margin:"10px 10px 10px 10px"}}>
                                 <CardHeader onClick={toggle} style={{backgroundColor: "white "}}>
                                 <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
-                                    <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
-                                    <TitleQuestion>Presiona aquí para ver las preguntas</TitleQuestion>
+                                    
+                                    <TitleQuestion style={{marginLeft: '2rem'}}>Te dejamos aquí una guía para realizar el mejor masaje erótico 😉</TitleQuestion>
                                 </div>
                                 <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
                                 </CardHeader>
                                 <Collapse isOpen={isOpen}>
                                     <CardBody>
                                         <AnswerQuestion>
-                                            1. ¿Luz prendida o apagada?
-                                            <br/>
-                                            2. ¿Besos en los testículos o en la cabeza del pene?
-                                            <br/>
-                                            3. ¿Depilación al 100%, bigotito o salvaje?
-                                            <br/>
-                                            4. Si no es adentro, ¿dónde te gusta más la eyaculación? Diga tres opciones.
-                                            <br/>
-                                            5. ¿Qué parte de TU cuerpo te gusta más?
-                                            <br/>
-                                            6. Lugares en casa (que no sea la cama) para hacerlo que te exciten. Diga tres.
-                                            <br/>
-                                            7. ¿Algún tema o banda en especial que te estimule más en las relaciones sexuales? Diga dos.
-                                            <br/>
-                                            8. ¿Qué material te excita más? Algodón, seda, cuero, encaje u otros.
-                                            <br/>
-                                            9. Menciona al menos dos frases al oído que te exciten.
-                                            <br/>
-                                            10. ¿Fantaseando... trío o swinger?
-                                            <br/>
-                                            11. ¿Mañanero, siestero o nochero?
-                                            <br/>
-                                            12. ¿Cuántas veces te autoestimulas a la semana?
-                                            <br/>
-                                            13. ¿Estimulantes/lubricantes: qué prefieres, efecto frío o calor?
-                                            <br/>
-                                            14. Del 1 al 10, ¿cuál es la importancia de las relaciones sexuales en tu vínculo?
-                                            <br/>
-                                            15. ¿Qué zona te gusta más estimular a tu pareja? Diga tres.
-                                            <br/>
-                                            16. ¿Qué zona te gusta más que te estimulen? Diga tres.
-                                            <br/>
-                                            17. ¿Prefieres sexo oral o que te masturben?
-                                            <br/>
-                                            18. ¿Qué posiciones te excitan más?
-                                            <br/>
-                                            19. ¿Qué parte del cuerpo de tu pareja te pone más 🔥?
-                                            <br/>
-                                            20. ¿De qué te disfrazarías o personificarías para excitar a tu pareja? Diga dos.
-                                            <br/>
-                                            21. ¿Cuál sería tu frecuencia sexual semanal óptima?
-                                            <br/>
-                                            22. ¿Qué te gustaría más hacerle a tu pareja, vendarle los ojos o atarle las manos?
-                                            <br/>
-                                            23. ¿Qué te gustaría más que te hagan de la pregunta anterior?
-                                            <br/>
-                                            24. ¿En silencio o a gritos?
-                                            <br/>
-                                            25. Elige de la vitrina de un sex shop un juguete para ambos... ¿Cuál sería?
-                                            <br/>
-                                            26. ¿Una fantasía sexual recurrente?
-                                            <br/>
-                                            27. ¿Si pudieses hacer cualquier cosa, qué te gustaría hacer con tu pareja ahora mismo?
-                                            <br/>
+                                        <TextBombNormal style={{fontWeight: 'bold'}}>Paso 1: Preparación</TextBombNormal>
+                                        
+                                        <ul>
+                                            <li>
+                                                Crea un ambiente adecuado: Prepara el lugar donde realizarás el masaje. Asegúrate de que sea cómodo, tranquilo y libre de distracciones. Puedes ambientar con velas aromáticas, música suave y luces tenues para crear un ambiente íntimo y relajante.
+                                            </li>
+                                            <li>
+                                                Asegúrate de tener todo lo necesario: Reúne los elementos que necesitarás, como aceites de masaje, toallas suaves, accesorios (plumas, cremas comestibles, vibradores) y cualquier otra cosa que desees incorporar.
+                                            </li>
+                                        <br/>
+                                        </ul>
+                                        <TextBombNormal style={{fontWeight: 'bold'}}>Paso 2: Comenzar el masaje</TextBombNormal>
+                                        <ul>
+                                            <li>
+                                                Invita a la persona a acostarse cómodamente: Esta puede recostarse boca abajo o boca arriba, según prefiera. Asegúrate de que esté relajada y cómoda antes de comenzar.
+                                            </li>
+                                            <li>
+                                                Aplica aceite de masaje: Calienta el aceite en tus manos antes de aplicarlo sobre el cuerpo de tu pareja. Comienza con movimientos suaves y largos, distribuyendo el aceite de manera uniforme.
+                                            </li>
+                                            <li>
+                                                Explora diferentes partes del cuerpo: Empieza por las zonas menos sensibles, como la espalda, los hombros y los brazos. Utiliza movimientos suaves, largos y fluidos para acariciar y masajear estas áreas. A medida que avances, presta atención a las reacciones de tu pareja y ve explorando otras partes del cuerpo, como las piernas, los pies, el cuello y el cuero cabelludo.
+                                            </li>
+                                        </ul>
+                                        <br/>
+                                        <TextBombNormal style={{fontWeight: 'bold'}}>Paso 3: Variedad en las técnicas de masaje</TextBombNormal>
+                                        <ul>
+
+                                            <li>
+                                                Utiliza diferentes partes del cuerpo: No te limites a usar solo tus manos. Experimenta con otras partes de tu cuerpo, como los antebrazos, los codos, el pecho o incluso tu propio cuerpo en contacto con el de la otra persona. Estos cambios en las técnicas de masaje pueden generar sensaciones diferentes y aumentar la excitación.
+                                            </li>
+                                            <ul>
+                                                <li>
+                                                
+                                                    <li>
+                                                        Juega con las intensidades: Alterna entre movimientos suaves y firmes, adaptándote a las preferencias de tu pareja.
+                                                    </li>
+                                                    <li>
+                                                        Puedes usar las yemas de tus dedos para acariciar suavemente.
+                                                    </li>
+                                                    <li>
+                                                        Las palmas de tus manos para aplicar una presión más profunda.
+                                                    </li>
+                                                    <li>
+                                                        Las uñas para generar leves rasguños estimulantes.
+                                                    </li>
+                                                </li>
+                                            </ul>
+                                            <li>
+                                            Experimenta con diferentes ritmos y velocidades: Varía el ritmo y la velocidad de tus movimientos para mantener la excitación.
+                                            </li>
+                                            <ul>
+                                                <li>
+                                                
+                                                    <li>
+                                                        Puedes realizar movimientos lentos y sensuales, alternándolos con movimientos más rápidos y enérgicos para aumentar la intensidad.
+                                                    </li>
+                                                </li>
+                                            </ul>
+                                        </ul>
+                                        <br/>
+                                        <TextBombNormal style={{fontWeight: 'bold'}}>Paso 4: Enfócate en las zonas erógenas</TextBombNormal>
+                                        <ul>
+                                            <li>
+                                                Descubre las zonas sensibles: Presta atención a las reacciones de tu pareja y busca las zonas que le generen mayor placer. Estas pueden incluir los labios, el cuello, los pezones, los muslos internos, el abdomen, las nalgas, los genitales y otras áreas erógenas que mencionamos en la guía.
+                                            </li>
+                                            <li>
+                                                Estimula las zonas erógenas de forma creativa: Utiliza técnicas específicas para estimular estas zonas, como suaves mordiscos, besos, lamidos o movimientos circulares con la lengua.
+                                            </li>
+                                        </ul>
                                         </AnswerQuestion>
                                     </CardBody>
                                 </Collapse>
                             </Card>
                         </Col>
-
-                        
                     </Row>
-                    <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
-                            <ContentTitle2>
-                                <Title2>BONUS</Title2>
-                                <AppImage src="../../img/bomb.png" alt="Bomba" />
-                            </ContentTitle2>
-                        
-                            <Text2>
-                                Por si la manija de este primer día los deja con ganas de más, les dejamos una propuesta para cuando se vayan del bar 😉 (O para cuando quieran):
-                                <br/>
-                                <br/>
-                                <span>La bomba del tiempo</span>
-                                <br/>
-                                <TextBombNormal>Este juego consiste en poner un temporizador, una cuenta regresiva, en la cual no podrán realizar penetración hasta que 
-                                la cuenta regresiva llegue a 0. Esto les ayudará a explorar otras prácticas y salir de la penetración. 
-                                Podrán explorar zonas erógenas, descubrir áreas de placer inesperadas y, además, aumentar la tensión y la excitación al jugar con el tiempo hasta llegar a 0.
-                                </TextBombNormal>
-                                <TextBombNormal style={{marginTop: "2rem", marginBottom:"2rem"}}><span>Claro, para eso les enviamos la guía de zonas erógenas. Ahí explicamos qué es el coitocentrismo y les enseñamos a 
-                                estimular cada zona del cuerpo. Así que no les van a faltar herramientas para disfrutar de este juego</span>
-                                </TextBombNormal>
-                                
-                                ¿Y AHORA? 
-                                <br/>
-                                
-                                Cuando estén listos para empezar, pongan un temporizador de 30 minutos. Pueden jugar también a sostener la tensión, 
-                                sin llegar al orgasmo durante esos 30 minutos. Eso va a requerir mucha comunicación (ya sea verbal o corporal) para ir regulando cuándo seguir y cuándo frenar. 
-                                ¿Aguantarán la tensión sexual hasta que el cronómetro llegue a 0...?
-                                <br/>
-                                <br/>
-                                ¡Que se disfruten!
-                            </Text2>
+                    <Row className="justify-content-between">   
+                        <Text>
+                            <span>NOTA FINAL:</span>  Recuerden que el objetivo es divertirse y tener un espacio para ustedes. No hay expectativas de que el desafío conduzca a un acto sexual, dejense llevar por el momento y el disfrute. 
+                        </Text>
                     </Row>
             </Container>
             </Background>

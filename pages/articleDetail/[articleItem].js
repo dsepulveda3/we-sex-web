@@ -256,10 +256,15 @@ const Buttons = styled.div`
 
 const ArticleContainer = styled.div`
   display: flex;
-  justify-content: center; /* Center the article cards horizontally */
-  gap: 1rem; /* Add gap between article cards */
+  flex-direction: column;
+  justify-content: center; /* Center the discussion cards horizontally */
+  gap: 1rem; /* Add gap between discussion cards */
   margin-bottom: 0.5rem; /* Add margin at the bottom for spacing */
+  @media (max-width: 540px) {
+    margin-left: 0rem;
+  }
 `;
+
 
 const ArticleCard = styled.div`
   width: 100%;
@@ -438,6 +443,7 @@ const ArticleDetail = ({ articleItem }) => {
               >
                 Otros articulos de la categoria
               </h5>
+              <ArticleContainer>
               {newArticles.map((article) => (
                 
                   <ArticleCard key={article._id}>
@@ -448,6 +454,7 @@ const ArticleDetail = ({ articleItem }) => {
                     />
                   </ArticleCard>
               ))}
+              </ArticleContainer>
             </Col>
           </Row>
         </Container>
