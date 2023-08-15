@@ -50,7 +50,8 @@ const PDFViewer = () => {
   return (
     <Background>
       <div className="pdf-container">
-        <Document file={pdfUrl} onLoadSuccess={onDocumentLoadSuccess}>
+        Hello
+        {/* <Document file={pdfUrl} onLoadSuccess={onDocumentLoadSuccess}>
           <div className="pdf-pages">
             {Array.from(new Array(numPages || 0), (_, index) => (
               <div
@@ -69,7 +70,7 @@ const PDFViewer = () => {
               </div>
             ))}
           </div>
-        </Document>
+        </Document> */}
       </div>
 
       <style jsx>{`
