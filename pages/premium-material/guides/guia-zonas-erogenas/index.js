@@ -9,6 +9,7 @@ import Dudas from '../../../../components/premiumMaterial/dudas'
 import AfterDiv from '../../../../components/premiumMaterial/afterDiv'
 import AboutWeSex from '../../../../components/premiumMaterial/aboutWeSex'
 import Footer from '../../../../components/premiumMaterial/footer'
+import PDF from '../../../../components/premiumMaterial/pdfPage'
 import Layout from '../../../../components/general/Layout';
 
 export default function Home() {
@@ -33,6 +34,7 @@ export default function Home() {
           description2='Te enseñamos a estimular cada parte del cuerpo, de pies a cabeza.' imageVisibility={true} 
           videoVisibility={false} image='/img/premium-material/2ZonasErogenas (1).png' widthImage={'45%'}/>
         <AfterDiv />
+        {/* <PDF /> */}
         <EsParaVosSiUniversal title1_1='Esta guía de Zonas Erógenas es ' title1Span='para ti' title1_2=' si buscas' 
           emoji1='✨' text1_1='La magia de combinar diferentes zonas y ' text1Span='técnicas para alcanzar un placer extremo.' text1_2=''
           emoji2='👀' text2_1='Cómo ' text2Span='romper con el coitocentrismo' text2_2=' y explorar nuevas prácticas sexuales.' 

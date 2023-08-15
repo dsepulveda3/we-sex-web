@@ -274,6 +274,7 @@ const ArticleCard = styled.div`
 const ArticleDetail = ({ articleItem }) => {
   const [newArticles, setNewArticles] = useState([]);
   const [comments, setComments] = useState();
+  const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
     getNewArticles();
@@ -300,6 +301,20 @@ const ArticleDetail = ({ articleItem }) => {
       });
   }
 
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+
   return (
     <>
       <Head>
@@ -309,7 +324,7 @@ const ArticleDetail = ({ articleItem }) => {
         <meta name='keywords' content={''} />
       </Head>
       <Layout type={'nothidden'}>
-        <ContainerAll>
+        <ContainerAll >
         <ArticleTitle>
           <span className='hide-mobile'>Articulo de la categoría </span>
           <Link
@@ -333,12 +348,24 @@ const ArticleDetail = ({ articleItem }) => {
               <Col>
               {articleItem?.content?.map((item, index) => {
                 if (item.type === 'text') {
+                  console.log(item.value);
                   return (
                     <div
-                      dangerouslySetInnerHTML={{ __html: item.value }}
-                      key={`text-${index}`} // Use a unique key by concatenating "text-" with the index
-                      style={{ textAlign: 'justify', paddingLeft: "2rem", paddingRight: "2rem" }}
-                    />
+                      key={`text-${index}`}
+                      style={{ textAlign: 'justify', paddingLeft: '1rem', 
+                      margin:
+                          windowWidth <= 540 ? '1rem' : '0rem',
+                      paddingRight:
+                          windowWidth <= 540 ? '0px' : '0rem'  }}
+                    >
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: item.value
+                            .replace(/<p>/g, '<p style="background-color: transparent; margin-right: 0px; color: rgb(0, 0, 0); text-align: justify">')
+                            .replace(/<ul>/g, '<ul style="list-style-type: disc; margin-right: 80px; text-align: justify">'),
+                        }}
+                      />
+                    </div>
                   );
                 } else if (item.type === 'image') {
                     return (
