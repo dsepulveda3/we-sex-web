@@ -446,10 +446,10 @@ const Desafio1 = () => {
                             </ContentTitle2>
                         
                             <Text2>
-                                <span>Silvia, hoy te toca realizar un masaje relajante y/o erótico a Sergio. Sin expectativas de que lleve a algo más, simplemente para que ella se sienta bien y relajada.</span>
+                                <span>Yani, hoy te toca realizar un masaje relajante y/o erótico a Dani. Sin expectativas de que lleve a algo más, simplemente para que ella se sienta bien y relajada.</span>
                                 <br/>
                                 <br/>
-                                Puedes preguntarle a Sergio cómo le gustaría que sea el masaje, pero igualmente…
+                                Puedes preguntarle a Dani cómo le gustaría que sea el masaje, pero igualmente…
                                 <br/>
                             </Text2>
                             <Col xs="12" lg="12" md="3">

@@ -1,4 +1,5 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import CardGame from '../../components/CardGame/card'
 
 
 export default function Home() {
@@ -18,7 +19,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <div>On process</div>
+        <CardGame />
       </main>
     </>
   )
