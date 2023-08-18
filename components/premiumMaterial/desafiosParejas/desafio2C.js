@@ -486,7 +486,7 @@ const Desafio1 = () => {
                                             </li>
                                         <br/>
                                         </ul>
-                                        Ahora ya tienen, no solo un plan para esta noche, sino una "to-do list" de sus fantasías a realizar juntos.
+                                        Ahora ya tienen, no solo un plan para esta noche, sino una &quot;to-do list&quot; de sus fantasías a realizar juntos.
                                         </AnswerQuestion>
                                     </CardBody>
                                 </Collapse>

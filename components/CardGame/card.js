@@ -186,7 +186,7 @@ const PopupContent = () => {
         </InfoText>
         <br />
         <InfoText>
-          <span>Descubre el término</span> Una versión sexual del juego "Tabú". Las cartas contienen un término relacionado con el sexo, y el jugador debe describirlo sin usar ciertas palabras "prohibidas".
+          <span>Descubre el término</span> Una versión sexual del juego &quot;Tabú&quot;. Las cartas contienen un término relacionado con el sexo, y el jugador debe describirlo sin usar ciertas palabras &quot;prohibidas&quot;.
         </InfoText>
         <br />
         <InfoText>
