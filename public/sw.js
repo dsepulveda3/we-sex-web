@@ -11,6 +11,17 @@
  * limitations under the License.
  */
 
+self.addEventListener('push', event => {
+  const options = {
+    body: 'Test', // Customize the notification content
+  };
+
+  event.waitUntil(
+    self.registration.showNotification('Notification Title', options)
+  );
+});
+
+
 // If the loader is already loaded, just stop.
 if (!self.define) {
   let registry = {};
