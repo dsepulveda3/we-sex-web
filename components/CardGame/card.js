@@ -23,7 +23,7 @@ const Background = styled.div`
        
     }
 
-    min-height: 860px; /* Set the minimum height here */
+    min-height: 1000px; /* Set the minimum height here */
 `;
 
 const Title = styled.div`
@@ -86,11 +86,12 @@ const StartCard = styled.div`
 `;
 
 const QuestionCard = styled.div`
-    background-color: white; /* Set the background color to white */
+    position: relative; /* Ensure proper stacking of elements */
+    background-color: white;
     background-size: cover;
     background-position: center;
     border-radius: 20px;
-    border: 2px solid #FFFFFF;
+    border: 3px solid black;
     height: 450px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -98,8 +99,94 @@ const QuestionCard = styled.div`
     max-width: 300px;
     margin: 0 auto;
     color: black;
+    text-align: center; /* Center align the content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    span {
+        font-family: "Averia Libre", sans-serif;
+        background-color: var(--green);
+        padding: 0.3rem 0.5rem;
+        color: white;
+    }
+
+    /* Default text in the top right corner */
+    ::before {
+        content: "WeSex";
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-family: "Averia Libre", sans-serif;
+        font-size: 2.0rem;
+        color: var(--green);
+    }
+
+    /* Default text in the bottom left corner */
+    ::after {
+        content: "WeSex";
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        font-family: "Averia Libre", sans-serif;
+        font-size: 2.0rem;
+        color: var(--green);
+    }
+`;
+
+
+const Question = styled.div`
+    font-size: 1.6 rem;
+    font-family: "Karla", sans-serif;
+    font-weight: bold;
+
+    /* Default text in the top */
+    ::before {
+        display: ${props => (props.showBefore === false ? "none" : "block")};
+        content: "PREGUNTA";
+        position: absolute;
+        top: 0;
+        margin-top: 1rem;
+        left: 50%; /* Center the text horizontally */
+        transform: translateX(-50%); /* Move the text back by half its width */
+        font-family: "Karla", sans-serif;
+        font-size: 2.0rem;
+        color: black;
+    }
+
+    span {
+        font-size: 2.0rem;
+        background-color: var(--green); /* Set the background color to green */
+        padding: 0.2rem 0.7rem; /* Add padding to make the background visible */
+        padding-left: 1rem;
+        padding-right: 1rem;
+        color: white; /* Set the text color to white */
+    }
+`;
+
+const Answer = styled.div`
+    font-size: 1.6rem;
+    font-family: "Karla", sans-serif;
+    font-weight: bold;
     
-    
+    /* Default text in the top */
+    ::before {
+        content: "RESPUESTA";
+        position: absolute;
+        top: 0;
+        margin-top: 1rem;
+        left: 50%; /* Center the text horizontally */
+        transform: translateX(-50%); /* Move the text back by half its width */
+        font-family: "Karla", sans-serif;
+        font-size: 2.0rem;
+        color: black;
+    }
+    span {
+        font-size: 1.8rem;
+        background-color: white; /* Set the background color to green */
+        color: var(--violet); /* Set the text color to white */
+        font-style: italic; /* Set the font style to italic */
+    }
 `;
 
 const PopupContainer = styled.div`
@@ -201,14 +288,37 @@ const PopupContent = () => {
   
   const gameData = {
     "VERDADERO O FALSO": [
-      { question: "Statement 1", answer: true },
-      { question: "Statement 2", answer: false },
+      { question: "La testosterona solo está presente en los hombres.", answer: "Falso. Está presente tanto en hombres como en mujeres, aunque en diferentes cantidades." },
+      { question: "Las mujeres pueden quedar embarazadas la primera vez que tienen relaciones sexuales.", answer: "Verdadero" },
+      { question: "El uso frecuente de anticonceptivos orales puede causar infertilidad a largo plazo.", answer: "Falso" },
+      { question: "La ducha vaginal después del sexo evita el embarazo.", answer: "Falso" },
+      { question: "El tamaño del pie de un hombre está relacionado con el tamaño de su pene.", answer: "Falso." },
+      { question: "Es posible contraer una ETS (enfermedad de transmisión sexual) a través de un asiento de baño.", answer: "Falso. Es altamente improbable." },
+      { question: "Los hombres siempre tienen orgasmos durante el coito.", answer: "Falso" },
+      { question: "El uso de dos condones al mismo tiempo proporciona el doble de protección.", answer: "Falso. Puede aumentar el riesgo de ruptura." },
+      { question: "Las píldoras anticonceptivas protegen contra las ETS.", answer: "Falso." },
+      { question: "Los hombres no pueden experimentar múltiples orgasmos.", answer: " Falso. Aunque es menos común que en las mujeres, algunos hombres pueden experimentar orgasmos múltiples." },
+      { question: "El coito interrumpido es un método anticonceptivo altamente eficaz.", answer: "Falso" },
+      { question: "Puedes saber si alguien tiene una ETS solo con mirarlo.", answer: "Falso." },
+      { question: "Todas las personas con VIH (Virus de Inmunodeficiencia Humana) muestran síntomas evidentes.", answer: "Falso." },
+      { question: "El herpes solo se transmite cuando hay síntomas visibles.", answer: " Falso." },
+      { question: "Es posible que las mujeres experimenten un orgasmo sin ninguna estimulación genital.", answer: "Verdadero." },
+      { question: "Las duchas vaginales regulares son una buena práctica para mantener una higiene saludable.", answer: " Falso. Pueden alterar el equilibrio natural y ser contraproducentes." },
+
+      { question: "Solo las personas promiscuas contraen ETS.", answer: "Falso." },
+      { question: "Los espermatozoides pueden vivir varios días dentro del cuerpo de la mujer después del coito.", answer: "Verdadero." },
+      { question: "La masturbación causa impotencia o disfunción eréctil en los hombres.", answer: "Falso." },
+      { question: "Es normal sentir dolor durante el sexo.", answer: "Falso. Si bien puede haber ocasiones en las que el sexo puede ser incómodo, el dolor persistente no es normal y debe ser abordado." },
+    { question: "EL JUEGO HA ACABADO. PUEDES SELECCIONAR UNO NUEVO PARA SEGUIR DISFRUTANDO DE LOS JUEGOS DE WESEX." },
+
+
     ],
-    "PREGUNTA Y RESPUESTA": [
-      { question: "What is the capital of France?", answer: "Paris" },
-      { question: "What is the capital of Chile?", answer: "Santiago" },
-      // more questions for this mode...
-    ],
+    // "PREGUNTA Y RESPUESTA": [
+    //   { question: "What is the capital of France?", answer: "Paris" },
+    //   { question: "What is the capital of Chile?", answer: "Santiago" },
+    //   { question: "What is the capital of Argentina?", answer: "Buenos Aires" },
+    //   // more questions for this mode...
+    // ],
     // Add more game modes and their questions here...
   };
 
@@ -217,17 +327,20 @@ const PopupContent = () => {
     const [showAnswer, setShowAnswer] = useState(false);
 
     const toggleQuestionAndAnswer = () => {
-        setShowAnswer(!showAnswer);
-    };
-
-    const nextQuestion = () => {
+        // If the current index is not the last question, toggle the answer
         if (currentQuestionIndex < questions.length - 1) {
+            setShowAnswer(!showAnswer);
+        }
+
+        // Move to the next question only if the answer is shown and it's not the last question
+        if (showAnswer && currentQuestionIndex < questions.length - 1) {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
             setShowAnswer(false);
         }
     };
 
     useEffect(() => {
+        // Reset the current question index and answer status when questions change
         setCurrentQuestionIndex(0);
         setShowAnswer(false);
     }, [questions]);
@@ -239,16 +352,24 @@ const PopupContent = () => {
     return (
         <QuestionCard onClick={toggleQuestionAndAnswer}>
             {showAnswer ? (
-                questions[currentQuestionIndex].answer.toString()
-            ) : (
                 <div>
-                    {questions[currentQuestionIndex].question}
-                    <button onClick={nextQuestion}>Next Question</button>
+                    <Question showBefore={false}>
+                        <span>{questions[currentQuestionIndex].question}</span>
+                    </Question>
+                    <br />
+                    <Answer>
+                        <span>{questions[currentQuestionIndex].answer.toString()}</span>
+                    </Answer>
                 </div>
+            ) : (
+                <Question>
+                    <span>{questions[currentQuestionIndex].question}</span>
+                </Question>
             )}
         </QuestionCard>
     );
 };
+
 
 const CardGame = () => {
     const [selectedOption, setSelectedOption] = useState('VERDADERO O FALSO');
