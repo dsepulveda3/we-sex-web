@@ -22,7 +22,7 @@ self.addEventListener('push', event => {
 });
 
 
-// If the loader is already loaded, just stop.
+// If the loader is already loaded, just stop. //
 if (!self.define) {
   let registry = {};
 
