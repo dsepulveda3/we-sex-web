@@ -12,6 +12,8 @@
  */
 
 self.addEventListener('push', event => {
+  console.log('Push event received:', event);
+
   const options = {
     body: 'Test', // Customize the notification content
   };
@@ -21,6 +23,7 @@ self.addEventListener('push', event => {
     self.registration.showNotification('Notification Title', options)
   );
 });
+
 
 
 // If the loader is already loaded, just stop. //
