@@ -15,6 +15,7 @@ self.addEventListener('push', event => {
   const options = {
     body: 'Test', // Customize the notification content
   };
+  console.log("Showing notification");
 
   event.waitUntil(
     self.registration.showNotification('Notification Title', options)
