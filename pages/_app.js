@@ -44,6 +44,7 @@ function MyApp({ Component, pageProps }) {
           navigator.serviceWorker.ready.then(registration => {
             registration.showNotification('Notification Title', {
               body: 'Test', // Customize the notification content
+              
             });
           });
         }

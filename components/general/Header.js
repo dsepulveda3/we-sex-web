@@ -145,6 +145,20 @@ const StyledNavbarToggler = styled(NavbarToggler)`
   }
 `;
 
+const AppImage = styled.img `
+  width: 10%;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+  margin-left: 2.5rem;
+
+  @media (max-width: 540px) {
+    width: 25%;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    margin-left: 2.5rem;
+
+  }
+`;
 
 
 const NavItemHideOnPhone = styled(NavItem)`
@@ -293,7 +307,7 @@ const Header = ({type}) => {
       <Navbar expand="md" className="fixed-top" >
       <div className="d-flex justify-content-between align-items-center w-100" style={{marginLeft: "20px", marginRight: "20px"}}>
           <NavbarBrand href="/">
-            <Title>WeSex</Title>
+          <AppImage src="/img/logo_wesex_croped.png" />
           </NavbarBrand>
           <StyledNavbarToggler aria-controls="basielc-navbar-nav" onClick={toggleNavbar} />
           <Collapse isOpen={isOpen} navbar>

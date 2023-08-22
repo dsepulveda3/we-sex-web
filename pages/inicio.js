@@ -22,6 +22,8 @@ export default function Home() {
       <main>
       <Layout type={'nothidden'}>
         <div style={{paddingBottom: '5rem'}}>
+        {/* here */}
+        
         <SurveysHorizontal />
         <ArticlesHorizontal />
         <DebatesHorizontal />

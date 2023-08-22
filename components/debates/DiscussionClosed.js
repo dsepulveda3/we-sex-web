@@ -29,7 +29,6 @@ const Discussion = styled.div`
     border: 5px solid var(--green);
   }
 
-  
 
   @media (max-width: 540px) {
     margin-top: 7px;
@@ -51,9 +50,17 @@ const Title = styled.p`
   -webkit-line-clamp: 2; /* Number of lines to show */
   -webkit-box-orient: vertical;
   font-family: "Averia Libre", sans-serif;
+  span {
+    font-weight: bold;
+    font-family: "Averia Libre", sans-serif;
+    background-color: var(--green); /* Set the background color to green */
+    padding: 0.5rem 1rem; /* Add padding to make the background visible */
+    color: white; /* Set the text color to white */
+}
+
   
   @media (max-width: 540px) {
-    font-size: 2.2rem;
+    font-size: 2.0rem;
     text-align: left;
   }
 `;
@@ -71,7 +78,7 @@ const Text = styled.p`
   font-family: "Karla", sans-serif;
   
   @media (max-width: 540px) {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     text-align: left;
   }
 `;
@@ -113,7 +120,7 @@ const DiscussionClosed = ({ type, discussion, onClick = false }) => {
         )
       }
     >
-      <Title>{discussion?.title}</Title>
+      <Title><span>{discussion?.title}</span></Title>
       <Text>{discussion?.subtitle}</Text>
       <Row className="align-items-center">
         <Col xs={3} className='d-flex align-items-center'>

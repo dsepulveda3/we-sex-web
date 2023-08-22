@@ -11,22 +11,7 @@
  * limitations under the License.
  */
 
-self.addEventListener('push', event => {
-  console.log('Push event received:', event);
-
-  const options = {
-    body: 'Test', // Customize the notification content
-  };
-  console.log("Showing notification");
-
-  event.waitUntil(
-    self.registration.showNotification('Notification Title', options)
-  );
-});
-
-
-
-// If the loader is already loaded, just stop. //
+// If the loader is already loaded, just stop.
 if (!self.define) {
   let registry = {};
 
