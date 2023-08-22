@@ -20,6 +20,7 @@ import ArticlesHome from '../components/articles/ArticlesHome';
 import Banner from '../components/home/Banner';
 import Faqs from '../components/home/Faqs';
 import clienteAxios from '../config/axios';
+import Inicio from '../pages/inicio';
 
 export default function Home() {
   // async function getData() {
@@ -39,24 +40,21 @@ export default function Home() {
 
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>WeSex - La app para hablar y aprender de sexo</title>
         <meta name='description' content={''} />
         <meta name='keywords' content={''} />
       </Head>
       <Layout type={'landing'}>
-        {/* <HeaderLanding /> */}
         <Hola />
         <Stadistics2 />
-        {/* <Articles/>
-        <Debates/> */}
         <Temas2 />
         <Community />
         <Ceciliace />
         <Questions/>
         <Contactus/>
-      </Layout>
-
+      </Layout> */}
+      <Inicio />
       {/* <Layout>
         <Banner />
         <ArticlesHome />
