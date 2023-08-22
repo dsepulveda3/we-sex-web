@@ -147,8 +147,8 @@ const StyledNavbarToggler = styled(NavbarToggler)`
 
 const AppImage = styled.img `
   width: 10%;
-  padding-top: 1.2rem;
-  padding-bottom: 1.2rem;
+  padding-top: 1.0rem;
+  padding-bottom: 1.0rem;
   margin-left: 2.5rem;
 
   @media (max-width: 540px) {
@@ -335,7 +335,7 @@ const Header = ({type}) => {
               
               <NavItemHideOnPhone>
                 <PremiumMaterialButton onClick={toggleNavbar} className="nav-link scrollto" href="/premium-material" style={{color: "white"}}>
-                  Premium Material
+                  Premium
                 </PremiumMaterialButton>
               </NavItemHideOnPhone>
             </Nav>

@@ -4,6 +4,10 @@ import { Row, Col, Container } from 'reactstrap';
 import styled from '@emotion/styled';
 import { downloadAppAlert } from '../../helpers';
 
+const Background = styled.div`
+  padding: 1rem;
+`;
+
 const ProfilePic = styled.img`
   border-radius: 100% !important;
   width: 5rem !important;
@@ -17,7 +21,7 @@ const TimeStamp = styled.p`
 `;
 
 const CommentDiv = styled.div`
-  border-bottom: 1px solid var(--lightGrey);
+  border-bottom: 1px solid #DCDCDC;
   color: black;
   padding: 1.5rem 0.5rem;
   max-width: 60rem;
@@ -67,7 +71,9 @@ const Icon = styled(Col)`
 
 const Comment = ({ comment }) => {
   return (
+    <Background>
     <CommentDiv>
+      
       <Row>
         <Col xs={8} style={{ textAlign: 'left' }}>
           <ProfilePic
@@ -115,7 +121,10 @@ const Comment = ({ comment }) => {
           <a onClick={() => downloadAppAlert()}>responder</a>
         </Icon>
       </Row>
+      
     </CommentDiv>
+    </Background>
+  
   );
 };
 

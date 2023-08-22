@@ -47,7 +47,7 @@ export async function getStaticProps({ params }) {
 }
 
 const ArticleTitle = styled.div`
-  margin-top: 0.1rem;
+  margin-top: 1.2rem;
   padding: 1rem;
   background-color: var(--violet);
   text-align: center;
@@ -67,6 +67,7 @@ const ArticleTitle = styled.div`
   }
   @media (max-width: 540px) {
     /* padding: .5rem; */
+    margin-top: 0.1rem;
     a {
       margin-left: 0;
     }
@@ -129,7 +130,7 @@ const ArticleExample = {
 const CommentsTitleP = styled.p`
   font-weight: bold;
   text-transform: uppercase;
-  color: var(--violet);
+  color: black;
   margin-top: 2rem !important;
 `;
 
@@ -180,8 +181,13 @@ const Debate = styled(Col)`
 
 const DiscussionTitle = styled.div`
   h1 {
-    font-size: 4rem !important;
+    font-size: 3rem !important;
     text-transform: capitalize;
+    font-weight: bold;
+    font-family: "Averia Libre", sans-serif;
+    background-color: var(--green); /* Set the background color to green */
+    padding: 0.5rem 1rem; /* Add padding to make the background visible */
+    color: white; /* Set the text color to white */
   }
 `;
 
@@ -228,8 +234,7 @@ const DiscussionContainer = styled.div`
   gap: 1rem; /* Add gap between discussion cards */
   margin-bottom: 0.5rem; /* Add margin at the bottom for spacing */
   @media (max-width: 540px) {
-    margin-left: 5rem;
-  }
+    margin-left: 4.2rem;
 `;
 
 const DiscussionCard = styled.div`
@@ -338,7 +343,7 @@ const DiscussionDetail = ({ discussionItem }) => {
               <p className='green-line w-30 ldes-cmob'></p>
               {Number(comments?.count) > 0 ? (
                 <>
-                  <CommentsTitleP>Opina la comunidad:</CommentsTitleP>
+                  <CommentsTitleP>Opina la comunidad</CommentsTitleP>
                   {comments?.results?.map((comment) => (
                     <Comment comment={comment} key={comment._id} />
                   ))}

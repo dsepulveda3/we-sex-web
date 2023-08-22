@@ -47,7 +47,9 @@ export async function getStaticProps({ params }) {
 }
 
 const ContainerAll = styled.div`
-  padding-top: 6.8rem;
+  padding-top: 8.0rem;
+  
+
 
   @media (max-width: 540px){
     padding-top: 8.5rem;
@@ -55,6 +57,7 @@ const ContainerAll = styled.div`
 
   }
 `;
+
 
 const ArticleTitle = styled.div`
   margin-top: 0.1rem;
@@ -93,6 +96,8 @@ const Published = styled.div`
   color: black;
   /* font-size: 1rem; */
   margin-top: 2rem;
+  margin-left: 1rem;
+  
   a {
     /* margin-left: .7rem; */
     /* font-size: 1rem; */
@@ -100,6 +105,7 @@ const Published = styled.div`
   }
   @media (max-width: 540px) {
     /* font-size: .8rem; */
+    margin-left: 2rem;
     a {
       /* font-size: .8rem; */
     }
@@ -145,11 +151,13 @@ const Links = styled.div`
 const CommentsTitle = styled.p`
   font-weight: bold;
   text-transform: uppercase;
-  color: var(--violet);
+  font-family: "Karla", sans-serif;
+  color: black;
   text-align: left;
   font-size: 2rem;
   @media (max-width: 540px) {
     margin-top: 3rem;
+    text-align: center;
   }
 `;
 
@@ -446,7 +454,7 @@ const ArticleDetail = ({ articleItem }) => {
               <p className='green-line w-30 ldes-cmob'></p>
               {Number(comments?.count) > 0 ? (
                 <>
-                  <CommentsTitle>Opina la comunidad:</CommentsTitle>
+                  <CommentsTitle>Opina la comunidad</CommentsTitle>
                   {comments?.results?.map((comment, index) => (
                   <Comment comment={comment} key={`comment-${index}`} />
                 ))}
