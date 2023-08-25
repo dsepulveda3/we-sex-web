@@ -414,51 +414,42 @@ const Desafio1 = () => {
                     <Row className="justify-content-between">   
                         <ContentTitle>
                             <Title>Desafío:</Title>
-                            <SubTitle><span>QUIERO - LO HARÍA - NO LO HARÍA</span></SubTitle>
+                            <SubTitle><span>Cocina y masajes</span></SubTitle>
                         </ContentTitle>
                         {/* <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle> */}
 
                         <Text>
-                        Ya saben cuánto nos gustan los juegos. Sobre todo, queremos transmitirles que nunca es tarde para seguir jugando como adultos. Si además al juego le sumamos algo sexual, bueno, es un planazo.
-                        <br />
-                        <br />
-                        <span>Objetivo:</span> ayudarlos a experimentar y llevar a cabo fantasías y actos sexuales.
+                        <span>Objetivo:</span> Pasar un momento divertido juntos, fortaleciendo la conexión y compartiendo risas.
                         <br/>
                         <br/>
-                        <span>Que necesitas para este desafió</span>
+                        <span>Cena y cocina juntos:</span>
                         <br/>
                         <br/>
-                        <span>1:</span> 2 hojas o cartulinas.
+                        <span>1:</span> Piensen en un plato que los identifique. Algún plato que les guste a ambos, que los remonte a un recuerdo, a una cita, a un viaje que hayan hecho.
                         <br/>
                         <br/>
-                        <span>2:</span> 2 lápices o lapiceras.
+                        <span>2:</span> Armen el listado de compras y vayan juntos a conseguir los ingredientes.
                         <br/>
                         <br/>
-                        <span>3:</span> 1 resaltador o lapicera de color.
+                        <span>3:</span> Llegada la noche, el plan será cocinar, tomar algo y disfrutar de la cena.
                         <br/>
                         <br/>
-                        <span>4:</span> Post-its (opcional).
+                        <span>4:</span> Asegúrense de poder tener esa noche solos.
                         <br/>
                         <br/>
                         </Text>
                     </Row>
                     <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
                             <ContentTitle2>
-                                <Title2 style={{textAlign: 'left'}}>Hora del jugar</Title2>
+                                <Title2 style={{textAlign: 'left'}}>LUEGO DE LA CENA</Title2>
                                 <AppImage src="../../img/bomb.png" alt="Bomba" />
                             </ContentTitle2>
                         
                             <Text2>
-                                El juego consiste en crear 3 columnas: <span>Quiero - Lo haría - No lo haría.</span>
-                                <br />
-                                <br />
-                                <span>Quiero:</span> vas a poner las cosas que quieres experimentar. Tienes ganas activamente de probar, experimentar o realizar las cosas que están en esta columna.
+                                <span>Mauro, hoy te toca realizar un masaje relajante y/o erótico a tu pareja. Sin expectativas de que lleve a algo más, simplemente para que ella se sienta bien y relajada.</span>
                                 <br/>
                                 <br/>
-                                <span>Lo haría:</span> vas a poner las cosas que podrías experimentar. No son cosas que estás buscando activamente hacer o probar, pero que quizás estarías dispuesto a hacer en caso de que tu pareja lo desee.
-                                <br/>
-                                <br/>
-                                <span>No lo haría:</span> aquí van las cosas que NO estás dispuesto a hacer.
+                                Puedes preguntarle a tu pareja cómo le gustaría que sea el masaje, pero igualmente…
                                 <br/>
                             </Text2>
                             <Col xs="12" lg="12" md="3">
@@ -466,25 +457,82 @@ const Desafio1 = () => {
                                 <CardHeader onClick={toggle} style={{backgroundColor: "white "}}>
                                 <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
                                     
-                                    <TitleQuestion style={{marginLeft: '2rem'}}>Luego de completar las intrucciones anteriores presiona aquí 😉</TitleQuestion>
+                                    <TitleQuestion style={{marginLeft: '2rem'}}>Te dejamos aquí una guía para realizar el mejor masaje erótico 😉</TitleQuestion>
                                 </div>
                                 <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
                                 </CardHeader>
                                 <Collapse isOpen={isOpen}>
                                     <CardBody>
                                         <AnswerQuestion>
-                                        <TextBombNormal style={{fontWeight: 'bold'}}>La idea es que, luego de que cada uno haya armado sus 3 columnas, las compartan juntos. Todas las cosas que estén en QUIERO y en LO HARÍA son nuevas ideas que pueden empezar a experimentar 😊.</TextBombNormal>
+                                        <TextBombNormal style={{fontWeight: 'bold'}}>Paso 1: Preparación</TextBombNormal>
                                         
                                         <ul>
                                             <li>
-                                                Van a marcar con un resaltador todas las cosas que ambos estarían dispuestos a hacer (QUIERO o LO HARÍA).
+                                                Crea un ambiente adecuado: Prepara el lugar donde realizarás el masaje. Asegúrate de que sea cómodo, tranquilo y libre de distracciones. Puedes ambientar con velas aromáticas, música suave y luces tenues para crear un ambiente íntimo y relajante.
                                             </li>
                                             <li>
                                                 Asegúrate de tener todo lo necesario: Reúne los elementos que necesitarás, como aceites de masaje, toallas suaves, accesorios (plumas, cremas comestibles, vibradores) y cualquier otra cosa que desees incorporar.
                                             </li>
                                         <br/>
                                         </ul>
-                                        Ahora ya tienen, no solo un plan para esta noche, sino una &quot;to-do list&quot; de sus fantasías a realizar juntos.
+                                        <TextBombNormal style={{fontWeight: 'bold'}}>Paso 2: Comenzar el masaje</TextBombNormal>
+                                        <ul>
+                                            <li>
+                                                Invita a la persona a acostarse cómodamente: Esta puede recostarse boca abajo o boca arriba, según prefiera. Asegúrate de que esté relajada y cómoda antes de comenzar.
+                                            </li>
+                                            <li>
+                                                Aplica aceite de masaje: Calienta el aceite en tus manos antes de aplicarlo sobre el cuerpo de tu pareja. Comienza con movimientos suaves y largos, distribuyendo el aceite de manera uniforme.
+                                            </li>
+                                            <li>
+                                                Explora diferentes partes del cuerpo: Empieza por las zonas menos sensibles, como la espalda, los hombros y los brazos. Utiliza movimientos suaves, largos y fluidos para acariciar y masajear estas áreas. A medida que avances, presta atención a las reacciones de tu pareja y ve explorando otras partes del cuerpo, como las piernas, los pies, el cuello y el cuero cabelludo.
+                                            </li>
+                                        </ul>
+                                        <br/>
+                                        <TextBombNormal style={{fontWeight: 'bold'}}>Paso 3: Variedad en las técnicas de masaje</TextBombNormal>
+                                        <ul>
+
+                                            <li>
+                                                Utiliza diferentes partes del cuerpo: No te limites a usar solo tus manos. Experimenta con otras partes de tu cuerpo, como los antebrazos, los codos, el pecho o incluso tu propio cuerpo en contacto con el de la otra persona. Estos cambios en las técnicas de masaje pueden generar sensaciones diferentes y aumentar la excitación.
+                                            </li>
+                                            <ul>
+                                                <li>
+                                                
+                                                    <li>
+                                                        Juega con las intensidades: Alterna entre movimientos suaves y firmes, adaptándote a las preferencias de tu pareja.
+                                                    </li>
+                                                    <li>
+                                                        Puedes usar las yemas de tus dedos para acariciar suavemente.
+                                                    </li>
+                                                    <li>
+                                                        Las palmas de tus manos para aplicar una presión más profunda.
+                                                    </li>
+                                                    <li>
+                                                        Las uñas para generar leves rasguños estimulantes.
+                                                    </li>
+                                                </li>
+                                            </ul>
+                                            <li>
+                                            Experimenta con diferentes ritmos y velocidades: Varía el ritmo y la velocidad de tus movimientos para mantener la excitación.
+                                            </li>
+                                            <ul>
+                                                <li>
+                                                
+                                                    <li>
+                                                        Puedes realizar movimientos lentos y sensuales, alternándolos con movimientos más rápidos y enérgicos para aumentar la intensidad.
+                                                    </li>
+                                                </li>
+                                            </ul>
+                                        </ul>
+                                        <br/>
+                                        <TextBombNormal style={{fontWeight: 'bold'}}>Paso 4: Enfócate en las zonas erógenas</TextBombNormal>
+                                        <ul>
+                                            <li>
+                                                Descubre las zonas sensibles: Presta atención a las reacciones de tu pareja y busca las zonas que le generen mayor placer. Estas pueden incluir los labios, el cuello, los pezones, los muslos internos, el abdomen, las nalgas, los genitales y otras áreas erógenas que mencionamos en la guía.
+                                            </li>
+                                            <li>
+                                                Estimula las zonas erógenas de forma creativa: Utiliza técnicas específicas para estimular estas zonas, como suaves mordiscos, besos, lamidos o movimientos circulares con la lengua.
+                                            </li>
+                                        </ul>
                                         </AnswerQuestion>
                                     </CardBody>
                                 </Collapse>
@@ -493,7 +541,7 @@ const Desafio1 = () => {
                     </Row>
                     <Row className="justify-content-between">   
                         <Text>
-                            <span>¡QUE DISFRUTEN!</span>
+                            <span>NOTA FINAL:</span>  Recuerden que el objetivo es divertirse y tener un espacio para ustedes. No hay expectativas de que el desafío conduzca a un acto sexual, dejense llevar por el momento y el disfrute. 
                         </Text>
                     </Row>
             </Container>
