@@ -21,7 +21,7 @@ const Background = styled.div`
     @media(max-width: 540px){
         background-attachment: scroll;
         text-align: center;
-        padding-bottom:3rem;
+        padding-bottom: 10rem;
     }
 `;
 

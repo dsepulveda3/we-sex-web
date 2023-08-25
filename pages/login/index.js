@@ -1,10 +1,13 @@
 import React from 'react';
 import LoginForm from "../../components/loginForm"
+import Layout from '../../components/general/Layout';
 
 
 function Login(){
     return (
-        <LoginForm />
+        <Layout>
+            <LoginForm />
+        </Layout>
     )
 }
 

@@ -8,8 +8,8 @@ export const Background = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    // background-color: var(--violet);
-    background-image: url("/img/auth/cta-bg.jpg");
+    background-color: var(--violet);
+    // background-image: url("/img/auth/cta-bg.jpg");
     background-position: center;
     background-size: 100% 100%;
     

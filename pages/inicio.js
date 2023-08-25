@@ -3,7 +3,9 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { Container, Row, Col } from 'reactstrap';
 import { useRouter } from 'next/router';
-import Layout from '../components/general/Layout';
+import Layout from '../components/general/Layout'
+import Suscribe from '../components/general/Suscribe';
+
 import SurveysHorizontal from '../components/surveys/surveysHorizontal'
 import DebatesHorizontal from '../components/debates/DebatesHorizontal'
 import ArticlesHorizontal from '../components/articles/ArticlesHorizontal'
@@ -23,7 +25,7 @@ export default function Home() {
       <Layout type={'nothidden'}>
         <div style={{paddingBottom: '5rem'}}>
         {/* here */}
-        
+        {/* <Suscribe/> */}
         <SurveysHorizontal />
         <ArticlesHorizontal />
         <DebatesHorizontal />

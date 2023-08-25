@@ -15,9 +15,6 @@ import { Pagination } from 'swiper';
 import clienteAxios from '../config/axios';
 import { articlesCategoriesTitle } from '../data';
 
-const Background = styled.div`
-    background-color; #ece9eb;
-`;
 
 const OneCategory = styled.button`
   /* float: left!important;  */
@@ -167,7 +164,7 @@ export default function Articulos() {
           </Container>
         </div> */}
 
-        <Background>
+        
         
         <Container style={{paddingTop: '2rem', paddingBottom: '5rem'}}>
           <TitleContainer>
@@ -217,7 +214,6 @@ export default function Articulos() {
             search={searchString}
           />
         </Container>
-        </Background>
       </Layout>
     </>
   );

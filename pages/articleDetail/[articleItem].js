@@ -49,8 +49,6 @@ export async function getStaticProps({ params }) {
 const ContainerAll = styled.div`
   padding-top: 8.0rem;
   
-
-
   @media (max-width: 540px){
     padding-top: 8.5rem;
     padding-bottom: 8rem;

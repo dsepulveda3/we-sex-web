@@ -1,14 +1,17 @@
 import React from 'react';
 import RegisterForm from '../../components/registerForm';
+import Layout from '../../components/general/Layout';
 import { RegisterProvider } from '../../context/registerContext';
 
 
 
 function Register(){
     return (
-        <RegisterProvider>
+        <Layout>
+            <RegisterProvider>
             <RegisterForm />
         </RegisterProvider>
+        </Layout>
     )
 }
 

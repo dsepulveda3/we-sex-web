@@ -19,12 +19,27 @@ const Background = styled.div`
     @media(max-width: 540px){
         background-attachment: scroll;
         text-align: center;
+        min-height: 100vh;
     }
 `;
 
 
-const PDFViewer = () => {
-  const pdfUrl = '/pdf/guia-anal.pdf';
+const PDFViewer = ({pdfItem}) => {
+  console.log(pdfItem);
+  const pdfUrl = "";
+
+  if (pdfItem === 'guia-anal') {
+    pdfUrl = "https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68b3f67626bfe72c4ef30/guiasexoanal-WeSex-3_compressed.pdf";
+  } 
+  else if (pdfItem === 'guia-tantra') {
+    pdfUrl = "https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68b6167626bfe72c4ef36/Guia de tantra_Orgasmos mas profundos 1_compressed.pdf"
+  }
+  else if (pdfItem === 'guia-zonas-erogenas') {
+    pdfUrl = "https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68b8167626bfe72c4ef3c/Guia de zonas erogenas WeSex_compressed.pdf"
+  }
+  else if (pdfItem === 'guia-salir-rutina') {
+    pdfUrl = "https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68cef67626bfe72c4ef48/Guía para salir de la rutina con tu pareja  WeSex_compressed.pdf"
+  }
   const [numPages, setNumPages] = useState(null);
   const [containerWidth, setContainerWidth] = useState(0);
   const [pageHeight, setPageHeight] = useState(0);
@@ -50,13 +65,12 @@ const PDFViewer = () => {
   return (
     <Background>
       <div className="pdf-container">
-        Hello
-        {/* <Document file={pdfUrl} onLoadSuccess={onDocumentLoadSuccess}>
+        <Document file={pdfUrl} onLoadSuccess={onDocumentLoadSuccess}>
           <div className="pdf-pages">
             {Array.from(new Array(numPages || 0), (_, index) => (
               <div
                 key={`page_${index + 1}`}
-                className={`pdf-page ${index >= 2 ? 'blurry-page' : ''}`}
+                className={`pdf-page ${index >= 2 ? '' : ''}`}
               >
                 <Page
                   pageNumber={index + 1}
@@ -70,7 +84,7 @@ const PDFViewer = () => {
               </div>
             ))}
           </div>
-        </Document> */}
+        </Document>
       </div>
 
       <style jsx>{`
@@ -86,10 +100,11 @@ const PDFViewer = () => {
 
         @media (max-width: 540px) {
           .pdf-container {
-            margin-left: 0px;
-            margin-right: 0px;
-            margin-top: 0px;
-            margin-bottom: 0px;
+            margin: 0; /* Remove margin for smaller screens */
+            padding: 20px 0px 0px 0px; /* Remove padding for smaller screens */
+            width: 100%; /* Adjust width for smaller screens */
+            height: auto; /* Adjust height for smaller screens */
+            overflow: visible; /* Adjust overflow for smaller screens */
           }
         }
 
@@ -120,7 +135,7 @@ const PDFViewer = () => {
         @media (max-width: 768px) {
           .pdf-container {
             width: 100%;
-            height: 300px;
+            height: 680px;
             overflow-x: auto;
           }
 

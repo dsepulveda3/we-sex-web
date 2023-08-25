@@ -1,4 +1,5 @@
 import { Container, Row, Col } from 'reactstrap';
+import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import Link from 'next/link';
 
@@ -21,7 +22,7 @@ const Background = styled.div`
     @media(max-width: 540px){
         background-attachment: scroll;
         text-align: center;
-        padding-bottom:3rem;
+        padding-bottom:10rem;
     }
 `;
 
@@ -231,6 +232,46 @@ const StyledH3 = styled.h3`
 
 
 const Guides = () => {
+
+    const [guides, setGuides] = useState([]);
+
+    useEffect(() => {
+        // Fetch guides when component mounts
+        fetch('http://localhost:8000/v1/guides/')  // Replace this with your API URL
+          .then(response => response.json())
+          .then(data => {
+            setGuides(data);
+          })
+          .catch(error => {
+            console.error('Error fetching guides:', error);
+          });
+      
+        console.log("Fetching guides...");
+      }, []); 
+
+    //   console.log("pdfFile of position 0:", guides[0].pdfFile.key);c
+    console.log(guides);
+
+    const [isSubscribed, setIsSubscribed] = useState(false);
+
+    // Depending on the isSubscribed state, set the appropriate link
+    const guideAnalLink = isSubscribed
+        ? `/premium-material/guides/pdf-viewer/${'guia-anal'}`// Link for subscribed user
+        : '/premium-material/guides/guia-sexo-anal'; // Link for non-subscribed user
+
+    const guideTantraLink = isSubscribed
+        ? `/premium-material/guides/pdf-viewer/${'guia-tantra'}`// Link for subscribed user
+        : '/premium-material/guides/guia-tantra'; // Link for non-subscribed user
+
+    const guideZonasLink = isSubscribed
+        ? `/premium-material/guides/pdf-viewer/${'guia-zonas-erogenas'}`// Link for subscribed user
+        : '/premium-material/guides/guia-zonas-erogenas'; // Link for non-subscribed user
+
+    const guideRutinaLink = isSubscribed
+        ? `/premium-material/guides/pdf-viewer/${'guia-salir-rutina'}`// Link for subscribed user
+        : '/premium-material/guides/guia-salir-rutina'; // Link for non-subscribed user
+
+
   return (
     <Section id="guides">
         <Background>
@@ -242,7 +283,7 @@ const Guides = () => {
                 <Row data-aos="fade-left">
 
                 <Col lg="3" md="4" >
-                <Link href="/premium-material/guides/guia-salir-rutina">
+                <Link href={guideRutinaLink}>
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageGuia2 src="/img/premium-material/salir_rutina.png" className="img-fluid"/>
@@ -253,7 +294,7 @@ const Guides = () => {
                 </Col>
 
                 <Col lg="3" md="4" >
-                    <Link href="/premium-material/guides/guia-zonas-erogenas">
+                    <Link href={guideZonasLink}>
                         <GuideSquare>
                             <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                                 <AppImageGuia3 src="/img/premium-material/2ZonasErogenas (1).png" className="img-fluid"/>
@@ -263,7 +304,7 @@ const Guides = () => {
                     </Link>
                 </Col>
                 <Col lg="3" md="4" >
-                    <Link href="/premium-material/guides/guia-tantra">
+                    <Link href={guideTantraLink}>
                         <GuideSquare>
                             <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                                 <AppImageGuia2 src="/img/premium-material/Tantra (1).png" className="img-fluid"/>
@@ -273,7 +314,7 @@ const Guides = () => {
                     </Link>
                 </Col>
                 <Col lg="3" md="4" >
-                <Link href="/premium-material/guides/guia-sexo-anal">
+                <Link href={guideAnalLink}>
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageGuia1 src="/img/premium-material/como-nunca-antes-gozado.png" className="img-fluid"/>

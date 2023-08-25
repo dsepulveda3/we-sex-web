@@ -5,6 +5,7 @@ import ProfesionalesUniversal from '../../../../components/premiumMaterial/profe
 import Regalar from '../../../../components/premiumMaterial/regalar'
 import PackUniversal from '../../../../components/premiumMaterial/packUniversal'
 import ComprarUniversal from '../../../../components/premiumMaterial/comprarUniversal'
+import ComprarUniversal2 from '../../../../components/premiumMaterial/comprarUniversal2'
 import Dudas from '../../../../components/premiumMaterial/dudas'
 import AfterDiv from '../../../../components/premiumMaterial/afterDiv'
 import AboutWeSex from '../../../../components/premiumMaterial/aboutWeSex'
@@ -29,6 +30,7 @@ export default function Home() {
       
       <main>
       <Layout>
+        {/* <ComprarUniversal2/> */}
         <FirstBannerUniversal titleText='Guía de tantra:' titleSpan='orgasmos más profundos' price='AR$ 1.600  /  U$D 6' description1='Te enseñamos de 0 a 100,' 
           description2='cómo aplicar el tantra a tu vida sexual.'  imageVisibility={true} 
           videoVisibility={false} image='/img/premium-material/Tantra (1).png' widthImage={'45%'}/>

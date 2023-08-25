@@ -15,9 +15,7 @@ import WriteComment from '../components/general/WriteComment';
 import { articles, articlesCategories, comments } from '../data';
 import { downloadAppAlert } from '../helpers';
 
-const Background = styled.div`
-    background-color; #ece9eb;
-`;
+
 
 const ArticleTitle = styled.div`
     margin-top:.1rem;
@@ -168,7 +166,7 @@ const DiscussionDetail = () => {
                 <meta name="keywords" content={""} />
             </Head>
             <Layout>
-                <Background>
+                
                 <ArticleTitle>
                     <span className="hide-mobile">Debate de la categoría</span> 
                     <Link href="/debates?categoria=habitos-sexuales">
@@ -240,7 +238,7 @@ const DiscussionDetail = () => {
                         </Col>
                     </Row>
                 </Container>
-                </Background>
+       
             </Layout>
         </>
     );

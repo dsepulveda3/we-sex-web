@@ -1711,6 +1711,18 @@
     semver "^7.3.5"
     tar "^6.1.11"
 
+"@mercadopago/sdk-js@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@mercadopago/sdk-js/-/sdk-js-0.0.3.tgz#f54eee5faa7d8d7253b5c03b0ef09dcb8229698a"
+  integrity sha512-kO48DNLHdfFAp3on12nuKdqNlEmw1x3+nM6wLd04BdWOXoFcAhkNMQV3AyUIanXdO/bB/dENakdacLT29297EQ==
+
+"@mercadopago/sdk-react@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@mercadopago/sdk-react/-/sdk-react-0.0.14.tgz#87778d24b0991b8718b7d3edc5223492d5574474"
+  integrity sha512-BH5xVdd9x2Q9fSSxYs6xRLTB/SaSiw1cS5hnhVda1S98KsU7KsYraNGinSXSxekGQgBBEm1EbCWCJPG4qEUtBA==
+  dependencies:
+    "@mercadopago/sdk-js" "^0.0.3"
+
 "@next/env@12.2.5":
   version "12.2.5"
   resolved "https://registry.yarnpkg.com/@next/env/-/env-12.2.5.tgz#d908c57b35262b94db3e431e869b72ac3e1ad3e3"

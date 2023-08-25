@@ -49,12 +49,12 @@ const StyledHeader = styled.header`
         left: 0;
         height: 30vh;
         width: 100vw;
-        background-color: violet;
-        background-image: url("/img/landing/cta-bg.jpg");
+        padding: 2rem;
+        
         z-index: 1;  /* set the z-index of the navbar-collapse */
       }
       .navbar-nav {
-        padding-top: 70px; /* adjust this value as needed to add space at the top */
+        padding-top: 50px; /* adjust this value as needed to add space at the top */
       }
       .navbar-nav .nav-link {
         color: black;
@@ -114,28 +114,30 @@ const PremiumMaterialButton = styled(NavLink)`
 
 const SingUpButton = styled.a`
     display: inline-block;
-    background-color: var(--bs-red);
+    background-color: var(--green);
+    font-weight: bold;
     border-radius: 30px;
-    padding: 10px 20px;
+    padding: 5px 10px;
     color: white;
     cursor: pointer;
     white-space: nowrap; 
 
     @media(max-width: 540px){
-      margin-top: 2rem;
-
+      margin-top: 0rem;
+      font-size: 1.2rem;
     }
 
 `;
 
 const StyledNavbarToggler = styled(NavbarToggler)`
-  background-image: url(${'/img/icons/navbar-icon.png'});
-  padding: 0.2px;
+  background-image: url(${'/img/icons/search-bold.svg'});
+  padding: 0.1px;
   background-size: cover;
   background-position: center;
   border: none;
+  filter: invert(1);
    /* Add this line to make the SVG white */
-  
+
   &:focus {
     outline: none;
   }
@@ -152,10 +154,10 @@ const AppImage = styled.img `
   margin-left: 2.5rem;
 
   @media (max-width: 540px) {
-    width: 25%;
+    width: 30%;
     padding-top: 1.2rem;
     padding-bottom: 1.2rem;
-    margin-left: 2.5rem;
+    margin-left: 4.5rem;
 
   }
 `;
@@ -168,6 +170,12 @@ const NavItemHideOnPhone = styled(NavItem)`
   @media (max-width: 767px) {
     display: none;
   }
+`;
+
+
+
+const Search = styled(ReactSearchAutocomplete)`
+  background-color: var(--violet);
 `;
 
 const formatResult = (item) => {
@@ -305,11 +313,13 @@ const Header = ({type}) => {
     {type === 'landing' ? (<HeaderLanding />): (
       <StyledHeader bgColor={bgColor} bgImage={bgImage}>
       <Navbar expand="md" className="fixed-top" >
+      
       <div className="d-flex justify-content-between align-items-center w-100" style={{marginLeft: "20px", marginRight: "20px"}}>
+          <StyledNavbarToggler aria-controls="basielc-navbar-nav" onClick={toggleNavbar} />
           <NavbarBrand href="/">
           <AppImage src="/img/logo_wesex_croped.png" />
           </NavbarBrand>
-          <StyledNavbarToggler aria-controls="basielc-navbar-nav" onClick={toggleNavbar} />
+          
           <Collapse isOpen={isOpen} navbar>
             <Nav navbar>
               <NavItemHideOnPhone>
@@ -343,7 +353,7 @@ const Header = ({type}) => {
             
 
             <NavbarText style={{ width: 300, marginLeft: 20, marginRight: 20 }}>
-                <ReactSearchAutocomplete
+                <Search
                   items={itemsToSearch}
                   maxResults={15}
                   onSearch={handleOnSearch}
@@ -354,7 +364,12 @@ const Header = ({type}) => {
                   fuseOptions={{
                     keys: ['title', 'description', 'keywords'],
                   }} 
-                  styling={{ zIndex: 3 }} 
+                  styling={{ 
+                    zIndex: 3, 
+                    backgroundColor: "var(--violet)", 
+                    color: "white", 
+                    
+                  }} 
                 />
               </NavbarText>
 
@@ -365,6 +380,12 @@ const Header = ({type}) => {
               )} */}
               
           </Collapse>
+          {/* {loggedIn? <AuthToggleLinks setLoginStatus={setLoggedIn} /> : (
+                <SingUpButton href='/login' onClick={handleLogin}>
+                      Entrar
+                </SingUpButton>
+              )}
+           */}
         </div>
         
       </Navbar>
