@@ -55,7 +55,7 @@ const Suscribe = () => {
     <>
       {visible && (
         <Container>
-          <SingUpButton>Suscribirse a WeSex</SingUpButton>
+          <SingUpButton href={'premium-material/subscription'}>Suscribirse a WeSex</SingUpButton>
           <CloseButton onClick={handleClose}>X</CloseButton>
         </Container>
       )}
