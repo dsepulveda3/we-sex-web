@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import 'react-toastify/dist/ReactToastify.css';
 import '../styles/bootstrap.min.css';
 import '../styles/globals.css';
+import '../styles/stripeFormStyles.css';
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
