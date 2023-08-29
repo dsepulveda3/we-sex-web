@@ -15,7 +15,9 @@ const Background = styled.div`
   }
 `;
 
-const stripePromise = loadStripe('pk_test_BanXBYCwT9CATP3DfHn8nHiz00LBLj9klX');
+const STRIPE_API_KEY = process.env.NEXT_PUBLIC_STRIPE_API_KEY;
+
+const stripePromise = loadStripe(STRIPE_API_KEY);
 
 function StripeBrick() {
   return (

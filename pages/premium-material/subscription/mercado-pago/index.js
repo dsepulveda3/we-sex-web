@@ -1,4 +1,5 @@
-
+import Head from 'next/head';
+import MercadoPagoBrick from '../../../../components/mercadopagoBrick';
 
 
 export default function MercadoPago() {
@@ -18,7 +19,7 @@ export default function MercadoPago() {
         </Head>
         <main>
             <div>
-                Hello
+                <MercadoPagoBrick />
             </div>
         </main>
         </>

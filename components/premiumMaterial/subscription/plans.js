@@ -538,7 +538,7 @@ const Plans = () => {
 
 
     const NextLinkArgentina = isLogged
-        ? `/premium-material/guides/guia-sexo-anal`// Link for logged in user
+        ? `/premium-material/subscription/mercado-pago`// Link for logged in user
         : '/login'; // Link for non-logged in user
 
     const NextLinkOtro = isLogged

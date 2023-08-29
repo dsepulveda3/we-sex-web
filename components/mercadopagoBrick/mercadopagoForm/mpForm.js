@@ -1,9 +1,6 @@
 import React from 'react';
-import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { subscribe_to_premium } from '../../../requests/premiumService';
-import { useRouter } from 'next/router';
-import { toast } from 'react-toastify';
 import styled from '@emotion/styled';
+import MPCardInput from './mpCardInput';
 
 const Container = styled.div`
   border-radius: 2rem;
@@ -70,7 +67,7 @@ const Boton = styled.a`
 const StyledButtonLink = styled(Boton)`
   text-align: center;
   color: white;
-  background-color: black;
+  background-color: #00AEEF;
   margin: 0rem 2rem;
 `;
 
@@ -80,7 +77,7 @@ const ByLabel = styled.div`
     font-weight: bold;
     font-style: italic;
     margin-top: 1rem;
-    color: black;
+    color:  #00AEEF;
 `;
 
 const ContainerTitle = styled.div`
@@ -109,42 +106,7 @@ const WeSex = styled.div`
 
 
 
-function StripeForm() {
-  const router = useRouter();
-  const stripe = useStripe();
-  const elements = useElements();
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    if (!stripe || !elements) {
-      return;
-    }
-
-    const { token, error } = await stripe.createToken(elements.getElement(CardElement));
-
-    if (error) {
-      console.log(error);
-    } else {
-      try{
-        const response = await subscribe_to_premium(
-          '64e8fb610ab67f331b72c531',
-          {
-            cardToken: token.id,
-            paymentMethod: 'STRIPE',
-          }
-        );
-        console.log(response);
-        if (response.status === 201) {
-          router.push('/');
-          toast.success("Suscripción exitosa");
-        }
-      } catch (error) {
-        toast.error("Error al suscribirse");
-      }
-    }
-  };
-
+function MPForm() {
   return (
     <>
       <ContainerTitle>
@@ -158,16 +120,10 @@ function StripeForm() {
         <CardSubTitle><span>Nombre Comercio:</span> WeSex</CardSubTitle>
       </Container>
       <Container>
-        <CardTitle>Pagar con Tarjeta</CardTitle>
-        <CardSubTitle>Información de la tarjeta</CardSubTitle>
-        <CardElement />
-        <CenterButton>
-          <StyledButtonLink onClick={handleSubmit}>Suscribirme</StyledButtonLink>
-          <ByLabel>Powered by Stripe</ByLabel>
-        </CenterButton>
+        <MPCardInput />
       </Container>
     </>
   );
 }
 
-export default StripeForm;
+export default MPForm;
