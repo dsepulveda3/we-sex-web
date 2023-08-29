@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { is_subscribed } from '../../requests/premiumService';
 import { useAuth } from '../../context/authUserContext';
+import Suscribe from '../../components/general/Suscribe';
 
 const Background = styled.div`
     background-color: var(--violet);
@@ -258,6 +259,7 @@ const Guides = () => {
                 </Col>
                 )}
             </Row>
+            <Suscribe/>
         </Container>
       </Background>
     </Section>
