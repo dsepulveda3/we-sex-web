@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
 
 const MERCADO_PAGO_API_KEY = process.env.NEXT_PUBLIC_MP_API_KEY;
+const PLAN_ID = process.env.NEXT_PUBLIC_PLAN_ID;
 
 function MPCardInput (){
   const { user, loading } = useAuth();
@@ -65,7 +66,7 @@ function MPCardInput (){
             onSubmit: async ({ selectedPaymentMethod, formData }) => {
               try{
                 const response = await subscribe_to_premium(
-                  '64ee3d60b887f8eba5b7fa8b',
+                  PLAN_ID,
                   {
                       cardToken: formData.token,
                       paymentMethod: 'MP',

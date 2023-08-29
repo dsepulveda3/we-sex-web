@@ -12,6 +12,9 @@ import SurveysHorizontal from '../components/surveys/surveysHorizontal'
 import DebatesHorizontal from '../components/debates/DebatesHorizontal'
 import ArticlesHorizontal from '../components/articles/ArticlesHorizontal'
 
+
+const PLAN_ID = process.env.NEXT_PUBLIC_PLAN_ID;
+
 export default function Home() {
 
   const { authUser, loading } = useAuth();
@@ -19,7 +22,7 @@ export default function Home() {
 
   const checkSubscriptionStatus = async () =>{
     const response = await is_subscribed(
-      '64e8fb610ab67f331b72c531', 
+      PLAN_ID, 
     );
     console.log("reading request")
     console.log(response);

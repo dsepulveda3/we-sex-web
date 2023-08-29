@@ -107,7 +107,7 @@ const WeSex = styled.div`
     font-family: "Averia Libre", sans-serif;
 `;
 
-
+const PLAN_ID = process.env.NEXT_PUBLIC_PLAN_ID;
 
 function StripeForm() {
   const router = useRouter();
@@ -128,7 +128,7 @@ function StripeForm() {
     } else {
       try{
         const response = await subscribe_to_premium(
-          '64e8fb610ab67f331b72c531',
+          PLAN_ID,
           {
             cardToken: token.id,
             paymentMethod: 'STRIPE',

@@ -192,6 +192,8 @@ const ColHideOnPhone = styled(Col)`
 `;
 
 
+const PLAN_ID = process.env.NEXT_PUBLIC_PLAN_ID;
+
 const Guides = () => {
 
     const { authUser, loading } = useAuth();
@@ -199,7 +201,7 @@ const Guides = () => {
 
     const checkSubscriptionStatus = async () =>{
         const response = await is_subscribed(
-        '64e8fb610ab67f331b72c531', 
+        PLAN_ID, 
         );
         console.log("reading request")
         console.log(response);
