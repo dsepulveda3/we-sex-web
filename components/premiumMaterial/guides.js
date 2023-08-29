@@ -2,6 +2,8 @@ import { Container, Row, Col } from 'reactstrap';
 import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import Link from 'next/link';
+import { is_subscribed } from '../../requests/premiumService';
+import { useAuth } from '../../context/authUserContext';
 
 const Background = styled.div`
     background-color: var(--violet);
@@ -233,7 +235,28 @@ const StyledH3 = styled.h3`
 
 const Guides = () => {
 
+
     const [guides, setGuides] = useState([]);
+    const { authUser, loading } = useAuth();
+    const [isSubscribed, setIsSubscribed] = useState(false);
+
+    const checkSubscriptionStatus = async () =>{
+        const response = await is_subscribed(
+        '64e8fb610ab67f331b72c531', 
+        );
+        console.log("reading request")
+        console.log(response);
+        if (response.status === 200){
+        setIsSubscribed(true);
+        }
+
+    }
+    useEffect(() => {
+        if (!loading && authUser){
+        //  setLoggedIn(true)
+        checkSubscriptionStatus();
+        }
+    }, [authUser, loading]);
 
     useEffect(() => {
         // Fetch guides when component mounts
@@ -251,8 +274,6 @@ const Guides = () => {
 
     //   console.log("pdfFile of position 0:", guides[0].pdfFile.key);c
     console.log(guides);
-
-    const [isSubscribed, setIsSubscribed] = useState(false);
 
     // Depending on the isSubscribed state, set the appropriate link
     const guideAnalLink = isSubscribed

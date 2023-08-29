@@ -7,6 +7,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import CookieManager from 'browser/CookieManager';
 import BotonUniversal from '../botonUniversal';
+import { useAuth } from '../../../context/authUserContext';
+
 
 const Background = styled.div`
     background-image: url("/img/ws-background.jpg");
@@ -520,14 +522,28 @@ const PopupContent = () => {
 
 const Plans = () => {
 
+    const {
+        loading,
+        authUser,
+      } = useAuth();
     const [isLogged, setIsLogged] = useState(false);
     const [selectedOption, setSelectedOption] = useState('Argentina');
     const [showPopup, setShowPopup] = useState(false);
 
-    const NextLink = isLogged
+    useEffect(() => {
+        if (!loading && authUser)
+          setIsLogged(true)
+      }, [authUser, loading])
+
+
+
+    const NextLinkArgentina = isLogged
         ? `/premium-material/guides/guia-sexo-anal`// Link for logged in user
         : '/login'; // Link for non-logged in user
 
+    const NextLinkOtro = isLogged
+    ? `/premium-material/subscription/stripe`// Link for logged in user
+    : '/login'; // Link for non-logged in user
 
     const textRef1 = useRef(null);
     const textRef2 = useRef(null);
@@ -588,14 +604,14 @@ const Plans = () => {
                             {selectedOption === 'Argentina' && (
                                 <>
                                 <Price>8.000 ARS/mes</Price>
-                                <PayButton href={NextLink} >SUSCRIBIRSE</PayButton>
+                                <PayButton href={NextLinkArgentina} >SUSCRIBIRSE</PayButton>
                                 <ByLabel>Powered by Mercado Pago</ByLabel>
                                 </>
                             )}
                             {selectedOption === 'Otro País' && (
                                 <>
                                 <Price>7 USD/mes</Price>
-                                <PayButton href={NextLink} style={{backgroundColor: "black"}}>SUSCRIBIRSE</PayButton>
+                                <PayButton href={NextLinkOtro} style={{backgroundColor: "black"}}>SUSCRIBIRSE</PayButton>
                                 <ByLabel style={{color: "black"}}>Powered by Stripe</ByLabel>
                                 </>
                             )}

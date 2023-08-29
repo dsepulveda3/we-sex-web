@@ -3,11 +3,12 @@ import styled from '@emotion/styled';
 import CheckoutStep from './checkoutStep';
 import StripeForm from './stripeForm';
 
+
 const Container = styled.div`
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     border-radius: 20px;
 `;
 
@@ -62,6 +63,8 @@ export const Text = styled.p`
         font-size: 2rem;
     }
 `;
+
+
 
 const StepForm = () => {
   const [activeStep, setActiveStep] = useState(-1);

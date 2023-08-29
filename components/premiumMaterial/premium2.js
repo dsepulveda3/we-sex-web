@@ -1,6 +1,9 @@
 import { Container, Row, Col } from 'reactstrap';
 import styled from '@emotion/styled';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
+import { is_subscribed } from '../../requests/premiumService';
+import { useAuth } from '../../context/authUserContext';
 
 const Background = styled.div`
     background-color: var(--violet);
@@ -189,6 +192,28 @@ const ColHideOnPhone = styled(Col)`
 
 
 const Guides = () => {
+
+    const { authUser, loading } = useAuth();
+    const [isSubscribed, setIsSubscribed] = useState(false);
+
+    const checkSubscriptionStatus = async () =>{
+        const response = await is_subscribed(
+        '64e8fb610ab67f331b72c531', 
+        );
+        console.log("reading request")
+        console.log(response);
+        if (response.status === 200){
+        setIsSubscribed(true);
+        }
+
+    }
+    useEffect(() => {
+        if (!loading && authUser){
+        //  setLoggedIn(true)
+        checkSubscriptionStatus();
+        }
+    }, [authUser, loading]);
+
   return (
     <Section id="premium">
         <Background>
@@ -220,16 +245,18 @@ const Guides = () => {
                     </GuideSquare>
                 </Link>
                 </Col>
-                <Col lg="4" md="12" >
-                <Link href="/premium-material/packs">
+                {isSubscribed ? null : (  // Conditionally render based on isSubscribed
+                <Col lg="4" md="12">
+                    <Link href="/premium-material/packs">
                     <GuideSquare>
-                        <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                    <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageGuia2 src="/img/premium-material/packs (1).png" className="img-fluid"/>
                             <h3>Packs Orgásmicos</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
-                </Link>
+                    </Link>
                 </Col>
+                )}
             </Row>
         </Container>
       </Background>

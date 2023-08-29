@@ -380,12 +380,12 @@ const Header = ({type}) => {
               )} */}
               
           </Collapse>
-          {/* {loggedIn? <AuthToggleLinks setLoginStatus={setLoggedIn} /> : (
+          {loggedIn? <AuthToggleLinks setLoginStatus={setLoggedIn} /> : (
                 <SingUpButton href='/login' onClick={handleLogin}>
                       Entrar
                 </SingUpButton>
               )}
-           */}
+          
         </div>
         
       </Navbar>
