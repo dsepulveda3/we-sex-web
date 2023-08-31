@@ -1,8 +1,8 @@
 import React, {useState, useEffect, useRef } from 'react';
 import {Row, Col, Container} from 'reactstrap';
-import Head from 'next/head'
 import styled from '@emotion/styled';
 import Link from 'next/link';
+import PopUpSubscription from './popUpSubscription';
 
 const Background = styled.div`
     background-color: #f5f5f5;
@@ -169,9 +169,6 @@ const BotonVerde = styled(Boton)`
   
 `;
 
-// {}
-
-
  export default function PaymentButton({title_mp, unit_price_mp, quantity_mp, currency_id_mp,
   redirection_succesful_mp, redirection_failed_mp, price_before_ARG, price_ARG, price_before_USD, price_USD, link_payhip_usd, 
   has_promo, buy_just, reminder_buy_just, link_promo, text_promo1_1, text_promo1Span, text_promo1_2,
@@ -182,10 +179,13 @@ const BotonVerde = styled(Boton)`
    const [affiliate, setAffiliate] = useState("");
    const [isVisible, setIsVisible] = useState(false);
    const [hasPromo, setHasPromo] = useState(has_promo);
+   const [showPopup, setShowPopup] = useState(false);
+
 
    const botonPagoRef = useRef(null);
    
    const handleClick = () => {
+    setShowPopup(true);
     setIsVisible(!isVisible);
   }
  
@@ -351,6 +351,9 @@ const BotonVerde = styled(Boton)`
                 </BotonVioleta>
                 <Amount><span>{price_before_USD}</span>  {price_USD}</Amount>
               </div>
+            )}
+            {showPopup && (
+                <PopUpSubscription setShowPopup={setShowPopup} />
             )}
             <Link href={link_promo}>
               <Text3>{text_promo1_1}<span>{text_promo1Span}</span> {text_promo1_2}</Text3>

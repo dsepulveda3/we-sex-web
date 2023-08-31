@@ -5,6 +5,7 @@ const authUserContext = createContext({
     authUser: null,
     loading: true,
     user: null,
+    isSubscribed: false,
     signInWithEmailAndPassword: async () => {},
     signInWithGoogle: async () => {},
     signInWithApple: async () => {},

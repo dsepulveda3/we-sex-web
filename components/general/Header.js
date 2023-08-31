@@ -23,6 +23,7 @@ import clienteAxios from '../../config/axios';
 import { useRouter } from 'next/router';
 import HeaderLanding from '../general/HeaderLanding'
 import { useAuth } from '../../context/authUserContext';
+import { useCookies } from 'react-cookie';
 
 const StyledHeader = styled.header`
     z-index: 1000;  /* Higher z-index value */
@@ -190,7 +191,7 @@ const formatResult = (item) => {
   );
 };
 
-const Header = ({type}) => {
+const Header = ({type, data}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchString, setSearchString] = useState('');
   const [discussionsToSearch, setDiscussionsToSearch] = useState([]);
@@ -200,6 +201,7 @@ const Header = ({type}) => {
   const [loggedIn, setLoggedIn] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
   const router = useRouter();
+  const [cookie, setCookie, removeCookie] = useCookies(['authUser']);
 
   const [bgColor, setBgColor] = useState('transparent');
   const [bgImage, setBgImage] = useState('');
@@ -208,10 +210,10 @@ const Header = ({type}) => {
   
 
   useEffect(() => {
-    if (!loading && authUser){
+    if (cookie.authUser){
      setLoggedIn(true)
     }
-  }, [authUser, loading]);
+  }, []);
 
   useEffect(() => {
     if (type === 'landing') {
@@ -392,10 +394,10 @@ const Header = ({type}) => {
       {isOpen && <div className="backgroundClick" onClick={toggleNavbar}></div>}
     </StyledHeader>
     )}
-      
     </>
   );
 };
+
 
 export default Header;
 

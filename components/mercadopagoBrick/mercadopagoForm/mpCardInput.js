@@ -8,7 +8,7 @@ const MERCADO_PAGO_API_KEY = process.env.NEXT_PUBLIC_MP_API_KEY;
 const PLAN_ID = process.env.NEXT_PUBLIC_PLAN_ID;
 
 function MPCardInput (){
-  const { user, loading } = useAuth();
+  const { authUser, loading } = useAuth();
   const [email, SetEmail] = useState("");
   const router = useRouter();
 
@@ -16,7 +16,7 @@ function MPCardInput (){
     if (!loading && user) {
       SetEmail(user.email);
     }
-  }, [user, loading]);
+  }, [authUser, loading]);
 
   useEffect(() => {
     const script = document.createElement("script");

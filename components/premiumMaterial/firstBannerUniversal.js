@@ -1,7 +1,9 @@
 import React from 'react';
 import {Row, Col, Container} from 'reactstrap';
+import ReactPlayer from 'react-player';
 import styled from '@emotion/styled';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useAuth } from '../../context/authUserContext'
 
 const Background = styled.div`
 
@@ -132,8 +134,8 @@ const BotonUsd = styled(Boton)`
 
 const Video = styled.div`
     position: relative; 
-    padding-top: 18rem;
-    padding-left: 4rem;
+    padding-top: 14rem;
+    padding-left: 2rem;
     height: 0;
     top: 0; 
     left: 0; 
@@ -151,9 +153,24 @@ const PriceBefore = styled.span`
 `;
 
 const FirstBanner = ({titleText, titleSpan, titleText2, titleSpan2, price_before, price, description1, 
-    descriptionSpan, description2, image, widthImage, imageVisibility, video, videoVisibility}) => {
+    descriptionSpan, description2, image, widthImage, imageVisibility, video, videoVisibility, isEmbedded, buyVisibility=true}) => {
     const [imageIsVisible, setImageIsVisible] = useState(imageVisibility);
     const [videoIsVisible, setVideoIsVisible] = useState(videoVisibility);
+    const [isEmbeddedVideo, setIsEmbeddedVideo] = useState(isEmbedded);
+    const [buyIsVisible, setBuyIsVisible] = useState(buyVisibility);
+    const [userHasAccess, setUserHasAccess] = useState(false);
+    const [isClient, setIsClient] = useState(false);
+    const { authUser, loading, isSubscribed } = useAuth();
+
+    useEffect(() => {
+        setIsClient(true)
+    }, [])
+
+    useEffect(() => {
+        if (isSubscribed) {
+            setUserHasAccess(true)
+        }
+    }, [isSubscribed, authUser, loading])
 
     return (
         <Background>
@@ -173,9 +190,11 @@ const FirstBanner = ({titleText, titleSpan, titleText2, titleSpan2, price_before
                                     {description2}
                                 </Text>
                                 <Botones>
-                                    <BotonArs
-                                        href="#comprar"
-                                    >Comprar</BotonArs>
+                                    {buyIsVisible && (
+                                        <BotonArs
+                                            href="#comprar"
+                                        >Comprar</BotonArs>
+                                    )}
                                     <BotonUsd
                                         href="#paravos"
                                     >¿Qué voy a aprender?</BotonUsd>
@@ -188,7 +207,12 @@ const FirstBanner = ({titleText, titleSpan, titleText2, titleSpan2, price_before
                                     <AppImage src={image} width={widthImage} alt="" />
                                 </ContentImage>
                             )}
-                            {videoIsVisible && (
+                            {videoIsVisible && isClient && !isEmbeddedVideo && userHasAccess && (
+                                <Video>
+                                    <ReactPlayer url={video} controls={true} width="100%" height="100%" />
+                                </Video>
+                            )}
+                            {videoIsVisible && isEmbeddedVideo && (
                                 <Video>
                                     <iframe src={video} frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen></iframe>
                                 </Video>

@@ -3,6 +3,7 @@ import { ToastContainer } from 'react-toastify';
 import CodeInputModal from "../components/codeInputModal";
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { CookiesProvider } from "react-cookie";
 import 'react-toastify/dist/ReactToastify.css';
 import '../styles/bootstrap.min.css';
 import '../styles/globals.css';

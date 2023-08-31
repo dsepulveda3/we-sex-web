@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
+import { useCookies } from 'react-cookie';
 import { 
   getAuth,
   fetchSignInMethodsForEmail,
@@ -20,6 +21,10 @@ import {
   sendConfirmationCode,
   getUser
 } from '../requests/authService';
+import { is_subscribed } from '../requests/premiumService';
+
+
+const PLAN_ID = process.env.NEXT_PUBLIC_PLAN_ID;
 
 const formatAuthUser = (user) => ({
     uid: user.uid,
@@ -40,17 +45,22 @@ export default function useFirebaseAuth() {
     const [authUser, setAuthUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [user, setUser] = useState(null);
+    const [isSubscribed, setIsSubscribed] = useState(false);
+    const [cookie, setCookie, removeCookie] = useCookies(['authUser', 'user']);
     const router = useRouter();
 
     const authStateChanged = async (authState) => {
         if (!authState) {
             setLoading(false)
+            removeCookie('authUser');
             return;
         }
         setLoading(true)
         var formattedUser = formatAuthUser(authState);
         setAuthUser(formattedUser);
+        setCookie('authUser', JSON.stringify(formattedUser));
         await fetchUserFromDB();
+        await fetchIsSubscribed();
         setLoading(false);
     };
 
@@ -58,6 +68,14 @@ export default function useFirebaseAuth() {
         const response = await getUser();
         if (response.data) {
             setUser(response.data);
+            setCookie('user', JSON.stringify(response.data));
+        }
+    };
+
+    const fetchIsSubscribed = async () => {
+        const response = await is_subscribed(PLAN_ID);
+        if (response.status === 200) {
+            setIsSubscribed(true);
         }
     };
 
@@ -65,6 +83,8 @@ export default function useFirebaseAuth() {
         setAuthUser(null);
         setLoading(true);
         setUser(null);
+        removeCookie('authUser');
+        removeCookie('user');
     };
 
     const signInWithCredentials = async (email, password) => 
@@ -234,6 +254,7 @@ export default function useFirebaseAuth() {
         authUser,
         user,
         loading,
+        isSubscribed,
         signInWithCredentials,
         signInWithGoogle,
         signInWithApple,
