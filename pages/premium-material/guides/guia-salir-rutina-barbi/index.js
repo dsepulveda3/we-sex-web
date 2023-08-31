@@ -10,6 +10,7 @@ import AfterDiv from '../../../../components/premiumMaterial/afterDiv'
 import AboutWeSex from '../../../../components/premiumMaterial/aboutWeSex'
 import Footer from '../../../../components/premiumMaterial/footer'
 import Layout from '../../../../components/general/Layout';
+import globalPrices from '../../../../utils/globalPrices'
 
 export default function Home() {
   
@@ -30,7 +31,9 @@ export default function Home() {
       <main>
         {/* <NavBarWS /> */}
         <Layout>
-        <FirstBannerUniversal titleText='Guía para' titleSpan=' salir de la rutina con tu pareja' price='AR$ 1600  /  U$D 6' description1='' 
+        <FirstBannerUniversal titleText='Guía para' titleSpan=' salir de la rutina con tu pareja' 
+          price={`AR$ ${globalPrices.OneProductARS}  /  U$D ${globalPrices.OneProductUSD}`} 
+          description1='' 
           description2='Reavivar la llama como si fuera la primera vez.' imageVisibility={true} 
           videoVisibility={false} image='/img/premium-material/salir_rutina.png' widthImage={'45%'}/>
         <AfterDiv />
@@ -48,8 +51,8 @@ export default function Home() {
         title1_3='Salir de la rutina + Tantra + Anal' link_promo='/premium-material/packs/pack4-rutina-tantra-anal-barbi' />
         {/* <Pack/> */}
         <Regalar />
-        <ComprarUniversal title_mp='B - Guía para salir de la rutina - WeSex' unit_price_mp= {1600} quantity_mp={1} currency_id_mp='ARS'
-          price_ARG='AR$  1600' price_USD='U$D  6' redirection_succesful_mp='https://payhip.com/b/J7U1A' 
+        <ComprarUniversal title_mp='B - Guía para salir de la rutina - WeSex' unit_price_mp= {globalPrices.OneProductARS} quantity_mp={1} currency_id_mp='ARS'
+          price_ARG={`AR$ ${globalPrices.OneProductARS}`} price_USD={`U$D ${globalPrices.FourProductUSD}`} redirection_succesful_mp='https://payhip.com/b/J7U1A' 
           redirection_failed_mp='https://www.we.sex/premium-material/guides/guia-salir-rutina-barbi'
           link_payhip_usd='https://payhip.com/b/FXPAo' has_promo={true}
           buy_just='Comprar solo guía para salir de la rutina' reminder_buy_just='Estás comprando solo la guía para salir de la rutina' 

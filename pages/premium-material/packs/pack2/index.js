@@ -5,6 +5,7 @@ import ComprarUniversal from '../../../../components/premiumMaterial/comprarUniv
 import AfterDiv from '../../../../components/premiumMaterial/afterDiv'
 import Footer from '../../../../components/premiumMaterial/footer'
 import Layout from '../../../../components/general/Layout';
+import globalPrices from '../../../../utils/globalPrices'
 
 export default function Home() {
   
@@ -24,7 +25,10 @@ export default function Home() {
       
       <main>
       <Layout >
-        <FirstBannerUniversal titleText='Guías de ' titleSpan='Zonas Erógenas + Tantra' price_before= '' price='AR$ 2400  /  U$D 10' description1='Compra el pack' 
+        <FirstBannerUniversal titleText='Guías de ' titleSpan='Zonas Erógenas + Tantra' 
+          price_before= ''
+          price={`AR$ ${globalPrices.TwoProductARS}  /  U$D ${globalPrices.TwoProductUSD}`}
+          description1='Compra el pack' 
           description2='a un precio orgásmico.' 
           videoVisibility={false} imageVisibility={false}/>
           <AfterDiv />
@@ -45,8 +49,12 @@ export default function Home() {
           emoji5='🫦' text5_1='Técnicas de ' text5Span='liberación emocional.' text5_2='' 
           emoji6='🤟' text6_1='' text6Span='Técnicas  ' text6_2='para llevar tus encuentros al siguiente nivel.'
           emoji7='🧘' text7_1='Una ' text7Span='meditación guiada' text7_2=' vía audio.' />
-        <ComprarUniversal title_mp='Guía Zonas Erógenas + Tantra - WeSex' unit_price_mp= {2400} quantity_mp={1} currency_id_mp='ARS'
-          price_before_ARG='AR$  3200' price_ARG='AR$  2400' price_before_USD='U$D  12' price_USD='U$D  10' redirection_succesful_mp='https://payhip.com/b/QbNlX' 
+        <ComprarUniversal title_mp='Guía Zonas Erógenas + Tantra - WeSex' 
+          unit_price_mp= {globalPrices.TwoProductARS} 
+          quantity_mp={1} currency_id_mp='ARS'
+          price_before_ARG={`AR$ ${globalPrices.OneProductARS*2}`} price_ARG={`AR$ ${globalPrices.TwoProductARS}`} 
+          price_before_USD={`U$D ${globalPrices.OneProductUSD*2}`} price_USD={`U$D ${globalPrices.TwoProductUSD}`} 
+          redirection_succesful_mp='https://payhip.com/b/QbNlX' 
           redirection_failed_mp='https://www.we.sex/packs/pack2'
           link_payhip_usd='https://payhip.com/b/fZzt3' has_promo={false}
         />

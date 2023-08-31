@@ -11,6 +11,7 @@ import AfterDiv from '../../../../components/premiumMaterial/afterDiv'
 import AboutWeSex from '../../../../components/premiumMaterial/aboutWeSex'
 import Footer from '../../../../components/premiumMaterial/footer'
 import Layout from '../../../../components/general/Layout';
+import globalPrices from '../../../../utils/globalPrices'
 
 export default function Home() {
   
@@ -31,7 +32,9 @@ export default function Home() {
       <main>
       <Layout>
         {/* <ComprarUniversal2/> */}
-        <FirstBannerUniversal titleText='Guía de tantra:' titleSpan='orgasmos más profundos' price='AR$ 1.600  /  U$D 6' description1='Te enseñamos de 0 a 100,' 
+        <FirstBannerUniversal titleText='Guía de tantra:' titleSpan='orgasmos más profundos' 
+          price={`AR$ ${globalPrices.OneProductARS}  /  U$D ${globalPrices.OneProductUSD}`} 
+          description1='Te enseñamos de 0 a 100,' 
           description2='cómo aplicar el tantra a tu vida sexual.'  imageVisibility={true} 
           videoVisibility={false} image='/img/premium-material/Tantra (1).png' widthImage={'45%'}/>
         <AfterDiv />
@@ -48,8 +51,8 @@ export default function Home() {
         <PackUniversal title1_1='' title1_2='Llevate la guía de Tantra + Sexo Anal ' 
         title1_3='a un precio orgasmico' link_promo='/premium-material/guides/guia-pack-anal-tantra' />
         <Regalar />
-        <ComprarUniversal title_mp='Guía Tantra- WeSex' unit_price_mp= {1600} quantity_mp={1} currency_id_mp='ARS'
-          price_ARG='AR$  1600' price_USD='U$D  6' redirection_succesful_mp='https://payhip.com/b/SnTLd' 
+        <ComprarUniversal title_mp='Guía Tantra- WeSex' unit_price_mp= {globalPrices.OneProductARS} quantity_mp={1} currency_id_mp='ARS'
+          price_ARG={`AR$ ${globalPrices.OneProductARS}`} price_USD={`U$D ${globalPrices.OneProductUSD} `} redirection_succesful_mp='https://payhip.com/b/SnTLd' 
           redirection_failed_mp='https://we.sex/premium-material/guides/guia-tantra'
           link_payhip_usd='https://payhip.com/b/MiWzq' has_promo={true}
           buy_just='Comprar solo guía tantra' reminder_buy_just='Estás comprando solo la guía de Tantra' 

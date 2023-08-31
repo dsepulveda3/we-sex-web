@@ -5,6 +5,7 @@ import ComprarUniversal from '../../../../components/premiumMaterial/comprarUniv
 import AfterDiv from '../../../../components/premiumMaterial/afterDiv'
 import Footer from '../../../../components/premiumMaterial/footer'
 import Layout from '../../../../components/general/Layout';
+import globalPrices from '../../../../utils/globalPrices'
 
 export default function Home() {
   
@@ -24,7 +25,10 @@ export default function Home() {
       
       <main>
       <Layout>
-        <FirstBannerUniversal titleText='Guías ' titleSpan='Salir de la rutina + Zonas Erógenas' price_before= 'AR$ 3200  /  U$D 12' price='AR$ 2400  /  U$D 10' description1='' 
+        <FirstBannerUniversal titleText='Guías ' titleSpan='Salir de la rutina + Zonas Erógenas' 
+          price_before={`AR$ ${globalPrices.OneProductARS*2}  /  U$D ${globalPrices.OneProductUSD*2}`} 
+          price={`AR$ ${globalPrices.TwoProductARS}  /  U$D ${globalPrices.TwoProductUSD}`} 
+          description1='' 
           description2='Compra el pack a un precio orgásmico.' 
           videoVisibility={false} imageVisibility={false}/>
           <AfterDiv />
@@ -45,8 +49,12 @@ export default function Home() {
           emoji5='🤟' text5_1='' text5Span='Técnicas de ' text5_2='masajes eróticos.' 
           emoji6='😋' text6_1='' text6Span='Cómo estimular cada parte del cuerpo' text6_2=', de pies a cabeza.'
           emoji7='🫦' text7_1='' text7Span='Variadas técnicas de estimulación' text7_2=' desde suaves mordiscos hasta succiones.' />
-        <ComprarUniversal title_mp='B - Guía Salir de la rutina + Zonas Erógenas - WeSex' unit_price_mp= {2400} quantity_mp={1} currency_id_mp='ARS'
-          price_before_ARG='AR$  3200' price_ARG='AR$  2400' price_before_USD='U$D  12' price_USD='U$D  10' redirection_succesful_mp='https://payhip.com/b/RjfGF' 
+        <ComprarUniversal title_mp='B - Guía Salir de la rutina + Zonas Erógenas - WeSex' 
+          unit_price_mp= {globalPrices.TwoProductARS} 
+          quantity_mp={1} currency_id_mp='ARS'
+          price_before_ARG={`AR$ ${globalPrices.OneProductARS*2}`} price_ARG={`AR$ ${globalPrices.TwoProductARS}`}
+          price_before_USD={`U$D ${globalPrices.OneProductUSD*2}`} price_USD={`U$D ${globalPrices.TwoProductUSD}`} 
+          redirection_succesful_mp='https://payhip.com/b/RjfGF' 
           redirection_failed_mp='https://www.we.sex/packs/pack5-rutina-zonas-barbi'
           link_payhip_usd='https://payhip.com/b/yZmwG' has_promo={false}
         />

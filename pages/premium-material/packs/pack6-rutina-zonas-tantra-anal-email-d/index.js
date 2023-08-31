@@ -5,6 +5,7 @@ import ComprarUniversal from '../../../../components/premiumMaterial/comprarUniv
 import AfterDiv from '../../../../components/premiumMaterial/afterDiv'
 import Footer from '../../../../components/premiumMaterial/footer'
 import Layout from '../../../../components/general/Layout';
+import globalPrices from '../../../../utils/globalPrices'
 
 export default function Home() {
   
@@ -24,7 +25,10 @@ export default function Home() {
       
       <main>
       <Layout >
-        <FirstBannerUniversal titleText='Guías' titleSpan='Salir de la rutina con tu pareja + Zonas Erógenas + Anal + Tantra' price_before= 'AR$ 6400  /  U$D 24' price='AR$ 4800  /  U$D 18' description1='Llevate 4, paga 3 :) .' 
+        <FirstBannerUniversal titleText='Guías' titleSpan='Salir de la rutina con tu pareja + Zonas Erógenas + Anal + Tantra' 
+          price_before={`AR$ ${globalPrices.OneProductARS*4}  /  U$D ${globalPrices.OneProductUSD*4}`}
+          price={`AR$ ${globalPrices.FourProductARS}  /  U$D ${globalPrices.FourProductUSD}`}
+          description1='Llevate 4, paga 3 :) .' 
           description2='Compra el pack a un precio orgásmico.' 
           videoVisibility={false} imageVisibility={false}/>
         <AfterDiv />
@@ -63,8 +67,12 @@ export default function Home() {
         emoji5='😬' text5_1='' text5Span='Evitar dolor ' text5_2='innecesario.' 
         emoji6='🍆' text6_1='' text6Span='Diferentes juguetes sexuales ' text6_2='y cómo usarlos de forma segura y placentera.'
         emoji7='💦' text7_1='Tipos de ' text7Span='lubricantes disponibles' text7_2='y como usarlos correctamente para evitar el dolor o la incomodidad.' />
-        <ComprarUniversal title_mp='EMD - Guía Salir de la rutina + Zonas Erógenas + Anal + Tantra - WeSex' unit_price_mp= {4800} quantity_mp={1} currency_id_mp='ARS'
-          price_before_ARG='AR$  6400' price_ARG='AR$  4800' price_before_USD='U$D  24' price_USD='U$D  18' redirection_succesful_mp='https://payhip.com/b/L4yz8' 
+        <ComprarUniversal title_mp='EMD - Guía Salir de la rutina + Zonas Erógenas + Anal + Tantra - WeSex' 
+          unit_price_mp= {globalPrices.FourProductARS} 
+          quantity_mp={1} currency_id_mp='ARS'
+          price_before_ARG={`AR$ ${globalPrices.OneProductARS*4}`} price_ARG={`AR$ ${globalPrices.FourProductARS}`}
+          price_before_USD={`U$D ${globalPrices.OneProductUSD*4}`} price_USD={`U$D ${globalPrices.FourProductUSD}`}
+          redirection_succesful_mp='https://payhip.com/b/L4yz8' 
           redirection_failed_mp='https://www.we.sex/packs/pack6-rutina-zonas-tantra-anal-email-c'
           link_payhip_usd='https://payhip.com/b/nYqEa' has_promo={true}
           buy_just='Comprar pack 3x4' reminder_buy_just='Estás comprando el pack 3x4' 

@@ -10,6 +10,7 @@ import AfterDiv from '../../../../components/premiumMaterial/afterDiv'
 import AboutWeSex from '../../../../components/premiumMaterial/aboutWeSex'
 import Footer from '../../../../components/premiumMaterial/footer'
 import Layout from '../../../../components/general/Layout';
+import globalPrices from '../../../../utils/globalPrices'
 
 
 export default function Home() {
@@ -30,7 +31,9 @@ export default function Home() {
       
       <main>
       <Layout >
-        <FirstBannerUniversal titleText='Guía de Zonas Erógenas:' titleSpan=' aprende a dar más placer' price='AR$ 1600  /  U$D 6' description1='' 
+        <FirstBannerUniversal titleText='Guía de Zonas Erógenas:' titleSpan=' aprende a dar más placer' 
+          price={`AR$ ${globalPrices.OneProductARS}  /  U$D ${globalPrices.OneProductUSD}`} 
+          description1='' 
           description2='Te enseñamos a estimular cada parte del cuerpo, de pies a cabeza.' imageVisibility={true} 
           videoVisibility={false} image='/img/premium-material/2ZonasErogenas (1).png' widthImage={'45%'}/>
         <AfterDiv />
@@ -47,8 +50,8 @@ export default function Home() {
         <PackUniversal title1_1='2 x 3' title1_2='por 3.000 llevate las 3 guías de WeSex: ' 
         title1_3='Zonas Erógenas + Sexo Anal + Tantra' link_promo='/premium-material/packs/pack1-barbi' />
         <Regalar />
-        <ComprarUniversal title_mp='B - Guía Zonas Erógenas - WeSex' unit_price_mp= {1600} quantity_mp={1} currency_id_mp='ARS'
-          price_ARG='AR$  1600' price_USD='U$D  6' redirection_succesful_mp='https://payhip.com/b/kOASy' 
+        <ComprarUniversal title_mp='B - Guía Zonas Erógenas - WeSex' unit_price_mp= {globalPrices.OneProductARS} quantity_mp={1} currency_id_mp='ARS'
+          price_ARG={`AR$ ${globalPrices.OneProductARS}`} price_USD={`U$D ${globalPrices.OneProductUSD}`} redirection_succesful_mp='https://payhip.com/b/kOASy' 
           redirection_failed_mp='https://www.we.sex/premium-material/guides/guia-zonas-erogenas-barbi'
           link_payhip_usd='https://payhip.com/b/OIuPk' has_promo={true}
           buy_just='Comprar solo guía zonas erógenas' reminder_buy_just='Estás comprando solo la guía de zonas erógenas' 

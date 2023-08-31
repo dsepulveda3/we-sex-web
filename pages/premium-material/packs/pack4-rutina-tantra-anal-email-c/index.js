@@ -5,6 +5,7 @@ import ComprarUniversal from '../../../../components/premiumMaterial/comprarUniv
 import AfterDiv from '../../../../components/premiumMaterial/afterDiv'
 import Footer from '../../../../components/premiumMaterial/footer'
 import Layout from '../../../../components/general/Layout';
+import globalPrices from '../../../../utils/globalPrices'
 
 export default function Home() {
   
@@ -24,7 +25,10 @@ export default function Home() {
       
       <main>
       <Layout >
-        <FirstBannerUniversal titleText='Guías ' titleSpan='Salir de la rutina + Tantra + Anal' price_before= 'AR$ 4800  /  U$D 18' price='AR$ 3.200  /  U$D 12' description1='Llevate 3, paga 2 :) .' 
+        <FirstBannerUniversal titleText='Guías ' titleSpan='Salir de la rutina + Tantra + Anal' 
+          price_before= {`AR$ ${globalPrices.OneProductARS*3}  /  U$D ${globalPrices.OneProductUSD*3}`} 
+          price={`AR$ ${globalPrices.ThreeProductARS}  /  U$D ${globalPrices.ThreeProductUSD}`} 
+          description1='Llevate 3, paga 2 :) .' 
           description2='Compra el pack a un precio orgásmico.' 
           videoVisibility={false} imageVisibility={false}/>
           <AfterDiv />
@@ -54,8 +58,12 @@ export default function Home() {
         emoji5='😬' text5_1='' text5Span='Evitar dolor ' text5_2='innecesario.' 
         emoji6='🍆' text6_1='' text6Span='Diferentes juguetes sexuales ' text6_2='y cómo usarlos de forma segura y placentera.'
         emoji7='💦' text7_1='Tipos de ' text7Span='lubricantes disponibles' text7_2='y como usarlos correctamente para evitar el dolor o la incomodidad.' />
-        <ComprarUniversal title_mp='EMC - Guía Salir de la rutina + Tantra + Anal - WeSex' unit_price_mp= {3200} quantity_mp={1} currency_id_mp='ARS'
-          price_before_ARG='AR$  4800' price_ARG='AR$  3200' price_before_USD='U$D  18' price_USD='U$D  12' redirection_succesful_mp='https://payhip.com/b/D7s5Q' 
+        <ComprarUniversal title_mp='EMC - Guía Salir de la rutina + Tantra + Anal - WeSex' 
+          unit_price_mp= {3200} 
+          quantity_mp={1} currency_id_mp='ARS'
+          price_before_ARG={`AR$ ${globalPrices.OneProductARS*3}`} price_ARG={`U$D ${globalPrices.ThreeProductARS}`} 
+          price_before_USD={`U$D ${globalPrices.OneProductUSD*3}`} price_USD={`U$D ${globalPrices.ThreeProductUSD}`} 
+          redirection_succesful_mp='https://payhip.com/b/D7s5Q' 
           redirection_failed_mp='https://www.we.sex/packs/pack4-rutina-tantra-anal-email-c'
           link_payhip_usd='https://payhip.com/b/btkug' has_promo={false}
         />

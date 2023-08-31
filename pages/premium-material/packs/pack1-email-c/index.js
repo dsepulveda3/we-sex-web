@@ -5,6 +5,7 @@ import ComprarUniversal from '../../../../components/premiumMaterial/comprarUniv
 import AfterDiv from '../../../../components/premiumMaterial/afterDiv'
 import Footer from '../../../../components/premiumMaterial/footer'
 import Layout from '../../../../components/general/Layout';
+import globalPrices from '../../../../utils/globalPrices'
 
 export default function Home() {
   
@@ -24,7 +25,10 @@ export default function Home() {
       
       <main>
       <Layout>
-        <FirstBannerUniversal titleText='Guías de ' titleSpan='Zonas Erógenas + Anal + Tantra' price_before= 'AR$ 4800  /  U$D 18' price='AR$ 3200  /  U$D 12' description1='Llevate 3, paga 2 :) .' 
+        <FirstBannerUniversal titleText='Guías de ' titleSpan='Zonas Erógenas + Anal + Tantra' 
+          price_before= {`AR$ ${globalPrices.OneProductARS*3}  /  U$D ${globalPrices.OneProductUSD*3}`}
+          price={`AR$ ${globalPrices.ThreeProductARS}  /  U$D ${globalPrices.ThreeProductUSD}`} 
+          description1='Llevate 3, paga 2 :) .' 
           description2='Compra el pack a un precio orgásmico.' 
           videoVisibility={false} imageVisibility={false}/>
           <AfterDiv />
@@ -54,8 +58,12 @@ export default function Home() {
           emoji5='🫦' text5_1='Técnicas de ' text5Span='liberación emocional.' text5_2='' 
           emoji6='🤟' text6_1='' text6Span='Técnicas  ' text6_2='para llevar tus encuentros al siguiente nivel.'
           emoji7='🧘' text7_1='Una ' text7Span='meditación guiada' text7_2=' vía audio.' />
-        <ComprarUniversal title_mp='EMC - Guía Zonas Erógenas + Anal + Tantra - WeSex' unit_price_mp= {3200} quantity_mp={1} currency_id_mp='ARS'
-          price_before_ARG='AR$  4800' price_ARG='AR$  3200' price_before_USD='U$D  18' price_USD='U$D  12' redirection_succesful_mp='https://payhip.com/b/KQeJv' 
+        <ComprarUniversal title_mp='EMC - Guía Zonas Erógenas + Anal + Tantra - WeSex' 
+          unit_price_mp= {globalPrices.ThreeProductARS} 
+          quantity_mp={1} currency_id_mp='ARS'
+          price_before_ARG={`AR$ ${globalPrices.OneProductARS*3}`} price_ARG={`AR$ ${globalPrices.ThreeProductARS}`} 
+          price_before_USD={`U$D ${globalPrices.OneProductUSD*3}`} price_USD={`U$D ${globalPrices.ThreeProductUSD}`} 
+          redirection_succesful_mp='https://payhip.com/b/KQeJv' 
           redirection_failed_mp='https://www.we.sex/packs/pack1-email-c'
           link_payhip_usd='https://payhip.com/b/dH53R' has_promo={false}
         />
