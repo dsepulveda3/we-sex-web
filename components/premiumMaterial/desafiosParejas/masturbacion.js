@@ -309,6 +309,17 @@ const FullscreenCanvas = styled.div`
   align-items: center;
 `;
 
+const BotonRandom = styled.a`
+    background-color: var(--green);
+    color: white;
+    border: none;
+    border-radius: 10px; /* Make it rounded */
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a box shadow */
+`;
+
 
 
 
@@ -316,9 +327,16 @@ const Masturbacion = () => {
     const [showAnimation, setShowAnimation] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
     const [isOpen2, setIsOpen2] = useState(false);
+    const names = ["Quien presiono este botón", "Quien NO presionó este botón"]; // Add the names you want to choose from
+    const [chosenName, setChosenName] = useState("");
     const toggle = () => setIsOpen(!isOpen);
     const toggle2 = () => setIsOpen2(!isOpen2);
     const appRef = useRef(null); // Create a ref to hold the PIXI application
+
+    const chooseRandomName = () => {
+        const randomIndex = Math.floor(Math.random() * names.length);
+        setChosenName(names[randomIndex]);
+      };
 
     useEffect(() => {
         let app = null;
@@ -476,8 +494,10 @@ const Masturbacion = () => {
                             Antes de empezar a masturbar a tu pareja, tómate un momento para leer la descripción de la masturbación a medida. Siéntete libre de hacerle preguntas a tu pareja y de comprender bien los detalles.
                         <br/>
                         <br/>
-                            Ustedes deciden quién comienza.
+                        <BotonRandom onClick={chooseRandomName}>¿Quién comienza?</BotonRandom>
                         <br/>
+                        <br/>
+                        {chosenName && <div>Comienza: {chosenName}</div>}
 
                         </Text>
                         <Text>
