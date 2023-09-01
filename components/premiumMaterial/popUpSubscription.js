@@ -175,7 +175,7 @@ function PopUpSubscription ({ setShowPopup }) {
                     <PopUpTitle>Puedes <span>suscribirte</span> para acceder a todo el material premium</PopUpTitle>
                     <Benefits>
                     {premiumMaterials.map((material, index) => (
-                        <Benefit>
+                        <Benefit key={index}>
                             <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
                             <BenefitItem key={index}>{material}</BenefitItem>
                         </Benefit>
