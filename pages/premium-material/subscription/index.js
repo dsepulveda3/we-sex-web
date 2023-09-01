@@ -4,8 +4,19 @@ import Layout from '../../../components/general/Layout';
 import Intro from '../../../components/premiumMaterial/subscription/intro';
 import Explicacion from '../../../components/premiumMaterial/subscription/explicacion';
 import Plans from '../../../components/premiumMaterial/subscription/plans';
+import { useEffect, useState } from 'react';
+import { useAuth } from '../../../context/authUserContext';
+
 
 export default function Subscription() {
+    const [isSubscribedStatus, setIsSubscribedStatus] = useState(false);
+    const { authUser, loading, isSubscribed } = useAuth();
+
+    useEffect(() => {
+        if (!loading && authUser) {
+            setIsSubscribedStatus(isSubscribed);
+        }
+    }, [authUser, loading]);
     
     return (
         <>

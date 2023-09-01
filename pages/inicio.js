@@ -5,12 +5,40 @@ import { Container, Row, Col } from 'reactstrap';
 import { useRouter } from 'next/router';
 import Layout from '../components/general/Layout'
 import Suscribe from '../components/general/Suscribe';
+import { is_subscribed } from '../requests/premiumService';
+import { useAuth } from '../context/authUserContext';
 
 import SurveysHorizontal from '../components/surveys/surveysHorizontal'
 import DebatesHorizontal from '../components/debates/DebatesHorizontal'
 import ArticlesHorizontal from '../components/articles/ArticlesHorizontal'
 
+
+const PLAN_ID = process.env.NEXT_PUBLIC_PLAN_ID;
+
 export default function Home() {
+
+  const { authUser, loading } = useAuth();
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const checkSubscriptionStatus = async () =>{
+    const response = await is_subscribed(
+      PLAN_ID, 
+    );
+    console.log("reading request")
+    console.log(response);
+    if (response.status === 200){
+      setIsSubscribed(true);
+    }
+
+  }
+  useEffect(() => {
+    if (!loading && authUser){
+    //  setLoggedIn(true)
+     checkSubscriptionStatus();
+    }
+  }, [authUser, loading]);
+
+
 
   return (
     <>
@@ -25,7 +53,10 @@ export default function Home() {
       <Layout type={'nothidden'}>
         <div style={{paddingBottom: '5rem'}}>
         {/* here */}
-        {/* <Suscribe/> */}
+        <div>
+          {isSubscribed ? null : <Suscribe/>}
+        </div>
+
         <SurveysHorizontal />
         <ArticlesHorizontal />
         <DebatesHorizontal />

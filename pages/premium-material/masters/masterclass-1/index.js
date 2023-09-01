@@ -29,7 +29,7 @@ export default function Home() {
       <Layout>
         <FirstBannerUniversal titleText='MasterSex Class por' titleSpan='Barbara García' price='AR$ 4.500  /  U$D 15' description1='2 horas de aprendizaje sexual.' 
           descriptionSpan='Ondemand: ¡Mira la clase cuando prefieras!' description2='Aprende a disfrutar de cada instante de tus momentos sexuales.' 
-          imageVisibility={false} video="https://jumpshare.com/embed/u37eETh6sUpMkZJ2zl6A" videoVisibility={true} />
+          imageVisibility={false} video="https://jumpshare.com/embed/u37eETh6sUpMkZJ2zl6A" videoVisibility={true} isEmbedded={true} />
         <AfterDiv />
         <EsParaVosSiUniversal title1_1='Esta MasterSex Class es ' title1Span='para ti' title1_2=' si buscas' 
           emoji1='🗨️' text1_1='' text1Span='Técnicas de relajación ' text1_2='para conectar con el encuentro.'
