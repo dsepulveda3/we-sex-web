@@ -45,6 +45,8 @@ const CloseButton = styled.button`
   font-size: 1rem; /* Adjust the font size as needed */
 `;
 
+const PLAN_ID = process.env.NEXT_PUBLIC_PLAN_ID;
+
 
 const Suscribe = () => {
   const [visible, setVisible] = useState(true);
@@ -75,7 +77,7 @@ const Suscribe = () => {
 
   return (
     <>
-      {isSubscribed && (
+      {!isSubscribed && (
         <Container>
           <SingUpButton href={'premium-material/subscription'}>Suscribirse a WeSex</SingUpButton>
           <CloseButton onClick={handleClose}>X</CloseButton>
