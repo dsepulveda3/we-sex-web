@@ -53,12 +53,15 @@ export default function useFirebaseAuth() {
         if (!authState) {
             setLoading(false)
             removeCookie('authUser');
+            removeCookie('user');
             return;
         }
         setLoading(true)
         var formattedUser = formatAuthUser(authState);
         setAuthUser(formattedUser);
-        setCookie('authUser', JSON.stringify(formattedUser));
+        if(!cookie.authUser) {
+            setCookie('authUser', JSON.stringify(formattedUser));
+        }
         await fetchUserFromDB();
         await fetchIsSubscribed();
         setLoading(false);
@@ -68,7 +71,9 @@ export default function useFirebaseAuth() {
         const response = await getUser();
         if (response.data) {
             setUser(response.data);
-            setCookie('user', JSON.stringify(response.data));
+            if (!cookie.user){
+                setCookie('user', JSON.stringify(response.data));
+            }
         }
     };
 
