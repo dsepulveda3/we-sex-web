@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 import { PiUserCircleBold } from "react-icons/pi";
-import { AiFillCaretDown } from "react-icons/ai";
 import { useAuth } from "../../context/authUserContext";
 
 const AuthToggleLinks = ({ setLoginStatus }) => {
   const { signOutAndClear } = useAuth();
+  const router = useRouter();
   const [showLinks, setShowLinks] = useState(false);
 
   const handleLogOut = () => {
@@ -14,6 +15,10 @@ const AuthToggleLinks = ({ setLoginStatus }) => {
 
   const handleClick = () => {
     setShowLinks(!showLinks);
+  };
+
+  const handleRedirect = () => {
+    router.push("/perfil/me");
   };
 
   return (
@@ -49,7 +54,7 @@ const AuthToggleLinks = ({ setLoginStatus }) => {
           <a className="nav-link" onClick={handleLogOut} style={{ color: "purple", cursor: "pointer" }}>
             Cerrar sesión
           </a>
-          <a className="nav-link" href="/perfil/me" style={{ color: "purple", cursor: "pointer" }}>
+          <a className="nav-link" onClick={handleRedirect} style={{ color: "purple", cursor: "pointer" }}>
             Mi perfil
           </a>
         </div>
