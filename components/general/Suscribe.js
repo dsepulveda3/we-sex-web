@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
+import { is_subscribed } from '../../requests/premiumService';
+import { useAuth } from '../../context/authUserContext';
 
 const Container = styled.div`
   position: fixed;
@@ -46,6 +48,26 @@ const CloseButton = styled.button`
 
 const Suscribe = () => {
   const [visible, setVisible] = useState(true);
+  const { authUser, loading } = useAuth();
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const checkSubscriptionStatus = async () =>{
+    const response = await is_subscribed(
+      PLAN_ID, 
+    );
+    console.log("reading request")
+    console.log(response);
+    if (response.status === 200){
+      setIsSubscribed(true);
+    }
+
+  }
+  useEffect(() => {
+    if (!loading && authUser){
+    //  setLoggedIn(true)
+     checkSubscriptionStatus();
+    }
+  }, [authUser, loading]);
 
   const handleClose = () => {
     setVisible(false);
@@ -53,7 +75,7 @@ const Suscribe = () => {
 
   return (
     <>
-      {visible && (
+      {isSubscribed && (
         <Container>
           <SingUpButton href={'premium-material/subscription'}>Suscribirse a WeSex</SingUpButton>
           <CloseButton onClick={handleClose}>X</CloseButton>

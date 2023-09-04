@@ -64,8 +64,9 @@ const ContentContainer = styled.div`
 const PopUpImage = styled.img`
   width: auto;
   height: auto;
-  max-width: 100%;
+  max-width: 50%;
   max-height: 50vh; 
+  align-item: center;
 
   @media (max-width: 540px) {
     width: 40%;
@@ -121,9 +122,11 @@ const Benefit = styled.div`
 `;
 
 const BenefitItem = styled.ul`
-  color: var(--violet);
-  font-size: 2rem;
+  margin-top: 1rem;
+  color: black;
+  font-size: 1.8rem;
   text-align: center;
+  font-weight: bold;
   @media (max-width: 540px) {
     font-size: 1.5rem;
   }
@@ -146,7 +149,7 @@ const PopUpButton = styled.a`
 `;
 
 const AppImageChecksito = styled.img`
-  width: 10%;
+  width: 13%;
   height: auto;
   margin-right: 2rem;
 
@@ -157,12 +160,51 @@ const AppImageChecksito = styled.img`
   }
 `;
 
+const Title = styled.div`
+    font-size: 2.5rem;
+    font-family: "Karla", sans-serif;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    
+    span {
+        background-color: var(--green); /* Set the background color to green */
+        padding: 0.3rem 0.5rem; /* Add padding to make the background visible */
+        color: white; /* Set the text color to white */
+    }
+    @media(max-width: 540px){
+        font-size: 2.3rem;
+        margin-bottom: 0rem;
+        text-align: center;
+       
+    }
+`;
+
+const SubTitle = styled.div`
+    font-size: 1.8rem;
+    font-family: "Karla", sans-serif;
+    font-weight: bold;
+    color: var(--green);
+    margin: 1rem;
+    span {
+        background-color: var(--green); /* Set the background color to green */
+        padding: 0.3rem 0.5rem; /* Add padding to make the background visible */
+        color: white; /* Set the text color to white */
+    }
+    @media(max-width: 540px){
+        font-size: 1.8rem;
+        margin-bottom: 0rem;
+        text-align: center;
+       
+    }
+`;
+
 function PopUpSubscription ({ setShowPopup }) {
 
     const premiumMaterials = [
-        'Guias',
-        'Beneficios con marcas asociadas',
-        'Webinars QA',
+        'TODAS NUESTRAS GUÍAS',
+        'BENEFICIOS CON MARCAS',
+        'WEBINARS QA',
       ];
 
     return (
@@ -170,9 +212,11 @@ function PopUpSubscription ({ setShowPopup }) {
             <PopupDialog>
                 <CloseButton onClick={() => setShowPopup(false)}>✕</CloseButton>
                 <ContentContainer>
-                <PopUpImage src="/img/premium-material/salir_rutina.png" alt="Premium Access" />
+                <PopUpImage src="/img/premium-material/subscription_image_2.png" alt="Premium Access" />
                 <TextContainer>
-                    <PopUpTitle>Puedes <span>suscribirte</span> para acceder a todo el material premium</PopUpTitle>
+                    <Title>PUEDES <span>SUSCRIBIRTE</span> PARA ACCEDER A TODO EL MATERIAL PREMIUM</Title>
+                    <SubTitle>POR SOLO 7 USD / 2.500 ARS AL MES</SubTitle>
+                    {/* <PopUpTitle>Puedes <span>suscribirte</span> para acceder a todo el material premium</PopUpTitle> */}
                     <Benefits>
                     {premiumMaterials.map((material, index) => (
                         <Benefit key={index}>

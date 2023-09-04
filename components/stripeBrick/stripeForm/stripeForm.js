@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { subscribe_to_premium } from '../../../requests/premiumService';
 import { useRouter } from 'next/router';
@@ -110,6 +110,8 @@ const WeSex = styled.div`
 const PLAN_ID = process.env.NEXT_PUBLIC_PLAN_ID;
 
 function StripeForm() {
+  const [isSubmitting, setIsSubmitting] = useState(false); 
+  const [errorOccurred, setErrorOccurred] = useState(false);
   const router = useRouter();
   const stripe = useStripe();
   const elements = useElements();
@@ -117,14 +119,19 @@ function StripeForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (!stripe || !elements) {
+    if (!stripe || !elements || isSubmitting) {
       return;
     }
+
+    setIsSubmitting(true);
+    setErrorOccurred(false); // Restablecer el estado de error
 
     const { token, error } = await stripe.createToken(elements.getElement(CardElement));
 
     if (error) {
       console.log(error);
+      setErrorOccurred(true);
+      setIsSubmitting(false);
     } else {
       try{
         const response = await subscribe_to_premium(
@@ -134,6 +141,7 @@ function StripeForm() {
             paymentMethod: 'STRIPE',
           }
         );
+        setIsSubmitting(false);
         console.log(response);
         if (response.status === 201) {
           router.push('/');
@@ -142,6 +150,8 @@ function StripeForm() {
       } catch (error) {
         console.log(error);
         toast.error("Error al suscribirse");
+        setErrorOccurred(true);
+        setIsSubmitting(false);
       }
     }
   };
@@ -163,7 +173,9 @@ function StripeForm() {
         <CardSubTitle>Información de la tarjeta</CardSubTitle>
         <CardElement />
         <CenterButton>
-          <StyledButtonLink onClick={handleSubmit}>Suscribirme</StyledButtonLink>
+          <StyledButtonLink onClick={handleSubmit} disabled={isSubmitting && !errorOccurred}>
+            {isSubmitting ? "Procesando..." : "Suscribirme"}
+          </StyledButtonLink>
           <ByLabel>Powered by Stripe</ByLabel>
         </CenterButton>
       </Container>

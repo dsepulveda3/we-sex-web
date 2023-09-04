@@ -27,18 +27,44 @@ const Background = styled.div`
 const PDFViewer = ({pdfItem}) => {
   console.log(pdfItem);
   const pdfUrl = "";
+  const containerwd = 1.5;
+  const [isPhoneScreen, setIsPhoneScreen] = useState(false);
 
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      setIsPhoneScreen(screenWidth < 540); // Adjust the breakpoint as needed
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  
   if (pdfItem === 'guia-anal') {
     pdfUrl = "https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68b3f67626bfe72c4ef30/guiasexoanal-WeSex-3_compressed.pdf";
+    containerwd = 1.5;
   } 
   else if (pdfItem === 'guia-tantra') {
     pdfUrl = "https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68b6167626bfe72c4ef36/Guia de tantra_Orgasmos mas profundos 1_compressed.pdf"
+    containerwd = 1.5;
   }
   else if (pdfItem === 'guia-zonas-erogenas') {
     pdfUrl = "https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68b8167626bfe72c4ef3c/Guia de zonas erogenas WeSex_compressed.pdf"
+    containerwd = 1.5;
   }
   else if (pdfItem === 'guia-salir-rutina') {
     pdfUrl = "https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68cef67626bfe72c4ef48/Guía para salir de la rutina con tu pareja  WeSex_compressed.pdf"
+    if (isPhoneScreen) {
+      // Execute your function specific to phone screens here
+      containerwd = 1.3;
+    } else {
+      containerwd = 4.4;
+    }
   }
   const [numPages, setNumPages] = useState(null);
   const [containerWidth, setContainerWidth] = useState(0);
@@ -74,7 +100,7 @@ const PDFViewer = ({pdfItem}) => {
               >
                 <Page
                   pageNumber={index + 1}
-                  width={containerWidth / 1.5}
+                  width={containerWidth / containerwd}
                   height={pageHeight}
                   renderTextLayer={false}
                   renderAnnotationLayer={false}
