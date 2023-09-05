@@ -156,6 +156,7 @@ export default function Debates() {
   const [discussions, setDiscussions] = useState([]);
   const [searchString, setSearchString] = useState('');
   const [displayedDiscussions, setDisplayedDiscussions] = useState(8); // Number of discussions to show initially
+  const [page, setPage] = useState(1);
   const discussionsPerPage = 8;
 
   const containerRef = useRef(null);
@@ -163,11 +164,13 @@ export default function Debates() {
   const handleLoadMore = () => {
     // Increase the number of displayed discussions by the discussionsPerPage value
     setDisplayedDiscussions(displayedDiscussions + discussionsPerPage);
+    setPage(page + 1);
+
   
-    // Scroll the button into view after a slight delay
-    setTimeout(() => {
-      containerRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
-    }, 100); // Adjust the delay time as needed (e.g., 100ms).
+    // // Scroll the button into view after a slight delay
+    // setTimeout(() => {
+    //   containerRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    // }, 100); // Adjust the delay time as needed (e.g., 100ms).
   };
 
   useEffect(() => {
@@ -181,12 +184,20 @@ export default function Debates() {
     } else {
       getDiscussions();
     }
-  }, [selectedCategory]);
+  }, [selectedCategory, page]);
 
   function clickNewCategory(link) {
     router.push(`?categoria=${link.toLowerCase().replace(/ /g, '-')}`);
     setSelectedCategory(link.toLowerCase().replace(/ /g, '-'));
+    resetToInitialState();
   }
+
+  function resetToInitialState() {
+    setPage(1);
+    setDiscussions([]);
+    setDisplayedDiscussions(8);
+  }
+
 
   async function getDiscussionCategories() {
     await clienteAxios
@@ -198,15 +209,17 @@ export default function Debates() {
 
   async function getDiscussionsWithCategory(category) {
     await clienteAxios
-      .get(`/discussions/public/${category}`)
+      .get(`/discussions/public/${category}?page=${page}&limit=${discussionsPerPage}`)
       .then((response) => {
-        setDiscussions(response.data.results);
+        setDiscussions([...discussions, ...response.data.results]);
       });
   }
 
   async function getDiscussions() {
-    await clienteAxios.get('/discussions/recent-public').then((response) => {
-      setDiscussions(response.data);
+    await clienteAxios.get(
+      `/search/public-discussions?page=${page}&limit=${discussionsPerPage}`
+    ).then((response) => {
+      setDiscussions([...discussions, ...response.data.results]);
     });
   }
 
