@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import MPCardInput from './mpCardInput';
 
-const Container = styled.div`
+const ContainerInfo = styled.div`
   border-radius: 2rem;
   padding: 2rem;
   border: 2px solid white;
@@ -12,6 +12,20 @@ const Container = styled.div`
 
   @media (max-width: 540px) {
     margin-bottom: 1rem;
+  }
+`;
+
+const ContainerCard = styled.div`
+  border-radius: 2rem;
+  padding: 2rem;
+  border: 2px solid white;
+  background-color: white;
+  margin-bottom: 1rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Add shadow properties */
+
+  @media (max-width: 540px) {
+    margin-bottom: 1rem;
+    padding: 0rem;
   }
 `;
 
@@ -113,15 +127,15 @@ function MPForm() {
         <AppImage src="/img/splash.png" className="img-fluid"/>
         <WeSex>WeSex</WeSex>
       </ContainerTitle>
-      <Container>
+      <ContainerInfo>
         <CardTitle>Detalle de tu suscripción</CardTitle>
         <CardSubTitle><span>Nombre plan:</span> All Access</CardSubTitle>
         <CardSubTitle><span>Tipo suscripción:</span> Mensual</CardSubTitle>
         <CardSubTitle><span>Nombre Comercio:</span> WeSex</CardSubTitle>
-      </Container>
-      <Container>
+      </ContainerInfo>
+      <ContainerCard>
         <MPCardInput />
-      </Container>
+      </ContainerCard>
     </>
   );
 }

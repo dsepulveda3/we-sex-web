@@ -53,21 +53,19 @@ const Suscribe = () => {
   const { authUser, loading } = useAuth();
   const [isSubscribed, setIsSubscribed] = useState(false);
 
-  const checkSubscriptionStatus = async () =>{
-    const response = await is_subscribed(
-      PLAN_ID, 
-    );
-    console.log("reading request")
+  const checkSubscriptionStatus = async () => {
+    const response = await is_subscribed(PLAN_ID);
+    console.log("reading request");
     console.log(response);
-    if (response.status === 200){
+    if (response.status === 200) {
       setIsSubscribed(true);
     }
+  };
 
-  }
   useEffect(() => {
-    if (!loading && authUser){
-    //  setLoggedIn(true)
-     checkSubscriptionStatus();
+    if (!loading && authUser) {
+      //  setLoggedIn(true)
+      checkSubscriptionStatus();
     }
   }, [authUser, loading]);
 
@@ -77,9 +75,11 @@ const Suscribe = () => {
 
   return (
     <>
-      {!isSubscribed && (
+      {visible && !isSubscribed && (
         <Container>
-          <SingUpButton href={'premium-material/subscription'}>Suscribirse a WeSex</SingUpButton>
+          <SingUpButton href={'premium-material/subscription'}>
+            Suscribirse a WeSex
+          </SingUpButton>
           <CloseButton onClick={handleClose}>X</CloseButton>
         </Container>
       )}

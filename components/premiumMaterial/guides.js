@@ -278,6 +278,10 @@ const Guides = () => {
     console.log(guides);
 
     // Depending on the isSubscribed state, set the appropriate link
+    const guideMTLink = isSubscribed
+        ? `/premium-material/guides/pdf-viewer/${'guia-mt'}`// Link for subscribed user
+        : '/premium-material/guides/guia-masturbacion-tantrica'; // Link for non-subscribed user
+
     const guideAnalLink = isSubscribed
         ? `/premium-material/guides/pdf-viewer/${'guia-anal'}`// Link for subscribed user
         : '/premium-material/guides/guia-sexo-anal'; // Link for non-subscribed user
@@ -304,6 +308,17 @@ const Guides = () => {
                     Páginas de sabiduría sexual para volverte un experto en cada tema.
                 </Text>
                 <Row data-aos="fade-left">
+                
+                <Col lg="3" md="4" >
+                <Link href={guideMTLink}>
+                    <GuideSquare>
+                        <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                            <AppImageGuia2 src="/img/premium-material/Masturbacion_tantrica.png" className="img-fluid"/>
+                            <h3>Masturbación Tantrica - Parte 1</h3>
+                        </ContainerContentGuide>
+                    </GuideSquare>
+                    </Link>
+                </Col>
 
                 <Col lg="3" md="4" >
                 <Link href={guideRutinaLink}>
@@ -366,14 +381,14 @@ const Guides = () => {
                     </GuideSquare>
                 </ColHideOnPhone> */}
 
-                <ColHideOnPhone lg="3" md="4" >
+                {/* <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageGuiaQuestion src="/img/premium-material/question-mark-draw.png" className="img-fluid"/>
                             <h3>Pronto</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
-                </ColHideOnPhone>
+                </ColHideOnPhone> */}
                 <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">

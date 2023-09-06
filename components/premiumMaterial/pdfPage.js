@@ -24,11 +24,19 @@ const Background = styled.div`
 `;
 
 
-const PDFViewer = ({pdfItem}) => {
+const PDFViewer = ({pdfItem, demo}) => {
   console.log(pdfItem);
   const pdfUrl = "";
   const containerwd = 1.5;
   const [isPhoneScreen, setIsPhoneScreen] = useState(false);
+  const [hideGuide, setHideGuide] = useState(false);
+  
+  useEffect(() => {
+    if (demo === 'true'){
+      setHideGuide(true);
+    }
+  })
+  
 
   useEffect(() => {
     const handleResize = () => {
@@ -65,6 +73,15 @@ const PDFViewer = ({pdfItem}) => {
     } else {
       containerwd = 4.4;
     }
+  } else if (pdfItem === 'guia-mt'){
+    pdfUrl = "https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64f7817a650421f970535baf/Guía Tantra y masturbación Parte 1_compressed.pdf"
+    if (isPhoneScreen) {
+      // Execute your function specific to phone screens here
+      containerwd = 1.3;
+    } else {
+      containerwd = 4.4;
+    }
+
   }
   const [numPages, setNumPages] = useState(null);
   const [containerWidth, setContainerWidth] = useState(0);
@@ -92,8 +109,26 @@ const PDFViewer = ({pdfItem}) => {
     <Background>
       <div className="pdf-container">
         <Document file={pdfUrl} onLoadSuccess={onDocumentLoadSuccess}>
-          <div className="pdf-pages">
-            {Array.from(new Array(numPages || 0), (_, index) => (
+        <div className="pdf-pages">
+          {hideGuide ? (
+            Array.from(new Array(numPages || 0), (_, index) => (
+              <div
+                key={`page_${index + 1}`}
+                className={`pdf-page ${index >= 2 ? 'blurry-page' : ''}`}
+              >
+                <Page
+                  pageNumber={index + 1}
+                  width={containerWidth / containerwd}
+                  height={pageHeight}
+                  renderTextLayer={false}
+                  renderAnnotationLayer={false}
+                  renderInteractiveForms={false}
+                  renderMode="canvas"
+                />
+              </div>
+            ))
+          ) : (
+            Array.from(new Array(numPages || 0), (_, index) => (
               <div
                 key={`page_${index + 1}`}
                 className={`pdf-page ${index >= 2 ? '' : ''}`}
@@ -108,8 +143,10 @@ const PDFViewer = ({pdfItem}) => {
                   renderMode="canvas"
                 />
               </div>
-            ))}
-          </div>
+            ))
+          )}
+</div>
+
         </Document>
       </div>
 

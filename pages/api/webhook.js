@@ -271,6 +271,51 @@ export default async function handler(req, res) {
   post_perfit(account, listId, contactData, axiosConfig);
 
 
+} else if (
+  productName === 'Guía Tantra y Masturbación - Parte 1' ||
+  productName ===
+  '¡GRACIAS! Presiona el botón "Descargar ahora" para recibir la guía de tantra y masturbación por mail y empezar a disfrutar.' ||
+  productName === 'F - Guía Tantra y Masturbación - Parte 1' ||
+  productName ===
+    'F - ¡GRACIAS! Presiona el botón "Descargar ahora" para recibir la guía de tantra y masturbación por mail y empezar a disfrutar.'
+) {
+  const listId = 83; // lista Perfit guía masturbación tántrica
+  const contactData = {
+    email: email,
+  };
+
+  post_perfit(account, listId, contactData, axiosConfig);
+
+
+} else if (
+  productName === 'Guía Masturbación Tántrica + Zonas Erógenas + Anal' ||
+  productName ===
+  '¡GRACIAS! PresionA el botón "Descargar ahora" para recibir la guía de masturbación tántrica + zonas erógenas + anal por mail y empezar a disfrutar.' ||
+  productName === 'F - Guía Masturbación Tántrica + Zonas Erógenas + Anal' ||
+  productName ===
+    'F - ¡GRACIAS! PresionA el botón "Descargar ahora" para recibir la guía de masturbación tántrica + zonas erógenas + anal por mail y empezar a disfrutar.'
+) {
+  const listId = 84; // lista Perfit guía Masturbación Tántrica + Zonas Erógenas + Anal
+  const contactData = {
+    email: email,
+  };
+
+  post_perfit(account, listId, contactData, axiosConfig);
+
+  
+} else if (
+  productName === 'Guía Masturbación Tántrica + salir de la rutina + Zonas Erógenas + Sexo Anal + Tantra' ||
+  productName ===
+  '¡GRACIAS! PresionA el botón "Descargar ahora" para recibir la guía de masturbación tántrica + salir de la rutina con tu pareja + zonas erógenas + sexo anal + tantra por mail y empezar a disfrutar.'
+) {
+  const listId = 85; // lista Perfit guía Masturbación Tántrica + Zonas Erógenas + Anal
+  const contactData = {
+    email: email,
+  };
+
+  post_perfit(account, listId, contactData, axiosConfig);
+
+  
 } 
 
     console.log('Successful request');

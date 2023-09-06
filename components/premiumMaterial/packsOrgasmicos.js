@@ -294,11 +294,22 @@ const Packs = () => {
                 <Row data-aos="fade-left">
 
                 <Col lg="3" md="4" >
+                    <Link href="/premium-material/packs/pack8-MT-R-Z-T-A">
+                        <GuideSquare>
+                            <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                                <AppImagePack src="/img/premium-material/giftbox.png" className="img-fluid"/>
+                                <TextPack>Pack <span>WeSexer</span> 5 x 4</TextPack>
+                             </ContainerContentGuide>
+                        </GuideSquare>
+                    </Link>
+                </Col>
+
+                <Col lg="3" md="4" >
                     <Link href="/premium-material/packs/pack6-rutina-zonas-tantra-anal">
                         <GuideSquare>
                             <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                                 <AppImagePack src="/img/premium-material/giftbox.png" className="img-fluid"/>
-                                <TextPack>Pack <span>Premium</span> 3 x 4</TextPack>
+                                <TextPack>Pack <span>Premium</span> 4 x 3</TextPack>
                              </ContainerContentGuide>
                         </GuideSquare>
                     </Link>
@@ -332,7 +343,7 @@ const Packs = () => {
                             <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                                 <AppImagePack src="/img/premium-material/giftbox.png" className="img-fluid"/>
                                 {/* <TextGuide>Guía <span>Zonas Erógenas</span> + <span>Anal</span> + <span>Tantra</span></TextGuide> */}
-                                <TextPack>Pack <span>Experto</span> 2 x 3</TextPack>
+                                <TextPack>Pack <span>Experto</span> 3 x 2</TextPack>
                              </ContainerContentGuide>
                         </GuideSquare>
                     </Link>
@@ -394,14 +405,14 @@ const Packs = () => {
                         </ContainerContentGuide>
                     </GuideSquare>
                 </ColHideOnPhone> */}
-                <ColHideOnPhone lg="3" md="4" >
+                {/* <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageGuiaQuestion src="/img/premium-material/question-mark-draw.png" className="img-fluid"/>
                             <h3>Pronto</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
-                </ColHideOnPhone>
+                </ColHideOnPhone> */}
                 <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">

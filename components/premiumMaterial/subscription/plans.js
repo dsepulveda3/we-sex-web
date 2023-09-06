@@ -411,26 +411,26 @@ const PlanContainer = styled.div`
     }
 
     /* Default text in the top right corner */
-    ::before {
-        content: "WeSex";
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-family: "Averia Libre", sans-serif;
-        font-size: 2.0rem;
-        color: var(--green);
-    }
+    // ::before {
+    //     content: "WeSex";
+    //     position: absolute;
+    //     top: 10px;
+    //     right: 10px;
+    //     font-family: "Averia Libre", sans-serif;
+    //     font-size: 2.0rem;
+    //     color: var(--green);
+    // }
 
     /* Default text in the bottom left corner */
-    ::after {
-        content: "WeSex";
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-        font-family: "Averia Libre", sans-serif;
-        font-size: 2.0rem;
-        color: var(--green);
-    }
+    // ::after {
+    //     content: "WeSex";
+    //     position: absolute;
+    //     bottom: 10px;
+    //     left: 10px;
+    //     font-family: "Averia Libre", sans-serif;
+    //     font-size: 2.0rem;
+    //     color: var(--green);
+    // }
 `;
 
 const PlanInfo = styled.div`
@@ -452,7 +452,7 @@ const Benefit = styled.div`
 const TitlePlan = styled.div`
     font-weight: bold;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 
     font-family: "Averia Libre", sans-serif;
     background-color: var(--green); /* Set the background color to green */
@@ -600,11 +600,15 @@ const Plans = () => {
                                 </Benefit>
                                 <Benefit>
                                     <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
+                                    <ul>+2 guías al mes</ul>
+                                </Benefit>
+                                <Benefit>
+                                    <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
                                     <ul>Beneficios con marcas asociadas</ul>
                                 </Benefit>
                                 <Benefit>
                                     <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
-                                    <ul>Webinars QA</ul>
+                                    <ul>Webinars QA con expertos</ul>
                                 </Benefit>
                             </Benefits>
                             {selectedOption === 'Argentina' && (

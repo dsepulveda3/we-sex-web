@@ -53,10 +53,8 @@ export default function Home() {
       <Layout type={'nothidden'}>
         <div style={{paddingBottom: '5rem'}}>
         {/* here */}
-        <div>
-          {isSubscribed ? null : <Suscribe/>}
-        </div>
-
+        <Suscribe/>
+        
         <SurveysHorizontal />
         <ArticlesHorizontal />
         <DebatesHorizontal />

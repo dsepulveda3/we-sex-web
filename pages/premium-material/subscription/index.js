@@ -32,9 +32,9 @@ export default function Subscription() {
             <link rel="manifest" href="/img/favicon/site.webmanifest"/>
         </Head>
         <main>
-            <Layout>
+            <Layout type={'nothidden'}>
                 <Intro/>
-                <Explicacion/>
+                {/* <Explicacion/> */}
                 <Plans/>
             </Layout>
         </main>

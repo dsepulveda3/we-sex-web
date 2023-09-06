@@ -5,38 +5,9 @@ import styled from '@emotion/styled';
 import { useCookies } from 'react-cookie';
 import { useAuth } from '../../context/authUserContext';
 
-const ProfilePicture = styled.img`
-  border-radius: 15rem;
-  width: 10rem !important;
-  height: 10rem !important;
-  object-fit: cover;
-`;
-
-export const MainContainer = styled(Container)`
-    display: flex;
-    align-items: center;
-    // justify-content: center;
-    background-color: #ebe4f8;
-    width: 550px;
-    // height: 690px;
-    padding: 5rem 5rem 5rem 5rem;
-    margin-top: 8rem;
-
-    @media(min-width: 540px){
-        border-radius: 20px;
-    }
-
-    @media(max-width: 540px){
-        background-attachment: scroll;
-        text-align: center;
-        padding-bottom: 3rem;
-        height: 130vh;
-    }
-`;
-
 const ProfileData = styled.div`
   display: flex;
-  align-items: flex-start; /* Align items at the top */
+  align-items: center; /* Align items at the top */
   margin: 2rem 0;
 
   h1,
@@ -49,6 +20,7 @@ const ProfileData = styled.div`
 const Information = styled.div`
   color: var(--violet);
   margin-top: 2rem;
+  align-items: center;
 
   h5 {
     font-size: 2.5rem;
@@ -79,35 +51,97 @@ const UnsubscribeButton = styled.button`
 `;
 
 const Title = styled.h2`
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: var(--violet);
   margin-bottom: 2rem;
+  align-text: center;
+
 `;
 
 const InfoGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
+  align-items: center;
 `;
 
 const InfoItem = styled.div`
   display: flex;
+  background-color: white;
+  padding: 0.8rem;
+  border-radius: 1rem;
+  align-items: center;
+  
 `;
 
 const InfoFieldName = styled.span`
   color: var(--violet);
   font-weight: bold;
   margin-right: 0.5rem;
+  font-family: "Karla", sans-serif;
+  font-size: 1.5rem;
+
+  @media(max-width: 540px){
+    font-size: 1.5rem;
+  }
 `;
 
 const InfoFieldValue = styled.span`
   color: var(--violet);
+  font-family: "Karla", sans-serif;
+  font-size: 1.5rem;
+
+  @media(max-width: 540px){
+    font-size: 1.5rem;
+  }
 `;
 
 const InfoFieldContainer = styled.div`
   display: flex;
   align-items: center; /* Align text vertically in the middle */
 `;
+
+
+
+const ProfilePicture = styled.img`
+  border-radius: 15rem;
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+  margin: 1rem;
+
+  @media(max-width: 540px) {
+    width: 5rem;
+    height: 5rem;
+  }
+`;
+
+const MainContainer = styled(Container)`
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  // background-color: #ebe4f8;
+  background-color: var(--green);
+  width: 550px;
+  padding: 3rem;
+  margin-top: 15rem;
+
+  @media(min-width: 540px){
+    border-radius: 20px;
+  }
+
+  @media(max-width: 540px){
+    background-attachment: scroll;
+    text-align: center;
+    padding-bottom: 3rem;
+    height: 70vh;
+    width: 350px;
+    border-radius: 20px;
+  }
+`;
+
+// Rest of your styled components...
 
 const MyProfile = () => {
   const [cookie, setCookie] = useCookies(['user']);
@@ -130,43 +164,39 @@ const MyProfile = () => {
   return (
     <Layout type={'nothidden'}>
       <MainContainer>
-        <Row>
-          <Col>
-            <Title>Tu perfil</Title>
-            <ProfileData>
+      <ProfileData>
               <ProfilePicture
                 src={profile?.avatar}
                 alt={`Foto de perfil de @${profile?.user}`}
               />
-              <div>
+              <div style={{alignItems: "center"}}>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <h1>{profile?.firstName}</h1>
-                  <h1>{profile?.lastName}</h1>
+                  <h2 style={{color: "white"}}>{profile?.firstName}</h2>
+                  <h2 style={{color: "white"}}>{profile?.lastName}</h2>
                 </div>
-                <p>@{profile?.user}</p>
+                <p style={{color: "white"}}>@{profile?.user}</p>
               </div>
             </ProfileData>
-            <Information>
-              <h5>Información</h5>
-              <InfoGrid>
-                <InfoItem>
-                  <InfoFieldName>Edad:</InfoFieldName>
+        <Information>
+          <InfoGrid>
+          <InfoItem>
+                  <InfoFieldName>EDAD:</InfoFieldName>
                   <InfoFieldValue>{profile?.age}</InfoFieldValue>
                 </InfoItem>
                 <InfoItem>
-                  <InfoFieldName>Email:</InfoFieldName>
+                  <InfoFieldName>EMAIL:</InfoFieldName>
                   <InfoFieldValue>{profile?.email}</InfoFieldValue>
                 </InfoItem>
                 <InfoItem>
-                  <InfoFieldName>Pais:</InfoFieldName>
+                  <InfoFieldName>PAÍS:</InfoFieldName>
                   <InfoFieldValue>{profile?.country === 'AR'? 'Argentina': 'Otro'}</InfoFieldValue>
                 </InfoItem>
                 <InfoItem>
-                  <InfoFieldName>Orientación sexual:</InfoFieldName>
+                  <InfoFieldName>ORIENTACIÓN:</InfoFieldName>
                   <InfoFieldValue>{profile?.sexualOrientation === 'ratherNotSay'? 'Prefiere no decir': profile?.sexualOrientation}</InfoFieldValue>
                 </InfoItem>
                 <InfoItem>
-                    <InfoFieldName>Estado de subscripción:</InfoFieldName>
+                    <InfoFieldName>ESTADO SUSCRIPCIÓN:</InfoFieldName>
                     <InfoFieldValue>
                       {isSubscribedStatus ? 'Suscrito' : 'No suscrito'}
                     </InfoFieldValue>
@@ -174,10 +204,8 @@ const MyProfile = () => {
                   {isSubscribedStatus && (
                         <UnsubscribeButton>Cancelar subscripción</UnsubscribeButton>
                       )}
-              </InfoGrid>
-            </Information>
-          </Col>
-        </Row>
+          </InfoGrid>
+        </Information>
       </MainContainer>
     </Layout>
   );
