@@ -30,7 +30,7 @@ const Background = styled.div`
 `;
 
 
-const PDFViewer = ({pdfItem, demo}) => {
+const PDFViewer = ({pdfItem, demo, setLoaded}) => {
   console.log(pdfItem);
   const pdfUrl = "";
   const containerwd = 1.5;
@@ -41,7 +41,7 @@ const PDFViewer = ({pdfItem, demo}) => {
     if (demo === 'true'){
       setHideGuide(true);
     }
-  })
+  }, [])
   
 
   useEffect(() => {
@@ -92,6 +92,7 @@ const PDFViewer = ({pdfItem, demo}) => {
   const [numPages, setNumPages] = useState(null);
   const [containerWidth, setContainerWidth] = useState(0);
   const [pageHeight, setPageHeight] = useState(0);
+
 
   useEffect(() => {
     setContainerWidth(window.innerWidth);
@@ -203,7 +204,7 @@ const PDFViewer = ({pdfItem, demo}) => {
 
         @media (max-width: 768px) {
           .pdf-container {
-            width: 100%;
+            width: 80vw;
             height: 680px;
             overflow-x: auto;
           }

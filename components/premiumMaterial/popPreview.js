@@ -76,19 +76,15 @@ const ContentContainer = styled.div`
 
 
 function PopUpPrewiew ({ setShowPopup, guideShown }) {
-  console.log("guideshowwn");
-  console.log(guideShown);
 
-    return (
-        <PopupContainer>
-            <PopupDialog>
-                <CloseButton onClick={() => setShowPopup(false)}>✕</CloseButton>
-                {/* <ContentContainer> */}
-                <PDFPage pdfItem={guideShown} demo='true'/>
-                {/* </ContentContainer> */}
-            </PopupDialog>
-        </PopupContainer>   
-    )
+  return (
+      <PopupContainer>
+          <PopupDialog>
+              <CloseButton onClick={() => setShowPopup(false)}>✕</CloseButton>
+              <PDFPage pdfItem={guideShown} demo="true" />
+          </PopupDialog>
+      </PopupContainer>   
+  )
 }
 
 export default PopUpPrewiew;

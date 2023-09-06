@@ -3,6 +3,24 @@ import { useRouter } from 'next/router';
 import Layout from '../../../../components/general/Layout';
 import PDF from '../../../../components/premiumMaterial/pdfPage';
 
+import styled from '@emotion/styled';
+
+const CenteredContainer = styled.div`
+  @media (max-width: 768px) {
+    background-image: url("/img/premium-material/ws-background.jpg");
+    background-color: var(--violet);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* This ensures the container takes the full viewport height */
+    text-align: center; /* Center the content horizontally */
+  }
+`;
+
 
 export default function PDFViewer() {
   const router = useRouter();
@@ -24,7 +42,9 @@ export default function PDFViewer() {
 
       <main>
         <Layout>
-            <PDF pdfItem={pdfItem}/>
+            <CenteredContainer>
+              <PDF pdfItem={pdfItem}/>
+            </CenteredContainer>
         </Layout>
       </main>
     </>
