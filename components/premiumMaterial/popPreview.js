@@ -19,26 +19,23 @@ const PopupContainer = styled.div`
   }
 `;
 
+
 const PopupDialog = styled.div`
   background-color: white;
   padding: 2rem;
   border-radius: 10px;
-  max-width: 80%;
-  max-height: 80%;
+  max-width: 100%; /* Set the maximum width to 100% */
+  max-height: 100%; /* Set the maximum height to 100% */
   overflow-y: auto;
-  display: flex; /* Added to create a flex container */
-  flex-direction: column; /* Arrange children in a column */
-  align-items: center; /* Center children horizontally */
-  justify-content: center; /* Center children vertically */
-  position: relative; /* Added to position the CloseButton */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 
   @media (max-width: 768px) {
     max-width: 90%;
     max-height: 90%;
-  }
-
-  @media (min-width: 768px) {
-    padding: 4rem 4rem;
   }
 `;
 
@@ -74,13 +71,6 @@ const ContentContainer = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-
-  @media (max-width: 540px) {
-    min-width: 400px;
-  }
-
-
-  
 `;
 
 
