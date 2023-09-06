@@ -32,7 +32,7 @@ export default function Pack8() {
           description2='Compra el pack a un precio orgásmico.' 
           videoVisibility={false} imageVisibility={false}/>
         <AfterDiv />
-        <EsParaVosSiUniversal title1_1='Esta guía de Masturbación Tántrica  ' title1Span='para ti' title1_2=' si buscas' 
+        <EsParaVosSiUniversal title1_1='Esta guía de Masturbación Tántrica es ' title1Span='para ti' title1_2=' si buscas' 
             emoji1='👀' text1_1='Experimentar nuevas ' text1Span='dimensiones de placer.' text1_2=''
             emoji2='✨' text2_1='Transformar el ' text2Span='autoplacer' text2_2=' en una práctica espiritual y de bienestar.' 
             emoji3='💗' text3_1='' text3Span='Amigarte con tu cuerpo' text3_2=' y tu placer interior.' 
@@ -50,7 +50,7 @@ export default function Pack8() {
             emoji6='🧚‍♀️' text6_1='Llevar a cabo' text6Span=' tus fantasías.' text6_2=''
             emoji7='👅' text7_1='Reavivar la llama' text7Span=' como si fuera la primera vez.' text7_2='' />
         <AfterDiv />
-        <EsParaVosSiUniversal title1_1='Esta guía de Zonas Erógenas ' title1Span='para ti' title1_2=' si buscas' 
+        <EsParaVosSiUniversal title1_1='Esta guía de Zonas Erógenas es ' title1Span='para ti' title1_2=' si buscas' 
             emoji1='✨' text1_1='La magia de combinar diferentes zonas y técnicas para ' text1Span='alcanzar un placer extremo.' text1_2=''
             emoji2='👀' text2_1='Cómo ' text2Span='romper con el coitocentrismo' text2_2=' y explorar nuevas prácticas sexuales.' 
             emoji3='💦' text3_1='Formas de minimizar ' text3Span='relacionados con la eyaculación precoz' text3_2=' y la falta de erección.' 

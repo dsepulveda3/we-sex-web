@@ -131,6 +131,7 @@ function MPForm() {
         <CardTitle>Detalle de tu suscripción</CardTitle>
         <CardSubTitle><span>Nombre plan:</span> All Access</CardSubTitle>
         <CardSubTitle><span>Tipo suscripción:</span> Mensual</CardSubTitle>
+        <CardSubTitle><span>Precio:</span> 2.500 ARS/mes</CardSubTitle>
         <CardSubTitle><span>Nombre Comercio:</span> WeSex</CardSubTitle>
       </ContainerInfo>
       <ContainerCard>

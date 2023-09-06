@@ -141,6 +141,22 @@ const AppImageGuia2 = styled.img`
     }
 `;
 
+const AppImageGuia3 = styled.img`
+    width: 40%;
+    margin-left: 0rem;
+    margin-top: 0rem;   
+    
+    @media(max-width: 540px){
+        width: 40%;
+        margin-top: 0rem;
+        margin-right: 1rem;
+        margin-left: 1.5rem;
+    }
+    @media(min-width: 540px){
+        // margin-right: 2rem;
+    }
+`;
+
 const Section = styled.section`
   
 
@@ -260,6 +276,18 @@ const Guides = () => {
                     </Link>
                 </Col>
                 )}
+                {/* {!isSubscribed ? null : (  // Conditionally render based on isSubscribed
+                <Col lg="4" md="12">
+                    <Link href="/premium-material/benefits">
+                    <GuideSquare>
+                    <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                            <AppImageGuia3 src="/img/premium-material/cupon.png" className="img-fluid"/>
+                            <h3 style={{marginTop: "0.5rem"}}>Beneficos exclusivos</h3>
+                        </ContainerContentGuide>
+                    </GuideSquare>
+                    </Link>
+                </Col>
+                )} */}
             </Row>
             <Suscribe/>
         </Container>
