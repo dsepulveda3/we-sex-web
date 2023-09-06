@@ -149,8 +149,10 @@ const AppImageGuia3 = styled.img`
     @media(max-width: 540px){
         width: 40%;
         margin-top: 0rem;
-        margin-right: 1rem;
-        margin-left: 1.5rem;
+        // margin-right: 1rem;
+        // margin-left: 1.5rem;
+        margin-buttom: 1rem;
+        margin-right: 1.5rem;
     }
     @media(min-width: 540px){
         // margin-right: 2rem;
@@ -205,6 +207,20 @@ const ColHideOnPhone = styled(Col)`
   @media (max-width: 767px) {
     display: none;
   }
+`;
+
+const Soon = styled.h6`
+  text-align: left;
+  margin-left: 1rem;
+  color: black;
+  font-weight: bold;
+
+  @media (max-width){
+
+    margin-right: 1rem;
+
+  }
+
 `;
 
 
@@ -276,18 +292,21 @@ const Guides = () => {
                     </Link>
                 </Col>
                 )}
-                {/* {!isSubscribed ? null : (  // Conditionally render based on isSubscribed
+                {!isSubscribed ? null : (  // Conditionally render based on isSubscribed
                 <Col lg="4" md="12">
-                    <Link href="/premium-material/benefits">
+                    {/* <Link href="/premium-material/benefits"> */}
                     <GuideSquare>
                     <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia3 src="/img/premium-material/cupon.png" className="img-fluid"/>
-                            <h3 style={{marginTop: "0.5rem"}}>Beneficos exclusivos</h3>
+                          
+                            {/* <AppImageGuia3 src="/img/premium-material/cupon.png" className="img-fluid"/>
+                            <Soon >Disponibles 07/09</Soon> */}
+                           
+                            <h3 style={{marginTop: "2.5rem", textAlign: "center", marginLeft: "0.2rem"}}>Beneficos exclusivos disponibles 07/09/2023</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
-                    </Link>
+                    {/* </Link> */}
                 </Col>
-                )} */}
+                )}
             </Row>
             <Suscribe/>
         </Container>
