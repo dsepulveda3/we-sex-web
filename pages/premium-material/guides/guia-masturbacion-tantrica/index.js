@@ -37,14 +37,14 @@ export default function MasturbacionTantrica() {
           description2='Descubre nuevas capas de placer y goza como nunca' imageVisibility={true} 
           videoVisibility={false} image='/img/premium-material/Masturbacion_tantrica.png' widthImage={'45%'}/>
         <AfterDiv />
-        <EsParaVosSiUniversal title1_1='Esta guía de masturbación tántrica es  ' title1Span='para ti' title1_2=' si buscas' 
+        <EsParaVosSiUniversal title1_1='Esta guía de masturbación tántrica es  ' title1Span='para ti' title1_2=' si buscas'
           emoji1='👀' text1_1='Experimentar nuevas ' text1Span='dimensiones de placer.' text1_2=''
-          emoji2='✨' text2_1='Transformar el ' text2Span='autoplacer' text2_2=' en una práctica espiritual y de bienestar.' 
-          emoji3='💗' text3_1='' text3Span='Amigarte con tu cuerpo' text3_2=' y tu placer interior.' 
+          emoji2='✨' text2_1='Transformar el ' text2Span='autoplacer' text2_2=' en una práctica espiritual y de bienestar.'
+          emoji3='💗' text3_1='' text3Span='Amigarte con tu cuerpo' text3_2=' y tu placer interior.'
           emoji4='🏓' text4_1 ='Introducirte ' text4Span='a nuevas técnicas' text4_2 = ' de Masturbación.'
-          emoji5='🫦' text5_1='Sensibilizar tus tejidos para una' text5Span=' experiencia más profunda.' text5_2='' 
+          emoji5='🫦' text5_1='Sensibilizar tus tejidos para una' text5Span=' experiencia más profunda.' text5_2=''
           emoji6='🧚‍♀️' text6_1='Descubrir el poder de la' text6Span=' atención plena en tu vida sexual.' text6_2=''
-          emoji7='🧘' text7_1='Explorar la ' text7Span='conexión mente-cuerpo.' text7_2='' 
+          emoji7='🧘' text7_1='Explorar la ' text7Span='conexión mente-cuerpo.' text7_2=''
         />
         <AfterDiv />
         <ProfesionalesUniversal fabiVisibility={true} ceciliaVisibility={true} barbaraVisibility={true}/>
