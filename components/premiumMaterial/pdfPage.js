@@ -12,15 +12,21 @@ const Background = styled.div`
     background-repeat: no-repeat;
     background-attachment: fixed;
     /* min-height: 85vh; */
-    margin-top: .1rem;
+    // margin-top: .1rem;
     position: relative;
-    padding-top:6rem;
-    padding-bottom:6rem;
-    @media(max-width: 540px){
-        background-attachment: scroll;
-        text-align: center;
-        min-height: 100vh;
-    }
+    overflow: hidden;
+    min-height: 100vh;
+    padding-top: ${props => props.paddingTop || '0'}; // Add a default value if props.paddingTop is not provided
+    min-height: ${props => props.minHeight || '0'}; // Add a default value if props.minHeight is not provided
+
+
+    // @media(max-width: 540px){
+    //   // padding-top:6rem;
+    //   // padding-bottom:6rem;
+    //   // background-attachment: scroll;
+    //   // text-align: center;
+    //   // min-height: 100vh;
+    // }
 `;
 
 
@@ -106,7 +112,7 @@ const PDFViewer = ({pdfItem, demo}) => {
   };
 
   return (
-    <Background>
+    <Background paddingTop={demo? '0': '6rem'} minHeight={demo? '0': '100vh'}>
       <div className="pdf-container">
         <Document file={pdfUrl} onLoadSuccess={onDocumentLoadSuccess}>
         <div className="pdf-pages">

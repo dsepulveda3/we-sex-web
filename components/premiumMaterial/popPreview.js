@@ -24,9 +24,9 @@ const PopupDialog = styled.div`
   background-color: white;
   padding: 2rem;
   border-radius: 10px;
-  max-width: 100%; /* Set the maximum width to 100% */
-  max-height: 100%; /* Set the maximum height to 100% */
-  overflow-y: auto;
+  max-width: 90% !important; /* Set the maximum width to 100% */
+  max-height: 90% !important; /* Set the maximum height to 100% */
+  overflow-y: hide;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,8 +69,8 @@ const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  // width: 100%;
+  // height: 50%;
 `;
 
 
@@ -83,9 +83,9 @@ function PopUpPrewiew ({ setShowPopup, guideShown }) {
         <PopupContainer>
             <PopupDialog>
                 <CloseButton onClick={() => setShowPopup(false)}>✕</CloseButton>
-                <ContentContainer>
-                  <PDFPage pdfItem={guideShown} demo='true'/>
-                </ContentContainer>
+                {/* <ContentContainer> */}
+                <PDFPage pdfItem={guideShown} demo='true'/>
+                {/* </ContentContainer> */}
             </PopupDialog>
         </PopupContainer>   
     )
