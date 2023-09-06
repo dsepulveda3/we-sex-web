@@ -278,7 +278,7 @@ const Guides = () => {
                 )}
                 {/* {!isSubscribed ? null : (  // Conditionally render based on isSubscribed
                 <Col lg="4" md="12">
-                    <Link href="/premium-material/packs">
+                    <Link href="/premium-material/benefits">
                     <GuideSquare>
                     <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageGuia3 src="/img/premium-material/cupon.png" className="img-fluid"/>
