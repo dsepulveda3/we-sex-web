@@ -498,22 +498,21 @@ const PopupContent = () => {
       <>
         <br />
         <InfoText>
-          <span>Seguimiento:</span> Soporte y respuestas a todas sus dudas en el proceso. 
-        </InfoText>
-        <br />
-        <InfoText>
           <span>Acceso material premium:</span> Podrás acceder a todo nuestro contenido premium tales como guías y masterclasses sin necesidad de pagar por cada una 😉.
         </InfoText>
         <br />
         <InfoText>
-          <span>Cajita WeSexer:</span> El último fin de semana de cada mes les mandaremos una caja sorpresa para que exploren y se diviertan MUCHO😉
+          <span>+2 guías al mes:</span> Tedrás acceso a 2 guías nuevas que serán lanzadas cada mes 😉.
         </InfoText>
         <br />
         <InfoText>
-          <span>Sesión 1/mes sexologa:</span> Podrás tener una consulta de 30 minutos al mes con una sexologa junto a tu pareja.
+          <span>Beneficios con marcas asociadas:</span> Acceso a descuentos y beneficios con partners.
         </InfoText>
         <br />
-        {/* Add more content as needed */}
+        <InfoText>
+          <span>Webinars QA:</span> Con los mejores expertos de sexualidad.
+        </InfoText>
+        <br />
       </>
     );
   };
@@ -613,7 +612,7 @@ const Plans = () => {
                             </Benefits>
                             {selectedOption === 'Argentina' && (
                                 <>
-                                <Price>8.000 ARS/mes</Price>
+                                <Price>2.500 ARS/mes</Price>
                                 <PayButton href={NextLinkArgentina} >SUSCRIBIRSE</PayButton>
                                 <ByLabel>Powered by Mercado Pago</ByLabel>
                                 </>

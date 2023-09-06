@@ -48,14 +48,14 @@ export default function MasturbacionTantricaFabi() {
         />
         <AfterDiv />
         <ProfesionalesUniversal fabiVisibility={true} ceciliaVisibility={true} barbaraVisibility={true}/>
-        <PackUniversal title1_1='3 x 2' title1_2={`Por ${globalPrices.ThreeProductARS} llevate 3 guías de WeSex: `}
+        <PackUniversal title1_1='3 x 2' title1_2={`Por AR$${globalPrices.ThreeProductARS} llevate 3 guías de WeSex: `}
         title1_3='Masturbación Tántrica, Zonas Erógenas, Sexo Anal.' link_promo='/premium-material/packs/pack7-MT-zonas-anal-fabi' />
         <Regalar />
         <ComprarUniversal title_mp='Guía Masturbación Tántrica - WeSex' unit_price_mp= {globalPrices.OneProductARS} quantity_mp={1} currency_id_mp='ARS'
           price_ARG={`AR$ ${globalPrices.OneProductARS}`} price_USD={`U$D ${globalPrices.OneProductUSD}`} redirection_succesful_mp='https://payhip.com/b/TKdoa' 
           redirection_failed_mp='https://www.we.sex/premium-material/guides/guia-masturbacion-tantrica'
           link_payhip_usd='https://payhip.com/b/OqnKf' has_promo={true}
-          buy_just='Comprar solo guía masturbación tántrica 1' reminder_buy_just='Estás comprando solo la guía para salir de la rutina' 
+          buy_just='Comprar solo guía masturbación tántrica 1' reminder_buy_just='Estás comprando la guía para salir de la rutina' 
           link_promo='' text_promo1_1=''
           text_promo1Span='' text_promo1_2=''
           link_promo2='' text_promo2_1=''

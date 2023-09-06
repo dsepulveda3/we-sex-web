@@ -21,6 +21,10 @@ const AuthToggleLinks = ({ setLoginStatus }) => {
     router.push("/perfil/me");
   };
 
+  const handleContact = () => {
+    router.push("https://wa.me/5491140678698?text=Hola!%20Tengo%20una%20pregunta.");
+  };
+
   return (
     <div style={{ display: "inline-block" }}>
       <div
@@ -51,11 +55,14 @@ const AuthToggleLinks = ({ setLoginStatus }) => {
             right: "0",
           }}
         >
-          <a className="nav-link" onClick={handleLogOut} style={{ color: "purple", cursor: "pointer" }}>
-            Cerrar sesión
-          </a>
           <a className="nav-link" onClick={handleRedirect} style={{ color: "purple", cursor: "pointer" }}>
             Mi perfil
+          </a>
+          <a className="nav-link" onClick={handleContact} style={{ color: "purple", cursor: "pointer" }}>
+            Contacto
+          </a>
+          <a className="nav-link" onClick={handleLogOut} style={{ color: "purple", cursor: "pointer" }}>
+            Cerrar sesión
           </a>
         </div>
       )}

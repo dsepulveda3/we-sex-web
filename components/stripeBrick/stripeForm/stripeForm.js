@@ -166,6 +166,7 @@ function StripeForm() {
         <CardTitle>Detalle de tu suscripción</CardTitle>
         <CardSubTitle><span>Nombre plan:</span> All Access</CardSubTitle>
         <CardSubTitle><span>Tipo suscripción:</span> Mensual</CardSubTitle>
+        <CardSubTitle><span>Precio:</span> 7 USD/mes</CardSubTitle>
         <CardSubTitle><span>Nombre Comercio:</span> WeSex</CardSubTitle>
       </Container>
       <Container>
