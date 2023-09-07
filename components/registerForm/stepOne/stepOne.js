@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import GoogleSignInButton from '../../googleSignInButton/googleSignInButton';
@@ -30,10 +30,17 @@ const StepOne = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
   const [submittedByEnter, setSubmittedByEnter] = useState(false);
+  const [isEmbeddedBrowser, setIsEmbeddedBrowser] = useState(false);
   const { updateFormData, setStepOneCompleted } = useRegisterContext();
   const {
     emailIsInUse
   } = useAuth();
+
+  useEffect(() => {
+    if (navigator.userAgent.includes('Instagram')) {
+      setIsEmbeddedBrowser(true);
+    }
+  }, []);
   
   const validationSchema = Yup.object().shape({
     email: Yup.string().email('Email invalido').required('Campo requerido'),
@@ -100,7 +107,7 @@ const StepOne = () => {
         <Content>
           <Title>WeSex</Title>
           <Text>Crea tu cuenta en 1 minuto 🤝</Text>
-          <GoogleSignInButton />
+          {!isEmbeddedBrowser && (<GoogleSignInButton />)}
           <AppleSingInButton />
           <Or>o</Or>
 

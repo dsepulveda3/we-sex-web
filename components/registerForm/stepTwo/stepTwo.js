@@ -21,6 +21,7 @@ import {
 import { BsPencil } from 'react-icons/bs';
 import { useRegisterContext } from '../../../context/registerContext';
 import { useAuth } from '../../../context/authUserContext';
+import { use } from 'react';
 
 const StepTwo = () => {
   const defaultImageURL = '/img/auth/no-avatar.jpg';
