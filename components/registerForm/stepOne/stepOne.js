@@ -108,8 +108,8 @@ const StepOne = () => {
           <Title>WeSex</Title>
           <Text>Crea tu cuenta en 1 minuto 🤝</Text>
           {!isEmbeddedBrowser && (<GoogleSignInButton />)}
-          <AppleSingInButton />
-          <Or>o</Or>
+          {!isEmbeddedBrowser && (<AppleSingInButton />)}
+          {!isEmbeddedBrowser && (<Or>o</Or>) }
 
           <FormWrapper>
             <InputWrapper>

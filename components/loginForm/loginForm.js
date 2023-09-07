@@ -125,9 +125,9 @@ const LoginForm = () => {
             </InputWrapper>
             <BotonArs type="submit" onClick={formik.handleSubmit}>Entrar</BotonArs>
           </FormWrapper>
-          <Or>o</Or>
+          {!isEmbeddedBrowser && (<Or>o</Or>)}
           {!isEmbeddedBrowser && (<GoogleSignInButton />)}
-          <AppleSingInButton />
+          {!isEmbeddedBrowser && (<AppleSingInButton />)}
           <ForgotPasswordLink href="/forgotPassword">
             Recuperar contraseña
           </ForgotPasswordLink>
