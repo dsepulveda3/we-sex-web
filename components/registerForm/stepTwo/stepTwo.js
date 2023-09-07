@@ -16,7 +16,9 @@ import {
   PencilContainer,
   ErrorMsg,
   InputWrapper,
-  LoginLink
+  LoginLink,
+  LabelForDate,
+  LastInputWrapper,
 } from './stepTwoStyles';
 import { BsPencil } from 'react-icons/bs';
 import { useRegisterContext } from '../../../context/registerContext';
@@ -162,7 +164,7 @@ const StepTwo = () => {
             )}
           </InputWrapper>
 
-            <InputWrapper>
+            <LastInputWrapper>
               <Input
                 type="text"
                 name="username"
@@ -177,9 +179,10 @@ const StepTwo = () => {
               {(formik.touched.username && formik.errors.username) && (
                 <ErrorMsg>{formik.errors.username}</ErrorMsg>
               )}
-            </InputWrapper>
+            </LastInputWrapper>
             
             <InputWrapper>
+              <LabelForDate htmlFor="date">Fecha de nacimiento:</LabelForDate>
               <Input
                 type="date"
                 name="date"

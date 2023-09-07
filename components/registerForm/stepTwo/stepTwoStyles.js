@@ -158,6 +158,10 @@ export const InputWrapper = styled.div`
     margin-bottom: 3rem;
 `;
 
+export const LastInputWrapper = styled(InputWrapper)`
+    margin-bottom: 1.5rem;
+`;
+
 export const ImageInputContainer = styled.label`
   position: relative;
   display: flex;
@@ -192,4 +196,10 @@ export const PencilContainer = styled.div`
   background-color: #fff;
   border-radius: 20%;
   padding: 5px;
+`;
+
+export const LabelForDate = styled.label`
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 2rem;
 `;
