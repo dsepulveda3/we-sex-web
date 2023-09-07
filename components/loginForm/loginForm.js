@@ -33,6 +33,14 @@ const LoginForm = () => {
   const router = useRouter();
   const [submittedByEnter, setSubmittedByEnter] = useState(false);
   const [passwordVisible, setPasswordVisible] = useState(false);
+  const [isEmbeddedBrowser, setIsEmbeddedBrowser] = useState(false);
+
+  useEffect(() => {
+    if (navigator.userAgent.includes('Instagram')) {
+      setIsEmbeddedBrowser(true);
+    }
+  }, []);
+  
 
   useEffect(() => {
     if (!loading && authUser)
@@ -118,7 +126,7 @@ const LoginForm = () => {
             <BotonArs type="submit" onClick={formik.handleSubmit}>Entrar</BotonArs>
           </FormWrapper>
           <Or>o</Or>
-          <GoogleSignInButton />
+          {!isEmbeddedBrowser && (<GoogleSignInButton />)}
           <AppleSingInButton />
           <ForgotPasswordLink href="/forgotPassword">
             Recuperar contraseña
