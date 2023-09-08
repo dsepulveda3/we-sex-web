@@ -99,7 +99,7 @@ const LoginForm = () => {
         <Content>
           <Title>WeSex</Title>
           {isOriginSubscribeRoute? 
-            (<Text>Ya casi estas suscrito 🤝</Text>) :
+            (<Text><span>Ya casi estas suscrito 🤝</span></Text>) :
             (<Text>Hola de nuevo 👋</Text>)
           }
           <FormWrapper>

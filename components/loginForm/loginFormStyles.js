@@ -78,7 +78,7 @@ export const Text = styled.p`
     font-size: 2.8rem;
     margin-bottom: 4rem;
     span {
-        color: var(--green);
+        background-color: var(--green);
     }
     @media(max-width: 540px){
         font-size: 2rem;

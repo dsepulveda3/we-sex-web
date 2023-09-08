@@ -120,7 +120,7 @@ const StepOne = () => {
         <Content>
           <Title>WeSex</Title>
           {isOriginSubscribeRoute? 
-            (<Text>Ya casi estas suscrito 🤝</Text>) :
+            (<Text><span>Ya casi estas suscrito 🤝</span></Text>) :
             (<Text>Crea tu cuenta en 1 minuto 🤝</Text>)
           }
           {!isEmbeddedBrowser && (<GoogleSignInButton origin={origin} />)}
