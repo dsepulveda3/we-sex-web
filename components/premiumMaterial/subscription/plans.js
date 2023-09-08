@@ -544,11 +544,11 @@ const Plans = () => {
 
     const NextLinkArgentina = isLogged
         ? `/premium-material/subscription/mercado-pago`// Link for logged in user
-        : '/register'; // Link for non-logged in user
+        : '/register?origin=subscribe'; // Link for non-logged in user
 
     const NextLinkOtro = isLogged
     ? `/premium-material/subscription/stripe`// Link for logged in user
-    : '/register'; // Link for non-logged in user
+    : '/register?origin=subscribe'; // Link for non-logged in user
 
     const textRef1 = useRef(null);
     const textRef2 = useRef(null);

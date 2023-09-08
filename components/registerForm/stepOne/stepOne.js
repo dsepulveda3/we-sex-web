@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { useRouter } from 'next/router';
 import GoogleSignInButton from '../../googleSignInButton/googleSignInButton';
 import AppleSingInButton from '../../appleSignInButton/appleSignInButton';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
@@ -27,14 +28,24 @@ import { useRegisterContext } from '../../../context/registerContext';
 import { useAuth } from '../../../context/authUserContext';
 
 const StepOne = () => {
+  const router = useRouter();
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
   const [submittedByEnter, setSubmittedByEnter] = useState(false);
   const [isEmbeddedBrowser, setIsEmbeddedBrowser] = useState(false);
+  const [isOriginSubscribeRoute, setIsOriginSubscribeRoute] = useState(false);
   const { updateFormData, setStepOneCompleted } = useRegisterContext();
   const {
     emailIsInUse
   } = useAuth();
+
+  useEffect(() => {
+    if (router.isReady){
+      if (router.query.origin === 'subscribe') {
+        setIsOriginSubscribeRoute(true);
+      }
+    }
+  }, [router.isReady, isOriginSubscribeRoute]);
 
   useEffect(() => {
     if (navigator.userAgent.includes('Instagram')) {
@@ -106,9 +117,12 @@ const StepOne = () => {
       <LoginContainer>
         <Content>
           <Title>WeSex</Title>
-          <Text>Crea tu cuenta en 1 minuto 🤝</Text>
-          {!isEmbeddedBrowser && (<GoogleSignInButton />)}
-          {!isEmbeddedBrowser && (<AppleSingInButton />)}
+          {isOriginSubscribeRoute? 
+            (<Text>Ya casi estas suscrito 🤝</Text>) :
+            (<Text>Crea tu cuenta en 1 minuto 🤝</Text>)
+          }
+          {!isEmbeddedBrowser && (<GoogleSignInButton origin={isOriginSubscribeRoute? "subscribe" : null} />)}
+          {!isEmbeddedBrowser && (<AppleSingInButton origin={isOriginSubscribeRoute? "subscribe" : null} />)}
           {!isEmbeddedBrowser && (<Or>o</Or>) }
 
           <FormWrapper>
@@ -188,7 +202,7 @@ const StepOne = () => {
               Continuar
             </BotonArs>
           </FormWrapper>
-          <LoginLink href="/login">Ya tengo cuenta</LoginLink>
+          <LoginLink href={isOriginSubscribeRoute? "/login?origin=subscribe" : "/login"}>Ya tengo cuenta</LoginLink>
         </Content>
       </LoginContainer>
     </Background>

@@ -5,11 +5,11 @@ import {
     AppleImage
 } from './appleSingInButtonStyles.js';
 
-export default function AppleSingInButton() {
+export default function AppleSingInButton({origin}) {
     const { signInWithApple } = useAuth();
 
     const handleSignInWithApple = () => {
-        signInWithApple();
+        signInWithApple(origin);
     };
 
 

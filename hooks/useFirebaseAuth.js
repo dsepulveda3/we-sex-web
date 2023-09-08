@@ -92,20 +92,24 @@ export default function useFirebaseAuth() {
         removeCookie('user');
     };
 
-    const signInWithCredentials = async (email, password) => 
+    const signInWithCredentials = async (email, password, origin=null) => 
         fetchSignInMethodsForEmail(auth, email).then((signInMethods) => {
             if (signInMethods.includes('password')) {
-                ExecuteSignInWithCredentials(email, password);
+                ExecuteSignInWithCredentials(email, password, origin);
             } else {
                 toast.error('No existe una cuenta registrada por este metodo con este correo');
             }
         });
 
-    const ExecuteSignInWithCredentials = async (email, password) =>
+    const ExecuteSignInWithCredentials = async (email, password, origin) =>
         signInWithEmailAndPassword(auth, email, password)
         .then(() => {
             toast.success('Bienvenido de nuevo!');
-            router.push('/');
+            if (origin === 'subscribe') {
+                router.push('/premium-material/subscription');
+            } else {
+                router.push('/');
+            }
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -119,22 +123,22 @@ export default function useFirebaseAuth() {
             }
         });
 
-    const signInWithGoogle = async () => {
+    const signInWithGoogle = async (origin=null) => {
         const provider = new GoogleAuthProvider();
         signInWithPopup(auth, provider)
             .then((result) => {
-                handleSocialAuth(result.user);
+                handleSocialAuth(result.user, origin);
             })
             .catch((error) => {
                 toast.error('Hubo un error al iniciar sesión');
             });
     };
 
-    const signInWithApple = async () => {
+    const signInWithApple = async (origin=null) => {
         const provider = new OAuthProvider('apple.com');
         signInWithPopup(auth, provider)
             .then((result) => {
-                handleSocialAuth(result.user);
+                handleSocialAuth(result.user, origin);
             })
             .catch((error) => {
                 console.log(error);
@@ -142,12 +146,16 @@ export default function useFirebaseAuth() {
             });
     };
 
-    const handleSocialAuth = async (user) => {
+    const handleSocialAuth = async (user, origin) => {
         const userData = formatSocialAuthUser(user);
         const response = await sendSocialAuthUser(userData);
         if (response.status === 200) {
             toast.success('Bienvenido de nuevo!');
-            router.push('/');
+            if (origin === 'subscribe') {
+                router.push('/premium-material/subscription');
+            } else {
+                router.push('/');
+            }
         } else {
             toast.error('Hubo un error al iniciar sesión');
         }
@@ -170,21 +178,21 @@ export default function useFirebaseAuth() {
         }); 
     };
 
-    const registerUserWithFormData = (formData) => 
+    const registerUserWithFormData = (formData, origin=null) => 
         fetchSignInMethodsForEmail(auth, formData.email).then((signInMethods) => {
             if (signInMethods.length > 0) {
                 toast.error('Ya existe una cuenta registrada con este correo');
             } else {
-                executeCreateUserWithCredentials(formData);
+                executeCreateUserWithCredentials(formData, origin);
             }
         }).catch((error) => {
             toast.error('Hubo un error al crear la cuenta');
         });
 
-    const executeCreateUserWithCredentials = (formData) =>
+    const executeCreateUserWithCredentials = (formData, origin) =>
         createUserWithEmailAndPassword(auth, formData.email, formData.password)
             .then((userCredential) => {
-                createUserInBackend({...formData, firebaseId: userCredential.user.uid});
+                createUserInBackend({...formData, firebaseId: userCredential.user.uid}, origin);
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -192,12 +200,16 @@ export default function useFirebaseAuth() {
                 console.log("error", errorMessage)
         });
     
-    const createUserInBackend = async (formData) => {
+    const createUserInBackend = async (formData, origin) => {
         registerUser(formData).then((response) => {
             if (response.status === 201) {
                 toast.success('Cuenta creada exitosamente');
-                router.push('/');
                 setUser(response.data);
+                if (origin === 'subscribe') {
+                    router.push('/premium-material/subscription');
+                } else {
+                    router.push('/');
+                }
             }
         }).catch((error) => {
             toast.error('Hubo un error al crear la cuenta');

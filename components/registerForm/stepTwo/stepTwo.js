@@ -23,14 +23,24 @@ import {
 import { BsPencil } from 'react-icons/bs';
 import { useRegisterContext } from '../../../context/registerContext';
 import { useAuth } from '../../../context/authUserContext';
-import { use } from 'react';
+import { useRouter } from 'next/router';
 
 const StepTwo = () => {
+  const router = useRouter();
   const defaultImageURL = '/img/auth/no-avatar.jpg';
   const [submittedByEnter, setSubmittedByEnter] = useState(false);
   const [avatar, setAvatar] = useState(null);
   const { formData, resetFormData, setStepOneCompleted } = useRegisterContext();
   const { registerUserWithFormData } = useAuth();
+  const [isOriginSubscribeRoute, setIsOriginSubscribeRoute] = useState(false);
+
+  useEffect(() => {
+    if (router.isReady){
+      if (router.query.origin === 'subscribe') {
+        setIsOriginSubscribeRoute(true);
+      }
+    }
+  }, [router.isReady, isOriginSubscribeRoute]);
 
   const validationSchema = Yup.object().shape({
     avatar: Yup.string().nullable(),
@@ -69,7 +79,7 @@ const StepTwo = () => {
       email: formData.email,
       password: formData.password,
       acceptedTos: formData.acceptedTos,
-    });
+    }, isOriginSubscribeRoute? 'subscribe' : null);
   };
 
   const handleBackPress = () => {

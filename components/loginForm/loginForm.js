@@ -34,6 +34,16 @@ const LoginForm = () => {
   const [submittedByEnter, setSubmittedByEnter] = useState(false);
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [isEmbeddedBrowser, setIsEmbeddedBrowser] = useState(false);
+  const [isOriginSubscribeRoute, setIsOriginSubscribeRoute] = useState(false);
+
+  useEffect(() => {
+    if (router.isReady){
+      if (router.query.origin === 'subscribe') {
+        setIsOriginSubscribeRoute(true);
+      }
+    }
+  }, [router.isReady, isOriginSubscribeRoute]);
+
 
   useEffect(() => {
     if (navigator.userAgent.includes('Instagram')) {
@@ -58,7 +68,7 @@ const LoginForm = () => {
   });
 
   const handleSubmitWithCredentials = (values) => {
-    signInWithCredentials(values.email, values.password);
+    signInWithCredentials(values.email, values.password, isOriginSubscribeRoute? 'subscribe' : null);
   };
 
   const formik = useFormik({
@@ -86,7 +96,10 @@ const LoginForm = () => {
       <LoginContainer>
         <Content>
           <Title>WeSex</Title>
-          <Text>Hola de nuevo 👋</Text>
+          {isOriginSubscribeRoute? 
+            (<Text>Ya casi estas suscrito 🤝</Text>) :
+            (<Text>Hola de nuevo 👋</Text>)
+          }
           <FormWrapper>
             <InputWrapper>
               <Input
@@ -126,8 +139,8 @@ const LoginForm = () => {
             <BotonArs type="submit" onClick={formik.handleSubmit}>Entrar</BotonArs>
           </FormWrapper>
           {!isEmbeddedBrowser && (<Or>o</Or>)}
-          {!isEmbeddedBrowser && (<GoogleSignInButton />)}
-          {!isEmbeddedBrowser && (<AppleSingInButton />)}
+          {!isEmbeddedBrowser && (<GoogleSignInButton origin={isOriginSubscribeRoute? "subscribe" : null} />)}
+          {!isEmbeddedBrowser && (<AppleSingInButton origin={isOriginSubscribeRoute? "subscribe" : null} />)}
           <ForgotPasswordLink href="/forgotPassword">
             Recuperar contraseña
           </ForgotPasswordLink>

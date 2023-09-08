@@ -5,11 +5,12 @@ import {
     GoogleImage
 } from './googleSingInButtonStyles.js';
 
-export default function GoogleSignInButton() {
+export default function GoogleSignInButton({origin}) {
     const { signInWithGoogle } = useAuth();
 
     const handleSignInWithGoogle = () => {
-        signInWithGoogle();
+        console.log(origin);
+        signInWithGoogle(origin);
     };
 
 
