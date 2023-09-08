@@ -33,11 +33,13 @@ const StepTwo = () => {
   const { formData, resetFormData, setStepOneCompleted } = useRegisterContext();
   const { registerUserWithFormData } = useAuth();
   const [isOriginSubscribeRoute, setIsOriginSubscribeRoute] = useState(false);
+  const [origin, setOrigin] = useState(null);
 
   useEffect(() => {
     if (router.isReady){
-      if (router.query.origin === 'subscribe') {
+      if (router.query.origin) {
         setIsOriginSubscribeRoute(true);
+        setOrigin(router.query.origin);
       }
     }
   }, [router.isReady, isOriginSubscribeRoute]);
@@ -79,7 +81,7 @@ const StepTwo = () => {
       email: formData.email,
       password: formData.password,
       acceptedTos: formData.acceptedTos,
-    }, isOriginSubscribeRoute? 'subscribe' : null);
+    }, origin);
   };
 
   const handleBackPress = () => {

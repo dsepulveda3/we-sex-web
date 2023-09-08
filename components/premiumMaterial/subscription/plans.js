@@ -1,4 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react';
+import { useRouter } from 'next/router';
 import {Row, Col, Container} from 'reactstrap';
 import styled from '@emotion/styled';
 import "swiper/css";
@@ -525,9 +526,22 @@ const Plans = () => {
         loading,
         authUser,
       } = useAuth();
+    const router = useRouter();
     const [isLogged, setIsLogged] = useState(false);
     const [selectedOption, setSelectedOption] = useState('Argentina');
     const [showPopup, setShowPopup] = useState(false);
+    const [isOriginSubscribeRoute, setIsOriginSubscribeRoute] = useState(false);
+    const [origin, setOrigin] = useState(null);
+    
+
+    useEffect(() => {  
+        if (router.isReady){
+            if (router.query.origin) {
+                setIsOriginSubscribeRoute(true);
+                setOrigin(router.query.origin);
+            }
+        }
+    }, [router.isReady, isOriginSubscribeRoute]);
 
     useEffect(() => {
         console.log(authUser);
@@ -538,17 +552,13 @@ const Plans = () => {
           
       }, [authUser])
 
-    
-
-
-
     const NextLinkArgentina = isLogged
-        ? `/premium-material/subscription/mercado-pago`// Link for logged in user
-        : '/register?origin=subscribe'; // Link for non-logged in user
+        ? origin ? `/premium-material/subscription/mercado-pago?origin=${origin}` : `/premium-material/subscription/mercado-pago`// Link for logged in user
+        : origin ? `/register?origin=${origin}`: '/register'; // Link for non-logged in user
 
     const NextLinkOtro = isLogged
-    ? `/premium-material/subscription/stripe`// Link for logged in user
-    : '/register?origin=subscribe'; // Link for non-logged in user
+    ? origin ? `/premium-material/subscription/stripe?origin=${origin}` : `/premium-material/subscription/stripe`// Link for logged in user
+    : origin ? `/register?origin=${origin}`: '/register'; // Link for non-logged in user
 
     const textRef1 = useRef(null);
     const textRef2 = useRef(null);

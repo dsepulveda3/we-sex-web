@@ -35,11 +35,13 @@ const LoginForm = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [isEmbeddedBrowser, setIsEmbeddedBrowser] = useState(false);
   const [isOriginSubscribeRoute, setIsOriginSubscribeRoute] = useState(false);
+  const [origin, setOrigin] = useState(null);
 
   useEffect(() => {
     if (router.isReady){
-      if (router.query.origin === 'subscribe') {
+      if (router.query.origin) {
         setIsOriginSubscribeRoute(true);
+        setOrigin(router.query.origin);
       }
     }
   }, [router.isReady, isOriginSubscribeRoute]);
@@ -68,7 +70,7 @@ const LoginForm = () => {
   });
 
   const handleSubmitWithCredentials = (values) => {
-    signInWithCredentials(values.email, values.password, isOriginSubscribeRoute? 'subscribe' : null);
+    signInWithCredentials(values.email, values.password, origin);
   };
 
   const formik = useFormik({
@@ -139,12 +141,12 @@ const LoginForm = () => {
             <BotonArs type="submit" onClick={formik.handleSubmit}>Entrar</BotonArs>
           </FormWrapper>
           {!isEmbeddedBrowser && (<Or>o</Or>)}
-          {!isEmbeddedBrowser && (<GoogleSignInButton origin={isOriginSubscribeRoute? "subscribe" : null} />)}
-          {!isEmbeddedBrowser && (<AppleSingInButton origin={isOriginSubscribeRoute? "subscribe" : null} />)}
+          {!isEmbeddedBrowser && (<GoogleSignInButton origin={origin} />)}
+          {!isEmbeddedBrowser && (<AppleSingInButton origin={origin} />)}
           <ForgotPasswordLink href="/forgotPassword">
             Recuperar contraseña
           </ForgotPasswordLink>
-          <SignUpLink href="/register">Aún no tienes cuenta</SignUpLink>
+          <SignUpLink href={origin? `/register?origin=${origin}` : "/register"}>Aún no tienes cuenta</SignUpLink>
         </Content>
       </LoginContainer>
     </Background>

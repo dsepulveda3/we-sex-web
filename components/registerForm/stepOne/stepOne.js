@@ -34,6 +34,7 @@ const StepOne = () => {
   const [submittedByEnter, setSubmittedByEnter] = useState(false);
   const [isEmbeddedBrowser, setIsEmbeddedBrowser] = useState(false);
   const [isOriginSubscribeRoute, setIsOriginSubscribeRoute] = useState(false);
+  const [origin, setOrigin] = useState(null);
   const { updateFormData, setStepOneCompleted } = useRegisterContext();
   const {
     emailIsInUse
@@ -41,8 +42,9 @@ const StepOne = () => {
 
   useEffect(() => {
     if (router.isReady){
-      if (router.query.origin === 'subscribe') {
+      if (router.query.origin) {
         setIsOriginSubscribeRoute(true);
+        setOrigin(router.query.origin);
       }
     }
   }, [router.isReady, isOriginSubscribeRoute]);
@@ -121,8 +123,8 @@ const StepOne = () => {
             (<Text>Ya casi estas suscrito 🤝</Text>) :
             (<Text>Crea tu cuenta en 1 minuto 🤝</Text>)
           }
-          {!isEmbeddedBrowser && (<GoogleSignInButton origin={isOriginSubscribeRoute? "subscribe" : null} />)}
-          {!isEmbeddedBrowser && (<AppleSingInButton origin={isOriginSubscribeRoute? "subscribe" : null} />)}
+          {!isEmbeddedBrowser && (<GoogleSignInButton origin={origin} />)}
+          {!isEmbeddedBrowser && (<AppleSingInButton origin={origin} />)}
           {!isEmbeddedBrowser && (<Or>o</Or>) }
 
           <FormWrapper>
@@ -202,7 +204,7 @@ const StepOne = () => {
               Continuar
             </BotonArs>
           </FormWrapper>
-          <LoginLink href={isOriginSubscribeRoute? "/login?origin=subscribe" : "/login"}>Ya tengo cuenta</LoginLink>
+          <LoginLink href={origin? `/login?origin=${origin}` : "/login"}>Ya tengo cuenta</LoginLink>
         </Content>
       </LoginContainer>
     </Background>

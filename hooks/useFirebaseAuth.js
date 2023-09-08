@@ -105,8 +105,8 @@ export default function useFirebaseAuth() {
         signInWithEmailAndPassword(auth, email, password)
         .then(() => {
             toast.success('Bienvenido de nuevo!');
-            if (origin === 'subscribe') {
-                router.push('/premium-material/subscription');
+            if (origin) {
+                router.push(`/premium-material/subscription?origin=${origin}`);
             } else {
                 router.push('/');
             }
@@ -151,8 +151,8 @@ export default function useFirebaseAuth() {
         const response = await sendSocialAuthUser(userData);
         if (response.status === 200) {
             toast.success('Bienvenido de nuevo!');
-            if (origin === 'subscribe') {
-                router.push('/premium-material/subscription');
+            if (origin) {
+                router.push(`/premium-material/subscription?origin=${origin}`);
             } else {
                 router.push('/');
             }
@@ -205,8 +205,8 @@ export default function useFirebaseAuth() {
             if (response.status === 201) {
                 toast.success('Cuenta creada exitosamente');
                 setUser(response.data);
-                if (origin === 'subscribe') {
-                    router.push('/premium-material/subscription');
+                if (origin) {
+                    router.push(`/premium-material/subscription?origin=${origin}`);
                 } else {
                     router.push('/');
                 }
