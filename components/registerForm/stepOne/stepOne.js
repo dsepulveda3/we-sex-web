@@ -50,6 +50,20 @@ const StepOne = () => {
   }, [router.isReady, isOriginSubscribeRoute]);
 
   useEffect(() => {
+    // Check if window is defined (client-side)
+    if (typeof window !== 'undefined') {
+      // This code will only run on the client side
+        const currentRoute = window.location.pathname + window.location.search;
+
+        // Send the complete route to Freshpaint as a custom event
+        if(currentRoute === '/register?origin=email'){
+            freshpaint.track("EM - REGISTER - Page View Suscripción", {"Path": currentRoute});
+        }
+        
+    }
+  }, []);
+
+  useEffect(() => {
     if (navigator.userAgent.includes('Instagram')) {
       setIsEmbeddedBrowser(true);
     }

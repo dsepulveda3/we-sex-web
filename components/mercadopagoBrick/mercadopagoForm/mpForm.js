@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from '@emotion/styled';
 import MPCardInput from './mpCardInput';
 
@@ -121,6 +121,21 @@ const WeSex = styled.div`
 
 
 function MPForm() {
+
+  useEffect(() => {
+    // Check if window is defined (client-side)
+    if (typeof window !== 'undefined') {
+      // This code will only run on the client side
+        const currentRoute = window.location.pathname + window.location.search;
+
+        // Send the complete route to Freshpaint as a custom event
+        if(currentRoute === '/premium-material/subscription/mercado-pago?origin=email'){
+            freshpaint.track("EM - MERCADO PAGO - Page View Suscripción", {"Path": currentRoute});
+        }
+        
+    }
+  }, []);
+
   return (
     <>
       <ContainerTitle>

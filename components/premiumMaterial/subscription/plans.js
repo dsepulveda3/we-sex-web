@@ -544,6 +544,21 @@ const Plans = () => {
     }, [router.isReady, isOriginSubscribeRoute]);
 
     useEffect(() => {
+        // Check if window is defined (client-side)
+        if (typeof window !== 'undefined') {
+          // This code will only run on the client side
+            const currentRoute = window.location.pathname + window.location.search;
+    
+            // Send the complete route to Freshpaint as a custom event
+            if(currentRoute === '/premium-material/subscription?origin=email'){
+                freshpaint.track("EM - SUBSCRIPTION - Page View Suscripción", {"Path": currentRoute});
+            }
+            
+        }
+      }, []);
+
+
+    useEffect(() => {
         console.log(authUser);
         console.log(loading);
 

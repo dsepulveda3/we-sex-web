@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { subscribe_to_premium } from '../../../requests/premiumService';
 import { useRouter } from 'next/router';
@@ -115,6 +115,20 @@ function StripeForm() {
   const router = useRouter();
   const stripe = useStripe();
   const elements = useElements();
+
+  useEffect(() => {
+    // Check if window is defined (client-side)
+    if (typeof window !== 'undefined') {
+      // This code will only run on the client side
+        const currentRoute = window.location.pathname + window.location.search;
+
+        // Send the complete route to Freshpaint as a custom event
+        if(currentRoute === '/premium-material/subscription/stripe?origin=email'){
+            freshpaint.track("EM - STRIPE - Page View Suscripción", {"Path": currentRoute});
+        }
+        
+    }
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();

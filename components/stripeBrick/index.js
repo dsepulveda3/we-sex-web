@@ -8,10 +8,9 @@ import styled from '@emotion/styled';
 const Background = styled.div`
   background-color: #6772E5;
   padding: 12rem;
+  height: 100vh;
   @media (max-width: 540px) {
     padding: 11rem 5rem 12rem 5rem;
-
-    
   }
 `;
 
