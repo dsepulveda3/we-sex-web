@@ -534,42 +534,6 @@ const SexoOral = () => {
                                 La posición no tiene nada de distinto, pero sí los tips que te vamos a mandar por privado para que sorprendas a tu pareja con algunos truquitos nuevos 😉
                             </Text2>
                     </Row>
-                    <Row>
-                    <Col xs="12" lg="6" md="3">
-                            <Card style={{margin:"10px 10px 10px 10px"}}>
-                                <CardHeader onClick={toggle} style={{backgroundColor: "white "}}>
-                                <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
-                                    <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
-                                    <TitleQuestion>Tips expertos para chupar un pene. (pete): </TitleQuestion>
-                                </div>
-                                <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
-                                </CardHeader>
-                                <Collapse isOpen={isOpen}>
-                                    <CardBody>
-                                        <AnswerQuestion>
-                                            <ul>
-                                                <li>
-                                                    Amigos con derechos
-                                                </li>
-                                                <li>
-                                                    Legalmente rubia.
-                                                </li>
-                                                <li>
-                                                    Comer, rezar, amar.
-                                                </li>
-                                                <li>
-                                                    Rápidos y furiosos 5.
-                                                </li>
-                                                <li>
-                                                    Mi novia Polly.
-                                                </li>
-                                            </ul>
-                                        </AnswerQuestion>
-                                    </CardBody>
-                                </Collapse>
-                            </Card>
-                        </Col>
-                    </Row>
             </Container>
             </Background>
           )}
