@@ -529,7 +529,7 @@ const SexoOral = () => {
                                 <span>Para dar sexo oral a personas con pene, recomendamos esta posición:</span>
                                 <br/>
                                 <div>
-                                    <img src='/img/premium-material/men-to-woman-SO.jpeg'/>
+                                    <img src='/img/premium-material/woman-to-man-SO.jpeg'/>
                                 </div>
                                 La posición no tiene nada de distinto, pero sí los tips que te vamos a mandar por privado para que sorprendas a tu pareja con algunos truquitos nuevos 😉
                             </Text2>
