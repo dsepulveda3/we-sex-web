@@ -405,7 +405,7 @@ const TipsCP = () => {
             // Stop the animation and remove PIXI elements from the stage
             container.removeChildren();
             setShowAnimation(false);
-          }, 4000);
+          }, 1);
         } else if (appRef.current) {
           appRef.current.view.style.display = 'none'; // If showAnimation is false, hide the PIXI canvas
         }
