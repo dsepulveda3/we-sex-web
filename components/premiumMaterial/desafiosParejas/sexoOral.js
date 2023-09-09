@@ -491,14 +491,14 @@ const SexoOral = () => {
                         Ya con la peli encendida, cuando se sientan listos, una persona empezará a estimular a la otra. El rol de la otra persona será simplemente recibir placer. Puede liberar su cabeza, no tiene que preocuparse por nada más, ni por lo que tiene que hacer luego, ni por no llegar o llegar al orgasmo. Solo recibir.
                         <br/>
                         <br/>
-                        La persona que esté estimulando, también tendrá una sola cosa en la que concentrarse. Dar placer. Entregar placer, hacer gozar a tu pareja, excitarse de ver a tu pareja excitada. También te alentamos a que le preguntes a tu pareja, ¿te gusta así? O simplemente decir: "guíame".
+                        La persona que esté estimulando, también tendrá una sola cosa en la que concentrarse. Dar placer. Entregar placer, hacer gozar a tu pareja, excitarse de ver a tu pareja excitada. También te alentamos a que le preguntes a tu pareja, ¿te gusta así? O simplemente decir: &quot;guíame&quot;.
                         <br/>
                         <br/>
                         {/* <BotonRandom onClick={chooseRandomName}>¿Quién comienza?</BotonRandom>
                         <br/>
                         <br/>
                         {chosenName && <div>Comienza: {chosenName}</div>} */}
-                        <span>A tener en cuenta:</span> No es necesario que el encuentro sea recíproco. No siempre es "yo te doy y vos me das". Puede también terminar luego de que uno solo reciba sexo oral y el otro solo se encargue de dar ese día. La próxima cambiarán roles si lo desean.
+                        <span>A tener en cuenta:</span> No es necesario que el encuentro sea recíproco. No siempre es &quot;yo te doy y vos me das&quot;. Puede también terminar luego de que uno solo reciba sexo oral y el otro solo se encargue de dar ese día. La próxima cambiarán roles si lo desean.
                         <br/>
                         <br/>
                         Obviamente, si luego quieren cambiar de roles esa misma noche, ¡adelante!
