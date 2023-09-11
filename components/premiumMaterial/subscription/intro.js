@@ -24,13 +24,13 @@ const Background = styled.div`
     margin-top: .1rem;
     position: relative;
     // padding-bottom:8rem;
-    padding-top: 10rem;
-    padding-bottom: 3rem;
+    padding-top: 4rem;
+    padding-bottom: 8rem;
     
     @media(max-width: 540px){
         background-attachment: scroll;
         text-align: center;
-        padding-bottom:3rem;
+        
     }
 `;
 
@@ -381,7 +381,7 @@ const Intro = ({subtitle1_1, subtitle1_2}) => {
                                 <SwiperSlide>
                                     <GuideSquare>
                                         <AppImageGuia4 src="/img/premium-material/question-mark-draw.png" className="img-fluid"/>
-                                        <h3 style={{ color: "var(--violet)", fontWeight: "bold" }}>Pronto</h3>
+                                        <h3 style={{ color: "var(--violet)", fontWeight: "bold" }}>Más</h3>
                                     </GuideSquare>
                                 </SwiperSlide>
                                 {/* ... (more SwiperSlides) */}

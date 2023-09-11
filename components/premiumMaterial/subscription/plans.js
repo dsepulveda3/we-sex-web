@@ -17,6 +17,7 @@ const Background = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    padding-top: 8rem;
     
     /* min-height: 85vh; */
     /* margin-top: 3rem; */

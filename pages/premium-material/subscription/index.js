@@ -33,9 +33,9 @@ export default function Subscription() {
         </Head>
         <main>
             <Layout type={'nothidden'}>
-                <Intro/>
                 {/* <Explicacion/> */}
                 <Plans/>
+                <Intro/>
             </Layout>
         </main>
         </>
