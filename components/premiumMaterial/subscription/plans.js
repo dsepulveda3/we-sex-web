@@ -667,7 +667,7 @@ const Plans = () => {
                 <DudasText><span>¿Tienes dudas?</span> Escribenos por Whatsapp</DudasText>
 
                 <BotonUniversal link_redireccion='https://wa.me/5491140678698?
-                text=Hola!%20Quiero%20más%20info%20sobre%20el%20programa%20para%20innovar%20en%20pareja'
+                text=Hola!%20Quiero%20más%20info%20sobre%20la%20memebresía%20WeSexer'
                 text="Contactar Whatsapp"
                 textColor='white'
                 bgColor='var(--green)'

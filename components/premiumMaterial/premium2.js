@@ -294,17 +294,14 @@ const Guides = () => {
                 )}
                 {!isSubscribed ? null : (  // Conditionally render based on isSubscribed
                 <Col lg="4" md="12">
-                    {/* <Link href="/premium-material/benefits"> */}
+                    <Link href="/premium-material/benefits">
                     <GuideSquare>
                     <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                          
-                            {/* <AppImageGuia3 src="/img/premium-material/cupon.png" className="img-fluid"/>
-                            <Soon >Disponibles 07/09</Soon> */}
-                           
-                            <h3 style={{marginTop: "2.5rem", textAlign: "center", marginLeft: "0.2rem"}}>Beneficos exclusivos disponibles 07/09/2023</h3>
+                            <AppImageGuia3 src="/img/premium-material/cupon.png" className="img-fluid"/>
+                            <h3 style={{marginBottom: "2rem"}}>Beneficos</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
-                    {/* </Link> */}
+                    </Link>
                 </Col>
                 )}
             </Row>
