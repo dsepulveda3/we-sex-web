@@ -24,20 +24,60 @@ const Title = styled.div`
 
 
 const BenefitContainer = styled.div`
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center; /* Center vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
     // align-items: center; /* Center horizontally */
     background-color: white;
     border-radius: 1rem;
     width: 30%;
-    height: 20%;
+    height: 30%;
     margin: 1rem;
+    padding: 2rem;
     
     @media(max-width: 540px){
         width: 80%;
-        height: 20%;
+        height: 30%;
     }
+`;
+
+const AsanaLogo = styled.img`
+    display: block;
+    margin: auto;
+    width: 30%;
+`;
+
+const TitleCompany = styled.div`
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    margin: 0.5rem;
+`;
+
+const SubTitleCompany= styled.div`
+    font-size: 1.3rem;
+    background-color: var(--green);
+    color: white;
+    text-align: center;
+`;
+
+const DescriptionCompany = styled.div`
+    font-size: 1.3rem;
+    color: black;
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+
+`;
+
+const ButtonCompany = styled.a`
+    font-size: 1.5rem;
+    margin: auto;
+    border-radius: 5rem;
+    background-color: var(--green);
+    padding: 1rem;
+    font
 `;
 
 const Benefits = () => {
@@ -45,8 +85,21 @@ const Benefits = () => {
     return(
         <Background>
             <Title>Beneficios WeSexers</Title>
-            <BenefitContainer>Hey </BenefitContainer>
-            <BenefitContainer>Hey </BenefitContainer>
+            <BenefitContainer>
+                <AsanaLogo src='/img/premium-material/Asana_logo.png'/>
+                <TitleCompany>Asana 🇦🇷</TitleCompany>
+                <SubTitleCompany>15% OFF + envió gratis</SubTitleCompany>
+                <DescriptionCompany>El botón te lleva directo a comprar com descuento y envío gratis. </DescriptionCompany>
+                <ButtonCompany href='https://asanacup.com/discount/WESEX'>Quiero el beneficio :)</ButtonCompany>
+            </BenefitContainer>
+            <BenefitContainer>
+                <AsanaLogo src='/img/premium-material/Savage_logo.png'/>
+                <TitleCompany>Savage Sexhop 🇦🇷</TitleCompany>
+                <SubTitleCompany>15% OFF + envió gratis</SubTitleCompany>
+                <DescriptionCompany>Codigo: wesexer → pegando este codigo en la página tendrás un 15% OFF + envió gratis en el producto que quieras 😀. </DescriptionCompany>
+                <ButtonCompany href='https://www.savagesexshop.com.ar/'>Quiero el beneficio :)</ButtonCompany>
+            </BenefitContainer>
+            
         </Background>
     );
 };

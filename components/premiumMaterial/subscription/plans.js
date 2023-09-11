@@ -504,15 +504,15 @@ const PopupContent = () => {
         </InfoText>
         <br />
         <InfoText>
-          <span>+2 guías al mes:</span> Tedrás acceso a 2 guías nuevas que serán lanzadas cada mes 😉.
-        </InfoText>
-        <br />
-        <InfoText>
           <span>Beneficios con marcas asociadas:</span> Acceso a descuentos y beneficios con partners.
         </InfoText>
         <br />
         <InfoText>
           <span>Webinars QA:</span> Con los mejores expertos de sexualidad.
+        </InfoText>
+        <br />
+        <InfoText>
+          <span>Apoya el crecimiento de la educación sexual ❤️.</span>
         </InfoText>
         <br />
       </>
@@ -600,7 +600,7 @@ const Plans = () => {
             <Container style={{paddingTop: "5rem", paddingBottom: "5rem"}}>
                 <Title><span>Precios</span></Title>
                 <SlideHeader>
-                    <SubTitle>Accede a nuestro plan full access</SubTitle>
+                    <SubTitle>Hazte miembre de WeSex y revoluciona tu vida sexual</SubTitle>
                     <InfoButton onClick={() => setShowPopup(true)}>ℹ️</InfoButton>
                 </SlideHeader>
 
@@ -617,23 +617,23 @@ const Plans = () => {
                 <CenteredContainer>
                     <PlanContainer>
                         <PlanInfo>
-                            <TitlePlan>Plan All Access</TitlePlan>
+                            <TitlePlan>Membresía WeSexer</TitlePlan>
                             <Benefits>
                                 <Benefit>
                                     <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
-                                    <ul>Acceso a todo el contenido premium</ul>
+                                    <ul>Acceso a todo el contenido premium <InfoButton onClick={() => setShowPopup(true)}>ℹ️</InfoButton></ul>
                                 </Benefit>
                                 <Benefit>
                                     <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
-                                    <ul>+2 guías al mes</ul>
-                                </Benefit>
-                                <Benefit>
-                                    <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
-                                    <ul>Beneficios con marcas asociadas</ul>
+                                    <ul>Beneficios con marcas</ul>
                                 </Benefit>
                                 <Benefit>
                                     <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
                                     <ul>Webinars QA con expertos</ul>
+                                </Benefit>
+                                <Benefit>
+                                    <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
+                                    <ul>Apoya el crecimiento de la educación sexual ❤️</ul>
                                 </Benefit>
                             </Benefits>
                             {selectedOption === 'Argentina' && (
