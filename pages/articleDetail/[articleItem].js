@@ -435,7 +435,7 @@ const ArticleDetail = ({ articleItem }) => {
                 <RWebShare
                   data={{
                     text: `Mira este articulo de WeSex: ${articleItem?.title}`,
-                    url: `https://we-sex-web-eze.vercel.app/articleDetail/${articleItem?._id}`,
+                    url: `https://we.sex/articleDetail/${articleItem?._id}`,
                   }}
                 >
                   <ShareButton>
