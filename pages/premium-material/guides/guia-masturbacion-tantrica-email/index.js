@@ -55,7 +55,7 @@ export default function MasturbacionTantricaEmail() {
           price_ARG={`AR$ ${globalPrices.OneProductARS}`} price_USD={`U$D ${globalPrices.OneProductUSD}`} redirection_succesful_mp='https://payhip.com/b/Tv2Ha' 
           redirection_failed_mp='https://www.we.sex/premium-material/guides/guia-masturbacion-tantrica-email'
           link_payhip_usd='https://payhip.com/b/jPhQA' has_promo={true}
-          buy_just='Comprar solo guía masturbación tántrica 1' reminder_buy_just='' 
+          buy_just='Comprar guía masturbación tántrica 1' reminder_buy_just='' 
           link_promo='' text_promo1_1=''
           text_promo1Span='' text_promo1_2=''
           link_promo2='' text_promo2_1=''
