@@ -508,7 +508,7 @@ const PopupContent = () => {
         </InfoText>
         <br />
         <InfoText>
-          <span>Webinars QA:</span> Con los mejores expertos de sexualidad.
+          <span>Filosofadas sexuales:</span> Con los mejores expertos de sexualidad.
         </InfoText>
         <br />
         <InfoText>
@@ -629,7 +629,7 @@ const Plans = () => {
                                 </Benefit>
                                 <Benefit>
                                     <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
-                                    <ul>Webinars QA con expertos</ul>
+                                    <ul>Filosofadas sexuales</ul>
                                 </Benefit>
                                 <Benefit>
                                     <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />

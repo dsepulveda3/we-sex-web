@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useRef } from 'react';
+import { useRouter } from 'next/router';
 import styled from '@emotion/styled';
 
 const PopupContainer = styled.div`
@@ -201,11 +202,30 @@ const SubTitle = styled.div`
 
 function PopUpSubscription ({ setShowPopup }) {
 
+    const router = useRouter();
+    const [isOriginSubscribeRoute, setIsOriginSubscribeRoute] = useState(false);
+    const [origin, setOrigin] = useState(null);
+
+
+    useEffect(() => {  
+      if (router.isReady){
+          if (router.query.origin) {
+              setIsOriginSubscribeRoute(true);
+              setOrigin(router.query.origin);
+          }
+      }
+  }, [router.isReady, isOriginSubscribeRoute]);
+
+  const LinkSubscription =
+    origin ? `/premium-material/subscription?origin=${origin}` : `/premium-material/subscription`// Link for logged in user
+
     const premiumMaterials = [
-        'TODAS NUESTRAS GUÍAS',
+        'ACCESO A TODO EL CONTENIDO',
         'BENEFICIOS CON MARCAS',
-        'WEBINARS QA',
+        'FILOSOFADAS SEXUALES'
       ];
+
+
 
     return (
         <PopupContainer>
@@ -225,7 +245,7 @@ function PopUpSubscription ({ setShowPopup }) {
                         </Benefit>
                     ))}
                     </Benefits>
-                    <PopUpButton href='/premium-material/subscription'>Subscribirse</PopUpButton>
+                    <PopUpButton href={LinkSubscription}>Subscribirse</PopUpButton>
                 </TextContainer>
                 </ContentContainer>
             </PopupDialog>
