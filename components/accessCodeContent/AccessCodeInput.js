@@ -1,73 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
-import { useAuth } from '../../context/authUserContext';
-import ContentAccessCode from './ContentAccessCode';
-
-const PopupContainer = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("/img/landing/cta-bg.jpg");
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const PopupDialog = styled.div`
-  background-color: white;
-  padding: 2rem;
-  border-radius: 10px;
-  max-width: 80%;
-  max-height: 80%;
-  overflow-y: auto;
-  display: flex; /* Added to create a flex container */
-  flex-direction: column; /* Arrange children in a column */
-  align-items: center; /* Center children horizontally */
-  justify-content: center; /* Center children vertically */
-  position: relative; /* Added to position the CloseButton */
-
-  @media (max-width: 768px) {
-    max-width: 90%;
-    max-height: 90%;
-  }
-
-  @media (min-width: 768px) {
-    padding: 4rem 4rem;
-  }
-`;
-
-const ContentContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-
-
-  @media (min-width: 768px) {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-`;
-
-const PopUpImage = styled.img`
-  width: auto;
-  height: auto;
-  max-width: 50%;
-  max-height: 50vh; 
-  align-item: center;
-
-  @media (max-width: 540px) {
-    width: 40%;
-  }
-
-  @media (min-width: 768px) {
-    width: 20%;
-  }
-`;
 
 const TextContainer = styled.div`
   display: flex;
@@ -86,7 +18,7 @@ const Title = styled.div`
     font-size: 3rem;
     font-family: "Karla", sans-serif;
     font-weight: bold;
-    color: black;
+    color: var(--violet);
     text-align: center;
     
     span {
@@ -153,14 +85,26 @@ const PopUpButton = styled.a`
   }
 `;
 
-function AccessCodeContent () {
+function AccessCodeInput () {
+    const [accessCode, setAccessCode] = useState('');
+
+    const handleSubmit = () => {
+      console.log('Submit');
+      console.log(accessCode);
+    }
+
     return (
-        <PopupContainer>
-            <PopupDialog>
-              <ContentAccessCode />
-            </PopupDialog>
-        </PopupContainer>   
+        <TextContainer>
+            <Title>El ultimo paso</Title>
+            <SubTitle>Ingresa tu codigo para activar tu <span>subscripción</span> al contenido premium</SubTitle>
+            <CodeInput 
+                type="text" 
+                value={accessCode}
+                onChange={(e) => setAccessCode(e.target.value)} 
+            />
+            <PopUpButton type="submit" onClick={handleSubmit}>Enviar</PopUpButton>
+        </TextContainer>
     )
 }
 
-export default AccessCodeContent;
+export default AccessCodeInput;

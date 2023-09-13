@@ -1,43 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
 import styled from '@emotion/styled';
+import AccessCodeInput from './AccessCodeInput';
+import AccessCodeLoginRequired from './AccessCodeLoginRequired';
 import { useAuth } from '../../context/authUserContext';
-import ContentAccessCode from './ContentAccessCode';
 
-const PopupContainer = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("/img/landing/cta-bg.jpg");
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const PopupDialog = styled.div`
-  background-color: white;
-  padding: 2rem;
-  border-radius: 10px;
-  max-width: 80%;
-  max-height: 80%;
-  overflow-y: auto;
-  display: flex; /* Added to create a flex container */
-  flex-direction: column; /* Arrange children in a column */
-  align-items: center; /* Center children horizontally */
-  justify-content: center; /* Center children vertically */
-  position: relative; /* Added to position the CloseButton */
-
-  @media (max-width: 768px) {
-    max-width: 90%;
-    max-height: 90%;
-  }
-
-  @media (min-width: 768px) {
-    padding: 4rem 4rem;
-  }
-`;
 
 const ContentContainer = styled.div`
   display: flex;
@@ -86,7 +52,7 @@ const Title = styled.div`
     font-size: 3rem;
     font-family: "Karla", sans-serif;
     font-weight: bold;
-    color: black;
+    color: var(--violet);
     text-align: center;
     
     span {
@@ -153,14 +119,25 @@ const PopUpButton = styled.a`
   }
 `;
 
-function AccessCodeContent () {
+function ContentAccessCode () {
+    const [isLogged, setIsLogged] = useState(false);
+    const { authUser, loading } = useAuth();
+
+    useEffect(() => {
+      if (authUser){
+        setIsLogged(true);
+      }
+    }, [authUser, loading])
+
+
+
     return (
-        <PopupContainer>
-            <PopupDialog>
-              <ContentAccessCode />
-            </PopupDialog>
-        </PopupContainer>   
+        <ContentContainer>
+          <PopUpImage src="/img/premium-material/subscription_image_2.png" alt="Premium Access" />
+          {!isLogged && (<AccessCodeLoginRequired />)}
+          {isLogged && (<AccessCodeInput />)}
+        </ContentContainer>
     )
 }
 
-export default AccessCodeContent;
+export default ContentAccessCode;
