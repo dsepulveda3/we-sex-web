@@ -122,6 +122,7 @@ const Penetracion = () => {
             </SelectorButtonContainer>
             {selectedOption === 'op1' && (
                 <>
+                <Background2>
                 <ContainerInstructions>
                 <ul>
                     <li>
@@ -138,7 +139,7 @@ const Penetracion = () => {
                     </li>
                 </ul>
                 </ContainerInstructions>
-                <Background2>
+                
                     <ContainerImage>
                         <PositionImg src='/img/positions/misionero-cercania.jpg' />
                     </ContainerImage> 
@@ -147,6 +148,7 @@ const Penetracion = () => {
             )}
             {selectedOption === 'op2' && (
                 <>
+                <Background2>
                 <ContainerInstructions>
                 <ul>
                     <li>
@@ -157,7 +159,7 @@ const Penetracion = () => {
                     </li>
                 </ul>
                 </ContainerInstructions>
-                <Background2>
+                
                     <ContainerImage>
                         <PositionImg src='/img/positions/basculeo.gif' />
                     </ContainerImage> 
