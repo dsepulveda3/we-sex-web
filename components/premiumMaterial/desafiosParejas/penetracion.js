@@ -63,7 +63,7 @@ const SelectorButton = styled.select`
 
 const ContainerInstructions = styled.div`
     text-align: justify
-    justify-content: center;
+    // justify-content: center;
     font-family: "Karla", sans-serif;
     padding: 2rem;
     color: black;
@@ -118,6 +118,12 @@ const Penetracion = () => {
                 <SelectorButton onChange={(e) => setSelectedOption(e.target.value)}>
                     <option value="op1">1-. Misionero con cercanía</option>
                     <option value="op2">2-. Basculeame todo</option>
+                    <option value="op3">3-. Levitate de dua lipa</option>
+                    <option value="op4">4-. AbraSex</option>
+                    <option value="op5">5-. Boca abajo</option>
+                    <option value="op6">6-. Costadito</option>
+                    <option value="op7">7-. Pe-Perreito</option>
+                    <option value="op8">8-. Patitas al hombro</option>
                 </SelectorButton>
             </SelectorButtonContainer>
             {selectedOption === 'op1' && (
@@ -139,7 +145,6 @@ const Penetracion = () => {
                     </li>
                 </ul>
                 </ContainerInstructions>
-                
                     <ContainerImage>
                         <PositionImg src='/img/positions/misionero-cercania.jpg' />
                     </ContainerImage> 
@@ -159,15 +164,159 @@ const Penetracion = () => {
                     </li>
                 </ul>
                 </ContainerInstructions>
-                
                     <ContainerImage>
                         <PositionImg src='/img/positions/basculeo.gif' />
                     </ContainerImage> 
                 </Background2>  
                 </>
             )}
-            
-            
+            {selectedOption === 'op3' && (
+                <>
+                <Background2>
+                <ContainerInstructions>
+                <ul>
+                    <li>
+                        Posición para estimular el punto G.
+                    </li>
+                    <li>
+                        Levantando las caderas en la posición del misionero, podemos estimular mejor la pared anterior de la vagina en la zona del Punto G.
+                    </li>
+                    <li>
+                        Persona con vulva: Subir la cadera y realizar pequeños movimientos de pelvis hacia tu pareja
+                    </li>
+                    <li>
+                        Persona con pene: Puedes ayudar a tu pareja a levantarse o sostenerle la cadera.
+                    </li>
+                    <li>
+                        Wesexer tip: recomendamos el contacto visual en esta posición.
+                    </li>
+                </ul>
+                </ContainerInstructions>
+                    <ContainerImage>
+                        <PositionImg src='/img/positions/levitate.jpg' />
+                    </ContainerImage> 
+                </Background2>  
+                </>
+            )}
+            {selectedOption === 'op4' && (
+                <>
+                <Background2>
+                <ContainerInstructions>
+                <ul>
+                    <li>
+                        Acá queda aún más apretado y friccionado el clítoris con la pelvis de tu pareja sexual.
+                    </li>
+                    <li>
+                        La persona con pene se queda quieta y la persona con vulva va y viene buscando la fricción.
+                    </li>
+                    <li>
+                        Disfruten de la cercanía de sus cuerpos. Esta posición es ideal para sincronizar la respiración.
+                    </li>
+                    <li>
+                        Pueden combinar con besos en el cuello 💥
+                    </li>
+                </ul>
+                </ContainerInstructions>
+                    <ContainerImage>
+                        <PositionImg src='/img/positions/abrasex.jpg' />
+                    </ContainerImage> 
+                </Background2>  
+                </>
+            )}
+            {selectedOption === 'op5' && (
+                <>
+                <Background2>
+                <ContainerInstructions>
+                <ul>
+                    <li>
+                        Esta posición permite a la persona con vulva friccionar el clítoris contra sus manos o contra el colchón mientras es penetrada.
+                    </li>
+                    <li>
+                        Los besos en la espalda y en el cuello suman mucho.
+                    </li>
+                    <li>
+                        Agarrar los senos de tu pareja o estimularle manualmente el clitoris para mas placer 🔥.
+                    </li>
+                    <li>
+                        Si les gusta a ambos, tirar un poquito del pelo queda comodo en esta posición. Siempre con cuidado y consentimiento.
+                    </li>
+                </ul>
+                </ContainerInstructions>
+                    <ContainerImage>
+                        <PositionImg src='/img/positions/boca_abajo.jpg' />
+                    </ContainerImage> 
+                </Background2>  
+                </>
+            )}
+            {selectedOption === 'op6' && (
+                <>
+                <Background2>
+                <ContainerInstructions>
+                <ul>
+                    <li>
+                        Acá la vulva queda en fricción con la pierna de tu pareja.
+                    </li>
+                    <li>
+                        Persona con vulva: Vas a buscar que tu vulva quede entrelazada con las piernas de tu pareja y mover tus caderas para buscar la fricción
+                    </li>
+                    <li>
+                        Persona con pene: entrar y salir suavemente, sintiendo cada sensación.
+                    </li>
+                </ul>
+                </ContainerInstructions>
+                    <ContainerImage>
+                        <PositionImg src='/img/positions/costadito.jpg' />
+                    </ContainerImage> 
+                </Background2>  
+                </>
+            )}
+            {selectedOption === 'op7' && (
+                <>
+                <Background2>
+                <ContainerInstructions>
+                <ul>
+                    <li>
+                        Permite buena estimulación del canal vaginal.
+                    </li>
+                    <li>
+                        Podes además estimular tu clítoris de forma manual.
+                    </li>
+                    <li>
+                        Jugá con la inclinación de tu torso para buscar la estimulación y presión que mas placer te produzca. Hay que ir con cuidado para no lastimar el pene.
+                    </li>
+                    <li>
+                        Persona con pene: Relajate y disfruta.
+                    </li>
+                </ul>
+                </ContainerInstructions>
+                    <ContainerImage>
+                        <PositionImg src='/img/positions/boca_abajo.jpg' />
+                    </ContainerImage> 
+                </Background2>  
+                </>
+            )}
+            {selectedOption === 'op8' && (
+                <>
+                <Background2>
+                <ContainerInstructions>
+                <ul>
+                    <li>
+                        Al levantar las piernas el canal vaginal se acorta y el cuello del útero queda más expuesto.
+                    </li>
+                    <li>
+                        Recomendamos entrar y salir variando la velocidad e intensidad.
+                    </li>
+                    <li>
+                        Posición no recomendada para penes de más de 16 cm.
+                    </li>
+                </ul>
+                </ContainerInstructions>
+                <ContainerImage>
+                    <PositionImg src='/img/positions/patitas_al_hombro.jpg' />
+                </ContainerImage>
+                </Background2>  
+                </>
+            )}
         </Background>
     )
 };
