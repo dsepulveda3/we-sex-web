@@ -91,7 +91,7 @@ const ContainerImage = styled.div`
     width: 30%;
     margin: 2rem;
     @media (max-width: 540px) {
-        height: 15%;
+        height: 20%;
         width: 90%;
     }
     
@@ -145,7 +145,7 @@ const Penetracion = () => {
                     </li>
                 </ul>
                 </ContainerInstructions>
-                    <ContainerImage>
+                <ContainerImage>
                         <PositionImg src='/img/positions/misionero-cercania.jpg' />
                     </ContainerImage> 
                 </Background2>  
@@ -290,7 +290,7 @@ const Penetracion = () => {
                 </ul>
                 </ContainerInstructions>
                     <ContainerImage>
-                        <PositionImg src='/img/positions/boca_abajo.jpg' />
+                        <PositionImg src='/img/positions/pe_perreito.jpg' />
                     </ContainerImage> 
                 </Background2>  
                 </>
