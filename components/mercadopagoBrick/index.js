@@ -6,7 +6,7 @@ import MPForm from './mercadopagoForm/mpForm';
 const Background = styled.div`
   background-color: #00AEEF;
   padding: 12rem;
-  height: 100vh;
+  height: 100%;
   @media (max-width: 540px) {
     padding: 11rem 5rem 12rem 5rem;
   }

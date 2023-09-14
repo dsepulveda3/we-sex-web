@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { subscribe_to_premium } from '../../../requests/premiumService';
+import { subscribe_to_premium, subscribe_to_premium_with_email } from '../../../requests/premiumService';
 import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
+import { useAuth } from '../../../context/authUserContext';
 import styled from '@emotion/styled';
 
 const Container = styled.div`
@@ -107,14 +108,38 @@ const WeSex = styled.div`
     font-family: "Averia Libre", sans-serif;
 `;
 
+const EmailInput = styled.input`
+  /* Add styles for your input here */
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-family: "Karla", sans-serif;
+  margin-bottom: 2.5rem;
+  width: 100%;
+  &:focus {
+    outline: none; /* Remove the browser's default focus outline */
+  }
+`;
+
 const PLAN_ID = process.env.NEXT_PUBLIC_PLAN_ID;
 
 function StripeForm() {
+  const { authUser, loading } = useAuth();
   const [isSubmitting, setIsSubmitting] = useState(false); 
   const [errorOccurred, setErrorOccurred] = useState(false);
+  const [isLogged, setIsLogged] = useState(false);
+  const [emailValue, setEmailValue] = useState('');
   const router = useRouter();
   const stripe = useStripe();
   const elements = useElements();
+
+  useEffect(() => {
+    if (!loading && authUser) {
+      setIsLogged(true);
+      setEmailValue(user.email);
+    }
+  }, [loading, authUser]);
 
   useEffect(() => {
     // Check if window is defined (client-side)
@@ -129,6 +154,34 @@ function StripeForm() {
         
     }
   }, []);
+
+  const handleRequest = async (token) => {
+    if (isLogged){
+      const response = await subscribe_to_premium(
+        PLAN_ID,
+        {
+          cardToken: token.id,
+          paymentMethod: 'STRIPE',
+        }
+      );
+      setIsSubmitting(false);
+      console.log(response);
+      return response;
+    } else {
+      const response = await subscribe_to_premium_with_email(
+        PLAN_ID,
+        {
+          cardToken: token.id,
+          email: emailValue,
+          paymentMethod: 'STRIPE',
+        }
+      );
+      setIsSubmitting(false);
+      console.log(response);
+      return response;
+    }
+  };
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -148,15 +201,7 @@ function StripeForm() {
       setIsSubmitting(false);
     } else {
       try{
-        const response = await subscribe_to_premium(
-          PLAN_ID,
-          {
-            cardToken: token.id,
-            paymentMethod: 'STRIPE',
-          }
-        );
-        setIsSubmitting(false);
-        console.log(response);
+        const response = await handleRequest(token);
         if (response.status === 201) {
           router.push('/');
           toast.success("Suscripción exitosa");
@@ -185,6 +230,13 @@ function StripeForm() {
       </Container>
       <Container>
         <CardTitle>Pagar con Tarjeta</CardTitle>
+        <CardSubTitle>Información personal</CardSubTitle>
+        <EmailInput 
+          type="email" placeholder="Email" 
+          value={emailValue} 
+          disabled={isLogged} 
+          onChange={(e) => setEmailValue(e.target.value)}
+        />
         <CardSubTitle>Información de la tarjeta</CardSubTitle>
         <CardElement />
         <CenterButton>

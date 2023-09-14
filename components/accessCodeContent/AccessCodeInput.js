@@ -65,7 +65,7 @@ const CodeInput = styled.input`
   width: 80%;
 
   &:focus {
-    outline: none; /* Remove the browser's default focus outline */
+    outline: none;
   }
 `;
 
