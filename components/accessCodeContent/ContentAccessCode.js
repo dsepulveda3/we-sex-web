@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
-import AccessCodeInput from './AccessCodeInput';
+import AccessCodeInput from './AccessCodeInputComponent';
 import AccessCodeLoginRequired from './AccessCodeLoginRequired';
+import LostCodeInput from './LostCodeInput';
 import { useAuth } from '../../context/authUserContext';
 
 
@@ -35,11 +36,14 @@ const PopUpImage = styled.img`
   }
 `;
 
+
 function ContentAccessCode () {
     const [isLogged, setIsLogged] = useState(false);
+    const [lostCode, setLostCode] = useState(false);
     const { authUser, loading } = useAuth();
 
     useEffect(() => {
+      console.log(lostCode);
       if (authUser){
         setIsLogged(true);
       }
@@ -50,8 +54,9 @@ function ContentAccessCode () {
     return (
         <ContentContainer>
           <PopUpImage src="/img/premium-material/subscription_image_2.png" alt="Premium Access" />
-          {!isLogged && (<AccessCodeLoginRequired />)}
-          {isLogged && (<AccessCodeInput />)}
+          {!isLogged && !lostCode && (<AccessCodeLoginRequired setLostLink={setLostCode} />)}
+          {isLogged && !lostCode && (<AccessCodeInput setLostLink={setLostCode} />)}
+          {lostCode && (<LostCodeInput setLostLink={setLostCode} />)}
         </ContentContainer>
     )
 }

@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
+import { toast } from 'react-toastify';
+import { regenerate_access_code } from '../../requests/premiumService';
 
 const TextContainer = styled.div`
   display: flex;
@@ -8,9 +10,9 @@ const TextContainer = styled.div`
   text-align: center;
 
   @media (min-width: 768px) {
+    margin-top: 0;
     margin-left: 20px;
     text-align: left;
-    padding: 4rem 0 4rem 4rem;
   }
 `;
 
@@ -53,6 +55,22 @@ const SubTitle = styled.div`
     }
 `;
 
+const CodeInput = styled.input`
+  /* Add styles for your input here */
+  padding: 1rem;
+  border: 2px solid var(--green);
+  border-radius: 5px;
+  font-size: 2.5rem;
+  font-family: "Karla", sans-serif;
+  color: var(--green);
+  margin-top: 2.5rem;
+  width: 80%;
+
+  &:focus {
+    outline: none;
+  }
+`;
+
 const PopUpButton = styled.a`
   background-color: var(--green);
   font-weight: bold;
@@ -82,20 +100,40 @@ const LostLink = styled.a`
     }
 `;
 
-function AccessCodeLoginRequired ({setLostLink}) {
+function LostCodeInput ({setLostLink}) {
+    const [email, setEmail] = useState('');
 
     const handleClick = () => {
-        setLostLink(true);
+        setLostLink(false);
+    }
+
+    const handleSubmit = () => {
+        regenerate_access_code(email)
+            .then((response) => {
+                if (response.status === 200) {
+                    console.log(response);
+                    toast.success('Se envio un nuevo código a tu email');
+                    setLostLink(false);
+                }
+            })
+            .catch((error) => {
+                toast.error('Hubo un error al enviar el código');
+            })
     }
 
     return (
         <TextContainer>
             <Title>El ultimo paso</Title>
-            <SubTitle>Debes iniciar sesión para canjear tu codigo</SubTitle>
-            <PopUpButton href="/login?origin=redeem-code">Iniciar sesión</PopUpButton>
-            <LostLink onClick={handleClick}>¿Perdiste tu código?</LostLink>
+            <SubTitle>Ingresa tu email para enviarte un nuevo <span>código</span></SubTitle>
+            <CodeInput 
+                type="text" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)} 
+            />
+            <PopUpButton type="submit" onClick={handleSubmit}>Enviar</PopUpButton>
+            <LostLink onClick={handleClick}>Volver</LostLink>
         </TextContainer>
     )
 }
 
-export default AccessCodeLoginRequired;
+export default LostCodeInput;

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
+import { toast } from 'react-toastify';
+import { redeem_access_code } from '../../requests/premiumService';
 
 const TextContainer = styled.div`
   display: flex;
@@ -85,12 +87,45 @@ const PopUpButton = styled.a`
   }
 `;
 
-function AccessCodeInput () {
+const LostLink = styled.a`
+    color: var(--violet);
+    margin-top: 3rem;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 2rem;
+    font-family: "Karla", sans-serif;
+    font-weight: bold;
+    :hover {
+        color: var(--green);
+    }
+`;
+
+function AccessCodeInput ({setLostLink}) {
     const [accessCode, setAccessCode] = useState('');
 
+    const handleClick = () => {
+        setLostLink(true);
+    }
+
     const handleSubmit = () => {
-      console.log('Submit');
-      console.log(accessCode);
+        redeem_access_code('premium', accessCode)
+            .then((response) => {
+                console.log(response);
+                if (response.status === 200) {
+                    if (response.data.status === 'used') {
+                        toast.error('Codigo ya utilizado');
+                        return;
+                    } else if (response.data.status === 'invalid') {
+                        toast.error('Codigo invalido');
+                        return;
+                    }
+                    toast.success('Codigo canjeado con exito');
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+                toast.error('Error al canjear el codigo');
+            })
     }
 
     return (
@@ -103,6 +138,7 @@ function AccessCodeInput () {
                 onChange={(e) => setAccessCode(e.target.value)} 
             />
             <PopUpButton type="submit" onClick={handleSubmit}>Enviar</PopUpButton>
+            <LostLink onClick={handleClick}>¿Perdiste tu código?</LostLink>
         </TextContainer>
     )
 }
