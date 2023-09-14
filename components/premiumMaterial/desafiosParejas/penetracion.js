@@ -3,23 +3,60 @@ import React, {useState} from "react";
 import styled from "@emotion/styled";
 
 const Background = styled.div`
+    background-color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    
+    padding: 0rem 25rem 0rem 25rem;
+    z-index: 1;
+    @media (max-width: 540px) {
+        height: 100%;
+        padding: 0rem;
+    }
+`;
+
+// const WeSexText = styled.div`
+//   position: absolute; /* Position the text absolutely within the container */
+//   color: var(--green); /* Text color */
+//   font-size: 24px; /* Font size */
+//   font-weight: bold; /* Font weight */
+//   pointer-events: none; /* Ensure the text doesn't block interaction with elements below */
+//   font-family: "Averia Libre", sans-serif;
+//   padding: 8rem;
+//   z-index: 0;
+
+
+//   /* Generate random positions */
+//   top: ${Math.random() * 100}%; /* Random percentage for top position */
+//   left: ${Math.random() * 100}%; /* Random percentage for left position */
+
+//   /* You can add more styling here as needed */
+// `;
+
+const Border = styled.div`
     background-color: var(--green);
-    height: 100vh;
+    border: 3px solid var(--violet); /* Add a white border */
+    margin: 2rem 10rem 2rem 10rem;
+    border-radius: 30px;
     display: flex;
     flex-direction: column;
     align-items: center; /* Center horizontally */
-
+    padding: 1rem;
     @media (max-width: 540px) {
-        height: 100vh;
+        border: 0px solid white; /* Add a white border */
+        padding: 0rem;
+        margin: 0rem;
+        border-radius: 0px;
+    
     }
-
 `;
 
 const Logo = styled.img`
-    height: 8%;
-    display: block;
-    margin: auto;
-    padding: 1rem;
+    height: 150px;
+    
+    padding: 4rem;
 `;
 
 const Title = styled.div`
@@ -44,7 +81,11 @@ const Text = styled.div`
     font-family: "Karla", sans-serif;
     font-size: 2rem;
     font-weight: bold;
-    text-align: center;
+    text-align: justify;
+
+    span {
+        background-color: var(--violet);
+    }
 `;
 
 const SelectorButtonContainer = styled.div`
@@ -53,6 +94,7 @@ const SelectorButtonContainer = styled.div`
     align-items: center;
     margin-top: 2rem;
     margin-bottom: 2rem;
+    padding: 1rem;
 `;
 
 const SelectorButton = styled.select`
@@ -69,18 +111,11 @@ const ContainerInstructions = styled.div`
     color: black;
     border-radius: 2rem;
     background-color: white;
-    width: 30%;
+    width: 80%;
     @media (max-width: 540px) {
         width: 90%;
         text-align: justify
     }
-`;
-
-const Background2 = styled.div`
-    background-color: var(--green);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 `;
 
 const ContainerImage = styled.div`
@@ -88,7 +123,7 @@ const ContainerImage = styled.div`
     border-radius: 2rem;
     background-color: var(--green);
     height: 20%;
-    width: 30%;
+    width: 40%;
     margin: 2rem;
     @media (max-width: 540px) {
         height: 20%;
@@ -101,19 +136,92 @@ const PositionImg = styled.img`
     border-radius: 2rem;
 `;
 
+const Button = styled.a`
+    
+    color: var(--green);
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 30px;
+
+    &:hover {
+        color: var(--violet); /* Change the color on hover */
+      }
+`;
 
 
 const Penetracion = () => {
 
     const [selectedOption, setSelectedOption] = useState('op1');
+    const [numeroAleatorio, setNumeroAleatorio] = useState(null);
+
+    const generarNumeroAleatorio = () => {
+        const nuevoNumero = Math.floor(Math.random() * 9) + 1;
+        setNumeroAleatorio(nuevoNumero);
+    };
 
     return(
         <Background>
+            <Border>
             <Logo src='/img/logo_wesex_croped.png' />
             <Title>PENETRACIÓN</Title>
             <SubTitle>Posición v/s Estimulo</SubTitle>
-            <Text style={{padding: "1rem"}}>Finalmente, llegó el turno de la penetración.</Text>
+        
+            <Text style={{padding: "2rem"}}>Finalmente, llegó el turno de la penetración.</Text>
+            <Text style={{padding: "2rem"}}>Es clave poder igualar o acercar esta brecha con estimulación previa. Y para eso, los venimos entrenando en desafíos anteriores.</Text>
+            <Text style={{padding: "2rem"}}><span>Para la estimulación "previa" a penetrar, podrán usar todas las herramientas aprendidas:</span></Text>
+            <Text style={{padding: "2rem"}}>
+                <ul>
+                    <li>
+                        Masajes
+                    </li>
+                    <li>
+                        Estimulación de zonas erógenas
+                    </li>
+                    <li>
+                        Besos, caricias
+                    </li>
+                    <li>
+                        Masturbación
+                    </li>
+                    <li>
+                        Sexo oral
+                    </li>
+                    <li>
+                        O simplemente elegir ir directo a los bifes jeje.
+                    </li>
+                </ul>
+            </Text>
+            <Text style={{padding: "2rem"}}><span>Una vez pasen a la penetración, les recomendamos lo siguiente:</span></Text>
+            <Text style={{padding: "2rem"}}>
+                <ul>
+                    <li>
+                        Empezar despacio.
+                    </li>
+                    <li>
+                        Conectar con tu pareja y sentir cada sensación poco a poco.
+                    </li>
+                </ul>
+            </Text>
+            <Text style={{padding: "2rem"}}>
+                <span>⚠️ Recuerden usar preservativo a menos que se hayan hecho estudios contra las ITS y usen otro método anticonceptivo 🙂</span>
+            </Text>
             {/* <Text>Antes de comenzar con el desafío, les recomendamos leer este pequeño artículo sobre la brecha orgasmica:</Text> */}
+            <Text style={{padding: "2rem"}}>
+                Como nos gusta jugar, no vamos a dejar las cosas así nomás. Les recomendamos 8 posiciones para probar, y 6 estímulos diferentes. Con el dado wesexer van a poder sortear qué posición realizarán y con qué estímulo la van a combinar.
+            </Text>
+            <Text style={{padding: "2rem"}}>
+                Además, les explicamos cómo aprovechar al máximo cada posición. Como siempre, con información de nuestros expertos 😎
+            </Text>
+            <div>
+                <Text style={{padding: "2rem"}}>
+                    {numeroAleatorio
+                    ? <span>Lanza este botón y haz la posición correspondiente al número: {numeroAleatorio}</span>
+                    : 'Presiona el botón para generar un número aleatorio.'}
+                </Text>
+                <SelectorButtonContainer>
+                    <Button onClick={generarNumeroAleatorio}>Generar Número Aleatorio</Button>
+                </SelectorButtonContainer>
+            </div>
             <SelectorButtonContainer>
                 <SelectorButton onChange={(e) => setSelectedOption(e.target.value)}>
                     <option value="op1">1-. Misionero con cercanía</option>
@@ -126,9 +234,10 @@ const Penetracion = () => {
                     <option value="op8">8-. Patitas al hombro</option>
                 </SelectorButton>
             </SelectorButtonContainer>
+            
             {selectedOption === 'op1' && (
                 <>
-                <Background2>
+               
                 <ContainerInstructions>
                 <ul>
                     <li>
@@ -148,12 +257,12 @@ const Penetracion = () => {
                 <ContainerImage>
                         <PositionImg src='/img/positions/misionero-cercania.jpg' />
                     </ContainerImage> 
-                </Background2>  
+                
                 </>
             )}
             {selectedOption === 'op2' && (
                 <>
-                <Background2>
+                
                 <ContainerInstructions>
                 <ul>
                     <li>
@@ -167,12 +276,12 @@ const Penetracion = () => {
                     <ContainerImage>
                         <PositionImg src='/img/positions/basculeo.gif' />
                     </ContainerImage> 
-                </Background2>  
+            
                 </>
             )}
             {selectedOption === 'op3' && (
                 <>
-                <Background2>
+              
                 <ContainerInstructions>
                 <ul>
                     <li>
@@ -195,12 +304,12 @@ const Penetracion = () => {
                     <ContainerImage>
                         <PositionImg src='/img/positions/levitate.jpg' />
                     </ContainerImage> 
-                </Background2>  
+                 
                 </>
             )}
             {selectedOption === 'op4' && (
                 <>
-                <Background2>
+               
                 <ContainerInstructions>
                 <ul>
                     <li>
@@ -220,12 +329,12 @@ const Penetracion = () => {
                     <ContainerImage>
                         <PositionImg src='/img/positions/abrasex.jpg' />
                     </ContainerImage> 
-                </Background2>  
+          
                 </>
             )}
             {selectedOption === 'op5' && (
                 <>
-                <Background2>
+                
                 <ContainerInstructions>
                 <ul>
                     <li>
@@ -245,12 +354,12 @@ const Penetracion = () => {
                     <ContainerImage>
                         <PositionImg src='/img/positions/boca_abajo.jpg' />
                     </ContainerImage> 
-                </Background2>  
+               
                 </>
             )}
             {selectedOption === 'op6' && (
                 <>
-                <Background2>
+           
                 <ContainerInstructions>
                 <ul>
                     <li>
@@ -267,12 +376,12 @@ const Penetracion = () => {
                     <ContainerImage>
                         <PositionImg src='/img/positions/costadito.jpg' />
                     </ContainerImage> 
-                </Background2>  
+           
                 </>
             )}
             {selectedOption === 'op7' && (
                 <>
-                <Background2>
+                
                 <ContainerInstructions>
                 <ul>
                     <li>
@@ -292,12 +401,12 @@ const Penetracion = () => {
                     <ContainerImage>
                         <PositionImg src='/img/positions/pe_perreito.jpg' />
                     </ContainerImage> 
-                </Background2>  
+                
                 </>
             )}
             {selectedOption === 'op8' && (
                 <>
-                <Background2>
+          
                 <ContainerInstructions>
                 <ul>
                     <li>
@@ -314,9 +423,10 @@ const Penetracion = () => {
                 <ContainerImage>
                     <PositionImg src='/img/positions/patitas_al_hombro.jpg' />
                 </ContainerImage>
-                </Background2>  
+              
                 </>
             )}
+            </Border>
         </Background>
     )
 };
