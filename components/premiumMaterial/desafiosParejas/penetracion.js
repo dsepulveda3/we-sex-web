@@ -241,7 +241,7 @@ const Penetracion = () => {
                 <ContainerInstructions>
                 <ul>
                     <li>
-                        En vez de alejarse y hacer un movimiento de meter y sacar el pene &quot;el famoso ”mete saca”&quot;, la persona con pene debe pegarse a la pelvis de la persona con vulva y hacer el famoso “froti froti”.
+                        En vez de alejarse y hacer un movimiento de meter y sacar el pene (el famoso &quot;mete saca&quot;), la persona con pene debe pegarse a la pelvis de la persona con vulva y hacer el famoso “froti froti”.
                     </li>
                     <li>
                         Persona con pene: El movimiento es hacia arriba y hacia adelante. Friccionando tu pelvis contra el clítoris.
