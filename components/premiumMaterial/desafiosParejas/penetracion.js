@@ -187,6 +187,23 @@ const AnswerQuestion = styled.p`
     }
 `;
 
+const obtenerAccionAleatoria = () => {
+    const acciones = [
+      " y el que presionó este botón se venda los ojos.",
+      "y el que no presionó se venda los ojos.",
+      "y sincronicen su respiración.",
+      "con mucho contacto visual.",
+      "con muchos besos de por medio."
+    ];
+  
+    // Genera un índice aleatorio dentro del rango de opciones
+    const indiceAleatorio = Math.floor(Math.random() * acciones.length);
+  
+    // Retorna la acción aleatoria
+    return acciones[indiceAleatorio];
+  };
+
+
 
 const Penetracion = () => {
 
@@ -202,6 +219,7 @@ const Penetracion = () => {
         setNumeroAleatorio(nuevoNumero);
     };
 
+    
     return(
         <Background>
             <Border>
@@ -326,7 +344,7 @@ const Penetracion = () => {
             </Text>
             {/* <Text>Antes de comenzar con el desafío, les recomendamos leer este pequeño artículo sobre la brecha orgasmica:</Text> */}
             <Text style={{padding: "2rem"}}>
-                Como nos gusta jugar, no vamos a dejar las cosas así nomás. Les recomendamos 8 posiciones para probar, y 6 estímulos diferentes. Con el dado wesexer van a poder sortear qué posición realizarán y con qué estímulo la van a combinar.
+                Como nos gusta jugar, no vamos a dejar las cosas así nomás. Les recomendamos 8 posiciones para probar, y 6 estímulos diferentes. Con el botón &quot;posición v/s estímulo&quot; van a poder sortear qué posición realizarán y con qué estímulo la van a combinar.
             </Text>
             <Text style={{padding: "2rem"}}>
                 Además, les explicamos cómo aprovechar al máximo cada posición. Como siempre, con información de nuestros expertos 😎
@@ -334,11 +352,11 @@ const Penetracion = () => {
             <div>
                 <Text style={{padding: "2rem"}}>
                     {numeroAleatorio
-                    ? <span>Lanza este botón y haz la posición correspondiente al número: {numeroAleatorio}</span>
-                    : 'Presiona el botón para generar un número aleatorio.'}
+                    ? <span>Haz la posición correspondiente al número: {numeroAleatorio} {obtenerAccionAleatoria()}</span>
+                    : 'Presiona el botón y descubre tu posición.'}
                 </Text>
                 <SelectorButtonContainer>
-                    <Button onClick={generarNumeroAleatorio}>Generar Número Aleatorio</Button>
+                    <Button onClick={generarNumeroAleatorio}>Posción v/s estímulo</Button>
                 </SelectorButtonContainer>
             </div>
             <SelectorButtonContainer>
