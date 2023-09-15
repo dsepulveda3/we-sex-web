@@ -343,8 +343,9 @@ const Penetracion = () => {
                 <span>⚠️ Recuerden usar preservativo a menos que se hayan hecho estudios contra las ITS y usen otro método anticonceptivo 🙂</span>
             </Text>
             {/* <Text>Antes de comenzar con el desafío, les recomendamos leer este pequeño artículo sobre la brecha orgasmica:</Text> */}
+            <Text style={{fontSize: "2.5rem"}}>VAMOS A JUGAR</Text>
             <Text style={{padding: "2rem"}}>
-                Como nos gusta jugar, no vamos a dejar las cosas así nomás. Les recomendamos 8 posiciones para probar, y 6 estímulos diferentes. Con el botón &quot;posición v/s estímulo&quot; van a poder sortear qué posición realizarán y con qué estímulo la van a combinar.
+                Les recomendamos 8 posiciones para probar, y 6 estímulos diferentes. Con el botón &quot;posición v/s estímulo&quot; van a poder sortear qué posición realizarán y con qué estímulo la van a combinar.
             </Text>
             <Text style={{padding: "2rem"}}>
                 Además, les explicamos cómo aprovechar al máximo cada posición. Como siempre, con información de nuestros expertos 😎
