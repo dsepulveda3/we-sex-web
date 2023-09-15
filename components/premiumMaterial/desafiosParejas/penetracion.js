@@ -1,6 +1,7 @@
 
 import React, {useState} from "react";
 import styled from "@emotion/styled";
+import { Card, CardHeader, Collapse, CardBody } from "reactstrap";
 
 const Background = styled.div`
     background-color: white;
@@ -149,10 +150,52 @@ const Button = styled.a`
 `;
 
 
+const TitleQuestion = styled.h4`
+    font-size: 1.5rem;
+    font-family: "Karla", sans-serif;
+    text-align: left;
+    color: black;
+    font-weight: bold;
+    margin-top: 10px;
+    
+    span {
+        color: var(--green);
+        font-weight: bold;
+        font-family: "Averia Libre", sans-serif;
+    }
+    @media(max-width: 540px){
+        margin-bottom:1rem;
+        font-size: 1.5rem;
+    }
+    @media(min-width: 540px){
+        margin-bottom: 1rem;
+    }
+`;
+
+const AnswerQuestion = styled.p`
+    font-family: "Karla", sans-serif;
+    font-size: 1.5rem;
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+    color: black;
+    span {
+        color: var(--green);
+    }
+    @media(max-width: 540px){
+        font-size: 1.7rem;
+        text-align:left;
+    }
+`;
+
+
 const Penetracion = () => {
 
     const [selectedOption, setSelectedOption] = useState('op1');
     const [numeroAleatorio, setNumeroAleatorio] = useState(null);
+    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen2, setIsOpen2] = useState(false);
+    const toggle = () => setIsOpen(!isOpen);
+    const toggle2 = () => setIsOpen2(!isOpen2);
 
     const generarNumeroAleatorio = () => {
         const nuevoNumero = Math.floor(Math.random() * 9) + 1;
@@ -165,8 +208,84 @@ const Penetracion = () => {
             <Logo src='/img/logo_wesex_croped.png' />
             <Title>PENETRACIÓN</Title>
             <SubTitle>Posición v/s Estimulo</SubTitle>
-        
+
+            
             <Text style={{padding: "2rem"}}>Finalmente, llegó el turno de la penetración.</Text>
+            <Text style={{padding: "2rem"}}>Antes de comenzar con el desafío, les recomendamos leer estos 2 pequeños artículo sobre la brecha orgásmica:</Text>
+            <Card style={{padding: "1rem", margin: "0.5rem",width: "95%"}}>
+                <CardHeader onClick={toggle} style={{backgroundColor: "white "}}>
+                <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
+                    
+                    <TitleQuestion style={{textAlign: "center"}}>Qué es la respuesta sexual humana.</TitleQuestion>
+                </div>
+                <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
+                </CardHeader>
+                <Collapse isOpen={isOpen}>
+                    <CardBody>
+                        <AnswerQuestion>
+                            Es la respuesta fisiológica que se activa en nosotros cada vez que nos excitamos. Esta teoría, desarrollada por Masters y Johnson, fue publicada en 1966 y se desarrolló a partir de la observación de parejas hetero en coito. La línea violeta representa a la persona con pene y la verde a la persona con vulva. Lo que se observa son cuatro fases: excitación, meseta, orgasmo y resolución. La persona con vulva puede demorar más en llegar a excitarse y alcanzar el orgasmo, pero puede también a veces presentar orgasmos secuenciales. 
+                        </AnswerQuestion>
+                        <img src="/img/premium-material/grafic.jpeg"/>
+                        <AnswerQuestion>
+                            Unos años más tarde, Helen Kaplan, sumó a este modelo el concepto de Deseo. Sería como una primera fase que puede sostenerse a lo largo de todo el proceso y que tiene que ver con tener ganas. El nivel de deseo depende de cada uno y además se construye, pero también depende de factores culturales, psicológicos, biológicos y afectivos.
+                        </AnswerQuestion>
+                    </CardBody>
+                </Collapse>
+            </Card>
+            <Card style={{padding: "1rem", margin: "0.5rem",width: "95%"}}>
+                <CardHeader onClick={toggle2} style={{backgroundColor: "white "}}>
+                <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
+                    
+                    <TitleQuestion style={{textAlign: "center"}}>La brecha orgásmica.</TitleQuestion>
+                </div>
+                <i className={isOpen2 ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
+                </CardHeader>
+                <Collapse isOpen={isOpen2}>
+                    <CardBody>
+                        <AnswerQuestion>
+                            Mujeres CIS: dificultades para llegar al orgasmo.
+                        </AnswerQuestion>
+                        <AnswerQuestion>
+                            ¿Sabían que las mujeres heterosexuales son el grupo que menos orgasmos consigue?
+                        </AnswerQuestion>
+                        <AnswerQuestion>
+                            En el primer puesto se llevan todos los orgasmos los hombres heterosexuales, con un porcentaje de orgasmos del 95%, le siguen los gays (89%), los varones bisexuales (88%), las lesbianas (86%) y las mujeres bisexuales (66%).
+                        </AnswerQuestion>
+                        <AnswerQuestion>
+                            En el último lugar tenemos a las (cis) mujeres heterosexuales con un 65%. Lo curioso es que no hay diferencias porcentuales entre los orgasmos alcanzados por masturbación. Asi que cuando las mujeres hetero se masturban, alcanzan el orgasmo en el mismo tiempo y con la misma frecuencia que los hombres.
+                        </AnswerQuestion>
+                        <AnswerQuestion>
+                            Básicamente el caos está en los encuentros sexuales entre un (cis) hombre y una (cis) mujer ambos heterosexuales. ¿Qué pasa detrás de esta brecha?
+                        </AnswerQuestion>
+                        <AnswerQuestion>
+                            <ul>
+                                <li>
+                                    Falta de estimulación de las zonas de placer femenina.
+                                </li>
+                                <li>
+                                    Relaciones sexuales centradas en el coito (penetración pene - vagina).
+                                </li>
+                                <li>
+                                    Molestias o dolor en la penetración.
+                                </li>
+                                <li>
+                                    Desconocimiento y bloqueos en la sexualidad femenina.
+                                </li>
+                                <li>
+                                    Ansiedades y miedos en los encuentros hetero por situaciones de abuso que ponen a la mujer en alerta ante un hombre.
+                                </li>
+                                <li>
+                                    Vergüenza, falta de comunicación, falta de intimidad, etc.
+                                </li>
+                                <li>
+                                    Siglos de encuentros sexuales que giran en torno al placer masculino.
+                                </li>
+                            </ul>
+                        </AnswerQuestion>
+                    </CardBody>
+                </Collapse>
+            </Card>
+            <Text style={{padding: "2rem"}}>Ahora sí:</Text>
             <Text style={{padding: "2rem"}}>Es clave poder igualar o acercar esta brecha con estimulación previa. Y para eso, los venimos entrenando en desafíos anteriores.</Text>
             <Text style={{padding: "2rem"}}><span>Para la estimulación &quot;previa&quot; a penetrar, podrán usar todas las herramientas aprendidas:</span></Text>
             <Text style={{padding: "2rem"}}>
