@@ -168,7 +168,7 @@ const Penetracion = () => {
         
             <Text style={{padding: "2rem"}}>Finalmente, llegó el turno de la penetración.</Text>
             <Text style={{padding: "2rem"}}>Es clave poder igualar o acercar esta brecha con estimulación previa. Y para eso, los venimos entrenando en desafíos anteriores.</Text>
-            <Text style={{padding: "2rem"}}><span>Para la estimulación "previa" a penetrar, podrán usar todas las herramientas aprendidas:</span></Text>
+            <Text style={{padding: "2rem"}}><span>Para la estimulación &quot;previa&quot; a penetrar, podrán usar todas las herramientas aprendidas:</span></Text>
             <Text style={{padding: "2rem"}}>
                 <ul>
                     <li>
