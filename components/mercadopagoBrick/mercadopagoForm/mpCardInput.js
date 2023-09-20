@@ -93,6 +93,8 @@ function MPCardInput (){
               try{
                 const response = await handleRequest(formData.token, formData.payer.email);
               } catch (error) {
+                console.log("Displayed Error");
+                console.log(error);
                 toast.error("Error al suscribirse");
               }
             },
