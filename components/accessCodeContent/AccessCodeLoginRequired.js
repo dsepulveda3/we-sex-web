@@ -92,7 +92,7 @@ function AccessCodeLoginRequired ({setLostLink}) {
         <TextContainer>
             <Title>El ultimo paso</Title>
             <SubTitle>En tu correo estan las instrucciones para canjear tu subscripción</SubTitle>
-            <PopUpButton href="/login?origin=redeem-code">Iniciar sesión</PopUpButton>
+            <PopUpButton href="/login?origin=access-code">Iniciar sesión</PopUpButton>
             <LostLink onClick={handleClick}>¿Perdiste tu código?</LostLink>
         </TextContainer>
     )
