@@ -27,6 +27,10 @@ function MPCardInput (){
           paymentMethod: 'MP',
         }
       );
+      if (response.status === 201) {
+        router.push('/');
+        toast.success("Suscripción exitosa");
+      }
       return response;
     } else {
       const response = await subscribe_to_premium_with_email(
@@ -37,6 +41,10 @@ function MPCardInput (){
           paymentMethod: 'MP',
         }
       );
+      if (response.status === 201) {
+        router.push('/subscription/access-code');
+        toast.success("Subscripcion de la tarjeta exitosa");
+      }
       return response;
     }
   };
@@ -83,10 +91,6 @@ function MPCardInput (){
             onSubmit: async ({ selectedPaymentMethod, formData }) => {
               try{
                 const response = await handleRequest(formData.cardToken, formData.email);
-                if (response.status === 201) {
-                  router.push('/');
-                  toast.success("Suscripción exitosa");
-                }
               } catch (error) {
                 toast.error("Error al suscribirse");
               }

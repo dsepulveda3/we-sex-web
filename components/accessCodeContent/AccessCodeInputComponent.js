@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import styled from '@emotion/styled';
 import { toast } from 'react-toastify';
 import { redeem_access_code } from '../../requests/premiumService';
@@ -100,7 +101,10 @@ const LostLink = styled.a`
     }
 `;
 
+const PLAN_ID = process.env.NEXT_PUBLIC_PLAN_ID;
+
 function AccessCodeInput ({setLostLink}) {
+    const router = useRouter();
     const [accessCode, setAccessCode] = useState('');
 
     const handleClick = () => {
@@ -108,7 +112,7 @@ function AccessCodeInput ({setLostLink}) {
     }
 
     const handleSubmit = () => {
-        redeem_access_code('premium', accessCode)
+        redeem_access_code(PLAN_ID, accessCode)
             .then((response) => {
                 console.log(response);
                 if (response.status === 200) {
@@ -120,6 +124,7 @@ function AccessCodeInput ({setLostLink}) {
                         return;
                     }
                     toast.success('Codigo canjeado con exito');
+                    router.push('/premium-material');
                 }
             })
             .catch((error) => {

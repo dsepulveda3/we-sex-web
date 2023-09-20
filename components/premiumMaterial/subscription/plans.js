@@ -568,13 +568,15 @@ const Plans = () => {
           
       }, [authUser])
 
-    const NextLinkArgentina = isLogged
-        ? origin ? `/premium-material/subscription/mercado-pago?origin=${origin}` : `/premium-material/subscription/mercado-pago`// Link for logged in user
-        : origin ? `/register?origin=${origin}`: '/register'; // Link for non-logged in user
+    // const NextLinkArgentina = isLogged
+    //     ? origin ? `/premium-material/subscription/mercado-pago?origin=${origin}` : `/premium-material/subscription/mercado-pago`// Link for logged in user
+    //     : origin ? `/register?origin=${origin}`: '/register'; // Link for non-logged in user
 
-    const NextLinkOtro = isLogged
-    ? origin ? `/premium-material/subscription/stripe?origin=${origin}` : `/premium-material/subscription/stripe`// Link for logged in user
-    : origin ? `/register?origin=${origin}`: '/register'; // Link for non-logged in user
+    // const NextLinkOtro = isLogged
+    // ? origin ? `/premium-material/subscription/stripe?origin=${origin}` : `/premium-material/subscription/stripe`// Link for logged in user
+    // : origin ? `/register?origin=${origin}`: '/register'; // Link for non-logged in user
+    const NextLinkArgentina = origin ? `/premium-material/subscription/mercado-pago?origin=${origin}` : `/premium-material/subscription/mercado-pago`
+    const NextLinkOtro = origin ? `/premium-material/subscription/stripe?origin=${origin}` : `/premium-material/subscription/stripe`
 
     const textRef1 = useRef(null);
     const textRef2 = useRef(null);
@@ -611,9 +613,9 @@ const Plans = () => {
                         <option value="Otro País">Otro País</option>
                     </SelectorButton>
                 </SelectorButtonContainer>
-                <div style={{display: "flex", justifyContent: "center"}}>
+                {/* <div style={{display: "flex", justifyContent: "center"}}>
                     {isLogged ? null : <LogInText href='/login' >DEBES ESTAR INICIADO SESIÓN PARA SUSCRIBIRTE</LogInText>}
-                </div>
+                </div> */}
                 <CenteredContainer>
                     <PlanContainer>
                         <PlanInfo>

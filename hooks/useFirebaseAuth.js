@@ -106,7 +106,11 @@ export default function useFirebaseAuth() {
         .then(() => {
             toast.success('Bienvenido de nuevo!');
             if (origin) {
-                router.push(`/premium-material/subscription?origin=${origin}`);
+                if (origin === 'access-code'){
+                    router.push('/premium-material/access-code');
+                } else{
+                    router.push(`/premium-material/subscription?origin=${origin}`);
+                }
             } else {
                 router.push('/');
             }
@@ -152,7 +156,11 @@ export default function useFirebaseAuth() {
         if (response.status === 200) {
             toast.success('Bienvenido de nuevo!');
             if (origin) {
-                router.push(`/premium-material/subscription?origin=${origin}`);
+                if (origin === 'access-code'){
+                    router.push('/premium-material/access-code');
+                } else{
+                    router.push(`/premium-material/subscription?origin=${origin}`);
+                }
             } else {
                 router.push('/');
             }
@@ -206,7 +214,11 @@ export default function useFirebaseAuth() {
                 toast.success('Cuenta creada exitosamente');
                 setUser(response.data);
                 if (origin) {
-                    router.push(`/premium-material/subscription?origin=${origin}`);
+                    if (origin === 'access-code'){
+                        router.push('/premium-material/access-code');
+                    } else{
+                        router.push(`/premium-material/subscription?origin=${origin}`);
+                    }
                 } else {
                     router.push('/');
                 }

@@ -164,6 +164,10 @@ function StripeForm() {
           paymentMethod: 'STRIPE',
         }
       );
+      if (response.status === 201) {
+        router.push('/');
+        toast.success("Suscripción exitosa");
+      }
       setIsSubmitting(false);
       console.log(response);
       return response;
@@ -176,6 +180,10 @@ function StripeForm() {
           paymentMethod: 'STRIPE',
         }
       );
+      if (response.status === 201) {
+        router.push('/premium-material/access-code');
+        toast.success("Subscripción de la tarjeta exitosa");
+      }
       setIsSubmitting(false);
       console.log(response);
       return response;
@@ -202,10 +210,6 @@ function StripeForm() {
     } else {
       try{
         const response = await handleRequest(token);
-        if (response.status === 201) {
-          router.push('/');
-          toast.success("Suscripción exitosa");
-        }
       } catch (error) {
         console.log(error);
         toast.error("Error al suscribirse");
