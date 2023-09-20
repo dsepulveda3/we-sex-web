@@ -123,7 +123,7 @@ function LostCodeInput ({setLostLink}) {
 
     return (
         <TextContainer>
-            <Title>El ultimo paso</Title>
+            <Title>El último paso</Title>
             <SubTitle>Ingresa tu email para enviarte un nuevo <span>código</span></SubTitle>
             <CodeInput 
                 type="text" 

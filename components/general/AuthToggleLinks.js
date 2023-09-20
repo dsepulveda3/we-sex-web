@@ -80,7 +80,6 @@ const AuthToggleLinks = ({ setLoginStatus }) => {
             Mi código
           </a>
           )}
-          
           <a className="nav-link" onClick={handleLogOut} style={{ color: "purple", cursor: "pointer" }}>
             Cerrar sesión
           </a>

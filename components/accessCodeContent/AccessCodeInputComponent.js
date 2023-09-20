@@ -135,8 +135,8 @@ function AccessCodeInput ({setLostLink}) {
 
     return (
         <TextContainer>
-            <Title>El ultimo paso</Title>
-            <SubTitle>Ingresa tu codigo para activar tu <span>subscripción</span> al contenido premium</SubTitle>
+            <Title>El último paso</Title>
+            <SubTitle>Ingresa tu codigo para activar tu <span>suscripción</span> al contenido premium</SubTitle>
             <CodeInput 
                 type="text" 
                 value={accessCode}
