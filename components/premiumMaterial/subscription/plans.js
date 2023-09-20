@@ -602,10 +602,9 @@ const Plans = () => {
             <Container style={{paddingTop: "5rem", paddingBottom: "5rem"}}>
                 <Title><span>Precios</span></Title>
                 <SlideHeader>
-                    <SubTitle>Hazte miembre de WeSex y revoluciona tu vida sexual</SubTitle>
-                    <InfoButton onClick={() => setShowPopup(true)}>ℹ️</InfoButton>
+                    <SubTitle>Hazte miembro de WeSex y revoluciona tu vida sexual</SubTitle>
+                    {/* <InfoButton onClick={() => setShowPopup(true)}>ℹ️</InfoButton> */}
                 </SlideHeader>
-
                 
                 <SelectorButtonContainer>
                     <SelectorButton onChange={(e) => setSelectedOption(e.target.value)}>
