@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
-import Link from 'next/link';
+import CircularProgressBar from './Loader';
 import styled from '@emotion/styled';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
@@ -92,6 +92,7 @@ const PDFViewer = ({pdfItem, demo, setLoaded}) => {
   const [numPages, setNumPages] = useState(null);
   const [containerWidth, setContainerWidth] = useState(0);
   const [pageHeight, setPageHeight] = useState(0);
+  const [loadProgress, setLoadProgress] = useState(0);
 
 
   useEffect(() => {
@@ -115,7 +116,15 @@ const PDFViewer = ({pdfItem, demo, setLoaded}) => {
   return (
     <Background paddingTop={demo? '0': '6rem'} minHeight={demo? '0': '100vh'}>
       <div className="pdf-container">
-        <Document file={pdfUrl} onLoadSuccess={onDocumentLoadSuccess}>
+        <Document 
+          file={pdfUrl} 
+          onLoadSuccess={onDocumentLoadSuccess} 
+          loading={<CircularProgressBar progress={loadProgress} />}
+          onLoadProgress={({ loaded, total }) => {
+              setLoadProgress(Math.round((loaded / total) * 100));
+            }
+          }
+        >
         <div className="pdf-pages">
           {hideGuide ? (
             Array.from(new Array(numPages || 0), (_, index) => (
