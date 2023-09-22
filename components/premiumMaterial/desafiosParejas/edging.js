@@ -487,7 +487,7 @@ const Edging = () => {
                             </Card>
                         </Col>
                         <Text>
-                            Luego de la visualización pueden comenzar de a poco con caricias y besos a entrar en la exploración física con su pareja
+                            Luego de la visualización pueden comenzar de a poco con caricias y besos a entrar en la exploración física con su pareja.
                         </Text>
                         <Text style={{marginBottom: "0px"}}>
                         <span>Parte 2:</span> EDGING
