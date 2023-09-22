@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useRouter } from 'next/router';
 import styled from "@emotion/styled";
 
 
@@ -20,7 +22,7 @@ const Title = styled.div`
     font-family: "Helvetica Neue", sans-serif;
     color: black;
     font-weight: bold;
-    font-size: 4rem;
+    font-size: 2.5rem;
     color: white;
     justify-content: center;
 
@@ -33,7 +35,7 @@ const SubTitle = styled.div`
     font-family: "Helvetica Neue", sans-serif;
     color: black;
     font-weight: bold;
-    font-size: 4rem;
+    font-size: 1.8rem;
     color: white;
     justify-content: center;
 
@@ -43,7 +45,7 @@ const SubTitle = styled.div`
 `;
 
 const Background = styled.div`
-    // background-color: #ebe4f8;
+    background-color: #ebe4f8;
     margin-top: 2rem;
     background: white;
     text-align: center;
@@ -51,6 +53,7 @@ const Background = styled.div`
 
     @media (min-width: 540px){
         padding: 0rem 10rem 20rem 10rem;
+  
     }
 
     @media (max-width: 540px){
@@ -144,37 +147,130 @@ const ImageDosis = styled.img`
 
 `;
 
-const Road = () => {
+
+
+const couplesData = {
+    "mati-vicky": {
+      subtitle: "Mati y Vickyy",
+      challenges: [
+        { status: "done", ML: "0px", MR: "0px"},
+        { status: "done", ML: "60px", MR: "0px"},
+        { status: "next", ML: "90px", MR: "0px"},
+        { status: "to_do", ML: "0px", MR: "0px"},
+        { status: "to_do", ML: "0px", MR: "50px"},
+        { status: "to_do", ML: "40px", MR: "0px"},
+        { status: "to_do", ML: "80px", MR: "0px"},
+        { status: "to_do", ML: "0px", MR: "0px"},
+      ],
+      // Add more data for this couple
+    },
+    // Add data for other couples
+  };
+
+  const ChallengeImage = ({ status, ML, MR }) => {
+    console.log(ML);
+    // Map the challenge status to the corresponding image component
+    const imageComponents = {
+      done: <ImageDoneChallenge src="/img/challenges/done.png" style={{ marginLeft: ML, marginRight: MR }}/>,
+      next: <ImageStartoDoChallenge src="/img/challenges/start.png" style={{ marginLeft: ML, marginRight: MR }}/>,
+      to_do: <ImageToDoChallenge src="/img/challenges/to_do.png" style={{ marginLeft: ML, marginRight: MR }}/>,
+    };
+  
+    // Render the appropriate image component based on the status
+    return imageComponents[status] || null;
+  };
+  
+  const Road = () => {
+    const router = useRouter();
+    const coupleName = router.query.origin;
+  
+    const [coupleData, setCoupleData] = useState(null);
+  
+    useEffect(() => {
+      // Check if coupleName is valid and exists in couplesData
+      if (coupleName && couplesData[coupleName]) {
+        setCoupleData(couplesData[coupleName]);
+      }
+    }, [coupleName]);
+  
     return (
         <>
-        <Header>
+          <Header>
             <Title>Desafíos para parejas</Title>
-            <SubTitle>Mati y Vicky</SubTitle>
-        </Header>
-        <Background>
-            
+            {coupleData ? (
+              <SubTitle>{coupleData.subtitle}</SubTitle>
+            ) : (
+              <SubTitle>Loading...</SubTitle> // Or any loading indicator
+            )}
+          </Header>
+          <Background>
             <ChallengesAndDosisContainer>
-                <ChallengesContainer>
-                    <ImageDoneChallenge src="/img/challenges/done.png" />
-                    <ImageDoneChallenge src="/img/challenges/done.png" style={{ marginLeft: '60px' }}/>
-                    <ImageStartoDoChallenge src="/img/challenges/start.png" style={{ marginLeft: '90px' }}/>
-                    <ImageToDoChallenge src="/img/challenges/to_do.png" style={{ marginLeft: '0px' }}/>
-                    <ImageToDoChallenge src="/img/challenges/to_do.png" style={{ marginRight: '50px' }}/>
-                    <ImageToDoChallenge src="/img/challenges/to_do.png" style={{ marginLeft: '40px' }}/>
-                    <ImageToDoChallenge src="/img/challenges/to_do.png" style={{ marginLeft: '80px' }}/>
-                    <ImageToDoChallenge src="/img/challenges/to_do.png"/>
-                </ChallengesContainer>
-                <DosisContainer>
-                    <ImageDosis src="/img/challenges/award_unlocked.png"/>
-                    <ImageDosis src="/img/challenges/award_locked.png"/>
-                    <ImageDosis src="/img/challenges/award_locked.png"/>
-                    <ImageDosis src="/img/challenges/award_locked.png"/>
-                    <ImageDosis src="/img/challenges/award_locked.png"/>
-                </DosisContainer>
+              <ChallengesContainer>
+                {coupleData ? (
+                  coupleData.challenges.map((challenge, index) => (
+                    <ChallengeImage key={index} status={challenge.status} ML={challenge.ML} MR={challenge.MR} />
+                  ))
+                ) : (
+                  <div>No Challenges Available</div> // Display a message or loading indicator
+                )}
+              </ChallengesContainer>
+              <DosisContainer>
+                <ImageDosis src="/img/challenges/award_unlocked.png"/>
+                <ImageDosis src="/img/challenges/award_locked.png"/>
+                <ImageDosis src="/img/challenges/award_locked.png"/>
+                <ImageDosis src="/img/challenges/award_locked.png"/>
+                <ImageDosis src="/img/challenges/award_locked.png"/>
+              </DosisContainer>
             </ChallengesAndDosisContainer>
-        </Background>
+          </Background>
         </>
-    );
-}
+      );
+    };
+  
+  export default Road;
+
+// const Road = () => {
+//     const router = useRouter();
+//     const coupleName = router.query.origin;
+
+//     console.log("Data URl");
+//     console.log(router.query.origin);
+
+//     // Look up data for the couple based on the extracted name
+//     const coupleData = couplesData[coupleName];
+//     console.log(coupleData);
+
+    
+//     return (
+//         <>
+//         <Header>
+//             <Title>Desafíos para parejas</Title>
+//             <SubTitle>{coupleData.subtitle}</SubTitle>
+//         </Header>
+//         <Background>
+            
+//             <ChallengesAndDosisContainer>
+//                 <ChallengesContainer>
+//                     <ImageDoneChallenge src="/img/challenges/done.png" />
+//                     <ImageDoneChallenge src="/img/challenges/done.png" style={{ marginLeft: '60px' }}/>
+//                     <ImageStartoDoChallenge src="/img/challenges/start.png" style={{ marginLeft: '90px' }}/>
+//                     <ImageToDoChallenge src="/img/challenges/to_do.png" style={{ marginLeft: '0px' }}/>
+//                     <ImageToDoChallenge src="/img/challenges/to_do.png" style={{ marginRight: '50px' }}/>
+//                     <ImageToDoChallenge src="/img/challenges/to_do.png" style={{ marginLeft: '40px' }}/>
+//                     <ImageToDoChallenge src="/img/challenges/to_do.png" style={{ marginLeft: '80px' }}/>
+//                     <ImageToDoChallenge src="/img/challenges/to_do.png"/>
+//                 </ChallengesContainer>
+//                 <DosisContainer>
+//                     <ImageDosis src="/img/challenges/award_unlocked.png"/>
+//                     <ImageDosis src="/img/challenges/award_locked.png"/>
+//                     <ImageDosis src="/img/challenges/award_locked.png"/>
+//                     <ImageDosis src="/img/challenges/award_locked.png"/>
+//                     <ImageDosis src="/img/challenges/award_locked.png"/>
+//                 </DosisContainer>
+//             </ChallengesAndDosisContainer>
+//         </Background>
+//         </>
+//     );
+// }
  
-export default Road;
+// export default Road;
