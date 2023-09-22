@@ -467,49 +467,23 @@ const Comunicacion = () => {
                         Luego de compartir su listado de preguntas mutuamente, pueden fluir en la conversación en caso de que crean que haga falta retomar el tema de conversación con mayor tranquilidad y apertura. 
                             
                         </Text>
-                        <Col xs="12" lg="6" md="3">
-                            <Card style={{margin:"10px 10px 10px 10px"}}>
-                                <CardHeader onClick={toggle} style={{backgroundColor: "white "}}>
-                                <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
-                                    <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
-                                    <TitleQuestion>Les compartimos algunos tips para aplicar la comunicación asertiva</TitleQuestion>
-                                </div>
-                                <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
-                                </CardHeader>
-                                <Collapse isOpen={isOpen}>
-                                    <CardBody>
-                                        <AnswerQuestion>
-                                            <ul>
-                                                <li>
-                                                    Lo más importante es la escucha activa, la atención y el interés genuino por entender lo que le pasa a tu pareja. Escuchar suena fácil pero es una tarea muy complicada, ya que cuando estamos escuchando, la mente empieza a generar argumentos para defendernos, o vienen pensamientos de juicio y emociones incómodas. Entonces, no escuchamos genuinamente y no logramos empatizar con la emoción de la otra persona. Te proponemos que intentes prestar atención a tu forma de escuchar y vuelvas a la conversación cada vez que registres que te fuiste a tu cabeza. 
-                                                </li>
-                                                <li>
-                                                    El lenguaje no verbal también comunica y nos predispone a un tipo de escucha.  Por ejemplo, es importante que el cuerpo esté frente a frente, haciendo contacto visual y sin cruzar las manos. Esto marca una posición corporal de apertura y disponibilidad. 
-                                                </li>
-                                                <li>
-                                                    Ten en cuenta que lo que haces puede afectar al otro y viceversa, entonces intenta cuidar tus acciones y palabras. Por ejemplo, cuando estamos enojados decimos y hacemos cosas que pueden lastimar a los demás. Ten en cuenta y reflexiona si lo que vas a decir, es para mejorar o sólo empeorará la situación y la comunicación.
-                                                </li>
-                                                <li>
-                                                    Al inicio de cualquier conversación incómoda, pregúntate, ¿qué es lo que buscas? ¿buscas comunicación asertiva, llena de respeto y amor o de lo contrario sin respeto y agresiva?. Mantén clara la intención y esta te guiará hacia la resolución de los conflictos. 
-                                                </li>
-                                                <li>
-                                                    Trata de ser consciente de tus pensamientos y de tus emociones, toma una pausa para identificar qué te está pasando. Esto nos ayuda a controlarnos para elegir realmente cómo queremos proceder. 
-                                                </li>
-                                                <li>
-                                                    Salí  de la idea de que la discusión se trata de ganar o perder y reconoce que no atacar es una situación de triunfo en sí misma. Por ejemplo, si vamos con la idea de que queremos tener la razón será muy difícil escuchar, empatizar y crear un espacio seguro, en cambio , si vamos abiertos a que no se trata de tener razón, podremos conectar emocionalmente y comprender el punto de vista de ambos como valioso. 
-                                                </li>
-                                            </ul>
-                                        </AnswerQuestion>
-                                    </CardBody>
-                                </Collapse>
-                            </Card>
-                        </Col>
-                        <Text>
-                        Cuando comiences a aplicar estas herramientas vas a comprobar cómo mejoran tus vínculos. 
-                        <br />
-                        <br />
-                        ¿Se quedaron con ganas de saber un poco más?
-                        </Text>
+                        {/* <Text>
+                        <span>Para resumir, el desafío de esta semana consta de : </span>
+                                <br/>
+                                <br/>
+                                
+                                <ol>
+                                    <li>
+                                       <span>Cada uno armara el listado escrito de las 6 preguntas del principio. </span>
+                                    </li>
+                                    <li>
+                                        <span>Se juntaran en un espacio tranquilo y que les guste a compartir lo que escribieron.</span>
+                                    </li>
+                                    <li>
+                                        <span>Seguirán los tips para continuar con una comunicación más sana y asertiva. </span>
+                                    </li>
+                                </ol>
+                        </Text> */}
                         <Col xs="12" lg="6" md="3">
                             <Card style={{margin:"0px 10px 10px 10px"}}>
                                 <CardHeader onClick={toggle2} style={{backgroundColor: "white "}}>
@@ -554,28 +528,55 @@ const Comunicacion = () => {
                                 </Collapse>
                             </Card>
                         </Col>
+                        <Text>
+                        Cuando comiences a aplicar estas herramientas vas a comprobar cómo mejoran tus vínculos. 
+                        <br />
+                        <br />
+                        ¿Se quedaron con ganas de saber un poco más?
+                        </Text>
+                        <Col xs="12" lg="6" md="3">
+                            <Card style={{margin:"10px 10px 10px 10px"}}>
+                                <CardHeader onClick={toggle} style={{backgroundColor: "white "}}>
+                                <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
+                                    <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
+                                    <TitleQuestion>Les compartimos algunos tips para aplicar la comunicación asertiva</TitleQuestion>
+                                </div>
+                                <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
+                                </CardHeader>
+                                <Collapse isOpen={isOpen}>
+                                    <CardBody>
+                                        <AnswerQuestion>
+                                            <ul>
+                                                <li>
+                                                    Lo más importante es la escucha activa, la atención y el interés genuino por entender lo que le pasa a tu pareja. Escuchar suena fácil pero es una tarea muy complicada, ya que cuando estamos escuchando, la mente empieza a generar argumentos para defendernos, o vienen pensamientos de juicio y emociones incómodas. Entonces, no escuchamos genuinamente y no logramos empatizar con la emoción de la otra persona. Te proponemos que intentes prestar atención a tu forma de escuchar y vuelvas a la conversación cada vez que registres que te fuiste a tu cabeza. 
+                                                </li>
+                                                <li>
+                                                    El lenguaje no verbal también comunica y nos predispone a un tipo de escucha.  Por ejemplo, es importante que el cuerpo esté frente a frente, haciendo contacto visual y sin cruzar las manos. Esto marca una posición corporal de apertura y disponibilidad. 
+                                                </li>
+                                                <li>
+                                                    Ten en cuenta que lo que haces puede afectar al otro y viceversa, entonces intenta cuidar tus acciones y palabras. Por ejemplo, cuando estamos enojados decimos y hacemos cosas que pueden lastimar a los demás. Ten en cuenta y reflexiona si lo que vas a decir, es para mejorar o sólo empeorará la situación y la comunicación.
+                                                </li>
+                                                <li>
+                                                    Al inicio de cualquier conversación incómoda, pregúntate, ¿qué es lo que buscas? ¿buscas comunicación asertiva, llena de respeto y amor o de lo contrario sin respeto y agresiva?. Mantén clara la intención y esta te guiará hacia la resolución de los conflictos. 
+                                                </li>
+                                                <li>
+                                                    Trata de ser consciente de tus pensamientos y de tus emociones, toma una pausa para identificar qué te está pasando. Esto nos ayuda a controlarnos para elegir realmente cómo queremos proceder. 
+                                                </li>
+                                                <li>
+                                                    Salí  de la idea de que la discusión se trata de ganar o perder y reconoce que no atacar es una situación de triunfo en sí misma. Por ejemplo, si vamos con la idea de que queremos tener la razón será muy difícil escuchar, empatizar y crear un espacio seguro, en cambio , si vamos abiertos a que no se trata de tener razón, podremos conectar emocionalmente y comprender el punto de vista de ambos como valioso. 
+                                                </li>
+                                            </ul>
+                                        </AnswerQuestion>
+                                    </CardBody>
+                                </Collapse>
+                            </Card>
+                        </Col>
 
                         
                         
                     </Row>
                     <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
                             <Text2>
-                                Para resumir, el desafío de esta semana consta de : 
-                                <br/>
-                                <br/>
-                                <ol>
-                                    <li>
-                                        Cada uno armara el listado escrito de las 6 preguntas del principio. 
-                                    </li>
-                                    <li>
-                                        Se juntaran en un espacio tranquilo y que les guste a compartir lo que escribieron.
-                                    </li>
-                                    <li>
-                                        Seguirán los tips para continuar con una comunicación más sana y asertiva. 
-                                    </li>
-                                </ol>
-                                <br/>
-                                <br/>
                                 <span>Les deseamos lo mejor con este desafío,</span>
                                 <br/>
                                 <span>El equipo de WeSex.</span>

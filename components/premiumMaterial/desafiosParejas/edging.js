@@ -540,7 +540,7 @@ const Edging = () => {
                         </Col>
 
                         <Text>
-                            Luego de frenar esa primera vez, van a invertir los roles. La persona que estaba estimulando va a pasar a ser estimulada y viceversa.
+                            Luego de frenar esa primera vez, van a <span>invertir los roles.</span> La persona que estaba estimulando va a pasar a ser estimulada y viceversa.
                             <br />
                             <br />
                             Seguirán entregándose al placer, y repetirán el proceso con los roles invertidos: 
@@ -549,7 +549,12 @@ const Edging = () => {
                             Estimulación progresiva → Detectar sensaciones → Frenar antes de llegar al orgasmo → Respiración profunda.
                             <br />
                             <br />
-                            Luego de  ese momento, volverán a invertir los roles. En algún momento también pueden decidir ir a penetración, o pasar a un 69 para estimularse mutuamente. Aquí es importante que si alguno de los dos está por llegar al orgasmo pueda retirarse previamente. Este desafío requiere mucha comunicación tanto verbal como corporal y confianza en que valdrá la pena aguantarse las ganas 🔥.
+                            <span>WeSexer Tip:</span> En algún momento también pueden decidir ir a penetración, o pasar a un 69 para estimularse mutuamente. Aquí es importante que si alguno de los dos está por llegar al orgasmo pueda retirarse previamente. Este desafío requiere mucha comunicación tanto verbal como corporal y confianza en que valdrá la pena aguantarse las ganas 🔥.
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <span>Parte 3:</span> Culminación
                             <br />
                             <br />
                             Idealmente, cuando sientan que ya no pueden más, que su deseo sexual y el clímax están al máximo, la persona que suele llegar al orgasmo más rápido pasará a ser quien estimule a su pareja, que tarda más en llegar, y se focalizarán solo en la estimulación de esta persona. Seguirán practicando edging, hasta que no puedan más y la persona estimulada decida entregarse al orgasmo. 
