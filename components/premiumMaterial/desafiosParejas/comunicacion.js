@@ -577,6 +577,22 @@ const Comunicacion = () => {
                     </Row>
                     <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
                             <Text2>
+                            Para resumir, el desafío de esta semana consta de :
+                                <br/>
+                                <br/>
+                                <ol>
+                                    <li>
+                                       Cada uno armara el listado escrito de las 6 preguntas del principio.
+                                    </li>
+                                    <li>
+                                        Se juntaran en un espacio tranquilo y que les guste a compartir lo que escribieron.
+                                    </li>
+                                    <li>
+                                        Seguirán los tips para continuar con una comunicación más sana y asertiva.
+                                    </li>
+                                </ol>
+                                <br />
+                                <br />
                                 <span>Les deseamos lo mejor con este desafío,</span>
                                 <br/>
                                 <span>El equipo de WeSex.</span>
