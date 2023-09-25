@@ -226,9 +226,35 @@ const PopUpButton = styled.a`
   }
 `;
 
+const PopUpDone = styled.div`
+  color: white;
+  background-color: #5bcb06;
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  padding: 0.4rem;
+  font-size: 1.8rem;
+`;
+
+const PopUpToDo = styled.div`
+  color: black;
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  padding: 0.4rem;
+  font-size: 1.8rem;
+`;
+
+const PopUpDoAnyways = styled.div`
+    color: #5bcb06;
+    font-family: "Karla", sans-serif;
+    font-weight: bold;
+    padding: 0.4rem;
+    font-size: 1.8rem;
+    text-decoration: underline; // Add this line to underline the text
+    cursor: pointer; // Add this line to change the cursor to a pointer on hover
+`;
 
 
-const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '' }) => {
+const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '', status }) => {
     const router = useRouter();
 
     const handleSubmit = () => {
@@ -238,14 +264,42 @@ const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '' }) => 
     const handleClose = () => {
       onClose();
     };
+
+    console.log("status");
+    console.log(status);
   
     return isVisible ? (
       <PopupCard onClick={handleClose}>
         <PopupDialog onClick={(e) => e.stopPropagation()}>
           <CloseButton onClick={handleClose}>✕</CloseButton>
+          {status === 'next' ? 
+          <>
           <PopUpTitle>{title}</PopUpTitle>
           <PopUpSubTitle>{subtitle}</PopUpSubTitle>
           <PopUpButton type="submit" onClick={handleSubmit}>¡ Comenzar 😁 !</PopUpButton>
+          </>
+          : null}
+          {status === 'done' ? 
+          <>
+          <PopUpTitle>{title}</PopUpTitle>
+          <PopUpSubTitle>{subtitle}</PopUpSubTitle>
+          <PopUpDone style={{marginTop: "1rem"}}> YA COMPLETASTE ESTE DESAFIO :)</PopUpDone>
+          <PopUpDoAnyways onClick={handleSubmit}>Quiero verlo de todas formas</PopUpDoAnyways>
+          {/* <PopUpButton type="submit" onClick={handleSubmit}>¡ Comenzar 😁 !</PopUpButton> */}
+          </>
+          : null}
+          {status === 'to_do' ? 
+          <>
+          <PopUpToDo> DEBES COMPLETAR TU ÚLTIMO DESAFIO PARA PODER DESBLOQUEAR EL PRÓXIMO</PopUpToDo>
+          {/* <PopUpButton type="submit" onClick={handleSubmit}>¡ Comenzar 😁 !</PopUpButton> */}
+          </>
+          : null}
+          {/* {title !== '' ? <PopUpTitle>{title}</PopUpTitle> : null}
+          {subtitle !== '' ? <PopUpSubTitle>{subtitle}</PopUpSubTitle> : null}
+          {link !== '' ? <PopUpButton type="submit" onClick={handleSubmit}>¡ Comenzar 😁 !</PopUpButton> : null} */}
+          
+
+          
         </PopupDialog>
       </PopupCard>
     ) : null;
@@ -255,7 +309,7 @@ const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '' }) => 
 
 const couplesData = {
     "mati-vicky": {
-      subtitle: "Mati y Vickyy",
+      subtitle: "Mati y Vicky SON LOS 1",
       challenges: [
         { status: "done", ML: "0px", MR: "0px", title: "QUIERO - LO HARÍA - NO LO HARÍA", subtitle: "Descripción del challenge Descripción del challenge Descripción del challenge", link: "/challenge1",},
         { status: "done", ML: "60px", MR: "0px", title: "CENA Y MASAJES", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/challenge1",},
@@ -280,19 +334,21 @@ const couplesData = {
         <ImageDoneChallenge
           src="/img/challenges/done.png"
           style={{ marginLeft: ML, marginRight: MR }}
+          onClick={() => onClick({ title, subtitle, link, status })}
         />
       ),
       next: (
         <ImageStartoDoChallenge
           src="/img/challenges/start.png"
           style={{ marginLeft: ML, marginRight: MR }}
-          onClick={() => onClick({ title, subtitle, link })}
+          onClick={() => onClick({ title, subtitle, link, status })}
         />
       ),
       to_do: (
         <ImageToDoChallenge
           src="/img/challenges/to_do.png"
           style={{ marginLeft: ML, marginRight: MR }}
+          onClick={() => onClick({ title, subtitle, link, status })}
         />
       ),
     };
@@ -310,9 +366,9 @@ const couplesData = {
     const [popupContent, setPopupContent] = useState(null); 
     
 
-    const handleStartChallengeClick = ({ title, subtitle, link }) => {
+    const handleStartChallengeClick = ({ title, subtitle, link, status }) => {
         if (title && subtitle && link) {
-          setPopupContent({ title, subtitle, link }); // Store the challenge data in state
+          setPopupContent({ title, subtitle, link, status }); // Store the challenge data in state
           setPopupVisible(true); // Open the popup
         }
       };
@@ -366,6 +422,7 @@ const couplesData = {
           <Popup
             isVisible={isPopupVisible}
             onClose={handleClosePopup}
+            status = {popupContent ? popupContent.status : ''}
             title={popupContent ? popupContent.title : ''}
             subtitle={popupContent ? popupContent.subtitle : ''}
             link={popupContent ? popupContent.link : ''}
