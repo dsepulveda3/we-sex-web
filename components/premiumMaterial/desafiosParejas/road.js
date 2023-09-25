@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { useRouter } from 'next/router';
 import styled from "@emotion/styled";
@@ -148,32 +148,153 @@ const ImageDosis = styled.img`
 `;
 
 
+const PopupCard = styled.div`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 999;
+`;
+
+const PopupDialog = styled.div`
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px 10px 0 0; /* Apply border-radius only to top corners */
+  width: 100%;
+  height: 30%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 30%;
+  }
+
+  @media (min-width: 768px) {
+    padding: 4rem 4rem;
+  }
+`;
+
+const CloseButton = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+`;
+
+const PopUpTitle = styled.div`
+  color: black;
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  padding-bottom: 1rem;
+`;
+
+const PopUpSubTitle = styled.div`
+  color: black;
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  font-size: 1.6rem;
+`;
+
+
+const PopUpButton = styled.a`
+  background-color: #5bcb06;
+  font-weight: bold;
+  border-radius: 30px;
+  padding: 10px 40px;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 2rem;
+  margin-top: 20px;
+
+  @media (max-width: 540px) {
+    font-size: 1.5rem;
+  }
+`;
+
+
+
+const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '' }) => {
+    const router = useRouter();
+
+    const handleSubmit = () => {
+        router.push(link);
+    }
+
+    const handleClose = () => {
+      onClose();
+    };
+  
+    return isVisible ? (
+      <PopupCard onClick={handleClose}>
+        <PopupDialog onClick={(e) => e.stopPropagation()}>
+          <CloseButton onClick={handleClose}>✕</CloseButton>
+          <PopUpTitle>{title}</PopUpTitle>
+          <PopUpSubTitle>{subtitle}</PopUpSubTitle>
+          <PopUpButton type="submit" onClick={handleSubmit}>¡ Comenzar 😁 !</PopUpButton>
+        </PopupDialog>
+      </PopupCard>
+    ) : null;
+  };
+  
+  
 
 const couplesData = {
     "mati-vicky": {
       subtitle: "Mati y Vickyy",
       challenges: [
-        { status: "done", ML: "0px", MR: "0px"},
-        { status: "done", ML: "60px", MR: "0px"},
-        { status: "next", ML: "90px", MR: "0px"},
-        { status: "to_do", ML: "0px", MR: "0px"},
-        { status: "to_do", ML: "0px", MR: "50px"},
-        { status: "to_do", ML: "40px", MR: "0px"},
-        { status: "to_do", ML: "80px", MR: "0px"},
-        { status: "to_do", ML: "0px", MR: "0px"},
+        { status: "done", ML: "0px", MR: "0px", title: "QUIERO - LO HARÍA - NO LO HARÍA", subtitle: "Descripción del challenge Descripción del challenge Descripción del challenge", link: "/challenge1",},
+        { status: "done", ML: "60px", MR: "0px", title: "CENA Y MASAJES", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/challenge1",},
+        { status: "done", ML: "90px", MR: "0px", title: "JUEGO DE ROLES", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/challenge1",},
+        { status: "next", ML: "0px", MR: "0px", title: "MASTURBACIÓN", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/challenge1",},
+        { status: "to_do", ML: "0px", MR: "50px", title: "PPP Y PPC", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/challenge1",},
+        { status: "to_do", ML: "40px", MR: "0px", title: "EDGING", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/challenge1",},
+        { status: "to_do", ML: "80px", MR: "0px", title: "PENETRACIÓN V/S ESTÍMULO", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/challenge1",},
+        { status: "to_do", ML: "0px", MR: "0px", title: "CHALLE", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/challenge1",},
       ],
       // Add more data for this couple
     },
     // Add data for other couples
   };
 
-  const ChallengeImage = ({ status, ML, MR }) => {
-    console.log(ML);
+  const ChallengeImage = ({ challenge, onClick }) => {
+    const { status, ML, MR, title, subtitle, link } = challenge;
+  
     // Map the challenge status to the corresponding image component
     const imageComponents = {
-      done: <ImageDoneChallenge src="/img/challenges/done.png" style={{ marginLeft: ML, marginRight: MR }}/>,
-      next: <ImageStartoDoChallenge src="/img/challenges/start.png" style={{ marginLeft: ML, marginRight: MR }}/>,
-      to_do: <ImageToDoChallenge src="/img/challenges/to_do.png" style={{ marginLeft: ML, marginRight: MR }}/>,
+      done: (
+        <ImageDoneChallenge
+          src="/img/challenges/done.png"
+          style={{ marginLeft: ML, marginRight: MR }}
+        />
+      ),
+      next: (
+        <ImageStartoDoChallenge
+          src="/img/challenges/start.png"
+          style={{ marginLeft: ML, marginRight: MR }}
+          onClick={() => onClick({ title, subtitle, link })}
+        />
+      ),
+      to_do: (
+        <ImageToDoChallenge
+          src="/img/challenges/to_do.png"
+          style={{ marginLeft: ML, marginRight: MR }}
+        />
+      ),
     };
   
     // Render the appropriate image component based on the status
@@ -185,6 +306,20 @@ const couplesData = {
     const coupleName = router.query.origin;
   
     const [coupleData, setCoupleData] = useState(null);
+    const [isPopupVisible, setPopupVisible] = useState(false); // State for controlling the popup
+    const [popupContent, setPopupContent] = useState(null); 
+    
+
+    const handleStartChallengeClick = ({ title, subtitle, link }) => {
+        if (title && subtitle && link) {
+          setPopupContent({ title, subtitle, link }); // Store the challenge data in state
+          setPopupVisible(true); // Open the popup
+        }
+      };
+    
+    const handleClosePopup = () => {
+        setPopupVisible(false);
+    };
   
     useEffect(() => {
       // Check if coupleName is valid and exists in couplesData
@@ -207,11 +342,15 @@ const couplesData = {
             <ChallengesAndDosisContainer>
               <ChallengesContainer>
                 {coupleData ? (
-                  coupleData.challenges.map((challenge, index) => (
-                    <ChallengeImage key={index} status={challenge.status} ML={challenge.ML} MR={challenge.MR} />
-                  ))
+                coupleData.challenges.map((challenge, index) => (
+                    <ChallengeImage 
+                    key={index} 
+                    challenge={challenge} // Provide the entire challenge object as a prop
+                    onClick={handleStartChallengeClick} 
+                    />
+                ))
                 ) : (
-                  <div>No Challenges Available</div> // Display a message or loading indicator
+                <div>No Challenges Available</div>
                 )}
               </ChallengesContainer>
               <DosisContainer>
@@ -223,6 +362,15 @@ const couplesData = {
               </DosisContainer>
             </ChallengesAndDosisContainer>
           </Background>
+        
+          <Popup
+            isVisible={isPopupVisible}
+            onClose={handleClosePopup}
+            title={popupContent ? popupContent.title : ''}
+            subtitle={popupContent ? popupContent.subtitle : ''}
+            link={popupContent ? popupContent.link : ''}
+        />
+
         </>
       );
     };
