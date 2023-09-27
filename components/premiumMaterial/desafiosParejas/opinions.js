@@ -225,22 +225,22 @@ const Opinions = ({subtitle1_1, subtitle1_2}) => {
                             >
                                 <SwiperSlide>
                                     <GuideSquare>
-                                        <h3 style={{ color: "white", fontWeight: "bold" }}>"Increíble la conexión que generamos."</h3>
+                                        <h3 style={{ color: "white", fontWeight: "bold" }}>&quot;Increíble la conexión que generamos.&quot;</h3>
                                     </GuideSquare>
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <GuideSquare>
-                                        <h3 style={{ color: "white", fontWeight: "bold" }}>"Pude conocer más sus zonas erógenas y ella las mías."</h3>
+                                        <h3 style={{ color: "white", fontWeight: "bold" }}>&quot;Pude conocer más sus zonas erógenas y ella las mías.&quot;</h3>
                                     </GuideSquare>
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <GuideSquare>
-                                        <h3 style={{ color: "white", fontWeight: "bold" }}>"Vamos 1 mes y ya veo cambios en la sexualidad de la pareja."</h3>
+                                        <h3 style={{ color: "white", fontWeight: "bold" }}>&quot;Vamos 1 mes y ya veo cambios en la sexualidad de la pareja.&quot;</h3>
                                     </GuideSquare>
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <GuideSquare>
-                                        <h3 style={{ color: "white", fontWeight: "bold" }}>"Tener sexo de formas diferentes todas las semanas es increíble. "</h3>
+                                        <h3 style={{ color: "white", fontWeight: "bold" }}>&quot;Tener sexo de formas diferentes todas las semanas es increíble.&quot;</h3>
                                     </GuideSquare>
                                 </SwiperSlide>
                             </SwiperWrap>

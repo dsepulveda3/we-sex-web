@@ -146,7 +146,7 @@ const ComoFunciona = () => {
       <Background id="queVoyAEncontrar">
         <Container style={{ paddingTop: "5rem", paddingBottom: "5rem", textAlign: "center" }}>
           <Title>¿Cómo funciona?</Title>
-          <Text style={{ border: 'none' }}><span>"Es como tener un plan armado por expertos en sexo, para follar mejor que nunca"</span> - Camila, usuaria de WeSex. </Text>
+          <Text style={{ border: 'none' }}><span>&quot;Es como tener un plan armado por expertos en sexo, para follar mejor que nunca&quot;</span> - Camila, usuaria de WeSex. </Text>
           <Row className="justify-content-center">
             <Col xl={12} lg={12} md={12} xs={12} sm={12} className="align-items-center">
               <Text>
