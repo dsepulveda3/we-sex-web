@@ -412,11 +412,11 @@ const couplesData = {
                 )}
               </ChallengesContainer>
               <DosisContainer>
-                <ImageDosis src="/img/challenges/wesex_pasticolor.png"/>
-                <ImageDosis src="/img/challenges/wesex_pastinocolor.png"/>
-                <ImageDosis src="/img/challenges/wesex_pastinocolor.png"/>
-                <ImageDosis src="/img/challenges/wesex_pastinocolor.png"/>
-                <ImageDosis src="/img/challenges/wesex_pastinocolor.png"/>
+                <ImageDosis src="/img/challenges/WeSex_PastiColor.png"/>
+                <ImageDosis src="/img/challenges/WeSex_PastiNoColor.png"/>
+                <ImageDosis src="/img/challenges/WeSex_PastiNoColor.png"/>
+                <ImageDosis src="/img/challenges/WeSex_PastiNoColor.png"/>
+                <ImageDosis src="/img/challenges/WeSex_PastiNoColor.png"/>
               </DosisContainer>
             </ChallengesAndDosisContainer>
           </Background>

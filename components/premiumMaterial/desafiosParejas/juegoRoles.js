@@ -432,8 +432,8 @@ const JuegoRoles = () => {
                     <TitleWeSex>WeSex</TitleWeSex>
                     <Row className="justify-content-between">   
                         <ContentTitle>
-                            <Title>Desafío 2:</Title>
-                            <SubTitle><span>Hablemos de sexo</span></SubTitle>
+                            <Title>Desafío</Title>
+                            <SubTitle><span>Juego de Roles</span></SubTitle>
                         </ContentTitle>
                         {/* <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle> */}
 
