@@ -59,7 +59,7 @@ const Dudas = () => {
     return (
         <Background>
             <Container style={{paddingTop: "5rem", paddingBottom: "6rem", textAlign:"center"}}>
-                <Title>¿DUDAS?</Title>
+                <Title>QUIERO SABER MÁS</Title>
                 <Text>Escribile a Cami, que está lista para ayudarte en nuestro WhatsApp de soporte 😎!</Text>  
                 <Boton
                     href="https://wa.me/5491140678698"

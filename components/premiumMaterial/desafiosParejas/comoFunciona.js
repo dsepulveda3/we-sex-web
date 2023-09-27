@@ -146,7 +146,7 @@ const ComoFunciona = () => {
       <Background id="queVoyAEncontrar">
         <Container style={{ paddingTop: "5rem", paddingBottom: "5rem", textAlign: "center" }}>
           <Title>¿Cómo funciona?</Title>
-          <Text style={{ border: 'none' }}>Buena pregunta,<br />pero la respuesta es aún mejor 🤤</Text>
+          <Text style={{ border: 'none' }}><span>"Es como tener un plan armado por expertos en sexo, para follar mejor que nunca"</span> - Camila, usuaria de WeSex. </Text>
           <Row className="justify-content-center">
             <Col xl={12} lg={12} md={12} xs={12} sm={12} className="align-items-center">
               <Text>
@@ -163,7 +163,7 @@ const ComoFunciona = () => {
                 <CenteredContainer>
                 <Circle>2</Circle> 
                 </CenteredContainer>
-                Ese formulario va a ser analizado por <span>sexólogas expertas</span> de nuestro equipo, quienes <span>armarán el programa vivencial</span> personalizado para ustedes.
+                Inmediatamente podrán acceder al primero desafío.
               </Text>
             </Col>
             <Col xl={12} lg={12} md={12} xs={12} sm={12} className="align-items-center">
@@ -172,7 +172,7 @@ const ComoFunciona = () => {
                 <CenteredContainer>
                 <Circle>3</Circle> 
                 </CenteredContainer>
-                <span>Todas las semanas</span>, van a recibir <span>desafíos y actividades</span> para hacer en pareja. Muchas veces son planes copados y divertidos para salir de la rutina, otras, cosas para charlar o actividades para hacer en su tiempo libre.
+                <span>Todas las semanas</span>, van a recibir <span>desafíos sexuales diferentes</span> para hacer en pareja. 💥Van a experimentar con comunicación, afecto, masturbación, sexo oral, penetración, fantasias, y mucho más.
               </Text>
             </Col>
             <Col xl={12} lg={12} md={12} xs={12} sm={12} className="align-items-center">
@@ -190,7 +190,7 @@ const ComoFunciona = () => {
                 <CenteredContainer>
                 <Circle>5</Circle> 
                 </CenteredContainer>
-                Luego de cada desafío van a poder llenar una encuesta para contarnos cómo fue y el equipo de WeSex irá <span>ajustando el plan según sus necesidades.</span>
+                Con pequeñas preguntas vamos a saber cómo la están pasando y <span>ajustaremos el plan según sus necesidades.</span>
               </Text>
             </Col>
             <Col xl={12} lg={12} md={12} xs={12} sm={12} className="align-items-center">
@@ -216,7 +216,7 @@ const ComoFunciona = () => {
           text=Hola!%20Quiero%20más%20info%20sobre%20el%20programa%20para%20innovar%20en%20pareja">Quiero saber más</Boton> */}
           <BotonUniversal link_redireccion='https://wa.me/5491140678698?
           text=Hola!%20Quiero%20más%20info%20sobre%20el%20programa%20para%20innovar%20en%20pareja'
-          text="Quiero saber más"
+          text="Quiero empezar"
           textColor='white'
           bgColor='var(--green)'
           bgColorHover='var(--violet)'

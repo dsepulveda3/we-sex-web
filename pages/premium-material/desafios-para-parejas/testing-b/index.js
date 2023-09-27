@@ -6,6 +6,7 @@ import Explicacion from '../../../../components/premiumMaterial/explicacion'
 import ComoFunciona from '../../../../components/premiumMaterial/desafiosParejas/comoFunciona'
 import Dudas from '../../../../components/premiumMaterial/dudas'
 import Plans from '../../../../components/premiumMaterial/desafiosParejas/plans'
+import Opinions from '../../../../components/premiumMaterial/desafiosParejas/opinions';
 
 
 export default function Home() {
@@ -26,11 +27,12 @@ export default function Home() {
       
       <main>
         <Layout>
-        <Intro subtitle1_1='Desafios para ' subtitle1_2='gozar más que nunca' />
+        <Intro subtitle1_1='Lleva la sexualidad con tu pareja' subtitle1_2='al máximo de placer' />
         {/* <div style={{color: "black", textAlign: "center", fontSize: "3rem", fontWeight: "bold"}}>TESTING B</div> */}
         <Explicacion2 />
         <ComoFunciona />
         <Dudas />
+        <Opinions />
         <Plans />
         <Explicacion />
         </Layout>
