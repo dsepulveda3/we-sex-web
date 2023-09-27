@@ -1,9 +1,18 @@
 import React, { useEffect, useState, useRef } from 'react';
 import {Row, Col, Container, Card, CardHeader, CardBody, Collapse, Button} from 'reactstrap';
+import ArrowBack from './universals/arrowBack';
+import Notificar from './universals/notificar';
 import styled from '@emotion/styled';
 import * as PIXI from 'pixi.js';
-import santaUrl from '../../../public/img/rutina_bomba.png';
+import { useRouter } from 'next/router';
 
+
+const Header = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+`;
 
 const Background = styled.div`
 
@@ -28,6 +37,7 @@ const Background = styled.div`
     }
 `;
 
+
 const TitleWeSex = styled.div`
   font-size: 3.5rem;
   color: white;
@@ -36,7 +46,8 @@ const TitleWeSex = styled.div`
   margin-left: 4px;
   margin-top: 0px;
   margin-bottom: 0rem;
-  text-align: right;
+  
+  
 
   @media(max-width: 540px){
     color: white;
@@ -149,24 +160,6 @@ const Text = styled.p`
     }
 `;
 
-const ContainerText2 = styled.div`
-    background-color: var(--green);
-    
-    @media (max-width: 540px) {
-        
-  }
-`;
-
-const ContentTitle2 = styled.div`
-    display: flex;
-    flex-direction: row;
-    
-
-    @media(max-width: 540px) {
-        flex-direction: row;
-    }
-`;
-
 const Text2 = styled.p`
     margin-top: 2rem;
     font-family: "Averia Libre", sans-serif;
@@ -189,42 +182,6 @@ const Text2 = styled.p`
     }
     
 `;
-
-const AppImage = styled.img`
-    
-    width: 3%;
-    height: 80%;
-    @media(max-width: 540px){
-        margin-top: 1rem;
-        margin-left: 0rem;
-        margin-right: 0rem;
-        width: 15%;
-        height: 80%;
-    }
-    @media(min-width: 540px){
-        margin-right: 2rem;
-    }
-
-    
-`;
-
-const TextBombNormal = styled.div`
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    text-align: justify;
-
-    span {
-        font-size: 1.7rem;
-        font-weight: bold;
-        font-style: italic;
-        font-family: "Averia Libre", sans-serif;
-        background-color: var(--violet); /* Set the background color to green */
-        padding: 0.4rem 1rem; /* Add padding to make the background visible */
-        color: white; /* Set the text color to white */
-        
-    }
-`;
-
 
 //Questions
 
@@ -320,6 +277,22 @@ const BotonRandom = styled.a`
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a box shadow */
 `;
 
+const ContainerNotificarDone = styled.div`
+    padding: 2rem;
+
+`;
+
+const BotonNotificarDone = styled.a`
+    background-color: var(--green);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a box shadow */
+
+`;
 
 
 
@@ -332,6 +305,10 @@ const Edging = () => {
     const toggle = () => setIsOpen(!isOpen);
     const toggle2 = () => setIsOpen2(!isOpen2);
     const appRef = useRef(null); // Create a ref to hold the PIXI application
+    const router = useRouter();
+
+    const [isOriginRoute, setIsOriginRoute] = useState(false);
+    const [origin, setOrigin] = useState(null);
 
     const chooseRandomName = () => {
         const randomIndex = Math.floor(Math.random() * names.length);
@@ -418,8 +395,19 @@ const Edging = () => {
         };
       }, [showAnimation]);
       
+  
+      useEffect(() => {
+          if (router.isReady){
+            if (router.query.origin) {
+              setIsOriginRoute(true);
+              setOrigin(router.query.origin);
+            }
+          }
+        }, [router.isReady, isOriginRoute]);
       
-    
+      console.log("printing origin");
+      console.log(origin);
+      
     
     
       return (
@@ -430,8 +418,11 @@ const Edging = () => {
       {!showAnimation && (
             <Background>
               <Container>
-                    <TitleWeSex>WeSex</TitleWeSex>
-                    <Row className="justify-content-between">   
+                    <Header>
+                        <ArrowBack url={`/premium-material/desafios-para-parejas/road?origin=${origin}`}/>
+                        <TitleWeSex>WeSex</TitleWeSex>
+                    </Header>
+                    <Row className="justify-content-between">
                         <ContentTitle>
                             <Title>Desafío:</Title>
                             <SubTitle><span>Edging</span></SubTitle>
@@ -578,6 +569,10 @@ const Edging = () => {
                             </Text2>
                     </Row>
             </Container>
+            
+            <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://wa.me/5491140678698?
+            text=Hola!%20Somos%20${origin}.%20Terminamos%20el%20desafío%20EDGING`}/>
+
             </Background>
           )}
         </section>

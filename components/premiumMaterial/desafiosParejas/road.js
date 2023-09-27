@@ -53,7 +53,6 @@ const Background = styled.div`
 
     @media (min-width: 540px){
         padding: 0rem 10rem 20rem 10rem;
-  
     }
 
     @media (max-width: 540px){
@@ -98,8 +97,8 @@ const ImageToDoChallenge = styled.img`
 `;
 
 const ImageStartoDoChallenge = styled.img`
-    height: 15%;
-    width: 11%;
+    height: 16%;
+    width: 12%;
     padding: 2rem;
 
     @media (max-width: 540px){
@@ -135,13 +134,14 @@ const DosisContainer = styled.div`
 `;
 
 const ImageDosis = styled.img`
-    height: 15%;
-    width: 25%;
-    padding: 2rem;
+    height: 12%;
+    width: 14%;
+    padding: 1rem;
+    transform: rotate(0deg);
 
     @media (max-width: 540px){
         height: 10%;
-        width: 55%;
+        width: 40%;
         padding: 0.9rem;
     }
 
@@ -256,17 +256,25 @@ const PopUpDoAnyways = styled.div`
 
 const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '', status }) => {
     const router = useRouter();
+    const [isOriginRoute, setIsOriginRoute] = useState(false);
+    const [origin, setOrigin] = useState(null);
+
+    useEffect(() => {
+        if (router.isReady){
+          if (router.query.origin) {
+            setIsOriginRoute(true);
+            setOrigin(router.query.origin);
+          }
+        }
+      }, [router.isReady, isOriginRoute]);
 
     const handleSubmit = () => {
-        router.push(link);
+        router.push(`${link}?origin=${origin}`);
     }
 
     const handleClose = () => {
       onClose();
     };
-
-    console.log("status");
-    console.log(status);
   
     return isVisible ? (
       <PopupCard onClick={handleClose}>
@@ -294,12 +302,6 @@ const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '', statu
           {/* <PopUpButton type="submit" onClick={handleSubmit}>¡ Comenzar 😁 !</PopUpButton> */}
           </>
           : null}
-          {/* {title !== '' ? <PopUpTitle>{title}</PopUpTitle> : null}
-          {subtitle !== '' ? <PopUpSubTitle>{subtitle}</PopUpSubTitle> : null}
-          {link !== '' ? <PopUpButton type="submit" onClick={handleSubmit}>¡ Comenzar 😁 !</PopUpButton> : null} */}
-          
-
-          
         </PopupDialog>
       </PopupCard>
     ) : null;
@@ -312,9 +314,9 @@ const couplesData = {
       subtitle: "Mati y Vicky SON LOS 1",
       challenges: [
         { status: "done", ML: "0px", MR: "0px", title: "QUIERO - LO HARÍA - NO LO HARÍA", subtitle: "Descripción del challenge Descripción del challenge Descripción del challenge", link: "/challenge1",},
-        { status: "done", ML: "60px", MR: "0px", title: "CENA Y MASAJES", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/challenge1",},
+        { status: "done", ML: "60px", MR: "0px", title: "CENA Y MASAJES", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/premium-material/desafios-para-parejas/cocina",},
         { status: "done", ML: "90px", MR: "0px", title: "JUEGO DE ROLES", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/challenge1",},
-        { status: "next", ML: "0px", MR: "0px", title: "MASTURBACIÓN", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/challenge1",},
+        { status: "next", ML: "0px", MR: "0px", title: "EDGING", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/premium-material/desafios-para-parejas/edging",},
         { status: "to_do", ML: "0px", MR: "50px", title: "PPP Y PPC", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/challenge1",},
         { status: "to_do", ML: "40px", MR: "0px", title: "EDGING", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/challenge1",},
         { status: "to_do", ML: "80px", MR: "0px", title: "PENETRACIÓN V/S ESTÍMULO", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/challenge1",},
@@ -339,7 +341,7 @@ const couplesData = {
       ),
       next: (
         <ImageStartoDoChallenge
-          src="/img/challenges/start.png"
+          src="/img/challenges/WeSex_next.png"
           style={{ marginLeft: ML, marginRight: MR }}
           onClick={() => onClick({ title, subtitle, link, status })}
         />
@@ -364,6 +366,7 @@ const couplesData = {
     const [coupleData, setCoupleData] = useState(null);
     const [isPopupVisible, setPopupVisible] = useState(false); // State for controlling the popup
     const [popupContent, setPopupContent] = useState(null); 
+
     
 
     const handleStartChallengeClick = ({ title, subtitle, link, status }) => {
@@ -410,11 +413,11 @@ const couplesData = {
                 )}
               </ChallengesContainer>
               <DosisContainer>
-                <ImageDosis src="/img/challenges/award_unlocked.png"/>
-                <ImageDosis src="/img/challenges/award_locked.png"/>
-                <ImageDosis src="/img/challenges/award_locked.png"/>
-                <ImageDosis src="/img/challenges/award_locked.png"/>
-                <ImageDosis src="/img/challenges/award_locked.png"/>
+                <ImageDosis src="/img/challenges/WeSex_PastiColor.png"/>
+                <ImageDosis src="/img/challenges/WeSex_PastiNoColor.png"/>
+                <ImageDosis src="/img/challenges/WeSex_PastiNoColor.png"/>
+                <ImageDosis src="/img/challenges/WeSex_PastiNoColor.png"/>
+                <ImageDosis src="/img/challenges/WeSex_PastiNoColor.png"/>
               </DosisContainer>
             </ChallengesAndDosisContainer>
           </Background>

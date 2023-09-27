@@ -309,14 +309,33 @@ const FullscreenCanvas = styled.div`
   align-items: center;
 `;
 
+const BotonRandom = styled.a`
+    background-color: var(--green);
+    color: white;
+    border: none;
+    border-radius: 10px; /* Make it rounded */
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a box shadow */
+`;
 
 
 
-const Desafio1 = () => {
+
+
+const JuegoRoles = () => {
     const [showAnimation, setShowAnimation] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
     const appRef = useRef(null); // Create a ref to hold the PIXI application
+
+    const names = ["Quien presiono este botón", "Quien NO presionó este botón"]; // Add the names you want to choose from
+    const [chosenName, setChosenName] = useState("");
+    const chooseRandomName = () => {
+        const randomIndex = Math.floor(Math.random() * names.length);
+        setChosenName(names[randomIndex]);
+      };
 
     useEffect(() => {
         let app = null;
@@ -426,9 +445,20 @@ const Desafio1 = () => {
                         <br/>
                         <br/>
                         Abajo les dejaremos un guion para que puedan utilizar como base en el juego de roles.
-                        <span>En este desafío, quien elegirá la fantasía será Fernando.</span> Es tu turno, Fer, de decidir cuál te gustaría 
-                        llevar a cabo. ¿Serás vos el que se disfrace, los dos o será Vane? ¿Te gustaría que se disfrace de abogada, 
-                        profesora, médica? Hoy, elegís y propones vos. Vane podrá evaluar si se siente cómoda con esa fantasía y, 
+
+                        <Text style={{marginBottom: "0px"}}>
+                            Presiona el botón antes de leer las instrucciones.
+                            <br />
+                            <br />
+                            <BotonRandom onClick={chooseRandomName}>¿Quién comienza?</BotonRandom>
+                            <br/>
+                            <br/>
+                            {chosenName && <div>Comienza: {chosenName}</div>}
+                        </Text>
+
+                        <span>En este desafío, quien elegirá la fantasía será {chosenName}.</span> Es tu turno de decidir cuál te gustaría 
+                        llevar a cabo. ¿Serás vos el que se disfrace, los dos o será tu pareja? ¿Te gustaría que se disfrace de abogado, 
+                        profesor, médico? Hoy, elegís y propones vos. Tu pareja podrá evaluar si se siente cómodo con esa fantasía y, 
                         en caso de que no la acepte, podrás pensar en otra, hasta que lleguen a una con la que ambos se sientan cómodos. 
                         Siempre mantenemos el consentimiento y la comunicación como base para todos los desafíos.
                         <br/>
@@ -563,76 +593,4 @@ const Desafio1 = () => {
       );
 }
  
-export default Desafio1;
-
-
-// useEffect(() => {
-    //     let app = null;
-    
-    //     if (showAnimation) {
-    //       app = new PIXI.Application({ background: '#5f32a2', resizeTo: window });
-    //       document.body.appendChild(app.view);
-    //       appRef.current = app; // Save the PIXI application to the ref
-    
-    //       // Set the canvas width and height to match the screen dimensions
-    //       app.view.style.width = `${window.innerWidth}px`;
-    //       app.view.style.height = `${window.innerHeight}px`;
-    
-    //       // Create a PIXI.Text element
-    //       const style = new PIXI.TextStyle({
-    //         fontFamily: 'Arial',
-    //         fontSize: 30,
-    //         fontStyle: 'italic',
-    //         fontWeight: 'bold',
-    //         fill: ['white', 'white'], // gradient
-            
-    //       });
-    
-    //       const richText = new PIXI.Text('Cargando Desafio 1 ...', style);
-    //       richText.x = 50;
-    //       richText.y = 220;
-    //       richText.anchor.set(0.5);
-    //       richText.x = app.screen.width / 2;
-    //       richText.y = app.screen.height / 2 - 180;
-    //       app.stage.addChild(richText);
-    
-    //       // Load the spritesheet
-    //       PIXI.Assets.load(santaUrl).then(() => {
-    //         // Create an AnimatedSprite
-    //         const frames = [];
-    //         for (let i = 0; i < 30; i++) {
-    //           const val = i < 10 ? `0${i}` : i;
-    //           frames.push(PIXI.Texture.from(`rollSequence00${val}.png`));
-    //         }
-    //         const anim = new PIXI.AnimatedSprite(frames);
-    //         anim.x = app.screen.width / 2;
-    //         anim.y = app.screen.height / 2;
-    //         anim.anchor.set(0.5);
-    //         anim.animationSpeed = 0.5;
-    //         anim.play();
-    //         app.stage.addChild(anim);
-    
-    //         // Animate the rotation
-    //         app.ticker.add(() => {
-    //           anim.rotation += 0.01;
-    //         });
-    
-    //         // Set a timeout to hide the animation after 3 seconds
-    //         setTimeout(() => {
-    //           // Stop the animation and remove PIXI elements from the stage
-    //           anim.stop();
-    //           app.stage.removeChild(richText);
-    //           app.stage.removeChild(anim);
-    //           setShowAnimation(false);
-    //         }, 3500);
-    //       });
-    //     } else if (appRef.current) {
-    //       appRef.current.view.style.display = 'none'; // If showAnimation is false, hide the PIXI canvas
-    //     }
-    
-    //     return () => {
-    //       if (app) {
-    //         document.body.removeChild(app.view); // Remove PIXI canvas from the DOM
-    //       }
-    //     };
-    //   }, [showAnimation]);
+export default JuegoRoles;

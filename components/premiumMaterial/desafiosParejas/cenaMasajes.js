@@ -309,14 +309,32 @@ const FullscreenCanvas = styled.div`
   align-items: center;
 `;
 
+const BotonRandom = styled.a`
+    background-color: var(--violet);
+    color: white;
+    border: none;
+    border-radius: 10px; /* Make it rounded */
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a box shadow */
+`;
 
 
 
-const Desafio1 = () => {
+
+const CenaMasajes = () => {
     const [showAnimation, setShowAnimation] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
     const appRef = useRef(null); // Create a ref to hold the PIXI application
+
+    const names = ["Quien presiono este botón", "Quien NO presionó este botón"]; // Add the names you want to choose from
+    const [chosenName, setChosenName] = useState("");
+    const chooseRandomName = () => {
+        const randomIndex = Math.floor(Math.random() * names.length);
+        setChosenName(names[randomIndex]);
+      };
 
     useEffect(() => {
         let app = null;
@@ -444,12 +462,22 @@ const Desafio1 = () => {
                                 <Title2 style={{textAlign: 'left'}}>LUEGO DE LA CENA</Title2>
                                 <AppImage src="../../img/bomb.png" alt="Bomba" />
                             </ContentTitle2>
+
+                            <Text style={{marginBottom: "0px"}}>
+                            Presiona el botón antes de leer las instrucciones.
+                            <br />
+                            <br />
+                            <BotonRandom onClick={chooseRandomName}>¿Quién comienza?</BotonRandom>
+                            <br/>
+                            <br/>
+                            {chosenName && <div>Comienza: {chosenName}</div>}
+                            </Text>
                         
                             <Text2>
-                                <span>Yani, hoy te toca realizar un masaje relajante y/o erótico a Dani. Sin expectativas de que lleve a algo más, simplemente para que el se sienta bien y relajado.</span>
+                                <span>{chosenName}, hoy te toca realizar un masaje relajante y/o erótico a tu pareja. Sin expectativas de que lleve a algo más, simplemente para que el se sienta bien y relajado.</span>
                                 <br/>
                                 <br/>
-                                Puedes preguntarle a Dani cómo le gustaría que sea el masaje, pero igualmente…
+                                Puedes preguntarle a Sergio cómo le gustaría que sea el masaje, pero igualmente…
                                 <br/>
                             </Text2>
                             <Col xs="12" lg="12" md="3">
@@ -551,76 +579,4 @@ const Desafio1 = () => {
       );
 }
  
-export default Desafio1;
-
-
-// useEffect(() => {
-    //     let app = null;
-    
-    //     if (showAnimation) {
-    //       app = new PIXI.Application({ background: '#5f32a2', resizeTo: window });
-    //       document.body.appendChild(app.view);
-    //       appRef.current = app; // Save the PIXI application to the ref
-    
-    //       // Set the canvas width and height to match the screen dimensions
-    //       app.view.style.width = `${window.innerWidth}px`;
-    //       app.view.style.height = `${window.innerHeight}px`;
-    
-    //       // Create a PIXI.Text element
-    //       const style = new PIXI.TextStyle({
-    //         fontFamily: 'Arial',
-    //         fontSize: 30,
-    //         fontStyle: 'italic',
-    //         fontWeight: 'bold',
-    //         fill: ['white', 'white'], // gradient
-            
-    //       });
-    
-    //       const richText = new PIXI.Text('Cargando Desafio 1 ...', style);
-    //       richText.x = 50;
-    //       richText.y = 220;
-    //       richText.anchor.set(0.5);
-    //       richText.x = app.screen.width / 2;
-    //       richText.y = app.screen.height / 2 - 180;
-    //       app.stage.addChild(richText);
-    
-    //       // Load the spritesheet
-    //       PIXI.Assets.load(santaUrl).then(() => {
-    //         // Create an AnimatedSprite
-    //         const frames = [];
-    //         for (let i = 0; i < 30; i++) {
-    //           const val = i < 10 ? `0${i}` : i;
-    //           frames.push(PIXI.Texture.from(`rollSequence00${val}.png`));
-    //         }
-    //         const anim = new PIXI.AnimatedSprite(frames);
-    //         anim.x = app.screen.width / 2;
-    //         anim.y = app.screen.height / 2;
-    //         anim.anchor.set(0.5);
-    //         anim.animationSpeed = 0.5;
-    //         anim.play();
-    //         app.stage.addChild(anim);
-    
-    //         // Animate the rotation
-    //         app.ticker.add(() => {
-    //           anim.rotation += 0.01;
-    //         });
-    
-    //         // Set a timeout to hide the animation after 3 seconds
-    //         setTimeout(() => {
-    //           // Stop the animation and remove PIXI elements from the stage
-    //           anim.stop();
-    //           app.stage.removeChild(richText);
-    //           app.stage.removeChild(anim);
-    //           setShowAnimation(false);
-    //         }, 3500);
-    //       });
-    //     } else if (appRef.current) {
-    //       appRef.current.view.style.display = 'none'; // If showAnimation is false, hide the PIXI canvas
-    //     }
-    
-    //     return () => {
-    //       if (app) {
-    //         document.body.removeChild(app.view); // Remove PIXI canvas from the DOM
-    //       }
-    //     };
-    //   }, [showAnimation]);
+export default CenaMasajes;

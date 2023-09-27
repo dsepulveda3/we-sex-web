@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 import { Card, CardHeader, Collapse, CardBody } from "reactstrap";
 
 const Background = styled.div`
-    background-color: white;
+    background-color: var(--green);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -38,9 +38,9 @@ const Background = styled.div`
 
 const Border = styled.div`
     background-color: var(--green);
-    border: 3px solid var(--violet); /* Add a white border */
-    margin: 2rem 10rem 2rem 10rem;
-    border-radius: 30px;
+    // border: 3px solid var(--violet); /* Add a white border */
+    // margin: 2rem 10rem 2rem 10rem;
+    // border-radius: 30px;
     display: flex;
     flex-direction: column;
     align-items: center; /* Center horizontally */
