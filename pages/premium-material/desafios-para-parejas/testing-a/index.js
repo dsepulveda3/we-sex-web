@@ -26,7 +26,7 @@ export default function Home() {
 
       <main>
         <Layout>
-        <Intro subtitle1_1='Desafios sexuales ' subtitle1_2='para hacer en pareja' />
+        <Intro subtitle1_1='' subtitle1_2='Desafios sexuales' subtitle1_3='para hacer en pareja'/>
         {/* <div style={{color: "black", textAlign: "center", fontSize: "3rem", fontWeight: "bold"}}>TESTING A</div> */}
         <Explicacion2 />
         <ComoFunciona />

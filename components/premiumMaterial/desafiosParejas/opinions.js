@@ -212,7 +212,7 @@ const Opinions = ({subtitle1_1, subtitle1_2}) => {
                 <Container>
                     <VioletWrap>
                         <TitleContainer>
-                            <Title>Qué dicen las personas que probaron desafíos 💑 💏 👩‍❤️‍💋‍👩</Title>
+                            <Title>Qué dicen las personas que probaron los desafíos 💑 💏 👩‍❤️‍💋‍👩</Title>
                         </TitleContainer>
                         <div>
                             <SwiperWrap
