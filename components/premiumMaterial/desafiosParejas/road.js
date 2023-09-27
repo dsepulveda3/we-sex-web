@@ -135,13 +135,13 @@ const DosisContainer = styled.div`
 
 const ImageDosis = styled.img`
     height: 12%;
-    width: 14%;
+    width: 13%;
     padding: 1rem;
     transform: rotate(0deg);
 
     @media (max-width: 540px){
         height: 10%;
-        width: 40%;
+        width: 38%;
         padding: 0.9rem;
     }
 
@@ -341,7 +341,7 @@ const couplesData = {
       ),
       next: (
         <ImageStartoDoChallenge
-          src="/img/challenges/WeSex_next.png"
+          src="/img/challenges/next.png"
           style={{ marginLeft: ML, marginRight: MR }}
           onClick={() => onClick({ title, subtitle, link, status })}
         />
@@ -413,11 +413,11 @@ const couplesData = {
                 )}
               </ChallengesContainer>
               <DosisContainer>
-                <ImageDosis src="/img/challenges/WeSex_PastiColor.png"/>
-                <ImageDosis src="/img/challenges/WeSex_PastiNoColor.png"/>
-                <ImageDosis src="/img/challenges/WeSex_PastiNoColor.png"/>
-                <ImageDosis src="/img/challenges/WeSex_PastiNoColor.png"/>
-                <ImageDosis src="/img/challenges/WeSex_PastiNoColor.png"/>
+                <ImageDosis src="/img/challenges/wesex_pasticolor.png"/>
+                <ImageDosis src="/img/challenges/wesex_pastinocolor.png"/>
+                <ImageDosis src="/img/challenges/wesex_pastinocolor.png"/>
+                <ImageDosis src="/img/challenges/wesex_pastinocolor.png"/>
+                <ImageDosis src="/img/challenges/wesex_pastinocolor.png"/>
               </DosisContainer>
             </ChallengesAndDosisContainer>
           </Background>

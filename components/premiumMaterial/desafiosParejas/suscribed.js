@@ -206,9 +206,6 @@ const Suscribed = () => {
                 <Title>
                     <span>¡FELICITACIONES!</span> con tu pareja ya están suscritos a WeSex
                 </Title>
-                <SubTitle>
-                    <span>Estamos muy contentos por acompañarlos en este proceso de exploración!</span>
-                </SubTitle>
                 <Text>Haz click aquí para comenzar el programa para parejas. <span>Solicita el paso 1 a nuestro equipo.</span></Text>
                 <BotonArs href="https://wa.me/5491140678698?text=Hola!%20Estoy%20listo%20para%20recibir%20el%20paso%201%20del%20programa%20">Comenzar</BotonArs>
                 {/* <Text>
