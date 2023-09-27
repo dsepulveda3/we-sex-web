@@ -107,7 +107,7 @@ const CustomNextArrow = styled.img`
     display: none;
   }
   margin-right: 2.7rem;
-  margin-top: 3rem;
+  margin-top: 1.6rem;
   height: 27px; /* Set the desired height */
   transform: scale(2);
 `;
@@ -117,7 +117,7 @@ const CustomPrevArrow = styled.img`
     display: none;
     }
     margin-left: 2.7rem;
-    margin-top: 3rem;
+    margin-top: 1.6rem;
     height: 27px; /* Set the desired height */
     transform: scale(2);
 }
@@ -164,7 +164,7 @@ const SwiperWrap = styled(Swiper) `
 `;
 
 const GuideSquare = styled.div`
-    background-color: white;
+    background-color: var(--violet);
     padding: 2rem;
     width: 30rem;
     height: 10rem;
@@ -173,7 +173,7 @@ const GuideSquare = styled.div`
     margin-right: 1rem;
     margin-left: 1rem;
     border-radius: 10px;
-    border: 2px solid var(--green);
+    // border: 2px solid var(--green);
 
     display: flex; /* Add display flex for horizontal alignment */
     flex-direction: row; /* Align children vertically */
@@ -225,22 +225,22 @@ const Opinions = ({subtitle1_1, subtitle1_2}) => {
                             >
                                 <SwiperSlide>
                                     <GuideSquare>
-                                        <h3 style={{ color: "var(--violet)", fontWeight: "bold" }}>"Increíble la conexión que generamos."</h3>
+                                        <h3 style={{ color: "white", fontWeight: "bold" }}>"Increíble la conexión que generamos."</h3>
                                     </GuideSquare>
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <GuideSquare>
-                                        <h3 style={{ color: "var(--violet)", fontWeight: "bold" }}>"Pude conocer más sus zonas erógenas y ella las mías."</h3>
+                                        <h3 style={{ color: "white", fontWeight: "bold" }}>"Pude conocer más sus zonas erógenas y ella las mías."</h3>
                                     </GuideSquare>
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <GuideSquare>
-                                        <h3 style={{ color: "var(--violet)", fontWeight: "bold" }}>"Vamos 1 mes y ya veo cambios en la sexualidad de la pareja."</h3>
+                                        <h3 style={{ color: "white", fontWeight: "bold" }}>"Vamos 1 mes y ya veo cambios en la sexualidad de la pareja."</h3>
                                     </GuideSquare>
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <GuideSquare>
-                                        <h3 style={{ color: "var(--violet)", fontWeight: "bold" }}>"Tener sexo de formas diferentes todas las semanas es increíble. "</h3>
+                                        <h3 style={{ color: "white", fontWeight: "bold" }}>"Tener sexo de formas diferentes todas las semanas es increíble. "</h3>
                                     </GuideSquare>
                                 </SwiperSlide>
                             </SwiperWrap>
