@@ -144,7 +144,6 @@ const ImageDosis = styled.img`
         width: 38%;
         padding: 0.9rem;
     }
-
 `;
 
 
