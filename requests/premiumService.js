@@ -38,3 +38,17 @@ export const regenerate_access_code = async (email) => {
     );
     return response;
 }
+
+export const query_guides = async () => {
+    const response = await basePremiumService.get(
+        `v1/Guide/`
+    );
+    return response;
+}
+
+export const query_guide = async (guide_id) => {
+    const response = await basePremiumService.get(
+        `v1/Guide/${guide_id}`
+    );
+    return response;
+}
