@@ -63,13 +63,13 @@ const Search = () => {
   }, []);
 
   async function getArticles() {
-    await clienteAxios.get('/articles/all-public').then((response) => {
+    await clienteAxios.get(`/search/articles?queryString=${searchString}`).then((response) => {
       setArticles(response.data.results);
     });
   }
 
   async function getDiscussions() {
-    await clienteAxios.get('/discussions/recent-public').then((response) => {
+    await clienteAxios.get(`search/public-discussions?queryString=${searchString}`).then((response) => {
       setDiscussions(response.data);
     });
   }

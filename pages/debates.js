@@ -296,7 +296,7 @@ export default function Debates() {
           </DiscussionContainer>
           {/* Load More Button */}
           <div style={{ padding: '10px 0', textAlign: 'center' }}>
-          <Button onClick={handleLoadMore} ref={containerRef}>Load More</Button>
+          <Button onClick={handleLoadMore} ref={containerRef}>Ver mas</Button>
           
         </div>
         </div>

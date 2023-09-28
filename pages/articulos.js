@@ -258,7 +258,7 @@ export default function Articulos() {
             search={searchString}
           />
           <div style={{ padding: '10px 0', textAlign: 'center' }}>
-            <Button onClick={handleLoadMore} >Load More</Button>
+            <Button onClick={handleLoadMore} >Ver mas</Button>
           </div>
         </Container>
       </Layout>
