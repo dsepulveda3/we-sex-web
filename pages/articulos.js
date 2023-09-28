@@ -98,22 +98,45 @@ const CarouselPers = styled(Carousel)`
   }
 `;
 
+const Button = styled.a`
+    font-family: "Karla", sans-serif;
+    border-radius: 4rem;
+    padding: 1rem 3rem;
+    font-weight: bold;
+    margin: 1rem auto;
+    border: none;
+    transition: all .5s ease;
+    background-color: var(--green);
+    color: white;
+    font-size: 2.1rem;
+    &:hover {
+        background-color: var(--violet);
+    }
+
+    margin-bottom: 10rem;
+
+`;
+
 export default function Articulos() {
   const searchString = 0;
   const [selectedCategory, setSelectedCategory] = useState('');
   const [articlesCategories, setArticlesCategories] = useState([]);
   const [articles, setArticles] = useState([]);
-  const router = useRouter();
+  const [displayedArticles, setDisplayedArticles] = useState(8);
+  const [page, setPage] = useState(2);
+
+  function resetToInitialState() {
+    setPage(2);
+    setDisplayedArticles(8);
+  }
 
   useEffect(() => {
-    const searchParams = new URLSearchParams(window?.location.search);
-    const categoria = searchParams.get('categoria');
-    setSelectedCategory(categoria);
     getArticlesCategories();
-    if (categoria) {
-      getArticlesByCategory(categoria);
+    resetToInitialState();
+    if (selectedCategory !== '') {
+      getArticlesByCategoryInitial(selectedCategory, page);
     } else {
-      getArticles();
+      getArticlesInitial(page);
     }
   }, [selectedCategory]);
 
@@ -123,25 +146,46 @@ export default function Articulos() {
     });
   }
 
-  async function getArticles() {
-    await clienteAxios.get('/articles/all-public').then((response) => {
-      setArticles(response.data.results);
-    });
+  async function getArticlesInitial(page) {
+    const response1 = await clienteAxios.get(`/articles/all-public?page=${page - 1}`);
+    const response2 = await clienteAxios.get(`/articles/all-public?page=${page}`);
+    setArticles([...response1.data.results, ...response2.data.results]);
   }
 
-  async function getArticlesByCategory(category) {
-    await clienteAxios.get(`/articles/public/${category}`).then((response) => {
-      setArticles(response.data.results);
-    });
+  async function getArticlesByCategoryInitial(category, page) {
+    const response1 = await clienteAxios.get(`/articles/public/${category}?page=${page - 1}`);
+    const response2 = await clienteAxios.get(`/articles/public/${category}?page=${page}`);
+    setArticles([...response1.data.results, ...response2.data.results]);
   }
 
-  function clickNewCategory(link) {
-    router.push(
-      `/articulos?categoria=${link.toLowerCase().replace(/ /g, '-')}`
-    );
+  async function getArticles(page) {
+    const response = await clienteAxios.get(`/articles/all-public?page=${page}`);
+    setArticles([...articles, ...response.data.results]);
+  }
 
+  async function getArticlesByCategory(category, page) {
+    const response = await clienteAxios.get(`/articles/public/${category}?page=${page}`);
+    setArticles([...articles, ...response.data.results]);
+  }
+
+  async function clickNewCategory(link) {
     setSelectedCategory(link.toLowerCase().replace(/ /g, '-'));
   }
+
+  const handleLoadMore = () => {
+    setPage(page + 1);
+    setDisplayedArticles(displayedArticles + 4);
+  }
+
+  useEffect(() => {
+    if (page !== 2){
+      if (selectedCategory){
+        getArticlesByCategory(selectedCategory, page);
+      } else {
+        getArticles(page);
+      }
+    }
+  }, [page]);
 
   return (
     <>
@@ -209,10 +253,13 @@ export default function Articulos() {
             </RowPers>
           </div>
           <Articles
-            articles={articles}
+            articles={articles.slice(0, displayedArticles)}
             selectedCategory={selectedCategory}
             search={searchString}
           />
+          <div style={{ padding: '10px 0', textAlign: 'center' }}>
+            <Button onClick={handleLoadMore} >Load More</Button>
+          </div>
         </Container>
       </Layout>
     </>
