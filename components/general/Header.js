@@ -286,17 +286,17 @@ const Header = ({type, data}) => {
 
   async function getDiscussionsToSearch() {
     await clienteAxios
-      .get('search/public-discussions', {
-        query: { queryString: searchString },
-      })
+      .get(`search/public-discussions?queryString=${searchString}`)
       .then((response) => {
+        console.log('buscando', searchString);
+        console.log('articles buscados', response.data.results);
         setDiscussionsToSearch(response.data.results);
       });
   }
 
   async function getArticlesToSearch() {
     await clienteAxios
-      .get('search/articles', { query: { queryString: searchString } })
+      .get(`search/articles?queryString=${searchString}`)
       .then((response) => {
         setArticlesToSearch(response.data.results);
       });

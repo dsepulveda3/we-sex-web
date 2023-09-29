@@ -70,7 +70,7 @@ const Search = () => {
 
   async function getDiscussions() {
     await clienteAxios.get(`search/public-discussions?queryString=${searchString}`).then((response) => {
-      setDiscussions(response.data);
+      setDiscussions(response.data.results);
     });
   }
 
