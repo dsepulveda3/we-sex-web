@@ -3,7 +3,9 @@ import { useRouter } from "next/router";
 
 
 const ContainerNotificarDone = styled.div`
-    padding: 2rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
 
 `;
 

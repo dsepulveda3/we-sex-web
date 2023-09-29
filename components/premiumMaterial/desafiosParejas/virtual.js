@@ -297,7 +297,7 @@ const BotonNotificarDone = styled.a`
 
 
 
-const Edging = () => {
+const Virtual = () => {
     const [showAnimation, setShowAnimation] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
     const [isOpen2, setIsOpen2] = useState(false);
@@ -427,30 +427,40 @@ const Edging = () => {
                     <Row className="justify-content-between">
                         <ContentTitle>
                             <Title>Desafío:</Title>
-                            <SubTitle><span>Edging</span></SubTitle>
+                            <SubTitle><span>Virtual</span></SubTitle>
                         </ContentTitle>
                         {/* <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle> */}
                         <Text>
-                            El edging es cuando vos y/o tu pareja se acercan al orgasmo, pero retroceden justo antes de llegar al punto culminante para volver a retomar la estimulación. Se trata de jugar con esa excitación en aumento, pero retirarse antes del punto culminante. Seguir estimulando otras zonas para que la excitación no baje del todo, sino que retroceda; lo que generamos con esto es intensificar el orgasmo una vez que sucede.
+                            ¿Quién dijo que a la distancia baja la calentura?
                             <br />
+                            Hoy les vamos a demostrar lo contrario.
                             <br />
-                            En este desafío, lo van a poner en práctica, y les vamos a dar un paso a paso de cómo hacerlo.
+                            El desafío de hoy es muy simple, y pueden elegir su propio camino según la disponibilidad que tengan.
+                            <br />
                         </Text>
                         <Text>
-                        <span>Parte 1:</span> Entrando en calor
+                        <span>Opción A:</span> Sexo virtual en vivo
                         <br/>
                         <br/>
-                            Para comenzar, les proponemos una pequeña actividad llamada visualización creativa.
-                        <br/>
-                            El objetivo es despertar el deseo y explorar límites de forma controlada, mediante la creación de imágenes mentales excitantes.
-                        <br/>
+                            <ol>
+                                <li>
+                                    Encuentren un espacio en donde sepan que ambos van a estar disponibles y en un lugar privado (como una habitación o un baño).
+                                </li>
+                                <li>
+                                    Comenzarán a enviarse fotos hot para subir la temperatura pero… obviamente que este desafío viene acompañado con tips para profesionalizar el sexteo.
+                                </li>
+                                <li>
+                                    Si se animan, pueden pasar a videollamada.
+                                </li>
+                            </ol>
+                        
                         </Text>
                         <Col xs="12" lg="6" md="3">
                             <Card style={{margin:"10px 10px 10px 10px"}}>
                                 <CardHeader onClick={toggle} style={{backgroundColor: "white "}}>
                                 <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
                                     <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
-                                    <TitleQuestion>Aquí les dejamos instrucciones para la primera parte</TitleQuestion>
+                                    <TitleQuestion>Botón Sexting Tips</TitleQuestion>
                                 </div>
                                 <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
                                 </CardHeader>
@@ -459,112 +469,65 @@ const Edging = () => {
                                         <AnswerQuestion>
                                             <ul>
                                                 <li>
-                                                    Siéntense cómodamente, cierren los ojos y respiren profundamente para relajarse.
+                                                    Creetela. Antes que nada la foto es para vos y es fundamental que te sientas bien al momento de hacerla.
                                                 </li>
                                                 <li>
-                                                    Concéntrate en tu respiración durante unos minutos, permitiendo que cualquier pensamiento externo se desvanezca.
+                                                    Encontrá el momento. Es importante que te retrates en un instante en el que estés internamente conectando con tu erotismo.
                                                 </li>
                                                 <li>
-                                                    Imagina un lugar o situación que encuentres particularmente excitante. Puede ser real o fantástico. Visualiza los detalles: los sonidos, los olores, las sensaciones en la piel.
+                                                    Elegí qué mostrar. Fotografiá esa parte de tu cuerpo que más te guste.
                                                 </li>
                                                 <li>
-                                                    Imagina las caricias, los besos, la conexión con tu pareja en esa situación. Siente cómo se intensifica tu deseo y cómo tu cuerpo responde a estas sensaciones.
+                                                    Ambientá. No es para que prendas una vela, pero por lo menos que no salga el tender de fondo jeje.
                                                 </li>
                                                 <li>
-                                                    En el momento en que sientas que la excitación está creciendo, visualiza cómo pones un &quot;freno&quot;, controlando y reduciendo la intensidad de las sensaciones. Imagina un color, una luz o un elemento que represente este control. 
+                                                    Que la luz te favorezca. Si lo que querés es mostrar más, lo mejor es el sol de la mañana o el atardecer. Si apenas querés sugerir, una lámpara en la que se proyecte tu silueta en sombra puede resultar en una foto muy sensual.
                                                 </li>
+                                                <li>
+                                                    Optá por la cámara frontal y el uso del temporizador, suele tener mejor calidad que la selfie del celular y te da tiempo de acomodarte.
+                                                </li>
+                                                <li>
+                                                    Organizá con qué agarrar el teléfono: si tenés tripode o agarre tipo popsocket genial. Sino simplemente lo apoyás con algo que le de estabilidad.
+                                                </li>
+                                                <li>
+                                                Ángulo: Depende lo que quieras resaltar 😉
+                                                    <ul>
+                                                        <li>
+                                                            Hacia arriba si vas a sacarte foto de los genitales, pero hacia abajo si es de la cara o el torso. 
+                                                        </li>
+                                                        <li>
+                                                            Acostadx en la cama de costado, para los pechos. 
+                                                        </li>
+                                                        <li>
+                                                            Desde el hombro boca abajo para la cola. 
+                                                        </li>
+                                                    </ul>
+                                                    </li>
+                                                <li>
+                                                    Algo de ropa suma siempre. Podes ir quitándote la ropa foto tras foto y jugando con esa excitación 
+                                                </li>
+                                                ⚠️ Por Seguridad: no cara, no tatuajes. Usen telegram que no queda nada en el sistema. No compartas las fotos que te mandan, cuídense y sean responsables con el otrx.
+                                                    
+                                                
                                             </ul>
                                         </AnswerQuestion>
                                     </CardBody>
                                 </Collapse>
                             </Card>
                         </Col>
-                        <Text>
-                            Luego de la visualización pueden comenzar de a poco con caricias y besos a entrar en la exploración física con su pareja.
-                        </Text>
                         <Text style={{marginBottom: "0px"}}>
-                        <span>Parte 2:</span> EDGING
-                        <Text style={{marginBottom: "0px"}}>
-                            Presiona el botón antes de leer las instrucciones.
-                            <br />
-                            <br />
-                            <BotonRandom onClick={chooseRandomName}>¿Quién comienza?</BotonRandom>
-                            <br/>
-                            <br/>
-                            {chosenName && <div>Comienza: {chosenName}</div>}
+                        <span>Opción B:</span> Foto que va, foto que viene
                         </Text>
-                        </Text>
-                        <Col xs="12" lg="6" md="3">
-                            <Card style={{margin:"0px 10px 10px 10px"}}>
-                                <CardHeader onClick={toggle2} style={{backgroundColor: "white "}}>
-                                <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
-                                    <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
-                                    <TitleQuestion>Aquí les dejamos las intrucciones para esta segunda parte</TitleQuestion>
-                                </div>
-                                <i className={isOpen2 ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
-                                </CardHeader>
-                                <Collapse isOpen={isOpen2}>
-                                    <CardBody>
-                                        <AnswerQuestion>
-                                            <ul>
-                                                <li>
-                                                    Una persona va a empezar a estimular a la otra. La idea es que esta estimulación sea progresiva, de menos a más.
-                                                </li>
-                                                <li>
-                                                    La otra persona se entregará a recibir placer e irá comunicándo de qué forma le gusta más.
-                                                </li>
-                                                <li>
-                                                    Lo importante va a ser que la persona estimulada pueda detectar estas sensaciones de placer y saber cuándo está por llegar al orgasmo.
-                                                </li>
-                                                <li>
-                                                    Mientras la intensidad de la estimulación vaya aumentando, es importante mantener contacto visual y estar atento a las sensaciones de la persona estimulada.
-                                                </li>
-                                                <li>
-                                                    Persona estimulada: ANTES de llegar al orgasmo, vas a avisarle a tu pareja que frene. Cuando sientas la mínima posibilidad de que se está acercando ese momento, PARAS.
-                                                </li>
-                                                <li>
-                                                    Utiliza la respiración profunda para calmarte y bajar el nivel de excitación.
-                                                </li>
-                                            </ul>
-                                        </AnswerQuestion>
-                                    </CardBody>
-                                </Collapse>
-                            </Card>
-                        </Col>
-
                         <Text>
-                            Luego de frenar esa primera vez, van a <span>invertir los roles.</span> La persona que estaba estimulando va a pasar a ser estimulada y viceversa.
+                            Si no tienen tiempo de coincidir para el sexo virtual en vivo, les traemos la siguiente propuesta: 
                             <br />
                             <br />
-                            Seguirán entregándose al placer, y repetirán el proceso con los roles invertidos: 
-                            <br />
-                            <br />
-                            Estimulación progresiva → Detectar sensaciones → Frenar antes de llegar al orgasmo → Respiración profunda.
-                            <br />
-                            <br />
-                            <span>WeSexer Tip:</span> En algún momento también pueden decidir ir a penetración, o pasar a un 69 para estimularse mutuamente. Aquí es importante que si alguno de los dos está por llegar al orgasmo pueda retirarse previamente. Este desafío requiere mucha comunicación tanto verbal como corporal y confianza en que valdrá la pena aguantarse las ganas 🔥.
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <span>Parte 3:</span> Culminación
-                            <br />
-                            <br />
-                            Idealmente, cuando sientan que ya no pueden más, que su deseo sexual y el clímax están al máximo, la persona que suele llegar al orgasmo más rápido pasará a ser quien estimule a su pareja, que tarda más en llegar, y se focalizarán solo en la estimulación de esta persona. Seguirán practicando edging, hasta que no puedan más y la persona estimulada decida entregarse al orgasmo. 
-                            <br />
-                            <br />
-                            Una vez que la persona estimulada termine de disfrutar su orgasmo y su post orgasmo, si lo desean, puede ir a estimular a la persona que todavía no llegó al orgasmo. Y repetirán el proceso de edging hasta entregarse al climax. 
+                            ¿Qué más excitante que recibir una foto hot de tu pareja en el medio del día? A la mañana, a la noche, cuando van al baño, cuando se sientan calientes... siempre hay momento para calentar un poquito las cosas con tu pareja. Los invitamos a mandarse fotos durante el día para generarle un momento de calentura a su pareja y prepararse para la vuelta a la presencialidad 😉.
                         </Text>
                         
                     </Row>
                     <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
                             <Text2>
-                                El orgasmo será mucho más intenso que si hubiesen orgasmeado al principio del ejercicio.
-                                <br/>
-                                <br/>
-                                Cuando decidan terminar, dense el tiempo para apreciar y sentir las sensaciones en su cuerpo. La relajación, la excitación, sus latidos, la piel de su pareja y el momento presente…
-                                <br/>
-                                <br/>
                                 <span>Con placer,</span>
                                 <br/>
                                 <span>El equipo de WeSex.</span>
@@ -572,13 +535,14 @@ const Edging = () => {
                     </Row>
             </Container>
             
+            
             <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://wa.me/5491140678698?
-            text=Hola!%20Somos%20${origin}.%20Terminamos%20el%20desafío%20EDGING`}/>
-
+            text=Hola!%20Somos%20${origin}.%20Terminamos%20el%20desafío%20VIRTUAL`}/>
+            
             </Background>
           )}
         </section>
       );
 }
  
-export default Edging;
+export default Virtual;
