@@ -166,6 +166,8 @@ const Title = styled.h2`
     font-family: "Averia Libre", sans-serif;
     opacity: 1; /* adjust the opacity as needed */
     color: white;
+    padding: 1.5rem;
+    background-color: var(--violet);
     span {
         font-family: "Averia Libre", sans-serif;
         background-color: var(--violet); /* Set the background color to green */
@@ -176,8 +178,8 @@ const Title = styled.h2`
     
     @media(max-width: 540px){
         font-size: 1.8rem;
-        padding-top: 0rem;
-        padding-bottom: 0rem;
+        // padding-top: 0rem;
+        // padding-bottom: 0rem;
     }
 `;
 
@@ -336,7 +338,7 @@ const ArticleDetail = ({ articleItem }) => {
       <Layout type={'nothidden'}>
         <ContainerAll >
         <ArticleTitle>
-          <span className='hide-mobile'>Articulo de la categoría </span>
+          <span>Articulo de la categoría </span>
           <Link
             href={`/articulos?categoria=${articleItem?.category.toLowerCase()}`}
           >
@@ -347,11 +349,11 @@ const ArticleDetail = ({ articleItem }) => {
           <Row>
             <Articulo lg={8}>
               <div className='d-title'>
-                <img
+                {/* <img
                   className='hide-desktop'
                   src='/img/icons/quote.svg'
                   alt='Quote symbol'
-                />
+                /> */}
                 <Title><span>{articleItem?.title}</span></Title>
               </div>
               <p>{articleItem?.subtitle}</p>
