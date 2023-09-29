@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import styled from '@emotion/styled';
 import { toast } from 'react-toastify';
@@ -101,8 +101,8 @@ const LostLink = styled.a`
     }
 `;
 
-// const PLAN_ID = process.env.NEXT_PUBLIC_PLAN_ID;
-const PLAN_ID = "6516d2d2d029edb06814d45c";
+const PLAN_ID = process.env.NEXT_PUBLIC_PLAN_ID;
+// const PLAN_ID = "6516d2d2d029edb06814d45c";
 
 function AccessCodeInput ({setLostLink}) {
     const router = useRouter();
@@ -111,6 +111,7 @@ function AccessCodeInput ({setLostLink}) {
     const handleClick = () => {
         setLostLink(true);
     }
+
 
     const handleSubmit = () => {
         redeem_access_code(PLAN_ID, accessCode)
