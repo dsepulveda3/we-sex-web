@@ -305,7 +305,7 @@ const Guides = () => {
                 </Col>
                 )}
             </Row>
-            <Suscribe/>
+            {/* <Suscribe/> */}
         </Container>
       </Background>
     </Section>
