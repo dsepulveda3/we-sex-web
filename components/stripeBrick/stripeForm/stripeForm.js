@@ -212,7 +212,23 @@ function StripeForm() {
         const response = await handleRequest(token);
       } catch (error) {
         console.log(error);
-        toast.error("Error al suscribirse");
+        toast.error(    
+          <div>
+            Error al suscribirse. {' '}
+            <a
+              href="https://wa.me/5491140678698?
+              text=Hola!%20Tengo%20un%20problema%20con%20mi%20suscripción"
+              style={{
+                textDecoration: 'underline', // Add underline
+                fontFamily: 'inherit', // Use the same font as the surrounding div
+                fontSize: 'inherit', // Use the same font size as the surrounding div
+              }}
+            >
+             Contactar soporte
+            </a>
+            .
+          </div>
+        );
         setErrorOccurred(true);
         setIsSubmitting(false);
       }
