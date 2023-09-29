@@ -425,9 +425,12 @@ const ArticleDetail = ({ articleItem }) => {
                 ) : (
                   <>
                     Publicado por
-                    <Link href={`/perfil/${articleItem?.user.user}`}>
+                    <p>
                       <a>@{articleItem?.user.user}</a>
-                    </Link>
+                    </p>
+                    {/* <Link href={`/perfil/${articleItem?.user.user}`}>
+                      <a>@{articleItem?.user.user}</a>
+                    </Link> */}
                   </>
                 )}
               </Published>
