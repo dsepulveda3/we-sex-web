@@ -113,6 +113,8 @@ const LoginForm = () => {
         <Content>
           <Title>WeSex</Title>
           {isOriginSubscribeRoute? 
+            origin === 'access-code' ?
+            (<Text><span>Ingresa para canjear tu código 🤝</span></Text>) :
             (<Text><span>Ya casi estas suscrito 🤝</span></Text>) :
             (<Text>Hola de nuevo 👋</Text>)
           }

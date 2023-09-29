@@ -134,8 +134,10 @@ const StepOne = () => {
         <Content>
           <Title>WeSex</Title>
           {isOriginSubscribeRoute? 
+            origin === 'access-code' ?
+            (<Text><span>Ingresa para canjear tu código 🤝</span></Text>) :
             (<Text><span>Ya casi estas suscrito 🤝</span></Text>) :
-            (<Text>Crea tu cuenta en 1 minuto 🤝</Text>)
+            (<Text>Hola de nuevo 👋</Text>)
           }
           {!isEmbeddedBrowser && (<GoogleSignInButton origin={origin} />)}
           {!isEmbeddedBrowser && (<AppleSingInButton origin={origin} />)}

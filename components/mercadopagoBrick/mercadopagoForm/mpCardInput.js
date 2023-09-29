@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { subscribe_to_premium } from '../../../requests/premiumService';
+import { subscribe_to_premium, subscribe_to_premium_with_email } from '../../../requests/premiumService';
 import { useAuth } from '../../../context/authUserContext';
 import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
@@ -9,14 +9,46 @@ const PLAN_ID = process.env.NEXT_PUBLIC_PLAN_ID;
 
 function MPCardInput (){
   const { authUser, loading } = useAuth();
-  const [email, SetEmail] = useState("");
+  const [isLogged, setIsLogged] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
-    if (!loading && user) {
-      SetEmail(user.email);
+    if (!loading && authUser) {
+      setIsLogged(true);
     }
   }, [authUser, loading]);
+
+  const handleRequest = async (token, email) => {
+    console.log("request sent");
+    if (isLogged){
+      const response = await subscribe_to_premium(
+        PLAN_ID,
+        {
+          cardToken: token,
+          paymentMethod: 'MP',
+        }
+      );
+      if (response.status === 201) {
+        router.push('/');
+        toast.success("Suscripción exitosa");
+      }
+      return response;
+    } else {
+      const response = await subscribe_to_premium_with_email(
+        PLAN_ID,
+        {
+          cardToken: token,
+          email: email,
+          paymentMethod: 'MP',
+        }
+      );
+      if (response.status === 201) {
+        router.push('/premium-material/access-code');
+        toast.success("Subscripcion de la tarjeta exitosa");
+      }
+      return response;
+    }
+  };
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -34,12 +66,6 @@ function MPCardInput (){
         const settings = {
           initialization: {
             amount: 250,
-            // preferenceId: "<PREFERENCE_ID>",
-            // payer: {
-            //   // firstName: "Diego",
-            //   // lastName: " Sepulveda",
-            //   // email: "jhon@doe.cl",
-            // },
           },
           customization: {
             visual: {
@@ -65,18 +91,10 @@ function MPCardInput (){
             },
             onSubmit: async ({ selectedPaymentMethod, formData }) => {
               try{
-                const response = await subscribe_to_premium(
-                  PLAN_ID,
-                  {
-                      cardToken: formData.token,
-                      paymentMethod: 'MP',
-                  }
-                );
-                if (response.status === 201) {
-                  router.push('/');
-                  toast.success("Suscripción exitosa");
-                }
+                const response = await handleRequest(formData.token, formData.payer.email);
               } catch (error) {
+                console.log("Displayed Error");
+                console.log(error);
                 toast.error("Error al suscribirse");
               }
             },

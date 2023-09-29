@@ -17,7 +17,7 @@ const ContainerInfo = styled.div`
 
 const ContainerCard = styled.div`
   border-radius: 2rem;
-  padding: 2rem;
+  padding: 1rem;
   border: 2px solid white;
   background-color: white;
   margin-bottom: 1rem;
