@@ -1,3 +1,5 @@
+
+
 import React from "react";
 import { useState, useEffect } from "react";
 import styled from '@emotion/styled';
@@ -17,13 +19,22 @@ const Background = styled.div`
     padding-bottom: 2rem;
     position: relative;
     
+    
     @media(max-width: 540px){
         background-attachment: scroll;
         text-align: center;
        
     }
 
-    min-height: 1000px; /* Set the minimum height here */
+    height: 100vh; /* Set the minimum height here */
+`;
+
+const ContainerQRAndCard = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
 `;
 
 const Title = styled.div`
@@ -235,6 +246,13 @@ const InfoText = styled.div`
         padding: 0.5rem 1rem; /* Add padding to make the background visible */
         color: white; /* Set the text color to white */
 `;
+
+const ScanQRImage = styled.img`
+    height: 20%;
+    width: 20%;
+
+`;
+
 
 const PopupContent = () => {
     return (
@@ -467,177 +485,155 @@ const PopupContent = () => {
     // Add more game modes and their questions here...
 };
 
-const GameCard = ({ game }) => {
-    const [questionOrder, setQuestionOrder] = useState([]);
-    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-    const [showAnswer, setShowAnswer] = useState(false);
 
-    useEffect(() => {
-        const shuffledQuestions = [...game.questions];
-        for (let i = shuffledQuestions.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [shuffledQuestions[i], shuffledQuestions[j]] = [shuffledQuestions[j], shuffledQuestions[i]];
-        }
-        // Add the "game over" card to the end
-        shuffledQuestions.push({ question: "EL JUEGO HA ACABADO. PUEDES SELECCIONAR UNO NUEVO PARA SEGUIR DISFRUTANDO DE LOS JUEGOS DE WESEX." });
-        setQuestionOrder(shuffledQuestions);
-    }, [game.questions]);
-
-    const toggleQuestionAndAnswer = () => {
-        if (currentQuestionIndex === questionOrder.length - 1) return;
-
-        const currentQuestion = questionOrder[currentQuestionIndex];
-
-        if (game.type === "question-answer") {
-            // Toggle the answer if the game type is question-answer
-            setShowAnswer(!showAnswer);
-        }
-
-        if (showAnswer || game.type === "question-only") {
-            if (currentQuestionIndex < questionOrder.length - 2) {
-                setCurrentQuestionIndex(currentQuestionIndex + 1);
-                setShowAnswer(false);
-            } else {
-                setCurrentQuestionIndex(questionOrder.length - 1);
-            }
-        }
-    };
-
-    useEffect(() => {
-        setCurrentQuestionIndex(0);
-        setShowAnswer(false);
-    }, [game.questions]);
-
-    if (questionOrder.length === 0) {
-        return <div>No questions available.</div>;
-    }
-
-    const currentQuestion = questionOrder[currentQuestionIndex];
-    return (
-        <QuestionCard onClick={toggleQuestionAndAnswer}>
-            {showAnswer && game.type === "question-answer" ? (
-                <div>
-                    <Question showBefore={!currentQuestion.answer}>
-                        <span>{currentQuestion.question}</span>
-                    </Question>
-                    {currentQuestion.answer && (
-                        <div>
-                            <br />
-                            <Answer>
-                                <span>{currentQuestion.answer}</span>
-                            </Answer>
-                        </div>
-                    )}
-                </div>
-            ) : (
-                <Question>
-                    <span>{currentQuestion.question}</span>
-                </Question>
-            )}
-        </QuestionCard>
-    );
-};
 
 const CardGame = () => {
     const [selectedOption, setSelectedOption] = useState('PARA HABLAR DE SEXO Y DIVERTIRSE');
     const [showPopup, setShowPopup] = useState(false);
     const [showStartCard, setShowStartCard] = useState(true);
-    const [game, setGame] = useState(null); // Store the selected game mode
+    const [game, setGame] = useState(null);
     const [questionOrder, setQuestionOrder] = useState([]);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [showAnswer, setShowAnswer] = useState(false);
-
-    // Function to initialize the game when the selected game mode changes
+  
+    const shuffleArray = (array) => {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    };
+  
     const initializeGame = (selectedGame) => {
-        const shuffledQuestions = [...selectedGame.questions];
-        for (let i = shuffledQuestions.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [shuffledQuestions[i], shuffledQuestions[j]] = [shuffledQuestions[j], shuffledQuestions[i]];
-        }
-        // Add the "game over" card to the end
-        shuffledQuestions.push({ question: "EL JUEGO HA ACABADO. PUEDES SELECCIONAR UNO NUEVO PARA SEGUIR DISFRUTANDO DE LOS JUEGOS DE WESEX." });
-        setQuestionOrder(shuffledQuestions);
-        setCurrentQuestionIndex(0);
-        setShowAnswer(false);
-        setGame(selectedGame);
+      const shuffledQuestions = [...selectedGame.questions];
+      shuffleArray(shuffledQuestions);
+  
+      setQuestionOrder(shuffledQuestions);
+      setCurrentQuestionIndex(0);
+      setShowAnswer(false);
+      setGame(selectedGame);
     };
-
-    useEffect(() => {
-        // Initialize the game when the component mounts
-        initializeGame(gameData[selectedOption]);
-    }, [selectedOption]);
-
-    // Function to handle clicking the start card and begin the game
+  
     const startGame = () => {
-        setShowStartCard(false);
+      setShowStartCard(false);
     };
-
-    // Function to toggle between questions and answers
+  
     const toggleQuestionAndAnswer = () => {
-        if (currentQuestionIndex === questionOrder.length - 1) return;
-
+      if (currentQuestionIndex === questionOrder.length - 1) {
+        // If all cards have been shown, reset the game
+        resetGame();
+      } else {
         const currentQuestion = questionOrder[currentQuestionIndex];
-
+  
         if (game.type === "question-answer") {
-            // Toggle the answer if the game type is question-answer
-            setShowAnswer(!showAnswer);
+          setShowAnswer(!showAnswer);
         }
-
+  
         if (showAnswer || game.type === "question-only") {
-            if (currentQuestionIndex < questionOrder.length - 2) {
-                setCurrentQuestionIndex(currentQuestionIndex + 1);
-                setShowAnswer(false);
-            } else {
-                setCurrentQuestionIndex(questionOrder.length - 1);
-            }
+          if (currentQuestionIndex < questionOrder.length - 2) {
+            setCurrentQuestionIndex(currentQuestionIndex + 1);
+            setShowAnswer(false);
+          } else {
+            // If the current question is the second-to-last, move to the last question
+            setCurrentQuestionIndex(questionOrder.length - 1);
+          }
         }
+      }
     };
-
+  
     const resetGame = () => {
-        // Reset the game to its initial state
-        setShowStartCard(true);
-        setQuestionOrder([]);
-        setCurrentQuestionIndex(0);
-        setShowAnswer(false);
-        setGame(null);
+      setShowStartCard(true);
+      setQuestionOrder([]);
+      setCurrentQuestionIndex(0);
+      setShowAnswer(false);
+      // Check if game is not null before accessing its properties
+      if (game) {
+        // If the current game mode is 'PARA HABLAR DE SEXO Y DIVERTIRSE',
+        // reinitialize the game; otherwise, set the game to null
+        if (selectedOption === 'PARA HABLAR DE SEXO Y DIVERTIRSE') {
+          initializeGame(gameData[selectedOption]);
+        } else {
+          setGame(null);
+        }
+      }
     };
-
-    return (
-        <Background>
-            <Title>JUEGOS DE CARTAS</Title>
-            <SelectorButtonContainer>
-                {/* <InfoButton onClick={() => setShowPopup(true)}>¿De qué tratan los juegos? ℹ️</InfoButton> */}
-                <SelectorButton onChange={(e) => {
-                    setSelectedOption(e.target.value);
-                    // Reset the game when the selected game mode changes
-                    resetGame();
-                }}>
-                    {Object.keys(gameData).map(mode => (
-                        <option key={mode} value={mode}>{mode}</option>
-                    ))}
-                </SelectorButton>
-            </SelectorButtonContainer>
-            {showPopup && (
-                <PopupContainer>
-                    <PopupDialog>
-                        <CloseButton onClick={() => setShowPopup(false)}>✕</CloseButton>
-                        <PopupContent />
-                    </PopupDialog>
-                </PopupContainer>
+  
+    useEffect(() => {
+      initializeGame(gameData[selectedOption]);
+    }, [selectedOption]);
+  
+    const simulateCardClick = () => {
+      if (showStartCard) {
+        startGame();
+      } else {
+        toggleQuestionAndAnswer();
+      }
+    };
+  
+    useEffect(() => {
+      const timer = setInterval(simulateCardClick, 5000);
+  
+      return () => {
+        clearInterval(timer);
+      };
+    }, [currentQuestionIndex, questionOrder, showStartCard, toggleQuestionAndAnswer]);
+  
+    const currentQuestion = questionOrder[currentQuestionIndex];
+  return (
+    <div>
+      {/* Your JSX for rendering the game */}
+      <Background>
+        <Title>JUEGOS DE CARTAS</Title>
+        <SelectorButtonContainer>
+          {/* <InfoButton onClick={() => setShowPopup(true)}>¿De qué tratan los juegos? ℹ️</InfoButton> */}
+          <SelectorButton onChange={(e) => {
+            setSelectedOption(e.target.value);
+            // Reset the game when the selected game mode changes
+            resetGame();
+          }}>
+            {Object.keys(gameData).map(mode => (
+              <option key={mode} value={mode}>{mode}</option>
+            ))}
+          </SelectorButton>
+        </SelectorButtonContainer>
+        {showPopup && (
+          <PopupContainer>
+            <PopupDialog>
+              <CloseButton onClick={() => setShowPopup(false)}>✕</CloseButton>
+              <PopupContent />
+            </PopupDialog>
+          </PopupContainer>
+        )}
+        <ContainerQRAndCard>
+        <ScanQRImage src="/img/escaneame_we_sex_game.png" />
+        {showStartCard && <StartCard onClick={startGame} />}
+        {game && !showStartCard && (
+          <QuestionCard onClick={toggleQuestionAndAnswer}>
+            {showAnswer && game.type === "question-answer" ? (
+              <div>
+                <Question showBefore={!currentQuestion.answer}>
+                  <span>{currentQuestion.question}</span>
+                </Question>
+                {currentQuestion.answer && (
+                  <div>
+                    <br />
+                    <Answer>
+                      <span>{currentQuestion.answer}</span>
+                    </Answer>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Question>
+                <span>{currentQuestion.question}</span>
+              </Question>
             )}
-
-            {showStartCard && <StartCard onClick={startGame} />}
-             {game && !showStartCard && ( // Check if game is not null
-                <GameCard
-                    game={game}
-                    questionOrder={questionOrder}
-                    currentQuestionIndex={currentQuestionIndex}
-                    showAnswer={showAnswer}
-                    toggleQuestionAndAnswer={toggleQuestionAndAnswer}
-                />
-            )}
-        </Background>
-    );
+          </QuestionCard>
+        )}
+        <ScanQRImage src="/img/escaneame_we_sex_game.png" />
+        </ContainerQRAndCard>
+      </Background>
+    </div>
+  );
 };
 
 export default CardGame;

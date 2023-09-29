@@ -96,7 +96,7 @@ const Title2 = styled.div`
         margin-right: 2rem;
     
     @media(max-width: 540px){
-        font-size: 4rem;
+        font-size: 3rem;
         padding-top: 1.5rem;
         padding-bottom: 1rem;
 
@@ -258,7 +258,7 @@ const TitleQuestion = styled.h4`
     }
     @media(max-width: 540px){
         margin-bottom:1rem;
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
     @media(min-width: 540px){
         margin-bottom: 1rem;
@@ -323,16 +323,15 @@ const BotonRandom = styled.a`
 
 
 
-const Masturbacion = () => {
+
+const JuegoRoles = () => {
     const [showAnimation, setShowAnimation] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
-    const [isOpen2, setIsOpen2] = useState(false);
-    const names = ["Quien presiono este botón", "Quien NO presionó este botón"]; // Add the names you want to choose from
-    const [chosenName, setChosenName] = useState("");
     const toggle = () => setIsOpen(!isOpen);
-    const toggle2 = () => setIsOpen2(!isOpen2);
     const appRef = useRef(null); // Create a ref to hold the PIXI application
 
+    const names = ["Quien presiono este botón", "Quien NO presionó este botón"]; // Add the names you want to choose from
+    const [chosenName, setChosenName] = useState("");
     const chooseRandomName = () => {
         const randomIndex = Math.floor(Math.random() * names.length);
         setChosenName(names[randomIndex]);
@@ -433,126 +432,158 @@ const Masturbacion = () => {
                     <TitleWeSex>WeSex</TitleWeSex>
                     <Row className="justify-content-between">   
                         <ContentTitle>
-                            <Title>Desafío:</Title>
-                            <SubTitle><span>Explorando la Masturbación a Medida</span></SubTitle>
+                            <Title>Desafío</Title>
+                            <SubTitle><span>Juego de Roles</span></SubTitle>
                         </ContentTitle>
                         {/* <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle> */}
 
                         <Text>
-                        <span>Parte 1:</span> Imaginando el Placer
+                        Para el desafío de este fin de semana, los vamos a invitar a jugar y divertirse ;)
                         <br/>
                         <br/>
-                        Cada uno deberá anotar en una hoja la forma ideal en la que le gustaría que lo mastubren. 
+                        Queremos que saquen a la luz su actor interior y se animen a un juego de roles.
                         <br/>
-                        Cuanto más detallado, mejor. Empiecen escribiendo desde el principio, hasta el final. 
                         <br/>
+                        Abajo les dejaremos un guion para que puedan utilizar como base en el juego de roles.
+
+                        <Text style={{marginBottom: "0px"}}>
+                            Presiona el botón antes de leer las instrucciones.
+                            <br />
+                            <br />
+                            <BotonRandom onClick={chooseRandomName}>¿Quién comienza?</BotonRandom>
+                            <br/>
+                            <br/>
+                            {chosenName && <div>Comienza: {chosenName}</div>}
                         </Text>
-                        <Col xs="12" lg="6" md="3">
+
+                        <span>En este desafío, quien elegirá la fantasía será {chosenName}.</span> Es tu turno de decidir cuál te gustaría 
+                        llevar a cabo. ¿Serás vos el que se disfrace, los dos o será tu pareja? ¿Te gustaría que se disfrace de abogado, 
+                        profesor, médico? Hoy, elegís y propones vos. Tu pareja podrá evaluar si se siente cómodo con esa fantasía y, 
+                        en caso de que no la acepte, podrás pensar en otra, hasta que lleguen a una con la que ambos se sientan cómodos. 
+                        Siempre mantenemos el consentimiento y la comunicación como base para todos los desafíos.
+                        <br/>
+                        <br/>
+                        ¡Que se disfruten!
+                        </Text>
+                        {/* <Col xs="12" lg="6" md="3">
                             <Card style={{margin:"10px 10px 10px 10px"}}>
                                 <CardHeader onClick={toggle} style={{backgroundColor: "white "}}>
                                 <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
                                     <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
-                                    <TitleQuestion>Aquí les dejamos unas preguntas para ayudarlos a describir su masturbación a medida.</TitleQuestion>
+                                    <TitleQuestion>Presiona aquí para ver las preguntas</TitleQuestion>
                                 </div>
                                 <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
                                 </CardHeader>
                                 <Collapse isOpen={isOpen}>
                                     <CardBody>
                                         <AnswerQuestion>
-                                            <ul>
-                                                <li>
-                                                    ¿Cómo comienza todo? ¿Dónde están cuando inicia el encuentro?
-                                                </li>
-                                                <li>
-                                                    ¿Cómo prefieren que empiece el contacto físico? ¿Con besos, caricias, masajes, o directo a los genitales?
-                                                </li>
-                                                <li>
-                                                    ¿Qué partes del cuerpo desean que les toquen primero?
-                                                </li>
-                                                <li>
-                                                    ¿Cómo desean que la otra persona se acerque a sus genitales?
-                                                </li>
-                                                <li>
-                                                    Detallen paso a paso la estimulación: ¿Con saliva o lubricante? ¿Rápido, lento o moderado? ¿Con cuántos dedos o cuántas manos?
-                                                </li>
-                                                <li>
-                                                    ¿Cómo les gustaría llegar al orgasmo, si es que lo desean?
-                                                </li>
-                                            </ul>
+                                            1. ¿Luz prendida o apagada?
+                                            <br/>
+                                            2. ¿Besos en los testículos o en la cabeza del pene?
+                                            <br/>
+                                            3. ¿Depilación al 100%, bigotito o salvaje?
+                                            <br/>
+                                            4. Si no es adentro, ¿dónde te gusta más la eyaculación? Diga tres opciones.
+                                            <br/>
+                                            5. ¿Qué parte de TU cuerpo te gusta más?
+                                            <br/>
+                                            6. Lugares en casa (que no sea la cama) para hacerlo que te exciten. Diga tres.
+                                            <br/>
+                                            7. ¿Algún tema o banda en especial que te estimule más en las relaciones sexuales? Diga dos.
+                                            <br/>
+                                            8. ¿Qué material te excita más? Algodón, seda, cuero, encaje u otros.
+                                            <br/>
+                                            9. Menciona al menos dos frases al oído que te exciten.
+                                            <br/>
+                                            10. ¿Fantaseando... trío o swinger?
+                                            <br/>
+                                            11. ¿Mañanero, siestero o nochero?
+                                            <br/>
+                                            12. ¿Cuántas veces te autoestimulas a la semana?
+                                            <br/>
+                                            13. ¿Estimulantes/lubricantes: qué prefieres, efecto frío o calor?
+                                            <br/>
+                                            14. Del 1 al 10, ¿cuál es la importancia de las relaciones sexuales en tu vínculo?
+                                            <br/>
+                                            15. ¿Qué zona te gusta más estimular a tu pareja? Diga tres.
+                                            <br/>
+                                            16. ¿Qué zona te gusta más que te estimulen? Diga tres.
+                                            <br/>
+                                            17. ¿Prefieres sexo oral o que te masturben?
+                                            <br/>
+                                            18. ¿Qué posiciones te excitan más?
+                                            <br/>
+                                            19. ¿Qué parte del cuerpo de tu pareja te pone más 🔥?
+                                            <br/>
+                                            20. ¿De qué te disfrazarías o personificarías para excitar a tu pareja? Diga dos.
+                                            <br/>
+                                            21. ¿Cuál sería tu frecuencia sexual semanal óptima?
+                                            <br/>
+                                            22. ¿Qué te gustaría más hacerle a tu pareja, vendarle los ojos o atarle las manos?
+                                            <br/>
+                                            23. ¿Qué te gustaría más que te hagan de la pregunta anterior?
+                                            <br/>
+                                            24. ¿En silencio o a gritos?
+                                            <br/>
+                                            25. Elige de la vitrina de un sex shop un juguete para ambos... ¿Cuál sería?
+                                            <br/>
+                                            26. ¿Una fantasía sexual recurrente?
+                                            <br/>
+                                            27. ¿Si pudieses hacer cualquier cosa, qué te gustaría hacer con tu pareja ahora mismo?
+                                            <br/>
                                         </AnswerQuestion>
                                     </CardBody>
                                 </Collapse>
                             </Card>
-                        </Col>
-                        <Text>
-                        <span>Parte 2:</span> Poniéndolo en Práctica
-                        <br/>
-                        <br/>
-                            Una vez hayan plasmado su masturbacion ideal en papel y sientan que están listos, es momento de llevarlo a la práctica. Primero le tocará a uno de ustedes ser quien reciba, y luego al otro. Pueden optar por hacerlo el mismo día o dividirlo en diferentes ocasiones.
-                        <br/>
-                        <br/>
-                            Antes de empezar a masturbar a tu pareja, tómate un momento para leer la descripción de la masturbación a medida. Siéntete libre de hacerle preguntas a tu pareja y de comprender bien los detalles.
-                        <br/>
-                        <br/>
-                        <BotonRandom onClick={chooseRandomName}>¿Quién comienza?</BotonRandom>
-                        <br/>
-                        <br/>
-                        {chosenName && <div>Comienza: {chosenName}</div>}
+                        </Col> */}
 
-                        </Text>
-                        <Text>
-                        <span>Parte 3:</span> La Comunicación es Clave
-                        <br/>
-                        <br/>
-                            Tras la experiencia, tómense un momento para conversar sobre cómo se sintieron.
-                        <br/>
-                        </Text>
-                        <Col xs="12" lg="6" md="3">
-                            <Card style={{margin:"10px 10px 10px 10px"}}>
-                                <CardHeader onClick={toggle2} style={{backgroundColor: "white "}}>
-                                <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
-                                    <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
-                                    <TitleQuestion>Aquí les dejamos algunas preguntas guía para facilitar el diálogo</TitleQuestion>
-                                </div>
-                                <i className={isOpen2 ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
-                                </CardHeader>
-                                <Collapse isOpen={isOpen2}>
-                                    <CardBody>
-                                        <AnswerQuestion>
-                                            <ul>
-                                                <li>
-                                                    ¿Qué sintieron al escribir su masturbación ideal?
-                                                </li>
-                                                <li>
-                                                    ¿Cómo se sintieron al masturbar a su pareja?
-                                                </li>
-                                                <li>
-                                                    ¿Cómo se sintieron al ser mastubrados?
-                                                </li>
-                                                <li>
-                                                    ¿Hubo algo que no les haya gustado? ¿Qué?
-                                                </li>
-                                                <li>
-                                                    ¿Qué fue lo que más les gustó?
-                                                </li>
-                                            </ul>
-                                        </AnswerQuestion>
-                                    </CardBody>
-                                </Collapse>
-                            </Card>
-                        </Col>
+                        
                     </Row>
                     <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
+                            <ContentTitle2>
+                                <Title2>GUIÓN BASE PARA JUEGO DE ROLES</Title2>
+                                <AppImage src="../../img/bomb.png" alt="Bomba" />
+                            </ContentTitle2>
+                        
                             <Text2>
-                                Vivir tu paja ideal y que tu pareja sea quien la haga es una experiencia hermosa. Estar del otro lado y poder dar placer a tu pareja sabiendo exactamente cómo le gusta, también.
+                                <span>1. Escenario:</span> En un lugar de _______ (puede ser una oficina, un bar, una biblioteca, un consultorio, etc.)
                                 <br/>
                                 <br/>
-                                ¡Que se diviertan y exploren juntos su sexualidad!
+                                <span>2. Entrada:</span> _______ (nombre/personaje, por ejemplo: Juan/el jefe, María/la secretaria, etc.) entra por la puerta y observa detenidamente a su alrededor. Se percata de la presencia de _______ (otro nombre/personaje).
                                 <br/>
                                 <br/>
-                                <span>Con placer,</span>
+                                <span>3. Interacción:</span>
                                 <br/>
-                                <span>El equipo de WeSex.</span>
+                                _______ (primer nombre/personaje) se acerca y dice: &quot;_______ (frase inicial, como &quot;Hace tiempo que no nos veíamos&quot;, &quot;Escuché que necesitas mi ayuda&quot;, &quot;Me dijeron que estarías aquí&quot;, etc.)&quot;.
+                                <br/>
+                                _______ (segundo nombre/personaje) levanta la vista y responde: &quot;_______ (respuesta inicial, como &quot;No esperaba verte aquí&quot;, &quot;Si, tengo un problema y tú eres la única persona que puede ayudarme&quot;, &quot;¿Y qué te trae por aquí?&quot;, etc.)&quot;.
+                                <br/>
+                                <br/>
+                                <span>4. Desarrollo:</span>
+                                <br/>
+                                _______ (primer nombre/personaje) sonríe/parece sorprendido/se muestra curioso y pregunta: &quot;_______ (pregunta o comentario que puede dar pie a una conversación más amplia o a la acción siguiente, como &quot;¿Qué ha cambiado desde la última vez?&quot;, &quot;Siempre supe que este día llegaría&quot;, &quot;¿Por qué crees que yo soy la solución?&quot;, etc.)&quot;.
+                                <br/>
+                                _______ (segundo nombre/personaje) toma un respiro/se muestra nervioso/sonríe coquetamente y comenta: &quot;_______ (respuesta o comentario que genera tensión o interés, como &quot;Hay cosas que deberías saber&quot;, &quot;No es tan simple como parece&quot;, &quot;Había esperado este momento durante mucho tiempo&quot;, etc.)&quot;.
+                                <br/>
+                                <br/>
+                                <span>5. Transición:</span> A partir de este punto, la conversación o las acciones pueden seguir de forma libre, permitiendo que la imaginación y la dinámica de la pareja decidan el rumbo de la historia. Que se diviertan ;) 
+                                {/* <TextBombNormal>Este juego consiste en poner un temporizador, una cuenta regresiva, en la cual no podrán realizar penetración hasta que 
+                                la cuenta regresiva llegue a 0. Esto les ayudará a explorar otras prácticas y salir de la penetración. 
+                                Podrán explorar zonas erógenas, descubrir áreas de placer inesperadas y, además, aumentar la tensión y la excitación al jugar con el tiempo hasta llegar a 0.
+                                </TextBombNormal>
+                                <TextBombNormal style={{marginTop: "2rem", marginBottom:"2rem"}}><span>Claro, para eso les enviamos la guía de zonas erógenas. Ahí explicamos qué es el coitocentrismo y les enseñamos a 
+                                estimular cada zona del cuerpo. Así que no les van a faltar herramientas para disfrutar de este juego</span>
+                                </TextBombNormal>
+                                
+                                ¿Y AHORA? 
+                                <br/>
+                                
+                                Cuando estén listos para empezar, pongan un temporizador de 30 minutos. Pueden jugar también a sostener la tensión, 
+                                sin llegar al orgasmo durante esos 30 minutos. Eso va a requerir mucha comunicación (ya sea verbal o corporal) para ir regulando cuándo seguir y cuándo frenar. 
+                                ¿Aguantarán la tensión sexual hasta que el cronómetro llegue a 0...?
+                                <br/>
+                                <br/>
+                                ¡Que se disfruten! */}
                             </Text2>
                     </Row>
             </Container>
@@ -562,4 +593,4 @@ const Masturbacion = () => {
       );
 }
  
-export default Masturbacion;
+export default JuegoRoles;

@@ -323,7 +323,7 @@ const BotonRandom = styled.a`
 
 
 
-const Masturbacion = () => {
+const Comunicacion = () => {
     const [showAnimation, setShowAnimation] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
     const [isOpen2, setIsOpen2] = useState(false);
@@ -333,7 +333,7 @@ const Masturbacion = () => {
     const toggle2 = () => setIsOpen2(!isOpen2);
     const appRef = useRef(null); // Create a ref to hold the PIXI application
 
-    const chooseRandomName = () => {
+    const chooseRandomName = () =>{
         const randomIndex = Math.floor(Math.random() * names.length);
         setChosenName(names[randomIndex]);
       };
@@ -434,25 +434,112 @@ const Masturbacion = () => {
                     <Row className="justify-content-between">   
                         <ContentTitle>
                             <Title>Desafío:</Title>
-                            <SubTitle><span>Explorando la Masturbación a Medida</span></SubTitle>
+                            <SubTitle><span>Comunicación</span></SubTitle>
                         </ContentTitle>
                         {/* <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle> */}
-
                         <Text>
-                        <span>Parte 1:</span> Imaginando el Placer
-                        <br/>
-                        <br/>
-                        Cada uno deberá anotar en una hoja la forma ideal en la que le gustaría que lo mastubren. 
-                        <br/>
-                        Cuanto más detallado, mejor. Empiecen escribiendo desde el principio, hasta el final. 
-                        <br/>
+                            Les proponemos que puedan ir a un lugar neutral, como a un bar, café, o plaza, y retomar la discusión desde una nueva perspectiva. Para ello es importante previamente que cada uno pueda repensar cuál es la responsabilidad que tuvo en la generación del conflicto y arme un listado escrito.
+                            <br />
+                            <br />
+                            <ul>
+                                                <li>
+                                                    ❓ ¿Qué hice yo para generar el conflicto?
+                                                </li>
+                                                <li>
+                                                    🤭 ¿Cuáles fueron mis formas o actitudes no verbales que pudieron resultar agresivas?
+                                                </li>
+                                                <li>
+                                                    💡 ¿Qué podría haber hecho de forma diferente?
+                                                </li>
+                                                <li>
+                                                    ⏱️ ¿Cuándo podría haber frenado y no lo hice?
+                                                </li>
+                                                <li>
+                                                    🌟 ¿Qué podría mejorar?
+                                                </li>
+                                                <li>
+                                                    🤐 ¿Qué hubiera evitado decir?
+                                                </li>
+                                            </ul>
+                        <br />
+                        De esta manera generamos un intercambio en el que cada uno puede compartir su listado, y en vez de acusar, escuchamos.
+                        <br />
+                        Luego de compartir su listado de preguntas mutuamente, pueden fluir en la conversación en caso de que crean que haga falta retomar el tema de conversación con mayor tranquilidad y apertura. 
+                            
+                        </Text>
+                        {/* <Text>
+                        <span>Para resumir, el desafío de esta semana consta de : </span>
+                                <br/>
+                                <br/>
+                                
+                                <ol>
+                                    <li>
+                                       <span>Cada uno armara el listado escrito de las 6 preguntas del principio. </span>
+                                    </li>
+                                    <li>
+                                        <span>Se juntaran en un espacio tranquilo y que les guste a compartir lo que escribieron.</span>
+                                    </li>
+                                    <li>
+                                        <span>Seguirán los tips para continuar con una comunicación más sana y asertiva. </span>
+                                    </li>
+                                </ol>
+                        </Text> */}
+                        <Col xs="12" lg="6" md="3">
+                            <Card style={{margin:"0px 10px 10px 10px"}}>
+                                <CardHeader onClick={toggle2} style={{backgroundColor: "white "}}>
+                                <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
+                                    <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
+                                    <TitleQuestion>Van algunos extra tips para abordar conversaciones incómodas en pareja</TitleQuestion>
+                                </div>
+                                <i className={isOpen2 ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
+                                </CardHeader>
+                                <Collapse isOpen={isOpen2}>
+                                    <CardBody>
+                                        <AnswerQuestion>
+                                            <ol>
+                                                <li>
+                                                    Elijan un espacio seguro donde ambos se sientan a gusto para abrir un canal de comunicación.
+                                                </li>
+                                                <li>
+                                                    Aborden un sólo tema a la vez.
+                                                </li>
+                                                <li>
+                                                    Sean honestos y comiencen el mensaje hablado de forma autorreferencial, por ejemplo:  &quot;Yo siento que…  me gustaría que… &quot;. De esta manera logramos ser claros y directos. Traten de evitar hablar del otro, ya que puede ser un modo de crítica o un modo de justificar lo que nos pasa. 
+                                                    <br />
+                                                    Cuando logramos esto se genera mayor apertura en la comunicación y baja el nivel de defensa, que muchas veces se activa si nos sentimos atacados o criticados.
+                                                </li>
+                                                <li>
+                                                    Intenten no minimizar o invalidar los sentimientos de la otra persona, pues ambos son igual de valiosos. Permitan expresarse. 
+                                                </li>
+                                                <li>
+                                                    Traten de parafrasear lo que han entendido, así no habrá malentendidos. 
+                                                </li>
+                                                <li>
+                                                    Intenten formular preguntas abiertas, ya que permiten conocer las inquietudes, necesidades y deseos mutuos. Aumentar la curiosidad es la clave: ¿Qué me quiere decir?, ¿desde qué perspectiva lo está pensando?, ¿cómo lo siente?. 
+                                                    <br />
+                                                    Escuchen y respondan de manera respetuosa.
+                                                </li>
+                                                <li>
+                                                    Intenten llegar a un acuerdo con empatía y comprensión, entendiendo que ambas posturas pueden ser válidas. A veces necesitamos ceder un poco de cada lado para acercarnos y priorizar el vínculo y el amor.
+                                                </li>
+                                            </ol>
+                                        </AnswerQuestion>
+                                    </CardBody>
+                                </Collapse>
+                            </Card>
+                        </Col>
+                        <Text>
+                        Cuando comiences a aplicar estas herramientas vas a comprobar cómo mejoran tus vínculos. 
+                        <br />
+                        <br />
+                        ¿Se quedaron con ganas de saber un poco más?
                         </Text>
                         <Col xs="12" lg="6" md="3">
                             <Card style={{margin:"10px 10px 10px 10px"}}>
                                 <CardHeader onClick={toggle} style={{backgroundColor: "white "}}>
                                 <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
                                     <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
-                                    <TitleQuestion>Aquí les dejamos unas preguntas para ayudarlos a describir su masturbación a medida.</TitleQuestion>
+                                    <TitleQuestion>Les compartimos algunos tips para aplicar la comunicación asertiva</TitleQuestion>
                                 </div>
                                 <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
                                 </CardHeader>
@@ -461,22 +548,22 @@ const Masturbacion = () => {
                                         <AnswerQuestion>
                                             <ul>
                                                 <li>
-                                                    ¿Cómo comienza todo? ¿Dónde están cuando inicia el encuentro?
+                                                    Lo más importante es la escucha activa, la atención y el interés genuino por entender lo que le pasa a tu pareja. Escuchar suena fácil pero es una tarea muy complicada, ya que cuando estamos escuchando, la mente empieza a generar argumentos para defendernos, o vienen pensamientos de juicio y emociones incómodas. Entonces, no escuchamos genuinamente y no logramos empatizar con la emoción de la otra persona. Te proponemos que intentes prestar atención a tu forma de escuchar y vuelvas a la conversación cada vez que registres que te fuiste a tu cabeza. 
                                                 </li>
                                                 <li>
-                                                    ¿Cómo prefieren que empiece el contacto físico? ¿Con besos, caricias, masajes, o directo a los genitales?
+                                                    El lenguaje no verbal también comunica y nos predispone a un tipo de escucha.  Por ejemplo, es importante que el cuerpo esté frente a frente, haciendo contacto visual y sin cruzar las manos. Esto marca una posición corporal de apertura y disponibilidad. 
                                                 </li>
                                                 <li>
-                                                    ¿Qué partes del cuerpo desean que les toquen primero?
+                                                    Ten en cuenta que lo que haces puede afectar al otro y viceversa, entonces intenta cuidar tus acciones y palabras. Por ejemplo, cuando estamos enojados decimos y hacemos cosas que pueden lastimar a los demás. Ten en cuenta y reflexiona si lo que vas a decir, es para mejorar o sólo empeorará la situación y la comunicación.
                                                 </li>
                                                 <li>
-                                                    ¿Cómo desean que la otra persona se acerque a sus genitales?
+                                                    Al inicio de cualquier conversación incómoda, pregúntate, ¿qué es lo que buscas? ¿buscas comunicación asertiva, llena de respeto y amor o de lo contrario sin respeto y agresiva?. Mantén clara la intención y esta te guiará hacia la resolución de los conflictos. 
                                                 </li>
                                                 <li>
-                                                    Detallen paso a paso la estimulación: ¿Con saliva o lubricante? ¿Rápido, lento o moderado? ¿Con cuántos dedos o cuántas manos?
+                                                    Trata de ser consciente de tus pensamientos y de tus emociones, toma una pausa para identificar qué te está pasando. Esto nos ayuda a controlarnos para elegir realmente cómo queremos proceder. 
                                                 </li>
                                                 <li>
-                                                    ¿Cómo les gustaría llegar al orgasmo, si es que lo desean?
+                                                    Salí  de la idea de que la discusión se trata de ganar o perder y reconoce que no atacar es una situación de triunfo en sí misma. Por ejemplo, si vamos con la idea de que queremos tener la razón será muy difícil escuchar, empatizar y crear un espacio seguro, en cambio , si vamos abiertos a que no se trata de tener razón, podremos conectar emocionalmente y comprender el punto de vista de ambos como valioso. 
                                                 </li>
                                             </ul>
                                         </AnswerQuestion>
@@ -484,73 +571,29 @@ const Masturbacion = () => {
                                 </Collapse>
                             </Card>
                         </Col>
-                        <Text>
-                        <span>Parte 2:</span> Poniéndolo en Práctica
-                        <br/>
-                        <br/>
-                            Una vez hayan plasmado su masturbacion ideal en papel y sientan que están listos, es momento de llevarlo a la práctica. Primero le tocará a uno de ustedes ser quien reciba, y luego al otro. Pueden optar por hacerlo el mismo día o dividirlo en diferentes ocasiones.
-                        <br/>
-                        <br/>
-                            Antes de empezar a masturbar a tu pareja, tómate un momento para leer la descripción de la masturbación a medida. Siéntete libre de hacerle preguntas a tu pareja y de comprender bien los detalles.
-                        <br/>
-                        <br/>
-                        <BotonRandom onClick={chooseRandomName}>¿Quién comienza?</BotonRandom>
-                        <br/>
-                        <br/>
-                        {chosenName && <div>Comienza: {chosenName}</div>}
 
-                        </Text>
-                        <Text>
-                        <span>Parte 3:</span> La Comunicación es Clave
-                        <br/>
-                        <br/>
-                            Tras la experiencia, tómense un momento para conversar sobre cómo se sintieron.
-                        <br/>
-                        </Text>
-                        <Col xs="12" lg="6" md="3">
-                            <Card style={{margin:"10px 10px 10px 10px"}}>
-                                <CardHeader onClick={toggle2} style={{backgroundColor: "white "}}>
-                                <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
-                                    <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
-                                    <TitleQuestion>Aquí les dejamos algunas preguntas guía para facilitar el diálogo</TitleQuestion>
-                                </div>
-                                <i className={isOpen2 ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
-                                </CardHeader>
-                                <Collapse isOpen={isOpen2}>
-                                    <CardBody>
-                                        <AnswerQuestion>
-                                            <ul>
-                                                <li>
-                                                    ¿Qué sintieron al escribir su masturbación ideal?
-                                                </li>
-                                                <li>
-                                                    ¿Cómo se sintieron al masturbar a su pareja?
-                                                </li>
-                                                <li>
-                                                    ¿Cómo se sintieron al ser mastubrados?
-                                                </li>
-                                                <li>
-                                                    ¿Hubo algo que no les haya gustado? ¿Qué?
-                                                </li>
-                                                <li>
-                                                    ¿Qué fue lo que más les gustó?
-                                                </li>
-                                            </ul>
-                                        </AnswerQuestion>
-                                    </CardBody>
-                                </Collapse>
-                            </Card>
-                        </Col>
+                        
+                        
                     </Row>
                     <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
                             <Text2>
-                                Vivir tu paja ideal y que tu pareja sea quien la haga es una experiencia hermosa. Estar del otro lado y poder dar placer a tu pareja sabiendo exactamente cómo le gusta, también.
+                            Para resumir, el desafío de esta semana consta de :
                                 <br/>
                                 <br/>
-                                ¡Que se diviertan y exploren juntos su sexualidad!
-                                <br/>
-                                <br/>
-                                <span>Con placer,</span>
+                                <ol>
+                                    <li>
+                                       Cada uno armara el listado escrito de las 6 preguntas del principio.
+                                    </li>
+                                    <li>
+                                        Se juntaran en un espacio tranquilo y que les guste a compartir lo que escribieron.
+                                    </li>
+                                    <li>
+                                        Seguirán los tips para continuar con una comunicación más sana y asertiva.
+                                    </li>
+                                </ol>
+                                <br />
+                                <br />
+                                <span>Les deseamos lo mejor con este desafío,</span>
                                 <br/>
                                 <span>El equipo de WeSex.</span>
                             </Text2>
@@ -562,4 +605,4 @@ const Masturbacion = () => {
       );
 }
  
-export default Masturbacion;
+export default Comunicacion;

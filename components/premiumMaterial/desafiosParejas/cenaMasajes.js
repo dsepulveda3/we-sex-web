@@ -198,8 +198,8 @@ const AppImage = styled.img`
         margin-top: 1rem;
         margin-left: 0rem;
         margin-right: 0rem;
-        width: 15%;
-        height: 80%;
+        width: 18%;
+        height: 70%;
     }
     @media(min-width: 540px){
         margin-right: 2rem;
@@ -258,7 +258,7 @@ const TitleQuestion = styled.h4`
     }
     @media(max-width: 540px){
         margin-bottom:1rem;
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
     @media(min-width: 540px){
         margin-bottom: 1rem;
@@ -310,7 +310,7 @@ const FullscreenCanvas = styled.div`
 `;
 
 const BotonRandom = styled.a`
-    background-color: var(--green);
+    background-color: var(--violet);
     color: white;
     border: none;
     border-radius: 10px; /* Make it rounded */
@@ -323,16 +323,14 @@ const BotonRandom = styled.a`
 
 
 
-const Masturbacion = () => {
+const CenaMasajes = () => {
     const [showAnimation, setShowAnimation] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
-    const [isOpen2, setIsOpen2] = useState(false);
-    const names = ["Quien presiono este botón", "Quien NO presionó este botón"]; // Add the names you want to choose from
-    const [chosenName, setChosenName] = useState("");
     const toggle = () => setIsOpen(!isOpen);
-    const toggle2 = () => setIsOpen2(!isOpen2);
     const appRef = useRef(null); // Create a ref to hold the PIXI application
 
+    const names = ["Quien presiono este botón", "Quien NO presionó este botón"]; // Add the names you want to choose from
+    const [chosenName, setChosenName] = useState("");
     const chooseRandomName = () => {
         const randomIndex = Math.floor(Math.random() * names.length);
         setChosenName(names[randomIndex]);
@@ -434,126 +432,145 @@ const Masturbacion = () => {
                     <Row className="justify-content-between">   
                         <ContentTitle>
                             <Title>Desafío:</Title>
-                            <SubTitle><span>Explorando la Masturbación a Medida</span></SubTitle>
+                            <SubTitle><span>Cocina y masajes</span></SubTitle>
                         </ContentTitle>
                         {/* <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle> */}
 
                         <Text>
-                        <span>Parte 1:</span> Imaginando el Placer
+                        <span>Objetivo:</span> Pasar un momento divertido juntos, fortaleciendo la conexión y compartiendo risas.
                         <br/>
                         <br/>
-                        Cada uno deberá anotar en una hoja la forma ideal en la que le gustaría que lo mastubren. 
+                        <span>Cena y cocina juntos:</span>
                         <br/>
-                        Cuanto más detallado, mejor. Empiecen escribiendo desde el principio, hasta el final. 
+                        <br/>
+                        <span>1:</span> Piensen en un plato que los identifique. Algún plato que les guste a ambos, que los remonte a un recuerdo, a una cita, a un viaje que hayan hecho.
+                        <br/>
+                        <br/>
+                        <span>2:</span> Armen el listado de compras y vayan juntos a conseguir los ingredientes.
+                        <br/>
+                        <br/>
+                        <span>3:</span> Llegada la noche, el plan será cocinar, tomar algo y disfrutar de la cena.
+                        <br/>
+                        <br/>
+                        <span>4:</span> Asegúrense de poder tener esa noche solos.
+                        <br/>
                         <br/>
                         </Text>
-                        <Col xs="12" lg="6" md="3">
+                    </Row>
+                    <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
+                            <ContentTitle2>
+                                <Title2 style={{textAlign: 'left'}}>LUEGO DE LA CENA</Title2>
+                                <AppImage src="../../img/bomb.png" alt="Bomba" />
+                            </ContentTitle2>
+
+                            <Text style={{marginBottom: "0px"}}>
+                            Presiona el botón antes de leer las instrucciones.
+                            <br />
+                            <br />
+                            <BotonRandom onClick={chooseRandomName}>¿Quién comienza?</BotonRandom>
+                            <br/>
+                            <br/>
+                            {chosenName && <div>Comienza: {chosenName}</div>}
+                            </Text>
+                        
+                            <Text2>
+                                <span>{chosenName}, hoy te toca realizar un masaje relajante y/o erótico a tu pareja. Sin expectativas de que lleve a algo más, simplemente para que el se sienta bien y relajado.</span>
+                                <br/>
+                                <br/>
+                                Puedes preguntarle a Sergio cómo le gustaría que sea el masaje, pero igualmente…
+                                <br/>
+                            </Text2>
+                            <Col xs="12" lg="12" md="3">
                             <Card style={{margin:"10px 10px 10px 10px"}}>
                                 <CardHeader onClick={toggle} style={{backgroundColor: "white "}}>
                                 <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
-                                    <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
-                                    <TitleQuestion>Aquí les dejamos unas preguntas para ayudarlos a describir su masturbación a medida.</TitleQuestion>
+                                    
+                                    <TitleQuestion style={{marginLeft: '2rem'}}>Te dejamos aquí una guía para realizar el mejor masaje erótico 😉</TitleQuestion>
                                 </div>
                                 <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
                                 </CardHeader>
                                 <Collapse isOpen={isOpen}>
                                     <CardBody>
                                         <AnswerQuestion>
-                                            <ul>
-                                                <li>
-                                                    ¿Cómo comienza todo? ¿Dónde están cuando inicia el encuentro?
-                                                </li>
-                                                <li>
-                                                    ¿Cómo prefieren que empiece el contacto físico? ¿Con besos, caricias, masajes, o directo a los genitales?
-                                                </li>
-                                                <li>
-                                                    ¿Qué partes del cuerpo desean que les toquen primero?
-                                                </li>
-                                                <li>
-                                                    ¿Cómo desean que la otra persona se acerque a sus genitales?
-                                                </li>
-                                                <li>
-                                                    Detallen paso a paso la estimulación: ¿Con saliva o lubricante? ¿Rápido, lento o moderado? ¿Con cuántos dedos o cuántas manos?
-                                                </li>
-                                                <li>
-                                                    ¿Cómo les gustaría llegar al orgasmo, si es que lo desean?
-                                                </li>
-                                            </ul>
-                                        </AnswerQuestion>
-                                    </CardBody>
-                                </Collapse>
-                            </Card>
-                        </Col>
-                        <Text>
-                        <span>Parte 2:</span> Poniéndolo en Práctica
-                        <br/>
-                        <br/>
-                            Una vez hayan plasmado su masturbacion ideal en papel y sientan que están listos, es momento de llevarlo a la práctica. Primero le tocará a uno de ustedes ser quien reciba, y luego al otro. Pueden optar por hacerlo el mismo día o dividirlo en diferentes ocasiones.
-                        <br/>
-                        <br/>
-                            Antes de empezar a masturbar a tu pareja, tómate un momento para leer la descripción de la masturbación a medida. Siéntete libre de hacerle preguntas a tu pareja y de comprender bien los detalles.
-                        <br/>
-                        <br/>
-                        <BotonRandom onClick={chooseRandomName}>¿Quién comienza?</BotonRandom>
-                        <br/>
-                        <br/>
-                        {chosenName && <div>Comienza: {chosenName}</div>}
+                                        <TextBombNormal style={{fontWeight: 'bold'}}>Paso 1: Preparación</TextBombNormal>
+                                        
+                                        <ul>
+                                            <li>
+                                                Crea un ambiente adecuado: Prepara el lugar donde realizarás el masaje. Asegúrate de que sea cómodo, tranquilo y libre de distracciones. Puedes ambientar con velas aromáticas, música suave y luces tenues para crear un ambiente íntimo y relajante.
+                                            </li>
+                                            <li>
+                                                Asegúrate de tener todo lo necesario: Reúne los elementos que necesitarás, como aceites de masaje, toallas suaves, accesorios (plumas, cremas comestibles, vibradores) y cualquier otra cosa que desees incorporar.
+                                            </li>
+                                        <br/>
+                                        </ul>
+                                        <TextBombNormal style={{fontWeight: 'bold'}}>Paso 2: Comenzar el masaje</TextBombNormal>
+                                        <ul>
+                                            <li>
+                                                Invita a la persona a acostarse cómodamente: Esta puede recostarse boca abajo o boca arriba, según prefiera. Asegúrate de que esté relajada y cómoda antes de comenzar.
+                                            </li>
+                                            <li>
+                                                Aplica aceite de masaje: Calienta el aceite en tus manos antes de aplicarlo sobre el cuerpo de tu pareja. Comienza con movimientos suaves y largos, distribuyendo el aceite de manera uniforme.
+                                            </li>
+                                            <li>
+                                                Explora diferentes partes del cuerpo: Empieza por las zonas menos sensibles, como la espalda, los hombros y los brazos. Utiliza movimientos suaves, largos y fluidos para acariciar y masajear estas áreas. A medida que avances, presta atención a las reacciones de tu pareja y ve explorando otras partes del cuerpo, como las piernas, los pies, el cuello y el cuero cabelludo.
+                                            </li>
+                                        </ul>
+                                        <br/>
+                                        <TextBombNormal style={{fontWeight: 'bold'}}>Paso 3: Variedad en las técnicas de masaje</TextBombNormal>
+                                        <ul>
 
-                        </Text>
-                        <Text>
-                        <span>Parte 3:</span> La Comunicación es Clave
-                        <br/>
-                        <br/>
-                            Tras la experiencia, tómense un momento para conversar sobre cómo se sintieron.
-                        <br/>
-                        </Text>
-                        <Col xs="12" lg="6" md="3">
-                            <Card style={{margin:"10px 10px 10px 10px"}}>
-                                <CardHeader onClick={toggle2} style={{backgroundColor: "white "}}>
-                                <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
-                                    <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
-                                    <TitleQuestion>Aquí les dejamos algunas preguntas guía para facilitar el diálogo</TitleQuestion>
-                                </div>
-                                <i className={isOpen2 ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
-                                </CardHeader>
-                                <Collapse isOpen={isOpen2}>
-                                    <CardBody>
-                                        <AnswerQuestion>
+                                            <li>
+                                                Utiliza diferentes partes del cuerpo: No te limites a usar solo tus manos. Experimenta con otras partes de tu cuerpo, como los antebrazos, los codos, el pecho o incluso tu propio cuerpo en contacto con el de la otra persona. Estos cambios en las técnicas de masaje pueden generar sensaciones diferentes y aumentar la excitación.
+                                            </li>
                                             <ul>
                                                 <li>
-                                                    ¿Qué sintieron al escribir su masturbación ideal?
-                                                </li>
-                                                <li>
-                                                    ¿Cómo se sintieron al masturbar a su pareja?
-                                                </li>
-                                                <li>
-                                                    ¿Cómo se sintieron al ser mastubrados?
-                                                </li>
-                                                <li>
-                                                    ¿Hubo algo que no les haya gustado? ¿Qué?
-                                                </li>
-                                                <li>
-                                                    ¿Qué fue lo que más les gustó?
+                                                
+                                                    <li>
+                                                        Juega con las intensidades: Alterna entre movimientos suaves y firmes, adaptándote a las preferencias de tu pareja.
+                                                    </li>
+                                                    <li>
+                                                        Puedes usar las yemas de tus dedos para acariciar suavemente.
+                                                    </li>
+                                                    <li>
+                                                        Las palmas de tus manos para aplicar una presión más profunda.
+                                                    </li>
+                                                    <li>
+                                                        Las uñas para generar leves rasguños estimulantes.
+                                                    </li>
                                                 </li>
                                             </ul>
+                                            <li>
+                                            Experimenta con diferentes ritmos y velocidades: Varía el ritmo y la velocidad de tus movimientos para mantener la excitación.
+                                            </li>
+                                            <ul>
+                                                <li>
+                                                
+                                                    <li>
+                                                        Puedes realizar movimientos lentos y sensuales, alternándolos con movimientos más rápidos y enérgicos para aumentar la intensidad.
+                                                    </li>
+                                                </li>
+                                            </ul>
+                                        </ul>
+                                        <br/>
+                                        <TextBombNormal style={{fontWeight: 'bold'}}>Paso 4: Enfócate en las zonas erógenas</TextBombNormal>
+                                        <ul>
+                                            <li>
+                                                Descubre las zonas sensibles: Presta atención a las reacciones de tu pareja y busca las zonas que le generen mayor placer. Estas pueden incluir los labios, el cuello, los pezones, los muslos internos, el abdomen, las nalgas, los genitales y otras áreas erógenas que mencionamos en la guía.
+                                            </li>
+                                            <li>
+                                                Estimula las zonas erógenas de forma creativa: Utiliza técnicas específicas para estimular estas zonas, como suaves mordiscos, besos, lamidos o movimientos circulares con la lengua.
+                                            </li>
+                                        </ul>
                                         </AnswerQuestion>
                                     </CardBody>
                                 </Collapse>
                             </Card>
                         </Col>
                     </Row>
-                    <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
-                            <Text2>
-                                Vivir tu paja ideal y que tu pareja sea quien la haga es una experiencia hermosa. Estar del otro lado y poder dar placer a tu pareja sabiendo exactamente cómo le gusta, también.
-                                <br/>
-                                <br/>
-                                ¡Que se diviertan y exploren juntos su sexualidad!
-                                <br/>
-                                <br/>
-                                <span>Con placer,</span>
-                                <br/>
-                                <span>El equipo de WeSex.</span>
-                            </Text2>
+                    <Row className="justify-content-between">   
+                        <Text>
+                            <span>NOTA FINAL:</span>  Recuerden que el objetivo es divertirse y tener un espacio para ustedes. No hay expectativas de que el desafío conduzca a un acto sexual, dejense llevar por el momento y el disfrute. 
+                        </Text>
                     </Row>
             </Container>
             </Background>
@@ -562,4 +579,4 @@ const Masturbacion = () => {
       );
 }
  
-export default Masturbacion;
+export default CenaMasajes;

@@ -198,8 +198,8 @@ const AppImage = styled.img`
         margin-top: 1rem;
         margin-left: 0rem;
         margin-right: 0rem;
-        width: 15%;
-        height: 80%;
+        width: 18%;
+        height: 70%;
     }
     @media(min-width: 540px){
         margin-right: 2rem;
@@ -258,7 +258,7 @@ const TitleQuestion = styled.h4`
     }
     @media(max-width: 540px){
         margin-bottom:1rem;
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
     @media(min-width: 540px){
         margin-bottom: 1rem;
@@ -309,35 +309,15 @@ const FullscreenCanvas = styled.div`
   align-items: center;
 `;
 
-const BotonRandom = styled.a`
-    background-color: var(--green);
-    color: white;
-    border: none;
-    border-radius: 10px; /* Make it rounded */
-    padding: 10px 20px;
-    cursor: pointer;
-    font-weight: bold;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a box shadow */
-`;
 
 
 
-
-const Masturbacion = () => {
+const QuieroLHNLH = () => {
     const [showAnimation, setShowAnimation] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
-    const [isOpen2, setIsOpen2] = useState(false);
-    const names = ["Quien presiono este botón", "Quien NO presionó este botón"]; // Add the names you want to choose from
-    const [chosenName, setChosenName] = useState("");
     const toggle = () => setIsOpen(!isOpen);
-    const toggle2 = () => setIsOpen2(!isOpen2);
     const appRef = useRef(null); // Create a ref to hold the PIXI application
-
-    const chooseRandomName = () => {
-        const randomIndex = Math.floor(Math.random() * names.length);
-        setChosenName(names[randomIndex]);
-      };
-
+    
     useEffect(() => {
         let app = null;
       
@@ -434,126 +414,87 @@ const Masturbacion = () => {
                     <Row className="justify-content-between">   
                         <ContentTitle>
                             <Title>Desafío:</Title>
-                            <SubTitle><span>Explorando la Masturbación a Medida</span></SubTitle>
+                            <SubTitle><span>QUIERO - LO HARÍA - NO LO HARÍA</span></SubTitle>
                         </ContentTitle>
                         {/* <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle> */}
 
                         <Text>
-                        <span>Parte 1:</span> Imaginando el Placer
+                        Ya saben cuánto nos gustan los juegos. Sobre todo, queremos transmitirles que nunca es tarde para seguir jugando como adultos. Si además al juego le sumamos algo sexual, bueno, es un planazo.
+                        <br />
+                        <br />
+                        <span>Objetivo:</span> ayudarlos a experimentar y llevar a cabo fantasías y actos sexuales.
                         <br/>
                         <br/>
-                        Cada uno deberá anotar en una hoja la forma ideal en la que le gustaría que lo mastubren. 
+                        <span>Que necesitas para este desafió</span>
                         <br/>
-                        Cuanto más detallado, mejor. Empiecen escribiendo desde el principio, hasta el final. 
+                        <br/>
+                        <span>1:</span> 2 hojas o cartulinas.
+                        <br/>
+                        <br/>
+                        <span>2:</span> 2 lápices o lapiceras.
+                        <br/>
+                        <br/>
+                        <span>3:</span> 1 resaltador o lapicera de color.
+                        <br/>
+                        <br/>
+                        <span>4:</span> Post-its (opcional).
+                        <br/>
                         <br/>
                         </Text>
-                        <Col xs="12" lg="6" md="3">
+                    </Row>
+                    <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
+                            <ContentTitle2>
+                                <Title2 style={{textAlign: 'left'}}>Hora del jugar</Title2>
+                                <AppImage src="../../img/bomb.png" alt="Bomba" />
+                            </ContentTitle2>
+                        
+                            <Text2>
+                                El juego consiste en crear 3 columnas: <span>Quiero - Lo haría - No lo haría.</span>
+                                <br />
+                                <br />
+                                <span>Quiero:</span> vas a poner las cosas que quieres experimentar. Tienes ganas activamente de probar, experimentar o realizar las cosas que están en esta columna.
+                                <br/>
+                                <br/>
+                                <span>Lo haría:</span> vas a poner las cosas que podrías experimentar. No son cosas que estás buscando activamente hacer o probar, pero que quizás estarías dispuesto a hacer en caso de que tu pareja lo desee.
+                                <br/>
+                                <br/>
+                                <span>No lo haría:</span> aquí van las cosas que NO estás dispuesto a hacer.
+                                <br/>
+                            </Text2>
+                            <Col xs="12" lg="12" md="3">
                             <Card style={{margin:"10px 10px 10px 10px"}}>
                                 <CardHeader onClick={toggle} style={{backgroundColor: "white "}}>
                                 <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
-                                    <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
-                                    <TitleQuestion>Aquí les dejamos unas preguntas para ayudarlos a describir su masturbación a medida.</TitleQuestion>
+                                    
+                                    <TitleQuestion style={{marginLeft: '2rem'}}>Luego de completar las intrucciones anteriores presiona aquí 😉</TitleQuestion>
                                 </div>
                                 <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
                                 </CardHeader>
                                 <Collapse isOpen={isOpen}>
                                     <CardBody>
                                         <AnswerQuestion>
-                                            <ul>
-                                                <li>
-                                                    ¿Cómo comienza todo? ¿Dónde están cuando inicia el encuentro?
-                                                </li>
-                                                <li>
-                                                    ¿Cómo prefieren que empiece el contacto físico? ¿Con besos, caricias, masajes, o directo a los genitales?
-                                                </li>
-                                                <li>
-                                                    ¿Qué partes del cuerpo desean que les toquen primero?
-                                                </li>
-                                                <li>
-                                                    ¿Cómo desean que la otra persona se acerque a sus genitales?
-                                                </li>
-                                                <li>
-                                                    Detallen paso a paso la estimulación: ¿Con saliva o lubricante? ¿Rápido, lento o moderado? ¿Con cuántos dedos o cuántas manos?
-                                                </li>
-                                                <li>
-                                                    ¿Cómo les gustaría llegar al orgasmo, si es que lo desean?
-                                                </li>
-                                            </ul>
-                                        </AnswerQuestion>
-                                    </CardBody>
-                                </Collapse>
-                            </Card>
-                        </Col>
-                        <Text>
-                        <span>Parte 2:</span> Poniéndolo en Práctica
-                        <br/>
-                        <br/>
-                            Una vez hayan plasmado su masturbacion ideal en papel y sientan que están listos, es momento de llevarlo a la práctica. Primero le tocará a uno de ustedes ser quien reciba, y luego al otro. Pueden optar por hacerlo el mismo día o dividirlo en diferentes ocasiones.
-                        <br/>
-                        <br/>
-                            Antes de empezar a masturbar a tu pareja, tómate un momento para leer la descripción de la masturbación a medida. Siéntete libre de hacerle preguntas a tu pareja y de comprender bien los detalles.
-                        <br/>
-                        <br/>
-                        <BotonRandom onClick={chooseRandomName}>¿Quién comienza?</BotonRandom>
-                        <br/>
-                        <br/>
-                        {chosenName && <div>Comienza: {chosenName}</div>}
-
-                        </Text>
-                        <Text>
-                        <span>Parte 3:</span> La Comunicación es Clave
-                        <br/>
-                        <br/>
-                            Tras la experiencia, tómense un momento para conversar sobre cómo se sintieron.
-                        <br/>
-                        </Text>
-                        <Col xs="12" lg="6" md="3">
-                            <Card style={{margin:"10px 10px 10px 10px"}}>
-                                <CardHeader onClick={toggle2} style={{backgroundColor: "white "}}>
-                                <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
-                                    <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
-                                    <TitleQuestion>Aquí les dejamos algunas preguntas guía para facilitar el diálogo</TitleQuestion>
-                                </div>
-                                <i className={isOpen2 ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
-                                </CardHeader>
-                                <Collapse isOpen={isOpen2}>
-                                    <CardBody>
-                                        <AnswerQuestion>
-                                            <ul>
-                                                <li>
-                                                    ¿Qué sintieron al escribir su masturbación ideal?
-                                                </li>
-                                                <li>
-                                                    ¿Cómo se sintieron al masturbar a su pareja?
-                                                </li>
-                                                <li>
-                                                    ¿Cómo se sintieron al ser mastubrados?
-                                                </li>
-                                                <li>
-                                                    ¿Hubo algo que no les haya gustado? ¿Qué?
-                                                </li>
-                                                <li>
-                                                    ¿Qué fue lo que más les gustó?
-                                                </li>
-                                            </ul>
+                                        <TextBombNormal style={{fontWeight: 'bold'}}>La idea es que, luego de que cada uno haya armado sus 3 columnas, las compartan juntos. Todas las cosas que estén en QUIERO y en LO HARÍA son nuevas ideas que pueden empezar a experimentar 😊.</TextBombNormal>
+                                        
+                                        <ul>
+                                            <li>
+                                                Van a marcar con un resaltador todas las cosas que ambos estarían dispuestos a hacer (QUIERO o LO HARÍA).
+                                            </li>
+                                            <li>
+                                                Asegúrate de tener todo lo necesario: Reúne los elementos que necesitarás, como aceites de masaje, toallas suaves, accesorios (plumas, cremas comestibles, vibradores) y cualquier otra cosa que desees incorporar.
+                                            </li>
+                                        <br/>
+                                        </ul>
+                                        Ahora ya tienen, no solo un plan para esta noche, sino una &quot;to-do list&quot; de sus fantasías a realizar juntos.
                                         </AnswerQuestion>
                                     </CardBody>
                                 </Collapse>
                             </Card>
                         </Col>
                     </Row>
-                    <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
-                            <Text2>
-                                Vivir tu paja ideal y que tu pareja sea quien la haga es una experiencia hermosa. Estar del otro lado y poder dar placer a tu pareja sabiendo exactamente cómo le gusta, también.
-                                <br/>
-                                <br/>
-                                ¡Que se diviertan y exploren juntos su sexualidad!
-                                <br/>
-                                <br/>
-                                <span>Con placer,</span>
-                                <br/>
-                                <span>El equipo de WeSex.</span>
-                            </Text2>
+                    <Row className="justify-content-between">   
+                        <Text>
+                            <span>¡QUE DISFRUTEN!</span>
+                        </Text>
                     </Row>
             </Container>
             </Background>
@@ -562,4 +503,4 @@ const Masturbacion = () => {
       );
 }
  
-export default Masturbacion;
+export default QuieroLHNLH;

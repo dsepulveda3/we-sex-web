@@ -276,6 +276,10 @@ const ArticleCard = styled.div`
   width: 100%;
 `;
 
+const ContainerImg= styled.img`
+  width: 100%;
+`;
+
 
 const ArticleDetail = ({ articleItem }) => {
   const [newArticles, setNewArticles] = useState([]);
@@ -353,6 +357,7 @@ const ArticleDetail = ({ articleItem }) => {
               <p>{articleItem?.subtitle}</p>
               <Col>
               {articleItem?.content?.map((item, index) => {
+                console.log(item);
                 if (item.type === 'text') {
                   console.log(item.value);
                   return (
@@ -367,8 +372,13 @@ const ArticleDetail = ({ articleItem }) => {
                       <div
                         dangerouslySetInnerHTML={{
                           __html: item.value
+                            .replace(
+                              /<p><img/g,
+                              '<p style="text-align: center; "><img style=""'
+                            )
                             .replace(/<p>/g, '<p style="background-color: transparent; margin-right: 0px; color: rgb(0, 0, 0); text-align: justify">')
-                            .replace(/<ul>/g, '<ul style="list-style-type: disc; margin-right: 80px; text-align: justify">'),
+                            .replace(/<ul>/g, '<ul style="list-style-type: disc; margin-right: 80px; text-align: justify">')
+                            
                         }}
                       />
                     </div>
