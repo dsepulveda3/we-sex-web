@@ -101,7 +101,8 @@ const LostLink = styled.a`
     }
 `;
 
-const PLAN_ID = process.env.NEXT_PUBLIC_PLAN_ID;
+// const PLAN_ID = process.env.NEXT_PUBLIC_PLAN_ID;
+const PLAN_ID = "6516d2d2d029edb06814d45c";
 
 function AccessCodeInput ({setLostLink}) {
     const router = useRouter();
