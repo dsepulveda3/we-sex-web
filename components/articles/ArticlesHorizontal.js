@@ -158,8 +158,8 @@ const ArticlesWithTabs = () => {
  
 
   async function getArticles() {
-    await Axios.get('/articles/all-public').then((response) => {
-      setArticles(response.data.results);
+    await Axios.get('/articles/public-randomized').then((response) => {
+      setArticles(response.data);
     });
   }
 
