@@ -173,8 +173,8 @@ const DiscussionsWithTabs = () => {
   
 
   async function getRecentDiscussions() {
-    await Axios.get('/search/public-discussions').then((response) => {
-      setDiscussions(response.data.results);
+    await Axios.get('/discussions/public-randomized').then((response) => {
+      setDiscussions(response.data);
       console.log("Va info discusiones");
       console.log(response.data);
     });
