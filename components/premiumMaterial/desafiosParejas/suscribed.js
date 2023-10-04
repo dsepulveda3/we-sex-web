@@ -6,7 +6,7 @@ import Dudas from '../dudas';
 const Background = styled.div`
 
     background-color: var(--violet);
-    // background-image: url("/img/cta-bg.jpg");
+    // background-image: url("/img/cta-bg.webp");
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;

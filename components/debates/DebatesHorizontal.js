@@ -12,7 +12,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const Background = styled.div`
-    // background-image: url("/img/landing/cta-bg.jpg");
+    // background-image: url("/img/landing/cta-bg.webp");
     background-color: white;
     background-position: center;
     background-repeat: no-repeat;

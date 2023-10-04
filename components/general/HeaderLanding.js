@@ -27,7 +27,7 @@ const StyledHeader = styled.header`
         height: 40vh;
         width: 100vw;
         background-color: violet;
-        background-image: url("/img/landing/cta-bg.jpg");
+        background-image: url("/img/landing/cta-bg.webp");
         z-index: 1;  /* set the z-index of the navbar-collapse */
       }
       .navbar-nav {
@@ -119,7 +119,7 @@ const Header = () => {
     const handleScroll = () => {
       if (window.pageYOffset > 0) {
         setBgColor('#000000');
-        setBgImage('/img/landing/cta-bg.jpg');
+        setBgImage('/img/landing/cta-bg.webp');
       } else {
         setBgColor('transparent');
         setBgImage('');

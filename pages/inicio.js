@@ -46,8 +46,8 @@ export default function Home() {
         <title>
           {'Inicio | WeSex - La app para hablar y aprender de sexo'}
         </title>
-        <meta name='description' content={''} />
-        <meta name='keywords' content={''} />
+        <meta name='description' content='Página de inicio de WeSex' />
+        <meta name='keywords' content='wesex,www.we.sex,we.sex' />
       </Head>
       <main>
       <Layout type={'nothidden'}>

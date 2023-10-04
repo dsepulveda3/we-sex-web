@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 
 const Discussion = styled.div`
   background-color: var(--violet);
-  // background-image: url("/img/landing/cta-bg.jpg");
+  // background-image: url("/img/landing/cta-bg.webp");
   border-radius: 1.5rem;
   padding: 1.5rem;
   color: var(--violet);

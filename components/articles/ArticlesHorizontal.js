@@ -14,7 +14,7 @@ import "swiper/css/pagination";
 const Background = styled.div`
     // background-color: #f7f7f7;
     background-color: white;
-    // background-image: url("/img/cta-bg.jpg");
+    // background-image: url("/img/cta-bg.webp");
     // background-color: var(--violet);
     background-position: center;
     background-repeat: no-repeat;

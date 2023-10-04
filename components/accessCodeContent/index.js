@@ -8,7 +8,7 @@ const PopupContainer = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("/img/landing/cta-bg.jpg");
+  background-image: url("/img/landing/cta-bg.webp");
   display: flex;
   justify-content: center;
   align-items: center;
