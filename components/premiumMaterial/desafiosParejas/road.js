@@ -309,7 +309,7 @@ const PopupContent2 = () => {
     <>
       <br />
       <InfoText>
-        Terminos y condiciones: al acceder a "desafios para parejas" aceptas los <a style={{fontSize: "1.5rem"}} href={'/privacy-policy'}><span>términos y condiciones</span>.</a>
+        Terminos y condiciones: al acceder a &quot;desafios para parejas&quot; aceptas los <a style={{fontSize: "1.5rem"}} href={'/privacy-policy'}><span>términos y condiciones</span>.</a>
       </InfoText>
       
       {/* Add more content as needed */}
