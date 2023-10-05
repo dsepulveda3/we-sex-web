@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import styled from "@emotion/styled";
 import { Card, CardHeader, Collapse, CardBody } from "reactstrap";
 import Notificar from "./universals/notificar";
+import ArrowBack from './universals/arrowBack';
 
 const Header = styled.div`
     display: flex;

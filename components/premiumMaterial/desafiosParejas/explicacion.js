@@ -3,6 +3,7 @@ import {Row, Col, Container} from 'reactstrap';
 import Head from 'next/head'
 import styled from '@emotion/styled';
 
+
 const Background = styled.div`
     background-color: var(--green);
     @media(max-width: 540px){

@@ -5,6 +5,7 @@ import Notificar from './universals/notificar';
 import styled from '@emotion/styled';
 import * as PIXI from 'pixi.js';
 import { useRouter } from 'next/router';
+import ArrowBack from './universals/arrowBack';
 
 
 const Header = styled.div`

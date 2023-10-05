@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import * as PIXI from 'pixi.js';
 import santaUrl from '../../../public/img/rutina_bomba.png';
 import Notificar from './universals/notificar';
+import ArrowBack from './universals/arrowBack';
 
 const Header = styled.div`
     display: flex;
