@@ -27,6 +27,28 @@ const Background = styled.div`
     }
 `;
 
+const TitleWeSex = styled.div`
+  font-size: 3.5rem;
+  color: white;
+  font-family: "Averia Libre", sans-serif;
+  opacity: 1;
+  margin-left: 4px;
+  margin-top: 0px;
+  margin-bottom: 0rem;
+  text-align: right;
+  
+  
+
+  @media(max-width: 540px){
+    color: white;
+    font-size: 3.5rem;
+    margin-bottom:1.5rem;
+  }
+  @media(max-width: 540px){
+    margin-right: 2rem;
+  }
+`;
+
 // const WeSexText = styled.div`
 //   position: absolute; /* Position the text absolutely within the container */
 //   color: var(--green); /* Text color */
