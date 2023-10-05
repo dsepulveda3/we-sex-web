@@ -5,6 +5,7 @@ import * as PIXI from 'pixi.js';
 import santaUrl from '../../../public/img/rutina_bomba.png';
 import Notificar from './universals/notificar';
 import ArrowBack from './universals/arrowBack';
+import { useRouter } from 'next/router';
 
 const Header = styled.div`
     display: flex;
@@ -325,6 +326,19 @@ const HablemosDeSexo = () => {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
     const appRef = useRef(null); // Create a ref to hold the PIXI application
+    const router = useRouter();
+
+    const [isOriginRoute, setIsOriginRoute] = useState(false);
+    const [origin, setOrigin] = useState(null);
+
+    useEffect(() => {
+        if (router.isReady){
+          if (router.query.origin) {
+            setIsOriginRoute(true);
+            setOrigin(router.query.origin);
+          }
+        }
+      }, [router.isReady, isOriginRoute]);
 
     useEffect(() => {
         let app = null;

@@ -7,6 +7,7 @@ import * as PIXI from 'pixi.js';
 import { useRouter } from 'next/router';
 
 
+
 const Header = styled.div`
     display: flex;
     flex-direction: row;

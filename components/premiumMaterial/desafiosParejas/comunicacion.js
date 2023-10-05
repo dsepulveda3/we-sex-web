@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import * as PIXI from 'pixi.js';
 import santaUrl from '../../../public/img/rutina_bomba.png';
 import ArrowBack from './universals/arrowBack';
+import { useRouter } from 'next/router';
 
 const Header = styled.div`
     display: flex;
@@ -339,6 +340,19 @@ const Comunicacion = () => {
     const toggle = () => setIsOpen(!isOpen);
     const toggle2 = () => setIsOpen2(!isOpen2);
     const appRef = useRef(null); // Create a ref to hold the PIXI application
+    const router = useRouter();
+
+    const [isOriginRoute, setIsOriginRoute] = useState(false);
+    const [origin, setOrigin] = useState(null);
+
+    useEffect(() => {
+        if (router.isReady){
+          if (router.query.origin) {
+            setIsOriginRoute(true);
+            setOrigin(router.query.origin);
+          }
+        }
+      }, [router.isReady, isOriginRoute]);
 
     const chooseRandomName = () =>{
         const randomIndex = Math.floor(Math.random() * names.length);

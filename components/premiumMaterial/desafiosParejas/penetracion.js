@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 import { Card, CardHeader, Collapse, CardBody } from "reactstrap";
 import Notificar from "./universals/notificar";
 import ArrowBack from './universals/arrowBack';
+import { useRouter } from 'next/router';
 
 const Header = styled.div`
     display: flex;
@@ -245,10 +246,25 @@ const Penetracion = () => {
     const toggle = () => setIsOpen(!isOpen);
     const toggle2 = () => setIsOpen2(!isOpen2);
 
+    const router = useRouter();
+
+    const [isOriginRoute, setIsOriginRoute] = useState(false);
+    const [origin, setOrigin] = useState(null);
+
+    useEffect(() => {
+        if (router.isReady){
+          if (router.query.origin) {
+            setIsOriginRoute(true);
+            setOrigin(router.query.origin);
+          }
+        }
+      }, [router.isReady, isOriginRoute]);
+
     const generarNumeroAleatorio = () => {
         const nuevoNumero = Math.floor(Math.random() * 9) + 1;
         setNumeroAleatorio(nuevoNumero);
     };
+
 
     
     return(
