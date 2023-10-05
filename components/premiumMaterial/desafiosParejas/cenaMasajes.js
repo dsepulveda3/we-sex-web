@@ -5,6 +5,12 @@ import * as PIXI from 'pixi.js';
 import santaUrl from '../../../public/img/rutina_bomba.png';
 import Notificar from './universals/notificar';
 
+const Header = styled.div`
+    display: flex;
+    align-items: center; /* Vertically center the items */
+    padding: 0 1rem;
+    
+`;
 
 const Background = styled.div`
 
@@ -429,7 +435,10 @@ const CenaMasajes = () => {
       {!showAnimation && (
             <Background>
               <Container>
-                    <TitleWeSex>WeSex</TitleWeSex>
+                    <Header>
+                        <ArrowBack url={`/premium-material/desafios-para-parejas/road?origin=${origin}`}/>
+                        <TitleWeSex>WeSex</TitleWeSex>
+                    </Header>
                     <Row className="justify-content-between">   
                         <ContentTitle>
                             <Title>Desafío:</Title>

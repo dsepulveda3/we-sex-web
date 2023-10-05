@@ -8,6 +8,13 @@ import { Pagination } from "swiper";
 import CookieManager from 'browser/CookieManager';
 import BotonUniversal from '../botonUniversal';
 
+const Header = styled.div`
+    display: flex;
+    align-items: center; /* Vertically center the items */
+    padding: 0 1rem;
+    
+`;
+
 const Background = styled.div`
     background-image: url("/img/ws-background.jpg");
     background-color: var(--violet);

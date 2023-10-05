@@ -4,6 +4,13 @@ import styled from "@emotion/styled";
 import { Card, CardHeader, Collapse, CardBody } from "reactstrap";
 import Notificar from "./universals/notificar";
 
+const Header = styled.div`
+    display: flex;
+    align-items: center; /* Vertically center the items */
+    padding: 0 1rem;
+    
+`;
+
 const Background = styled.div`
     background-color: var(--green);
     height: 100%;
@@ -224,7 +231,12 @@ const Penetracion = () => {
     return(
         <Background>
             <Border>
+            <Header>
+                <ArrowBack url={`/premium-material/desafios-para-parejas/road?origin=${origin}`}/>
+                <TitleWeSex>WeSex</TitleWeSex>
+            </Header>
             <Logo src='/img/logo_wesex_croped.png' />
+            
             <Title>PENETRACIÓN</Title>
             <SubTitle>Posición v/s Estimulo</SubTitle>
 

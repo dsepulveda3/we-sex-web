@@ -423,7 +423,10 @@ const MapaAmor = () => {
                         <ArrowBack url={`/premium-material/desafios-para-parejas/road?origin=${origin}`}/>
                         <TitleWeSex>WeSex</TitleWeSex>
                     </Header> */}
-                    <TitleWeSex>WeSex</TitleWeSex>
+                    <Header>
+                        <ArrowBack url={`/premium-material/desafios-para-parejas/road?origin=${origin}`}/>
+                        <TitleWeSex>WeSex</TitleWeSex>
+                    </Header>
                     <Row className="justify-content-between">
                         <ContentTitle>
                             <Title>Desafío:</Title>
