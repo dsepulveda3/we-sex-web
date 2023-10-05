@@ -12064,31 +12064,31 @@ const PrivacyPolicy = () => (
                                                     }}
                                                   >
                                                     <span data-custom-class="body_text">
-                                                    By purchasing and using "Challenges for Couples," you agree to comply with and be bound by these Terms and Conditions. If you do not agree with these terms, please do not use the product.
+                                                    By purchasing and using &quot;Challenges for Couples,&quot; you agree to comply with and be bound by these Terms and Conditions. If you do not agree with these terms, please do not use the product.
                                                       <ul>
                                                         <li>
-                                                          "Challenges for Couples" is intended for adults in a consenting, mutually respectful relationship. It is not intended for use by individuals under the legal age of consent.
+                                                        &quot;Challenges for Couples&quot; is intended for adults in a consenting, mutually respectful relationship. It is not intended for use by individuals under the legal age of consent.
                                                         </li>
                                                         <li>
-                                                          You agree to use "Challenges for Couples" in a responsible and respectful manner and to obtain the consent of your partner before engaging in any challenges provided by the product.
+                                                          You agree to use &quot;Challenges for Couples&quot; in a responsible and respectful manner and to obtain the consent of your partner before engaging in any challenges provided by the product.
                                                         </li>
                                                         <li>
                                                           We are not responsible for any consequences arising from the use of this product, including but not limited to any disputes or disagreements that may arise between you and your partner.
                                                         </li>
                                                         <li>
-                                                          "Challenges for Couples" is provided for entertainment and educational purposes only. It does not replace professional advice or counseling. We recommend seeking advice from a qualified professional for any relationship or sexual concerns.
+                                                        &quot;Challenges for Couples&quot; is provided for entertainment and educational purposes only. It does not replace professional advice or counseling. We recommend seeking advice from a qualified professional for any relationship or sexual concerns.
                                                         </li>
                                                         <li>
                                                           We do not guarantee specific outcomes from using the product, and any results or improvements in your relationship are based on your own efforts and circumstances.
                                                         </li>
                                                         <li>
-                                                          All content, including challenges, text, graphics, and images provided by "Challenges for Couples," is protected by copyright and intellectual property laws. You may not reproduce, distribute, or use this content for any commercial purposes without prior written consent.
+                                                          All content, including challenges, text, graphics, and images provided by &quot;Challenges for Couples,&quot; is protected by copyright and intellectual property laws. You may not reproduce, distribute, or use this content for any commercial purposes without prior written consent.
                                                         </li>
                                                         <li>
                                                           We respect your privacy and do not collect personal information without your consent. Please refer to our Privacy Policy for more information on how we handle your data.
                                                         </li>
                                                         <li>
-                                                          We reserve the right to terminate your access to "Challenges for Couples" if you violate these Terms and Conditions or engage in any behavior that we deem inappropriate or harmful.
+                                                          We reserve the right to terminate your access to &quot;Challenges for Couples&quot; if you violate these Terms and Conditions or engage in any behavior that we deem inappropriate or harmful.
                                                         </li>
                                                       </ul>
                                                     </span>
