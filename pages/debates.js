@@ -148,46 +148,80 @@ const CenteredRow = styled(Row)`
   gap: 0px;
 `;
 
+const ToggleContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+`;
+
+const ToggleButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  background-color: ${props => (props.isOn ? 'var(--green)' : '#E7F7E2')};
+  border-radius: 30px; 
+  padding: 5px;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease; 
+  width: 60px; 
+`;
+
+const ToggleBall = styled.div`
+  width: 20px;
+  height: 20px;
+  background-color: var(--violet);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+
+  &.left {
+    transform: translateX(0); /* Move to the left */
+  }
+
+  &.right {
+    transform: translateX(29px); /* Move to the right */
+  }
+`;
+
+
+const ToggleButtonLabelContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const ToggleLabel = styled.label`
+  margin-top: 0.5rem;
+  color: var(--violet); 
+  font-size: 16px; 
+`;
+
 
 export default function Debates() {
   const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState('');
   const [discussionCategories, setDiscussionCategories] = useState([]);
   const [discussions, setDiscussions] = useState([]);
-  const [searchString, setSearchString] = useState('');
-  const [displayedDiscussions, setDisplayedDiscussions] = useState(8); // Number of discussions to show initially
+  const [displayedDiscussions, setDisplayedDiscussions] = useState(8);
+  const [shuffle, setShuffle] = useState(false);
   const [page, setPage] = useState(1);
   const discussionsPerPage = 8;
 
-  const containerRef = useRef(null);
-
   const handleLoadMore = () => {
-    // Increase the number of displayed discussions by the discussionsPerPage value
     setDisplayedDiscussions(displayedDiscussions + discussionsPerPage);
     setPage(page + 1);
-
-  
-    // // Scroll the button into view after a slight delay
-    // setTimeout(() => {
-    //   containerRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
-    // }, 100); // Adjust the delay time as needed (e.g., 100ms).
   };
 
   useEffect(() => {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const categoria = urlParams.get('categoria');
-    setSelectedCategory(categoria);
     getDiscussionCategories();
-    if (categoria) {
-      getDiscussionsWithCategory(categoria);
+    if (selectedCategory) {
+      getDiscussionsWithCategory(selectedCategory);
     } else {
       getDiscussions();
     }
-  }, [selectedCategory, page]);
+  }, [selectedCategory, page, shuffle]);
 
   function clickNewCategory(link) {
-    router.push(`?categoria=${link.toLowerCase().replace(/ /g, '-')}`);
     setSelectedCategory(link.toLowerCase().replace(/ /g, '-'));
     resetToInitialState();
   }
@@ -208,24 +242,44 @@ export default function Debates() {
   }
 
   async function getDiscussionsWithCategory(category) {
-    await clienteAxios
+    if (shuffle){
+      await clienteAxios
+      .get(`/discussions/public-randomized/${category}`)
+      .then((response) => {
+        setDiscussions([...discussions, ...response.data]);
+      });
+    } else {
+      await clienteAxios
       .get(`/discussions/public/${category}?page=${page}&limit=${discussionsPerPage}`)
       .then((response) => {
         setDiscussions([...discussions, ...response.data.results]);
       });
+    }
   }
 
   async function getDiscussions() {
-    await clienteAxios.get(
-      `/search/public-discussions?page=${page}&limit=${discussionsPerPage}`
-    ).then((response) => {
-      setDiscussions([...discussions, ...response.data.results]);
-    });
+    if (shuffle){
+      await clienteAxios
+      .get(`/discussions/public-randomized`)
+      .then((response) => {
+        setDiscussions([...discussions, ...response.data]);
+      });
+    } else {
+      await clienteAxios.get(
+        `/search/public-discussions?page=${page}&limit=${discussionsPerPage}`
+      ).then((response) => {
+        setDiscussions([...discussions, ...response.data.results]);
+      });
+    }
   }
+
+  const toggleShuffle = () => {
+    setShuffle(!shuffle);
+    resetToInitialState();
+  };
 
   return (
     <>
-      {/* Head */}
       <Head>
         <title>
           {'Debates | WeSex - La app para hablar y aprender de sexo'}
@@ -233,15 +287,26 @@ export default function Debates() {
         <meta name='description' content={''} />
         <meta name='keywords' content={''} />
       </Head>
-      {/* Layout */}
       <Layout type={'nothidden'}>
         <div style={{ minHeight: 'calc(100vh - 160px)', paddingBottom: '10rem', overflowY: 'auto' }}>
-          {/* Title Container */}
           <TitleContainer className='sec-title'>
             <Container>
-              {/* Title */}
-              <Title>DEBATES</Title>
-              {/* Subtitle */}
+              <ToggleContainer>
+                <div>
+                  <Title>Debates</Title>
+                </div>
+                <div>
+                <ToggleButtonLabelContainer>
+                  <ToggleButtonContainer isOn={shuffle}>
+                    <ToggleBall
+                      className={shuffle ? 'right' : 'left'}
+                      onClick={toggleShuffle}
+                    />
+                  </ToggleButtonContainer>
+                  <ToggleLabel htmlFor="shuffleToggle">Recomendados</ToggleLabel>
+                </ToggleButtonLabelContainer>
+                </div>
+              </ToggleContainer>
               <Subtitle className='sec-subtitle first-uppercase'>
                 {selectedCategory
                   ? discussionCategoriesTitle[selectedCategory]
@@ -250,7 +315,6 @@ export default function Debates() {
             </Container>
           </TitleContainer>
           <DiscussionContainer>
-            {/* Swiper Carousel */}
             <div className='mx-auto text-center mt-5'>
               <Swiper
                 slidesPerView={'auto'}
@@ -258,8 +322,6 @@ export default function Debates() {
                 modules={[Pagination]}
                 className='mySwiper'
               >
-                
-                {/* Category Buttons */}
                 {discussionCategories.map((category) => (
                   <SwiperSlide key={category.order}>
                     <CategoryButton
@@ -286,7 +348,6 @@ export default function Debates() {
               </Swiper>
             </div>
             <CenteredRow className='mt-4' style={{justifyContent: "center", flexWrap: "wrap"}}>
-            {/* Displayed Discussions */}
             {discussions.slice(0, displayedDiscussions).map((discussion) => (
               <Col xl={3} lg={4} md={6} xs={12} key={discussion._id} style={{ flex: '0 0 280px' }}>
                 <DiscussionClosed discussion={discussion} type= 'debatessection' />
@@ -294,9 +355,8 @@ export default function Debates() {
             ))}
           </CenteredRow>
           </DiscussionContainer>
-          {/* Load More Button */}
           <div style={{ padding: '10px 0', textAlign: 'center' }}>
-          <Button onClick={handleLoadMore} ref={containerRef}>Ver mas</Button>
+          <Button onClick={handleLoadMore}>Ver mas</Button>
           
         </div>
         </div>
