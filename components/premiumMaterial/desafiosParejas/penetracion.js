@@ -1,5 +1,5 @@
 
-import React, {useState} from "react";
+import React, { useEffect, useState, useRef } from 'react';
 import styled from "@emotion/styled";
 import { Card, CardHeader, Collapse, CardBody } from "reactstrap";
 import Notificar from "./universals/notificar";
