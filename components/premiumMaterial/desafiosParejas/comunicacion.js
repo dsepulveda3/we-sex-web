@@ -5,6 +5,12 @@ import * as PIXI from 'pixi.js';
 import santaUrl from '../../../public/img/rutina_bomba.png';
 import ArrowBack from './universals/arrowBack';
 
+const Header = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+`;
 
 const Background = styled.div`
 
