@@ -6,7 +6,8 @@ import styled from "@emotion/styled";
 
 const Header = styled.div`
     // background-color: #72e436;
-    background-color: #5bcb06;
+    // background-color: #5bcb06;
+    background-color: var(--violet);
     height: 10vh;
     width: 100%;
     font-weight: bold;
@@ -210,7 +211,8 @@ const PopUpSubTitle = styled.div`
 
 
 const PopUpButton = styled.a`
-  background-color: #5bcb06;
+  // background-color: #5bcb06;
+  background-color: var(--violet);
   font-weight: bold;
   border-radius: 30px;
   padding: 10px 40px;
@@ -227,7 +229,8 @@ const PopUpButton = styled.a`
 
 const PopUpDone = styled.div`
   color: white;
-  background-color: #5bcb06;
+  // background-color: #5bcb06;
+  background-color: var(--violet);
   font-family: "Karla", sans-serif;
   font-weight: bold;
   padding: 0.4rem;
@@ -243,7 +246,8 @@ const PopUpToDo = styled.div`
 `;
 
 const PopUpDoAnyways = styled.div`
-    color: #5bcb06;
+    // color: #5bcb06;
+    color: var(--violet);
     font-family: "Karla", sans-serif;
     font-weight: bold;
     padding: 0.4rem;
@@ -252,6 +256,66 @@ const PopUpDoAnyways = styled.div`
     cursor: pointer; // Add this line to change the cursor to a pointer on hover
 `;
 
+const PopupContainer2 = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Ensure the pop-up is on top of other elements */
+`;
+
+const PopupDialog2 = styled.div`
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+  position: relative; /* Added to position the CloseButton */
+`;
+
+const CloseButton2 = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+`;
+
+const InfoText = styled.div`
+    color: black;
+    font-size: 1.3rem;
+    font-family: "Averia Libre", sans-serif;
+    text-align: left;
+
+    span {
+        font-weight: bold;
+        font-family: "Averia Libre", sans-serif;
+        background-color: var(--green); /* Set the background color to green */
+        padding: 0.5rem 1rem; /* Add padding to make the background visible */
+        color: white; /* Set the text color to white */
+`;
+
+
+const PopupContent2 = () => {
+  return (
+    <>
+      <br />
+      <InfoText>
+        Terminos y condiciones: al acceder a "desafios para parejas" aceptas los <a style={{fontSize: "1.5rem"}} href={'/privacy-policy'}><span>términos y condiciones</span>.</a>
+      </InfoText>
+      
+      {/* Add more content as needed */}
+    </>
+  );
+};
 
 const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '', status }) => {
     const router = useRouter();
@@ -295,9 +359,24 @@ const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '', statu
           {/* <PopUpButton type="submit" onClick={handleSubmit}>¡ Comenzar 😁 !</PopUpButton> */}
           </>
           : null}
+          {status === 'done_dosis' ? 
+          <>
+          <PopUpTitle>{title}</PopUpTitle>
+          <PopUpSubTitle>{subtitle}</PopUpSubTitle>
+          <PopUpDone style={{marginTop: "1rem"}}> YA COMPLETASTE ESTA DOSIS :)</PopUpDone>
+          <PopUpDoAnyways onClick={handleSubmit}>Quiero verlo de todas formas</PopUpDoAnyways>
+          {/* <PopUpButton type="submit" onClick={handleSubmit}>¡ Comenzar 😁 !</PopUpButton> */}
+          </>
+          : null}
           {status === 'to_do' ? 
           <>
           <PopUpToDo> DEBES COMPLETAR TU ÚLTIMO DESAFIO PARA PODER DESBLOQUEAR EL PRÓXIMO</PopUpToDo>
+          {/* <PopUpButton type="submit" onClick={handleSubmit}>¡ Comenzar 😁 !</PopUpButton> */}
+          </>
+          : null}
+          {status === 'to_do_dosis' ? 
+          <>
+          <PopUpToDo> DEBES COMPLETAR TU ÚLTIMA DOSIS PARA PODER DESBLOQUEAR LA PRÓXIMO</PopUpToDo>
           {/* <PopUpButton type="submit" onClick={handleSubmit}>¡ Comenzar 😁 !</PopUpButton> */}
           </>
           : null}
@@ -307,20 +386,29 @@ const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '', statu
   };
   
   
+  
 
 const couplesData = {
     "mati-vicky": {
       subtitle: "Mati y Vicky SON LOS 1",
       challenges: [
-        { status: "done", ML: "0px", MR: "0px", title: "QUIERO - LO HARÍA - NO LO HARÍA", subtitle: "Descripción del challenge Descripción del challenge Descripción del challenge", link: "/challenge1",},
-        { status: "done", ML: "60px", MR: "0px", title: "CENA Y MASAJES", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/premium-material/desafios-para-parejas/cocina",},
-        { status: "done", ML: "90px", MR: "0px", title: "JUEGO DE ROLES", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/challenge1",},
-        { status: "next", ML: "0px", MR: "0px", title: "EDGING", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/premium-material/desafios-para-parejas/edging",},
-        { status: "to_do", ML: "0px", MR: "50px", title: "PPP Y PPC", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/challenge1",},
-        { status: "to_do", ML: "40px", MR: "0px", title: "EDGING", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/challenge1",},
-        { status: "to_do", ML: "80px", MR: "0px", title: "PENETRACIÓN V/S ESTÍMULO", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/challenge1",},
-        { status: "to_do", ML: "0px", MR: "0px", title: "CHALLE", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/challenge1",},
+        { status: "done", ML: "0px", MR: "0px", title: "HABLEMOS DE SEXO", subtitle: "Descripción del challenge Descripción del challenge Descripción del challenge", link: "/premium-material/desafios-para-parejas/hablemos-de-sexo",},
+        { status: "done", ML: "60px", MR: "0px", title: "JUEGO DE ROLES", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/premium-material/desafios-para-parejas/juego-roles",},
+        { status: "done", ML: "90px", MR: "0px", title: "COMUNICACIÓN", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/premium-material/desafios-para-parejas/comunicacion",},
+        { status: "next", ML: "0px", MR: "0px", title: "CENA Y MASAJES", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/premium-material/desafios-para-parejas/cena-masajes",},
+        { status: "to_do", ML: "0px", MR: "50px", title: "EDGING", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/premium-material/desafios-para-parejas/edging",},
+        { status: "to_do", ML: "40px", MR: "0px", title: "SEXO ORAL", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/premium-material/desafios-para-parejas/sexo-oral ",},
+        { status: "to_do", ML: "80px", MR: "0px", title: "QUIERO - LO HARÍA - NO LO HARÍA", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "//premium-material/desafios-para-parejasquiero-lh-nlh",},
+        { status: "to_do", ML: "0px", MR: "0px", title: "PENETRACIÓN", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/premium-material/desafios-para-parejas/penetracion",},
+        { status: "to_do", ML: "0px", MR: "0px", title: "MASTURBACIÓN", subtitle: "Descripción del challlenge Descripción del challlenge Descripción del challlenge", link: "/premium-material/desafios-para-parejas/masturbacion",},
       ],
+      dosis: [
+        { status: "done_dosis", title: "Dosis 1", subtitle: "Descripción de la dosis 1", link: "/premium-material/desafios-para-parejas/dosis/dosis1" },
+        { status: "next", title: "Dosis 2", subtitle: "Descripción de la dosis 2", link: "/premium-material/desafios-para-parejas/dosis/dosis1" },
+        { status: "to_do_dosis", title: "Dosis 3", subtitle: "Descripción de la dosis 3", link: "/premium-material/desafios-para-parejas/dosis/dosis1" },
+        // Add more dosis data...
+      ],
+      termsAndConditionsAccepted: false,
       // Add more data for this couple
     },
     // Add data for other couples
@@ -333,7 +421,7 @@ const couplesData = {
     const imageComponents = {
       done: (
         <ImageDoneChallenge
-          src="/img/challenges/done.png"
+          src="/img/challenges/done_wesex.png"
           style={{ marginLeft: ML, marginRight: MR }}
           onClick={() => onClick({ title, subtitle, link, status })}
         />
@@ -347,7 +435,7 @@ const couplesData = {
       ),
       to_do: (
         <ImageToDoChallenge
-          src="/img/challenges/to_do.png"
+          src="/img/challenges/to_do_wesex.png"
           style={{ marginLeft: ML, marginRight: MR }}
           onClick={() => onClick({ title, subtitle, link, status })}
         />
@@ -355,6 +443,33 @@ const couplesData = {
     };
   
     // Render the appropriate image component based on the status
+    return imageComponents[status] || null;
+  };
+
+  const DosisImage = ({ dosis, onClick }) => {
+    const { status, title, subtitle, link } = dosis;
+  
+    const imageComponents = {
+      done_dosis: (
+        <ImageDosis
+          src="/img/challenges/WeSex_PastiColor.png"
+          onClick={() => onClick({ title, subtitle, link, status })}
+        />
+      ),
+      next: (
+        <ImageDosis
+          src="/img/challenges/WeSex_PastiColor.png"
+          onClick={() => onClick({ title, subtitle, link, status })}
+        />
+      ),
+      to_do_dosis: (
+        <ImageDosis
+          src="/img/challenges/WeSex_PastiNoColor.png"
+          onClick={() => onClick({ title, subtitle, link, status })}
+        />
+      ),
+    };
+  
     return imageComponents[status] || null;
   };
   
@@ -365,6 +480,7 @@ const couplesData = {
     const [coupleData, setCoupleData] = useState(null);
     const [isPopupVisible, setPopupVisible] = useState(false); // State for controlling the popup
     const [popupContent, setPopupContent] = useState(null); 
+    const [showPopup, setShowPopup] = useState(false);
 
     
 
@@ -374,9 +490,20 @@ const couplesData = {
           setPopupVisible(true); // Open the popup
         }
       };
+
+    const handleStartDosisClick = ({ title, subtitle, link, status }) => {
+      if (title && subtitle && link) {
+        setPopupContent({ title, subtitle, link, status }); // Store the dosis data in state
+        setPopupVisible(true); // Open the popup
+      }
+    };
     
     const handleClosePopup = () => {
         setPopupVisible(false);
+    };
+
+    const handleWarningSymbolClick = () => {
+      setShowPopup(true); // Show the warning popup when the warning symbol is clicked
     };
   
     useEffect(() => {
@@ -397,6 +524,7 @@ const couplesData = {
             )}
           </Header>
           <Background>
+          <div onClick={handleWarningSymbolClick} style={{textAlign: "right", padding: "0.5rem"}}>ℹ️</div>
             <ChallengesAndDosisContainer>
               <ChallengesContainer>
                 {coupleData ? (
@@ -412,11 +540,17 @@ const couplesData = {
                 )}
               </ChallengesContainer>
               <DosisContainer>
-                <ImageDosis src="/img/challenges/WeSex_PastiColor.png"/>
-                <ImageDosis src="/img/challenges/WeSex_PastiNoColor.png"/>
-                <ImageDosis src="/img/challenges/WeSex_PastiNoColor.png"/>
-                <ImageDosis src="/img/challenges/WeSex_PastiNoColor.png"/>
-                <ImageDosis src="/img/challenges/WeSex_PastiNoColor.png"/>
+                {coupleData ? (
+                  coupleData.dosis.map((dosis, index) => (
+                    <DosisImage
+                      key={index}
+                      dosis={dosis} // Provide the entire dosis object as a prop
+                      onClick={handleStartDosisClick}
+                    />
+                  ))
+                ) : (
+                  <div>No Dosis Available</div>
+                )}
               </DosisContainer>
             </ChallengesAndDosisContainer>
           </Background>
@@ -429,7 +563,16 @@ const couplesData = {
             subtitle={popupContent ? popupContent.subtitle : ''}
             link={popupContent ? popupContent.link : ''}
         />
-
+        {/* Add the WarningPopup component here */}
+       
+        {showPopup && (
+                <PopupContainer2>
+                    <PopupDialog2>
+                        <CloseButton2 onClick={() => setShowPopup(false)}>✕</CloseButton2>
+                        <PopupContent2 />
+                    </PopupDialog2>
+                </PopupContainer2>
+            )}
         </>
       );
     };

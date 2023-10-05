@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const PrivacyPolicy = () => (
 <>
   <style
@@ -8,6 +9,7 @@ const PrivacyPolicy = () => (
         "\n  [data-custom-class='body'], [data-custom-class='body'] * {\n          background: transparent !important;\n        }\n[data-custom-class='title'], [data-custom-class='title'] * {\n          font-family: Arial !important;\nfont-size: 26px !important;\ncolor: #000000 !important;\n        }\n[data-custom-class='subtitle'], [data-custom-class='subtitle'] * {\n          font-family: Arial !important;\ncolor: #595959 !important;\nfont-size: 14px !important;\n        }\n[data-custom-class='heading_1'], [data-custom-class='heading_1'] * {\n          font-family: Arial !important;\nfont-size: 19px !important;\ncolor: #000000 !important;\n        }\n[data-custom-class='heading_2'], [data-custom-class='heading_2'] * {\n          font-family: Arial !important;\nfont-size: 17px !important;\ncolor: #000000 !important;\n        }\n[data-custom-class='body_text'], [data-custom-class='body_text'] * {\n          color: #595959 !important;\nfont-size: 14px !important;\nfont-family: Arial !important;\n        }\n[data-custom-class='link'], [data-custom-class='link'] * {\n          color: #3030F1 !important;\nfont-size: 14px !important;\nfont-family: Arial !important;\nword-break: break-word !important;\n        }\n"
     }}
   />
+  <div style={{padding: "2rem"}}>
   <div data-custom-class="body">
     <div>
       <strong>
@@ -11990,6 +11992,132 @@ const PrivacyPolicy = () => (
                                                   </span>
                                                 </span>
                                               </div>
+                                              <div
+                                                id="request"
+                                                style={{ lineHeight: "1.5" }}
+                                              >
+                                                <span
+                                                  style={{
+                                                    color: "rgb(127, 127, 127)"
+                                                  }}
+                                                >
+                                                  <span
+                                                    style={{
+                                                      color: "rgb(89, 89, 89)",
+                                                      fontSize: 15
+                                                    }}
+                                                  >
+                                                    <span
+                                                      style={{
+                                                        fontSize: 15,
+                                                        color: "rgb(89, 89, 89)"
+                                                      }}
+                                                    >
+                                                      <span
+                                                        style={{
+                                                          fontSize: 15,
+                                                          color:
+                                                            "rgb(89, 89, 89)"
+                                                        }}
+                                                      >
+                                                        <span
+                                                          id="control"
+                                                          style={{
+                                                            color:
+                                                              "rgb(0, 0, 0)"
+                                                          }}
+                                                        >
+                                                          <strong>
+                                                            <span data-custom-class="heading_1">
+                                                              14. CHALLENGES FOR COUPLES
+                                                            </span>
+                                                          </strong>
+                                                          &nbsp;
+                                                        </span>
+                                                        &nbsp;
+                                                      </span>
+                                                      &nbsp;
+                                                    </span>
+                                                    &nbsp;
+                                                  </span>
+                                                  &nbsp;
+                                                </span>
+                                              </div>
+                                              <div
+                                                style={{ lineHeight: "1.5" }}
+                                              >
+                                                <br />
+                                              </div>
+                                              <div
+                                                style={{ lineHeight: "1.5" }}
+                                              >
+                                                <span
+                                                  style={{
+                                                    fontSize: 15,
+                                                    color: "rgb(89, 89, 89)"
+                                                  }}
+                                                >
+                                                  <span
+                                                    style={{
+                                                      fontSize: 15,
+                                                      color: "rgb(89, 89, 89)"
+                                                    }}
+                                                  >
+                                                    <span data-custom-class="body_text">
+                                                    By purchasing and using "Challenges for Couples," you agree to comply with and be bound by these Terms and Conditions. If you do not agree with these terms, please do not use the product.
+                                                      <ul>
+                                                        <li>
+                                                          "Challenges for Couples" is intended for adults in a consenting, mutually respectful relationship. It is not intended for use by individuals under the legal age of consent.
+                                                        </li>
+                                                        <li>
+                                                          You agree to use "Challenges for Couples" in a responsible and respectful manner and to obtain the consent of your partner before engaging in any challenges provided by the product.
+                                                        </li>
+                                                        <li>
+                                                          We are not responsible for any consequences arising from the use of this product, including but not limited to any disputes or disagreements that may arise between you and your partner.
+                                                        </li>
+                                                        <li>
+                                                          "Challenges for Couples" is provided for entertainment and educational purposes only. It does not replace professional advice or counseling. We recommend seeking advice from a qualified professional for any relationship or sexual concerns.
+                                                        </li>
+                                                        <li>
+                                                          We do not guarantee specific outcomes from using the product, and any results or improvements in your relationship are based on your own efforts and circumstances.
+                                                        </li>
+                                                        <li>
+                                                          All content, including challenges, text, graphics, and images provided by "Challenges for Couples," is protected by copyright and intellectual property laws. You may not reproduce, distribute, or use this content for any commercial purposes without prior written consent.
+                                                        </li>
+                                                        <li>
+                                                          We respect your privacy and do not collect personal information without your consent. Please refer to our Privacy Policy for more information on how we handle your data.
+                                                        </li>
+                                                        <li>
+                                                          We reserve the right to terminate your access to "Challenges for Couples" if you violate these Terms and Conditions or engage in any behavior that we deem inappropriate or harmful.
+                                                        </li>
+                                                      </ul>
+                                                    </span>
+                                                    <span
+                                                      style={{
+                                                        color:
+                                                          "rgb(48, 48, 241)"
+                                                      }}
+                                                    >
+                                                      
+                                                    </span>
+                                                    <bdt className="block-component">
+                                                      <span data-custom-class="body_text" />
+                                                    </bdt>
+                                                  </span>
+                                                </span>
+                                                <span data-custom-class="body_text">
+                                                  .
+                                                  <span
+                                                    style={{ fontSize: 15 }}
+                                                  >
+                                                    <span data-custom-class="body_text">
+                                                      <bdt className="statement-end-if-in-editor">
+                                                        <bdt className="statement-end-if-in-editor" />
+                                                      </bdt>
+                                                    </span>
+                                                  </span>
+                                                </span>
+                                              </div>
                                               <style
                                                 dangerouslySetInnerHTML={{
                                                   __html:
@@ -12017,6 +12145,7 @@ const PrivacyPolicy = () => (
         </div>
       </div>
     </div>
+  </div>
   </div>
 </>
 );

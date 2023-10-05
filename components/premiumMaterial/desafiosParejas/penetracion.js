@@ -2,6 +2,7 @@
 import React, {useState} from "react";
 import styled from "@emotion/styled";
 import { Card, CardHeader, Collapse, CardBody } from "reactstrap";
+import Notificar from "./universals/notificar";
 
 const Background = styled.div`
     background-color: var(--green);
@@ -565,6 +566,8 @@ const Penetracion = () => {
                 </>
             )}
             </Border>
+            
+            <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/qKMvzG2VYcKs2Cs98`}/>
         </Background>
     )
 };

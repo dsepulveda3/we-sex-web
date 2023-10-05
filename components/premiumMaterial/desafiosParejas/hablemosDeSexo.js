@@ -3,7 +3,7 @@ import {Row, Col, Container, Card, CardHeader, CardBody, Collapse, Button} from 
 import styled from '@emotion/styled';
 import * as PIXI from 'pixi.js';
 import santaUrl from '../../../public/img/rutina_bomba.png';
-
+import Notificar from './universals/notificar';
 
 const Background = styled.div`
 
@@ -539,6 +539,7 @@ const HablemosDeSexo = () => {
                             </Text2>
                     </Row>
             </Container>
+            <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/8oW1tTcHAiryn7zW7`}/>
             </Background>
           )}
         </section>

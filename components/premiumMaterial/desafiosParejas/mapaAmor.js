@@ -467,8 +467,7 @@ const MapaAmor = () => {
                     </Row>
             </Container>
             
-            <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://wa.me/5491140678698?
-            text=Hola!%20Somos%20${origin}.%20Terminamos%20el%20desafío%20EDGING`}/>
+            <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/GKkBB4tjRkDY5Gyc9`}/>
 
             </Background>
           )}

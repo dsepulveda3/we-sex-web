@@ -3,6 +3,12 @@ import styled from "@emotion/styled";
 
 const Arrow = styled.a`
     font-weight: bold;
+    margin-right: auto; /* Pushes "Atrás" button to the left */
+    
+    @media (max-width: 540px) {
+        padding: 0.5rem;
+    }
+
     
 `;
 

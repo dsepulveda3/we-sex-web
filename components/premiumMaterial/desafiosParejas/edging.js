@@ -9,8 +9,8 @@ import { useRouter } from 'next/router';
 
 const Header = styled.div`
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    align-items: center; /* Vertically center the items */
+    padding: 0 1rem;
     
 `;
 
@@ -298,7 +298,7 @@ const BotonNotificarDone = styled.a`
 
 
 const Edging = () => {
-    const [showAnimation, setShowAnimation] = useState(true);
+    const [showAnimation, setShowAnimation] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [isOpen2, setIsOpen2] = useState(false);
     const names = ["Quien presiono este botón", "Quien NO presionó este botón"]; // Add the names you want to choose from
@@ -419,11 +419,11 @@ const Edging = () => {
       {!showAnimation && (
             <Background>
               <Container>
-                    {/* <Header>
+                    <Header>
                         <ArrowBack url={`/premium-material/desafios-para-parejas/road?origin=${origin}`}/>
                         <TitleWeSex>WeSex</TitleWeSex>
-                    </Header> */}
-                    <TitleWeSex>WeSex</TitleWeSex>
+                    </Header>
+                    {/* <TitleWeSex>WeSex</TitleWeSex> */}
                     <Row className="justify-content-between">
                         <ContentTitle>
                             <Title>Desafío:</Title>
@@ -572,8 +572,7 @@ const Edging = () => {
                     </Row>
             </Container>
             
-            <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://wa.me/5491140678698?
-            text=Hola!%20Somos%20${origin}.%20Terminamos%20el%20desafío%20EDGING`}/>
+            <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/YQYCzDz3RthXnG8C6`}/>
 
             </Background>
           )}
