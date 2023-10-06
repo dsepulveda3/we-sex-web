@@ -433,7 +433,7 @@ const Musica = () => {
                         </ol>
                         <br />
                         <br />
-                        <span>Aquí les dejamos la playlist para este desafío : <a href="https://open.spotify.com/playlist/6ilE8ByVM6EmT3TCOHu1uy" cstyle={{textDecoration: "underline"}}>Playlist WeSexer</a></span>
+                        <span>Aquí les dejamos la playlist para este desafío : <a href="https://open.spotify.com/playlist/6ilE8ByVM6EmT3TCOHu1uy" target="_blank" cstyle={{textDecoration: "underline"}}>Playlist WeSexer</a></span>
                         
                         <br/>
                         <br/>
