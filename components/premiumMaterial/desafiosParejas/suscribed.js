@@ -205,11 +205,11 @@ const Suscribed = () => {
 
             <Content>
                 <Title>
-                    <span>¡FELICITACIONES!</span> con tu pareja ya están suscritos a WeSex
+                    <span>¡FELICITACIONES!</span> Ya están suscritos al programa para innovar en pareja.
                 </Title>
                 <div style={{padding: "5rem", textAlign: "left"}}>
-                <Text>Sigue los siguientes pasos para comenzar :).</Text>
-                <Text><span>Paso 1:</span> rellenar encuesta para que profesionales personalicen desafíos.
+                <Text><span>Sigue los siguientes pasos para comenzar :).</span></Text>
+                <Text><span>Paso 1:</span> completen el siguiente formulario, para que los expertos de WeSex puedan personalizar sus desafios !
                 <br/>
                 <br/>
                 <a href="https://forms.gle/3xFvkKAnubszUS2m6" style={{textDecoration: "underline"}}>Encuesta persona con pene</a>
@@ -218,11 +218,11 @@ const Suscribed = () => {
 
                 </Text>
 
-                <Text><span>Paso 2:</span> luego de rellenar las encuestas realicen el primer desafío.</Text>
+                <Text><span>Paso 2:</span> Les dejamos el desafío 1 para este fin de semana 😎</Text>
                 <BotonArs href="/premium-material/desafios-para-parejas/hablemos-de-sexo">Hacer primer desafio !</BotonArs>
                 <br />
                 <br />
-                <Text><span>Paso 3:</span> contactate con nuestro equipo paera  para hacerle saber que comenzaste con los desafíos.</Text>
+                <Text><span>Paso 3:</span> contactate con nuestro equipo para hacerles saber que comenzaste con los desafíos.</Text>
                 <BotonArs href="https://wa.me/5491140678698?text=Hola!%20Estoy%20listo%20para%20recibir%20el%20paso%201%20del%20programa%20">Notificar</BotonArs>
                 </div>
                 {/* <Text>
