@@ -3,7 +3,7 @@ import { useState } from "react";
 import styled from "@emotion/styled";
 
 const ContainerNotificarDone = styled.div`
-    padding: 1rem;
+    padding: 2rem;
     display: flex;
     justify-content: center;
 
@@ -15,7 +15,7 @@ const BotonNotificarDone = styled.a`
     color: white;
     border: none;
     border-radius: 20px;
-    padding: 5px 15px;
+    padding: 5px 20px;
     cursor: pointer;
     font-weight: bold;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a box shadow */
