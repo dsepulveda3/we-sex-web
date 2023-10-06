@@ -411,6 +411,54 @@ const couplesData = {
       termsAndConditionsAccepted: false,
       // Add more data for this couple
     },
+    "flujo_1": {
+      subtitle: "Flujo 1",
+      challenges: [
+        { status: "done", ML: "0px", MR: "0px", title: "HABLEMOS DE SEXO", subtitle: "Una de las claves para una relación sana, tanto sexual como vincular, es la comunicación.", link: "/premium-material/desafios-para-parejas/hablemos-de-sexo",},
+        { status: "next", ML: "0px", MR: "0px", title: "CENA Y MASAJES", subtitle: "Pasar un momento divertido juntos, fortaleciendo la conexión y compartiendo risas.", link: "/premium-material/desafios-para-parejas/cena-masajes",},
+
+        { status: "to_do", ML: "0px", MR: "0px", title: "MASTURBACIÓN", subtitle: "Vivir tu paja ideal y que tu pareja sea quien la haga es una experiencia hermosa.", link: "/premium-material/desafios-para-parejas/masturbacion",},
+        { status: "to_do", ML: "40px", MR: "0px", title: "SEXO ORAL", subtitle: "El plan se llama PPPC: Pizza, Peli, Pete y Clete.", link: "/premium-material/desafios-para-parejas/sexo-oral ",},
+        { status: "to_do", ML: "0px", MR: "0px", title: "PENETRACIÓN", subtitle: "Les recomendamos 8 posiciones para probar, y 6 estímulos diferentes", link: "/premium-material/desafios-para-parejas/penetracion",},
+        { status: "to_do", ML: "0px", MR: "50px", title: "EDGING", subtitle: "El orgasmo será mucho más intenso que si hubiesen orgasmeado al principio del ejercicio.", link: "/premium-material/desafios-para-parejas/edging",},
+        { status: "to_do", ML: "80px", MR: "0px", title: "QUIERO - LO HARÍA - NO LO HARÍA", subtitle: "Vamos a ayudarlos a experimentar y llevar a cabo fantasías y actos sexuales.", link: "//premium-material/desafios-para-parejasquiero-lh-nlh",},
+
+        { status: "done", ML: "60px", MR: "0px", title: "JUEGO DE ROLES", subtitle: "¿Te gustaría que se disfrazarte de abogado, profesor, médico?", link: "/premium-material/desafios-para-parejas/juego-roles",},
+
+      ],
+      dosis: [
+        { status: "done_dosis", title: "Dosis 1", subtitle: "Descripción de la dosis 1", link: "/premium-material/desafios-para-parejas/dosis/dosis1" },
+        { status: "next", title: "Dosis 2", subtitle: "Descripción de la dosis 2", link: "/premium-material/desafios-para-parejas/dosis/dosis1" },
+        { status: "to_do_dosis", title: "Dosis 3", subtitle: "Descripción de la dosis 3", link: "/premium-material/desafios-para-parejas/dosis/dosis1" },
+        // Add more dosis data...
+      ],
+      termsAndConditionsAccepted: false,
+      // Add more data for this couple
+    },
+    "flujo_2": {
+      subtitle: "Flujo 2",
+      challenges: [
+        { status: "done", ML: "0px", MR: "0px", title: "HABLEMOS DE SEXO", subtitle: "Una de las claves para una relación sana, tanto sexual como vincular, es la comunicación.", link: "/premium-material/desafios-para-parejas/hablemos-de-sexo",},
+        { status: "done", ML: "0px", MR: "0px", title: "MAPA DE AMOR", subtitle: "Es un trabajo de construcción que sostiene el vínculo.", link: "/premium-material/desafios-para-parejas/mapa-amor",},
+        { status: "next", ML: "0px", MR: "0px", title: "CENA Y MASAJES", subtitle: "Pasar un momento divertido juntos, fortaleciendo la conexión y compartiendo risas.", link: "/premium-material/desafios-para-parejas/cena-masajes",},
+
+        { status: "to_do", ML: "0px", MR: "0px", title: "MASTURBACIÓN", subtitle: "Vivir tu paja ideal y que tu pareja sea quien la haga es una experiencia hermosa.", link: "/premium-material/desafios-para-parejas/masturbacion",},
+        { status: "to_do", ML: "40px", MR: "0px", title: "SEXO ORAL", subtitle: "El plan se llama PPPC: Pizza, Peli, Pete y Clete.", link: "/premium-material/desafios-para-parejas/sexo-oral ",},
+        { status: "to_do", ML: "0px", MR: "0px", title: "PENETRACIÓN", subtitle: "Les recomendamos 8 posiciones para probar, y 6 estímulos diferentes", link: "/premium-material/desafios-para-parejas/penetracion",},
+        { status: "to_do", ML: "0px", MR: "50px", title: "EDGING", subtitle: "El orgasmo será mucho más intenso que si hubiesen orgasmeado al principio del ejercicio.", link: "/premium-material/desafios-para-parejas/edging",},
+
+        { status: "to_do", ML: "80px", MR: "0px", title: "QUIERO - LO HARÍA - NO LO HARÍA", subtitle: "Vamos a ayudarlos a experimentar y llevar a cabo fantasías y actos sexuales.", link: "//premium-material/desafios-para-parejasquiero-lh-nlh",},
+        { status: "done", ML: "60px", MR: "0px", title: "JUEGO DE ROLES", subtitle: "¿Te gustaría que se disfrazarte de abogado, profesor, médico?", link: "/premium-material/desafios-para-parejas/juego-roles",},
+      ],
+      dosis: [
+        { status: "done_dosis", title: "Dosis 1", subtitle: "Descripción de la dosis 1", link: "/premium-material/desafios-para-parejas/dosis/dosis1" },
+        { status: "next", title: "Dosis 2", subtitle: "Descripción de la dosis 2", link: "/premium-material/desafios-para-parejas/dosis/dosis1" },
+        { status: "to_do_dosis", title: "Dosis 3", subtitle: "Descripción de la dosis 3", link: "/premium-material/desafios-para-parejas/dosis/dosis1" },
+        // Add more dosis data...
+      ],
+      termsAndConditionsAccepted: false,
+      // Add more data for this couple
+    },
     // Add data for other couples
   };
 
