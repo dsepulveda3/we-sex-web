@@ -5,6 +5,7 @@ import Notificar from './universals/notificar';
 import styled from '@emotion/styled';
 import * as PIXI from 'pixi.js';
 import { useRouter } from 'next/router';
+import Feedback from './universals/feedback';
 
 
 const Header = styled.div`
@@ -426,6 +427,7 @@ const MapaAmor = () => {
                     <Header>
                         <ArrowBack url={`/premium-material/desafios-para-parejas/road?origin=${origin}`}/>
                         <TitleWeSex>WeSex</TitleWeSex>
+                        <Feedback challengeName={"Mapa de Amor"}/>
                     </Header>
                     <Row className="justify-content-between">
                         <ContentTitle>

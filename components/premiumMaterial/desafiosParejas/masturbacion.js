@@ -6,6 +6,7 @@ import santaUrl from '../../../public/img/rutina_bomba.png';
 import Notificar from './universals/notificar';
 import ArrowBack from './universals/arrowBack';
 import { useRouter } from 'next/router';
+import Feedback from './universals/feedback';
 
 const Header = styled.div`
     display: flex;
@@ -456,6 +457,7 @@ const Masturbacion = () => {
                     <Header>
                         <ArrowBack url={`/premium-material/desafios-para-parejas/road?origin=${origin}`}/>
                         <TitleWeSex>WeSex</TitleWeSex>
+                        <Feedback challengeName={"Masturbación"}/>
                     </Header>
                     <Row className="justify-content-between">   
                         <ContentTitle>

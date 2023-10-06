@@ -5,6 +5,7 @@ import { Card, CardHeader, Collapse, CardBody } from "reactstrap";
 import Notificar from "./universals/notificar";
 import ArrowBack from './universals/arrowBack';
 import { useRouter } from 'next/router';
+import Feedback from './universals/feedback';
 
 const Header = styled.div`
     display: flex;
@@ -273,6 +274,7 @@ const Penetracion = () => {
             <Header>
                 <ArrowBack url={`/premium-material/desafios-para-parejas/road?origin=${origin}`}/>
                 <TitleWeSex>WeSex</TitleWeSex>
+                <Feedback challengeName={"Penetración"}/>
             </Header>
             <Logo src='/img/logo_wesex_croped.png' />
             

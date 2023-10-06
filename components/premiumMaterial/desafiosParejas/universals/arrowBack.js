@@ -11,6 +11,27 @@ const Arrow = styled.a`
 
     
 `;
+const ContainerNotificarDone = styled.div`
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    margin-right: auto; /* Pushes "Atrás" button to the left */
+
+`;
+
+const BotonNotificarDone = styled.a`
+    background-color: var(--green);
+    font-size: 1.4rem;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a box shadow */
+
+`;
+
 
 
 const ArrowBack = ({url}) => {
@@ -21,7 +42,11 @@ const ArrowBack = ({url}) => {
     }
 
     return(
-        <Arrow onClick={handleArrowClick}>Atrás</Arrow>
+        <ContainerNotificarDone>
+            <BotonNotificarDone onClick={handleArrowClick}>
+                Atras
+            </BotonNotificarDone>
+        </ContainerNotificarDone>
 
     );
 }
