@@ -84,7 +84,7 @@ const Text = styled.div`
 
 
 
-const Dosis1 = () => {
+const Dosis6 = () => {
 
     const [selectedOption, setSelectedOption] = useState('op1');
     const [numeroAleatorio, setNumeroAleatorio] = useState(null);
@@ -124,16 +124,16 @@ const Dosis1 = () => {
             <Logo src='/img/logo_wesex_croped.png' />
             
             {/* <Title>Agradecimientos diarios</Title> */}
-            <SubTitle>Agradecimientos Diarios</SubTitle>
+            <SubTitle>Lectura Erótica</SubTitle>
 
             
-            <Text style={{padding: "2rem"}}>Hoy, compartan algo con su pareja de lo que esten agredecidos de el/ella. </Text>
+            <Text style={{padding: "2rem"}}>Hoy los invitamos a leer este relato erotico antes de dormir… Cortito y al pie, para empezar a introducirse en este mundo : <a style={{textDecoration: "underline"}} href={"https://we.sex/articleDetail/6360424acb77480861a979fd"}>Articulo WeSex</a></Text>
             
             </Border>
-            <Notificar message='¡ Notificar que completamos la dosis1 !' url={`https://wa.me/5491140678698?
-                    text=Hola!%20Terminamos%20la%20dosis%20uno`}/>
+            <Notificar message='¡ Notificar que completamos la dosis5 !' url={`https://wa.me/5491140678698?
+                    text=Hola!%20Terminamos%20la%20dosis%20cinco`}/>
         </Background>
     )
 };
 
-export default Dosis1;
+export default Dosis6;

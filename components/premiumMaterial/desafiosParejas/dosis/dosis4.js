@@ -84,7 +84,7 @@ const Text = styled.div`
 
 
 
-const Dosis1 = () => {
+const Dosis4 = () => {
 
     const [selectedOption, setSelectedOption] = useState('op1');
     const [numeroAleatorio, setNumeroAleatorio] = useState(null);
@@ -124,16 +124,16 @@ const Dosis1 = () => {
             <Logo src='/img/logo_wesex_croped.png' />
             
             {/* <Title>Agradecimientos diarios</Title> */}
-            <SubTitle>Agradecimientos Diarios</SubTitle>
+            <SubTitle>Dosis de calentura</SubTitle>
 
             
-            <Text style={{padding: "2rem"}}>Hoy, compartan algo con su pareja de lo que esten agredecidos de el/ella. </Text>
+            <Text style={{padding: "2rem"}}>Hoy les traemos una dosis, pero de calentura: Tienen que besarse intensamente en un momento cotidiano del día. ¿Cuándo? La primera vez que hagan contacto visual luego de leer este mensaje.</Text>
             
             </Border>
-            <Notificar message='¡ Notificar que completamos la dosis1 !' url={`https://wa.me/5491140678698?
-                    text=Hola!%20Terminamos%20la%20dosis%20uno`}/>
+            <Notificar message='¡ Notificar que completamos la dosis4 !' url={`https://wa.me/5491140678698?
+                    text=Hola!%20Terminamos%20la%20dosis%20cuatro`}/>
         </Background>
     )
 };
 
-export default Dosis1;
+export default Dosis4;

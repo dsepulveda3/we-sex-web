@@ -84,7 +84,7 @@ const Text = styled.div`
 
 
 
-const Dosis1 = () => {
+const Dosis5 = () => {
 
     const [selectedOption, setSelectedOption] = useState('op1');
     const [numeroAleatorio, setNumeroAleatorio] = useState(null);
@@ -124,16 +124,16 @@ const Dosis1 = () => {
             <Logo src='/img/logo_wesex_croped.png' />
             
             {/* <Title>Agradecimientos diarios</Title> */}
-            <SubTitle>Agradecimientos Diarios</SubTitle>
+            <SubTitle>Respiración Sincronizada</SubTitle>
 
             
-            <Text style={{padding: "2rem"}}>Hoy, compartan algo con su pareja de lo que esten agredecidos de el/ella. </Text>
+            <Text style={{padding: "2rem"}}>Durante 4 minutos, siéntense juntos en una posición cómoda y traten de sincronizar su respiración. Una buena posición para hacerlo es espalda con espalda, o frente con frente. Esto promueve la sintonía entre ambos. Además, es un ejercicio que luego pueden llevar a sus encuentros sexuales, sincronizando la respiración.</Text>
             
             </Border>
-            <Notificar message='¡ Notificar que completamos la dosis1 !' url={`https://wa.me/5491140678698?
-                    text=Hola!%20Terminamos%20la%20dosis%20uno`}/>
+            <Notificar message='¡ Notificar que completamos la dosis5 !' url={`https://wa.me/5491140678698?
+                    text=Hola!%20Terminamos%20la%20dosis%20cinco`}/>
         </Background>
     )
 };
 
-export default Dosis1;
+export default Dosis5;

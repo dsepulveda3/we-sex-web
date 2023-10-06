@@ -535,7 +535,7 @@ const HablemosDeSexo = () => {
 
                         
                     </Row>
-                    <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
+                    {/* <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
                             <ContentTitle2>
                                 <Title2>BONUS</Title2>
                                 <AppImage src="../../img/bomb.png" alt="Bomba" />
@@ -565,7 +565,7 @@ const HablemosDeSexo = () => {
                                 <br/>
                                 ¡Que se disfruten!
                             </Text2>
-                    </Row>
+                    </Row> */}
             </Container>
             <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/8oW1tTcHAiryn7zW7`}/>
             </Background>

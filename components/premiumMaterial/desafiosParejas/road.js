@@ -389,8 +389,8 @@ const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '', statu
   
 
 const couplesData = {
-    "mati-vicky": {
-      subtitle: "Mati y Vicky SON LOS 1",
+    "all": {
+      subtitle: "Test",
       challenges: [
         { status: "done", ML: "0px", MR: "0px", title: "HABLEMOS DE SEXO", subtitle: "Una de las claves para una relación sana, tanto sexual como vincular, es la comunicación.", link: "/premium-material/desafios-para-parejas/hablemos-de-sexo",},
         { status: "done", ML: "60px", MR: "0px", title: "JUEGO DE ROLES", subtitle: "¿Te gustaría que se disfrazarte de abogado, profesor, médico?", link: "/premium-material/desafios-para-parejas/juego-roles",},
@@ -403,9 +403,12 @@ const couplesData = {
         { status: "to_do", ML: "0px", MR: "0px", title: "MASTURBACIÓN", subtitle: "Vivir tu paja ideal y que tu pareja sea quien la haga es una experiencia hermosa.", link: "/premium-material/desafios-para-parejas/masturbacion",},
       ],
       dosis: [
-        { status: "done_dosis", title: "Dosis 1", subtitle: "Descripción de la dosis 1", link: "/premium-material/desafios-para-parejas/dosis/dosis1" },
-        { status: "next", title: "Dosis 2", subtitle: "Descripción de la dosis 2", link: "/premium-material/desafios-para-parejas/dosis/dosis1" },
-        { status: "to_do_dosis", title: "Dosis 3", subtitle: "Descripción de la dosis 3", link: "/premium-material/desafios-para-parejas/dosis/dosis1" },
+        { status: "done_dosis", title: "Agradecimientos Diarios", subtitle: " ", link: "/premium-material/desafios-para-parejas/dosis/dosis1" },
+        { status: "next", title: "Primera vez", subtitle: " ", link: "/premium-material/desafios-para-parejas/dosis/dosis2" },
+        { status: "to_do_dosis", title: "Contacto Ocular", subtitle: " ", link: "/premium-material/desafios-para-parejas/dosis/dosis3" },
+        { status: "to_do_dosis", title: "Dosis de calentura", subtitle: " ", link: "/premium-material/desafios-para-parejas/dosis/dosis4" },
+        { status: "to_do_dosis", title: "Respiración Sincronizada", subtitle: " ", link: "/premium-material/desafios-para-parejas/dosis/dosis5" },
+        { status: "to_do_dosis", title: "Lectura Erótica", subtitle: " ", link: "/premium-material/desafios-para-parejas/dosis/dosis6" },
         // Add more dosis data...
       ],
       termsAndConditionsAccepted: false,
@@ -452,8 +455,8 @@ const couplesData = {
       ],
       dosis: [
         { status: "done_dosis", title: "Dosis 1", subtitle: "Descripción de la dosis 1", link: "/premium-material/desafios-para-parejas/dosis/dosis1" },
-        { status: "next", title: "Dosis 2", subtitle: "Descripción de la dosis 2", link: "/premium-material/desafios-para-parejas/dosis/dosis1" },
-        { status: "to_do_dosis", title: "Dosis 3", subtitle: "Descripción de la dosis 3", link: "/premium-material/desafios-para-parejas/dosis/dosis1" },
+        { status: "next", title: "Dosis 2", subtitle: "Descripción de la dosis 2", link: "/premium-material/desafios-para-parejas/dosis/dosis2" },
+        { status: "to_do_dosis", title: "Dosis 3", subtitle: "Descripción de la dosis 3", link: "/premium-material/desafios-para-parejas/dosis/dosis3" },
         // Add more dosis data...
       ],
       termsAndConditionsAccepted: false,
