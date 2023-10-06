@@ -8,7 +8,7 @@ export default function Home() {
     <>
     <Head>
         <title>Juego de Cartas - WeSex</title>
-        <meta name="description" content="Guía Tantra + Sexo Anal - WeSex" /> 
+        <meta name="description" content="Juego de Cartas - WeSex" /> 
         <meta name="keywords" content="" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
