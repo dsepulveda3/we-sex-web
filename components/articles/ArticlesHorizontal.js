@@ -140,29 +140,9 @@ const More = styled.a`
     
 `;
 
-const ArticlesWithTabs = () => {
-  const [selected, setSelected] = useState('last');
-  const [articles, setArticles] = useState([]);
+const ArticlesWithTabs = ({ articles }) => {
   const [swiper, setSwiper] = useState(null);
-
-  useEffect(() => {
-    if (selected === 'last') {
-      getArticles();
-    } 
-    // else if (selected === 'trending') {
-    //   getTrendingDiscussions();
-    // } else {
-    //   getRandomDiscussions();
-    // }
-  }, [selected]);
- 
-
-  async function getArticles() {
-    await Axios.get('/articles/public-randomized').then((response) => {
-      setArticles(response.data);
-    });
-  }
-
+  
   const handleNext = () => {
     if (swiper !== null) {
       swiper.slideNext();

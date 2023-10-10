@@ -160,25 +160,8 @@ const More = styled.a`
 `;
 
 
-const DiscussionsWithTabs = () => {
-  const [selected, setSelected] = useState('last');
-  const [discussions, setDiscussions] = useState([]);
+const DiscussionsWithTabs = ( { discussions }) => {
   const [swiper, setSwiper] = useState(null);
-
-  useEffect(() => {
-    if (selected === 'last') {
-      getRecentDiscussions();
-    }
-  }, [selected]);
-  
-
-  async function getRecentDiscussions() {
-    await Axios.get('/discussions/public-randomized').then((response) => {
-      setDiscussions(response.data);
-      console.log("Va info discusiones");
-      console.log(response.data);
-    });
-  }
 
   const handleNext = () => {
     if (swiper !== null) {
