@@ -192,7 +192,7 @@ const Intro = ({subtitle1_1, subtitle1_2, subtitle1_3}) => {
                         </Col>
                         <Col>
                             <ContentImage>
-                                <AppImage src="../../img/rutina_bomba.png" alt="Salir de la rutina." />
+                                <AppImage src="/img/rutina_bomba.png" alt="Salir de la rutina." />
                             </ContentImage>
                         </Col>
                     </Row>
