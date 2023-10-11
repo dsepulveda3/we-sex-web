@@ -36,9 +36,9 @@ export default function Home() {
         mp_basic="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b1aa470018b1be3b6c80166" 
         mp_estandar="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b1aa477018b1be49fae016f"
         mp_premium="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b1aa492018b1be5aa83015d"
-        stripe_basic="https://buy.stripe.com/cN202I8NP12taooaEJ"
-        stripe_estandar="https://buy.stripe.com/5kA6r62pr4eFcww006"
-        stripe_premium="https://buy.stripe.com/8wM3eUaVXeTjfII8wD"
+        stripe_basic="https://buy.stripe.com/aEUeXCaVX26xaoo008"
+        stripe_estandar="https://buy.stripe.com/7sI5n2e893aB400aEN"
+        stripe_premium="https://buy.stripe.com/28o5n29RT8uV688cMW"
         />
         <Explicacion/>
         </Layout>
