@@ -246,8 +246,8 @@ const Guides = () => {
         const response = await is_subscribed(
             PLAN_ID, 
         );
-        console.log("reading request")
-        console.log(response);
+        //console.log("reading request")
+        //console.log(response);
         if (response.status === 200){
         setIsSubscribed(true);
         }
@@ -271,11 +271,11 @@ const Guides = () => {
             console.error('Error fetching guides:', error);
           });
       
-        console.log("Fetching guides...");
+        //console.log("Fetching guides...");
       }, []); 
 
-    //   console.log("pdfFile of position 0:", guides[0].pdfFile.key);c
-    console.log(guides);
+    //   //console.log("pdfFile of position 0:", guides[0].pdfFile.key);c
+    //console.log(guides);
 
     // Depending on the isSubscribed state, set the appropriate link
     const guideMTLink = isSubscribed

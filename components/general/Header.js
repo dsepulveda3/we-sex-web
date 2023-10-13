@@ -288,8 +288,8 @@ const Header = ({type, data}) => {
     await clienteAxios
       .get(`search/public-discussions?queryString=${searchString}`)
       .then((response) => {
-        console.log('buscando', searchString);
-        console.log('articles buscados', response.data.results);
+        //console.log('buscando', searchString);
+        //console.log('articles buscados', response.data.results);
         setDiscussionsToSearch(response.data.results);
       });
   }

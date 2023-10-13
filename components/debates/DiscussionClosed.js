@@ -109,7 +109,7 @@ const Likes = styled.img`
 const DiscussionClosed = ({ type, discussion, onClick = false }) => {
   const router = useRouter();
 
-  console.log(type);
+  //console.log(type);
 
   return (
     <Discussion

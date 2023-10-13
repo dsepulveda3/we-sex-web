@@ -560,8 +560,8 @@ const Plans = () => {
 
 
     useEffect(() => {
-        console.log(authUser);
-        console.log(loading);
+        //console.log(authUser);
+        //console.log(loading);
 
         if (authUser)
           setIsLogged(true)

@@ -440,12 +440,12 @@ const couplesData = {
 //     const router = useRouter();
 //     const coupleName = router.query.origin;
 
-//     console.log("Data URl");
-//     console.log(router.query.origin);
+//     //console.log("Data URl");
+//     //console.log(router.query.origin);
 
 //     // Look up data for the couple based on the extracted name
 //     const coupleData = couplesData[coupleName];
-//     console.log(coupleData);
+//     //console.log(coupleData);
 
     
 //     return (

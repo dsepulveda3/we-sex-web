@@ -406,8 +406,8 @@ const MapaAmor = () => {
           }
         }, [router.isReady, isOriginRoute]);
       
-      console.log("printing origin");
-      console.log(origin);
+      //console.log("printing origin");
+      //console.log(origin);
       
     
     

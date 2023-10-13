@@ -9,9 +9,9 @@ export default async function handler(req, res) {
     // Assuming you have the subscription_plan_id, cardToken, and paymentMethod
 
     const { token, payment_method_id } = req.body; // Extract the data
-    console.log("token");
-    console.log(token);
-    console.log(payment_method_id);
+    //console.log("token");
+    //console.log(token);
+    //console.log(payment_method_id);
 
     // Create the data for the second POST request
     const subscriptionData = {
@@ -29,7 +29,7 @@ export default async function handler(req, res) {
         body: JSON.stringify(subscriptionData),
       });
 
-      console.log("sending info");
+      //console.log("sending info");
 
       const subscriptionResult = await subscriptionResponse.json();
 
