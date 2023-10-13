@@ -111,7 +111,7 @@ const ArticleClosed = ({ article, icon, onClick = false }) => {
         router.push(onClick ? `${article._id}` : `articleDetail/${article._id}`)
       }
     >
-      <Category>{articlesCategoriesTitle[article.category.name]}</Category>
+      <Category href={`articleDetail/${article._id}`} >{articlesCategoriesTitle[article.category.name]}</Category>
       <Title>{article.title}</Title>
       <Row>
         <Col sm={3} style={{ display: 'inline-flex', alignItems: 'flex-end' }}>

@@ -19,7 +19,7 @@ const Header = styled.div`
 const Background = styled.div`
 
     background-color: var(--violet);
-    background-image: url("/img/landing/cta-bg.jpg");
+    background-image: url("/img/landing/cta-bg.webp");
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -408,8 +408,8 @@ const Virtual = () => {
           }
         }, [router.isReady, isOriginRoute]);
       
-      console.log("printing origin");
-      console.log(origin);
+      //console.log("printing origin");
+      //console.log(origin);
       
     
     

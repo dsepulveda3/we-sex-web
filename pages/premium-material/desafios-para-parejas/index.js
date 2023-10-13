@@ -15,7 +15,7 @@ const ABTestPage = () => {
     setUserSegment(getRandomNumber());
   }, []);
 
-  console.log('User Segment coming:', userSegment);
+  //console.log('User Segment coming:', userSegment);
 
   useEffect(() => {
     // Check if userSegment is not null and redirect accordingly
@@ -56,7 +56,7 @@ export default ABTestPage;
 //     setUserSegment(getRandomNumber());
 //   }, []);
 
-//   console.log('User Segment coming:', userSegment);
+//   //console.log('User Segment coming:', userSegment);
 
 //   if (userSegment === null) {
 //     return null; // Return null during the first render

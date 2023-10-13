@@ -43,7 +43,7 @@ function ContentAccessCode () {
     const { authUser, loading } = useAuth();
 
     useEffect(() => {
-      console.log(lostCode);
+      //console.log(lostCode);
       if (authUser){
         setIsLogged(true);
       }

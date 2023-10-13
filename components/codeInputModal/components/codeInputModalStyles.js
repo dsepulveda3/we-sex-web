@@ -18,7 +18,7 @@ export const ModalContainer = styled(Container)`
   width: 550px;
   padding: 5rem 5rem 5rem 5rem;
   background-color: var(--violet);
-  background-image: url("/img/auth/cta-bg.jpg");
+  background-image: url("/img/auth/cta-bg.webp");
   background-position: center;
   background-size: cover;
   border-radius: 20px;
@@ -32,7 +32,7 @@ export const ModalContainer = styled(Container)`
     text-align: center;
     padding-bottom: 3rem;
     background-color: var(--violet);
-    background-image: url("/img/auth/cta-bg.jpg");
+    background-image: url("/img/auth/cta-bg.webp");
     background-position: center;
     background-size: cover;
     height: 100vh; 

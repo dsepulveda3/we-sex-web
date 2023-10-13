@@ -220,7 +220,7 @@ const Header = ({type, data}) => {
       setBgImage('');
     }
     else if(type === 'nothidden') {
-      setBgImage('/img/landing/cta-bg.jpg');
+      setBgImage('/img/landing/cta-bg.webp');
     }
     
   }, [type]);
@@ -241,7 +241,7 @@ const Header = ({type, data}) => {
       if (window.pageYOffset >= 0) {
         setBgColor('#000000');
         if (type === 'nothidden') {
-          setBgImage('/img/landing/cta-bg.jpg');
+          setBgImage('/img/landing/cta-bg.webp');
         } else {
           setBgImage('');
         }
@@ -288,8 +288,8 @@ const Header = ({type, data}) => {
     await clienteAxios
       .get(`search/public-discussions?queryString=${searchString}`)
       .then((response) => {
-        console.log('buscando', searchString);
-        console.log('articles buscados', response.data.results);
+        //console.log('buscando', searchString);
+        //console.log('articles buscados', response.data.results);
         setDiscussionsToSearch(response.data.results);
       });
   }
@@ -319,7 +319,7 @@ const Header = ({type, data}) => {
       <div className="d-flex justify-content-between align-items-center w-100" style={{marginLeft: "20px", marginRight: "20px"}}>
           <StyledNavbarToggler aria-controls="basielc-navbar-nav" onClick={toggleNavbar} />
           <NavbarBrand href="/">
-          <AppImage src="/img/logo_wesex_croped.png" />
+          <AppImage src="/img/logo_wesex_croped.png" alt='wesex-logo' />
           </NavbarBrand>
           
           <Collapse isOpen={isOpen} navbar>

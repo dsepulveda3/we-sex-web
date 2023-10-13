@@ -98,7 +98,7 @@ const CarouselPers = styled(Carousel)`
   }
 `;
 
-const Button = styled.a`
+const SeeMoreButton = styled.button`
     font-family: "Karla", sans-serif;
     border-radius: 4rem;
     padding: 1rem 3rem;
@@ -193,8 +193,8 @@ export default function Articulos() {
         <title>
           {'Artículos | WeSex - La app para hablar y aprender de sexo'}
         </title>
-        <meta name='description' content={''} />
-        <meta name='keywords' content={''} />
+        <meta name='description' content='Artículos de WeSex' />
+        <meta name='keywords' content='wesex,www.we.sex,we.sex' />
       </Head>
       <Layout type={'nothidden'}>
         {/* <div className='sec-title'>
@@ -258,7 +258,7 @@ export default function Articulos() {
             search={searchString}
           />
           <div style={{ padding: '10px 0', textAlign: 'center' }}>
-            <Button onClick={handleLoadMore} >Ver mas</Button>
+            <SeeMoreButton onClick={handleLoadMore} >Ver mas</SeeMoreButton>
           </div>
         </Container>
       </Layout>

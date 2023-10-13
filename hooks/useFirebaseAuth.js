@@ -145,7 +145,7 @@ export default function useFirebaseAuth() {
                 handleSocialAuth(result.user, origin);
             })
             .catch((error) => {
-                console.log(error);
+                //console.log(error);
                 toast.error('Hubo un error al iniciar sesión');
             });
     };
@@ -205,7 +205,7 @@ export default function useFirebaseAuth() {
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log("error", errorMessage)
+                //console.log("error", errorMessage)
         });
     
     const createUserInBackend = async (formData, origin) => {
@@ -231,7 +231,7 @@ export default function useFirebaseAuth() {
                     clear();
                 }
             ).catch((error) => {
-                console.log("error", error)
+                //console.log("error", error)
             });
         }
     )

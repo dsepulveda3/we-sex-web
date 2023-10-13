@@ -8,7 +8,7 @@ export const Background = styled.div`
     align-items: center;
     justify-content: center;
     background-color: var(--violet);
-    // background-image: url("/img/auth/cta-bg.jpg");
+    // background-image: url("/img/auth/cta-bg.webp");
     background-position: center;
     background-size: 100% 100%;
     
