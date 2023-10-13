@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <Head>
         <title>Material Premium</title>
-        <meta name="description" content="Material Premium" /> 
+        <meta name="description" content="Material Premium WeSex" /> 
         <meta name="keywords" content="" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 

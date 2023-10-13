@@ -116,7 +116,7 @@ const Subtitle = styled.p`
 `;
 
 
-const Button = styled.a`
+const Button = styled.button`
     font-family: "Karla", sans-serif;
     border-radius: 4rem;
     padding: 1rem 3rem;
@@ -284,8 +284,8 @@ export default function Debates() {
         <title>
           {'Debates | WeSex - La app para hablar y aprender de sexo'}
         </title>
-        <meta name='description' content={''} />
-        <meta name='keywords' content={''} />
+        <meta name='description' content='Debates de WeSex' />
+        <meta name='keywords' content='wesex,www.we.sex,we.sex' />
       </Head>
       <Layout type={'nothidden'}>
         <div style={{ minHeight: 'calc(100vh - 160px)', paddingBottom: '10rem', overflowY: 'auto' }}>

@@ -313,7 +313,7 @@ const Guides = () => {
                 <Link href={guideMTLink}>
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia2 src="/img/premium-material/Masturbacion_tantrica.png" className="img-fluid"/>
+                            <AppImageGuia2 src="/img/premium-material/Masturbacion_tantrica.png" className="img-fluid" alt='Logotipo Guía Masturbación Tantrica 1 WeSex'/>
                             <h3>Masturbación Tantrica - Parte 1</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
@@ -324,7 +324,7 @@ const Guides = () => {
                 <Link href={guideRutinaLink}>
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia2 src="/img/premium-material/salir_rutina.png" className="img-fluid"/>
+                            <AppImageGuia2 src="/img/premium-material/salir_rutina.png" className="img-fluid" alt='Logotipo Guía Salir de la rutina WeSex'/>
                             <StyledH3>Salir <span>de la</span> rutina <span>con tu</span> pareja</StyledH3>
                         </ContainerContentGuide>
                     </GuideSquare>
@@ -335,7 +335,7 @@ const Guides = () => {
                     <Link href={guideZonasLink}>
                         <GuideSquare>
                             <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                                <AppImageGuia3 src="/img/premium-material/2ZonasErogenas (1).png" className="img-fluid"/>
+                                <AppImageGuia3 src="/img/premium-material/2ZonasErogenas (1).png" className="img-fluid" alt='Logotipo Guía Zonas Erógenas Wesex'/>
                                 <h3>Zonas Erógenas</h3>
                             </ContainerContentGuide>
                         </GuideSquare>
@@ -345,7 +345,7 @@ const Guides = () => {
                     <Link href={guideTantraLink}>
                         <GuideSquare>
                             <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                                <AppImageGuia2 src="/img/premium-material/Tantra (1).png" className="img-fluid"/>
+                                <AppImageGuia2 src="/img/premium-material/Tantra (1).png" className="img-fluid" alt='Logotipo Guía Tantra Wesex'/>
                                 <h3>Tantra</h3>
                             </ContainerContentGuide>
                         </GuideSquare>
@@ -355,7 +355,7 @@ const Guides = () => {
                 <Link href={guideAnalLink}>
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia1 src="/img/premium-material/como-nunca-antes-gozado.png" className="img-fluid"/>
+                            <AppImageGuia1 src="/img/premium-material/como-nunca-antes-gozado.png" className="img-fluid" alt='Logotipo Guía Sexo Anal Wesex'/>
                             <h3>Guía Sexo Anal</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
