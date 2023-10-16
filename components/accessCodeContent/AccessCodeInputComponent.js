@@ -115,7 +115,7 @@ function AccessCodeInput ({setLostLink}) {
     const handleSubmit = () => {
         redeem_access_code(PLAN_ID, accessCode)
             .then((response) => {
-                console.log(response);
+                //console.log(response);
                 if (response.status === 200) {
                     if (response.data.status === 'used') {
                         toast.error('Codigo ya utilizado');
@@ -129,7 +129,7 @@ function AccessCodeInput ({setLostLink}) {
                 }
             })
             .catch((error) => {
-                console.log(error);
+                //console.log(error);
                 toast.error('Error al canjear el codigo');
             })
     }

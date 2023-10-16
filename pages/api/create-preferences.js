@@ -46,7 +46,7 @@ export default async function handler(req, res) {
     // Agregar el init_point a la respuesta
     res.status(200).json({ preferenceId: response.body.id, initPoint: response.body.init_point });
   } catch (error) {
-    console.log(error);
+    //console.log(error);
     res.status(500).json({ message: "Error creando la preferencia" });
   }
 }

@@ -359,9 +359,9 @@ const ArticleDetail = ({ articleItem }) => {
               <p>{articleItem?.subtitle}</p>
               <Col>
               {articleItem?.content?.map((item, index) => {
-                console.log(item);
+                //console.log(item);
                 if (item.type === 'text') {
-                  console.log(item.value);
+                  //console.log(item.value);
                   return (
                     <div
                       key={`text-${index}`}

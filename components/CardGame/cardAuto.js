@@ -7,7 +7,7 @@ import styled from '@emotion/styled';
 const Background = styled.div`
 
     background-color: var(--violet);
-    background-image: url("/img/landing/cta-bg.jpg");
+    background-image: url("/img/landing/cta-bg.webp");
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;

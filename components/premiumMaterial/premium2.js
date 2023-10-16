@@ -8,7 +8,7 @@ import Suscribe from '../../components/general/Suscribe';
 
 const Background = styled.div`
     background-color: var(--violet);
-    background-image: url("/img/landing/cta-bg.jpg");
+    background-image: url("/img/landing/cta-bg.webp");
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -235,8 +235,8 @@ const Guides = () => {
         const response = await is_subscribed(
         PLAN_ID, 
         );
-        console.log("reading request")
-        console.log(response);
+        //console.log("reading request")
+        //console.log(response);
         if (response.status === 200){
         setIsSubscribed(true);
         }
@@ -263,7 +263,7 @@ const Guides = () => {
                 <Link href="/premium-material/guides">
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia1 src="/img/premium-material/GuiasGeneral (1).png" className="img-fluid"/>
+                            <AppImageGuia1 src="/img/premium-material/GuiasGeneral (1).png" className="img-fluid" alt='Logotipo guias WeSex'/>
                             <h3 style={{marginBottom: "2rem"}}>Guías</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
@@ -274,7 +274,7 @@ const Guides = () => {
                 <Link href="/premium-material/masters">
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia2 src="/img/premium-material/MasterGeneral (1).png" className="img-fluid"/>
+                            <AppImageGuia2 src="/img/premium-material/MasterGeneral (1).png" className="img-fluid" alt='Logotipo MasterClasses WeSex'/>
                             <h3>Master Classes</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
@@ -285,7 +285,7 @@ const Guides = () => {
                     <Link href="/premium-material/packs">
                     <GuideSquare>
                     <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia2 src="/img/premium-material/packs (1).png" className="img-fluid"/>
+                            <AppImageGuia2 src="/img/premium-material/packs (1).png" className="img-fluid" alt='Logotipo Packs Orgásmicos WeSex'/>
                             <h3>Packs Orgásmicos</h3>
                         </ContainerContentGuide>
                     </GuideSquare>

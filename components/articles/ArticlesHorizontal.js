@@ -14,7 +14,7 @@ import "swiper/css/pagination";
 const Background = styled.div`
     // background-color: #f7f7f7;
     background-color: white;
-    // background-image: url("/img/cta-bg.jpg");
+    // background-image: url("/img/cta-bg.webp");
     // background-color: var(--violet);
     background-position: center;
     background-repeat: no-repeat;
@@ -140,29 +140,9 @@ const More = styled.a`
     
 `;
 
-const ArticlesWithTabs = () => {
-  const [selected, setSelected] = useState('last');
-  const [articles, setArticles] = useState([]);
+const ArticlesWithTabs = ({ articles }) => {
   const [swiper, setSwiper] = useState(null);
-
-  useEffect(() => {
-    if (selected === 'last') {
-      getArticles();
-    } 
-    // else if (selected === 'trending') {
-    //   getTrendingDiscussions();
-    // } else {
-    //   getRandomDiscussions();
-    // }
-  }, [selected]);
- 
-
-  async function getArticles() {
-    await Axios.get('/articles/public-randomized').then((response) => {
-      setArticles(response.data);
-    });
-  }
-
+  
   const handleNext = () => {
     if (swiper !== null) {
       swiper.slideNext();

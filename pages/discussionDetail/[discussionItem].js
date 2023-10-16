@@ -269,8 +269,8 @@ const DiscussionDetail = ({ discussionItem }) => {
         setComments(response.data);
       });
   }
-  console.log("Info debate");
-  console.log(discussionItem);
+  //console.log("Info debate");
+  //console.log(discussionItem);
 
   return (
     <>

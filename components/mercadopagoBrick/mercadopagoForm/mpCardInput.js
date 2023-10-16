@@ -19,7 +19,7 @@ function MPCardInput (){
   }, [authUser, loading]);
 
   const handleRequest = async (token, email) => {
-    console.log("request sent");
+    //console.log("request sent");
     if (isLogged){
       const response = await subscribe_to_premium(
         PLAN_ID,
@@ -93,8 +93,8 @@ function MPCardInput (){
               try{
                 const response = await handleRequest(formData.token, formData.payer.email);
               } catch (error) {
-                console.log("Displayed Error");
-                console.log(error);
+                //console.log("Displayed Error");
+                //console.log(error);
                 toast.error(    
                   <div>
                     Error al suscribirse. {' '}

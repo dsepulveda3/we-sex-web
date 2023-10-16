@@ -79,7 +79,7 @@ const MobileNavigation = ({type}) => {
           <Col xs={3} sm={3}>
             <Link href="/inicio">
               <a onClick={() => handleIconClick('/inicio', 'inicio')}>
-                <Icon src={clickedIcons.home ? '/img/icons/home2-icon-black.svg' : '/img/icons/home2-icon-white.svg'} active={activeLink === '/inicio'} />
+                <Icon src={clickedIcons.home ? '/img/icons/home2-icon-black.svg' : '/img/icons/home2-icon-white.svg'} active={activeLink === '/inicio'} alt='home-logo'/>
                 {activeLink === '/inicio' ? <BoldText>Inicio</BoldText> : 'Inicio'}
               </a>
             </Link>
@@ -87,7 +87,7 @@ const MobileNavigation = ({type}) => {
           <Col xs={3} sm={3}>
             <Link href="/debates">
               <a onClick={() => handleIconClick('/debates', 'debates')}>
-                <Icon src={clickedIcons.debates ? '/img/icons/debate2-icon-black.svg' : '/img/icons/debate2-icon-white.svg'} active={activeLink === '/debates'} />
+                <Icon src={clickedIcons.debates ? '/img/icons/debate2-icon-black.svg' : '/img/icons/debate2-icon-white.svg'} active={activeLink === '/debates'} alt='discussions-logo' />
                 {activeLink === '/debates' ? <BoldText>Debates</BoldText> : 'Debates'}
               </a>
             </Link>
@@ -95,7 +95,7 @@ const MobileNavigation = ({type}) => {
           <Col xs={3} sm={3}>
             <Link href="/articulos">
               <a onClick={() => handleIconClick('/articulos', 'articulos')}>
-                <Icon src={clickedIcons.articulos ? '/img/icons/article2-icon-black.svg' : '/img/icons/article2-icon-white.svg'} active={activeLink === '/articulos'} />
+                <Icon src={clickedIcons.articulos ? '/img/icons/article2-icon-black.svg' : '/img/icons/article2-icon-white.svg'} active={activeLink === '/articulos'} alt='articles-logo' />
                 {activeLink === '/articulos' ? <BoldText>Artículos</BoldText> : 'Artículos'}
               </a>
             </Link>
@@ -105,7 +105,7 @@ const MobileNavigation = ({type}) => {
             {/* <Link href="/buscar?autofocus=true"> */}
             <a onClick={() => handleIconClick('/premium-material', 'premium-material')}>
               {/* <a onClick={() => handleIconClick('/buscar?autofocus=true', 'premium')}> */}
-                <Icon src={clickedIcons.premium ? '/img/icons/premium2-icon-black.svg' : '/img/icons/premium2-icon-white.svg'} active={activeLink === 'premium-material'} />
+                <Icon src={clickedIcons.premium ? '/img/icons/premium2-icon-black.svg' : '/img/icons/premium2-icon-white.svg'} active={activeLink === 'premium-material'} alt='premium-material-logo' />
                 {activeLink === '/premium-matrial' ? <BoldText>Premium</BoldText> : 'Premium'}
               </a>
             </Link>

@@ -31,12 +31,12 @@ const Sexionary = ({ sexionaryItems }) => {
     //   const responseTest = await clienteAxios
     //     .get(`/articles/all-public`)
     //     .then((res) => {
-    //       console.log(res);
+    //       //console.log(res);
     //     })
     //     .catch((err) => {
-    //       console.log(err);
+    //       //console.log(err);
     //     });
-    //   console.log(responseTest);
+    //   //console.log(responseTest);
     // }
     // setAllItems(sexionaryItems)
     // eslint-disable-next-line

@@ -204,7 +204,7 @@ const FirstBanner = ({titleText, titleSpan, titleText2, titleSpan2, price_before
                         <Col>
                             {imageIsVisible && (
                                 <ContentImage>
-                                    <AppImage src={image} width={widthImage} alt="" />
+                                    <AppImage src={image} width={widthImage} alt="Logotipo Guía Wesex" />
                                 </ContentImage>
                             )}
                             {videoIsVisible && isClient && !isEmbeddedVideo && userHasAccess && (

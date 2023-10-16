@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Background = styled.div`
     background-color: var(--violet);
-    background-image: url("/img/landing/cta-bg.jpg");
+    background-image: url("/img/landing/cta-bg.webp");
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -189,7 +189,7 @@ const Masterclasses = () => {
                 <Link href="/premium-material/masters/masterclass-1">
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia1 src="/img/premium-material/Masterclass (1).png" className="img-fluid"/>
+                            <AppImageGuia1 src="/img/premium-material/Masterclass (1).png" className="img-fluid" alt='Imagen MasterClass 1 WeSex'/>
                             <h3>Master 1</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
@@ -198,7 +198,7 @@ const Masterclasses = () => {
                 <Col lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia2 src="/img/premium-material/question-mark-draw.png" className="img-fluid"/>
+                            <AppImageGuia2 src="/img/premium-material/question-mark-draw.png" className="img-fluid" alt='Logotipo proximamente WeSex'/>
                             <h3>Pronto</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
@@ -206,7 +206,7 @@ const Masterclasses = () => {
                 <Col lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia2 src="/img/premium-material/question-mark-draw.png" className="img-fluid"/>
+                            <AppImageGuia2 src="/img/premium-material/question-mark-draw.png" className="img-fluid" alt='Logotipo proximamente WeSex'/>
                             <h3>Pronto</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
@@ -214,7 +214,7 @@ const Masterclasses = () => {
                 <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia2 src="/img/premium-material/question-mark-draw.png" className="img-fluid"/>
+                            <AppImageGuia2 src="/img/premium-material/question-mark-draw.png" className="img-fluid" alt='Logotipo proximamente WeSex'/>
                             <h3>Pronto</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
@@ -222,7 +222,7 @@ const Masterclasses = () => {
                 <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia2 src="/img/premium-material/question-mark-draw.png" className="img-fluid"/>
+                            <AppImageGuia2 src="/img/premium-material/question-mark-draw.png" className="img-fluid" alt='Logotipo proximamente WeSex'/>
                             <h3>Pronto</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
@@ -230,7 +230,7 @@ const Masterclasses = () => {
                 <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia2 src="/img/premium-material/question-mark-draw.png" className="img-fluid"/>
+                            <AppImageGuia2 src="/img/premium-material/question-mark-draw.png" className="img-fluid" alt='Logotipo proximamente WeSex'/>
                             <h3>Pronto</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
@@ -238,7 +238,7 @@ const Masterclasses = () => {
                 <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia2 src="/img/premium-material/question-mark-draw.png" className="img-fluid"/>
+                            <AppImageGuia2 src="/img/premium-material/question-mark-draw.png" className="img-fluid" alt='Logotipo proximamente WeSex'/>
                             <h3>Pronto</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
@@ -246,7 +246,7 @@ const Masterclasses = () => {
                 <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia2 src="/img/premium-material/question-mark-draw.png" className="img-fluid"/>
+                            <AppImageGuia2 src="/img/premium-material/question-mark-draw.png" className="img-fluid" alt='Logotipo proximamente WeSex'/>
                             <h3>Pronto</h3>
                         </ContainerContentGuide>
                     </GuideSquare>

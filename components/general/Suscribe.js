@@ -55,8 +55,8 @@ const Suscribe = () => {
 
   const checkSubscriptionStatus = async () => {
     const response = await is_subscribed(PLAN_ID);
-    console.log("reading request");
-    console.log(response);
+    //console.log("reading request");
+    //console.log(response);
     if (response.status === 200) {
       setIsSubscribed(true);
     }

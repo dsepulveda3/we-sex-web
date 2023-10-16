@@ -169,7 +169,7 @@ function StripeForm() {
         toast.success("Suscripción exitosa");
       }
       setIsSubmitting(false);
-      console.log(response);
+      //console.log(response);
       return response;
     } else {
       const response = await subscribe_to_premium_with_email(
@@ -185,7 +185,7 @@ function StripeForm() {
         toast.success("Subscripción de la tarjeta exitosa");
       }
       setIsSubmitting(false);
-      console.log(response);
+      //console.log(response);
       return response;
     }
   };
@@ -204,14 +204,14 @@ function StripeForm() {
     const { token, error } = await stripe.createToken(elements.getElement(CardElement));
 
     if (error) {
-      console.log(error);
+      //console.log(error);
       setErrorOccurred(true);
       setIsSubmitting(false);
     } else {
       try{
         const response = await handleRequest(token);
       } catch (error) {
-        console.log(error);
+        //console.log(error);
         toast.error(    
           <div>
             Error al suscribirse. {' '}

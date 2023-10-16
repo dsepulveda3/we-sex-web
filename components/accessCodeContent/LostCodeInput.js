@@ -111,7 +111,7 @@ function LostCodeInput ({setLostLink}) {
         regenerate_access_code(email)
             .then((response) => {
                 if (response.status === 200) {
-                    console.log(response);
+                    //console.log(response);
                     toast.success('Se envio un nuevo código a tu email');
                     setLostLink(false);
                 }

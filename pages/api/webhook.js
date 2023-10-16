@@ -10,7 +10,7 @@ function post_perfit(account, listId, contactData, axiosConfig) {
           )
           .then((response) => {
             const contact = response.data.data;
-            console.log('Contacto creado/actualizado', contact);
+            //console.log('Contacto creado/actualizado', contact);
           })
           .catch((error) => {
             console.error('Error creating/updating contact:', error);
@@ -28,9 +28,9 @@ export default async function handler(req, res) {
     const apiKeyPerfit = 'wesex-UnDzvCG44TVzuajb7g8bbybtyDuiKIRw';
     const axiosConfig = { headers: { Authorization: `Bearer ${apiKeyPerfit}` } };
 
-    console.log('Body', payload);
-    console.log('Email:', payload.email);
-    console.log('Signature:', payload.signature);
+    //console.log('Body', payload);
+    //console.log('Email:', payload.email);
+    //console.log('Signature:', payload.signature);
 
     // Process the payload
     // Example: Accessing the email and product name
@@ -318,10 +318,10 @@ export default async function handler(req, res) {
   
 } 
 
-    console.log('Successful request');
+    //console.log('Successful request');
     res.status(200).end(); // Return a 200 status code to acknowledge the webhook request
   } else {
-    console.log('Unsupported method');
+    //console.log('Unsupported method');
     res.status(405).json({ message: 'Unsupported method' });
   } 
 } 
@@ -348,29 +348,29 @@ export default async function handler(req, res) {
 //     const calculatedSignature = hash('sha256', apiKey); // Calculate the expected signature
 //     const isSignatureValid = signature === calculatedSignature;
 
-//     console.log('Body', payload);
-//     console.log('Email:', payload.email);
-//     console.log('Signature:', payload.signature);
+//     //console.log('Body', payload);
+//     //console.log('Email:', payload.email);
+//     //console.log('Signature:', payload.signature);
 
 //     if (isSignatureValid) {
 //       // Process the payload
 //       // Example: Accessing the email and product name
 //       const email = payload.email;
 //       const productName = payload.items[0].product_name;
-//       console.log('Email:', email);
-//       console.log('Signature:', signature);
+//       //console.log('Email:', email);
+//       //console.log('Signature:', signature);
 
 //       // Perform your desired actions with the payload data
 //       // Example: Send an email notification, add to a database, etc.
       
-//       console.log('Signature is valid, succesfull request');
+//       //console.log('Signature is valid, succesfull request');
 //       res.status(200).end(); // Return a 200 status code to acknowledge the webhook request
 //     } else {
-//       console.log('Signature is not valid');
+//       //console.log('Signature is not valid');
 //       res.status(401).end(); // Return a 401 status code if the signature is not valid
 //     }
 //   } else {
-//     console.log('Unsupported method');
+//     //console.log('Unsupported method');
 //     res.status(405).json({ message: 'Unsupported method' });
 //   }
 // }

@@ -9,7 +9,7 @@ export default function GoogleSignInButton({origin}) {
     const { signInWithGoogle } = useAuth();
 
     const handleSignInWithGoogle = () => {
-        console.log(origin);
+        //console.log(origin);
         signInWithGoogle(origin);
     };
 
