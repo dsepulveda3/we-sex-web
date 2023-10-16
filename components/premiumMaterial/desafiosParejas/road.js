@@ -4,6 +4,12 @@ import { useRouter } from 'next/router';
 import styled from "@emotion/styled";
 
 
+
+const HeaderContainer = styled.div`
+  background-color: #ebe4f8;
+`;
+
+
 const Header = styled.div`
     // background-color: #72e436;
     // background-color: #5bcb06;
@@ -47,17 +53,19 @@ const SubTitle = styled.div`
 
 const Background = styled.div`
     background-color: #ebe4f8;
-    margin-top: 2rem;
-    background: white;
+    padding-top: 2rem;
+    // background: white;
     text-align: center;
     height: 100vh;
 
     @media (min-width: 540px){
         padding: 0rem 10rem 20rem 10rem;
+        height: 115vh;
     }
 
     @media (max-width: 540px){
         padding: 0rem 1rem 20rem 1rem;
+        height: 100vh;
     }
 `;
 
@@ -135,7 +143,7 @@ const DosisContainer = styled.div`
 `;
 
 const ImageDosis = styled.img`
-    height: 12%;
+    height: 10%;
     width: 13%;
     padding: 1rem;
     transform: rotate(0deg);
@@ -569,14 +577,16 @@ const couplesData = {
   
     return (
         <>
-          <Header>
-            <Title>Desafíos para parejas</Title>
-            {coupleData ? (
-              <SubTitle>{coupleData.subtitle}</SubTitle>
-            ) : (
-              <SubTitle>Loading...</SubTitle> // Or any loading indicator
-            )}
-          </Header>
+          <HeaderContainer>
+            <Header>
+              <Title>Desafíos para parejas</Title>
+              {coupleData ? (
+                <SubTitle>{coupleData.subtitle}</SubTitle>
+              ) : (
+                <SubTitle>Loading...</SubTitle> // Or any loading indicator
+              )}
+            </Header>
+          </HeaderContainer>
           <Background>
           <div onClick={handleWarningSymbolClick} style={{textAlign: "right", padding: "0.5rem"}}>ℹ️</div>
             <ChallengesAndDosisContainer>
