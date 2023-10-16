@@ -503,7 +503,7 @@ const CenaMasajes = () => {
                             </Text>
                         
                             <Text2>
-                                <span>Hoy te toca realizar un masaje relajante y/o erótico a tu pareja. Sin expectativas de que lleve a algo más, simplemente para que el se sienta bien y relajado.</span>
+                                <span>Hoy te toca realizar un masaje relajante y/o erótico a tu pareja. Sin expectativas de que lleve a algo más, simplemente para que tu pareja se sienta bien y relajada.</span>
                                 <br/>
                                 <br/>
                                 Puedes preguntarle a tu pareja cómo le gustaría que sea el masaje, pero igualmente…
