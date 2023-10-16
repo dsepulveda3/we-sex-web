@@ -431,7 +431,8 @@ const PopupContent = () => {
   
 
 
-const PlansUniversal = ({mp_basic, mp_estandar, mp_premium, stripe_basic, stripe_estandar, stripe_premium}) => {
+const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, price_stripe_basic, price_stripe_estandar, price_stripe_premium,
+    mp_basic, mp_estandar, mp_premium, stripe_basic, stripe_estandar, stripe_premium, discount}) => {
 
     const [selectedOption, setSelectedOption] = useState('Argentina');
     const [showPopup, setShowPopup] = useState(false);
@@ -514,8 +515,8 @@ const PlansUniversal = ({mp_basic, mp_estandar, mp_premium, stripe_basic, stripe
                                 <InsideText>
                                     {selectedOption === 'Argentina' && (
                                     <InfoSuscription>
-                                        <PriceText>14,040 ARS/pareja</PriceText>
-                                        <ByLabel style={{color: "black"}}>Incluye 10% descuento Dirac</ByLabel>
+                                        <PriceText>{price_mp_basic}</PriceText>
+                                        <ByLabel style={{color: "black"}}>{discount}</ByLabel>
 
                                         <BotonUniversal 
                                         style={{fontSize: "1.8rem", margin: "1rem 0rem 0rem 2rem" }}
@@ -528,8 +529,8 @@ const PlansUniversal = ({mp_basic, mp_estandar, mp_premium, stripe_basic, stripe
                                     </InfoSuscription>)}
                                     {selectedOption === 'Otro País' && (
                                     <InfoSuscription>
-                                        <PriceText>27 USD/pareja</PriceText>
-                                        <ByLabel style={{color: "black"}}>Incluye 10% descuento Dirac</ByLabel>
+                                        <PriceText>{price_stripe_basic}</PriceText>
+                                        <ByLabel style={{color: "black"}}>{discount}</ByLabel>
                                         <BotonUniversal
                                         style={{fontSize: "1.8rem", margin: "1rem 0rem 0rem 2rem" }}
                                         link_redireccion={stripe_basic}
@@ -582,8 +583,8 @@ const PlansUniversal = ({mp_basic, mp_estandar, mp_premium, stripe_basic, stripe
                                 <InsideText>
                                     {selectedOption === 'Argentina' && (
                                     <InfoSuscription>
-                                        <PriceText>18,000 ARS/pareja</PriceText>
-                                        <ByLabel style={{color: "black"}}>Incluye 10% descuento Dirac</ByLabel>
+                                        <PriceText>{price_mp_estandar}</PriceText>
+                                        <ByLabel style={{color: "black"}}>{discount}</ByLabel>
 
 
                                         <BotonUniversal 
@@ -597,8 +598,8 @@ const PlansUniversal = ({mp_basic, mp_estandar, mp_premium, stripe_basic, stripe
                                     </InfoSuscription>)}
                                     {selectedOption === 'Otro País' && (
                                     <InfoSuscription>
-                                        <PriceText>34.2 USD/pareja</PriceText>
-                                        <ByLabel style={{color: "black"}}>Incluye 10% descuento Dirac</ByLabel>
+                                        <PriceText>{price_stripe_estandar}</PriceText>
+                                        <ByLabel style={{color: "black"}}>{discount}</ByLabel>
 
                                         <BotonUniversal
                                         style={{fontSize: "1.8rem", margin: "1rem 0rem 0rem 2rem" }}
@@ -649,8 +650,8 @@ const PlansUniversal = ({mp_basic, mp_estandar, mp_premium, stripe_basic, stripe
                                 <InsideText>
                                     {selectedOption === 'Argentina' && (
                                     <InfoSuscription>
-                                        <PriceText>24,300 ARS/pareja</PriceText>
-                                        <ByLabel style={{color: "black"}}>Incluye 10% descuento Dirac</ByLabel>
+                                        <PriceText>{price_mp_premium}</PriceText>
+                                        <ByLabel style={{color: "black"}}>{discount}</ByLabel>
 
                                         <BotonUniversal 
                                         style={{fontSize: "1.8rem", margin: "1rem 0rem 0rem 2rem" }}
@@ -663,8 +664,8 @@ const PlansUniversal = ({mp_basic, mp_estandar, mp_premium, stripe_basic, stripe
                                     </InfoSuscription>)}
                                     {selectedOption === 'Otro País' && (
                                     <InfoSuscription>
-                                        <PriceText>48,6 USD/pareja</PriceText>
-                                        <ByLabel style={{color: "black"}}>Incluye 10% descuento Dirac</ByLabel>
+                                        <PriceText>{price_stripe_premium}</PriceText>
+                                        <ByLabel style={{color: "black"}}>{discount}</ByLabel>
 
                                         <BotonUniversal
                                         style={{fontSize: "1.8rem", margin: "1rem 0rem 0rem 2rem" }}

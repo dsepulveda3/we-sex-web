@@ -33,19 +33,19 @@ export default function Home() {
         <Dudas />
         <Opinions />
         <PlansUniversal 
-        discount="Incluye 10% descuento Dirac"
-        price_mp_basic="14,040 ARS/pareja"
-        mp_basic="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b1aa470018b1be3b6c80166" 
-        price_mp_estandar="18,000 ARS/pareja"
-        mp_estandar="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b1aa477018b1be49fae016f"
-        price_mp_premium="24,300 ARS/pareja"
-        mp_premium="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b1aa492018b1be5aa83015d"
-        price_stripe_basic="27 USD/pareja"
-        stripe_basic="https://buy.stripe.com/aEUeXCaVX26xaoo008"
-        price_stripe_estandar="34,2 USD/pareja"
-        stripe_estandar="https://buy.stripe.com/7sI5n2e893aB400aEN"
-        price_stripe_premium="48,6 USD/pareja"
-        stripe_premium="https://buy.stripe.com/28o5n29RT8uV688cMW"
+        discount="Referido por Goteo"
+        price_mp_basic="15,600 ARS/pareja"
+        mp_basic="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b2a4548018b381dfc29073b" 
+        price_mp_estandar="20,000 ARS/pareja"
+        mp_estandar="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b2a4565018b381f11200740"
+        price_mp_premium="27,000 ARS/pareja"
+        mp_premium="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b2a4561018b381fb61506f9"
+        price_stripe_basic="30 USD/pareja"
+        stripe_basic="https://buy.stripe.com/7sI02IaVX12t400eV5"
+        price_stripe_estandar="38 USD/pareja"
+        stripe_estandar="https://buy.stripe.com/bIY2aQ5BD26xgMMdR2"
+        price_stripe_premium="54 USD/pareja"
+        stripe_premium="https://buy.stripe.com/9AQ9DiaVX12t9kk28l"
         />
         <Explicacion/>
         </Layout>
