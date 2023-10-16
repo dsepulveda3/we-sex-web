@@ -118,8 +118,8 @@ const Dosis1 = () => {
         <Background>
             <Border>
             <Header>
-                <ArrowBack url={`/premium-material/desafios-para-parejas/road?origin=${origin}`}/>
-                <Feedback challengeName={"Penetración"}/>
+                <ArrowBack color="violet" url={`/premium-material/desafios-para-parejas/road?origin=${origin}`}/>
+                <Feedback color="violet" challengeName={"Penetración"}/>
             </Header>
             <Logo src='/img/logo_wesex_croped.png' />
             
@@ -131,7 +131,7 @@ const Dosis1 = () => {
             
             </Border>
             <Notificar message='¡ Notificar que completamos la dosis1 !' url={`https://wa.me/5491140678698?
-                    text=Hola!%20Terminamos%20la%20dosis%20uno`}/>
+                    text=Hola!%20Terminamos%20la%20dosis%20uno`} color="violet"/>
         </Background>
     )
 };

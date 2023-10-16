@@ -20,7 +20,7 @@ const ContainerNotificarDone = styled.div`
 `;
 
 const BotonNotificarDone = styled.a`
-    background-color: var(--green);
+    background-color: ${(props) => (props.color === "violet" ? "var(--violet)" : "var(--green)")};
     font-size: 1.4rem;
     color: white;
     border: none;
@@ -34,7 +34,7 @@ const BotonNotificarDone = styled.a`
 
 
 
-const ArrowBack = ({url}) => {
+const ArrowBack = ({url, color = "green"}) => {
     const router = useRouter();
 
     const handleArrowClick = () => {
@@ -43,8 +43,8 @@ const ArrowBack = ({url}) => {
 
     return(
         <ContainerNotificarDone>
-            <BotonNotificarDone onClick={handleArrowClick}>
-                Atras
+            <BotonNotificarDone color={color} onClick={handleArrowClick}>
+                Atrás
             </BotonNotificarDone>
         </ContainerNotificarDone>
 

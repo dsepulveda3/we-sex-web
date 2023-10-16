@@ -10,7 +10,7 @@ const ContainerNotificarDone = styled.div`
 `;
 
 const BotonNotificarDone = styled.a`
-    background-color: var(--green);
+    background-color: ${(props) => (props.color === "violet" ? "var(--violet)" : "var(--green)")};
     font-size: 1.4rem;
     color: white;
     border: none;
@@ -69,7 +69,7 @@ const InfoText = styled.div`
         color: white; /* Set the text color to white */
 `;
 
-const PopupContent2 = ({challengeName}) => {
+const PopupContent2 = ({challengeName, color = "green"}) => {
     console.log(challengeName)
     return (
       <>
@@ -82,7 +82,7 @@ const PopupContent2 = ({challengeName}) => {
         <InfoText>
             <span>¿Necesitas ayuda?</span> Sea cual sea la razón estamos para ayudarte.
             <ContainerNotificarDone>
-            <BotonNotificarDone href={"https://wa.me/5491140678698?text=Hola!%20Necesito%20ayuda%20"} >
+            <BotonNotificarDone color={color} href={"https://wa.me/5491140678698?text=Hola!%20Necesito%20ayuda%20"} >
                 Contactar
             </BotonNotificarDone>
             </ContainerNotificarDone>
@@ -106,7 +106,7 @@ const Feedback = ({challengeName}) => {
     return(
         <>
          <ContainerNotificarDone>
-            <BotonNotificarDone onClick={handleFeebackClick} >
+            <BotonNotificarDone color="violet" onClick={handleFeebackClick} >
                 ¿Ayuda?
             </BotonNotificarDone>
         </ContainerNotificarDone>

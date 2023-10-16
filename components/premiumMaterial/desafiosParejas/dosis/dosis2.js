@@ -118,8 +118,8 @@ const Dosis2 = () => {
         <Background>
             <Border>
             <Header>
-                <ArrowBack url={`/premium-material/desafios-para-parejas/road?origin=${origin}`}/>
-                <Feedback challengeName={"Penetración"}/>
+                <ArrowBack color="violet" url={`/premium-material/desafios-para-parejas/road?origin=${origin}`}/>
+                <Feedback color="violet" challengeName={"Penetración"}/>
             </Header>
             <Logo src='/img/logo_wesex_croped.png' />
             

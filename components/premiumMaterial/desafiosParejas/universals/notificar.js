@@ -1,16 +1,14 @@
 import styled from "@emotion/styled";
 import { useRouter } from "next/router";
 
-
 const ContainerNotificarDone = styled.div`
     padding: 1rem;
     display: flex;
     justify-content: center;
-
 `;
 
 const BotonNotificarDone = styled.a`
-    background-color: var(--green);
+    background-color: ${(props) => (props.color === "violet" ? "var(--violet)" : "var(--green)")};
     color: white;
     border: none;
     border-radius: 20px;
@@ -18,23 +16,22 @@ const BotonNotificarDone = styled.a`
     cursor: pointer;
     font-weight: bold;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a box shadow */
-
 `;
 
-
-const Notificar = ({message, url}) => {
+const Notificar = ({ message, url, color = "green" }) => {
     const router = useRouter();
 
     const handleMessage = () => {
-        router.push(url);
+        window.open(url, "_blank"); // Opens the URL in a new tab or window
     };
-    return(
+
+    return (
         <ContainerNotificarDone>
-            <BotonNotificarDone onClick={handleMessage}>
-                {message}
+            <BotonNotificarDone color={color} onClick={handleMessage}>
+                {message} 
             </BotonNotificarDone>
         </ContainerNotificarDone>
     );
-}
+};
 
 export default Notificar;
