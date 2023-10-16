@@ -212,18 +212,18 @@ const Suscribed = () => {
                 <Text><span>Paso 1:</span> completen el siguiente formulario, para que los expertos de WeSex puedan personalizar sus desafios !
                 <br/>
                 <br/>
-                <a href="https://forms.gle/3xFvkKAnubszUS2m6" style={{textDecoration: "underline"}}>Encuesta persona con pene</a>
+                <a href="https://forms.gle/3xFvkKAnubszUS2m6" target="_blank" style={{textDecoration: "underline"}}>Encuesta persona con pene</a>
                 <br/>
-                <a href="https://forms.gle/V2gF1DbC8WhiXkGbA" style={{textDecoration: "underline"}}>Encuesta persona con vulva</a>
+                <a href="https://forms.gle/V2gF1DbC8WhiXkGbA" target="_blank" style={{textDecoration: "underline"}}>Encuesta persona con vulva</a>
 
                 </Text>
 
                 <Text><span>Paso 2:</span> Les dejamos el desafío 1 para este fin de semana 😎</Text>
-                <BotonArs href="/premium-material/desafios-para-parejas/hablemos-de-sexo">Hacer primer desafio !</BotonArs>
+                <BotonArs href="/premium-material/desafios-para-parejas/hablemos-de-sexo" target="_blank">Hacer primer desafio !</BotonArs>
                 <br />
                 <br />
                 <Text><span>Paso 3:</span> contactate con nuestro equipo para hacerles saber que comenzaste con los desafíos.</Text>
-                <BotonArs href="https://wa.me/5491140678698?text=Hola!%20Estoy%20listo%20para%20recibir%20el%20paso%201%20del%20programa%20">Notificar</BotonArs>
+                <BotonArs href="https://wa.me/5491140678698?text=Hola!%20Estoy%20listo%20para%20recibir%20el%20paso%201%20del%20programa%20" target="_blank">Notificar</BotonArs>
                 </div>
                 {/* <Text>
                     Puedes cancelar tu suscripción cuando lo desees ....
