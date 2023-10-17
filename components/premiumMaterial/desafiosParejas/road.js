@@ -398,10 +398,10 @@ const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '', statu
 
 const couplesData = {
     "all": {
-      subtitle: "Test",
+      subtitle: "All unlocked",
       challenges: [
         { status: "done", ML: "0px", MR: "0px", title: "HABLEMOS DE SEXO", subtitle: "Una de las claves para una relación sana, tanto sexual como vincular, es la comunicación.", link: "/premium-material/desafios-para-parejas/hablemos-de-sexo",},
-        { status: "next", ML: "60px", MR: "0px", title: "CENA Y MASAJES", subtitle: "Pasar un momento divertido juntos, fortaleciendo la conexión, el deseo y el contacto físico.", link: "/premium-material/desafios-para-parejas/cena-masajes",},
+        { status: "done", ML: "60px", MR: "0px", title: "CENA Y MASAJES", subtitle: "Pasar un momento divertido juntos, fortaleciendo la conexión, el deseo y el contacto físico.", link: "/premium-material/desafios-para-parejas/cena-masajes",},
         { status: "done", ML: "90px", MR: "0px", title: "ZONAS ERÓGENAS", subtitle: ".", link: "/premium-material/desafios-para-parejas/zonas-erogenas",},
         { status: "done", ML: "0px", MR: "0px", title: "MASTURBACIÓN", subtitle: "Vivir tu paja ideal y que tu pareja sea quien la haga es una experiencia hermosa.", link: "/premium-material/desafios-para-parejas/masturbacion",},
         { status: "done", ML: "0px", MR: "50px", title: "SEXO ORAL", subtitle: "El plan se llama PPPC: Pizza, Peli, Pete y Clete.", link: "/premium-material/desafios-para-parejas/sexo-oral ",},
