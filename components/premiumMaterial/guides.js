@@ -317,7 +317,7 @@ const Guides = () => {
                 <Link href={guideMT2Link}>
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia2 src="/img/premium-material/Masturbacion_tantrica.png" className="img-fluid" alt='Logotipo Guía Masturbación Tantrica 2 WeSex'/>
+                            <AppImageGuia2 src="/img/premium-material/masturbacion2.png" className="img-fluid" alt='Logotipo Guía Masturbación Tantrica 2 WeSex'/>
                             <h3>Masturbación Tantrica - Parte 2</h3>
                         </ContainerContentGuide>
                     </GuideSquare>

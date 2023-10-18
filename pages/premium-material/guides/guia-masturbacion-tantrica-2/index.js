@@ -36,7 +36,7 @@ export default function Home() {
           price={`AR$ ${globalPrices.OneProductARS}  /  U$D ${globalPrices.OneProductUSD}`} 
           description1='' 
           description2='Masajes genitales avanzados.' imageVisibility={true} 
-          videoVisibility={false} image='/img/premium-material/Masturbacion_tantrica.png' widthImage={'45%'}/>
+          videoVisibility={false} image='/img/premium-material/masturbacion2.png' widthImage={'45%'}/>
         <AfterDiv />
         <EsParaVosSiUniversal title1_1='Esta guía de Masturbación Tántrica 2 es ' title1Span='para ti' title1_2=' si buscas' 
           emoji1='😋' text1_1='' text1Span='Aprender técnicas' text1_2=' tántricas de masturbación.'
