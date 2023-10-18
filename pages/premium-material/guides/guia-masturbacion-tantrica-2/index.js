@@ -49,8 +49,9 @@ export default function Home() {
         <AfterDiv />
         <PackUniversal title1_1='Llevate el pack Tántrico' title1_2='Por AR$5600 llevate las 3 guías tántricas de Fabi Villalba: ' 
         title1_3='Orgasmos profundos, Masturbación Tántrica 1, y Masturbación Tántrica 2.' link_promo='/premium-material/packs/pack9-all-tantra' />
-        <ProfesionalesUniversal fabiVisibility={true} ceciliaVisibility={true} barbaraVisibility={true}/>
+        <AfterDiv />
         <DisclaimerTantra />
+        <ProfesionalesUniversal fabiVisibility={true} ceciliaVisibility={true} barbaraVisibility={true}/>
         <Regalar />
         <ComprarUniversal title_mp='Guía Masturbación Tántrica 2 - WeSex' unit_price_mp= {globalPrices.OneProductARS} quantity_mp={1} currency_id_mp='ARS'
           price_ARG={`AR$ ${globalPrices.OneProductARS}`} 
