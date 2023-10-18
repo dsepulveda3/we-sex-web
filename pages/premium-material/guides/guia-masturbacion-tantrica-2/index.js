@@ -11,7 +11,7 @@ import AboutWeSex from '../../../../components/premiumMaterial/aboutWeSex'
 import Footer from '../../../../components/premiumMaterial/footer'
 import Layout from '../../../../components/general/Layout';
 import globalPrices from '../../../../utils/globalPrices'
-import DisclaimerTantra from '../../../../components/premiumMaterial/DisclaimerTantra'
+import DisclaimerTantra from '../../../../components/premiumMaterial/disclaimerTantra'
 
 
 export default function Home() {
