@@ -278,6 +278,10 @@ const Guides = () => {
     //console.log(guides);
 
     // Depending on the isSubscribed state, set the appropriate link
+    const guideMT2Link = isSubscribed
+        ? `/premium-material/guides/pdf-viewer/${'guia-mt2'}`// Link for subscribed user
+        : '/premium-material/guides/guia-masturbacion-tantrica-2'; // Link for non-subscribed user
+
     const guideMTLink = isSubscribed
         ? `/premium-material/guides/pdf-viewer/${'guia-mt'}`// Link for subscribed user
         : '/premium-material/guides/guia-masturbacion-tantrica'; // Link for non-subscribed user
@@ -308,6 +312,17 @@ const Guides = () => {
                     Páginas de sabiduría sexual para volverte un experto en cada tema.
                 </Text>
                 <Row data-aos="fade-left">
+
+                <Col lg="3" md="4" >
+                <Link href={guideMT2Link}>
+                    <GuideSquare>
+                        <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                            <AppImageGuia2 src="/img/premium-material/Masturbacion_tantrica.png" className="img-fluid" alt='Logotipo Guía Masturbación Tantrica 2 WeSex'/>
+                            <h3>Masturbación Tantrica - Parte 2</h3>
+                        </ContainerContentGuide>
+                    </GuideSquare>
+                    </Link>
+                </Col>
                 
                 <Col lg="3" md="4" >
                 <Link href={guideMTLink}>
@@ -389,14 +404,14 @@ const Guides = () => {
                         </ContainerContentGuide>
                     </GuideSquare>
                 </ColHideOnPhone> */}
-                <ColHideOnPhone lg="3" md="4" >
+                {/* <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageGuiaQuestion src="/img/premium-material/question-mark-draw.png" className="img-fluid"/>
                             <h3>Pronto</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
-                </ColHideOnPhone>
+                </ColHideOnPhone> */}
                 <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">

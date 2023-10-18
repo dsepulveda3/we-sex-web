@@ -316,6 +316,54 @@ export default async function handler(req, res) {
   post_perfit(account, listId, contactData, axiosConfig);
 
   
+} else if (
+  productName === 'Guía Tantra y Masturbación - Parte 2' ||
+  productName ===
+  '¡GRACIAS! Presiona el botón "Descargar ahora" para recibir la guía de tantra y masturbación 2 por mail y empezar a disfrutar.' ||
+  productName === 'F - Guía Tantra y Masturbación - Parte 2' ||
+  productName === 
+  'F - ¡GRACIAS! Presiona el botón "Descargar ahora" para recibir la guía de tantra y masturbación 2 por mail y empezar a disfrutar.'
+) {
+  const listId = 89; // lista Perfit guía Masturbación Tántrica 2
+  const contactData = {
+    email: email,
+  };
+
+  post_perfit(account, listId, contactData, axiosConfig);
+
+  
+} else if (
+  productName === 'Guía Masturbación Tántrica - Parte 1 y 2 + Tantra Orgasmos Profundos' ||
+  productName ===
+  '¡GRACIAS! PresionA el botón "Descargar ahora" para recibir la guía de masturbación tántrica 1 y 2 + Tantra Orgasmos Profundos por mail y empezar a disfrutar.' ||
+  productName === 'F - Guía Masturbación Tántrica - Parte 1 y 2 + Tantra Orgasmos Profundos' ||
+  productName ===
+  'F - ¡GRACIAS! PresionA el botón "Descargar ahora" para recibir la guía de masturbación tántrica 1 y 2 + Tantra Orgasmos Profundos por mail y empezar a disfrutar.'
+) {
+  const listId = 90; // lista Perfit ALL guías Tantra
+  const contactData = {
+    email: email,
+  };
+
+  post_perfit(account, listId, contactData, axiosConfig);
+
+  
+} else if (
+  productName === 'Guía Masturbación Tántrica - Parte 1 y 2' ||
+  productName ===
+  '¡GRACIAS! PresionA el botón "Descargar ahora" para recibir la guía de masturbación tántrica 1 y 2 por mail y empezar a disfrutar.' ||
+  productName === 'F - Guía Masturbación Tántrica - Parte 1 y 2' ||
+  productName === 
+  'F - ¡GRACIAS! PresionA el botón "Descargar ahora" para recibir la guía de masturbación tántrica 1 y 2 por mail y empezar a disfrutar.'
+) {
+  const listId = 91; // lista Perfit guía Masturbación Tántrica 1 y 2
+  const contactData = {
+    email: email,
+  };
+
+  post_perfit(account, listId, contactData, axiosConfig);
+
+  
 } 
 
     //console.log('Successful request');

@@ -185,7 +185,7 @@ const BotonVerde = styled(Boton)`
    const botonPagoRef = useRef(null);
    
    const handleClick = () => {
-    setShowPopup(true);
+    // setShowPopup(true);
     setIsVisible(!isVisible);
   }
  

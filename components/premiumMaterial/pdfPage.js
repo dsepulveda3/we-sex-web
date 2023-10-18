@@ -87,8 +87,16 @@ const PDFViewer = ({pdfItem, demo, setLoaded}) => {
     } else {
       containerwd = 4.4;
     }
-
+  } else if (pdfItem === 'guia-mt2'){
+    pdfUrl = "https://we-sex-premium.s3.amazonaws.com/guides/pdfs/65300f3d8fdff02c326f1b83/Gui%CC%81a%20de%20masturbacio%CC%81n%20ta%CC%81ntrica%202%20masajes%20genitales%20nivel%20_compressed.pdf"
+    if (isPhoneScreen) {
+      // Execute your function specific to phone screens here
+      containerwd = 1.3;
+    } else {
+      containerwd = 4.4;
+    }
   }
+
   const [numPages, setNumPages] = useState(null);
   const [containerWidth, setContainerWidth] = useState(0);
   const [pageHeight, setPageHeight] = useState(0);

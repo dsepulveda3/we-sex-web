@@ -82,7 +82,7 @@ export default function Pack8() {
           price_before_ARG={`AR$ ${globalPrices.OneProductARS*5}`} price_ARG={`AR$ ${globalPrices.FiveProductARS}`}
           price_before_USD={`U$D ${globalPrices.OneProductUSD*5}`} price_USD={`U$D ${globalPrices.FiveProductUSD}`}
           redirection_succesful_mp='https://payhip.com/b/ZYKft' 
-          redirection_failed_mp='https://www.we.sex/packs/pack8-MT-R-Z-T-A'
+          redirection_failed_mp='https://www.we.sex/premium-material/packs/pack8-MT-R-Z-T-A'
           link_payhip_usd='https://payhip.com/b/0uBJF' has_promo={true}
           buy_just='Comprar pack 5X4' reminder_buy_just='Estás comprando el pack 5x4'
           link_promo='' text_promo1_1=''

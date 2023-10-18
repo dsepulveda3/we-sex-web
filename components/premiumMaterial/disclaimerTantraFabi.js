@@ -109,18 +109,27 @@ const BotonVerde = styled(Boton)`
     margin-top: 5rem!important;
     color: white;
     background-color: var(--green);
+   
+    @media(max-width: 540px){
+        font-size: 1.8rem;
+    }
 `;
 
-const Pack = ({title1_1, title1_2, title1_3, link_promo}) => {
+
+
+const DisclaimerTantraFabi = () => {
     return (
         <Background id="regalar">
             <Container className="text-center">
-                <Title><span>{title1_1}</span></Title>
-                <SubTitle>{title1_2}<span>{title1_3}</span></SubTitle>
-                <BotonVerde href={link_promo}>Ver oferta !</BotonVerde>
+                <Title><span>¿Es necesario haber leído la parte 1 antes de la 2?</span></Title>
+                <SubTitle>Esta segunda parte es 100%  práctica para que puedas abordar, desde una mirada tántrica, todos los temas que vimos en la primera.  No es necesario haber leído la parte 1, pero ambas se complementan y hacerlo en orden te permite ver el proceso completo.</SubTitle>
+                <BotonVerde href="/premium-material/packs/pack10-T1-T2-fabi">Comprar ambas guías</BotonVerde>
+                <br />
+                <br />
+                <BotonVerde style={{margin: "2rem"}} href="#comprar">Comprar solo guía Tantrica 2</BotonVerde>
             </Container>
         </Background>
     );
 }
  
-export default Pack;
+export default DisclaimerTantraFabi;
