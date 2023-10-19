@@ -556,8 +556,8 @@ const couplesData = {
       termsAndConditionsAccepted: false,
       // Add more data for this couple
     },
-    "caro-anibal": {
-      subtitle: "Caro y Anibal",
+    "caro-alvaro": {
+      subtitle: "Caro y Alvaro",
       challenges: [
         { status: "done", ML: "0px", MR: "0px", title: "HABLEMOS DE SEXO", subtitle: "Una de las claves para una relación sana, tanto sexual como vincular, es la comunicación.", link: "/premium-material/desafios-para-parejas/hablemos-de-sexo",},
         { status: "done", ML: "60px", MR: "0px", title: "CENA Y MASAJES", subtitle: "Pasar un momento divertido juntos, fortaleciendo la conexión, el deseo y el contacto físico.", link: "/premium-material/desafios-para-parejas/cena-masajes",},
@@ -565,7 +565,7 @@ const couplesData = {
         { status: "done", ML: "0px", MR: "0px", title: "SEXO ORAL", subtitle: "El plan se llama PPPC: Pizza, Peli, Pete y Clete.", link: "/premium-material/desafios-para-parejas/sexo-oral",},
         { status: "done", ML: "0px", MR: "50px", title: "PENETRACIÓN", subtitle: "Les recomendamos 8 posiciones para probar, y 6 estímulos diferentes", link: "/premium-material/desafios-para-parejas/penetracion",},
         { status: "next", ML: "0px", MR: "0px", title: "EDGING", subtitle: "El orgasmo será mucho más intenso que si hubiesen orgasmeado al principio del ejercicio.", link: "/premium-material/desafios-para-parejas/edging",},
-        { status: "to_do", ML: "4px", MR: "0px", title: "MÚSICA", subtitle: "Hoy los queremos llevar en un viaje por sus sentidos.", link: "/premium-material/desafios-para-parejas/musica",},
+        { status: "next", ML: "4px", MR: "0px", title: "MÚSICA", subtitle: "Hoy los queremos llevar en un viaje por sus sentidos.", link: "/premium-material/desafios-para-parejas/musica",},
         { status: "to_do", ML: "80px", MR: "0px", title: "QUIERO - LO HARÍA - NO LO HARÍA", subtitle: "Vamos a ayudarlos a experimentar y llevar a cabo fantasías y actos sexuales.", link: "/premium-material/desafios-para-parejas/quiero-lh-nlh",},
         { status: "to_do", ML: "0px", MR: "0px", title: "JUEGO DE ROLES", subtitle: "¿Te gustaría que se disfrazarte de abogado, profesor, médico?", link: "/premium-material/desafios-para-parejas/juego-roles",},
       ],
