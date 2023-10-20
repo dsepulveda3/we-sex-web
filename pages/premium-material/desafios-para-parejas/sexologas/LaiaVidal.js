@@ -33,7 +33,7 @@ export default function LailaVidal() {
         <Dudas />
         <Opinions />
         <PlansUniversal 
-        discount="Referido por Laila Vidal"
+        discount="Referido por Laia Vidal"
         extra_countries="yes"
         country="España"
         argentina="no"
