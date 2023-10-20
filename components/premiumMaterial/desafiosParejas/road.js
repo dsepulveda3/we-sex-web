@@ -591,7 +591,8 @@ const couplesData = {
         { status: "done", ML: "0px", MR: "50px", title: "SEXO ORAL", subtitle: "El plan se llama PPPC: Pizza, Peli, Pete y Clete.", link: "/premium-material/desafios-para-parejas/sexo-oral",},
         { status: "done", ML: "0px", MR: "0px", title: "PENETRACIÓN", subtitle: "Les recomendamos 8 posiciones para probar, y 6 estímulos diferentes", link: "/premium-material/desafios-para-parejas/penetracion",},
         { status: "done", ML: "4px", MR: "0px", title: "EDGING", subtitle: "El orgasmo será mucho más intenso que si hubiesen orgasmeado al principio del ejercicio.", link: "/premium-material/desafios-para-parejas/edging",},
-        { status: "next", ML: "80px", MR: "0px", title: "MÚSICA", subtitle: "Hoy los queremos llevar en un viaje por sus sentidos.", link: "/premium-material/desafios-para-parejas/musica",},
+        { status: "done", ML: "80px", MR: "0px", title: "MÚSICA", subtitle: "Hoy los queremos llevar en un viaje por sus sentidos.", link: "/premium-material/desafios-para-parejas/musica",},
+        { status: "next", ML: "80px", MR: "0px", title: "TANTRA 1", subtitle: "Basado en una meditación en duplas", link: "/premium-material/desafios-para-parejas/tantra1",},
       ],
       dosis: [
         { status: "done_dosis", title: "Agradecimientos Diarios", subtitle: " ", link: "/premium-material/desafios-para-parejas/dosis/dosis1" },

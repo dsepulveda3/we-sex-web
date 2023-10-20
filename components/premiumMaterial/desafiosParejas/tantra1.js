@@ -18,7 +18,7 @@ const Header = styled.div`
 const Background = styled.div`
 
     background-color: var(--violet);
-    background-image: url("/img/landing/cta-bg.jpg");
+    background-image: url("/img/landing/cta-bg.webp");
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -208,8 +208,8 @@ const AppImage = styled.img`
         margin-top: 1rem;
         margin-left: 0rem;
         margin-right: 0rem;
-        width: 18%;
-        height: 70%;
+        width: 15%;
+        height: 80%;
     }
     @media(min-width: 540px){
         margin-right: 2rem;
@@ -268,7 +268,7 @@ const TitleQuestion = styled.h4`
     }
     @media(max-width: 540px){
         margin-bottom:1rem;
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     @media(min-width: 540px){
         margin-bottom: 1rem;
@@ -319,14 +319,30 @@ const FullscreenCanvas = styled.div`
   align-items: center;
 `;
 
+const BotonRandom = styled.a`
+    background-color: var(--green);
+    color: white;
+    border: none;
+    border-radius: 10px; /* Make it rounded */
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a box shadow */
+`;
 
 
 
-const QuieroLHNLH = () => {
+
+const Tantra1 = () => {
     const [showAnimation, setShowAnimation] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
+    const [isOpen2, setIsOpen2] = useState(false);
+    const names = ["Quien presiono este botón", "Quien NO presionó este botón"]; // Add the names you want to choose from
+    const [chosenName, setChosenName] = useState("");
     const toggle = () => setIsOpen(!isOpen);
+    const toggle2 = () => setIsOpen2(!isOpen2);
     const appRef = useRef(null); // Create a ref to hold the PIXI application
+
     const router = useRouter();
 
     const [isOriginRoute, setIsOriginRoute] = useState(false);
@@ -340,7 +356,12 @@ const QuieroLHNLH = () => {
           }
         }
       }, [router.isReady, isOriginRoute]);
-    
+
+    const chooseRandomName = () => {
+        const randomIndex = Math.floor(Math.random() * names.length);
+        setChosenName(names[randomIndex]);
+      };
+
     useEffect(() => {
         let app = null;
       
@@ -436,99 +457,111 @@ const QuieroLHNLH = () => {
                     <Header>
                         <ArrowBack url={`/premium-material/desafios-para-parejas/road?origin=${origin}`}/>
                         <TitleWeSex>WeSex</TitleWeSex>
-                        <Feedback challengeName={"Quiero - Lo haria - No lo haría"}/>
+                        <Feedback challengeName={"Masturbación"}/>
                     </Header>
                     <Row className="justify-content-between">   
                         <ContentTitle>
                             <Title>Desafío:</Title>
-                            <SubTitle><span>QUIERO - LO HARÍA - NO LO HARÍA</span></SubTitle>
+                            <SubTitle><span>Tantra 1</span></SubTitle>
                         </ContentTitle>
                         {/* <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle> */}
 
                         <Text>
-                        Ya saben cuánto nos gustan los juegos. Sobre todo, queremos transmitirles que nunca es tarde para seguir jugando como adultos. Si además al juego le sumamos algo sexual, bueno, es un planazo.
                         <br />
-                        <br />
-                        <span>Objetivo:</span> ayudarlos a experimentar y llevar a cabo fantasías y actos sexuales.
-                        <br/>
-                        <br/>
-                        <span>Que necesitas para este desafió</span>
-                        <br/>
-                        <br/>
-                        <span>1:</span> 2 hojas o cartulinas.
-                        <br/>
-                        <br/>
-                        <span>2:</span> 2 lápices o lapiceras.
-                        <br/>
-                        <br/>
-                        <span>3:</span> 1 resaltador o lapicera de color.
-                        <br/>
-                        <br/>
-                        <span>4:</span> Post-its (opcional).
-                        <br/>
+                        ¡Bienvenidos al <span>primer desafío tántrico</span> del programa!
                         <br/>
                         </Text>
-                    </Row>
-                    <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
-                            <ContentTitle2>
-                                <Title2 style={{textAlign: 'left'}}>Hora del jugar</Title2>
-                                <AppImage src="../../img/bomb.png" alt="Bomba" />
-                            </ContentTitle2>
-                        
-                            <Text2>
-                                El juego consiste en crear 3 columnas: <span>Quiero - Lo haría - No lo haría.</span>
-                                <br />
-                                <br />
-                                <span>Quiero:</span> vas a poner las cosas que quieres experimentar. Tienes ganas activamente de probar, experimentar o realizar las cosas que están en esta columna.
-                                <br/>
-                                <br/>
-                                <span>Lo haría:</span> vas a poner las cosas que podrías experimentar. No son cosas que estás buscando activamente hacer o probar, pero que quizás estarías dispuesto a hacer en caso de que tu pareja lo desee.
-                                <br/>
-                                <br/>
-                                <span>No lo haría:</span> aquí van las cosas que NO estás dispuesto a hacer.
-                                <br/>
-                            </Text2>
-                            <Col xs="12" lg="12" md="3">
+                        <Col xs="12" lg="12" md="3">
                             <Card style={{margin:"10px 10px 10px 10px"}}>
                                 <CardHeader onClick={toggle} style={{backgroundColor: "white "}}>
                                 <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
-                                    
-                                    <TitleQuestion style={{marginLeft: '2rem'}}>Luego de completar las intrucciones anteriores presiona aquí 😉</TitleQuestion>
+                                    <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
+                                    <TitleQuestion>¿Que es el tantra?</TitleQuestion>
                                 </div>
                                 <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
                                 </CardHeader>
                                 <Collapse isOpen={isOpen}>
                                     <CardBody>
                                         <AnswerQuestion>
-                                        <TextBombNormal style={{fontWeight: 'bold'}}>La idea es que, luego de que cada uno haya armado sus 3 columnas, las compartan juntos. Todas las cosas que estén en QUIERO y en LO HARÍA son nuevas ideas que pueden empezar a experimentar 😊.</TextBombNormal>
-                                        
-                                        <ul>
-                                            <li>
-                                                Van a marcar con un resaltador todas las cosas que ambos estarían dispuestos a hacer (QUIERO o LO HARÍA).
-                                            </li>
-                                            <li>
-                                                Asegúrate de tener todo lo necesario: Reúne los elementos que necesitarás, como aceites de masaje, toallas suaves, accesorios (plumas, cremas comestibles, vibradores) y cualquier otra cosa que desees incorporar.
-                                            </li>
-                                        <br/>
-                                        </ul>
-                                        Ahora ya tienen, no solo un plan para esta noche, sino una &quot;to-do list&quot; de sus fantasías a realizar juntos.
+                                        El tantra es un camino de autoconocimiento que integra nuestro ser espiritual con nuestra experiencia humana y todas sus manifestaciones. 
+                                        No se limita a la sexualidad, pero a diferencia de otros caminos espirituales, la incluye. 
+                                        El Tantra puede ser un camino de transformación a través del contacto con tu energía sexual. 
+                                        Cuando hablamos de sexualidad, no sólo nos referimos al encuentro sexual, sino a la capacidad de hacer expansivo el placer corporal, y esto sucede en varios ámbitos de la vida. 
+                                        Desde el Tantra, entonces, nos abrimos a la posibilidad de que la experiencia orgásmica no suceda solamente en el encuentro sexual o la masturbación, sino en cada experiencia que nos brinde placer corporal. 
+                                        Para esto es necesario un cuerpo y una psique disponibles, que pueden entrenarse para ello.
                                         </AnswerQuestion>
                                     </CardBody>
                                 </Collapse>
                             </Card>
                         </Col>
-                    </Row>
-                    <Row className="justify-content-between">   
                         <Text>
-                            <span>¡QUE DISFRUTEN!</span>
+                        Para empezar a adentrarlos en el mundo tántrico, el desafío de hoy estará basado en una meditación en duplas. Luego de la misma, ustedes podrán elegir si seguir brindándose placer o si están satisfechos con las sensaciones sentidas hasta el momento. Lo que hará la meditación será prepararlos para vivir el encuentro de hoy con otro enfoque al placer.
+                        <br/>
+                        <br/>
                         </Text>
                     </Row>
+                    <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
+                            <Text2>
+                            <span>Meditación de Duplas:</span>
+                                <br />
+                                <br/>
+                                Esta práctica consiste en hacer un contacto meditativo en duplas, primero uno tendrá un rol activo y el otro más receptivo. Luego se intercambiarán los roles. Pueden poner música para ambientar. 
+                                <br/>
+                                Aquí les recomendamos una <a style={{textDecoration:"underline", color:"var(--violet)"}} href="https://open.spotify.com/playlist/6Y9nkFeVN8OYIc5DRWUncp?si=887d0aca0a884ffc">playlist tántrica.</a>
+                            </Text2>
+                            <Card style={{margin:"0px 0px 0px 0px"}}>
+                                <CardHeader onClick={toggle2} style={{backgroundColor: "white "}}>
+                                <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
+                                    <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
+                                    <TitleQuestion>Instrucciones</TitleQuestion>
+                                </div>
+                                <i className={isOpen2 ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
+                                </CardHeader>
+                                <Collapse isOpen={isOpen2}>
+                                    <CardBody>
+                                        <AnswerQuestion>
+                                            <ol>
+                                                <li>
+                                                    Quien recibe primero puede acostarse boca arriba sin ropa. 
+                                                </li>
+                                                <li>
+                                                    Quien da puede tomarse un tiempo para observar el cuerpo de la otra persona y el movimiento de su respiración, conectando con el rol de dar. 
+                                                </li>
+                                                <li>
+                                                    Puede frotar sus manos entre sí para generar un calorcito y cuando se sienta listo apoyar lenta y suavemente las manos en la cabeza de quien recibe. Estar ahí sin hacer ningún movimiento, un par de respiraciones. 
+                                                </li>
+                                                <li>
+                                                    Luego con la yema de los dedos empezar a acariciar desde el rostro e ir pasando por cada parte del cuerpo para finalizar en los pies. 
+                                                </li>
+                                                <li>
+                                                    Es un contacto que busca conectar con el placer de ser tocado, pero puede que inicialmente la persona no conecte con el placer y vengan otras emociones, es importante darles lugar y acompañar esa emoción con mucha presencia mientras se continúa con las caricias, no tienes que hacer nada más que estar ahí. No es un contacto que busca excitar o sanar nada, sino simplemente permitir que el otro pueda sentirse a través de tu contacto. 
+                                                </li>
+                                                <li>
+                                                    Mientras vas acariciando puedes repetir el sutra: ”mientras seas acariciado, conviértete en la caricia”. 
+                                                 </li>
+                                                 <li>
+                                                    Acaricia todo el cuerpo: brazos, manos, piernas, la pelvis y los genitales durante 20 min. Dale tiempo y presencia a cada parte del cuerpo, e intenta dejar los genitales para el final. 8. Una vez que hayas terminado, vuelve a hacer un contacto sostenido con ambas manos en la cabeza y luego retira el contacto y quédate cerca en silencio hasta que la otra persona decida volver.
+                                                </li>
+                                            </ol>
+                                        </AnswerQuestion>
+                                    </CardBody>
+                                </Collapse>
+                            </Card>
+                            <Text2>
+                                    Esta meditación está escrita por Fabiana Villalba, profesora y divulgadora de tantra, encargada de los contenidos tántricos en WeSex. Es importante que puedan tomar los pasos como una guía en la meditación pero que sepan que pueden dejarse fluir y adaptarla a su manera, a lo que vayan sintiendo en el momento. 
+                                    <br />
+                                    <br/>
+                                    <span>Qué se disfruten,</span>
+                                    <br/>
+                                    <span>El equipo de WeSex 💜</span>
+                            </Text2>
+                    </Row>
             </Container>
-            <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/Bja1UWfJZ9ZsHh7bA`}/>
+            <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/KnvY1G4pLymr1ahB9`}/>
             </Background>
           )}
         </section>
       );
 }
  
-export default QuieroLHNLH;
+export default Tantra1;
