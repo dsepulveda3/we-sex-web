@@ -323,7 +323,7 @@ const PopupContent2 = () => {
   );
 };
 
-const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '', status, type }) => {
+const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '', status, type, index }) => {
     const router = useRouter();
     const [isOriginRoute, setIsOriginRoute] = useState(false);
     const [origin, setOrigin] = useState(null);
@@ -338,7 +338,7 @@ const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '', statu
       }, [router.isReady, isOriginRoute]);
 
     const handleSubmit = () => {
-        router.push(`${link}?origin=${origin}`);
+        router.push(`${link}?origin=${origin}&type=${type}&index=${index}`);
     }
 
     const handleClose = () => {
@@ -500,7 +500,7 @@ const couplesData = {
     // Add data for other couples
   };
 
-  const ChallengeImage = ({ data, onClick }) => {
+  const ChallengeImage = ({ data, index, onClick }) => {
     const { status, challenge  } = data;
     const { title, subtitle, link } = challenge
     const ML = '0px';
@@ -512,21 +512,21 @@ const couplesData = {
         <ImageDoneChallenge
           src="/img/challenges/done_wesex.png"
           style={{ marginLeft: ML, marginRight: MR }}
-          onClick={() => onClick({ title, subtitle, link, status })}
+          onClick={() => onClick({ title, subtitle, link, status, index })}
         />
       ),
       next: (
         <ImageStartoDoChallenge
           src="/img/challenges/next.png"
           style={{ marginLeft: ML, marginRight: MR }}
-          onClick={() => onClick({ title, subtitle, link, status })}
+          onClick={() => onClick({ title, subtitle, link, status, index })}
         />
       ),
       to_do: (
         <ImageToDoChallenge
           src="/img/challenges/to_do_wesex.png"
           style={{ marginLeft: ML, marginRight: MR }}
-          onClick={() => onClick({ title, subtitle, link, status })}
+          onClick={() => onClick({ title, subtitle, link, status, index })}
         />
       ),
     };
@@ -535,7 +535,7 @@ const couplesData = {
     return imageComponents[status] || null;
   };
 
-  const DosisImage = ({ data, onClick }) => {
+  const DosisImage = ({ data, index, onClick }) => {
     const { status, pill } = data;
     const { title, subtitle, link } = pill;
   
@@ -543,19 +543,19 @@ const couplesData = {
       done: (
         <ImageDosis
           src="/img/challenges/WeSex_PastiColor.png"
-          onClick={() => onClick({ title, subtitle, link, status })}
+          onClick={() => onClick({ title, subtitle, link, status, index })}
         />
       ),
       next: (
         <ImageDosis
           src="/img/challenges/WeSex_PastiColor.png"
-          onClick={() => onClick({ title, subtitle, link, status })}
+          onClick={() => onClick({ title, subtitle, link, status, index })}
         />
       ),
       to_do: (
         <ImageDosis
           src="/img/challenges/WeSex_PastiNoColor.png"
-          onClick={() => onClick({ title, subtitle, link, status })}
+          onClick={() => onClick({ title, subtitle, link, status, index })}
         />
       ),
     };
@@ -580,16 +580,16 @@ const couplesData = {
       }
     }, [router.isReady]);
 
-    const handleStartChallengeClick = ({ title, subtitle, link, status }) => {
+    const handleStartChallengeClick = ({ title, subtitle, link, status, index }) => {
         if (title && subtitle && link) {
-          setPopupContent({ title, subtitle, link, status, type: 'challenge' }); // Store the challenge data in state
+          setPopupContent({ title, subtitle, link, status, type: 'challenge', index: index }); // Store the challenge data in state
           setPopupVisible(true); // Open the popup
         }
       };
 
-    const handleStartDosisClick = ({ title, subtitle, link, status }) => {
+    const handleStartDosisClick = ({ title, subtitle, link, status, index }) => {
       if (title && subtitle && link) {
-        setPopupContent({ title, subtitle, link, status, type: 'pill' }); // Store the dosis data in state
+        setPopupContent({ title, subtitle, link, status, type: 'pill', index: index }); // Store the dosis data in state
         setPopupVisible(true); // Open the popup
       }
     };
@@ -633,6 +633,7 @@ const couplesData = {
                     <ChallengeImage 
                     key={index} 
                     data={challenge} // Provide the entire challenge object as a prop
+                    index={index}
                     onClick={handleStartChallengeClick} 
                     />
                 ))
@@ -646,6 +647,7 @@ const couplesData = {
                     <DosisImage
                       key={index}
                       data={dosis} // Provide the entire dosis object as a prop
+                      index={index}
                       onClick={handleStartDosisClick}
                     />
                   ))
@@ -664,6 +666,7 @@ const couplesData = {
             subtitle={popupContent ? popupContent.subtitle : ''}
             link={popupContent ? popupContent.link : ''}
             type={popupContent ? popupContent.type : ''}
+            index={popupContent ? popupContent.index : -1}
         />
         {/* Add the WarningPopup component here */}
        

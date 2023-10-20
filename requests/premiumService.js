@@ -55,7 +55,7 @@ export const get_couple = async (couple_name) => {
 }
 
 export const done_task = async (data) => {
-    const response = await basePremiumService.post(
+    const response = await basePremiumService.put(
         `v1/CoupleGame`,
         data
     );

@@ -293,11 +293,9 @@ const Suscribed = () => {
                             </Text>
 
                             <Text><span>Paso 3:</span> Les dejamos el desafío 1 para este fin de semana 😎</Text>
-                            <BotonArs href="/premium-material/desafios-para-parejas/hablemos-de-sexo" target="_blank">Hacer primer desafio !</BotonArs>
+                            <BotonArs href={`/premium-material/desafios-para-parejas/road?origin=${coupleNickname}`} target="_blank">Acceder a los desafios !</BotonArs>
                             <br />
                             <br />
-                            <Text><span>Paso 4:</span> contactate con nuestro equipo para hacerles saber que comenzaste con los desafíos.</Text>
-                            <BotonArs href="https://wa.me/5491140678698?text=Hola!%20Estoy%20listo%20para%20recibir%20el%20paso%201%20del%20programa%20" target="_blank">Notificar</BotonArs>
                         </div>
                     )}
                 </div>
