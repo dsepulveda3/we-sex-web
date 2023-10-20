@@ -432,7 +432,8 @@ const PopupContent = () => {
 
 
 const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, price_stripe_basic, price_stripe_estandar, price_stripe_premium,
-    mp_basic, mp_estandar, mp_premium, stripe_basic, stripe_estandar, stripe_premium, discount, country='Argentina'}) => {
+    mp_basic, mp_estandar, mp_premium, stripe_basic, stripe_estandar, stripe_premium, discount, country='Argentina', argentina="yes", extra_countries='no', 
+    price_stripe_spain_basic, price_stripe_spain_estandar, price_stripe_spain_premium, stripe_basic_spain, stripe_estandar_spain, stripe_premium_spain}) => {
 
     const [selectedOption, setSelectedOption] = useState(country);
     const [showPopup, setShowPopup] = useState(false);
@@ -470,7 +471,8 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                     onChange={(e) => setSelectedOption(e.target.value)}
                     value={selectedOption}
                     >
-                        <option value="Argentina">Argentina</option>
+                        {argentina === 'yes' && <option value="Argentina">Argentina</option>}
+                        {extra_countries === 'yes' && <option value="España">España</option>}
                         <option value="Otro País">Otro País</option>
                     </SelectorButton>
                 </SelectorButtonContainer>
@@ -543,6 +545,20 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                         bgColorHover='var(--green)'
                                         />
                                     </InfoSuscription>)}
+                                    {selectedOption === 'España' && extra_countries === 'yes' && (
+                                    <InfoSuscription>
+                                        <PriceText>{price_stripe_spain_basic}</PriceText>
+                                        <ByLabel style={{color: "black"}}>{discount}</ByLabel>
+                                        <BotonUniversal
+                                        style={{fontSize: "1.8rem", margin: "1rem 0rem 0rem 2rem" }}
+                                        link_redireccion={stripe_basic_spain}
+                                        text="Suscribirme"
+                                        textColor='white'
+                                        bgColor='black'
+                                        bgColorHover='var(--green)'
+                                        />
+                                    </InfoSuscription>
+                                    )}
                                 </InsideText>
                             </ContainerInsideText>
                         </Text>
@@ -613,6 +629,20 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                         bgColorHover='var(--green)'
                                         />
                                     </InfoSuscription>)}
+                                    {selectedOption === 'España' && extra_countries === 'yes' && (
+                                    <InfoSuscription>
+                                        <PriceText>{price_stripe_spain_estandar}</PriceText>
+                                        <ByLabel style={{color: "black"}}>{discount}</ByLabel>
+                                        <BotonUniversal
+                                        style={{fontSize: "1.8rem", margin: "1rem 0rem 0rem 2rem" }}
+                                        link_redireccion={stripe_estandar_spain}
+                                        text="Suscribirme"
+                                        textColor='white'
+                                        bgColor='black'
+                                        bgColorHover='var(--green)'
+                                        />
+                                    </InfoSuscription>
+                                    )}
                                 </InsideText>
                             </ContainerInsideText>
                         </Text>
@@ -679,6 +709,20 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                         bgColorHover='var(--green)'
                                         />
                                     </InfoSuscription>)}
+                                    {selectedOption === 'España' && extra_countries === 'yes' && (
+                                    <InfoSuscription>
+                                        <PriceText>{price_stripe_spain_premium}</PriceText>
+                                        <ByLabel style={{color: "black"}}>{discount}</ByLabel>
+                                        <BotonUniversal
+                                        style={{fontSize: "1.8rem", margin: "1rem 0rem 0rem 2rem" }}
+                                        link_redireccion={stripe_premium_spain}
+                                        text="Suscribirme"
+                                        textColor='white'
+                                        bgColor='black'
+                                        bgColorHover='var(--green)'
+                                        />
+                                    </InfoSuscription>
+                                    )}
                                 </InsideText>
                             </ContainerInsideText>
                         </Text>

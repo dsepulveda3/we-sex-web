@@ -8,7 +8,7 @@ import Dudas from '../../../../components/premiumMaterial/dudas'
 import PlansUniversal from '../../../../components/premiumMaterial/desafiosParejas/plansUniversal'
 import Opinions from '../../../../components/premiumMaterial/desafiosParejas/opinions';
 
-export default function BarbiGarcia() {
+export default function LailaVidal() {
   
   return (
     <>
@@ -33,19 +33,32 @@ export default function BarbiGarcia() {
         <Dudas />
         <Opinions />
         <PlansUniversal 
-        discount="Referido por Barbi García"
-        price_mp_basic="15,600 ARS/pareja"
-        mp_basic="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b48faa1018b4e0e455f0357" 
-        price_mp_estandar="20,000 ARS/pareja"
-        mp_estandar="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b48fa3b018b4e0e9bc40338"
-        price_mp_premium="27,000 ARS/pareja"
-        mp_premium="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b48faa1018b4e0f1aa30358"
+        discount="Referido por Laila Vidal"
+        extra_countries="yes"
+        country="España"
+        argentina="no"
+
+        price_mp_basic=""
+        mp_basic="" 
+        price_mp_estandar=""
+        mp_estandar=""
+        price_mp_premium=""
+        mp_premium=""
+
         price_stripe_basic="30 USD/pareja"
-        stripe_basic="https://buy.stripe.com/7sI9Die899yZ8gg5kK"
+        stripe_basic="https://buy.stripe.com/cN22aQ1lncLb544aF7"
         price_stripe_estandar="38 USD/pareja"
-        stripe_estandar="https://buy.stripe.com/9AQ4iY9RT6mN7cc3cD"
+        stripe_estandar="https://buy.stripe.com/3cs9Di5BDeTj7cc3cG"
         price_stripe_premium="54 USD/pareja"
-        stripe_premium="https://buy.stripe.com/7sI9Di7JLh1r1RSdRi"
+        stripe_premium="https://buy.stripe.com/4gw16Mc018uV1RSaF9"
+
+        price_stripe_spain_basic="28 EUR/pareja"
+        stripe_basic_spain="https://buy.stripe.com/3cs3eU2praD3eEE3cI"
+        price_stripe_spain_estandar="36 EUR/pareja"
+        stripe_estandar_spain="https://buy.stripe.com/00g9Difcd3aBdAAbJf"
+        price_stripe_spain_premium="51 EUR/pareja"
+        stripe_premium_spain="https://buy.stripe.com/14kbLqfcd26x8gg3cK"
+
         />
         <Explicacion/>
         </Layout>
