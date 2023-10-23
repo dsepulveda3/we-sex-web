@@ -126,7 +126,7 @@ const Explicacion = () => {
                 <Text>Hay juegos, tips, ideas, pero de ahí a llevarlas a cabo, ¡hay mucho que recorrer! Esto se debe a que cada pareja es un mundo diferente.
                 Es por eso que lanzamos este programa vivencial, en donde te vamos a armar un plan personalizado para que en 2 meses la sexualidad con tu pareja sea mejor que nunca.</Text>   */}
                 <ContainerText2>
-                    <AppImage src="../../img/bomb.png" alt="Bomba" />
+                    <AppImage src="/img/bomb.png" alt="Bomba" />
                     <Text2>
                         Vamos a combinar los beneficios de estar en pareja, la confianza para comunicar y el amor que se tienen, con la <span>picantez y adrenalina</span> de los primeros días.
                         <br /> <br /> <br /> Vamos a ayudarlos a dejar <span>espacios para ustedes solos</span> y a proponerles desafíos interactivos todas las semanas.
