@@ -557,7 +557,7 @@ const Tantra1 = () => {
                             </Text2>
                     </Row>
             </Container>
-            <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/KnvY1G4pLymr1ahB9`}/>
+            <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/gY53Gkv1DFJ2gRQo8`}/>
             </Background>
           )}
         </section>
