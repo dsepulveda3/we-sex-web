@@ -323,6 +323,18 @@ const PopupContent2 = () => {
   );
 };
 
+const GetMargin = (index) => {
+  const sequence = [
+    {MR: '0px', ML: '0px'}, 
+    {MR: '60px', ML: '0px'}, 
+    {MR: '90px', ML: '0px'}, 
+    {MR: '0px', ML: '0px'}, 
+    {MR: '0px', ML: '50px'}
+  ]; 
+  const sequenceIndex = index % sequence.length;
+  return sequence[sequenceIndex];
+};
+
 const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '', status, type, index }) => {
     const router = useRouter();
     const [isOriginRoute, setIsOriginRoute] = useState(false);
@@ -502,9 +514,8 @@ const couplesData = {
 
   const ChallengeImage = ({ data, index, onClick }) => {
     const { status, challenge  } = data;
-    const { title, subtitle, link } = challenge
-    const ML = '0px';
-    const MR = '0px';
+    const { title, subtitle, link } = challenge;
+    const { ML, MR } = GetMargin(index);
   
     // Map the challenge status to the corresponding image component
     const imageComponents = {
