@@ -548,25 +548,25 @@ const couplesData = {
 
   const DosisImage = ({ data, index, onClick }) => {
     const { status, pill } = data;
-    const { title, subtitle, link } = pill;
+    const { title, link } = pill;
   
     const imageComponents = {
       done: (
         <ImageDosis
           src="/img/challenges/WeSex_PastiColor.png"
-          onClick={() => onClick({ title, subtitle, link, status, index })}
+          onClick={() => onClick({ title, link, status, index })}
         />
       ),
       next: (
         <ImageDosis
           src="/img/challenges/WeSex_PastiColor.png"
-          onClick={() => onClick({ title, subtitle, link, status, index })}
+          onClick={() => onClick({ title, link, status, index })}
         />
       ),
       to_do: (
         <ImageDosis
           src="/img/challenges/WeSex_PastiNoColor.png"
-          onClick={() => onClick({ title, subtitle, link, status, index })}
+          onClick={() => onClick({ title, link, status, index })}
         />
       ),
     };
@@ -598,9 +598,9 @@ const couplesData = {
         }
       };
 
-    const handleStartDosisClick = ({ title, subtitle, link, status, index }) => {
-      if (title && subtitle && link) {
-        setPopupContent({ title, subtitle, link, status, type: 'pill', index: index }); // Store the dosis data in state
+    const handleStartDosisClick = ({ title, link, status, index }) => {
+      if (title && link) {
+        setPopupContent({ title, link, status, type: 'pill', index: index }); // Store the dosis data in state
         setPopupVisible(true); // Open the popup
       }
     };
