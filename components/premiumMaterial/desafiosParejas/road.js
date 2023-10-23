@@ -629,7 +629,7 @@ const couplesData = {
             <Header>
               <Title>Desafíos para parejas</Title>
               {coupleData ? (
-                <SubTitle>{coupleData.subtitle}</SubTitle>
+                <SubTitle>{coupleData.coupleMemberOne} y {coupleData.coupleMemberTwo}</SubTitle>
               ) : (
                 <SubTitle>Loading...</SubTitle> // Or any loading indicator
               )}
