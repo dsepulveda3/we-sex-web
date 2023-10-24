@@ -38,3 +38,26 @@ export const regenerate_access_code = async (email) => {
     );
     return response;
 }
+
+export const create_couple = async (data) => {
+    const response = await basePremiumService.post(
+        `v1/CoupleGame`,
+        data
+    );
+    return response;
+}
+
+export const get_couple = async (couple_name) => {
+    const response = await basePremiumService.get(
+        `v1/CoupleGame/?couple_name=${couple_name}`
+    );
+    return response;
+}
+
+export const done_task = async (data) => {
+    const response = await basePremiumService.put(
+        `v1/CoupleGame`,
+        data
+    );
+    return response;
+}

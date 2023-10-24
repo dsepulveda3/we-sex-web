@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {Row, Col, Container, Button} from 'reactstrap';
 import styled from '@emotion/styled';
+import { create_couple } from '../../../requests/premiumService';
 import Dudas from '../dudas';
+import { toast } from 'react-toastify';
 
 const Background = styled.div`
 
@@ -194,7 +196,50 @@ const ContentImage = styled.div`
     }
 `;
 
+const Input = styled.input`
+  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid white;
+  ::placeholder {
+    color: ${(props) => (props.hasError ? '#FF9800' : 'initial')};
+  }
+  margin-bottom: 2rem;
+`;
+
 const Suscribed = () => {
+    const [memberOne, setMemberOne] = useState('');
+    const [memberTwo, setMemberTwo] = useState('');
+    const [coupleNickname, setCoupleNickname] = useState('');
+    const [step, setStep] = useState(1);
+
+    const isFormValid = memberOne.length >= 3 && memberTwo.length >= 3 && coupleNickname.length >= 3;
+
+    const handleStepOneSubmit = async () => {
+        if (!isFormValid) {
+            toast.error('Completa los campos para continuar.');
+            return;
+        }
+        try{
+            const response = await create_couple({
+                coupleName: coupleNickname,
+                coupleMemberOne: memberOne,
+                coupleMemberTwo: memberTwo,
+            });
+            if (response.status === 201){
+                setStep(2);
+            } 
+        } catch (error) {
+            if (error.response) {
+                if (error.response.status === 404) {
+                    toast.error('Apodo de pareja ya en uso, intenta con otro.');
+                } else  {
+                    toast.error('Ocurrió un error, intenta nuevamente.');
+                }
+            }
+        }
+    };
+
     return (
       <section id="hola">
         <Background>
@@ -208,22 +253,51 @@ const Suscribed = () => {
                     <span>¡FELICITACIONES!</span> Ya están suscritos al programa para innovar en pareja.
                 </Title>
                 <div style={{padding: "5rem", textAlign: "left"}}>
-                <Text><span>Sigue los siguientes pasos para comenzar :).</span></Text>
-                <Text><span>Paso 1:</span> completen el siguiente formulario, para que los expertos de WeSex puedan personalizar sus desafios !
-                <br/>
-                <br/>
-                <a href="https://forms.gle/3xFvkKAnubszUS2m6" target="_blank" style={{textDecoration: "underline"}}>Encuesta persona con pene</a>
-                <br/>
-                <a href="https://forms.gle/V2gF1DbC8WhiXkGbA" target="_blank" style={{textDecoration: "underline"}}>Encuesta persona con vulva</a>
+                    <Text><span>Sigue los siguientes pasos para comenzar :).</span></Text>
+                    {step === 1 && (
+                        <div>
+                        <Text>
+                            <span>Paso 1:</span> Completen el siguiente formulario:
+                        </Text>
+                        <div>
+                            <Input
+                            type="text"
+                            placeholder="Miembro 1"
+                            value={memberOne}
+                            onChange={(e) => setMemberOne(e.target.value)}
+                            />
+                            <Input
+                            type="text"
+                            placeholder="Miembro 2"
+                            value={memberTwo}
+                            onChange={(e) => setMemberTwo(e.target.value)}
+                            />
+                            <Input
+                            type="text"
+                            placeholder="Apodo de pareja"
+                            value={coupleNickname}
+                            onChange={(e) => setCoupleNickname(e.target.value)}
+                            />
+                            <BotonArs onClick={handleStepOneSubmit} disabled={!isFormValid}>Continuar!</BotonArs>
+                        </div>
+                        </div>
+                    )}
+                    {step === 2 && (
+                        <div>
+                            <Text><span>Paso 2:</span> completen el siguiente formulario, para que los expertos de WeSex puedan personalizar sus desafios !
+                            <br/>
+                            <br/>
+                            <a href="https://forms.gle/3xFvkKAnubszUS2m6" target="_blank" style={{textDecoration: "underline"}}>Encuesta persona con pene</a>
+                            <br/>
+                            <a href="https://forms.gle/V2gF1DbC8WhiXkGbA" target="_blank" style={{textDecoration: "underline"}}>Encuesta persona con vulva</a>
+                            </Text>
 
-                </Text>
-
-                <Text><span>Paso 2:</span> Les dejamos el desafío 1 para este fin de semana 😎</Text>
-                <BotonArs href="/premium-material/desafios-para-parejas/hablemos-de-sexo" target="_blank">Hacer primer desafio !</BotonArs>
-                <br />
-                <br />
-                <Text><span>Paso 3:</span> contactate con nuestro equipo para hacerles saber que comenzaste con los desafíos.</Text>
-                <BotonArs href="https://wa.me/5491140678698?text=Hola!%20Estoy%20listo%20para%20recibir%20el%20paso%201%20del%20programa%20" target="_blank">Notificar</BotonArs>
+                            <Text><span>Paso 3:</span> Les dejamos el desafío 1 para este fin de semana 😎</Text>
+                            <BotonArs href={`/premium-material/desafios-para-parejas/road?origin=${coupleNickname}`} target="_blank">Acceder a los desafios !</BotonArs>
+                            <br />
+                            <br />
+                        </div>
+                    )}
                 </div>
                 {/* <Text>
                     Puedes cancelar tu suscripción cuando lo desees ....

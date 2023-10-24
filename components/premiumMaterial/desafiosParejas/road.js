@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useParams } from "react-router-dom";
 import { useRouter } from 'next/router';
 import styled from "@emotion/styled";
-
-
+import { get_couple } from "../../../requests/premiumService";
 
 const HeaderContainer = styled.div`
   background-color: #ebe4f8;
@@ -325,7 +323,19 @@ const PopupContent2 = () => {
   );
 };
 
-const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '', status }) => {
+const GetMargin = (index) => {
+  const sequence = [
+    {MR: '0px', ML: '0px'}, 
+    {MR: '60px', ML: '0px'}, 
+    {MR: '90px', ML: '0px'}, 
+    {MR: '0px', ML: '0px'}, 
+    {MR: '0px', ML: '50px'}
+  ]; 
+  const sequenceIndex = index % sequence.length;
+  return sequence[sequenceIndex];
+};
+
+const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '', status, type, index }) => {
     const router = useRouter();
     const [isOriginRoute, setIsOriginRoute] = useState(false);
     const [origin, setOrigin] = useState(null);
@@ -340,7 +350,7 @@ const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '', statu
       }, [router.isReady, isOriginRoute]);
 
     const handleSubmit = () => {
-        router.push(`${link}?origin=${origin}`);
+        router.push(`${link}?origin=${origin}&type=${type}&index=${index}`);
     }
 
     const handleClose = () => {
@@ -358,7 +368,7 @@ const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '', statu
           <PopUpButton type="submit" onClick={handleSubmit}>¡ Comenzar 😁 !</PopUpButton>
           </>
           : null}
-          {status === 'done' ? 
+          {status === 'done' && type === 'challenge' ? 
           <>
           <PopUpTitle>{title}</PopUpTitle>
           <PopUpSubTitle>{subtitle}</PopUpSubTitle>
@@ -367,7 +377,7 @@ const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '', statu
           {/* <PopUpButton type="submit" onClick={handleSubmit}>¡ Comenzar 😁 !</PopUpButton> */}
           </>
           : null}
-          {status === 'done_dosis' ? 
+          {status === 'done' && type === 'pill' ? 
           <>
           <PopUpTitle>{title}</PopUpTitle>
           <PopUpSubTitle>{subtitle}</PopUpSubTitle>
@@ -376,13 +386,13 @@ const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '', statu
           {/* <PopUpButton type="submit" onClick={handleSubmit}>¡ Comenzar 😁 !</PopUpButton> */}
           </>
           : null}
-          {status === 'to_do' ? 
+          {status === 'to_do' && type === 'challenge' ? 
           <>
           <PopUpToDo> DEBES COMPLETAR TU ÚLTIMO DESAFIO PARA PODER DESBLOQUEAR EL PRÓXIMO</PopUpToDo>
           {/* <PopUpButton type="submit" onClick={handleSubmit}>¡ Comenzar 😁 !</PopUpButton> */}
           </>
           : null}
-          {status === 'to_do_dosis' ? 
+          {status === 'to_do' && type === 'pill' ? 
           <>
           <PopUpToDo> DEBES COMPLETAR TU ÚLTIMA DOSIS PARA PODER DESBLOQUEAR LA PRÓXIMO</PopUpToDo>
           {/* <PopUpButton type="submit" onClick={handleSubmit}>¡ Comenzar 😁 !</PopUpButton> */}
@@ -633,8 +643,10 @@ const couplesData = {
     // Add data for other couples
   };
 
-  const ChallengeImage = ({ challenge, onClick }) => {
-    const { status, ML, MR, title, subtitle, link } = challenge;
+  const ChallengeImage = ({ data, index, onClick }) => {
+    const { status, challenge  } = data;
+    const { title, subtitle, link } = challenge;
+    const { ML, MR } = GetMargin(index);
   
     // Map the challenge status to the corresponding image component
     const imageComponents = {
@@ -642,21 +654,21 @@ const couplesData = {
         <ImageDoneChallenge
           src="/img/challenges/done_wesex.png"
           style={{ marginLeft: ML, marginRight: MR }}
-          onClick={() => onClick({ title, subtitle, link, status })}
+          onClick={() => onClick({ title, subtitle, link, status, index })}
         />
       ),
       next: (
         <ImageStartoDoChallenge
           src="/img/challenges/next.png"
           style={{ marginLeft: ML, marginRight: MR }}
-          onClick={() => onClick({ title, subtitle, link, status })}
+          onClick={() => onClick({ title, subtitle, link, status, index })}
         />
       ),
       to_do: (
         <ImageToDoChallenge
           src="/img/challenges/to_do_wesex.png"
           style={{ marginLeft: ML, marginRight: MR }}
-          onClick={() => onClick({ title, subtitle, link, status })}
+          onClick={() => onClick({ title, subtitle, link, status, index })}
         />
       ),
     };
@@ -665,26 +677,27 @@ const couplesData = {
     return imageComponents[status] || null;
   };
 
-  const DosisImage = ({ dosis, onClick }) => {
-    const { status, title, subtitle, link } = dosis;
+  const DosisImage = ({ data, index, onClick }) => {
+    const { status, pill } = data;
+    const { title, link } = pill;
   
     const imageComponents = {
-      done_dosis: (
+      done: (
         <ImageDosis
           src="/img/challenges/WeSex_PastiColor.png"
-          onClick={() => onClick({ title, subtitle, link, status })}
+          onClick={() => onClick({ title, link, status, index })}
         />
       ),
       next: (
         <ImageDosis
           src="/img/challenges/WeSex_PastiColor.png"
-          onClick={() => onClick({ title, subtitle, link, status })}
+          onClick={() => onClick({ title, link, status, index })}
         />
       ),
-      to_do_dosis: (
+      to_do: (
         <ImageDosis
           src="/img/challenges/WeSex_PastiNoColor.png"
-          onClick={() => onClick({ title, subtitle, link, status })}
+          onClick={() => onClick({ title, link, status, index })}
         />
       ),
     };
@@ -694,25 +707,31 @@ const couplesData = {
   
   const Road = () => {
     const router = useRouter();
-    const coupleName = router.query.origin;
+    const [coupleName, setCoupleName] = useState("");
   
     const [coupleData, setCoupleData] = useState(null);
     const [isPopupVisible, setPopupVisible] = useState(false); // State for controlling the popup
     const [popupContent, setPopupContent] = useState(null); 
     const [showPopup, setShowPopup] = useState(false);
 
-    
+    useEffect(() => {
+      if (router.isReady){
+        if (router.query.origin) {
+          setCoupleName(router.query.origin);
+        }
+      }
+    }, [router.isReady]);
 
-    const handleStartChallengeClick = ({ title, subtitle, link, status }) => {
+    const handleStartChallengeClick = ({ title, subtitle, link, status, index }) => {
         if (title && subtitle && link) {
-          setPopupContent({ title, subtitle, link, status }); // Store the challenge data in state
+          setPopupContent({ title, subtitle, link, status, type: 'challenge', index: index }); // Store the challenge data in state
           setPopupVisible(true); // Open the popup
         }
       };
 
-    const handleStartDosisClick = ({ title, subtitle, link, status }) => {
-      if (title && subtitle && link) {
-        setPopupContent({ title, subtitle, link, status }); // Store the dosis data in state
+    const handleStartDosisClick = ({ title, link, status, index }) => {
+      if (title && link) {
+        setPopupContent({ title, link, status, type: 'pill', index: index }); // Store the dosis data in state
         setPopupVisible(true); // Open the popup
       }
     };
@@ -726,10 +745,13 @@ const couplesData = {
     };
   
     useEffect(() => {
-      // Check if coupleName is valid and exists in couplesData
-      if (coupleName && couplesData[coupleName]) {
-        setCoupleData(couplesData[coupleName]);
-      }
+      const fetchData = async () => {
+        const response = await get_couple(coupleName);
+        setCoupleData(response.data);
+        console.log(response.data);
+      };
+
+      if (coupleName !== '') fetchData();
     }, [coupleName]);
   
     return (
@@ -738,7 +760,7 @@ const couplesData = {
             <Header>
               <Title>Desafíos para parejas</Title>
               {coupleData ? (
-                <SubTitle>{coupleData.subtitle}</SubTitle>
+                <SubTitle>{coupleData.coupleMemberOne} y {coupleData.coupleMemberTwo}</SubTitle>
               ) : (
                 <SubTitle>Loading...</SubTitle> // Or any loading indicator
               )}
@@ -752,7 +774,8 @@ const couplesData = {
                 coupleData.challenges.map((challenge, index) => (
                     <ChallengeImage 
                     key={index} 
-                    challenge={challenge} // Provide the entire challenge object as a prop
+                    data={challenge} // Provide the entire challenge object as a prop
+                    index={index}
                     onClick={handleStartChallengeClick} 
                     />
                 ))
@@ -762,10 +785,11 @@ const couplesData = {
               </ChallengesContainer>
               <DosisContainer>
                 {coupleData ? (
-                  coupleData.dosis.map((dosis, index) => (
+                  coupleData.pills.map((dosis, index) => (
                     <DosisImage
                       key={index}
-                      dosis={dosis} // Provide the entire dosis object as a prop
+                      data={dosis} // Provide the entire dosis object as a prop
+                      index={index}
                       onClick={handleStartDosisClick}
                     />
                   ))
@@ -783,6 +807,8 @@ const couplesData = {
             title={popupContent ? popupContent.title : ''}
             subtitle={popupContent ? popupContent.subtitle : ''}
             link={popupContent ? popupContent.link : ''}
+            type={popupContent ? popupContent.type : ''}
+            index={popupContent ? popupContent.index : -1}
         />
         {/* Add the WarningPopup component here */}
        
@@ -798,50 +824,4 @@ const couplesData = {
       );
     };
   
-  export default Road;
-
-// const Road = () => {
-//     const router = useRouter();
-//     const coupleName = router.query.origin;
-
-//     //console.log("Data URl");
-//     //console.log(router.query.origin);
-
-//     // Look up data for the couple based on the extracted name
-//     const coupleData = couplesData[coupleName];
-//     //console.log(coupleData);
-
-    
-//     return (
-//         <>
-//         <Header>
-//             <Title>Desafíos para parejas</Title>
-//             <SubTitle>{coupleData.subtitle}</SubTitle>
-//         </Header>
-//         <Background>
-            
-//             <ChallengesAndDosisContainer>
-//                 <ChallengesContainer>
-//                     <ImageDoneChallenge src="/img/challenges/done.png" />
-//                     <ImageDoneChallenge src="/img/challenges/done.png" style={{ marginLeft: '60px' }}/>
-//                     <ImageStartoDoChallenge src="/img/challenges/start.png" style={{ marginLeft: '90px' }}/>
-//                     <ImageToDoChallenge src="/img/challenges/to_do.png" style={{ marginLeft: '0px' }}/>
-//                     <ImageToDoChallenge src="/img/challenges/to_do.png" style={{ marginRight: '50px' }}/>
-//                     <ImageToDoChallenge src="/img/challenges/to_do.png" style={{ marginLeft: '40px' }}/>
-//                     <ImageToDoChallenge src="/img/challenges/to_do.png" style={{ marginLeft: '80px' }}/>
-//                     <ImageToDoChallenge src="/img/challenges/to_do.png"/>
-//                 </ChallengesContainer>
-//                 <DosisContainer>
-//                     <ImageDosis src="/img/challenges/award_unlocked.png"/>
-//                     <ImageDosis src="/img/challenges/award_locked.png"/>
-//                     <ImageDosis src="/img/challenges/award_locked.png"/>
-//                     <ImageDosis src="/img/challenges/award_locked.png"/>
-//                     <ImageDosis src="/img/challenges/award_locked.png"/>
-//                 </DosisContainer>
-//             </ChallengesAndDosisContainer>
-//         </Background>
-//         </>
-//     );
-// }
- 
-// export default Road;
+export default Road;
