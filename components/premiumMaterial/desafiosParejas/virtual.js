@@ -300,7 +300,7 @@ const BotonNotificarDone = styled.a`
 
 
 const Virtual = () => {
-    const [showAnimation, setShowAnimation] = useState(true);
+    const [showAnimation, setShowAnimation] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [isOpen2, setIsOpen2] = useState(false);
     const names = ["Quien presiono este botón", "Quien NO presionó este botón"]; // Add the names you want to choose from

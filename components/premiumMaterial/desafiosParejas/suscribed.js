@@ -207,6 +207,16 @@ const Input = styled.input`
   margin-bottom: 2rem;
 `;
 
+const NickNameInstruction = styled.div`
+    font-size: 1.3rem;
+    // font-weight: bold;
+    font-style: italic;
+    color:  white;
+    margin-bottom: 2rem;
+    margin-left: 0.5rem;
+    margin-top: 0.1rem;
+`;
+
 const Suscribed = () => {
     const [memberOne, setMemberOne] = useState('');
     const [memberTwo, setMemberTwo] = useState('');
@@ -273,12 +283,14 @@ const Suscribed = () => {
                             onChange={(e) => setMemberTwo(e.target.value)}
                             />
                             <Input
+                            style={{marginBottom: "0px"}}
                             type="text"
-                            placeholder="Apodo de pareja"
+                            placeholder="Nombre de usuario de la pareja"
                             value={coupleNickname}
                             onChange={(e) => setCoupleNickname(e.target.value)}
                             />
-                            <BotonArs onClick={handleStepOneSubmit} disabled={!isFormValid}>Continuar!</BotonArs>
+                            <NickNameInstruction>Elijan nombre que los identifique como pareja. Ej: Brad + Angelina = Brangelina</NickNameInstruction>
+                            <BotonArs onClick={handleStepOneSubmit} disabled={!isFormValid}>¡Continuar!</BotonArs>
                         </div>
                         </div>
                     )}

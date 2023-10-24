@@ -758,7 +758,12 @@ const couplesData = {
         <>
           <HeaderContainer>
             <Header>
-              <Title>Desafíos para parejas</Title>
+              
+              {coupleData ? (
+                <Title>Desafíos {`${coupleData.coupleName}`}</Title>
+              ) : (
+                <Title>Loading...</Title> // Or any loading indicator
+              )}
               {coupleData ? (
                 <SubTitle>{coupleData.coupleMemberOne} y {coupleData.coupleMemberTwo}</SubTitle>
               ) : (

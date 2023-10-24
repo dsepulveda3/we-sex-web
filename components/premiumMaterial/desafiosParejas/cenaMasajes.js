@@ -334,7 +334,7 @@ const BotonRandom = styled.a`
 
 
 const CenaMasajes = () => {
-    const [showAnimation, setShowAnimation] = useState(true);
+    const [showAnimation, setShowAnimation] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
     const appRef = useRef(null); // Create a ref to hold the PIXI application
