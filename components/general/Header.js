@@ -325,7 +325,7 @@ const Header = ({type, data}) => {
           <Collapse isOpen={isOpen} navbar>
             <Nav navbar>
               <NavItemHideOnPhone>
-                <NavLink onClick={toggleNavbar} style={{ color: "white"}} css={{ "&:hover": {textDecoration: "underline"}}} className="nav-link scrollto active" href="/inicio">
+                <NavLink onClick={toggleNavbar} style={{ color: "white"}} css={{ "&:hover": {textDecoration: "underline"}}} className="nav-link scrollto active" href="/">
                   Home
                 </NavLink>
               </NavItemHideOnPhone>
