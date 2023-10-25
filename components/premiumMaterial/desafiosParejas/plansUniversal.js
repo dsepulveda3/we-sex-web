@@ -432,7 +432,7 @@ const PopupContent = () => {
 
 
 const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, price_stripe_basic, price_stripe_estandar, price_stripe_premium,
-    mp_basic, mp_estandar, mp_premium, stripe_basic, stripe_estandar, stripe_premium, discount, country='Argentina', argentina="yes", extra_countries='no', 
+    mp_basic, mp_estandar, mp_premium, stripe_basic, stripe_estandar, stripe_premium, discount, country='Argentina', argentina="yes", extra_countries='no', other_countries="yes",
     price_stripe_spain_basic, price_stripe_spain_estandar, price_stripe_spain_premium, stripe_basic_spain, stripe_estandar_spain, stripe_premium_spain}) => {
 
     const [selectedOption, setSelectedOption] = useState(country);
@@ -473,7 +473,7 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                     >
                         {argentina === 'yes' && <option value="Argentina">Argentina</option>}
                         {extra_countries === 'yes' && <option value="España">España</option>}
-                        <option value="Otro País">Otro País</option>
+                        {other_countries === 'yes' && <option value="Otro País">Otro País</option>}
                     </SelectorButton>
                 </SelectorButtonContainer>
 
