@@ -35,12 +35,19 @@ export default function Home() {
         <PlansUniversal 
         discount="Incluye 1er mes gratis"
         price_mp_basic="15,600 ARS/pareja"
-        other_countries="no"
+        
         mp_basic="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b62d290018b679bd9b50364" 
         price_mp_estandar="20,000 ARS/pareja"
         mp_estandar="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b62d285018b679d5eea037c"
         price_mp_premium="27,000 ARS/pareja"
         mp_premium="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b62d290018b67a01e2d0369"
+
+        price_stripe_basic="30 USD/pareja"
+        stripe_basic="https://buy.stripe.com/8wM8zed45dPf2VW6p6"
+        price_stripe_estandar="38 USD/pareja"
+        stripe_estandar="https://buy.stripe.com/bIYbLqc0112tcww4gZ"
+        price_stripe_premium="54 USD/pareja"
+        stripe_premium="https://buy.stripe.com/aEU8ze8NPeTjeEE4h0"
 
        
         />
