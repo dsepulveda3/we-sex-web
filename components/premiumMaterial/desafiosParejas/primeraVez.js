@@ -25,6 +25,7 @@ const Background = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    height: 100vh;
     // min-height: 72vh;
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -267,7 +268,7 @@ const FullscreenCanvas = styled.div`
   align-items: center;
 `;
 
-const Musica = () => {
+const PrimeraVez = () => {
     const [showAnimation, setShowAnimation] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [isOpen2, setIsOpen2] = useState(false);
@@ -398,60 +399,29 @@ const Musica = () => {
                 <Row className="justify-content-between">
                     <ContentTitle>
                         <Title>Desafío:</Title>
-                        <SubTitle><span>Música</span></SubTitle>
+                        <SubTitle><span>Primera Vez</span></SubTitle>
                     </ContentTitle>
                     {/* <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle> */}
                     <Text >
-                        Hoy los queremos llevar en un viaje por sus sentidos.
+                        Hoy los invitamos a organizar una salida en la que ambos se comporten como si fuera la primera vez que se encuentran. Tan simple y tan excitante al mismo tiempo. Pueden inventar personajes o simplemente presentarse como si fuera la primera vez, recordando la emoción de la conquista inicial.
                         <br />
                         <br />
-                        Las consignas de hoy son muy simples:
-                        <ol>
-                            <li>
-                                Van a apagar las luces y ambos se van a vendar los ojos. Si, ambos 😉.
-                            </li>
-                            <li>
-                                Van a poner música. Volumen: Alto 🔊.
-                            </li>
-                            <li>
-                                Se van a dejar fluir con cada canción. Todo el encuentro de hoy estará dirigido por la música:
-                                <ul>
-                                    <li>
-                                        La forma en la que se mueve su cuerpo.
-                                    </li>
-                                    <li>
-                                        La velocidad con la que tocan a su pareja.
-                                    </li>
-                                    <li>
-                                        La forma en la que besan.
-                                    </li>
-                                    <li>
-                                        La intensidad de la estimulación
-                                    </li>
-                                </ul>
-                            </li>
-                        </ol>
+                        Si aprovechan para salir fuera de su casa, mejor. Ya sea un bar, un plan divertido que harían en una primera cita, o hasta pueden ir al mismo lugar en donde se conocieron si existe la posibilidad.
                         <br />
                         <br />
-                        <span>Aquí les dejamos la playlist para este desafío : <a href="https://open.spotify.com/playlist/6ilE8ByVM6EmT3TCOHu1uy" target="_blank" cstyle={{textDecoration: "underline"}}>Playlist WeSexer</a></span>
-                        
-                        <br/>
-                        <br/>
-                        <span>Recomendación wesexer:</span> escuchar la playlist en orden y no en modo aleatorio.
-                       
                     </Text>
                     
                 </Row>
                 <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
                         <Text2>
-                            <span>Que disfruten,</span>
+                            <span>Que se disfruten desconocidos,</span>
                             <br/>
                             <span>El equipo de WeSex.</span>
                         </Text2>
                 </Row>
         </Container>
         
-        <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/tJd5VJ4MGiVyRcG16`}/>
+        {/* <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/GKkBB4tjRkDY5Gyc9`}/> */}
 
         </Background>
       )}
@@ -459,4 +429,4 @@ const Musica = () => {
     )
 }
 
-export default Musica;
+export default PrimeraVez;
