@@ -421,7 +421,7 @@ const PrimeraVez = () => {
                 </Row>
         </Container>
         
-        {/* <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/GKkBB4tjRkDY5Gyc9`}/> */}
+        <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/U4WHSdfAPo2RMs6o9`}/>
 
         </Background>
       )}

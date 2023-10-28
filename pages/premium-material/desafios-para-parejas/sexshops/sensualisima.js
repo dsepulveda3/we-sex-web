@@ -41,7 +41,6 @@ export default function Sensualisima() {
         mp_estandar="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b62d290018b6e43f96b098f"
         price_mp_premium="27,000 ARS/pareja"
         mp_premium="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b62d285018b6e44e90e0999"
-        
         />
         <Explicacion/>
         </Layout>
