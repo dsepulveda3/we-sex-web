@@ -335,7 +335,7 @@ const GetMargin = (index) => {
   return sequence[sequenceIndex];
 };
 
-const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '', status, type, index }) => {
+const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '', status, type, index, coupleMembers }) => {
     const router = useRouter();
     const [isOriginRoute, setIsOriginRoute] = useState(false);
     const [origin, setOrigin] = useState(null);
@@ -350,7 +350,7 @@ const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '', statu
       }, [router.isReady, isOriginRoute]);
 
     const handleSubmit = () => {
-        router.push(`${link}?origin=${origin}&type=${type}&index=${index}`);
+        router.push(`${link}?origin=${origin}&type=${type}&index=${index}&members=${coupleMembers.join('-')}`);
     }
 
     const handleClose = () => {
@@ -809,6 +809,7 @@ const couplesData = {
             link={popupContent ? popupContent.link : ''}
             type={popupContent ? popupContent.type : ''}
             index={popupContent ? popupContent.index : -1}
+            coupleMembers={coupleData ? [coupleData.coupleMemberOne, coupleData.coupleMemberTwo] : []}
         />
         {/* Add the WarningPopup component here */}
        
