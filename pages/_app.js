@@ -5,6 +5,7 @@ import CodeInputModal from "../components/codeInputModal";
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { CookiesProvider } from "react-cookie";
+import NextNProgress from 'nextjs-progressbar';
 import 'react-toastify/dist/ReactToastify.css';
 import '../styles/bootstrap.min.css';
 import '../styles/globals.css';
@@ -72,6 +73,7 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <AuthUserProvider>
+        <NextNProgress color="#09d08c" />
         <Component {...pageProps} />
         <ToastContainer
           position="top-right"

@@ -61,3 +61,10 @@ export const done_task = async (data) => {
     );
     return response;
 }
+
+export const query_task = async (couple_name, task_type, task_index) => {
+    const response = await basePremiumService.get(
+        `v1/CoupleGame/task?coupleName=${couple_name}&taskType=${task_type}&taskIndex=${task_index}`
+    );
+    return response;
+}

@@ -4,6 +4,8 @@ import styled from '@emotion/styled';
 import { create_couple } from '../../../requests/premiumService';
 import Dudas from '../dudas';
 import { toast } from 'react-toastify';
+import 'react-phone-number-input/style.css';
+import PhoneInput from 'react-phone-number-input';
 
 const Background = styled.div`
 
@@ -217,10 +219,24 @@ const NickNameInstruction = styled.div`
     margin-top: 0.1rem;
 `;
 
+const InputPhoneNumber = styled.input`
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 10px;
+  border: 1px solid white;
+  ::placeholder {
+    color: ${(props) => (props.hasError ? '#FF9800' : 'initial')};
+  }
+  margin-bottom: 2rem;
+`;
+
 const Suscribed = () => {
     const [memberOne, setMemberOne] = useState('');
     const [memberTwo, setMemberTwo] = useState('');
     const [coupleNickname, setCoupleNickname] = useState('');
+    const [email, setEmail] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
     const [step, setStep] = useState(1);
 
     const isFormValid = memberOne.length >= 3 && memberTwo.length >= 3 && coupleNickname.length >= 3;
@@ -235,6 +251,8 @@ const Suscribed = () => {
                 coupleName: coupleNickname,
                 coupleMemberOne: memberOne,
                 coupleMemberTwo: memberTwo,
+                email: email,
+                phoneNumber: phoneNumber,
             });
             if (response.status === 201){
                 setStep(2);
@@ -271,23 +289,36 @@ const Suscribed = () => {
                         </Text>
                         <div>
                             <Input
-                            type="text"
-                            placeholder="Miembro 1"
-                            value={memberOne}
-                            onChange={(e) => setMemberOne(e.target.value)}
+                                type="text"
+                                placeholder="Miembro 1"
+                                value={memberOne}
+                                onChange={(e) => setMemberOne(e.target.value)}
                             />
                             <Input
-                            type="text"
-                            placeholder="Miembro 2"
-                            value={memberTwo}
-                            onChange={(e) => setMemberTwo(e.target.value)}
+                                type="text"
+                                placeholder="Miembro 2"
+                                value={memberTwo}
+                                onChange={(e) => setMemberTwo(e.target.value)}
                             />
                             <Input
-                            style={{marginBottom: "0px"}}
-                            type="text"
-                            placeholder="Nombre de usuario de la pareja"
-                            value={coupleNickname}
-                            onChange={(e) => setCoupleNickname(e.target.value)}
+                                type="text"
+                                placeholder="Nombre de usuario de la pareja"
+                                value={coupleNickname}
+                                onChange={(e) => setCoupleNickname(e.target.value)}
+                            />
+                            <Input
+                                type="text"
+                                placeholder="Email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                            <PhoneInput
+                                international
+                                defaultCountry="AR"
+                                placeholder="Numero de telefono"
+                                value={phoneNumber}
+                                onChange={setPhoneNumber}
+                                inputComponent={InputPhoneNumber}
                             />
                             <NickNameInstruction>Elijan nombre que los identifique como pareja. Ej: Brad + Angelina = Brangelina</NickNameInstruction>
                             <BotonArs onClick={handleStepOneSubmit} disabled={!isFormValid}>¡Continuar!</BotonArs>

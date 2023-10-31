@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import styled from "@emotion/styled";
 import { useRouter } from "next/router";
-import { done_task } from "../../../../requests/premiumService";
+import { done_task, query_task } from "../../../../requests/premiumService";
 import { toast } from "react-toastify";
 
 const ContainerNotificarDone = styled.div`
@@ -20,10 +20,114 @@ const BotonNotificarDone = styled.a`
     font-weight: bold;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a box shadow */
 `;
+const PopupContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Ensure the pop-up is on top of other elements */
+`;
 
-const Notificar = ({ message, url, color = "green" }) => {
+const PopupDialog = styled.div`
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+  position: relative; /* Added to position the CloseButton */
+`;
+
+const CloseButton = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+`;
+
+const InfoText = styled.div`
+    color: black;
+    font-size: 1.3rem;
+    font-family: "Averia Libre", sans-serif;
+    text-align: left;
+
+    span {
+        font-weight: bold;
+        font-family: "Averia Libre", sans-serif;
+        background-color: var(--green); /* Set the background color to green */
+        padding: 0.5rem 1rem; /* Add padding to make the background visible */
+        color: white; /* Set the text color to white */
+    }
+`;
+
+const SurveyLink = styled.a`
+    color: var(--green); /* Set the text color to green */
+    margin: 0 10px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 2.5rem;
+`;
+
+const CommentInput = styled.textarea`
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    margin-top: 3rem;
+`;
+
+const TitleContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+`;
+
+const Title = styled.h1`
+    font-size: 5.5rem;
+    font-family: "Averia Libre", sans-serif;
+    opacity: 1; /* adjust the opacity as needed */
+   
+  
+    font-weight: bold;
+    
+    text-decoration: underline;
+    text-decoration-color: var(--green);
+    text-underline-offset: 1rem; /* ajusta la separación */
+    margin-right: 2rem;
+    
+    @media(max-width: 540px){
+        font-size: 4rem;
+        padding-top: 0rem;
+        padding-bottom: 1rem;
+
+    }
+`;
+
+const CommentContainer = styled.div`
+  background-color: var(--violet); 
+  border-radius: 20px; 
+  padding: 15px;
+  margin-top: 20px; 
+  color: white; 
+  font-size: 1.5rem; 
+  font-family: "Averia Libre", sans-serif;
+`;
+
+
+const PopupContent = ({ closePopUp, surveyUrl, setDone }) => {
     const router = useRouter();
     const [query, setQuery] = useState(null);
+    const [comment, setComment] = useState("");
 
     useEffect(() => {
         if (router.isReady){
@@ -33,7 +137,11 @@ const Notificar = ({ message, url, color = "green" }) => {
         }
     }, [router.isReady]);
 
-    const handleMessage = async () => {
+    const handleNewWindow = () => {
+        window.open(surveyUrl, "_blank");
+    };
+
+    const handleSubmit = async () => {
         const { origin, type, index } = query;
 
         try{
@@ -41,23 +149,149 @@ const Notificar = ({ message, url, color = "green" }) => {
                 coupleName: origin,
                 completedTaskType: type,
                 completedTaskIndex: index,
+                comment: comment,
             });
             if (response.status === 200) {
-                toast.success("Tarea completada, llena la encuesta");
+                toast.success("Tarea completada!!");
+                setDone(true);
+                closePopUp();
             }
         } catch (error) {
             toast.error("Error al notificar");
         }
-        window.open(url, "_blank"); 
     };
 
     return (
-        <ContainerNotificarDone>
-            <BotonNotificarDone color={color} onClick={handleMessage}>
-                {message} 
+        <InfoText>
+            <TitleContainer>
+                <Title>Notificar</Title>
+            </TitleContainer>
+                <h2><span>Paso 1:</span> Rellenen los formularios</h2>
+            <ContainerNotificarDone>
+            {query && (
+                <SurveyLink onClick={handleNewWindow}>Encuesta {query.members.split('-')[0]} </SurveyLink>
+            )}
+            {query && (
+                <SurveyLink onClick={handleNewWindow}>Encuesta {query.members.split('-')[1]} </SurveyLink>
+            )}
+            </ContainerNotificarDone>
+                <h2><span>Paso 2:</span>¿Como se sintieron? Escriban sus aprendizajes como pareja</h2>
+            <CommentInput
+                placeholder="Escriban sus aprendizajes..."
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
+            />
+            <ContainerNotificarDone>
+            <BotonNotificarDone color="green" onClick={handleSubmit} >
+                Finalizar
             </BotonNotificarDone>
-        </ContainerNotificarDone>
+            </ContainerNotificarDone>
+        </InfoText>
     );
 };
+
+const NotDoneTask = ({ message, url, color = "green", setDone }) => {
+    const [showPopup, setShowPopup] = useState(false);
+
+    return (
+        <>
+            <ContainerNotificarDone>
+                <BotonNotificarDone color={color} onClick={() => setShowPopup(true)}>
+                    {message} 
+                </BotonNotificarDone>
+            </ContainerNotificarDone>
+            {showPopup && (
+                <PopupContainer>
+                    <PopupDialog>
+                        <CloseButton onClick={() => setShowPopup(false)}>✕</CloseButton>
+                        <PopupContent closePopUp={() => setShowPopup(false)} surveyUrl={url} setDone={setDone} />
+                    </PopupDialog>
+                </PopupContainer>
+            )}  
+        </>
+    );
+};
+
+const PopupContentDone = ({ comment }) => {
+    return (
+        <InfoText>
+            <TitleContainer>
+                <Title>Aprendizajes</Title>
+            </TitleContainer>
+            <h2><span>Sensaciones percibidas:</span> Esto fue lo que sintieron al terminar el desafio</h2>
+            <CommentContainer>{comment ? comment : "No guardaron ningún comentario"}</CommentContainer>
+        </InfoText>
+    );
+};
+
+const DoneTask = ({ task }) => {
+    const [showPopup, setShowPopup] = useState(false);
+
+    return (
+        <>
+            <ContainerNotificarDone>
+                <Title>
+                    ¡Tarea completada!
+                </Title>
+                <BotonNotificarDone color='violet' onClick={() => setShowPopup(true)}>
+                    Ver aprendizajes
+                </BotonNotificarDone>
+            </ContainerNotificarDone>
+            {showPopup && (
+                <PopupContainer>
+                    <PopupDialog>
+                        <CloseButton onClick={() => setShowPopup(false)}>✕</CloseButton>
+                        <PopupContentDone comment={task.comment}/>
+                    </PopupDialog>
+                </PopupContainer>
+            )}  
+        </>
+    );
+};
+
+
+const Notificar = ({ message, url, color = "green" }) => {
+    const router = useRouter();
+    const [query, setQuery] = useState(null);
+    const [task, setTask] = useState(null);
+    const [completed, setCompleted] = useState(false);
+
+    useEffect(() => {
+        if (router.isReady){
+          if (router.query.origin) {
+            setQuery(router.query);
+          }
+        }
+    }, [router.isReady]);
+
+    useEffect(() => {
+        if (query) {
+            load_task();
+        }
+    }, [query, completed]);
+
+    const load_task = async () => {
+        const { origin, type, index } = query;
+        try {
+            const response = await query_task(origin, type, index);
+            setTask(response.data);
+            if (response.data.status === 'done') {
+                setCompleted(true);
+            }
+        } catch (error) {
+            toast.error("Error al cargar la tarea");
+        }
+    }
+
+    return (
+        <>
+            {completed ? (
+                <DoneTask task={task}/>
+            ) : (
+                <NotDoneTask message={message} url={url} color={color} setDone={setCompleted} />
+            )}
+        </>
+    );
+}
 
 export default Notificar;
