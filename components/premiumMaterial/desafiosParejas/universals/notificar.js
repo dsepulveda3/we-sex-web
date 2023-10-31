@@ -137,6 +137,10 @@ const PopupContent = ({ closePopUp, surveyUrl, setDone }) => {
         }
     }, [router.isReady]);
 
+    const handleNewWindow = () => {
+        window.open(surveyUrl, "_blank");
+    };
+
     const handleSubmit = async () => {
         const { origin, type, index } = query;
 
@@ -165,10 +169,10 @@ const PopupContent = ({ closePopUp, surveyUrl, setDone }) => {
                 <h2><span>Paso 1:</span> Rellenen los formularios</h2>
             <ContainerNotificarDone>
             {query && (
-                <SurveyLink href={surveyUrl}>Encuesta {query.members.split('-')[0]} </SurveyLink>
+                <SurveyLink onClick={handleNewWindow}>Encuesta {query.members.split('-')[0]} </SurveyLink>
             )}
             {query && (
-                <SurveyLink href={surveyUrl}>Encuesta {query.members.split('-')[1]} </SurveyLink>
+                <SurveyLink onClick={handleNewWindow}>Encuesta {query.members.split('-')[1]} </SurveyLink>
             )}
             </ContainerNotificarDone>
                 <h2><span>Paso 2:</span>¿Como se sintieron? Escriban sus aprendizajes como pareja</h2>
