@@ -172,7 +172,7 @@ const PopupDialog = styled.div`
   padding: 2rem;
   border-radius: 10px 10px 0 0; /* Apply border-radius only to top corners */
   width: 100%;
-  height: 30%;
+  height: 40%;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -180,9 +180,19 @@ const PopupDialog = styled.div`
   justify-content: center;
   position: relative;
 
+
+  /* Set maximum height and enable scrolling */
+  max-height: 80vh;
+  overflow-y: auto;
+
+  /* Position the title at the top */
+
+  
+  justify-content: flex-start; /* Align title at the top */
+
   @media (max-width: 768px) {
     width: 100%;
-    height: 30%;
+    height: 40%;
   }
 
   @media (min-width: 768px) {
@@ -307,6 +317,34 @@ const InfoText = styled.div`
         background-color: var(--green); /* Set the background color to green */
         padding: 0.5rem 1rem; /* Add padding to make the background visible */
         color: white; /* Set the text color to white */
+    }
+`;
+
+const Learning = styled.div`
+      font-style: italic;
+      color: black;
+      font-family: "Karla", sans-serif;
+      font-weight: bold;
+      text-align: left;
+      align-items: left;
+      justify-content: left;
+      
+      span {
+        font-weight: bold;
+        font-family: "Averia Libre", sans-serif;
+        background-color: var(--green); /* Set the background color to green */
+        padding: 0.5rem 1rem; /* Add padding to make the background visible */
+        color: white; /* Set the text color to white */
+        
+    }
+`;
+
+const Line = styled.div`
+    margin-top: 2rem;
+    
+    width: 100%;
+    height: 2px;
+    background-color: black;
 `;
 
 
@@ -335,11 +373,12 @@ const GetMargin = (index) => {
   return sequence[sequenceIndex];
 };
 
-const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '', status, type, index, coupleMembers }) => {
+const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '', status, type, index, coupleMembers, challenges, pills }) => {
     const router = useRouter();
     const [isOriginRoute, setIsOriginRoute] = useState(false);
     const [origin, setOrigin] = useState(null);
-
+    // console.log("challenges");
+    // console.log(challenges[0][index].comment);
     useEffect(() => {
         if (router.isReady){
           if (router.query.origin) {
@@ -374,6 +413,10 @@ const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '', statu
           <PopUpSubTitle>{subtitle}</PopUpSubTitle>
           <PopUpDone style={{marginTop: "1rem"}}> YA COMPLETASTE ESTE DESAFÍO :)</PopUpDone>
           <PopUpDoAnyways onClick={handleSubmit}>Quiero verlo de todas formas</PopUpDoAnyways>
+          <br/>
+          <Learning style={{marginTop: "1rem"}}> <span>Aprendizaje de pareja: </span>
+       
+          {challenges[0][index].comment}</Learning>
           {/* <PopUpButton type="submit" onClick={handleSubmit}>¡ Comenzar 😁 !</PopUpButton> */}
           </>
           : null}
@@ -383,6 +426,9 @@ const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '', statu
           <PopUpSubTitle>{subtitle}</PopUpSubTitle>
           <PopUpDone style={{marginTop: "1rem"}}> YA COMPLETASTE ESTA DOSIS :)</PopUpDone>
           <PopUpDoAnyways onClick={handleSubmit}>Quiero verlo de todas formas</PopUpDoAnyways>
+          <br />
+          <Learning style={{marginTop: "1rem"}}><span>Aprendizaje de pareja: </span>{pills[0][index].comment}</Learning>
+          
           {/* <PopUpButton type="submit" onClick={handleSubmit}>¡ Comenzar 😁 !</PopUpButton> */}
           </>
           : null}
@@ -753,7 +799,10 @@ const couplesData = {
 
       if (coupleName !== '') fetchData();
     }, [coupleName]);
-  
+
+    console.log("popup content");
+    console.log(popupContent);
+    
     return (
         <>
           <HeaderContainer>
@@ -815,6 +864,9 @@ const couplesData = {
             type={popupContent ? popupContent.type : ''}
             index={popupContent ? popupContent.index : -1}
             coupleMembers={coupleData ? [coupleData.coupleMemberOne, coupleData.coupleMemberTwo] : []}
+            // learnings={coupleData ? [coupleData.challenges[popupContent.index].comment] : []}
+            challenges={coupleData ? [coupleData.challenges] : []}
+            pills={coupleData ? [coupleData.pills] : []}
         />
         {/* Add the WarningPopup component here */}
        

@@ -10,6 +10,14 @@ const ContainerNotificarDone = styled.div`
     justify-content: center;
 `;
 
+const ContainerDone = styled.div`
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;
+
 const BotonNotificarDone = styled.a`
     background-color: ${(props) => (props.color === "violet" ? "var(--violet)" : "var(--green)")};
     color: white;
@@ -73,7 +81,8 @@ const SurveyLink = styled.a`
     margin: 0 10px;
     text-decoration: none;
     cursor: pointer;
-    font-size: 2.5rem;
+    font-size: 1.8rem;
+    text-decoration: underline;
 `;
 
 const CommentInput = styled.textarea`
@@ -92,8 +101,8 @@ const TitleContainer = styled.div`
     margin-bottom: 3rem;
 `;
 
-const Title = styled.h1`
-    font-size: 5.5rem;
+const Title = styled.div`
+    font-size: 2.5rem;
     font-family: "Averia Libre", sans-serif;
     opacity: 1; /* adjust the opacity as needed */
    
@@ -106,7 +115,7 @@ const Title = styled.h1`
     margin-right: 2rem;
     
     @media(max-width: 540px){
-        font-size: 4rem;
+        font-size: 2.5rem;
         padding-top: 0rem;
         padding-bottom: 1rem;
 
@@ -114,13 +123,36 @@ const Title = styled.h1`
 `;
 
 const CommentContainer = styled.div`
-  background-color: var(--violet); 
-  border-radius: 20px; 
-  padding: 15px;
+//   background-color: var(--violet); 
+//   border-radius: 20px; 
+  
   margin-top: 20px; 
-  color: white; 
+  color: black; 
   font-size: 1.5rem; 
   font-family: "Averia Libre", sans-serif;
+  font-weight: bold;
+  text-align: left;
+  span {
+    font-family: "Averia Libre", sans-serif;
+    background-color: var(--green); /* Set the background color to green */
+    padding: 0.5rem 1rem; /* Add padding to make the background visible */
+    color: white;
+    
+  }
+        
+`;
+
+const Instruction = styled.div`
+    font-size: 2rem;
+    text-align: left;
+
+`;
+
+const DescriptionInstruction = styled.div`
+    font-size: 1.2rem;
+    font-style: italic;
+    text-align: left;
+
 `;
 
 
@@ -166,7 +198,7 @@ const PopupContent = ({ closePopUp, surveyUrl, setDone }) => {
             <TitleContainer>
                 <Title>Notificar</Title>
             </TitleContainer>
-                <h2><span>Paso 1:</span> Rellenen los formularios</h2>
+                <Instruction><span>Paso 1:</span> Rellenen los formularios cada uno de manera individual.</Instruction>
             <ContainerNotificarDone>
             {query && (
                 <SurveyLink onClick={handleNewWindow}>Encuesta {query.members.split('-')[0]} </SurveyLink>
@@ -175,7 +207,7 @@ const PopupContent = ({ closePopUp, surveyUrl, setDone }) => {
                 <SurveyLink onClick={handleNewWindow}>Encuesta {query.members.split('-')[1]} </SurveyLink>
             )}
             </ContainerNotificarDone>
-                <h2><span>Paso 2:</span>¿Como se sintieron? Escriban sus aprendizajes como pareja</h2>
+                <Instruction><span>Paso 2:</span> En pareja, ¿Como se sintieron? ¿Qué se llevaron de esta práctica?.</Instruction>
             <CommentInput
                 placeholder="Escriban sus aprendizajes..."
                 value={comment}
@@ -212,36 +244,42 @@ const NotDoneTask = ({ message, url, color = "green", setDone }) => {
     );
 };
 
-const PopupContentDone = ({ comment }) => {
+const PopupContentDone = ({ comment, member1, member2}) => {
     return (
         <InfoText>
             <TitleContainer>
                 <Title>Aprendizajes</Title>
             </TitleContainer>
-            <h2><span>Sensaciones percibidas:</span> Esto fue lo que sintieron al terminar el desafio</h2>
-            <CommentContainer>{comment ? comment : "No guardaron ningún comentario"}</CommentContainer>
+            <DescriptionInstruction>Sensaciones percibidas: Esto fue lo que sintieron al terminar el desafío</DescriptionInstruction>
+            <CommentContainer>
+                <span>Respuesta {member1} y {member2}:</span>
+                <br />
+                <br />
+                {comment ? comment : "No guardaron ningún comentario"}
+            </CommentContainer>
         </InfoText>
     );
 };
 
-const DoneTask = ({ task }) => {
+const DoneTask = ({ task, query}) => {
     const [showPopup, setShowPopup] = useState(false);
 
     return (
         <>
-            <ContainerNotificarDone>
+            <ContainerDone>
                 <Title>
                     ¡Tarea completada!
                 </Title>
+                <br />
                 <BotonNotificarDone color='violet' onClick={() => setShowPopup(true)}>
                     Ver aprendizajes
                 </BotonNotificarDone>
-            </ContainerNotificarDone>
+            </ContainerDone>
             {showPopup && (
                 <PopupContainer>
                     <PopupDialog>
                         <CloseButton onClick={() => setShowPopup(false)}>✕</CloseButton>
-                        <PopupContentDone comment={task.comment}/>
+                        <PopupContentDone comment={task.comment}  member1={query.members.split('-')[0]} member2={query.members.split('-')[1]}/>
                     </PopupDialog>
                 </PopupContainer>
             )}  
@@ -275,6 +313,8 @@ const Notificar = ({ message, url, color = "green" }) => {
         try {
             const response = await query_task(origin, type, index);
             setTask(response.data);
+            console.log("Data task");
+            console.log(task);
             if (response.data.status === 'done') {
                 setCompleted(true);
             }
@@ -286,7 +326,7 @@ const Notificar = ({ message, url, color = "green" }) => {
     return (
         <>
             {completed ? (
-                <DoneTask task={task}/>
+                <DoneTask task={task} query={query}/>
             ) : (
                 <NotDoneTask message={message} url={url} color={color} setDone={setCompleted} />
             )}

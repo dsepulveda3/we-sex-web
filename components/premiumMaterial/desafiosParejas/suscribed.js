@@ -306,6 +306,7 @@ const Suscribed = () => {
                                 value={coupleNickname}
                                 onChange={(e) => setCoupleNickname(e.target.value)}
                             />
+                            <NickNameInstruction>Elijan nombre que los identifique como pareja. Ej: Brad + Angelina = Brangelina</NickNameInstruction>
                             <Input
                                 type="text"
                                 placeholder="Email"
@@ -320,7 +321,6 @@ const Suscribed = () => {
                                 onChange={setPhoneNumber}
                                 inputComponent={InputPhoneNumber}
                             />
-                            <NickNameInstruction>Elijan nombre que los identifique como pareja. Ej: Brad + Angelina = Brangelina</NickNameInstruction>
                             <BotonArs onClick={handleStepOneSubmit} disabled={!isFormValid}>¡Continuar!</BotonArs>
                         </div>
                         </div>
