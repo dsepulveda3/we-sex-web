@@ -348,6 +348,105 @@ const Line = styled.div`
 `;
 
 
+const ClockContainer = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: 48px; 
+  font-weight: bold;
+  font-family: "Averia Libre", sans-serif;
+`;
+
+const ClockSegment = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px;
+  color: var(--violet); 
+`;
+
+const ClockSeparator = styled.span`
+    color: var(--violet);
+`;
+
+const ClockTimer = ({ timestamp }) => {
+  const targetTime = new Date(new Date(timestamp).getTime() + 60 * 60 * 24 * 1000);
+  const currentTime = new Date(Date.now());
+  const timeDiff = targetTime - currentTime;
+
+  const [displayTime, setDisplayTime] = useState(timeDiff);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      console.log(timeDiff);
+      console.log(currentTime);
+      console.log(targetTime);
+      setDisplayTime(prevTime => prevTime - 1000);
+
+      if (displayTime <= 0) {
+        clearInterval(timer);
+      }
+    }, 1000);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, [timestamp]);
+
+  const hours = Math.floor((displayTime / (1000 * 60 * 60)));
+  const minutes = Math.floor((displayTime / (1000 * 60)) % 60);
+  const seconds = Math.floor((displayTime / 1000) % 60);
+
+  return (
+    <ClockContainer>
+      <ClockSegment>
+        <div>{hours < 10 ? `0${hours}` : hours}</div>
+      </ClockSegment>
+      <ClockSeparator>:</ClockSeparator>
+      <ClockSegment>
+        <div>{minutes < 10 ? `0${minutes}` : minutes}</div>
+      </ClockSegment>
+      <ClockSeparator>:</ClockSeparator>
+      <ClockSegment>
+        <div>{seconds < 10 ? `0${seconds}` : seconds}</div>
+      </ClockSegment>
+    </ClockContainer>
+  );
+};
+
+const ClockOrSubmit = ({ timestamp, onClick }) => {
+  const targetTime = timestamp ?  new Date(new Date(timestamp).getTime() + 60 * 60 * 24 * 1000) : null;
+  const currentTime = new Date().getTime();
+  const timeDiff = targetTime ? targetTime - currentTime : null;
+
+  const [timeRemaining, setTimeRemaining] = useState(timeDiff);
+
+  useEffect(() => {
+    if (targetTime) {
+      const timer = setInterval(() => {
+        const newTimeDiff = targetTime - new Date(Date.now());
+        setTimeRemaining(newTimeDiff);
+        if (newTimeDiff <= 0) {
+          clearInterval(timer);
+        }
+      }, 1000);
+
+      return () => {
+        clearInterval(timer);
+      };
+    }
+  }, [timestamp]);
+
+  if (timeRemaining !== null && timeRemaining > 0) { 
+    return (
+      <ClockTimer timestamp={timestamp} />
+    );
+  }
+
+  return (
+    <PopUpButton type="submit" onClick={onClick}>¡ Comenzar 😁 !</PopUpButton>
+  );
+};
+
 const PopupContent2 = () => {
   return (
     <>
@@ -373,12 +472,22 @@ const GetMargin = (index) => {
   return sequence[sequenceIndex];
 };
 
-const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '', status, type, index, coupleMembers, challenges, pills }) => {
+const Popup = ({ 
+    isVisible, 
+    onClose, 
+    title = '', 
+    subtitle = '', 
+    link = '', status, 
+    type, index, 
+    coupleMembers, 
+    challenges, 
+    pills, 
+    timeStamps 
+  }) => {
     const router = useRouter();
     const [isOriginRoute, setIsOriginRoute] = useState(false);
     const [origin, setOrigin] = useState(null);
-    // console.log("challenges");
-    // console.log(challenges[0][index].comment);
+
     useEffect(() => {
         if (router.isReady){
           if (router.query.origin) {
@@ -400,11 +509,18 @@ const Popup = ({ isVisible, onClose, title = '', subtitle = '', link = '', statu
       <PopupCard onClick={handleClose}>
         <PopupDialog onClick={(e) => e.stopPropagation()}>
           <CloseButton onClick={handleClose}>✕</CloseButton>
-          {status === 'next' ? 
+          {status === 'next' && type=== 'challenge' ? 
           <>
           <PopUpTitle>{title}</PopUpTitle>
           <PopUpSubTitle>{subtitle}</PopUpSubTitle>
-          <PopUpButton type="submit" onClick={handleSubmit}>¡ Comenzar 😁 !</PopUpButton>
+          <ClockOrSubmit timestamp={timeStamps ? timeStamps.challengeLastUpdate : null} onClick={handleSubmit} />
+          </>
+          : null}
+          {status === 'next' && type === 'pill' ? 
+          <>
+          <PopUpTitle>{title}</PopUpTitle>
+          <PopUpSubTitle>{subtitle}</PopUpSubTitle>
+          <ClockOrSubmit timestamp={timeStamps ? timeStamps.pillLastUpdate : null} onClick={handleSubmit} />
           </>
           : null}
           {status === 'done' && type === 'challenge' ? 
@@ -867,6 +983,7 @@ const couplesData = {
             // learnings={coupleData ? [coupleData.challenges[popupContent.index].comment] : []}
             challenges={coupleData ? [coupleData.challenges] : []}
             pills={coupleData ? [coupleData.pills] : []}
+            timeStamps={coupleData? coupleData.timeStamps : null}
         />
         {/* Add the WarningPopup component here */}
        
