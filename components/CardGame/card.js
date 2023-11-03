@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import styled from '@emotion/styled';
+import { RWebShare } from "react-web-share";
 
 const Background = styled.div`
 
@@ -234,6 +235,33 @@ const InfoText = styled.div`
         background-color: var(--green); /* Set the background color to green */
         padding: 0.5rem 1rem; /* Add padding to make the background visible */
         color: white; /* Set the text color to white */
+`;
+
+const ContainerShare = styled.div`
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Adjust the gap between buttons */
+  z-index: 1000;
+`;
+
+const ShareButton = styled.a`
+  background-color: var(--green);
+  font-weight: bold;
+  border-radius: 30px;
+  padding: 10px 40px;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 2rem;
+
+  @media (max-width: 540px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const PopupContent = () => {
@@ -636,6 +664,20 @@ const CardGame = () => {
                     toggleQuestionAndAnswer={toggleQuestionAndAnswer}
                 />
             )}
+            
+
+            <RWebShare
+                  data={{
+                    text: `Mira este Juego de WeSex `,
+                    url: `https://we.sex/card-game`,
+                  }}
+                >
+                <ContainerShare>
+                    <ShareButton>
+                        Compartir Juego
+                    </ShareButton>
+                </ContainerShare>
+                </RWebShare>
         </Background>
     );
 };
