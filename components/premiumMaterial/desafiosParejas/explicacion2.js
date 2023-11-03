@@ -124,7 +124,7 @@ const Explicacion2 = () => {
                 <ContainerText2>
                     <AppImage src="/img/frutilla.png" alt="Frutilla" />
                     <Text2>
-                    Nuestras expertas en sexualidad armaron un <span>plan</span> para que cada mes tu vida sexual con tu pareja sea <span>más exitante.</span>
+                    Nuestras expertas en sexualidad armaron un <span>plan</span> para que cada mes tu vida sexual con tu pareja sea <span>más excitante.</span>
                     </Text2>
                 </ContainerText2>
             </Container>
