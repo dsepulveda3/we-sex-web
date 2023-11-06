@@ -8,7 +8,7 @@ const getRandomNumber = () => {
 
 const ABTestPage = () => {
   const router = useRouter();
-  const [origin, setOrigin] = useState(null);
+  const [origin, setOrigin] = useState('Argentina');
   const [userSegment, setUserSegment] = useState(null);
 
   

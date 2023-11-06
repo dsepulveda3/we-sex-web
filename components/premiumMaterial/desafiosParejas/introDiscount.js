@@ -174,7 +174,7 @@ const IntroDiscount = ({subtitle1_1, subtitle1_2, subtitle1_3}) => {
                     <Row className="justify-content-between">
                         <Col lg={7} className="align-items-center">
                             <Content>
-                                <Title>Programa para <span>innovar en pareja</span></Title>
+                                <Title>Desafíos <span>para parejas</span></Title>
                                 <SubTitle>{subtitle1_1}<span>{subtitle1_2}</span>{subtitle1_3}</SubTitle>
                                 {/* <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle> */}
                                 <Text>
