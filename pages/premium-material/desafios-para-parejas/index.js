@@ -7,8 +7,22 @@ const getRandomNumber = () => {
 };
 
 const ABTestPage = () => {
-  const [userSegment, setUserSegment] = useState(null);
   const router = useRouter();
+  const [origin, setOrigin] = useState(null);
+  const [userSegment, setUserSegment] = useState(null);
+
+  
+
+  useEffect(() => {
+    if (router.isReady){
+      if (router.query.origin) {
+        setOrigin(router.query.origin);
+      }
+    }
+  }, [router.isReady]);
+
+  console.log("orgin of origins");
+  console.log(origin);
 
   useEffect(() => {
     // Generate the random number and set the user segment
@@ -22,11 +36,11 @@ const ABTestPage = () => {
     if (userSegment !== null && typeof window !== 'undefined') {
       const nextPage =
         userSegment === 0
-          ? '/premium-material/desafios-para-parejas/testing-a'
-          : '/premium-material/desafios-para-parejas/testing-b';
+          ? `/premium-material/desafios-para-parejas/testing-a?origin=${origin}`
+          : `/premium-material/desafios-para-parejas/testing-b?origin=${origin}`;
       router.push(nextPage);
     }
-  }, [userSegment]);
+  }, [userSegment, origin]);
 
   return null; // Return null during the first render
 };

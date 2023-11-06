@@ -438,9 +438,31 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
     const [selectedOption, setSelectedOption] = useState(country);
     const [showPopup, setShowPopup] = useState(false);
 
+    // useEffect(() => {
+    //     Set the default value based on the currency prop
+    //     if (country === "Otro") {
+    //         setSelectedOption("Otro");
+    //     }
+    //     }, []);
+
     const textRef1 = useRef(null);
     const textRef2 = useRef(null);
     const textRef3 = useRef(null);
+
+    useEffect(() => {
+        setSelectedOption(country);
+    }, [country]);
+
+   
+
+  
+
+
+
+    console.log("origin component");
+    console.log(selectedOption);
+
+   
     
     useEffect(() => {
         if (textRef1.current) {
@@ -467,13 +489,19 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                 </SlideHeader>
 
                 <SelectorButtonContainer>
-                    <SelectorButton 
+                <SelectorButton
                     onChange={(e) => setSelectedOption(e.target.value)}
                     value={selectedOption}
                     >
-                        {argentina === 'yes' && <option value="Argentina">Argentina</option>}
-                        {extra_countries === 'yes' && <option value="España">España</option>}
-                        {other_countries === 'yes' && <option value="Otro País">Otro País</option>}
+                    {argentina === 'yes' && (
+                        <option value="Argentina" selected={selectedOption === 'Argentina'}>Argentina</option>
+                    )}
+                    {extra_countries === 'yes' && (
+                        <option value="España" selected={selectedOption === 'España'}>España</option>
+                    )}
+                    {other_countries === 'yes' && (
+                        <option value="Otro" selected={selectedOption === 'Otro'}>Otro País</option>
+                    )}
                     </SelectorButton>
                 </SelectorButtonContainer>
 
@@ -532,7 +560,7 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                         bgColorHover='var(--green)'
                                         />
                                     </InfoSuscription>)}
-                                    {selectedOption === 'Otro País' && (
+                                    {selectedOption === 'Otro' && (
                                     <InfoSuscription>
                                         <PriceText>{price_stripe_basic}</PriceText>
                                         <ByLabel style={{color: "black"}}>{discount}</ByLabel>
@@ -615,7 +643,7 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                         bgColorHover='var(--green)'
                                         />
                                     </InfoSuscription>)}
-                                    {selectedOption === 'Otro País' && (
+                                    {selectedOption === 'Otro' && (
                                     <InfoSuscription>
                                         <PriceText>{price_stripe_estandar}</PriceText>
                                         <ByLabel style={{color: "black"}}>{discount}</ByLabel>
@@ -695,7 +723,7 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                         bgColorHover='var(--green)'
                                         />
                                     </InfoSuscription>)}
-                                    {selectedOption === 'Otro País' && (
+                                    {selectedOption === 'Otro' && (
                                     <InfoSuscription>
                                         <PriceText>{price_stripe_premium}</PriceText>
                                         <ByLabel style={{color: "black"}}>{discount}</ByLabel>

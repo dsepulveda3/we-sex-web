@@ -49,7 +49,6 @@ export default function Master() {
         price_stripe_premium="54 USD/pareja"
         stripe_premium="https://buy.stripe.com/cN28zeaVXbH77cc8xp"
 
-       
         />
         <Explicacion/>
         </Layout>
