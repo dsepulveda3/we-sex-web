@@ -23,6 +23,22 @@ export default function TestingB() {
     }
   }, [router.isReady]);
 
+  useEffect(() => {
+    // Check if window is defined (client-side)
+    if (typeof window !== 'undefined') {
+      // This code will only run on the client side
+        const currentRoute = window.location.pathname + window.location.search;
+
+        // Send the complete route to Freshpaint as a custom event
+        if(currentRoute === '/premium-material/desafios-para-parejas/testing-b?origin=Argentina'){
+            freshpaint.track("Test B (Argentina) - PRICING ", {"Path": currentRoute});
+        } else if (currentRoute === '/premium-material/desafios-para-parejas/testing-b?origin=Otro'){
+          freshpaint.track("Test B (Otro) - PRICING ", {"Path": currentRoute});
+        }
+        
+    }
+  }, []);
+
   return (
     <>
       <Head>
