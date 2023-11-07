@@ -8,18 +8,17 @@ const getRandomNumber = () => {
 
 const ABTestPage = () => {
   const router = useRouter();
-  const [origin, setOrigin] = useState(null);
+  const [origin, setOrigin] = useState('Argentina');
   const [userSegment, setUserSegment] = useState(null);
 
-  
-
   useEffect(() => {
-    if (router.isReady){
+    if (router.isReady) {
       if (router.query.origin) {
         setOrigin(router.query.origin);
       }
     }
-  }, [router.isReady, origin]);
+    // This effect depends on router.isReady and router.query.origin
+  }, [router.isReady, router.query.origin]);
 
   console.log("orgin of origins");
   console.log(origin);
@@ -27,9 +26,8 @@ const ABTestPage = () => {
   useEffect(() => {
     // Generate the random number and set the user segment
     setUserSegment(getRandomNumber());
+    // This effect doesn't depend on any other values
   }, []);
-
-  //console.log('User Segment coming:', userSegment);
 
   useEffect(() => {
     // Check if userSegment is not null and redirect accordingly
@@ -40,13 +38,13 @@ const ABTestPage = () => {
           : `/premium-material/desafios-para-parejas/testing-b?origin=${origin}`;
       router.push(nextPage);
     }
+    // This effect depends on userSegment and origin
   }, [userSegment, origin]);
 
   return null; // Return null during the first render
 };
 
 export default ABTestPage;
-
 
 
 
