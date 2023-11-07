@@ -12,15 +12,7 @@ import Opinions from '../../../components/premiumMaterial/desafiosParejas/opinio
 
 export default function TestingA() {
   const router = useRouter();
-  const [origin, setOrigin] = useState(null);
-
-  useEffect(() => {
-    if (router.isReady){
-      if (router.query.origin) {
-        setOrigin(router.query.origin);
-      }
-    }
-  }, [router.isReady]);
+  
 
   useEffect(() => {
     // Check if window is defined (client-side)
@@ -29,10 +21,8 @@ export default function TestingA() {
         const currentRoute = window.location.pathname + window.location.search;
 
         // Send the complete route to Freshpaint as a custom event
-        if(currentRoute === '/premium-material/desafios-para-parejas/testing-a?origin=Argentina'){
-            freshpaint.track("Test A (Argentina) - PRICING ", {"Path": currentRoute});
-        } else if (currentRoute === '/premium-material/desafios-para-parejas/testing-a?origin=Otro'){
-          freshpaint.track("Test A (Otro) - PRICING ", {"Path": currentRoute});
+        if(currentRoute === '/premium-material/desafios-para-parejas'){
+            freshpaint.track("Page View Desafíos Root ", {"Path": currentRoute});
         }
         
     }
