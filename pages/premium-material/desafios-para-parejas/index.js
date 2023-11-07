@@ -8,7 +8,7 @@ const getRandomNumber = () => {
 
 const ABTestPage = () => {
   const router = useRouter();
-  const [origin, setOrigin] = useState('Argentina');
+  const [origin, setOrigin] = useState(null);
   const [userSegment, setUserSegment] = useState(null);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const ABTestPage = () => {
 
   useEffect(() => {
     // Check if userSegment is not null and redirect accordingly
-    if (userSegment !== null && typeof window !== 'undefined') {
+    if (userSegment !== null && typeof window !== 'undefined' && origin !== null) {
       const nextPage =
         userSegment === 0
           ? `/premium-material/desafios-para-parejas/testing-a?origin=${origin}`
