@@ -453,11 +453,6 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
         setSelectedOption(country);
     }, [country]);
 
-   
-
-  
-
-
 
     console.log("origin component");
     console.log(selectedOption);
@@ -533,10 +528,10 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                     <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
                                     Seguimiento
                                 </InsideText>
-                                <InsideText>
+                                {/* <InsideText>
                                     <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
                                     Acceso material premium
-                                </InsideText>
+                                </InsideText> */}
                                 <InsideText>
                                     <AppImageCross src="/img/icons/cross.png" className="img-fluid" alt="" />
                                     Cajita WeSexer
@@ -615,10 +610,10 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                     <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
                                     Seguimiento
                                 </InsideText>
-                                <InsideText>
+                                {/* <InsideText>
                                     <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
                                     Acceso material premium
-                                </InsideText>
+                                </InsideText> */}
                                 <InsideText>
                                     <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
                                     Cajita WeSexer
@@ -696,10 +691,10 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                     <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
                                     Seguimiento
                                 </InsideText>
-                                <InsideText>
+                                {/* <InsideText>
                                     <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
                                     Acceso material premium
-                                </InsideText>
+                                </InsideText> */}
                                 <InsideText>
                                     <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
                                     Cajita WeSexer
