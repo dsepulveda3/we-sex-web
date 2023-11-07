@@ -19,7 +19,7 @@ const ABTestPage = () => {
         setOrigin(router.query.origin);
       }
     }
-  }, [router.isReady]);
+  }, [router.isReady, origin]);
 
   console.log("orgin of origins");
   console.log(origin);
