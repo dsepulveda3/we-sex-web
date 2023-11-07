@@ -190,8 +190,7 @@ const CenteredContainer = styled.div`
 `;
 
 const FullScreenSwiper = styled(Swiper)`
-  width: 100vh; /* Set the height of the Swiper to full viewport height */
-  
+  width: 140vh; /* Set the height of the Swiper to full viewport height */
   
 `;
 

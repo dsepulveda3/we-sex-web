@@ -1,52 +1,73 @@
-import { useEffect, useState } from 'react';
+import Head from 'next/head'
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import Layout from '../../../components/general/Layout';
+import IntroDiscount from '../../../components/premiumMaterial/desafiosParejas/introDiscount';
+import Explicacion2 from '../../../components/premiumMaterial/desafiosParejas/explicacion2'
+import Explicacion from '../../../components/premiumMaterial/explicacion'
+import ComoFunciona from '../../../components/premiumMaterial/desafiosParejas/comoFunciona'
+import Dudas from '../../../components/premiumMaterial/dudas'
+import Plans from '../../../components/premiumMaterial/desafiosParejas/plans';
+import Opinions from '../../../components/premiumMaterial/desafiosParejas/opinions';
 
-const getRandomNumber = () => {
-  // Generate a random number between 0 and 1
-  return Math.random() < 0.5 ? 0 : 1;
-};
-
-const ABTestPage = () => {
+export default function TestingA() {
   const router = useRouter();
   const [origin, setOrigin] = useState(null);
-  const [userSegment, setUserSegment] = useState(null);
 
   useEffect(() => {
-    if (router.isReady) {
+    if (router.isReady){
       if (router.query.origin) {
         setOrigin(router.query.origin);
       }
     }
-    // This effect depends on router.isReady and router.query.origin
-  }, [router.isReady, router.query.origin]);
-
-  console.log("orgin of origins");
-  console.log(origin);
+  }, [router.isReady]);
 
   useEffect(() => {
-    // Generate the random number and set the user segment
-    setUserSegment(getRandomNumber());
-    // This effect doesn't depend on any other values
-  }, []);
+    // Check if window is defined (client-side)
+    if (typeof window !== 'undefined') {
+      // This code will only run on the client side
+        const currentRoute = window.location.pathname + window.location.search;
 
-  useEffect(() => {
-    // Check if userSegment is not null and redirect accordingly
-    if (userSegment !== null && typeof window !== 'undefined' && origin !== null) {
-      const nextPage =
-        userSegment === 0
-          ? `/premium-material/desafios-para-parejas/testing-a?origin=${origin}`
-          : `/premium-material/desafios-para-parejas/testing-b?origin=${origin}`;
-      router.push(nextPage);
+        // Send the complete route to Freshpaint as a custom event
+        if(currentRoute === '/premium-material/desafios-para-parejas/testing-a?origin=Argentina'){
+            freshpaint.track("Test A (Argentina) - PRICING ", {"Path": currentRoute});
+        } else if (currentRoute === '/premium-material/desafios-para-parejas/testing-a?origin=Otro'){
+          freshpaint.track("Test A (Otro) - PRICING ", {"Path": currentRoute});
+        }
+        
     }
-    // This effect depends on userSegment and origin
-  }, [userSegment, origin]);
+  }, []);
+  
+  return (
+    <>
+      <Head>
+        <title>Desafio para parejas - WeSex</title>
+        <meta name="description" content="Reavivar la llama con tu pareja - WeSex" /> 
+        <meta name="keywords" content="" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  return null; // Return null during the first render
-};
+        <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png"/>
+        <link rel="manifest" href="/img/favicon/site.webmanifest"/>
+      </Head>
 
-export default ABTestPage;
-
-
+      <main>
+        <Layout>
+        <IntroDiscount subtitle1_1='' subtitle1_2='Desafios sexuales' subtitle1_3='para hacer en pareja'/>
+        {/* <div style={{color: "black", textAlign: "center", fontSize: "3rem", fontWeight: "bold"}}>TESTING A</div> */}
+        <Explicacion2 />
+        <ComoFunciona />
+        <Dudas />
+        <Opinions />
+        <Plans/>
+        <Explicacion/>
+        </Layout>
+        
+      </main>
+    </>
+  )
+}
 
 
 
