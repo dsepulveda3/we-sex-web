@@ -34,14 +34,16 @@ const Background = styled.div`
 
 const Slide = styled(SwiperSlide)`
     
-    height: 100%; /* Set the fixed height for each slide */
+    min-height: 100%; /* Ensure the slide takes up the full height */
+    display: flex; /* Use flex display to control the content within the slide */
+    flex-direction: column; /* Stack content vertically within the slide */
+    justify-content: space-between; /* Space content vertically */
     background-color: white;
-    border-radius: 2rem; /* Adjust the value as per your desired roundness */
+    border-radius: 2rem;
     flex: 0 0 calc(100% / 3); /* Set the width for each slide to occupy 1/3 of the screen width */
 
-    @media(min-width: 540px){
-    flex: 0 0 calc(100% / 3.65); /* Set the width for each slide to occupy 1/3 of the screen width */
-    height: 100%; /* Set the fixed height for each slide */
+    @media (min-width: 540px) {
+    flex: 0 0 calc(100% / 3.65); /* Adjust the width for larger screens */
     }
 `;
 
@@ -501,11 +503,10 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
 
                 <CenteredContainer>
                 <FullScreenSwiper
-                    slidesPerView={"auto"}
-                    spaceBetween={20}
-                    autoHeight={true} // Set the autoHeight prop to make all slides the same height
-                    modules={[Pagination]}
-                    className="mySwiper"
+                slidesPerView={"auto"}
+                spaceBetween={20}
+                modules={[Pagination]}
+                className="mySwiper"
                 >
                     <Slide ref={textRef1}>
                         <Text >
