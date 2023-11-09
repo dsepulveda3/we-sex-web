@@ -237,6 +237,7 @@ const Suscribed = () => {
     const [coupleNickname, setCoupleNickname] = useState('');
     const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
+    const [phoneNumberTwo, setPhoneNumberTwo] = useState('');
     const [step, setStep] = useState(1);
 
     const isFormValid = memberOne.length >= 3 && memberTwo.length >= 3 && coupleNickname.length >= 3;
@@ -313,12 +314,21 @@ const Suscribed = () => {
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
+                            <NickNameInstruction>Números de telefono</NickNameInstruction>
                             <PhoneInput
                                 international
                                 defaultCountry="AR"
                                 placeholder="Numero de telefono"
                                 value={phoneNumber}
                                 onChange={setPhoneNumber}
+                                inputComponent={InputPhoneNumber}
+                            />
+                            <PhoneInput
+                                international
+                                defaultCountry="AR"
+                                placeholder="Numero de telefono"
+                                value={phoneNumberTwo}
+                                onChange={setPhoneNumberTwo}
                                 inputComponent={InputPhoneNumber}
                             />
                             <BotonArs onClick={handleStepOneSubmit} disabled={!isFormValid}>¡Continuar!</BotonArs>
