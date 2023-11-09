@@ -368,18 +368,15 @@ const ClockSeparator = styled.span`
     color: var(--violet);
 `;
 
-const ClockTimer = ({ timestamp }) => {
+const ClockTimer = ({ timestamp, startTime }) => {
   const targetTime = new Date(new Date(timestamp).getTime() + 60 * 60 * 24 * 1000);
-  const currentTime = new Date(Date.now());
+  const currentTime = new Date(startTime)
   const timeDiff = targetTime - currentTime;
 
   const [displayTime, setDisplayTime] = useState(timeDiff);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      console.log(timeDiff);
-      console.log(currentTime);
-      console.log(targetTime);
       setDisplayTime(prevTime => prevTime - 1000);
 
       if (displayTime <= 0) {
@@ -413,9 +410,9 @@ const ClockTimer = ({ timestamp }) => {
   );
 };
 
-const ClockOrSubmit = ({ timestamp, onClick }) => {
+const ClockOrSubmit = ({ timestamp, startTime, onClick }) => {
   const targetTime = timestamp ?  new Date(new Date(timestamp).getTime() + 60 * 60 * 24 * 1000) : null;
-  const currentTime = new Date().getTime();
+  const currentTime = new Date(startTime)
   const timeDiff = targetTime ? targetTime - currentTime : null;
 
   const [timeRemaining, setTimeRemaining] = useState(timeDiff);
@@ -438,7 +435,7 @@ const ClockOrSubmit = ({ timestamp, onClick }) => {
 
   if (timeRemaining !== null && timeRemaining > 0) { 
     return (
-      <ClockTimer timestamp={timestamp} />
+      <ClockTimer timestamp={timestamp} startTime={startTime} />
     );
   }
 
@@ -513,14 +510,14 @@ const Popup = ({
           <>
           <PopUpTitle>{title}</PopUpTitle>
           <PopUpSubTitle>{subtitle}</PopUpSubTitle>
-          <ClockOrSubmit timestamp={timeStamps ? timeStamps.challengeLastUpdate : null} onClick={handleSubmit} />
+          <ClockOrSubmit timestamp={timeStamps ? timeStamps.challengeLastUpdate : null} startTime={timeStamps ? timeStamps.currentTime : null} onClick={handleSubmit} />
           </>
           : null}
           {status === 'next' && type === 'pill' ? 
           <>
           <PopUpTitle>{title}</PopUpTitle>
           <PopUpSubTitle>{subtitle}</PopUpSubTitle>
-          <ClockOrSubmit timestamp={timeStamps ? timeStamps.pillLastUpdate : null} onClick={handleSubmit} />
+          <ClockOrSubmit timestamp={timeStamps ? timeStamps.pillLastUpdate : null} startTime={timeStamps ? timeStamps.currentTime : null} onClick={handleSubmit} />
           </>
           : null}
           {status === 'done' && type === 'challenge' ? 
