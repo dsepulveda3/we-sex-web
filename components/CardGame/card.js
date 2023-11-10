@@ -598,7 +598,10 @@ const CardGame = () => {
             {
                 setSelectedOption(router.query.origin);
             }
-            resetGame();
+            else 
+            {
+                setSelectedOption('PARA HABLAR DE SEXO Y DIVERTIRSE')
+            }
         }
     }, [router.isReady]);
 
