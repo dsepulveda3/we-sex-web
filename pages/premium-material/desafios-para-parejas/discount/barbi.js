@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Layout from '../../../../components/general/Layout';
-import Intro from '../../../../components/premiumMaterial/desafiosParejas/intro'
+import IntroDiscount from '../../../../components/premiumMaterial/desafiosParejas/introDiscount';
 import Explicacion2 from '../../../../components/premiumMaterial/desafiosParejas/explicacion2'
 import Explicacion from '../../../../components/premiumMaterial/explicacion'
 import ComoFunciona from '../../../../components/premiumMaterial/desafiosParejas/comoFunciona'
@@ -26,7 +26,7 @@ export default function Barbi() {
 
       <main>
         <Layout>
-        <Intro subtitle1_1='' subtitle1_2='Desafios sexuales' subtitle1_3='para hacer en pareja'/>
+        <IntroDiscount subtitle1_1='' subtitle1_2='Desafios sexuales' subtitle1_3='para hacer en pareja'/>
         {/* <div style={{color: "black", textAlign: "center", fontSize: "3rem", fontWeight: "bold"}}>TESTING A</div> */}
         <Explicacion2 />
         <ComoFunciona />

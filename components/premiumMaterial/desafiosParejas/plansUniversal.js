@@ -34,14 +34,16 @@ const Background = styled.div`
 
 const Slide = styled(SwiperSlide)`
     
-    height: 100%; /* Set the fixed height for each slide */
+    min-height: 100%; /* Ensure the slide takes up the full height */
+    display: flex; /* Use flex display to control the content within the slide */
+    flex-direction: column; /* Stack content vertically within the slide */
+    justify-content: space-between; /* Space content vertically */
     background-color: white;
-    border-radius: 2rem; /* Adjust the value as per your desired roundness */
+    border-radius: 2rem;
     flex: 0 0 calc(100% / 3); /* Set the width for each slide to occupy 1/3 of the screen width */
 
-    @media(min-width: 540px){
-    flex: 0 0 calc(100% / 3.65); /* Set the width for each slide to occupy 1/3 of the screen width */
-    height: 100%; /* Set the fixed height for each slide */
+    @media (min-width: 540px) {
+    flex: 0 0 calc(100% / 3.65); /* Adjust the width for larger screens */
     }
 `;
 
@@ -191,7 +193,6 @@ const CenteredContainer = styled.div`
 
 const FullScreenSwiper = styled(Swiper)`
   width: 140vh; /* Set the height of the Swiper to full viewport height */
-  
   
 `;
 
@@ -438,9 +439,26 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
     const [selectedOption, setSelectedOption] = useState(country);
     const [showPopup, setShowPopup] = useState(false);
 
+    // useEffect(() => {
+    //     Set the default value based on the currency prop
+    //     if (country === "Otro") {
+    //         setSelectedOption("Otro");
+    //     }
+    //     }, []);
+
     const textRef1 = useRef(null);
     const textRef2 = useRef(null);
     const textRef3 = useRef(null);
+
+    useEffect(() => {
+        setSelectedOption(country);
+    }, [country]);
+
+
+    console.log("origin component");
+    console.log(selectedOption);
+
+   
     
     useEffect(() => {
         if (textRef1.current) {
@@ -467,23 +485,28 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                 </SlideHeader>
 
                 <SelectorButtonContainer>
-                    <SelectorButton 
+                <SelectorButton
                     onChange={(e) => setSelectedOption(e.target.value)}
                     value={selectedOption}
                     >
-                        {argentina === 'yes' && <option value="Argentina">Argentina</option>}
-                        {extra_countries === 'yes' && <option value="España">España</option>}
-                        {other_countries === 'yes' && <option value="Otro País">Otro País</option>}
+                    {argentina === 'yes' && (
+                        <option value="Argentina" selected={selectedOption === 'Argentina'}>Argentina</option>
+                    )}
+                    {extra_countries === 'yes' && (
+                        <option value="España" selected={selectedOption === 'España'}>España</option>
+                    )}
+                    {other_countries === 'yes' && (
+                        <option value="Otro" selected={selectedOption === 'Otro'}>Otro País</option>
+                    )}
                     </SelectorButton>
                 </SelectorButtonContainer>
 
                 <CenteredContainer>
                 <FullScreenSwiper
-                    slidesPerView={"auto"}
-                    spaceBetween={20}
-                    autoHeight={true} // Set the autoHeight prop to make all slides the same height
-                    modules={[Pagination]}
-                    className="mySwiper"
+                slidesPerView={"auto"}
+                spaceBetween={20}
+                modules={[Pagination]}
+                className="mySwiper"
                 >
                     <Slide ref={textRef1}>
                         <Text >
@@ -505,10 +528,10 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                     <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
                                     Seguimiento
                                 </InsideText>
-                                <InsideText>
+                                {/* <InsideText>
                                     <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
                                     Acceso material premium
-                                </InsideText>
+                                </InsideText> */}
                                 <InsideText>
                                     <AppImageCross src="/img/icons/cross.png" className="img-fluid" alt="" />
                                     Cajita WeSexer
@@ -532,7 +555,7 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                         bgColorHover='var(--green)'
                                         />
                                     </InfoSuscription>)}
-                                    {selectedOption === 'Otro País' && (
+                                    {selectedOption === 'Otro' && (
                                     <InfoSuscription>
                                         <PriceText>{price_stripe_basic}</PriceText>
                                         <ByLabel style={{color: "black"}}>{discount}</ByLabel>
@@ -587,10 +610,10 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                     <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
                                     Seguimiento
                                 </InsideText>
-                                <InsideText>
+                                {/* <InsideText>
                                     <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
                                     Acceso material premium
-                                </InsideText>
+                                </InsideText> */}
                                 <InsideText>
                                     <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
                                     Cajita WeSexer
@@ -615,7 +638,7 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                         bgColorHover='var(--green)'
                                         />
                                     </InfoSuscription>)}
-                                    {selectedOption === 'Otro País' && (
+                                    {selectedOption === 'Otro' && (
                                     <InfoSuscription>
                                         <PriceText>{price_stripe_estandar}</PriceText>
                                         <ByLabel style={{color: "black"}}>{discount}</ByLabel>
@@ -668,10 +691,10 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                     <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
                                     Seguimiento
                                 </InsideText>
-                                <InsideText>
+                                {/* <InsideText>
                                     <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
                                     Acceso material premium
-                                </InsideText>
+                                </InsideText> */}
                                 <InsideText>
                                     <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
                                     Cajita WeSexer
@@ -695,7 +718,7 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                         bgColorHover='var(--green)'
                                         />
                                     </InfoSuscription>)}
-                                    {selectedOption === 'Otro País' && (
+                                    {selectedOption === 'Otro' && (
                                     <InfoSuscription>
                                         <PriceText>{price_stripe_premium}</PriceText>
                                         <ByLabel style={{color: "black"}}>{discount}</ByLabel>
