@@ -219,6 +219,15 @@ const NickNameInstruction = styled.div`
     margin-top: 0.1rem;
 `;
 
+const PhonenumberLabel = styled.div`
+    font-size: 1.5rem;
+    // font-weight: bold;
+    font-style: italic;
+    color:  white;
+    margin-left: 0.5rem;
+    margin-top: 0.1rem;
+`;
+
 const InputPhoneNumber = styled.input`
   width: 100%;
   padding: 1rem;
@@ -314,7 +323,7 @@ const Suscribed = () => {
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
-                            <NickNameInstruction>Números de telefono</NickNameInstruction>
+                            <PhonenumberLabel>Tú número de teléfono</PhonenumberLabel>
                             <PhoneInput
                                 international
                                 defaultCountry="AR"
@@ -323,6 +332,7 @@ const Suscribed = () => {
                                 onChange={setPhoneNumber}
                                 inputComponent={InputPhoneNumber}
                             />
+                            <PhonenumberLabel>Número de teléfono de tu pareja</PhonenumberLabel>
                             <PhoneInput
                                 international
                                 defaultCountry="AR"
