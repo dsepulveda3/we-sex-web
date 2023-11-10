@@ -263,6 +263,7 @@ const Suscribed = () => {
                 coupleMemberTwo: memberTwo,
                 email: email,
                 phoneNumber: phoneNumber,
+                phoneNumberTwo: phoneNumberTwo,
             });
             if (response.status === 201){
                 setStep(2);
