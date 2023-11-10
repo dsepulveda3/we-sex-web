@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import styled from '@emotion/styled';
 import { RWebShare } from "react-web-share";
+import { useRouter } from "next/router";
 
 const Background = styled.div`
 
@@ -567,7 +568,8 @@ const GameCard = ({ game }) => {
 };
 
 const CardGame = () => {
-    const [selectedOption, setSelectedOption] = useState('PARA HABLAR DE SEXO Y DIVERTIRSE');
+    const router = useRouter();
+    const [selectedOption, setSelectedOption] = useState('');
     const [showPopup, setShowPopup] = useState(false);
     const [showStartCard, setShowStartCard] = useState(true);
     const [game, setGame] = useState(null); // Store the selected game mode
@@ -591,8 +593,18 @@ const CardGame = () => {
     };
 
     useEffect(() => {
+        if (router.isReady) {
+            if (router.query.origin)
+            {
+                setSelectedOption(router.query.origin);
+            }
+            resetGame();
+        }
+    }, [router.isReady]);
+
+    useEffect(() => {
         // Initialize the game when the component mounts
-        initializeGame(gameData[selectedOption]);
+        if(selectedOption !== '') initializeGame(gameData[selectedOption]);
     }, [selectedOption]);
 
     // Function to handle clicking the start card and begin the game
@@ -635,10 +647,12 @@ const CardGame = () => {
             <Title>JUEGOS DE CARTAS</Title>
             <SelectorButtonContainer>
                 {/* <InfoButton onClick={() => setShowPopup(true)}>¿De qué tratan los juegos? ℹ️</InfoButton> */}
-                <SelectorButton onChange={(e) => {
-                    setSelectedOption(e.target.value);
-                    // Reset the game when the selected game mode changes
-                    resetGame();
+                <SelectorButton 
+                    value={selectedOption}
+                    onChange={(e) => {
+                        setSelectedOption(e.target.value);
+                        // Reset the game when the selected game mode changes
+                        resetGame();
                 }}>
                     {Object.keys(gameData).map(mode => (
                         <option key={mode} value={mode}>{mode}</option>
