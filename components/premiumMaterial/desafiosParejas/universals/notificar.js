@@ -198,21 +198,35 @@ const PopupContent = ({ closePopUp, surveyUrl, setDone }) => {
             <TitleContainer>
                 <Title>Notificar</Title>
             </TitleContainer>
-                <Instruction><span>Paso 1:</span> Rellenen los formularios cada uno de manera individual.</Instruction>
-            <ContainerNotificarDone>
-            {query && (
-                <SurveyLink onClick={handleNewWindow}>Encuesta {query.members.split('-')[0]} </SurveyLink>
+            {query && query.type === 'challenge' && (
+                <>
+                    <Instruction><span>Paso 1:</span> Rellenen los formularios cada uno de manera individual.</Instruction>
+                    <ContainerNotificarDone>
+                    {query && (
+                        <SurveyLink onClick={handleNewWindow}>Encuesta {query.members.split('-')[0]} </SurveyLink>
+                    )}
+                    {query && (
+                        <SurveyLink onClick={handleNewWindow}>Encuesta {query.members.split('-')[1]} </SurveyLink>
+                    )}
+                    </ContainerNotificarDone>
+                    <Instruction><span>Paso 2:</span> En pareja, ¿Como se sintieron? ¿Qué se llevaron de esta práctica?.</Instruction>
+                    <CommentInput
+                        placeholder="Escriban sus aprendizajes..."
+                        value={comment}
+                        onChange={(e) => setComment(e.target.value)}
+                    />
+                </>
             )}
-            {query && (
-                <SurveyLink onClick={handleNewWindow}>Encuesta {query.members.split('-')[1]} </SurveyLink>
+            {query && query.type === 'pill' && (
+                <>
+                    <Instruction><span>Sentimientos:</span> En pareja, ¿Como se sintieron? ¿Qué se llevaron de esta práctica?.</Instruction>
+                    <CommentInput
+                        placeholder="Escriban sus aprendizajes..."
+                        value={comment}
+                        onChange={(e) => setComment(e.target.value)}
+                    />
+                </>
             )}
-            </ContainerNotificarDone>
-                <Instruction><span>Paso 2:</span> En pareja, ¿Como se sintieron? ¿Qué se llevaron de esta práctica?.</Instruction>
-            <CommentInput
-                placeholder="Escriban sus aprendizajes..."
-                value={comment}
-                onChange={(e) => setComment(e.target.value)}
-            />
             <ContainerNotificarDone>
             <BotonNotificarDone color="green" onClick={handleSubmit} >
                 Finalizar

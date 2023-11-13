@@ -249,7 +249,13 @@ const Suscribed = () => {
     const [phoneNumberTwo, setPhoneNumberTwo] = useState('');
     const [step, setStep] = useState(1);
 
-    const isFormValid = memberOne.length >= 3 && memberTwo.length >= 3 && coupleNickname.length >= 3;
+    const isFormValid = 
+        memberOne.length >= 3 && 
+        memberTwo.length >= 3 && 
+        coupleNickname.length >= 3 && 
+        email.length >= 3 && 
+        phoneNumber.length >= 3 && 
+        phoneNumberTwo.length >= 3;
 
     const handleStepOneSubmit = async () => {
         if (!isFormValid) {
