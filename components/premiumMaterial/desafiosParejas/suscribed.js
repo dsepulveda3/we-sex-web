@@ -276,7 +276,7 @@ const Suscribed = () => {
             } 
         } catch (error) {
             if (error.response) {
-                if (error.response.status === 404) {
+                if (error.response.status === 422) {
                     toast.error('Apodo de pareja ya en uso, intenta con otro.');
                 } else  {
                     toast.error('Ocurrió un error, intenta nuevamente.');
