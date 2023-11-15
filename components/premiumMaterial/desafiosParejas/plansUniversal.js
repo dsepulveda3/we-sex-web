@@ -434,10 +434,13 @@ const PopupContent = () => {
 
 const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, price_stripe_basic, price_stripe_estandar, price_stripe_premium,
     mp_basic, mp_estandar, mp_premium, stripe_basic, stripe_estandar, stripe_premium, discount, country='Argentina', argentina="yes", extra_countries='no', other_countries="yes",
-    price_stripe_spain_basic, price_stripe_spain_estandar, price_stripe_spain_premium, stripe_basic_spain, stripe_estandar_spain, stripe_premium_spain}) => {
+    price_stripe_spain_basic, price_stripe_spain_estandar, price_stripe_spain_premium, stripe_basic_spain, stripe_estandar_spain, stripe_premium_spain,
+    chile, price_stripe_chile_basic, price_stripe_chile_estandar, price_stripe_chile_premium, stripe_basic_chile, stripe_estandar_chile, stripe_premium_chile}) => {
 
     const [selectedOption, setSelectedOption] = useState(country);
     const [showPopup, setShowPopup] = useState(false);
+
+    
 
     // useEffect(() => {
     //     Set the default value based on the currency prop
@@ -454,10 +457,12 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
         setSelectedOption(country);
     }, [country]);
 
-
-    console.log("origin component");
+    console.log("country coming");
     console.log(selectedOption);
+    console.log(chile);
 
+
+  
    
     
     useEffect(() => {
@@ -492,12 +497,16 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                     {argentina === 'yes' && (
                         <option value="Argentina" selected={selectedOption === 'Argentina'}>Argentina</option>
                     )}
+                    {chile === 'yes' && (
+                        <option value="Chile" selected={selectedOption === 'Chile'}>Chile</option>
+                    )}
                     {extra_countries === 'yes' && (
                         <option value="España" selected={selectedOption === 'España'}>España</option>
                     )}
                     {other_countries === 'yes' && (
                         <option value="Otro" selected={selectedOption === 'Otro'}>Otro País</option>
                     )}
+                    
                     </SelectorButton>
                 </SelectorButtonContainer>
 
@@ -575,6 +584,20 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                         <BotonUniversal
                                         style={{fontSize: "1.8rem", margin: "1rem 0rem 0rem 2rem" }}
                                         link_redireccion={stripe_basic_spain}
+                                        text="Suscribirme"
+                                        textColor='white'
+                                        bgColor='black'
+                                        bgColorHover='var(--green)'
+                                        />
+                                    </InfoSuscription>
+                                    )}
+                                    {selectedOption === 'Chile' && chile === 'yes' && (
+                                    <InfoSuscription>
+                                        <PriceText>{price_stripe_chile_basic}</PriceText>
+                                        <ByLabel style={{color: "black"}}>{discount}</ByLabel>
+                                        <BotonUniversal
+                                        style={{fontSize: "1.8rem", margin: "1rem 0rem 0rem 2rem" }}
+                                        link_redireccion={stripe_basic_chile}
                                         text="Suscribirme"
                                         textColor='white'
                                         bgColor='black'
@@ -666,6 +689,20 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                         />
                                     </InfoSuscription>
                                     )}
+                                    {selectedOption === 'Chile' && chile === 'yes' && (
+                                    <InfoSuscription>
+                                        <PriceText>{price_stripe_chile_estandar}</PriceText>
+                                        <ByLabel style={{color: "black"}}>{discount}</ByLabel>
+                                        <BotonUniversal
+                                        style={{fontSize: "1.8rem", margin: "1rem 0rem 0rem 2rem" }}
+                                        link_redireccion={stripe_estandar_chile}
+                                        text="Suscribirme"
+                                        textColor='white'
+                                        bgColor='black'
+                                        bgColorHover='var(--green)'
+                                        />
+                                    </InfoSuscription>
+                                    )}
                                 </InsideText>
                             </ContainerInsideText>
                         </Text>
@@ -739,6 +776,20 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                         <BotonUniversal
                                         style={{fontSize: "1.8rem", margin: "1rem 0rem 0rem 2rem" }}
                                         link_redireccion={stripe_premium_spain}
+                                        text="Suscribirme"
+                                        textColor='white'
+                                        bgColor='black'
+                                        bgColorHover='var(--green)'
+                                        />
+                                    </InfoSuscription>
+                                    )}
+                                    {selectedOption === 'Chile' && chile === 'yes' && (
+                                    <InfoSuscription>
+                                        <PriceText>{price_stripe_chile_premium}</PriceText>
+                                        <ByLabel style={{color: "black"}}>{discount}</ByLabel>
+                                        <BotonUniversal
+                                        style={{fontSize: "1.8rem", margin: "1rem 0rem 0rem 2rem" }}
+                                        link_redireccion={stripe_premium_chile}
                                         text="Suscribirme"
                                         textColor='white'
                                         bgColor='black'

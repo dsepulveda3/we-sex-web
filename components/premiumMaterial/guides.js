@@ -278,6 +278,11 @@ const Guides = () => {
     //console.log(guides);
 
     // Depending on the isSubscribed state, set the appropriate link
+
+    const guideMenoLink = isSubscribed
+        ? `/premium-material/guides/pdf-viewer/${'guia-mt2'}`// Link for subscribed user
+        : '/premium-material/guides/guia-monopausia'; // Link for non-subscribed user
+
     const guideMT2Link = isSubscribed
         ? `/premium-material/guides/pdf-viewer/${'guia-mt2'}`// Link for subscribed user
         : '/premium-material/guides/guia-masturbacion-tantrica-2'; // Link for non-subscribed user
@@ -312,6 +317,17 @@ const Guides = () => {
                     Páginas de sabiduría sexual para volverte un experto en cada tema.
                 </Text>
                 <Row data-aos="fade-left">
+
+                {/* <Col lg="3" md="4" >
+                <Link href={guideMenoLink}>
+                    <GuideSquare>
+                        <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                            <AppImageGuia2 src="/img/premium-material/menopausia.png" className="img-fluid" alt='Logotipo Guía Menopausia WeSex'/>
+                            <h3>Menopausia</h3>
+                        </ContainerContentGuide>
+                    </GuideSquare>
+                    </Link>
+                </Col> */}
 
                 <Col lg="3" md="4" >
                 <Link href={guideMT2Link}>

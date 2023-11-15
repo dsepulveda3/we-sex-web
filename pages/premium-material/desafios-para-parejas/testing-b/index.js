@@ -64,12 +64,13 @@ export default function TestingB() {
         <PlansUniversal 
         discount="Incluye 1er mes gratis"
         country={origin}
+        chile="yes"
 
-        price_mp_basic="15,000 ARS/pareja"
+        price_mp_basic="10,000 ARS/pareja"
         mp_basic="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b95ad7e018ba6cca95509f8" 
         price_mp_estandar="20,000 ARS/pareja"
         mp_estandar="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b95ad95018ba6cde43a09ca"
-        price_mp_premium="27,000 ARS/pareja"
+        price_mp_premium="34,000 ARS/pareja"
         mp_premium="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b95ad8a018ba6cf23c40a22"
 
         price_stripe_basic="15 USD/pareja"
@@ -78,6 +79,13 @@ export default function TestingB() {
         stripe_estandar="https://buy.stripe.com/bIY5n29RTeTj688eVY"
         price_stripe_premium="27 USD/pareja"
         stripe_premium="https://buy.stripe.com/14kaHm6FHbH7fIIdRV"
+
+        price_stripe_chile_basic="15.000 CLP/pareja"
+        stripe_basic_chile="https://buy.stripe.com/8wM6r6ggh12t68815d"
+        price_stripe_chile_estandar="19.000 CLP/pareja"
+        stripe_estandar_chile="https://buy.stripe.com/fZebLq6FH4eFfII6py"
+        price_stripe_chile_premium="27.000 CLP/pareja"
+        stripe_premium_chile="https://buy.stripe.com/cN2cPuaVXcLb7ccdS1"
        
         />
         <Explicacion />
