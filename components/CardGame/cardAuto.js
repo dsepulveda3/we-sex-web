@@ -1,8 +1,7 @@
-
-
 import React from "react";
 import { useState, useEffect } from "react";
 import styled from '@emotion/styled';
+import { useRouter } from "next/router";
 
 const Background = styled.div`
 
@@ -488,7 +487,8 @@ const PopupContent = () => {
 
 
 const CardGame = () => {
-    const [selectedOption, setSelectedOption] = useState('PARA HABLAR DE SEXO Y DIVERTIRSE');
+    const router = useRouter();
+    const [selectedOption, setSelectedOption] = useState('');
     const [showPopup, setShowPopup] = useState(false);
     const [showStartCard, setShowStartCard] = useState(true);
     const [game, setGame] = useState(null);
@@ -516,6 +516,19 @@ const CardGame = () => {
     const startGame = () => {
       setShowStartCard(false);
     };
+
+    useEffect(() => {
+      if (router.isReady) {
+          if (router.query.origin)
+          {
+              setSelectedOption(router.query.origin);
+          }
+          else 
+          {
+              setSelectedOption('PARA HABLAR DE SEXO Y DIVERTIRSE')
+          }
+      }
+    }, [router.isReady]);
   
     const toggleQuestionAndAnswer = () => {
       if (currentQuestionIndex === questionOrder.length - 1) {
@@ -558,7 +571,7 @@ const CardGame = () => {
     };
   
     useEffect(() => {
-      initializeGame(gameData[selectedOption]);
+      if(selectedOption !== '') initializeGame(gameData[selectedOption]);
     }, [selectedOption]);
   
     const simulateCardClick = () => {
@@ -585,7 +598,9 @@ const CardGame = () => {
         <Title>JUEGOS DE CARTAS</Title>
         <SelectorButtonContainer>
           {/* <InfoButton onClick={() => setShowPopup(true)}>¿De qué tratan los juegos? ℹ️</InfoButton> */}
-          <SelectorButton onChange={(e) => {
+          <SelectorButton 
+            value={selectedOption}
+            onChange={(e) => {
             setSelectedOption(e.target.value);
             // Reset the game when the selected game mode changes
             resetGame();

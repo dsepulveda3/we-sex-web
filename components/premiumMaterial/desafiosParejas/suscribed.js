@@ -219,6 +219,15 @@ const NickNameInstruction = styled.div`
     margin-top: 0.1rem;
 `;
 
+const PhonenumberLabel = styled.div`
+    font-size: 1.5rem;
+    // font-weight: bold;
+    font-style: italic;
+    color:  white;
+    margin-left: 0.5rem;
+    margin-top: 0.1rem;
+`;
+
 const InputPhoneNumber = styled.input`
   width: 100%;
   padding: 1rem;
@@ -237,6 +246,7 @@ const Suscribed = () => {
     const [coupleNickname, setCoupleNickname] = useState('');
     const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
+    const [phoneNumberTwo, setPhoneNumberTwo] = useState('');
     const [step, setStep] = useState(1);
 
     const isFormValid = memberOne.length >= 3 && memberTwo.length >= 3 && coupleNickname.length >= 3;
@@ -253,6 +263,7 @@ const Suscribed = () => {
                 coupleMemberTwo: memberTwo,
                 email: email,
                 phoneNumber: phoneNumber,
+                phoneNumberTwo: phoneNumberTwo,
             });
             if (response.status === 201){
                 setStep(2);
@@ -313,12 +324,22 @@ const Suscribed = () => {
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
+                            <PhonenumberLabel>Tú número de teléfono</PhonenumberLabel>
                             <PhoneInput
                                 international
                                 defaultCountry="AR"
                                 placeholder="Numero de telefono"
                                 value={phoneNumber}
                                 onChange={setPhoneNumber}
+                                inputComponent={InputPhoneNumber}
+                            />
+                            <PhonenumberLabel>Número de teléfono de tu pareja</PhonenumberLabel>
+                            <PhoneInput
+                                international
+                                defaultCountry="AR"
+                                placeholder="Numero de telefono"
+                                value={phoneNumberTwo}
+                                onChange={setPhoneNumberTwo}
                                 inputComponent={InputPhoneNumber}
                             />
                             <BotonArs onClick={handleStepOneSubmit} disabled={!isFormValid}>¡Continuar!</BotonArs>
