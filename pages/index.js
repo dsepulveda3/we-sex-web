@@ -4,6 +4,7 @@ import Axios from '../config/axios';
 import SurveysHorizontal from '../components/surveys/surveysHorizontal'
 import DebatesHorizontal from '../components/debates/DebatesHorizontal'
 import ArticlesHorizontal from '../components/articles/ArticlesHorizontal'
+import Suscribe from '../components/general/Suscribe';
 
 export default function Home({ articles, discussions }) {
   return (
@@ -21,6 +22,7 @@ export default function Home({ articles, discussions }) {
         <SurveysHorizontal />
         <ArticlesHorizontal articles={articles} />
         <DebatesHorizontal discussions={discussions} />
+        <Suscribe />
         </div>
       </Layout>
       </main>

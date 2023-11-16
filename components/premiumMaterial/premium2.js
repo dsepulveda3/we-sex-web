@@ -109,6 +109,22 @@ const ContainerContentGuide = styled.div`
     }
 `;
 
+const AppImageBomb = styled.img`
+    width: 37%;
+    margin-top: 0rem;
+    margin-left: 0rem;
+    
+    @media(max-width: 540px){
+        width: 37%;
+        margin-top: 0.2rem;
+        margin-right: 3rem;
+        margin-left: 2rem;
+    }
+    @media(min-width: 540px){
+        // margin-right: 2rem;
+    }
+`;
+
 const AppImageGuia1 = styled.img`
     width: 40%;
     margin-top: 1rem;
@@ -259,6 +275,16 @@ const Guides = () => {
                 </Text>
                 <Row data-aos="fade-left">
                 {/* <Col lg="4" md="12" > */}
+                <Col lg="4" md="12" >
+                <Link href="/premium-material/desafios-para-parejas">
+                    <GuideSquare>
+                        <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                            <AppImageBomb src="/img/premium-material/rutina_bomba.png" className="img-fluid" alt='Logotipo guias WeSex'/>
+                            <h3 style={{marginBottom: "2rem"}}>Desafíos para parejas</h3>
+                        </ContainerContentGuide>
+                    </GuideSquare>
+                    </Link>
+                </Col>
                 <Col lg="4" md="12" >
                 <Link href="/premium-material/guides">
                     <GuideSquare>

@@ -7,7 +7,6 @@ import * as PIXI from 'pixi.js';
 import { useRouter } from 'next/router';
 import Feedback from './universals/feedback';
 
-
 const Header = styled.div`
     display: flex;
     flex-direction: row;
@@ -18,7 +17,7 @@ const Header = styled.div`
 const Background = styled.div`
 
     background-color: var(--violet);
-    background-image: url("/img/landing/cta-bg.webp");
+    background-image: url("/img/landing/cta-bg.jpg");
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -268,37 +267,7 @@ const FullscreenCanvas = styled.div`
   align-items: center;
 `;
 
-const BotonRandom = styled.a`
-    background-color: var(--green);
-    color: white;
-    border: none;
-    border-radius: 10px; /* Make it rounded */
-    padding: 10px 20px;
-    cursor: pointer;
-    font-weight: bold;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a box shadow */
-`;
-
-const ContainerNotificarDone = styled.div`
-    padding: 2rem;
-
-`;
-
-const BotonNotificarDone = styled.a`
-    background-color: var(--green);
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 15px 20px;
-    cursor: pointer;
-    font-weight: bold;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a box shadow */
-
-`;
-
-
-
-const MapaAmor = () => {
+const IntroBDSM = () => {
     const [showAnimation, setShowAnimation] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [isOpen2, setIsOpen2] = useState(false);
@@ -407,77 +376,87 @@ const MapaAmor = () => {
           }
         }, [router.isReady, isOriginRoute]);
       
-      //console.log("printing origin");
-      //console.log(origin);
-      
-    
-    
-      return (
+      console.log("printing origin");
+      console.log(origin);
+    return(
         <section>
-            <FullscreenCanvas style={{ zIndex: showAnimation ? 1 : -1 }}>
-        {/* Ship animation and PIXI canvas content here */}
-      </FullscreenCanvas>
-      {!showAnimation && (
-            <Background>
-              <Container>
-                    {/* <Header>
-                        <ArrowBack url={`/premium-material/desafios-para-parejas/road?origin=${origin}`}/>
-                        <TitleWeSex>WeSex</TitleWeSex>
-                    </Header> */}
-                    <Header>
-                        <ArrowBack url={`/premium-material/desafios-para-parejas/road?origin=${origin}`}/>
-                        <TitleWeSex>WeSex</TitleWeSex>
-                        <Feedback challengeName={"Mapa de Amor"}/>
-                    </Header>
-                    <Row className="justify-content-between">
-                        <ContentTitle>
-                            <Title>Desafío:</Title>
-                            <SubTitle><span>Mapa Amor</span></SubTitle>
-                        </ContentTitle>
-                        {/* <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle> */}
-                        <Text >
-                            <ol>
-                                <li>
-                                    Cada uno va a armar una lista de 20 o 30 cosas que le hacen sentir valorado/a, amado/a y/o deseado/a. Pueden ser cosas pequeñas o grandes. Desde un detalle como dejar una nota, o el café preparado, mandar un mensaje lindo durante el día, saludarse con un beso, una caricia, tener sexo de una forma determinada, hasta planificar una cita o unas vacaciones.
-                                </li>
-                                <li>
-                                    Luego van a intercambiar las listas y de esta forma cada uno tendrá el mapa de amor del otro.
-                                </li>
-                                <li>
-                                    La propuesta es incorporar algunos ítems de la lista del otro de forma cotidiana, para poco a poco ir fortaleciendo el vínculo y que cada uno reciba más cosas que le hacen sentir amor.
-                                </li>
-                            </ol>
-                            <br />
-                            <br />
-                                Si notaron que su pareja hizo algo de su mapa de amor, al final del día dense el espacio para registrarlo y apreciarlo. Pueden también comunicárselo a su pareja. Por ejemplo:
-                                Noté que me mandaste un mensajito en la mitad del día..., noté que te diste cuenta de que estaba ocupada y te encargaste vos de...
-                            <br />
-                            <br />
-                                Es un trabajo de construcción que sostiene el vínculo. No es una competencia a ver cuál de los dos hace más cosas. No hay perdedores. Todo es ganancia en cuanto a tomar conciencia y decidir poner intención al amor.
-                        </Text>
+        <FullscreenCanvas style={{ zIndex: showAnimation ? 1 : -1 }}>
+    {/* Ship animation and PIXI canvas content here */}
+  </FullscreenCanvas>
+  {!showAnimation && (
+        <Background>
+          <Container>
+                {/* <Header>
+                    <ArrowBack url={`/premium-material/desafios-para-parejas/road?origin=${origin}`}/>
+                    <TitleWeSex>WeSex</TitleWeSex>
+                </Header> */}
+                <Header>
+                    <ArrowBack url={`/premium-material/desafios-para-parejas/road?origin=${origin}`}/>
+                    <TitleWeSex>WeSex</TitleWeSex>
+                    <Feedback challengeName={"Musica"}/>
+                </Header>
+                <Row className="justify-content-between">
+                    <ContentTitle>
+                        <Title>Desafío:</Title>
+                        <SubTitle><span>Música</span></SubTitle>
+                    </ContentTitle>
+                    {/* <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle> */}
+                    <Text >
+                        Hoy los queremos llevar en un viaje por sus sentidos.
+                        <br />
+                        <br />
+                        Las consignas de hoy son muy simples:
+                        <ol>
+                            <li>
+                                Van a apagar las luces y ambos se van a vendar los ojos. Si, ambos 😉.
+                            </li>
+                            <li>
+                                Van a poner música. Volumen: Alto 🔊.
+                            </li>
+                            <li>
+                                Se van a dejar fluir con cada canción. Todo el encuentro de hoy estará dirigido por la música:
+                                <ul>
+                                    <li>
+                                        La forma en la que se mueve su cuerpo.
+                                    </li>
+                                    <li>
+                                        La velocidad con la que tocan a su pareja.
+                                    </li>
+                                    <li>
+                                        La forma en la que besan.
+                                    </li>
+                                    <li>
+                                        La intensidad de la estimulación
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <br />
+                        <br />
+                        <span>Aquí les dejamos la playlist para este desafío : <a href="https://open.spotify.com/playlist/6ilE8ByVM6EmT3TCOHu1uy" target="_blank" cstyle={{textDecoration: "underline"}}>Playlist WeSexer</a></span>
                         
-                    </Row>
-                    <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
-                            <Text2>
-                                    Empiecen por el paso 1, armando su listado propio, y los demás pasos irán fluyendo.
-                                <br/>
-                                <br/>
-                                    Saber qué le gusta a mi pareja y qué hace que se sienta amadx nos aporta una guía clara para llevar a cabo y generar así un círculo de interacciones amorosas e intencionales.
-                                <br/>
-                                <br/>
-                                <span>Con placer,</span>
-                                <br/>
-                                <span>El equipo de WeSex.</span>
-                            </Text2>
-                    </Row>
-            </Container>
-            
-            <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/GKkBB4tjRkDY5Gyc9`}/>
+                        <br/>
+                        <br/>
+                        <span>Recomendación wesexer:</span> escuchar la playlist en orden y no en modo aleatorio.
+                       
+                    </Text>
+                    
+                </Row>
+                <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
+                        <Text2>
+                            <span>Que disfruten,</span>
+                            <br/>
+                            <span>El equipo de WeSex.</span>
+                        </Text2>
+                </Row>
+        </Container>
+        
+        <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/tJd5VJ4MGiVyRcG16`}/>
 
-            </Background>
-          )}
-        </section>
-      );
+        </Background>
+      )}
+    </section>
+    )
 }
- 
-export default MapaAmor;
+
+export default IntroBDSM;
