@@ -280,7 +280,7 @@ const Guides = () => {
     // Depending on the isSubscribed state, set the appropriate link
 
     const guideMenoLink = isSubscribed
-        ? `/premium-material/guides/pdf-viewer/${'guia-mt2'}`// Link for subscribed user
+        ? `/premium-material/guides/pdf-viewer/${'guia-meno'}`// Link for subscribed user
         : '/premium-material/guides/guia-monopausia'; // Link for non-subscribed user
 
     const guideMT2Link = isSubscribed
@@ -318,7 +318,7 @@ const Guides = () => {
                 </Text>
                 <Row data-aos="fade-left">
 
-                {/* <Col lg="3" md="4" >
+                <Col lg="3" md="4" >
                 <Link href={guideMenoLink}>
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
@@ -327,7 +327,7 @@ const Guides = () => {
                         </ContainerContentGuide>
                     </GuideSquare>
                     </Link>
-                </Col> */}
+                </Col>
 
                 <Col lg="3" md="4" >
                 <Link href={guideMT2Link}>
@@ -428,14 +428,14 @@ const Guides = () => {
                         </ContainerContentGuide>
                     </GuideSquare>
                 </ColHideOnPhone> */}
-                <ColHideOnPhone lg="3" md="4" >
+                {/* <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageGuiaQuestion src="/img/premium-material/question-mark-draw.png" className="img-fluid"/>
                             <h3>Pronto</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
-                </ColHideOnPhone>
+                </ColHideOnPhone> */}
                 <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">

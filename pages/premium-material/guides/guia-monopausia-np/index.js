@@ -14,7 +14,7 @@ import globalPrices from '../../../../utils/globalPrices'
 import DisclaimerTantra from '../../../../components/premiumMaterial/disclaimerTantra'
 
 
-export default function Menopausia() {
+export default function MenopausiaNP() {
   
   return (
     <>
@@ -53,12 +53,12 @@ export default function Menopausia() {
         {/* <DisclaimerTantra /> */}
         <ProfesionalesUniversal fabiVisibility={true} ceciliaVisibility={true} barbaraVisibility={true}/>
         <Regalar />
-        <ComprarUniversal title_mp='Guía Menopausia - WeSex' unit_price_mp= {globalPrices.OneProductARS} quantity_mp={1} currency_id_mp='ARS'
+        <ComprarUniversal title_mp='NP - Guía Menopausia - WeSex' unit_price_mp= {globalPrices.OneProductARS} quantity_mp={1} currency_id_mp='ARS'
           price_ARG={`AR$ ${globalPrices.OneProductARS}`} 
           price_USD={`U$D ${globalPrices.OneProductUSD}`} 
-          redirection_succesful_mp='https://payhip.com/b/VBjLw' 
+          redirection_succesful_mp='https://payhip.com/b/3qWJp' 
           redirection_failed_mp='https://www.we.sex/premium-material/guides/guia-masturbacion-tantrica-2'
-          link_payhip_usd='https://payhip.com/b/fVZyA' 
+          link_payhip_usd='https://payhip.com/b/TOmpj'
           has_promo={true}
           buy_just='Comprar guía Menopausia' reminder_buy_just='Estás comprando solo la guía de Menopausia' 
           link_promo='' text_promo1_1=''
