@@ -364,6 +364,22 @@ export default async function handler(req, res) {
   post_perfit(account, listId, contactData, axiosConfig);
 
   
+} else if (
+  productName === 'Guía Menopausia' ||
+  productName ===
+  '¡GRACIAS! Presiona el botón "Descargar ahora" para recibir la guía de menopausia por mail y empezar a disfrutar.' ||
+  productName === 'NP - Guía Menopausia' ||
+  productName === 
+  'NP - ¡GRACIAS! Presiona el botón "Descargar ahora" para recibir la guía de menopausia por mail y empezar a disfrutar.'
+) {
+  const listId = 96; // lista Perfit guía Menopausia
+  const contactData = {
+    email: email,
+  };
+
+  post_perfit(account, listId, contactData, axiosConfig);
+
+  
 } 
 
     //console.log('Successful request');

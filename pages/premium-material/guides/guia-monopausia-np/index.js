@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { useEffect } from 'react'
 import FirstBannerUniversal from '../../../../components/premiumMaterial/firstBannerUniversal'
 import EsParaVosSiUniversal from '../../../../components/premiumMaterial/esParaVosSiUniversal'
 import ProfesionalesUniversal from '../../../../components/premiumMaterial/profesionalesUniversal'
@@ -15,6 +16,20 @@ import DisclaimerTantra from '../../../../components/premiumMaterial/disclaimerT
 
 
 export default function MenopausiaNP() {
+
+  useEffect(() => {
+    // Check if window is defined (client-side)
+    if (typeof window !== 'undefined') {
+      // This code will only run on the client side
+        const currentRoute = window.location.pathname + window.location.search;
+
+        // Send the complete route to Freshpaint as a custom event
+        if(currentRoute === '/premium-material/guides/guia-monopausia-np'){
+            freshpaint.track("Page View - Guía menopausia", {"Path": currentRoute});
+        }
+        
+    }
+  }, []);
   
   return (
     <>
