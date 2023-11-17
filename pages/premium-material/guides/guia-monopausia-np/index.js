@@ -80,8 +80,8 @@ export default function MenopausiaNP() {
           buy_just='Comprar guía Menopausia' reminder_buy_just='Estás comprando solo la guía de Menopausia' 
           link_promo='' text_promo1_1=''
           text_promo1Span='' text_promo1_2=''
-          link_promo2='' text_promo2_1=' '
-          text_promo2Span='' text_promo2_2=''
+          link_promo2='/premium-material/packs/pack11-Meno-R-NP' text_promo2_1='O llevate la '
+          text_promo2Span='guía de menopausia + salir de la rutina' text_promo2_2=' a un precio orgásmico'
           />
         <Dudas />
         <AboutWeSex />
