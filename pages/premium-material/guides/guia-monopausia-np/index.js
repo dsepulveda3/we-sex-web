@@ -25,7 +25,7 @@ export default function MenopausiaNP() {
 
         // Send the complete route to Freshpaint as a custom event
         if(currentRoute === '/premium-material/guides/guia-monopausia-np'){
-            freshpaint.track("Page View - Guía menopausia", {"Path": currentRoute});
+            freshpaint.track("NP - Page View - Guía menopausia", {"Path": currentRoute});
         }
         
     }
@@ -67,12 +67,14 @@ export default function MenopausiaNP() {
         <AfterDiv />
         {/* <DisclaimerTantra /> */}
         <ProfesionalesUniversal fabiVisibility={true} ceciliaVisibility={true} barbaraVisibility={true}/>
+        <PackUniversal title1_1='' title1_2={`Por AR$${globalPrices.TwoProductARS} llevate 2 guías de WeSex: `}
+        title1_3='Menopausia + Salir de la rutina.' link_promo='/premium-material/packs/pack11-Meno-R-NP' />
         <Regalar />
         <ComprarUniversal title_mp='NP - Guía Menopausia - WeSex' unit_price_mp= {globalPrices.OneProductARS} quantity_mp={1} currency_id_mp='ARS'
           price_ARG={`AR$ ${globalPrices.OneProductARS}`} 
           price_USD={`U$D ${globalPrices.OneProductUSD}`} 
           redirection_succesful_mp='https://payhip.com/b/3qWJp' 
-          redirection_failed_mp='https://www.we.sex/premium-material/guides/guia-masturbacion-tantrica-2'
+          redirection_failed_mp='https://www.we.sex/premium-material/guides/guia-menopausia-np'
           link_payhip_usd='https://payhip.com/b/TOmpj'
           has_promo={true}
           buy_just='Comprar guía Menopausia' reminder_buy_just='Estás comprando solo la guía de Menopausia' 

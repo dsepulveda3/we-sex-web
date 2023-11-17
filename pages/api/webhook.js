@@ -380,7 +380,22 @@ export default async function handler(req, res) {
   post_perfit(account, listId, contactData, axiosConfig);
 
   
-} 
+} else if (
+  productName === 'Guía Menopausia y Salir de la Rutina' ||
+  productName ===
+  '¡GRACIAS! PresionA el botón "Descargar ahora" para recibir la guía de menopausia y salir de la rutina por mail y empezar a disfrutar.' ||
+  productName === 'Guía Menopausia y Salir de la Rutina' ||
+  productName === 
+  'NP - ¡GRACIAS! PresionA el botón "Descargar ahora" para recibir la guía de menopausia y salir de la rutina por mail y empezar a disfrutar.'
+) {
+  const listId = 97; // lista Perfit guía Menopausia
+  const contactData = {
+    email: email,
+  };
+
+  post_perfit(account, listId, contactData, axiosConfig);
+
+}
 
     //console.log('Successful request');
     res.status(200).end(); // Return a 200 status code to acknowledge the webhook request
