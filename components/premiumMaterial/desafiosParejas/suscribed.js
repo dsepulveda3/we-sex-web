@@ -174,6 +174,9 @@ const Boton = styled.a`
 `;
 
 const BotonArs = styled(Boton)`
+    /* Add disabled styles */
+    opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
+    pointer-events: ${({ disabled }) => (disabled ? "none" : "auto")};
     color: white;
     background-color: var(--green);
     text-align: center;
@@ -249,7 +252,19 @@ const Suscribed = () => {
     const [phoneNumberTwo, setPhoneNumberTwo] = useState('');
     const [step, setStep] = useState(1);
 
-    const isFormValid = memberOne.length >= 3 && memberTwo.length >= 3 && coupleNickname.length >= 3;
+    const isFormValid = 
+        memberOne.length >= 3 && 
+        memberTwo.length >= 3 && 
+        /^[a-zA-Z0-9-_]+$/.test(coupleNickname) && 
+        email.length >= 3 && 
+        phoneNumber.length >= 3 && 
+        phoneNumberTwo.length >= 3;
+        memberOne.length >= 3 && 
+        memberTwo.length >= 3 && 
+        coupleNickname.length >= 3 && 
+        email.length >= 3 && 
+        phoneNumber.length >= 3 && 
+        phoneNumberTwo.length >= 3;
 
     const handleStepOneSubmit = async () => {
         if (!isFormValid) {
@@ -317,7 +332,7 @@ const Suscribed = () => {
                                 value={coupleNickname}
                                 onChange={(e) => setCoupleNickname(e.target.value)}
                             />
-                            <NickNameInstruction>Elijan nombre que los identifique como pareja. Ej: Brad + Angelina = Brangelina</NickNameInstruction>
+                            <NickNameInstruction>Elijan nombre que los identifique como pareja. Ej: Brad + Angelina = Brangelina (Solo permitidos letras, números y guiones)</NickNameInstruction>
                             <Input
                                 type="text"
                                 placeholder="Email"
