@@ -1,6 +1,7 @@
 import React from 'react';
 import {Row, Col, Container, Button} from 'reactstrap';
 import styled from '@emotion/styled';
+import ReactPlayer from 'react-player';
 
 const Background = styled.div`
 
@@ -103,20 +104,23 @@ const Text = styled.p`
     }
 `;
 
-const AppImage = styled.img`
+const AppVideoContainer = styled.div`
+    border-radius: 2rem;
+    overflow: hidden;
     margin-top: 5rem;
     margin-left: 2rem;
     width: 65%;
     height: 65%;
     @media(max-width: 540px){
         margin-top: 3rem;
-        margin-left: 0rem;
+        margin-left: 3rem;
         margin-right: 3rem;
         width: 70%;
         height: 70%;
     }
     @media(min-width: 540px){
         margin-right: 2rem;
+        margin-left: 5rem;
     }
 
     
@@ -167,6 +171,7 @@ const BotonUsd = styled(Boton)`
 `;
 
 const IntroDiscount = ({subtitle1_1, subtitle1_2, subtitle1_3}) => {
+    const video = "https://we-sex-premium.s3.us-east-2.amazonaws.com/couple_assets/IMG_5166.MOV";
     return (
         <section id="hola">
         <Background>
@@ -192,7 +197,9 @@ const IntroDiscount = ({subtitle1_1, subtitle1_2, subtitle1_3}) => {
                         </Col>
                         <Col>
                             <ContentImage>
-                                <AppImage src="/img/rutina_bomba.png" alt="Salir de la rutina." />
+                                <AppVideoContainer>
+                                    <ReactPlayer url={video} controls={true} width="100%" height="100%" />
+                                </AppVideoContainer>
                             </ContentImage>
                         </Col>
                     </Row>
