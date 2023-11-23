@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 const Background = styled.div`
 
     background-color: var(--violet);
-    background-image: url("/img/landing/cta-bg.jpg");
+    background-image: url("/img/landing/cta-bg.webp");
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -166,7 +166,7 @@ const BotonUsd = styled(Boton)`
     background-color: transparent;
 `;
 
-const Intro = ({subtitle1_1, subtitle1_2}) => {
+const Intro = ({subtitle1_1, subtitle1_2, subtitle1_3}) => {
     return (
         <section id="hola">
         <Background>
@@ -175,9 +175,8 @@ const Intro = ({subtitle1_1, subtitle1_2}) => {
                         <Col lg={7} className="align-items-center">
                             <Content>
                                 <Title>Programa para <span>innovar en pareja</span></Title>
-                                <SubTitle>{subtitle1_1}<span>{subtitle1_2}</span></SubTitle>
+                                <SubTitle>{subtitle1_1}<span>{subtitle1_2}</span>{subtitle1_3}</SubTitle>
                                 {/* <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle> */}
-
                                 <Text>
                                 ¿Quieren experimentar la sexualidad juntos? ¿Probar nuevas cosas? ¿Están juntos desde hace mucho tiempo y quieren innovar en la cama (o en cualquier lado 😉)?
                                 </Text>
@@ -193,7 +192,7 @@ const Intro = ({subtitle1_1, subtitle1_2}) => {
                         </Col>
                         <Col>
                             <ContentImage>
-                                <AppImage src="../../img/rutina_bomba.png" alt="Salir de la rutina." />
+                                <AppImage src="/img/rutina_bomba.png" alt="Salir de la rutina." />
                             </ContentImage>
                         </Col>
                     </Row>

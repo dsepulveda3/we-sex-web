@@ -46,8 +46,8 @@ const Comprar = () => {
               */
             },
             onSubmit: ({ selectedPaymentMethod, formData }) => {
-              console.log("form data comming");
-              console.log(formData);
+              //console.log("form data comming");
+              //console.log(formData);
               // callback llamado al hacer clic en el botón de envío de datos
               return new Promise((resolve, reject) => {
                 fetch("/api/process_payment", {
@@ -174,7 +174,7 @@ export default Comprar;
 //           event_category: "PayHip",
 //           event_label: "Botón de Pago en USD",
 //           event_callback: function () {
-//             console.log("Evento PH enviado correctamente");
+//             //console.log("Evento PH enviado correctamente");
 //           },
 //         });
 //       }
@@ -212,7 +212,7 @@ export default Comprar;
 //         },
 //       })
 //       .then(function () {
-//         console.log("Checkout iniciado correctamente");
+//         //console.log("Checkout iniciado correctamente");
   
 //         const walletContainer = document.getElementById("wallet_container");
 //         const handleWalletContainerClick = () => {
@@ -223,7 +223,7 @@ export default Comprar;
 //               event_category: "Mercado Pago",
 //               event_label: "Botón de Pagar",
 //               event_callback: function () {
-//                 console.log("Evento MP enviado correctamente");
+//                 //console.log("Evento MP enviado correctamente");
 //               },
 //             });
 //           }
@@ -237,7 +237,7 @@ export default Comprar;
 //         };
 //       })
 //       .catch(function (error) {
-//         console.log(error);
+//         //console.log(error);
 //       });
 //   };
   

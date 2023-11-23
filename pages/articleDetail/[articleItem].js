@@ -166,6 +166,8 @@ const Title = styled.h2`
     font-family: "Averia Libre", sans-serif;
     opacity: 1; /* adjust the opacity as needed */
     color: white;
+    padding: 1.5rem;
+    background-color: var(--violet);
     span {
         font-family: "Averia Libre", sans-serif;
         background-color: var(--violet); /* Set the background color to green */
@@ -176,8 +178,8 @@ const Title = styled.h2`
     
     @media(max-width: 540px){
         font-size: 1.8rem;
-        padding-top: 0rem;
-        padding-bottom: 0rem;
+        // padding-top: 0rem;
+        // padding-bottom: 0rem;
     }
 `;
 
@@ -276,6 +278,10 @@ const ArticleCard = styled.div`
   width: 100%;
 `;
 
+const ContainerImg= styled.img`
+  width: 100%;
+`;
+
 
 const ArticleDetail = ({ articleItem }) => {
   const [newArticles, setNewArticles] = useState([]);
@@ -332,7 +338,7 @@ const ArticleDetail = ({ articleItem }) => {
       <Layout type={'nothidden'}>
         <ContainerAll >
         <ArticleTitle>
-          <span className='hide-mobile'>Articulo de la categoría </span>
+          <span>Articulo de la categoría </span>
           <Link
             href={`/articulos?categoria=${articleItem?.category.toLowerCase()}`}
           >
@@ -343,18 +349,19 @@ const ArticleDetail = ({ articleItem }) => {
           <Row>
             <Articulo lg={8}>
               <div className='d-title'>
-                <img
+                {/* <img
                   className='hide-desktop'
                   src='/img/icons/quote.svg'
                   alt='Quote symbol'
-                />
+                /> */}
                 <Title><span>{articleItem?.title}</span></Title>
               </div>
               <p>{articleItem?.subtitle}</p>
               <Col>
               {articleItem?.content?.map((item, index) => {
+                //console.log(item);
                 if (item.type === 'text') {
-                  console.log(item.value);
+                  //console.log(item.value);
                   return (
                     <div
                       key={`text-${index}`}
@@ -367,8 +374,13 @@ const ArticleDetail = ({ articleItem }) => {
                       <div
                         dangerouslySetInnerHTML={{
                           __html: item.value
+                            .replace(
+                              /<p><img/g,
+                              '<p style="text-align: center; "><img style=""'
+                            )
                             .replace(/<p>/g, '<p style="background-color: transparent; margin-right: 0px; color: rgb(0, 0, 0); text-align: justify">')
-                            .replace(/<ul>/g, '<ul style="list-style-type: disc; margin-right: 80px; text-align: justify">'),
+                            .replace(/<ul>/g, '<ul style="list-style-type: disc; margin-right: 80px; text-align: justify">')
+                            
                         }}
                       />
                     </div>
@@ -413,9 +425,12 @@ const ArticleDetail = ({ articleItem }) => {
                 ) : (
                   <>
                     Publicado por
-                    <Link href={`/perfil/${articleItem?.user.user}`}>
+                    <p>
                       <a>@{articleItem?.user.user}</a>
-                    </Link>
+                    </p>
+                    {/* <Link href={`/perfil/${articleItem?.user.user}`}>
+                      <a>@{articleItem?.user.user}</a>
+                    </Link> */}
                   </>
                 )}
               </Published>

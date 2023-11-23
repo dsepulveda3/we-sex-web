@@ -1,15 +1,15 @@
 // utils/globalPrices.js
 
 const globalPrices = {
-    OneProductARS: 2200,
+    OneProductARS: 2800,
     OneProductUSD: 6,
-    TwoProductARS: 3500,
+    TwoProductARS: 5000,
     TwoProductUSD: 10,
-    ThreeProductARS: 4400,
+    ThreeProductARS: 5600,
     ThreeProductUSD: 12,
-    FourProductARS: 6600,
+    FourProductARS: 8400,
     FourProductUSD: 18,
-    FiveProductARS: 8800,
+    FiveProductARS: 10000,
     FiveProductUSD: 24
 
   };

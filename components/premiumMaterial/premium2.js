@@ -8,7 +8,7 @@ import Suscribe from '../../components/general/Suscribe';
 
 const Background = styled.div`
     background-color: var(--violet);
-    background-image: url("/img/landing/cta-bg.jpg");
+    background-image: url("/img/landing/cta-bg.webp");
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -106,6 +106,22 @@ const ContainerContentGuide = styled.div`
         padding-right: 2rem;
         padding-left: 4rem;
         padding-top: 5rem;
+    }
+`;
+
+const AppImageBomb = styled.img`
+    width: 37%;
+    margin-top: 0rem;
+    margin-left: 0rem;
+    
+    @media(max-width: 540px){
+        width: 37%;
+        margin-top: 0.2rem;
+        margin-right: 3rem;
+        margin-left: 2rem;
+    }
+    @media(min-width: 540px){
+        // margin-right: 2rem;
     }
 `;
 
@@ -235,8 +251,8 @@ const Guides = () => {
         const response = await is_subscribed(
         PLAN_ID, 
         );
-        console.log("reading request")
-        console.log(response);
+        //console.log("reading request")
+        //console.log(response);
         if (response.status === 200){
         setIsSubscribed(true);
         }
@@ -260,10 +276,20 @@ const Guides = () => {
                 <Row data-aos="fade-left">
                 {/* <Col lg="4" md="12" > */}
                 <Col lg="4" md="12" >
+                <Link href="/premium-material/desafios-para-parejas">
+                    <GuideSquare>
+                        <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                            <AppImageBomb src="/img/premium-material/rutina_bomba.png" className="img-fluid" alt='Logotipo guias WeSex'/>
+                            <h3 style={{marginBottom: "2rem"}}>Desafíos para parejas</h3>
+                        </ContainerContentGuide>
+                    </GuideSquare>
+                    </Link>
+                </Col>
+                <Col lg="4" md="12" >
                 <Link href="/premium-material/guides">
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia1 src="/img/premium-material/GuiasGeneral (1).png" className="img-fluid"/>
+                            <AppImageGuia1 src="/img/premium-material/GuiasGeneral (1).png" className="img-fluid" alt='Logotipo guias WeSex'/>
                             <h3 style={{marginBottom: "2rem"}}>Guías</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
@@ -274,7 +300,7 @@ const Guides = () => {
                 <Link href="/premium-material/masters">
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia2 src="/img/premium-material/MasterGeneral (1).png" className="img-fluid"/>
+                            <AppImageGuia2 src="/img/premium-material/MasterGeneral (1).png" className="img-fluid" alt='Logotipo MasterClasses WeSex'/>
                             <h3>Master Classes</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
@@ -285,7 +311,7 @@ const Guides = () => {
                     <Link href="/premium-material/packs">
                     <GuideSquare>
                     <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia2 src="/img/premium-material/packs (1).png" className="img-fluid"/>
+                            <AppImageGuia2 src="/img/premium-material/packs (1).png" className="img-fluid" alt='Logotipo Packs Orgásmicos WeSex'/>
                             <h3>Packs Orgásmicos</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
@@ -305,7 +331,7 @@ const Guides = () => {
                 </Col>
                 )}
             </Row>
-            <Suscribe/>
+            {/* <Suscribe/> */}
         </Container>
       </Background>
     </Section>

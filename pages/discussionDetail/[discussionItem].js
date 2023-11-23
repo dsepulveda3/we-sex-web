@@ -269,6 +269,8 @@ const DiscussionDetail = ({ discussionItem }) => {
         setComments(response.data);
       });
   }
+  //console.log("Info debate");
+  //console.log(discussionItem);
 
   return (
     <>
@@ -280,7 +282,7 @@ const DiscussionDetail = ({ discussionItem }) => {
       <Layout type={'nothidden'}>
         <ContainerAll>
         <ArticleTitle>
-          <span className='hide-mobile'>Debate de la categoría</span>
+          <span>Debate de la categoría</span>
           <Link href={`/debates?categoria=${discussionItem?.category?.name}`}>
             <a>{discussionCategoriesTitle[discussionItem?.category?.name]}</a>
           </Link>
@@ -303,9 +305,12 @@ const DiscussionDetail = ({ discussionItem }) => {
                 ) : (
                   <>
                     Publicado por
-                    <Link href={`/perfil/${discussionItem?.user.user}`}>
+                    <p>
                       <a>@{discussionItem?.user.user}</a>
-                    </Link>
+                    </p>
+                    {/* <Link href={`/perfil/${discussionItem?.user.user}`}>
+                      <a>@{discussionItem?.user.user}</a>
+                    </Link> */}
                   </>
                 )}
               </Published>

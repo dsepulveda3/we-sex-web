@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {Row, Col, Container, Button} from 'reactstrap';
 import styled from '@emotion/styled';
+import { create_couple } from '../../../requests/premiumService';
 import Dudas from '../dudas';
+import { toast } from 'react-toastify';
+import 'react-phone-number-input/style.css';
+import PhoneInput from 'react-phone-number-input';
 
 const Background = styled.div`
 
     background-color: var(--violet);
-    // background-image: url("/img/cta-bg.jpg");
+    // background-image: url("/img/cta-bg.webp");
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -170,6 +174,9 @@ const Boton = styled.a`
 `;
 
 const BotonArs = styled(Boton)`
+    /* Add disabled styles */
+    opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
+    pointer-events: ${({ disabled }) => (disabled ? "none" : "auto")};
     color: white;
     background-color: var(--green);
     text-align: center;
@@ -178,6 +185,7 @@ const BotonArs = styled(Boton)`
     
     @media(max-width: 540px){
         margin-top: 3rem;
+        font-size: 1.5rem;
     }
     @media(min-width: 540px){
         
@@ -193,7 +201,99 @@ const ContentImage = styled.div`
     }
 `;
 
+const Input = styled.input`
+  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid white;
+  ::placeholder {
+    color: ${(props) => (props.hasError ? '#FF9800' : 'initial')};
+  }
+  margin-bottom: 2rem;
+`;
+
+const NickNameInstruction = styled.div`
+    font-size: 1.3rem;
+    // font-weight: bold;
+    font-style: italic;
+    color:  white;
+    margin-bottom: 2rem;
+    margin-left: 0.5rem;
+    margin-top: 0.1rem;
+`;
+
+const PhonenumberLabel = styled.div`
+    font-size: 1.5rem;
+    // font-weight: bold;
+    font-style: italic;
+    color:  white;
+    margin-left: 0.5rem;
+    margin-top: 0.1rem;
+`;
+
+const InputPhoneNumber = styled.input`
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 10px;
+  border: 1px solid white;
+  ::placeholder {
+    color: ${(props) => (props.hasError ? '#FF9800' : 'initial')};
+  }
+  margin-bottom: 2rem;
+`;
+
 const Suscribed = () => {
+    const [memberOne, setMemberOne] = useState('');
+    const [memberTwo, setMemberTwo] = useState('');
+    const [coupleNickname, setCoupleNickname] = useState('');
+    const [email, setEmail] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [phoneNumberTwo, setPhoneNumberTwo] = useState('');
+    const [step, setStep] = useState(1);
+
+    const isFormValid = 
+        memberOne.length >= 3 && 
+        memberTwo.length >= 3 && 
+        /^[a-zA-Z0-9-_]+$/.test(coupleNickname) && 
+        email.length >= 3 && 
+        phoneNumber.length >= 3 && 
+        phoneNumberTwo.length >= 3;
+        memberOne.length >= 3 && 
+        memberTwo.length >= 3 && 
+        coupleNickname.length >= 3 && 
+        email.length >= 3 && 
+        phoneNumber.length >= 3 && 
+        phoneNumberTwo.length >= 3;
+
+    const handleStepOneSubmit = async () => {
+        if (!isFormValid) {
+            toast.error('Completa los campos para continuar.');
+            return;
+        }
+        try{
+            const response = await create_couple({
+                coupleName: coupleNickname,
+                coupleMemberOne: memberOne,
+                coupleMemberTwo: memberTwo,
+                email: email,
+                phoneNumber: phoneNumber,
+                phoneNumberTwo: phoneNumberTwo,
+            });
+            if (response.status === 201){
+                setStep(2);
+            } 
+        } catch (error) {
+            if (error.response) {
+                if (error.response.status === 404) {
+                    toast.error('Apodo de pareja ya en uso, intenta con otro.');
+                } else  {
+                    toast.error('Ocurrió un error, intenta nuevamente.');
+                }
+            }
+        }
+    };
+
     return (
       <section id="hola">
         <Background>
@@ -204,13 +304,80 @@ const Suscribed = () => {
 
             <Content>
                 <Title>
-                    <span>¡FELICITACIONES!</span> con tu pareja ya están suscritos a WeSex
+                    <span>¡FELICITACIONES!</span> Ya están suscritos al programa para innovar en pareja.
                 </Title>
-                <SubTitle>
-                    <span>Estamos muy contentos por acompañarlos en este proceso de exploración!</span>
-                </SubTitle>
-                <Text>Haz click aquí para comenzar el programa para parejas. <span>Solicita el paso 1 a nuestro equipo.</span></Text>
-                <BotonArs href="https://wa.me/5491140678698?text=Hola!%20Estoy%20listo%20para%20recibir%20el%20paso%201%20del%20programa%20">Comenzar</BotonArs>
+                <div style={{padding: "5rem", textAlign: "left"}}>
+                    <Text><span>Sigue los siguientes pasos para comenzar :).</span></Text>
+                    {step === 1 && (
+                        <div>
+                        <Text>
+                            <span>Paso 1:</span> Completen el siguiente formulario:
+                        </Text>
+                        <div>
+                            <Input
+                                type="text"
+                                placeholder="Miembro 1"
+                                value={memberOne}
+                                onChange={(e) => setMemberOne(e.target.value)}
+                            />
+                            <Input
+                                type="text"
+                                placeholder="Miembro 2"
+                                value={memberTwo}
+                                onChange={(e) => setMemberTwo(e.target.value)}
+                            />
+                            <Input
+                                type="text"
+                                placeholder="Nombre de usuario de la pareja"
+                                value={coupleNickname}
+                                onChange={(e) => setCoupleNickname(e.target.value)}
+                            />
+                            <NickNameInstruction>Elijan nombre que los identifique como pareja. Ej: Brad + Angelina = Brangelina (Solo permitidos letras, números y guiones)</NickNameInstruction>
+                            <Input
+                                type="text"
+                                placeholder="Email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                            <PhonenumberLabel>Tú número de teléfono</PhonenumberLabel>
+                            <PhoneInput
+                                international
+                                defaultCountry="AR"
+                                placeholder="Numero de telefono"
+                                value={phoneNumber}
+                                onChange={setPhoneNumber}
+                                inputComponent={InputPhoneNumber}
+                            />
+                            <PhonenumberLabel>Número de teléfono de tu pareja</PhonenumberLabel>
+                            <PhoneInput
+                                international
+                                defaultCountry="AR"
+                                placeholder="Numero de telefono"
+                                value={phoneNumberTwo}
+                                onChange={setPhoneNumberTwo}
+                                inputComponent={InputPhoneNumber}
+                            />
+                            <BotonArs onClick={handleStepOneSubmit} disabled={!isFormValid}>¡Continuar!</BotonArs>
+                        </div>
+                        </div>
+                    )}
+                    {step === 2 && (
+                        <div>
+                            <Text><span>Paso 2:</span> completen el siguiente formulario, para que los expertos de WeSex puedan personalizar sus desafios !
+                            <br/>
+                            <br/>
+                            <a href="https://forms.gle/3xFvkKAnubszUS2m6" target="_blank" style={{textDecoration: "underline"}}>Encuesta persona con pene</a>
+                            <br/>
+                            <a href="https://forms.gle/V2gF1DbC8WhiXkGbA" target="_blank" style={{textDecoration: "underline"}}>Encuesta persona con vulva</a>
+                            </Text>
+
+                            <Text><span>Paso 3:</span> Les dejamos el desafío 1 para este fin de semana 😎</Text>
+                            <BotonArs href={`/premium-material/desafios-para-parejas/road?origin=${coupleNickname}`} target="_blank">Acceder a los desafios !</BotonArs>
+                            <br />
+                            <br />
+                        </div>
+                    )}
+                </div>
                 {/* <Text>
                     Puedes cancelar tu suscripción cuando lo desees ....
                 </Text> */}

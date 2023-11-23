@@ -185,7 +185,7 @@ const BotonVerde = styled(Boton)`
    const botonPagoRef = useRef(null);
    
    const handleClick = () => {
-    setShowPopup(true);
+    // setShowPopup(true);
     setIsVisible(!isVisible);
   }
  
@@ -244,7 +244,7 @@ const BotonVerde = styled(Boton)`
           event_category: "PayHip",
           event_label: "Botón de Pago en USD",
           event_callback: function () {
-            console.log("Evento PH enviado correctamente");
+            //console.log("Evento PH enviado correctamente");
           },
         });
       }
@@ -282,7 +282,7 @@ const BotonVerde = styled(Boton)`
         },
       })
       .then(function () {
-        console.log("Checkout iniciado correctamente");
+        //console.log("Checkout iniciado correctamente");
   
         const walletContainer = document.getElementById("wallet_container");
         const handleWalletContainerClick = () => {
@@ -293,7 +293,7 @@ const BotonVerde = styled(Boton)`
               event_category: "Mercado Pago",
               event_label: "Botón de Pagar",
               event_callback: function () {
-                console.log("Evento MP enviado correctamente");
+                //console.log("Evento MP enviado correctamente");
               },
             });
           }
@@ -307,7 +307,7 @@ const BotonVerde = styled(Boton)`
         };
       })
       .catch(function (error) {
-        console.log(error);
+        //console.log(error);
       });
   };
   

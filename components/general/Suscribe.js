@@ -55,8 +55,8 @@ const Suscribe = () => {
 
   const checkSubscriptionStatus = async () => {
     const response = await is_subscribed(PLAN_ID);
-    console.log("reading request");
-    console.log(response);
+    //console.log("reading request");
+    //console.log(response);
     if (response.status === 200) {
       setIsSubscribed(true);
     }
@@ -74,16 +74,26 @@ const Suscribe = () => {
   };
 
   return (
+    // <>
+    //   {visible && !isSubscribed && (
+    //     <Container>
+    //       <SingUpButton href={'premium-material/subscription'}>
+    //         Suscribirse a WeSex
+    //       </SingUpButton>
+    //       <CloseButton onClick={handleClose}>X</CloseButton>
+    //     </Container>
+    //   )}
+    // </>
     <>
-      {visible && !isSubscribed && (
-        <Container>
-          <SingUpButton href={'premium-material/subscription'}>
-            Suscribirse a WeSex
-          </SingUpButton>
-          <CloseButton onClick={handleClose}>X</CloseButton>
-        </Container>
-      )}
-    </>
+   {visible && (
+      <Container>
+        <SingUpButton href={'card-game'}>
+          Nuevo Juego Cartas
+        </SingUpButton>
+        <CloseButton onClick={handleClose}>X</CloseButton>
+      </Container>
+  )}
+  </>
   );
 };
 

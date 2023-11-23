@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { PiUserCircleBold } from "react-icons/pi";
 import { useAuth } from "../../context/authUserContext";
@@ -7,6 +7,16 @@ const AuthToggleLinks = ({ setLoginStatus }) => {
   const { signOutAndClear } = useAuth();
   const router = useRouter();
   const [showLinks, setShowLinks] = useState(false);
+  const [isLogged, setIsLogged] = useState(false);
+  const { authUser, loading } = useAuth();
+
+  
+  useEffect(() => {
+    if (authUser){
+      setIsLogged(true);
+    }
+  }, [authUser, loading])
+
 
   const handleLogOut = () => {
     signOutAndClear();
@@ -23,6 +33,10 @@ const AuthToggleLinks = ({ setLoginStatus }) => {
 
   const handleContact = () => {
     router.push("https://wa.me/5491140678698?text=Hola!%20Tengo%20una%20pregunta.");
+  };
+
+  const handleRedirectCode = () => {
+    router.push("/premium-material/access-code");
   };
 
   return (
@@ -61,6 +75,11 @@ const AuthToggleLinks = ({ setLoginStatus }) => {
           <a className="nav-link" onClick={handleContact} style={{ color: "purple", cursor: "pointer" }}>
             Contacto
           </a>
+          {isLogged && (
+            <a className="nav-link" onClick={handleRedirectCode} style={{ color: "purple", cursor: "pointer" }}>
+            Mi código
+          </a>
+          )}
           <a className="nav-link" onClick={handleLogOut} style={{ color: "purple", cursor: "pointer" }}>
             Cerrar sesión
           </a>

@@ -122,10 +122,9 @@ const Explicacion2 = () => {
         <Background>
             <Container style={{paddingTop: "0rem", paddingBottom: "2rem", textAlign:"center"}}>
                 <ContainerText2>
-                    <AppImage src="../../img/frutilla.png" alt="Bomba" />
+                    <AppImage src="/img/frutilla.png" alt="Frutilla" />
                     <Text2>
-                    Hay <span>juegos, tips, ideas,</span> pero de ahí a llevarlas a cabo, ¡hay mucho que recorrer! Esto se debe a que cada pareja es un mundo diferente. 
-                    Es por eso que lanzamos este programa vivencial, en donde te vamos a armar un <span>plan personalizado</span> para que cada mes tu vida sexual con tu pareja sea <span>más exitante.</span>
+                    Nuestras expertas en sexualidad armaron un <span>plan</span> para que cada mes tu vida sexual con tu pareja sea <span>más excitante.</span>
                     </Text2>
                 </ContainerText2>
             </Container>

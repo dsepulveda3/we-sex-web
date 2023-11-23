@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Background = styled.div`
     background-color: var(--violet);
-    background-image: url("/img/landing/cta-bg.jpg");
+    background-image: url("/img/landing/cta-bg.webp");
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -292,7 +292,16 @@ const Packs = () => {
                     Páginas de sabiduría sexual para volverte un experto en el tema y poder aplicarlo en tu vida sexual.
                 </Text>
                 <Row data-aos="fade-left">
-
+                <Col lg="3" md="4" >
+                    <Link href="/premium-material/packs/pack9-all-tantra">
+                        <GuideSquare>
+                            <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                                <AppImagePack src="/img/premium-material/giftbox.png" className="img-fluid"/>
+                                <TextPack>Pack <span>Tántrico</span> 3 x 2</TextPack>
+                             </ContainerContentGuide>
+                        </GuideSquare>
+                    </Link>
+                </Col>
                 <Col lg="3" md="4" >
                     <Link href="/premium-material/packs/pack8-MT-R-Z-T-A">
                         <GuideSquare>
@@ -413,14 +422,14 @@ const Packs = () => {
                         </ContainerContentGuide>
                     </GuideSquare>
                 </ColHideOnPhone> */}
-                <ColHideOnPhone lg="3" md="4" >
+                {/* <ColHideOnPhone lg="3" md="4" >
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageGuiaQuestion src="/img/premium-material/question-mark-draw.png" className="img-fluid"/>
                             <h3>Pronto</h3>
                         </ContainerContentGuide>
                     </GuideSquare>
-                </ColHideOnPhone>
+                </ColHideOnPhone> */}
                 
             </Row>
                 </Container>

@@ -52,3 +52,33 @@ export const query_guide = async (guide_id) => {
     );
     return response;
 }
+
+export const create_couple = async (data) => {
+    const response = await basePremiumService.post(
+        `v1/CoupleGame`,
+        data
+    );
+    return response;
+}
+
+export const get_couple = async (couple_name) => {
+    const response = await basePremiumService.get(
+        `v1/CoupleGame/?couple_name=${couple_name}`
+    );
+    return response;
+}
+
+export const done_task = async (data) => {
+    const response = await basePremiumService.put(
+        `v1/CoupleGame`,
+        data
+    );
+    return response;
+}
+
+export const query_task = async (couple_name, task_type, task_index) => {
+    const response = await basePremiumService.get(
+        `v1/CoupleGame/task?coupleName=${couple_name}&taskType=${task_type}&taskIndex=${task_index}`
+    );
+    return response;
+}

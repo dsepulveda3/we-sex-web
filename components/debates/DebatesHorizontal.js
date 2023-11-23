@@ -12,7 +12,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const Background = styled.div`
-    // background-image: url("/img/landing/cta-bg.jpg");
+    // background-image: url("/img/landing/cta-bg.webp");
     background-color: white;
     background-position: center;
     background-repeat: no-repeat;
@@ -160,25 +160,8 @@ const More = styled.a`
 `;
 
 
-const DiscussionsWithTabs = () => {
-  const [selected, setSelected] = useState('last');
-  const [discussions, setDiscussions] = useState([]);
+const DiscussionsWithTabs = ( { discussions }) => {
   const [swiper, setSwiper] = useState(null);
-
-  useEffect(() => {
-    if (selected === 'last') {
-      getRecentDiscussions();
-    }
-  }, [selected]);
-  
-
-  async function getRecentDiscussions() {
-    await Axios.get('/search/public-discussions').then((response) => {
-      setDiscussions(response.data.results);
-      console.log("Va info discusiones");
-      console.log(response.data);
-    });
-  }
 
   const handleNext = () => {
     if (swiper !== null) {

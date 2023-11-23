@@ -3,12 +3,22 @@ import {Row, Col, Container, Card, CardHeader, CardBody, Collapse, Button} from 
 import styled from '@emotion/styled';
 import * as PIXI from 'pixi.js';
 import santaUrl from '../../../public/img/rutina_bomba.png';
+import Notificar from './universals/notificar';
+import ArrowBack from './universals/arrowBack';
+import { useRouter } from 'next/router';
+import Feedback from './universals/feedback';
 
+const Header = styled.div`
+    display: flex;
+    align-items: center; /* Vertically center the items */
+    padding: 0 1rem;
+    
+`;
 
 const Background = styled.div`
 
     background-color: var(--violet);
-    background-image: url("/img/landing/cta-bg.jpg");
+    background-image: url("/img/landing/cta-bg.webp");
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -324,7 +334,7 @@ const BotonRandom = styled.a`
 
 
 const Masturbacion = () => {
-    const [showAnimation, setShowAnimation] = useState(true);
+    const [showAnimation, setShowAnimation] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [isOpen2, setIsOpen2] = useState(false);
     const names = ["Quien presiono este botón", "Quien NO presionó este botón"]; // Add the names you want to choose from
@@ -332,6 +342,20 @@ const Masturbacion = () => {
     const toggle = () => setIsOpen(!isOpen);
     const toggle2 = () => setIsOpen2(!isOpen2);
     const appRef = useRef(null); // Create a ref to hold the PIXI application
+
+    const router = useRouter();
+
+    const [isOriginRoute, setIsOriginRoute] = useState(false);
+    const [origin, setOrigin] = useState(null);
+
+    useEffect(() => {
+        if (router.isReady){
+          if (router.query.origin) {
+            setIsOriginRoute(true);
+            setOrigin(router.query.origin);
+          }
+        }
+      }, [router.isReady, isOriginRoute]);
 
     const chooseRandomName = () => {
         const randomIndex = Math.floor(Math.random() * names.length);
@@ -430,7 +454,11 @@ const Masturbacion = () => {
       {!showAnimation && (
             <Background>
               <Container>
-                    <TitleWeSex>WeSex</TitleWeSex>
+                    <Header>
+                        <ArrowBack url={`/premium-material/desafios-para-parejas/road?origin=${origin}`}/>
+                        <TitleWeSex>WeSex</TitleWeSex>
+                        <Feedback challengeName={"Masturbación"}/>
+                    </Header>
                     <Row className="justify-content-between">   
                         <ContentTitle>
                             <Title>Desafío:</Title>
@@ -556,6 +584,7 @@ const Masturbacion = () => {
                             </Text2>
                     </Row>
             </Container>
+            <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/KnvY1G4pLymr1ahB9`}/>
             </Background>
           )}
         </section>
@@ -563,5 +592,3 @@ const Masturbacion = () => {
 }
  
 export default Masturbacion;
-
-

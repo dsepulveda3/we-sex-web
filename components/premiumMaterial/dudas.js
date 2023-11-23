@@ -11,8 +11,9 @@ const Background = styled.div`
 `;
 
 const Title = styled.p`
-    font-size: 5rem;
+    font-size: 4.5rem;
     font-family: "Averia Libre", sans-serif;
+    padding: 1rem;
     color: white;
     font-weight: bold;
     text-transform:uppercase;
@@ -23,7 +24,7 @@ const Title = styled.p`
     font-family: "Averia Libre", sans-serif;
     }
     @media(max-width: 540px){
-        font-size: 6rem;
+        font-size: 4.2rem;
     }
 `;
 
@@ -59,7 +60,7 @@ const Dudas = () => {
     return (
         <Background>
             <Container style={{paddingTop: "5rem", paddingBottom: "6rem", textAlign:"center"}}>
-                <Title>¿DUDAS?</Title>
+                <Title>QUIERO SABER MÁS</Title>
                 <Text>Escribile a Cami, que está lista para ayudarte en nuestro WhatsApp de soporte 😎!</Text>  
                 <Boton
                     href="https://wa.me/5491140678698"

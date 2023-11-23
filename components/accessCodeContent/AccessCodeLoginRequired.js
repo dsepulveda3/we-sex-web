@@ -53,6 +53,26 @@ const SubTitle = styled.div`
     }
 `;
 
+
+const Hint = styled.div`
+    font-size: 1.5rem;
+    font-family: "Karla", sans-serif;
+    font-weight: bold;
+    color: black;
+    margin: 1rem;
+    span {
+        background-color: var(--green); /* Set the background color to green */
+        padding: 0.3rem 0.5rem; /* Add padding to make the background visible */
+        color: white; /* Set the text color to white */
+    }
+    @media(max-width: 540px){
+        font-size: 1.5rem;
+        margin-bottom: 0rem;
+        text-align: center;
+       
+    }
+`;
+
 const PopUpButton = styled.a`
   background-color: var(--green);
   font-weight: bold;
@@ -82,6 +102,22 @@ const LostLink = styled.a`
     }
 `;
 
+const Boton = styled.a`
+    font-family: "Karla", sans-serif;
+    border-radius: 4rem;
+    padding: 1rem 3rem;
+    font-weight: bold;
+    margin: 1rem auto;
+    border: none;
+    transition: all .5s ease;
+    color: white;
+    background-color: var(--green);
+    font-size: 2.1rem;
+    &:hover {
+        background-color: var(--violet);
+    }
+`;
+
 function AccessCodeLoginRequired ({setLostLink}) {
 
     const handleClick = () => {
@@ -90,10 +126,16 @@ function AccessCodeLoginRequired ({setLostLink}) {
 
     return (
         <TextContainer>
-            <Title>El ultimo paso</Title>
-            <SubTitle>En tu correo estan las instrucciones para canjear tu subscripción</SubTitle>
-            <PopUpButton href="/login?origin=access-code">Iniciar sesión</PopUpButton>
+            <Title>El último paso</Title>
+            <SubTitle>En tu correo estan las instrucciones para canjear tu suscripción</SubTitle>
+            {/* <PopUpButton href="/login?origin=access-code">Iniciar sesión</PopUpButton> */}
+            <Hint>TIP: SI NO LO ENCUENTRAS, INGRESA EN EL BUSCADOR DE TU CORREO contacto@we.sex</Hint>
             <LostLink onClick={handleClick}>¿Perdiste tu código?</LostLink>
+            <Boton
+                    href="https://wa.me/5491140678698?
+                    text=Hola!%20Tengo%20un%20problema%20con%20mi%20código%20de%20suscripción"
+                    target="_blank"
+                >Contactar por WhatsApp</Boton>
         </TextContainer>
     )
 }

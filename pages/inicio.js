@@ -24,8 +24,8 @@ export default function Home() {
     const response = await is_subscribed(
       PLAN_ID, 
     );
-    console.log("reading request")
-    console.log(response);
+    //console.log("reading request")
+    //console.log(response);
     if (response.status === 200){
       setIsSubscribed(true);
     }
@@ -46,8 +46,8 @@ export default function Home() {
         <title>
           {'Inicio | WeSex - La app para hablar y aprender de sexo'}
         </title>
-        <meta name='description' content={''} />
-        <meta name='keywords' content={''} />
+        <meta name='description' content='Página de inicio de WeSex' />
+        <meta name='keywords' content='wesex,www.we.sex,we.sex' />
       </Head>
       <main>
       <Layout type={'nothidden'}>
@@ -55,9 +55,9 @@ export default function Home() {
         {/* here */}
         <Suscribe/>
         
-        <SurveysHorizontal />
+        {/* <SurveysHorizontal />
         <ArticlesHorizontal />
-        <DebatesHorizontal />
+        <DebatesHorizontal /> */}
         </div>
       </Layout>
       </main>

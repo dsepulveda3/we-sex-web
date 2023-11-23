@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import styled from '@emotion/styled';
 import { toast } from 'react-toastify';
@@ -111,10 +111,11 @@ function AccessCodeInput ({setLostLink}) {
         setLostLink(true);
     }
 
+
     const handleSubmit = () => {
         redeem_access_code(PLAN_ID, accessCode)
             .then((response) => {
-                console.log(response);
+                //console.log(response);
                 if (response.status === 200) {
                     if (response.data.status === 'used') {
                         toast.error('Codigo ya utilizado');
@@ -128,15 +129,15 @@ function AccessCodeInput ({setLostLink}) {
                 }
             })
             .catch((error) => {
-                console.log(error);
+                //console.log(error);
                 toast.error('Error al canjear el codigo');
             })
     }
 
     return (
         <TextContainer>
-            <Title>El ultimo paso</Title>
-            <SubTitle>Ingresa tu codigo para activar tu <span>subscripción</span> al contenido premium</SubTitle>
+            <Title>El último paso</Title>
+            <SubTitle>Ingresa tu codigo para activar tu <span>suscripción</span> al contenido premium</SubTitle>
             <CodeInput 
                 type="text" 
                 value={accessCode}

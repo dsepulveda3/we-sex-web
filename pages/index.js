@@ -1,68 +1,45 @@
-import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
+import Layout from '../components/general/Layout'
+import Axios from '../config/axios';
+import SurveysHorizontal from '../components/surveys/surveysHorizontal'
+import DebatesHorizontal from '../components/debates/DebatesHorizontal'
+import ArticlesHorizontal from '../components/articles/ArticlesHorizontal'
+import Suscribe from '../components/general/Suscribe';
 
-
-import HeaderLanding from '../components/landing/headerLanding';
-import Hola from '../components/landing/hola';
-import Stadistics2 from '../components/landing/stadistics2';
-import Temas2 from '../components/landing/temas2';
-import Community from '../components/landing/community';
-import Ceciliace from '../components/landing/ceciliace';
-import Questions from '../components/landing/questions';
-import Contactus from '../components/landing/contactus';
-
-
-import Layout from '../components/general/Layout';
-import DebatesHome from '../components/debates/DebatesHome';
-import TopUsers from '../components/home/TopUsers';
-import ArticlesHome from '../components/articles/ArticlesHome';
-import Banner from '../components/home/Banner';
-import Faqs from '../components/home/Faqs';
-import clienteAxios from '../config/axios';
-import Inicio from '../pages/inicio';
-
-export default function Home() {
-  // async function getData() {
-  //   await clienteAxios.get('/articles/feed')
-  //     .then(res => {
-  //       console.log(res)
-  //     })
-  //     .catch(err => {
-  //       console.log(err)
-  //     })
-  // }
-
-  // useEffect(() => {
-  //   getData();
-  //   // eslint-disable-next-line
-  // },[])
-
+export default function Home({ articles, discussions }) {
   return (
     <>
-      {/* <Head>
-        <title>WeSex - La app para hablar y aprender de sexo</title>
-        <meta name='description' content={''} />
-        <meta name='keywords' content={''} />
+      <Head>
+        <title>
+          {'Inicio | WeSex - La app para hablar y aprender de sexo'}
+        </title>
+        <meta name='description' content='Página de inicio de WeSex' />
+        <meta name='keywords' content='wesex,www.we.sex,we.sex' />
       </Head>
-      <Layout type={'landing'}>
-        <Hola />
-        <Stadistics2 />
-        <Temas2 />
-        <Community />
-        <Ceciliace />
-        <Questions/>
-        <Contactus/>
-      </Layout> */}
-      <Inicio />
-      {/* <Layout>
-        <Banner />
-        <ArticlesHome />
-        <DebatesHome />
-        <TopUsers />
-        <div className='violet-divisor'></div>
-        <Faqs />
-      </Layout> */}
+      <main>
+      <Layout type={'nothidden'}>
+        <div style={{paddingBottom: '5rem'}}>
+        <SurveysHorizontal />
+        <ArticlesHorizontal articles={articles} />
+        <DebatesHorizontal discussions={discussions} />
+        <Suscribe />
+        </div>
+      </Layout>
+      </main>
     </>
   );
+}
+
+export const getServerSideProps = async () => {
+  const articleResponse = await Axios.get('/articles/public-randomized')
+  const discussionsResponse = await Axios.get('/discussions/public-randomized');
+  const articles = articleResponse.data;
+  const discussions = discussionsResponse.data;
+
+  return {
+    props: {
+      articles,
+      discussions,
+    },
+  }
 }

@@ -19,11 +19,12 @@ function MPCardInput (){
   }, [authUser, loading]);
 
   const handleRequest = async (token, email) => {
+    //console.log("request sent");
     if (isLogged){
       const response = await subscribe_to_premium(
         PLAN_ID,
         {
-          cardToken: token.id,
+          cardToken: token,
           paymentMethod: 'MP',
         }
       );
@@ -36,13 +37,13 @@ function MPCardInput (){
       const response = await subscribe_to_premium_with_email(
         PLAN_ID,
         {
-          cardToken: token.id,
+          cardToken: token,
           email: email,
           paymentMethod: 'MP',
         }
       );
       if (response.status === 201) {
-        router.push('/subscription/access-code');
+        router.push('/premium-material/access-code');
         toast.success("Subscripcion de la tarjeta exitosa");
       }
       return response;
@@ -90,9 +91,27 @@ function MPCardInput (){
             },
             onSubmit: async ({ selectedPaymentMethod, formData }) => {
               try{
-                const response = await handleRequest(formData.cardToken, formData.email);
+                const response = await handleRequest(formData.token, formData.payer.email);
               } catch (error) {
-                toast.error("Error al suscribirse");
+                //console.log("Displayed Error");
+                //console.log(error);
+                toast.error(    
+                  <div>
+                    Error al suscribirse. {' '}
+                    <a
+                      href="https://wa.me/5491140678698?
+                      text=Hola!%20Tengo%20un%20problema%20con%20mi%20suscripción"
+                      style={{
+                        textDecoration: 'underline', // Add underline
+                        fontFamily: 'inherit', // Use the same font as the surrounding div
+                        fontSize: 'inherit', // Use the same font size as the surrounding div
+                      }}
+                    >
+                     Contactar soporte
+                    </a>
+                    .
+                  </div>
+                );
               }
             },
             onError: (error) => {

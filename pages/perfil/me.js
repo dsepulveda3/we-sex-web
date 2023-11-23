@@ -4,6 +4,7 @@ import { Row, Col, Container } from 'reactstrap';
 import styled from '@emotion/styled';
 import { useCookies } from 'react-cookie';
 import { useAuth } from '../../context/authUserContext';
+import { useRouter } from 'next/router';
 
 const ProfileData = styled.div`
   display: flex;
@@ -43,7 +44,9 @@ const Content = styled.div`
 `;
 
 const UnsubscribeButton = styled.button`
-  background-color: red;
+  background-color: var(--violet);
+  border-radius: 20px;
+  padding: 1rem;
   color: white;
   border: none;
   cursor: pointer;
@@ -149,6 +152,12 @@ const MyProfile = () => {
   const [isSubscribedStatus, setIsSubscribedStatus] = useState(false);
   const [profile, setProfile] = useState(null);
 
+  const router = useRouter();
+
+  const handleCancelSubscription = () => {
+    router.push("https://wa.me/5491140678698?text=Hola!%20Quiero%20cancelar%20mi%20suscripción%20a%20WeSex")
+  }
+
   useEffect(() => {
     if (cookie.user) {
       setProfile(cookie.user);
@@ -202,7 +211,7 @@ const MyProfile = () => {
                     </InfoFieldValue>
                 </InfoItem>
                   {isSubscribedStatus && (
-                        <UnsubscribeButton>Cancelar subscripción</UnsubscribeButton>
+                        <UnsubscribeButton onClick={handleCancelSubscription}>Cancelar suscripción</UnsubscribeButton>
                       )}
           </InfoGrid>
         </Information>

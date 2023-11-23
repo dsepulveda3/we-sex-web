@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
-import Link from 'next/link';
+import CircularProgressBar from './Loader';
 import styled from '@emotion/styled';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
@@ -31,7 +31,7 @@ const Background = styled.div`
 
 
 const PDFViewer = ({pdfItem, demo, setLoaded}) => {
-  console.log(pdfItem);
+  //console.log(pdfItem);
   const pdfUrl = "";
   const containerwd = 1.5;
   const [isPhoneScreen, setIsPhoneScreen] = useState(false);
@@ -87,11 +87,28 @@ const PDFViewer = ({pdfItem, demo, setLoaded}) => {
     } else {
       containerwd = 4.4;
     }
-
+  } else if (pdfItem === 'guia-mt2'){
+    pdfUrl = "https://we-sex-premium.s3.amazonaws.com/guides/pdfs/65300f3d8fdff02c326f1b83/Gui%CC%81a%20de%20masturbacio%CC%81n%20ta%CC%81ntrica%202%20masajes%20genitales%20nivel%20_compressed.pdf"
+    if (isPhoneScreen) {
+      // Execute your function specific to phone screens here
+      containerwd = 1.3;
+    } else {
+      containerwd = 4.4;
+    }
+  } else if (pdfItem === 'guia-meno'){
+    pdfUrl = "https://we-sex-premium.s3.amazonaws.com/guides/pdfs/65564615f94d0fa60f7c5d44/WeSex%20-%20Menogui%CC%81a%20Sexulidad&Menopausia%20%20(1)_compressed.pdf"
+    if (isPhoneScreen) {
+      // Execute your function specific to phone screens here
+      containerwd = 1.3;
+    } else {
+      containerwd = 4.4;
+    }
   }
+
   const [numPages, setNumPages] = useState(null);
   const [containerWidth, setContainerWidth] = useState(0);
   const [pageHeight, setPageHeight] = useState(0);
+  const [loadProgress, setLoadProgress] = useState(0);
 
 
   useEffect(() => {
@@ -115,7 +132,15 @@ const PDFViewer = ({pdfItem, demo, setLoaded}) => {
   return (
     <Background paddingTop={demo? '0': '6rem'} minHeight={demo? '0': '100vh'}>
       <div className="pdf-container">
-        <Document file={pdfUrl} onLoadSuccess={onDocumentLoadSuccess}>
+        <Document 
+          file={pdfUrl} 
+          onLoadSuccess={onDocumentLoadSuccess} 
+          loading={<CircularProgressBar progress={loadProgress} />}
+          onLoadProgress={({ loaded, total }) => {
+              setLoadProgress(Math.round((loaded / total) * 100));
+            }
+          }
+        >
         <div className="pdf-pages">
           {hideGuide ? (
             Array.from(new Array(numPages || 0), (_, index) => (

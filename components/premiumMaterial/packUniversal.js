@@ -38,7 +38,7 @@ const Title = styled.h4`
 `;
 
 const SubTitle = styled.h4`
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-family: "Averia Libre", sans-serif;
     color: white;
     font-weight: bold;

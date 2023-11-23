@@ -8,6 +8,13 @@ import { Pagination } from "swiper";
 import CookieManager from 'browser/CookieManager';
 import BotonUniversal from '../botonUniversal';
 
+const Header = styled.div`
+    display: flex;
+    align-items: center; /* Vertically center the items */
+    padding: 0 1rem;
+    
+`;
+
 const Background = styled.div`
     background-image: url("/img/ws-background.jpg");
     background-color: var(--violet);
@@ -569,7 +576,7 @@ const Plans = () => {
                                         <PriceText>38 USD/pareja</PriceText>
                                         <BotonUniversal
                                         style={{fontSize: "1.8rem", margin: "1rem 0rem 0rem 2rem" }}
-                                        link_redireccion='https://buy.stripe.com/6oE3eU0hjeTj688dQ'
+                                        link_redireccion='https://buy.stripe.com/6oE3eU0hjeTj688dQT'
                                         text="Suscribirme"
                                         textColor='white'
                                         bgColor='black'

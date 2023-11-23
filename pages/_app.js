@@ -5,6 +5,7 @@ import CodeInputModal from "../components/codeInputModal";
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { CookiesProvider } from "react-cookie";
+import NextNProgress from 'nextjs-progressbar';
 import 'react-toastify/dist/ReactToastify.css';
 import '../styles/bootstrap.min.css';
 import '../styles/globals.css';
@@ -15,11 +16,11 @@ function MyApp({ Component, pageProps }) {
   
 
   useEffect(() => {
-    console.log("reading use effect");
+    //console.log("reading use effect");
     if ('serviceWorker' in navigator && 'PushManager' in window) {
       navigator.serviceWorker.register('/sw.js')
         .then(registration => {
-          console.log('Service Worker registered with scope:', registration.scope);
+          //console.log('Service Worker registered with scope:', registration.scope);
 
           // Request permission for push notifications
           return registration.pushManager.getSubscription().then(subscription => {
@@ -37,13 +38,13 @@ function MyApp({ Component, pageProps }) {
     }
 
     // Trigger push notification when accessing the specified URL
-    console.log("url comming");
-    console.log(router.pathname);
+    //console.log("url comming");
+    //console.log(router.pathname);
     if (router.pathname === '/notification') {
       Notification.requestPermission().then(permission => {
         if (permission === 'granted') {
           // Trigger a push notification
-          console.log("permision granted");
+          //console.log("permision granted");
           navigator.serviceWorker.ready.then(registration => {
             registration.showNotification('Notification Title', {
               body: 'Test', // Customize the notification content
@@ -72,6 +73,7 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <AuthUserProvider>
+        <NextNProgress color="#09d08c" />
         <Component {...pageProps} />
         <ToastContainer
           position="top-right"
