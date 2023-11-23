@@ -12,6 +12,11 @@ import Opinions from '../../../components/premiumMaterial/desafiosParejas/opinio
 
 export default function TestingA() {
   const router = useRouter();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true)
+  }, []);
   
 
   useEffect(() => {
@@ -44,16 +49,18 @@ export default function TestingA() {
 
       <main>
         <Layout>
-        <IntroDiscount subtitle1_1='' subtitle1_2='Desafios sexuales' subtitle1_3='para hacer en pareja'/>
-        {/* <div style={{color: "black", textAlign: "center", fontSize: "3rem", fontWeight: "bold"}}>TESTING A</div> */}
-        <Explicacion2 />
-        <ComoFunciona />
-        <Dudas />
-        <Opinions />
-        <Plans/>
-        <Explicacion/>
+          {isClient && (
+            <>
+              <IntroDiscount subtitle1_1='' subtitle1_2='Desafios sexuales' subtitle1_3='para hacer en pareja'/>
+              <Explicacion2 />
+              <ComoFunciona />
+              <Dudas />
+              <Opinions />
+              <Plans/>
+              <Explicacion/>
+            </>
+          )}
         </Layout>
-        
       </main>
     </>
   )

@@ -3,6 +3,7 @@ import {Row, Col, Container, Card, CardHeader, CardBody, Collapse, Button} from 
 import styled from '@emotion/styled';
 import * as PIXI from 'pixi.js';
 import santaUrl from '../../../public/img/rutina_bomba.png';
+import ReactPlayer from 'react-player';
 import Notificar from './universals/notificar';
 import ArrowBack from './universals/arrowBack';
 import { useRouter } from 'next/router';
@@ -330,6 +331,39 @@ const BotonRandom = styled.a`
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a box shadow */
 `;
 
+const VideoContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 2rem;
+
+  @media (max-width: 540px) {
+    flex-direction: column;
+  }
+`;
+
+const AppVideoContainer = styled.div`
+    border-radius: 2rem;
+    overflow: hidden;
+`;
+
+const VideoWrapper = styled.div`
+  border-radius: 2rem;
+  overflow: hidden;
+  width: 100%;
+  @media (min-width: 540px) {
+    width: 20%; 
+  }
+`;
+
+const AnswerQuestionWrapper = styled.div`
+  width: 100%;
+  @media (min-width: 540px) {
+    width: 70%; 
+  }
+`;
+
 
 
 
@@ -347,6 +381,8 @@ const Tantra1 = () => {
 
     const [isOriginRoute, setIsOriginRoute] = useState(false);
     const [origin, setOrigin] = useState(null);
+
+    const video = "https://we-sex-premium.s3.us-east-2.amazonaws.com/couple_assets/IMG_5175.MOV";
 
     useEffect(() => {
         if (router.isReady){
@@ -450,7 +486,7 @@ const Tantra1 = () => {
         <section>
             <FullscreenCanvas style={{ zIndex: showAnimation ? 1 : -1 }}>
         {/* Ship animation and PIXI canvas content here */}
-      </FullscreenCanvas>
+            </FullscreenCanvas>
       {!showAnimation && (
             <Background>
               <Container>
@@ -482,14 +518,21 @@ const Tantra1 = () => {
                                 </CardHeader>
                                 <Collapse isOpen={isOpen}>
                                     <CardBody>
-                                        <AnswerQuestion>
-                                        El tantra es un camino de autoconocimiento que integra nuestro ser espiritual con nuestra experiencia humana y todas sus manifestaciones. 
-                                        No se limita a la sexualidad, pero a diferencia de otros caminos espirituales, la incluye. 
-                                        El Tantra puede ser un camino de transformación a través del contacto con tu energía sexual. 
-                                        Cuando hablamos de sexualidad, no sólo nos referimos al encuentro sexual, sino a la capacidad de hacer expansivo el placer corporal, y esto sucede en varios ámbitos de la vida. 
-                                        Desde el Tantra, entonces, nos abrimos a la posibilidad de que la experiencia orgásmica no suceda solamente en el encuentro sexual o la masturbación, sino en cada experiencia que nos brinde placer corporal. 
-                                        Para esto es necesario un cuerpo y una psique disponibles, que pueden entrenarse para ello.
-                                        </AnswerQuestion>
+                                        <VideoContainer>
+                                            <AnswerQuestionWrapper>
+                                                <AnswerQuestion>
+                                                    El tantra es un camino de autoconocimiento que integra nuestro ser espiritual con nuestra experiencia humana y todas sus manifestaciones. 
+                                                    No se limita a la sexualidad, pero a diferencia de otros caminos espirituales, la incluye. 
+                                                    El Tantra puede ser un camino de transformación a través del contacto con tu energía sexual. 
+                                                    Cuando hablamos de sexualidad, no sólo nos referimos al encuentro sexual, sino a la capacidad de hacer expansivo el placer corporal, y esto sucede en varios ámbitos de la vida. 
+                                                    Desde el Tantra, entonces, nos abrimos a la posibilidad de que la experiencia orgásmica no suceda solamente en el encuentro sexual o la masturbación, sino en cada experiencia que nos brinde placer corporal. 
+                                                    Para esto es necesario un cuerpo y una psique disponibles, que pueden entrenarse para ello.
+                                                </AnswerQuestion>
+                                            </AnswerQuestionWrapper>
+                                            <VideoWrapper>
+                                                <ReactPlayer url={video} controls={true} width="100%" height="100%"/>
+                                            </VideoWrapper>
+                                        </VideoContainer>
                                     </CardBody>
                                 </Collapse>
                             </Card>
