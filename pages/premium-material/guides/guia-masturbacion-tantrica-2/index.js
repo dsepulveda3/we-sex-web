@@ -47,7 +47,7 @@ export default function Home() {
           emoji6='🧚‍♀️' text6_1='Tener' text6Span=' orgasmos más profundos' text6_2=' y poder regularlos.'
           emoji7='👅' text7_1='Descubrir el poder de la' text7Span=' atención plena' text7_2=' en tu vida sexual.' />
         <AfterDiv />
-        <PackUniversal title1_1='Llevate el pack Tántrico' title1_2='Por AR$5600 llevate las 3 guías tántricas de Fabi Villalba: ' 
+        <PackUniversal title1_1='Llevate el pack Tántrico' title1_2={`Por AR$${globalPrices.ThreeProductARS} llevate 3 guías tántricas de Fabi Villalba: `}
         title1_3='Orgasmos profundos, Masturbación Tántrica 1, y Masturbación Tántrica 2.' link_promo='/premium-material/packs/pack9-all-tantra' />
         <AfterDiv />
         <DisclaimerTantra />

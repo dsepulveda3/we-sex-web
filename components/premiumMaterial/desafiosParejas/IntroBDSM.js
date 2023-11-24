@@ -140,7 +140,7 @@ const SubTitle = styled.h2`
 
 const Text = styled.p`
     font-family: "Averia Libre", sans-serif;
-    font-size: 2.2rem;
+    font-size: 2.0rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
     
@@ -398,46 +398,87 @@ const IntroBDSM = () => {
                 <Row className="justify-content-between">
                     <ContentTitle>
                         <Title>Desafío:</Title>
-                        <SubTitle><span>Música</span></SubTitle>
+                        <SubTitle><span>Intro al BDSM</span></SubTitle>
                     </ContentTitle>
                     {/* <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle> */}
+                    <Col xs="12" lg="12" md="3">
+                            <Card style={{margin:"30px 10px 10px 10px"}}>
+                                <CardHeader onClick={toggle} style={{backgroundColor: "white "}}>
+                                <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
+                                    <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
+                                    <TitleQuestion>¿Que es el BDSM?</TitleQuestion>
+                                </div>
+                                <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
+                                </CardHeader>
+                                <Collapse isOpen={isOpen}>
+                                    <CardBody>
+                                        <AnswerQuestion>
+                                            El BDSM es una sigla que representa un conjunto de prácticas sexuales y eróticas que involucran una amplia gama de actividades y roles. Las letras en BDSM representan las siguientes palabras:
+                                            <ol>
+                                                <li>
+                                                    <strong>Bondage:</strong> Se refiere a la restricción física o inmovilización de una persona a través de ataduras, como cuerdas, esposas, o cualquier otro tipo de restricción.
+                                                </li>
+                                                <li>
+                                                    <strong>Disciplina:</strong> Implica la imposición de reglas, castigos, o recompensas en el contexto de una relación BDSM. Esto puede incluir juegos de rol donde una persona asuma el rol de dominante y la otra el de sumisa.
+                                                </li>
+                                                <li>
+                                                    <strong>Submisión:</strong> Implica que una persona se somete voluntariamente a la autoridad o el control de otra persona en una relación BDSM. La persona sumisa acuerda seguir las órdenes o deseos del dominante.
+                                                </li>
+                                                <li>
+                                                    <strong>Masoquismo:</strong> Se refiere a la obtención de placer o excitación sexual a través de la experimentación con el dolor o la humillación consensuada. Esto puede incluir prácticas como el spanking/azotes o la utilización de ciertos juguetes sexuales.
+                                                </li>
+                                            </ol>
+                                        </AnswerQuestion>
+                                    </CardBody>
+                                </Collapse>
+                            </Card>
+                        </Col>
                     <Text >
-                        Hoy los queremos llevar en un viaje por sus sentidos.
+                        Vamos a los bifes ..
                         <br />
                         <br />
-                        Las consignas de hoy son muy simples:
-                        <ol>
-                            <li>
-                                Van a apagar las luces y ambos se van a vendar los ojos. Si, ambos 😉.
-                            </li>
-                            <li>
-                                Van a poner música. Volumen: Alto 🔊.
-                            </li>
-                            <li>
-                                Se van a dejar fluir con cada canción. Todo el encuentro de hoy estará dirigido por la música:
-                                <ul>
-                                    <li>
-                                        La forma en la que se mueve su cuerpo.
-                                    </li>
-                                    <li>
-                                        La velocidad con la que tocan a su pareja.
-                                    </li>
-                                    <li>
-                                        La forma en la que besan.
-                                    </li>
-                                    <li>
-                                        La intensidad de la estimulación
-                                    </li>
-                                </ul>
-                            </li>
-                        </ol>
+                        Hoy queremos llevarlos por una introducción a esta práctica, para que puedan saborear un poquito (o mucho) de este mundo.
                         <br />
                         <br />
-                        <span>Aquí les dejamos la playlist para este desafío : <a href="https://open.spotify.com/playlist/6ilE8ByVM6EmT3TCOHu1uy" target="_blank" cstyle={{textDecoration: "underline"}}>Playlist WeSexer</a></span>
+                        Todo tiene que ser bajo el consentimiento de ambos. Vayan de a poco y midiendo la intensidad según su comodidad.
+                        <br />
+                        <br />
+                        ¿Qué van a necesitar para este encuentro de BDSM casero?
+                        <br />
+                        <br />
+                        - Esposas: Si no tienen pueden usar una corbata.
+                        <br />
+                        - Antifaz: si no tienen pueden usar una remera/camiseta.
+                        <br />
+                        <br />
+                        La corbata la van a usar para inmovilizar las manos de su pareja. Si quieren inmovilizarla por completo, pueden usar otra para los pies. 
+                        <br />
+                        <br/>
+                        Si prefieren usar esposas y no tienen, les dejamos este <a style={{textDecoration: "underline" }} href="https://www.savagesexshop.com.ar/productos/esposas-con-peluche-eroski/" target="_blank">link de nuestro sexshop amigo Savagesexshop</a> para adquirlas.
+                        <br />
+                        <br />
+                        El antifaz o la remera la usarán para vendarle los ojos.
+                        <br />
+                        <br />
+                        En esta introducción al BDSM, una persona será dominante, y la otra será sumisa. La persona sumisa se dejará llevar por la persona dominante, quien tendrá la responsabilidad de vendar, atar y cuidar a su pareja.
+                        <br />
+                        <br />
+                        <span>Consentimiento:</span>
+                        <br />
+                        <br />
+                        Antes de comenzar, escriban en un papel las cosas que están dispuestos a realizar y las cosas que no. En este acuerdo pueden agregar lo que deseen realizar, y solo implementarán las cosas con las que ambos estén de acuerdo.
+                        <br />
+                        <br />
+                        Ejemplo: ¿Tirar del pelo, sí o no? - ¿Nalgadas, sí o no? ¿Con qué intensidad?
+                        <br />
+                        <br />
+                        <span>Aftercare:</span>
+                        <br />
+                        <br />
+                        Luego del encuentro, dense un espacio para bajar las revoluciones. Les recomendamos hacerse caricias, quedarse un rato abrazados y charlar sobre cómo se sintieron en la experiencia.
+
+
                         
-                        <br/>
-                        <br/>
-                        <span>Recomendación wesexer:</span> escuchar la playlist en orden y no en modo aleatorio.
                        
                     </Text>
                     

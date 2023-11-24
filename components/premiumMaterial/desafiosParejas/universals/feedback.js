@@ -3,7 +3,7 @@ import { useState } from "react";
 import styled from "@emotion/styled";
 
 const ContainerNotificarDone = styled.div`
-    padding: 0rem;
+    padding: 1.5rem;
     display: flex;
     justify-content: center;
 

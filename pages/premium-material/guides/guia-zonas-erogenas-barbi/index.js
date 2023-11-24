@@ -47,7 +47,7 @@ export default function Home() {
           emoji7='🫦' text7_1='' text7Span='Variadas técnicas de estimulación' text7_2=' desde suaves mordiscos hasta succiones.' />
         <AfterDiv />
         <ProfesionalesUniversal fabiVisibility={true} ceciliaVisibility={true} barbaraVisibility={true}/>
-        <PackUniversal title1_1='2 x 3' title1_2='por 3.000 llevate las 3 guías de WeSex: ' 
+        <PackUniversal title1_1='2 x 3' title1_2={`Por AR$${globalPrices.ThreeProductARS} llevate 3 guías de WeSex: `}
         title1_3='Zonas Erógenas + Sexo Anal + Tantra' link_promo='/premium-material/packs/pack1-barbi' />
         <Regalar />
         <ComprarUniversal title_mp='B - Guía Zonas Erógenas - WeSex' unit_price_mp= {globalPrices.OneProductARS} quantity_mp={1} currency_id_mp='ARS'

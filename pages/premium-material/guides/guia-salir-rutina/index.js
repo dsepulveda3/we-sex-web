@@ -47,7 +47,7 @@ export default function Home() {
           emoji7='👅' text7_1='Reavivar la llama' text7Span=' como si fuera la primera vez.' text7_2='' />
         <AfterDiv />
         <ProfesionalesUniversal fabiVisibility={true} ceciliaVisibility={true} barbaraVisibility={true}/>
-        <PackUniversal title1_1='2 x 3' title1_2='Por 3.000 llevate las 3 guías de WeSex: ' 
+        <PackUniversal title1_1='2 x 3' title1_2={`Por AR$${globalPrices.ThreeProductARS} llevate 3 guías de WeSex: `}
         title1_3='Salir de la rutina + Tantra + Anal' link_promo='/premium-material/packs/pack4-rutina-tantra-anal' />
         <Regalar />
         <ComprarUniversal title_mp='Guía para salir de la rutina - WeSex' unit_price_mp= {globalPrices.OneProductARS} quantity_mp={1} currency_id_mp='ARS'

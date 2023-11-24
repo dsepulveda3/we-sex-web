@@ -46,8 +46,9 @@ export default function Home() {
           emoji6='🧚‍♀️' text6_1='Llevar a cabo' text6Span=' tus fantasías.' text6_2=''
           emoji7='👅' text7_1='Reavivar la llama' text7Span=' como si fuera la primera vez.' text7_2='' />
         <AfterDiv />
-        <PackUniversal title1_1='2 x 3' title1_2='Por 3.000 llevate las 3 guías de WeSex: ' 
+        <PackUniversal title1_1='2 x 3' title1_2={`Por AR$${globalPrices.ThreeProductARS} llevate 3 guías de WeSex: `}
         title1_3='Salir de la rutina + Tantra + Anal' link_promo='/premium-material/packs/pack4-rutina-tantra-anal-email-c' />
+
         <ComprarUniversal title_mp='EMC - Guía para salir de la rutina - WeSex' unit_price_mp= {globalPrices.OneProductARS} quantity_mp={1} currency_id_mp='ARS'
           price_ARG={`AR$ ${globalPrices.OneProductARS}`} price_USD={`U$D ${globalPrices.OneProductUSD}`} redirection_succesful_mp='https://payhip.com/b/y38Qz'
           redirection_failed_mp='https://www.we.sex/premium-material/guides/guia-salir-rutina-email-c'
