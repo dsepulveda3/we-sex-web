@@ -235,10 +235,7 @@ const StyledH3 = styled.h3`
 const PLAN_ID = process.env.NEXT_PUBLIC_PLAN_ID;
 
 
-const Guides = () => {
-
-
-    const [guides, setGuides] = useState([]);
+const Guides = ({ guideData }) => {
     const { authUser, loading } = useAuth();
     const [isSubscribed, setIsSubscribed] = useState(false);
 
@@ -255,29 +252,12 @@ const Guides = () => {
     }
     useEffect(() => {
         if (!loading && authUser){
-        //  setLoggedIn(true)
-        checkSubscriptionStatus();
+            checkSubscriptionStatus();
         }
+        console.log(guideData);
     }, [authUser, loading]);
 
-    useEffect(() => {
-        // Fetch guides when component mounts
-        fetch('http://localhost:8000/v1/guides/')  // Replace this with your API URL
-          .then(response => response.json())
-          .then(data => {
-            setGuides(data);
-          })
-          .catch(error => {
-            console.error('Error fetching guides:', error);
-          });
-      
-        //console.log("Fetching guides...");
-      }, []); 
-
-    //   //console.log("pdfFile of position 0:", guides[0].pdfFile.key);c
-    //console.log(guides);
-
-    // Depending on the isSubscribed state, set the appropriate link
+    const prefixUrl = isSubscribed ? '/premium-material/guides/pdf-viewer/' : '/premium-material/guides/landing/';
 
     const guideMenoLink = isSubscribed
         ? `/premium-material/guides/pdf-viewer/${'guia-meno'}`// Link for subscribed user
@@ -317,18 +297,18 @@ const Guides = () => {
                     Páginas de sabiduría sexual para volverte un experto en cada tema.
                 </Text>
                 <Row data-aos="fade-left">
-
-                <Col lg="3" md="4" >
-                <Link href={guideMenoLink}>
-                    <GuideSquare>
-                        <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
-                            <AppImageGuia2 src="/img/premium-material/menopausia.png" className="img-fluid" alt='Logotipo Guía Menopausia WeSex'/>
-                            <h3>Menopausia</h3>
-                        </ContainerContentGuide>
-                    </GuideSquare>
-                    </Link>
-                </Col>
-
+                {guideData.map((guide) => (
+                    <Col lg="3" md="4" >
+                        <Link href={`${prefixUrl}/${guide._id}`}>
+                            <GuideSquare>
+                                <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                                    <AppImageGuia2 src={`https://we-sex-premium.s3.amazonaws.com/${guide.coverImage.key}`} className="img-fluid"/>
+                                    <h3>{guide.name}</h3>
+                                </ContainerContentGuide>
+                            </GuideSquare>
+                        </Link>
+                    </Col>
+                ))}
                 <Col lg="3" md="4" >
                 <Link href={guideMT2Link}>
                     <GuideSquare>

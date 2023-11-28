@@ -53,6 +53,13 @@ export const query_guide = async (guide_id) => {
     return response;
 }
 
+export const query_premium_guide = async (guide_id) => {
+    const response = await basePremiumService.get(
+        `v1/Guide/premium/${guide_id}`
+    );
+    return response;
+}
+
 export const create_couple = async (data) => {
     const response = await basePremiumService.post(
         `v1/CoupleGame`,
