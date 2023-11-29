@@ -63,7 +63,7 @@ const MobileNavigation = ({type}) => {
     setActiveLink(router.pathname);
     setClickedIcons(prevState => ({
       ...prevState,
-      home: router.pathname === '/inicio',
+      home: router.pathname === '/',
       debates: router.pathname === '/debates',
       articulos: router.pathname === '/articulos',
       premium: router.pathname === '/premium-material',
@@ -77,10 +77,10 @@ const MobileNavigation = ({type}) => {
       <Container>
         <Row className="pb-1 pt-1">
           <Col xs={3} sm={3}>
-            <Link href="/inicio">
-              <a onClick={() => handleIconClick('/inicio', 'inicio')}>
-                <Icon src={clickedIcons.home ? '/img/icons/home2-icon-black.svg' : '/img/icons/home2-icon-white.svg'} active={activeLink === '/inicio'} alt='home-logo'/>
-                {activeLink === '/inicio' ? <BoldText>Inicio</BoldText> : 'Inicio'}
+            <Link href="/">
+              <a onClick={() => handleIconClick('/', 'inicio')}>
+                <Icon src={clickedIcons.home ? '/img/icons/home2-icon-black.svg' : '/img/icons/home2-icon-white.svg'} active={activeLink === '/'} alt='home-logo'/>
+                {activeLink === '/' ? <BoldText>Inicio</BoldText> : 'Inicio'}
               </a>
             </Link>
           </Col>
