@@ -9,18 +9,18 @@ const HeaderContainer = styled.div`
 
 
 const Header = styled.div`
-    // background-color: #72e436;
-    // background-color: #5bcb06;
-    background-color: var(--violet);
+    background-image: url("/img/landing/cta-bg.webp");
     height: 10vh;
     width: 100%;
     font-weight: bold;
-    border-radius: 0 0 20px 20px;
+    border-radius: 20px; /* Apply border-radius to all corners */
     display: flex;
     flex-direction: column;
     justify-content: center; /* Vertically center content */
-    align-items: center
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Increased spread and blur for more shadow */
 `;
+
 
 
 const Title = styled.div`
@@ -104,14 +104,18 @@ const ImageToDoChallenge = styled.img`
 `;
 
 const ImageStartoDoChallenge = styled.img`
-    height: 16%;
-    width: 12%;
-    padding: 2rem;
+    height: 12%;
+    width: 9%;
+    padding: 0.5rem;
+    border-radius: 50%; /* Ensures the image itself is round */
+
+    /* Apply box-shadow for a rounded shadow */
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), inset 3px 3px 5px rgba(0, 0, 0, 0.3);
 
     @media (max-width: 540px){
         height: 20%;
         width: 32%;
-        padding: 0.9rem;
+        padding: 0.5rem;
     }
 `;
 
@@ -127,6 +131,28 @@ const ImageDoneChallenge = styled.img`
     }
 `;
 
+const ImageDoneChallengeCounter = styled.img`
+    height: 12%;
+    width: 11%;
+    padding: 2rem;
+
+    @media (max-width: 540px){
+        height: 35%;
+        width: 35%;
+        padding: 0.9rem;
+    }
+`;
+
+const ImageDoneChallengeCounterNumber = styled.div`
+  color: black;
+  font-size: 1.5rem;
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+
+  @media (max-width: 540px){
+    font-size: 1.2rem;
+  }
+`;
 
 const DosisContainer = styled.div`
     // border: 2px solid green;
@@ -141,7 +167,7 @@ const DosisContainer = styled.div`
 `;
 
 const ImageDosis = styled.img`
-    height: 10%;
+    height: 8%;
     width: 13%;
     padding: 1rem;
     transform: rotate(0deg);
@@ -150,6 +176,47 @@ const ImageDosis = styled.img`
         height: 10%;
         width: 38%;
         padding: 0.9rem;
+    }
+`;
+
+const ImageDosisCounter = styled.img`
+    height: 6%;
+    width: 6%;
+    padding: 1rem;
+    transform: rotate(0deg);
+
+    @media (max-width: 540px){
+        height: 29%;
+        width: 29%;
+        padding: 0.9rem;
+    }
+`;
+
+const ImageDosisCounterNumber = styled.div`
+  color: black;
+  font-size: 1.5rem;
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+
+    @media (max-width: 540px){
+      font-size: 1.2rem;
+    }
+`;
+
+const ImageDosisNext = styled.img`
+    height: 8%;
+    width: 13%;
+    padding: 0.5rem;
+    transform: rotate(0deg);
+
+    border-radius: 45%; /* Ensures the image itself is round */
+    /* Apply box-shadow for a rounded shadow */
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), inset 3px 3px 5px rgba(0, 0, 0, 0.3);
+
+    @media (max-width: 540px){
+        height: 10%;
+        width: 38%;
+        padding: 0.5rem;
     }
 `;
 
@@ -339,12 +406,42 @@ const Learning = styled.div`
     }
 `;
 
-const Line = styled.div`
-    margin-top: 2rem;
+
+
+const Level = styled.div`
+  color: black;
+  font-size: 1.5rem;
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  padding-left: 3rem;
+  @media (max-width: 540px){
+    padding-left: 2rem;
+    font-size: 1.2rem;
+  }
+
+  span {
+    font-weight: bold;
+    font-family: "Averia Libre", sans-serif;
+    background-color: var(--green); /* Set the background color to green */
+    padding: 0.1rem 0.5rem; /* Add padding to make the background visible */
+    color: white; /* Set the text color to white */
+}
+  
+`;
+
+const ContainerData = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  /* Additional styles for container if needed */
     
-    width: 100%;
-    height: 2px;
-    background-color: black;
+`;
+
+const SectionContainer = styled.div`
+display: flex;
+align-items: center;
+flex: 1; /* Allow the container to take available space */
+justify-content: center; /* Center its content horizontally */
 `;
 
 
@@ -872,6 +969,10 @@ const couplesData = {
     const [isPopupVisible, setPopupVisible] = useState(false); // State for controlling the popup
     const [popupContent, setPopupContent] = useState(null); 
     const [showPopup, setShowPopup] = useState(false);
+    const [challengesDone, setChallengesDone] = useState(0);
+    const [totalChallenges, setTotalChallenges] = useState(0);
+    const [dosisDone, setDosisDone] = useState(0);
+    const [totalDosis, setTotalDosis] = useState(0);
 
     useEffect(() => {
       if (router.isReady){
@@ -907,18 +1008,50 @@ const couplesData = {
       const fetchData = async () => {
         const response = await get_couple(coupleName);
         setCoupleData(response.data);
-        console.log(response.data);
+    
+        // Calculate number of challenges in 'done' status and total available
+        const responseChallengesDone = response.data.challenges.filter(
+          (challenge) => challenge.status === 'done'
+        ).length;
+        setChallengesDone(responseChallengesDone);
+        const responseTotalChallenges = response.data.challenges.length;
+        setTotalChallenges(responseTotalChallenges);
+    
+        // Calculate number of dosis in 'done' status and total available
+        const responseDosisDone = response.data.pills.filter(
+          (pill) => pill.status === 'done'
+        ).length;
+        setDosisDone(responseDosisDone);
+        const responseTotalDosis = response.data.pills.length;
+        setTotalDosis(responseTotalDosis);
+    
+        console.log('Challenges Done:', challengesDone);
+        console.log('Total Challenges:', totalChallenges);
+        console.log('Dosis Done:', dosisDone);
+        console.log('Total Dosis:', totalDosis);
       };
-
-      if (coupleName !== '') fetchData();
+    
+      fetchData();
     }, [coupleName]);
-
-    console.log("popup content");
-    console.log(popupContent);
+    
     
     return (
         <>
           <HeaderContainer>
+            <ContainerData>
+              <Level><span>NIVEL: CALENTAMIEMTO</span></Level>
+
+              <SectionContainer>
+                <ImageDoneChallengeCounter src="/img/challenges/done_wesex.png" />
+                <ImageDoneChallengeCounterNumber>{`${challengesDone}/${totalChallenges}`}</ImageDoneChallengeCounterNumber>
+              </SectionContainer>
+
+              <SectionContainer>
+              <ImageDosisCounter src="/img/challenges/WeSex_PastiColor.png" />
+              <ImageDosisCounterNumber>{`${dosisDone}/${totalDosis}`}</ImageDosisCounterNumber>
+              </SectionContainer>
+            </ContainerData>
+
             <Header>
               
               {coupleData ? (
