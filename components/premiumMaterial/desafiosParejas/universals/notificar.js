@@ -156,7 +156,7 @@ const DescriptionInstruction = styled.div`
 `;
 
 
-const PopupContent = ({ closePopUp, surveyUrl, setDone }) => {
+const PopupContent = ({ closePopUp, surveyUrl, setDone, type }) => {
     const router = useRouter();
     const [query, setQuery] = useState(null);
     const [comment, setComment] = useState("");
@@ -198,16 +198,32 @@ const PopupContent = ({ closePopUp, surveyUrl, setDone }) => {
             <TitleContainer>
                 <Title>Notificar</Title>
             </TitleContainer>
-                <Instruction><span>Paso 1:</span> Rellenen los formularios cada uno de manera individual.</Instruction>
-            <ContainerNotificarDone>
-            {query && (
-                <SurveyLink onClick={handleNewWindow}>Encuesta {query.members.split('-')[0]} </SurveyLink>
+                
+
+            {type !== "dosis" && (
+                <>
+                    <Instruction><span>Paso 1:</span> Rellenen los formularios cada uno de manera individual.</Instruction>
+                    <ContainerNotificarDone>
+                        {query && (
+                            <SurveyLink onClick={handleNewWindow}>Encuesta {query.members.split('-')[0]} </SurveyLink>
+                        )}
+                        {query && (
+                            <SurveyLink onClick={handleNewWindow}>Encuesta {query.members.split('-')[1]} </SurveyLink>
+                        )}
+                    </ContainerNotificarDone>
+                </>
             )}
-            {query && (
-                <SurveyLink onClick={handleNewWindow}>Encuesta {query.members.split('-')[1]} </SurveyLink>
+            {type !== "dosis" && (
+                <>
+                    <Instruction><span>Paso 2:</span> En pareja, ¿Como se sintieron? ¿Qué se llevaron de esta práctica?.</Instruction>
+                </>
             )}
-            </ContainerNotificarDone>
-                <Instruction><span>Paso 2:</span> En pareja, ¿Como se sintieron? ¿Qué se llevaron de esta práctica?.</Instruction>
+            {type === "dosis" && (
+                <>
+                    <Instruction>En pareja, ¿Como se sintieron? ¿Qué se llevaron de esta práctica?.</Instruction>
+                </>
+            )}
+                
             <CommentInput
                 placeholder="Escriban sus aprendizajes..."
                 value={comment}
@@ -222,7 +238,7 @@ const PopupContent = ({ closePopUp, surveyUrl, setDone }) => {
     );
 };
 
-const NotDoneTask = ({ message, url, color = "green", setDone }) => {
+const NotDoneTask = ({ message, url, color = "green", setDone, type }) => {
     const [showPopup, setShowPopup] = useState(false);
 
     return (
@@ -236,7 +252,7 @@ const NotDoneTask = ({ message, url, color = "green", setDone }) => {
                 <PopupContainer>
                     <PopupDialog>
                         <CloseButton onClick={() => setShowPopup(false)}>✕</CloseButton>
-                        <PopupContent closePopUp={() => setShowPopup(false)} surveyUrl={url} setDone={setDone} />
+                        <PopupContent closePopUp={() => setShowPopup(false)} surveyUrl={url} setDone={setDone} type={type}/>
                     </PopupDialog>
                 </PopupContainer>
             )}  
@@ -288,7 +304,7 @@ const DoneTask = ({ task, query}) => {
 };
 
 
-const Notificar = ({ message, url, color = "green" }) => {
+const Notificar = ({ message, url, color = "green", type }) => {
     const router = useRouter();
     const [query, setQuery] = useState(null);
     const [task, setTask] = useState(null);
@@ -328,7 +344,7 @@ const Notificar = ({ message, url, color = "green" }) => {
             {completed ? (
                 <DoneTask task={task} query={query}/>
             ) : (
-                <NotDoneTask message={message} url={url} color={color} setDone={setCompleted} />
+                <NotDoneTask message={message} url={url} color={color} setDone={setCompleted} type={type}/>
             )}
         </>
     );

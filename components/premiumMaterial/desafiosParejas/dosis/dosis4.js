@@ -131,7 +131,7 @@ const Dosis4 = () => {
             
             </Border>
             <Notificar message='¡ Notificar que completamos la dosis4 !' url={`https://wa.me/5491140678698?
-                    text=Hola!%20Terminamos%20la%20dosis%20cuatro`}/>
+                    text=Hola!%20Terminamos%20la%20dosis%20cuatro`} color="violet" type="dosis"/>
         </Background>
     )
 };
