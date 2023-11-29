@@ -15,7 +15,7 @@ const BotonNotificarDone = styled.a`
     color: white;
     border: none;
     border-radius: 20px;
-    padding: 5px 20px;
+    padding: 5px 14px;
     cursor: pointer;
     font-weight: bold;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a box shadow */
