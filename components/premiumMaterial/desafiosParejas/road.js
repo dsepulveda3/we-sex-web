@@ -137,8 +137,8 @@ const ImageDoneChallengeCounter = styled.img`
     padding: 2rem;
 
     @media (max-width: 540px){
-        height: 35%;
-        width: 35%;
+        height: 37%;
+        width: 37%;
         padding: 0.9rem;
     }
 `;
@@ -150,7 +150,7 @@ const ImageDoneChallengeCounterNumber = styled.div`
   font-weight: bold;
 
   @media (max-width: 540px){
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 `;
 
@@ -186,8 +186,8 @@ const ImageDosisCounter = styled.img`
     transform: rotate(0deg);
 
     @media (max-width: 540px){
-        height: 29%;
-        width: 29%;
+        height: 31%;
+        width: 31%;
         padding: 0.9rem;
     }
 `;
@@ -199,7 +199,7 @@ const ImageDosisCounterNumber = styled.div`
   font-weight: bold;
 
     @media (max-width: 540px){
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
 `;
 
