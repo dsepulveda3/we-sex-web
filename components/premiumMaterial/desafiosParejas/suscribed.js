@@ -357,6 +357,9 @@ const Suscribed = () => {
                                 onChange={setPhoneNumberTwo}
                                 inputComponent={InputPhoneNumber}
                             />
+                            <Text>
+                                ¡Revisa tu email una vez presionado continuar!
+                            </Text>
                             <BotonArs onClick={handleStepOneSubmit} disabled={!isFormValid}>¡Continuar!</BotonArs>
                         </div>
                         </div>
