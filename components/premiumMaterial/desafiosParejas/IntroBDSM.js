@@ -492,7 +492,7 @@ const IntroBDSM = () => {
                 </Row>
         </Container>
         
-        <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/tJd5VJ4MGiVyRcG16`}/>
+        <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/rE3d8UXN5rA6wyM39`}/>
 
         </Background>
       )}

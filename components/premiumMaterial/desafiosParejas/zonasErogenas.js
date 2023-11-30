@@ -512,7 +512,7 @@ const ZonasErogenas = () => {
                             </Text2>
                     </Row>
             </Container>
-            <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/MSBTr9Dfwsaycot167`}/>
+            <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/5YiiW1dTRfy5D3vZA`}/>
             </Background>
           )}
         </section>

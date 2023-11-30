@@ -501,7 +501,7 @@ const Sexting2 = () => {
                 </Row>
         </Container>
         
-        <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/tJd5VJ4MGiVyRcG16`}/>
+        <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/MBYhao3pxfaxQCpS8`}/>
 
         </Background>
       )}
