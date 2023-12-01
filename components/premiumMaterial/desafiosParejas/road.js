@@ -55,16 +55,16 @@ const Background = styled.div`
     padding-top: 2rem;
     // background: white;
     text-align: center;
-    height: 100vh;
+    min-height: 100%;
 
     @media (min-width: 540px){
         padding: 0rem 10rem 20rem 10rem;
-        height: 135vh;
+        min-height: 100%;
     }
 
     @media (max-width: 540px){
         padding: 0rem 1rem 20rem 1rem;
-        height: 100vh;
+        min-height: 100%;
     }
 `;
 
