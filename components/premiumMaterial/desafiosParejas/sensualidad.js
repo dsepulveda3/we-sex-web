@@ -267,7 +267,7 @@ const FullscreenCanvas = styled.div`
   align-items: center;
 `;
 
-const Sexting2 = () => {
+const Sensualidad = () => {
     const [showAnimation, setShowAnimation] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [isOpen2, setIsOpen2] = useState(false);
@@ -398,24 +398,110 @@ const Sexting2 = () => {
                 <Row className="justify-content-between">
                     <ContentTitle>
                         <Title>Desafío:</Title>
-                        <SubTitle><span>Erotismo Virual</span></SubTitle>
+                        <SubTitle><span>Sensualidad</span></SubTitle>
                     </ContentTitle>
                     {/* <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle> */}
-                    <Col xs="12" lg="12" md="3">
+                    <Text >
+
+                        <span>Objetivo:</span> Transformar la colocación y utilización del preservativo en un momento sensual y excitante para la pareja, reforzando la conexión a través de la mirada y el tacto.
+                        <br />
+                        <br />
+                        Materiales necesarios: Preservativos, lubricante (opcional), ambiente relajado. Tiempo recomendado: entre 30 a 60 minutos.
+                        <br/>
+                        <br/>
+                        Este juego propone convertir un momento común en algo más sensual y conectado, reforzando la intimidad y el deseo entre la pareja. Si con tu pareja no utilizan preservativo, este desafío también será parte de salir de la rutina.
+                    </Text>
+                    <Text >
+
+                        <span>Pasos del juego:</span> 
+                        <br />
+                        <br />
+                        <ol>
+                            <li>
+                            <strong style={{textDecoration: "underline"}}>Preparación del ambiente:</strong> Crear un entorno íntimo y relajado. Pueden encender velas, poner música suave o cualquier detalle que genere una atmósfera sensual.
+                            </li>
+                            <li>
+                            <strong style={{textDecoration: "underline"}}>Conexión visual:</strong> Pueden sentarse frente a frente, manteniendo contacto visual constante. La mirada es clave para intensificar la conexión emocional y el deseo. 
+                            </li>
+                            La idea es que se miren por dos minutos sin hablar. Es habitual que los primeros segundos aparezcan risas y cierta incomodidad, luego de eso la liberación de oxitocina por mirarnos aumenta la empatía y el deseo sexual. Es útil intentar conectar ambas respiraciones para que el tiempo fluya.
+                            <li>
+                            <strong style={{textDecoration: "underline"}}>Exploración táctil:</strong> Comiencen a acariciarse suavemente mientras mantienen la mirada.
+                                <ul>
+                                    <li>
+                                    Pueden comenzar el roce por ejemplo desde la boca, luego las mejillas, la frente, cabeza y cabello.
+                                    </li>
+                                    <li>
+                                    Después suavemente ir bajando por el cuello, los hombros y las manos. Luego lo mismo en el otro brazo.
+                                    </li>
+                                    <li>
+                                    Podemos seguir por el centro del pecho hasta el ombligo. Sugerimos de ahí pasar a los pies, con un suave masaje subir por piernas hasta la genitalidad y recorrer la misma suavemente hasta la erección.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                            <strong style={{textDecoration: "underline"}}>Integración del preservativo:</strong> Uno de ustedes toma el preservativo y, sin dejar de mirarse, comienza a abrirlo lentamente. El contacto visual es fundamental durante todo el proceso. Lo ideal es que la persona que lo coloque no sea la persona que va a recibir el preservativo.
+                            </li>
+                            <li>
+                            <strong style={{textDecoration: "underline"}}>Colocación sensual:</strong> El objetivo es colocar el preservativo de manera erótica. Pueden utilizar lubricante si lo desean para hacerlo más placentero. Permitan que los gestos sean suaves, sensuales y conectados. Podemos presentarlo en la punta del pene con la boca y luego bajarlo con las manos.
+                            </li>
+                            <li>
+                            <strong style={{textDecoration: "underline"}}>Continuar la conexión:</strong>  Después de haber colocado el preservativo, continúen manteniendo contacto visual y acariciándose mutuamente. Este momento puede convertirse en una transición íntima hacia juegos previos.
+                            </li>
+                        </ol>
+                    </Text>
+                    <Text>
+                        <span>Ahora elijan su propia aventura</span>
+                        <br/>
+                        <br/>
+                        Luego de poner el preservativo sensualmente, seguir con:
+                        <br/>
+                        <ul>
+                            <li>
+                            Masturbación: Prueben con mucho lubricante y con ambas manos. Pregúntale a tu pareja si prefiere la masturbación desde la base hasta la punta, o solo en la punta y anda ajustando según donde sienta mas placer.
+                            </li>
+                            <li>
+                            Sexo oral: Para evitar el gusto del preservativo recomendamos añadir lubricante con sabor y/o que sea un preservativo con sabo
+                            </li>
+                            <li>
+                            Apoyar el pene con el preservativo puesto sobre la vulva de tu pareja, pero sin penetrar. Solo friccionando contra su vulva y clítoris. También recomendamos añadir lubricante aquí.
+                            </li>
+                        </ul>
+                        Finalmente como frutilla del postre, gocen de la penetración.
+                    </Text>
+                </Row>
+                <Row className="justify-content-between">
+                <Col xs="12" lg="12" md="3">
                         <Card style={{margin:"30px 10px 10px 10px"}}>
                             <CardHeader onClick={toggle} style={{backgroundColor: "white "}}>
                             <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
                                 <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
-                                <TitleQuestion>¿Por qué en los primeros meses de la relación se mantiene un coqueteo virtual y luego con el correr del tiempo algunas parejas dejan de hacerlo?</TitleQuestion>
+                                <TitleQuestion>Material de apoyo: Cómo colocar un preservativo correctamente</TitleQuestion>
                             </div>
                             <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
                             </CardHeader>
                             <Collapse isOpen={isOpen}>
                                 <CardBody>
                                     <AnswerQuestion>
-                                        Hablar y compartir fantasías, es normal. Nutre el deseo y pueden incluir o no al vínculo, por eso son fantasías.😏
-                                        <br />
-                                        Es clave mantener encendido el vínculo desde el erotismo cotidiano, y si dejaste de hacerlo o nunca lo hiciste, este desafío te da la oportunidad de experimentarlo.
+                                        <ol>
+                                            <li>
+                                            Chequear fecha de vencimiento.
+                                            </li>
+                                            <li>
+                                            Abrirlo con la punta de los dedos, no con los dientes ni las uñas ni tijeras.
+                                            </li>
+                                            <li>
+                                            Al momento de ponerlo ten en cuenta que el preservativo solo puede desenrollarse en una dirección, por lo que tienes que asegurarte de que esté en la posición correcta. La punta tiene que mirar hacia arriba, y los bordes del preservativo deben estar enrollados hacia afuera.
+                                            </li>
+                                            <li>
+                                            Con el pene erecto, colocarlo sobre la punta del glande.
+                                            </li>
+                                            <li>
+                                            Con cuidado, agarra la punta del preservativo entre tu dedo índice y tu pulgar usando las yemas de los dedos y asegurándote de dejar un espacio entre tu pene y la punta del condón para el esperma. Con la otra mano desenrolla el preservativo hasta la base del pene.
+                                            </li>
+                                            <li>
+                                            Si el preservativo no se desenrolla con facilidad es porque probablemente está al revés, en ese caso tienes que usar uno nuevo. Es importante no voltear el preservativo y usarlo, porque puede haber líquido pre-seminal lo que los expondría a ambos a una situación poco segura.
+                                            </li>
+                                        </ol>
                                     </AnswerQuestion>
                                 </CardBody>
                             </Collapse>
@@ -426,74 +512,32 @@ const Sexting2 = () => {
                             <CardHeader onClick={toggle2} style={{backgroundColor: "white "}}>
                             <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
                                 <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
-                                <TitleQuestion>¿Cómo sostener el erotismo virtual?</TitleQuestion>
+                                <TitleQuestion><strong>Feedback:</strong> Les dejamos 3 preguntas para hacerse y anotar en su diario sexual de pareja</TitleQuestion>
                             </div>
                             <i className={isOpen2 ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
                             </CardHeader>
                             <Collapse isOpen={isOpen2}>
                                 <CardBody>
                                     <AnswerQuestion>
-                                        Ponerlo en agenda es clave, por eso vamos a ir paso a paso:
-                                        <br />
-                                        <ol>
+                                        <ul>
                                             <li>
-                                                Cada uno tendrá que elegir entre 1 a 3 materiales eróticos, ya sean música, relatos eróticos, una foto, un video de algún acto sexual, o lo que sea que los erotice.
+                                            ¿Cómo se sintieron con la experiencia?
                                             </li>
                                             <li>
-                                                Enviale a tu pareja los contenidos eróticos que hayas elegido. ¿Cuándo? Sugerimos agendar un día en la semana para enviar los contenidos. Saber qué día de la semana vas a recibir ese contenido erótico en un momento cotidiano, prepara nuestro deseo y expectativas.
+                                            Pudieron ponerse en modo sexy o les salió en modo automático.
                                             </li>
                                             <li>
-                                                <strong>Palabra de seguridad:</strong> Sugerimos que envíen un pre aviso consensuado así el cerebro se acomoda, y si por ahi estoy en el trabajo, o en algún lugar desprevenido, puedo tomarme 5 minutos, buscar algo de intimidad y mirar lo que me mandan. La palabra de seguridad puede ser divertida y no erótica, como por ejemplo AREPA, o una más sexy, como LÁTIGO.
+                                            Del 1 al 10, qué tan sexy sintieron la colocación del preservativo de esa manera.
                                             </li>
-                                            <li>
-                                                Es importante dar una devolución de qué sentiste o qué te pareció el contenido que te compartieron. Ejemplos de feedback que podemos dar a quien nos envió el contenido según lo que sintamos: &quot;Gracias , me re calentaste&quot;  &quot;No veo la hora de verte y hacer esto&quot; Es clave que este coqueteo no sea por medio de emojis solamente y que le pongamos arte y palabras a nuestras sensaciones.
-                                            </li>
-                                        </ol>
+                                        </ul>
                                     </AnswerQuestion>
                                 </CardBody>
                             </Collapse>
                         </Card>
                     </Col>
-                    <Text >
-                        <span>Pasando a al acción:</span>
-                        <br />
-                        <br />
-                        Llegado el día que hayan quedado para tener su encuentro sexual, les sugerimos cómo incorporar esta calentura acumulada en la semana:
-                        <br />
-                        <br />
-                        Elijan uno de los contenidos que mas les gusto para llevarlo a cabo a su manera en este encuentro. Si lo que enviaron fue una canción, pueden ponerla mientras se desnudan, si fue un video, pueden usarlo de inspiración o realizar esa práctica, si fue un relato erótico pueden leerlo mientras se recorren el cuerpo o actuar como si fuesen los personajes del mismo…
-                        <br />
-                        <br />
-                        También pueden elegir charlar sobre cómo los calentó este ida y vuelta erótico antes de pasar a la conexión física.
-                        <br />
-                        <br />
-                        Incluso si percibieron resistencia o dificultades a la hora de buscar o enviar contenido, pueden aprovechar para hablar de eso y aumentar su intimidad vincular. Simplemente hablarlo con tu pareja es un gran aprendizaje para mejorar la comunicación en la pareja.
-                        <br />
-                        <br />
-                        Para resumir, los pasos son:
-                        <br />
-                        <br />
-                        <ol>
-                            <li>
-                                Estoy atento en la semana a investigar qué contenido me erotiza.
-                            </li>
-                            <li>
-                                Seteo un día o momento que quiera para enviarselo a mi pareja con la palabra de seguridad.
-                            </li>
-                            <li>
-                                Doy feedback a mi pareja de lo que me pareció el contenido que recibí. Me dejó calentar por lo mismo y me doy el tiempo para disfrutarlo.
-                            </li>
-                            <li>
-                                El día del encuentro sexual, utilizo el contenido de inspiración.
-                            </li>
-                        </ol>
-                    </Text>
-                    
                 </Row>
                 <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
                         <Text2>
-                            <span>¿Qué pasaría si esta semana, el tiempo que usamos en redes sociales lo ponemos al servicio de nuestro erotismo?</span>
-                            <br />
                             <span>Que disfruten,</span>
                             <br/>
                             <span>El equipo de WeSex.</span>
@@ -509,4 +553,4 @@ const Sexting2 = () => {
     )
 }
 
-export default Sexting2;
+export default Sensualidad;
