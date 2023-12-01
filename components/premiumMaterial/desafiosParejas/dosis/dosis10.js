@@ -124,7 +124,7 @@ const Dosis10 = () => {
             <Logo src='/img/logo_wesex_croped.png' />
             
             {/* <Title>Agradecimientos diarios</Title> */}
-            <SubTitle>Dosis de calentura</SubTitle>
+            <SubTitle>Dosis de calentura 2.0</SubTitle>
 
             
             <Text style={{padding: "2rem"}}>Envía un mensaje a tu pareja contándole todo lo que le harías la próxima vez que le veas.</Text>
