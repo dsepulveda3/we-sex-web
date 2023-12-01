@@ -9,6 +9,26 @@ const HeaderContainer = styled.div`
 
 
 
+const LevelBox = styled.div`
+    background-color: var(--green);
+    height: 5vh;
+    font-size: 1.2rem;
+    width: 100%;
+    font-weight: bold;
+    border-radius: 12px; /* Apply border-radius to all corners */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Increased spread and blur for more shadow */
+`;
+
+const LevelBoxContainer = styled.div`
+  background-color: #ebe4f8;
+`;
+
+
+
 const Header = styled.div`
     background-image: url("/img/landing/cta-bg.webp");
     height: 10vh;
@@ -21,7 +41,6 @@ const Header = styled.div`
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Increased spread and blur for more shadow */
 `;
-
 
 
 const Title = styled.div`
@@ -835,6 +854,13 @@ const Popup = ({
               )}
             </Header>
           </HeaderContainer>
+
+          <div style={{paddingTop: "1rem", backgroundColor: "#ebe4f8"}}></div>
+          <LevelBoxContainer>
+            <LevelBox>
+              Nivel 1
+            </LevelBox>
+          </LevelBoxContainer>
           <Background>
           <div onClick={handleWarningSymbolClick} style={{textAlign: "right", padding: "0.5rem"}}>ℹ️</div>
             <ChallengesAndDosisContainer>

@@ -456,10 +456,10 @@ const HablemosDeSexo = () => {
                         <span>Paso 1: Vístanse para una cita y salgan. ¿A dónde? A donde quieran. Les proponemos algún bar de la zona que les guste y tenga onda. Tal vez alguno que les traiga buenos recuerdos, que les divierta. También puede ser un café, una plaza o el lugar que deseen.</span>
                         <br/>
                         <br/>
-                        <span>Paso 2: Una vez lleguen al lugar elegido para la cita, el siguiente paso es jugar a un ping-pong de preguntas que les dejamos aquí abajo:</span>
+                        <span>Paso 2: Una vez lleguen al lugar elegido para la cita, el siguiente paso es jugar a un ping-pong de preguntas que les dejamos aquí abajo, creado por la Sexologa y Dra. Barbara García.</span>
                         <br/>
                         <br/>
-                        PingPong sex: Dense tiempo para charlar. Dejen que la conversación fluya a donde tenga que ir, y siempre tendrán el listado de preguntas para volver a la siguiente.
+                        Tips PingPong sex: Dense tiempo para charlar. Dejen que la conversación fluya a donde tenga que ir, y siempre tendrán el listado de preguntas para volver a la siguiente.
                         </Text>
                         <Col xs="12" lg="6" md="3">
                             <Card style={{margin:"10px 10px 10px 10px"}}>
