@@ -460,7 +460,7 @@ const Sensualidad = () => {
                             Masturbación: Prueben con mucho lubricante y con ambas manos. Pregúntale a tu pareja si prefiere la masturbación desde la base hasta la punta, o solo en la punta y anda ajustando según donde sienta mas placer.
                             </li>
                             <li>
-                            Sexo oral: Para evitar el gusto del preservativo recomendamos añadir lubricante con sabor y/o que sea un preservativo con sabo
+                            Sexo oral: Para evitar el gusto del preservativo recomendamos añadir lubricante con sabor y/o que sea un preservativo con sabor.
                             </li>
                             <li>
                             Apoyar el pene con el preservativo puesto sobre la vulva de tu pareja, pero sin penetrar. Solo friccionando contra su vulva y clítoris. También recomendamos añadir lubricante aquí.
