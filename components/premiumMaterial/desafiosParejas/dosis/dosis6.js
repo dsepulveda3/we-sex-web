@@ -130,7 +130,7 @@ const Dosis6 = () => {
             <Text style={{padding: "2rem"}}>Hoy los invitamos a leer este relato erotico antes de dormir… Cortito y al pie, para empezar a introducirse en este mundo : <a style={{textDecoration: "underline"}} href={"https://we.sex/articleDetail/6360424acb77480861a979fd"}>Articulo WeSex</a></Text>
             
             </Border>
-            <Notificar message='¡ Notificar que completamos la dosis5 !' url={`https://wa.me/5491140678698?
+            <Notificar message='¡Notificar que completamos la dosis!' url={`https://wa.me/5491140678698?
                     text=Hola!%20Terminamos%20la%20dosis%20cinco`} color="violet" type="dosis"/>
         </Background>
     )

@@ -130,7 +130,7 @@ const Dosis7 = () => {
             <Text style={{padding: "2rem"}}>Dediquen 5 minutos donde uno habla y el otro simplemente escucha, sin interrumpir. Luego, cambian roles.</Text>
             
             </Border>
-            <Notificar message='¡ Notificar que completamos la dosis7 !' url={`https://wa.me/5491140678698?
+            <Notificar message='¡Notificar que completamos la dosis!' url={`https://wa.me/5491140678698?
                     text=Hola!%20Terminamos%20la%20dosis%20cinco`} color="violet" type="dosis"/>
         </Background>
     )

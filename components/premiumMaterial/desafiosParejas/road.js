@@ -353,6 +353,7 @@ const PopupContainer2 = styled.div`
   z-index: 999; /* Ensure the pop-up is on top of other elements */
 `;
 
+
 const PopupDialog2 = styled.div`
   background-color: white;
   padding: 2rem;
@@ -543,12 +544,15 @@ const ClockOrSubmit = ({ timestamp, startTime, onClick }) => {
 };
 
 const PopupContent2 = () => {
+
   return (
     <>
       <br />
+      
       <InfoText>
         Terminos y condiciones: al acceder a &quot;desafios para parejas&quot; aceptas los <a style={{fontSize: "1.5rem"}} href={'/privacy-policy'}><span>términos y condiciones</span>.</a>
       </InfoText>
+    
       
       {/* Add more content as needed */}
     </>
@@ -1119,8 +1123,8 @@ const couplesData = {
         {/* Add the WarningPopup component here */}
        
         {showPopup && (
-                <PopupContainer2>
-                    <PopupDialog2>
+                <PopupContainer2 onClick={() => setShowPopup(false)}>
+                    <PopupDialog2 onClick={(e) => e.stopPropagation()}>
                         <CloseButton2 onClick={() => setShowPopup(false)}>✕</CloseButton2>
                         <PopupContent2 />
                     </PopupDialog2>

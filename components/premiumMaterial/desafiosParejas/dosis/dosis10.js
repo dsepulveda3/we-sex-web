@@ -84,7 +84,7 @@ const Text = styled.div`
 
 
 
-const Dosis4 = () => {
+const Dosis10 = () => {
 
     const [selectedOption, setSelectedOption] = useState('op1');
     const [numeroAleatorio, setNumeroAleatorio] = useState(null);
@@ -127,13 +127,13 @@ const Dosis4 = () => {
             <SubTitle>Dosis de calentura</SubTitle>
 
             
-            <Text style={{padding: "2rem"}}>Hoy les traemos una dosis, pero de calentura: Tienen que besarse intensamente en un momento cotidiano del día. ¿Cuándo? La primera vez que hagan contacto visual luego de leer este mensaje.</Text>
+            <Text style={{padding: "2rem"}}>Envía un mensaje a tu pareja contándole todo lo que le harías la próxima vez que le veas.</Text>
             
             </Border>
             <Notificar message='¡Notificar que completamos la dosis!' url={`https://wa.me/5491140678698?
-                    text=Hola!%20Terminamos%20la%20dosis%20cuatro`} color="violet" type="dosis"/>
+                    text=Hola!%20Terminamos%20la%20dosis%20cinco`} color="violet" type="dosis"/>
         </Background>
     )
 };
 
-export default Dosis4;
+export default Dosis10;

@@ -130,7 +130,7 @@ const Dosis8 = () => {
             <Text style={{padding: "2rem"}}>Luego de leer esta consigna, escriban en un papelito algo que les gustaría que su pareja les hiciera esta noche. Cuando se vean, intercambien papelitos.</Text>
             
             </Border>
-            <Notificar message='¡ Notificar que completamos la dosis8 !' url={`https://wa.me/5491140678698?
+            <Notificar message='¡Notificar que completamos la dosis!' url={`https://wa.me/5491140678698?
                     text=Hola!%20Terminamos%20la%20dosis%20cinco`} color="violet" type="dosis"/>
         </Background>
     )

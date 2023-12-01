@@ -130,7 +130,7 @@ const Dosis3 = () => {
             <Text style={{padding: "2rem"}}>Dediquen 1 minuto a mirarse a los ojos sin hablar. Pongan un temporizador y 👀.</Text>
             
             </Border>
-            <Notificar message='¡ Notificar que completamos la dosis3 !' url={`https://wa.me/5491140678698?
+            <Notificar message='¡Notificar que completamos la dosis!' url={`https://wa.me/5491140678698?
                     text=Hola!%20Terminamos%20la%20dosis%20tres`} color="violet" type="dosis"/>
         </Background>
     )

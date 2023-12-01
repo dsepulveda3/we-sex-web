@@ -111,8 +111,8 @@ const Feedback = ({challengeName}) => {
             </BotonNotificarDone>
         </ContainerNotificarDone>
         {showPopup && (
-                <PopupContainer2>
-                    <PopupDialog2>
+                <PopupContainer2 onClick={() => setShowPopup(false)}>
+                    <PopupDialog2 onClick={(e) => e.stopPropagation()}>
                         <CloseButton2 onClick={() => setShowPopup(false)}>✕</CloseButton2>
                         <PopupContent2 challengeName={challengeName}/>
                     </PopupDialog2>

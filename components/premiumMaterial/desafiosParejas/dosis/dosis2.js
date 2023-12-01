@@ -130,7 +130,7 @@ const Dosis2 = () => {
             <Text style={{padding: "2rem"}}>Recuerden su primera vez Los invitamos a recordar como fue la primera vez que tuvieron sexo entre ustedes. Dense 5 minutos para charlar de esa primera vez y sobre que sintieron en ese momento ❤️ 😉</Text>
             
             </Border>
-            <Notificar message='¡ Notificar que completamos la dosis2 !' url={`https://wa.me/5491140678698?
+            <Notificar message='¡Notificar que completamos la dosis!' url={`https://wa.me/5491140678698?
                     text=Hola!%20Terminamos%20la%20dosis%20dos`} color="violet" type="dosis"/>
         </Background>
     )

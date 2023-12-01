@@ -292,8 +292,8 @@ const DoneTask = ({ task, query}) => {
                 </BotonNotificarDone>
             </ContainerDone>
             {showPopup && (
-                <PopupContainer>
-                    <PopupDialog>
+                <PopupContainer onClick={() => setShowPopup(false)}>
+                    <PopupDialog onClick={(e) => e.stopPropagation()}>
                         <CloseButton onClick={() => setShowPopup(false)}>✕</CloseButton>
                         <PopupContentDone comment={task.comment}  member1={query.members.split('-')[0]} member2={query.members.split('-')[1]}/>
                     </PopupDialog>
