@@ -821,7 +821,23 @@ const Popup = ({
     
       fetchData();
     }, [coupleName]);
+
     
+  const renderLevelBoxes = () => {
+    const levelBoxes = [];
+    const numberOfLevels = Math.ceil(totalChallenges / 5); // Calculate the number of LevelBoxes required
+
+    for (let i = 1; i <= numberOfLevels; i++) {
+      levelBoxes.push(
+        <div key={i} style={{ paddingTop: '1rem', backgroundColor: '#ebe4f8' }}>
+          <LevelBoxContainer>
+            <LevelBox>{`Nivel ${i}`}</LevelBox>
+          </LevelBoxContainer>
+        </div>
+      );
+    }
+    return levelBoxes;
+  };
     
     return (
         <>
@@ -838,6 +854,7 @@ const Popup = ({
               <ImageDosisCounter src="/img/challenges/WeSex_PastiColor.png" />
               <ImageDosisCounterNumber>{`${dosisDone}/${totalDosis}`}</ImageDosisCounterNumber>
               </SectionContainer>
+              <div onClick={handleWarningSymbolClick} style={{textAlign: "right", padding: "0.5rem"}}>ℹ️</div>
             </ContainerData>
 
             <Header>
@@ -854,15 +871,13 @@ const Popup = ({
               )}
             </Header>
           </HeaderContainer>
-
-          <div style={{paddingTop: "1rem", backgroundColor: "#ebe4f8"}}></div>
-          <LevelBoxContainer>
-            <LevelBox>
-              Nivel 1
-            </LevelBox>
-          </LevelBoxContainer>
           <Background>
-          <div onClick={handleWarningSymbolClick} style={{textAlign: "right", padding: "0.5rem"}}>ℹ️</div>
+            {/* {renderLevelBoxes()} */}
+            <div style={{ paddingTop: '1rem', backgroundColor: '#ebe4f8' }}></div>
+            <LevelBoxContainer>
+            <LevelBox>Nivel 1</LevelBox>
+          </LevelBoxContainer>
+            <div style={{paddingTop: "1rem", backgroundColor: "#ebe4f8"}}></div>
             <ChallengesAndDosisContainer>
               <ChallengesContainer>
                 {coupleData ? (
@@ -925,3 +940,11 @@ const Popup = ({
     };
   
 export default Road;
+
+
+{/* <div style={{paddingTop: "1rem", backgroundColor: "#ebe4f8"}}></div>
+            <LevelBoxContainer>
+              <LevelBox>
+                Nivel 1
+              </LevelBox>
+            </LevelBoxContainer> */}
