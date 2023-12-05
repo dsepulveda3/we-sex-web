@@ -36,7 +36,7 @@ export default function BarbiGarcia() {
         discount="Referido por Barbi García"
         price_mp_basic="15,600 ARS/pareja"
         mp_basic="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b48faa1018b4e0e455f0357" 
-        price_mp_estandar="20,000 ARS/pareja"
+        price_mp_estandar="21,000 ARS/pareja"
         mp_estandar="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b48fa3b018b4e0e9bc40338"
         price_mp_premium="27,000 ARS/pareja"
         mp_premium="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b48faa1018b4e0f1aa30358"

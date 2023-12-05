@@ -33,6 +33,8 @@ export default function TestingA() {
             freshpaint.track("Test A (Argentina) - PRICING ", {"Path": currentRoute});
         } else if (currentRoute === '/premium-material/desafios-para-parejas/testing-a?origin=Otro'){
           freshpaint.track("Test A (Otro) - PRICING ", {"Path": currentRoute});
+        } else if (currentRoute === '/premium-material/desafios-para-parejas/testing-a?origin=Chile'){
+          freshpaint.track("Test A (Chile) - PRICING ", {"Path": currentRoute});
         }
         
     }
@@ -69,7 +71,7 @@ export default function TestingA() {
 
         price_mp_basic="20,000 ARS/pareja"
         mp_basic="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b95ad95018ba6c9468709c0" 
-        price_mp_estandar="30,000 ARS/pareja"
+        price_mp_estandar="32,000 ARS/pareja"
         mp_estandar="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b95ad8a018ba6ca546e0a1a"
         price_mp_premium="44,000 ARS/pareja"
         mp_premium="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b95ad95018ba6cb937a09c4"

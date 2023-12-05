@@ -276,7 +276,7 @@ const Guides = () => {
                 <Row data-aos="fade-left">
                 {/* <Col lg="4" md="12" > */}
                 <Col lg="4" md="12" >
-                <Link href="/premium-material/desafios-para-parejas">
+                <Link href="/premium-material/desafios-para-parejas/testing?origin=Argentina">
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageBomb src="/img/premium-material/rutina_bomba.png" className="img-fluid" alt='Logotipo guias WeSex'/>
