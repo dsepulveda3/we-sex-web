@@ -337,10 +337,12 @@ const SexoOral = () => {
     const [showAnimation, setShowAnimation] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [isOpen2, setIsOpen2] = useState(false);
+    const [isOpen3, setIsOpen3] = useState(false);
     const names = ["Quien presiono este botón", "Quien NO presionó este botón"]; // Add the names you want to choose from
     const [chosenName, setChosenName] = useState("");
     const toggle = () => setIsOpen(!isOpen);
     const toggle2 = () => setIsOpen2(!isOpen2);
+    const toggle3 = () => setIsOpen3(!isOpen3);
     const appRef = useRef(null); // Create a ref to hold the PIXI application
 
     const router = useRouter();
@@ -559,7 +561,12 @@ const SexoOral = () => {
                                 <div>
                                     <img src='/img/premium-material/woman-to-man-SO.jpeg'/>
                                 </div>
-                                La posición no tiene nada de distinto, pero sí los tips que te vamos a mandar por privado para que sorprendas a tu pareja con algunos truquitos nuevos 😉
+                                La posición no tiene nada de distinto, pero sí los tips estos tips privados para que sorprendas a tu pareja con algunos truquitos nuevos 😉
+                                <br />
+                                <br />
+                                <a style={{textDecoration: "underline"}} href="https://www.we.sex/premium-material/desafios-para-parejas/tips-cv">Tips para persona dar sexo oral a persona con vulva</a>
+                                <br />
+                                <a style={{textDecoration: "underline"}} href="https://www.we.sex/premium-material/desafios-para-parejas/tips-cp">Tips para persona dar sexo oral a persona con pene</a>
                             </Text2>
                     </Row>
             </Container>
