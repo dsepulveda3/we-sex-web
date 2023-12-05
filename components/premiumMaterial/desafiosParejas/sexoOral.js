@@ -526,7 +526,7 @@ const SexoOral = () => {
                         <br/>
                         La persona que esté estimulando, también tendrá una sola cosa en la que concentrarse: 
                         <br/>
-                        Dar placer. Disfruta de hacer gozar a tu pareja, de excitarte de ver a tu pareja excitada. También te alentamos a que le preguntes a tu pareja, ¿te gusta así? O simplemente decir: "guíame".
+                        Dar placer. Disfruta de hacer gozar a tu pareja, de excitarte de ver a tu pareja excitada. También te alentamos a que le preguntes a tu pareja, ¿te gusta así? O simplemente decir: &quot;guíame&quot;.
                         <br/>
                         <br/>
                         {/* <BotonRandom onClick={chooseRandomName}>¿Quién comienza?</BotonRandom>
