@@ -541,7 +541,7 @@ const PechoALasBalas = () => {
                         </Text2>
                 </Row>
             </Container>
-            <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/8oW1tTcHAiryn7zW7`}/>
+            <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/Ssbou7gLatTsoPwH7`}/>
             </Background>
           )}
         </section>
