@@ -469,13 +469,13 @@ const JuegoRoles = () => {
                         Para el desafío de este fin de semana, los vamos a invitar a jugar y divertirse ;)
                         <br/>
                         <br/>
-                        Queremos que saquen a la luz su actor interior y se animen a un juego de roles.
+                        Queremos que saquen a la luz su actor interior y se animen a un juego de roles. 
                         <br/>
                         <br/>
                         Abajo les dejaremos un guion para que puedan utilizar como base en el juego de roles.
 
                         <Text style={{marginBottom: "0px"}}>
-                            Presiona el botón antes de leer las instrucciones.
+                            En este desafío, quien elegirá la fantasía será sorteado con este boton: 
                             <br />
                             <br />
                             <BotonRandom onClick={chooseRandomName}>¿Quién comienza?</BotonRandom>
@@ -484,10 +484,9 @@ const JuegoRoles = () => {
                             {chosenName && <div>Comienza: {chosenName}</div>}
                         </Text>
 
-                        <span>En este desafío, quien elegirá la fantasía será {chosenName}.</span> Es tu turno de decidir cuál te gustaría 
-                        llevar a cabo. ¿Serás vos el que se disfrace, los dos o será tu pareja? ¿Te gustaría que se disfrace de abogado, 
-                        profesor, médico? Hoy, elegís y propones vos. Tu pareja podrá evaluar si se siente cómodo con esa fantasía y, 
-                        en caso de que no la acepte, podrás pensar en otra, hasta que lleguen a una con la que ambos se sientan cómodos. 
+                        <span>En este desafío, quien elegirá la fantasía será {chosenName}.</span> Es tu turno de decidir cuál te gustaría llevar a cabo. ¿Serás vos quien se disfrace, los dos o solo tu pareja? 
+                        ¿Te gustaría que se disfrace de abogadx, profesorx, médicx? Hoy, elegís y propones vos. 
+                        Tu pareja podrá evaluar si se siente en comodidad con esa fantasía y, en caso de que no la acepte, podrás pensar en otra, hasta que lleguen a una con la que ambos se sientan cómodos. 
                         Siempre mantenemos el consentimiento y la comunicación como base para todos los desafíos.
                         <br/>
                         <br/>

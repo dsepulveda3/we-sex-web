@@ -449,10 +449,10 @@ const QuieroLHNLH = () => {
                         Ya saben cuánto nos gustan los juegos. Sobre todo, queremos transmitirles que nunca es tarde para seguir jugando como adultos. Si además al juego le sumamos algo sexual, bueno, es un planazo.
                         <br />
                         <br />
-                        <span>Objetivo:</span> ayudarlos a experimentar y llevar a cabo fantasías y actos sexuales.
+                        <span>Objetivo:</span> ayudarlos a experimentar y llevar a cabo sus fantasías y actos sexuales deseados.
                         <br/>
                         <br/>
-                        <span>Que necesitas para este desafió</span>
+                        <span>¿Qué necesitan para realizar el desafío?</span>
                         <br/>
                         <br/>
                         <span>1:</span> 2 hojas o cartulinas.
@@ -467,6 +467,9 @@ const QuieroLHNLH = () => {
                         <span>4:</span> Post-its (opcional).
                         <br/>
                         <br/>
+                        <span>5:</span>En caso de no tener los materiales, pueden armarlo en el celular o compu con la herramienta “trello” 
+                        <br/>
+                        <br/>
                         </Text>
                     </Row>
                     <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
@@ -479,13 +482,13 @@ const QuieroLHNLH = () => {
                                 El juego consiste en crear 3 columnas: <span>Quiero - Lo haría - No lo haría.</span>
                                 <br />
                                 <br />
-                                <span>Quiero:</span> vas a poner las cosas que quieres experimentar. Tienes ganas activamente de probar, experimentar o realizar las cosas que están en esta columna.
+                                <span>Quiero:</span> Vas a poner las cosas que quieres experimentar. Tienes ganas activamente de probar, experimentar o realizar las cosas que están en esta columna.
                                 <br/>
                                 <br/>
-                                <span>Lo haría:</span> vas a poner las cosas que podrías experimentar. No son cosas que estás buscando activamente hacer o probar, pero que quizás estarías dispuesto a hacer en caso de que tu pareja lo desee.
+                                <span>Lo haría:</span> Vas a poner las cosas que podrías experimentar. No son cosas que estás buscando activamente hacer o probar, pero que quizás estarías dispuesto a hacer en caso de que tu pareja lo desee.
                                 <br/>
                                 <br/>
-                                <span>No lo haría:</span> aquí van las cosas que NO estás dispuesto a hacer.
+                                <span>No lo haría:</span> Aquí van las cosas que NO estás dispuesto a hacer.
                                 <br/>
                             </Text2>
                             <Col xs="12" lg="12" md="3">
@@ -500,14 +503,14 @@ const QuieroLHNLH = () => {
                                 <Collapse isOpen={isOpen}>
                                     <CardBody>
                                         <AnswerQuestion>
-                                        <TextBombNormal style={{fontWeight: 'bold'}}>La idea es que, luego de que cada uno haya armado sus 3 columnas, las compartan juntos. Todas las cosas que estén en QUIERO y en LO HARÍA son nuevas ideas que pueden empezar a experimentar 😊.</TextBombNormal>
+                                        <TextBombNormal style={{fontWeight: 'bold'}}>Luego de que cada uno haya armado sus 3 columnas, es momento de compartirlas juntos. Todas las cosas que estén en QUIERO y en LO HARÍA son nuevas ideas que pueden empezar a experimentar 😊.</TextBombNormal>
                                         
                                         <ul>
                                             <li>
                                                 Van a marcar con un resaltador todas las cosas que ambos estarían dispuestos a hacer (QUIERO o LO HARÍA).
                                             </li>
                                             <li>
-                                                Asegúrate de tener todo lo necesario: Reúne los elementos que necesitarás, como aceites de masaje, toallas suaves, accesorios (plumas, cremas comestibles, vibradores) y cualquier otra cosa que desees incorporar.
+                                                Luego, de todos los puntos resaltados elegirán cuál realizarán esta noche 🤩💥.
                                             </li>
                                         <br/>
                                         </ul>

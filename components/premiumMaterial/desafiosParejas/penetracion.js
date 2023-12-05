@@ -226,7 +226,7 @@ const obtenerAccionAleatoria = () => {
       "y el que no presionó se venda los ojos.",
       "y sincronicen su respiración.",
       "con mucho contacto visual.",
-      "con muchos besos de por medio."
+      "con susurros atrevidos de por medio o “dirty talk”."
     ];
   
     // Genera un índice aleatorio dentro del rango de opciones

@@ -518,10 +518,15 @@ const SexoOral = () => {
                         </Col>
                         <Text>
                         {/* <span>Parte 2:</span> Poniéndolo en Práctica */}
-                        Ya con la peli encendida, cuando se sientan listos, una persona empezará a estimular a la otra. El rol de la otra persona será simplemente recibir placer. Puede liberar su cabeza, no tiene que preocuparse por nada más, ni por lo que tiene que hacer luego, ni por no llegar o llegar al orgasmo. Solo recibir.
+                        Ya con la peli encendida, cuando se sientan listos, una persona empezará a estimular a la otra. El rol de la otra persona será simplemente recibir placer. 
                         <br/>
                         <br/>
-                        La persona que esté estimulando, también tendrá una sola cosa en la que concentrarse. Dar placer. Entregar placer, hacer gozar a tu pareja, excitarse de ver a tu pareja excitada. También te alentamos a que le preguntes a tu pareja, ¿te gusta así? O simplemente decir: &quot;guíame&quot;.
+                        <span>Tip para quien recibe:</span> Libera tu cabeza, no te preocupes por nada más, ni por lo que tienes que hacer luego, ni por llegar o no llegar al orgasmo. Solo recibir.
+                        <br/>
+                        <br/>
+                        La persona que esté estimulando, también tendrá una sola cosa en la que concentrarse: 
+                        <br/>
+                        Dar placer. Disfruta de hacer gozar a tu pareja, de excitarte de ver a tu pareja excitada. También te alentamos a que le preguntes a tu pareja, ¿te gusta así? O simplemente decir: "guíame".
                         <br/>
                         <br/>
                         {/* <BotonRandom onClick={chooseRandomName}>¿Quién comienza?</BotonRandom>
@@ -529,9 +534,6 @@ const SexoOral = () => {
                         <br/>
                         {chosenName && <div>Comienza: {chosenName}</div>} */}
                         <span>A tener en cuenta:</span> No es necesario que el encuentro sea recíproco. No siempre es &quot;yo te doy y vos me das&quot;. Puede también terminar luego de que uno solo reciba sexo oral y el otro solo se encargue de dar ese día. La próxima cambiarán roles si lo desean.
-                        <br/>
-                        <br/>
-                        Obviamente, si luego quieren cambiar de roles esa misma noche, ¡adelante!
                         <br/>
                         <br/>
                         <span>WeSexer TIP:</span> Los usuarios de nuestra app recomiendan que la primera persona en recibir sexo oral sea la que tiende a tardar más en llegar al orgasmo.
@@ -553,7 +555,7 @@ const SexoOral = () => {
                                 <div>
                                     <img src='/img/premium-material/men-to-woman-SO.jpeg'/>
                                 </div>
-                                Esta posición permite a la mujer moverse para encontrar su estimulación adecuada. Para adelante, para atrás, más cerca o más lejos del clítoris. Como gustes.
+                                Esta posición permite a la persona con vulva moverse para encontrar su estimulación adecuada. 
                                 <br/>
                                 <br/>
                                 <span>Para dar sexo oral a personas con pene, recomendamos esta posición:</span>

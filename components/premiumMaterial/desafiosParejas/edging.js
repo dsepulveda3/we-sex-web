@@ -536,35 +536,32 @@ const Edging = () => {
 
                         <Text>
                             Luego de frenar esa primera vez, van a <span>invertir los roles.</span> La persona que estaba estimulando va a pasar a ser estimulada y viceversa.
-                            <br />
-                            <br />
+                            <br/>
+                            <br/>
                             Seguirán entregándose al placer, y repetirán el proceso con los roles invertidos: 
-                            <br />
-                            <br />
+                            <br/>
+                            <br/>
                             Estimulación progresiva → Detectar sensaciones → Frenar antes de llegar al orgasmo → Respiración profunda.
-                            <br />
-                            <br />
-                            <span>WeSexer Tip:</span> En algún momento también pueden decidir ir a penetración, o pasar a un 69 para estimularse mutuamente. Aquí es importante que si alguno de los dos está por llegar al orgasmo pueda retirarse previamente. Este desafío requiere mucha comunicación tanto verbal como corporal y confianza en que valdrá la pena aguantarse las ganas 🔥.
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <span>Parte 3:</span> Culminación
-                            <br />
-                            <br />
-                            Idealmente, cuando sientan que ya no pueden más, que su deseo sexual y el clímax están al máximo, la persona que suele llegar al orgasmo más rápido pasará a ser quien estimule a su pareja, que tarda más en llegar, y se focalizarán solo en la estimulación de esta persona. Seguirán practicando edging, hasta que no puedan más y la persona estimulada decida entregarse al orgasmo. 
-                            <br />
-                            <br />
-                            Una vez que la persona estimulada termine de disfrutar su orgasmo y su post orgasmo, si lo desean, puede ir a estimular a la persona que todavía no llegó al orgasmo. Y repetirán el proceso de edging hasta entregarse al climax. 
+                            <br/>
+                            <br/>
+                            Luego de  ese momento, volverán a invertir los roles. En algún momento también pueden decidir ir a penetración, o pasar a un 69 para estimularse mutuamente. Aquí es importante que si alguno de los dos está por llegar al orgasmo pueda retirarse previamente. Este desafío requiere mucha comunicación tanto verbal como corporal, y confianza en que valdrá la pena aguantarse las ganas 🔥.
+                            <br/>
+                            <br/>
+                            Cuando sientan que ya no pueden más, que su deseo sexual y el clímax están al máximo, se entregarán al orgasmo. 
+                            <br/>
+                            <br/>
+                            El orgasmo será mucho más intenso que si hubiesen orgasmeado al principio del ejercicio.
+                            <br/>
+                            <br/>
+                            <span>WeSexer Tip:</span> Muchas veces pasa que una persona termina más rápido que la otra y después le baja el deseo a la hora de dar placer a su pareja que todavía quiere seguir siendo estimulada. Para evitar esto, (si a la hora de entregarse al orgasmo, una persona será quien reciba y la otra quien estimule), les recomendamos que la persona en recibir sea quien suele tardar más en llegar al orgasmo, para que si luego quieren cambiar los roles, le toque recibir a la persona que menos tarda en llegar.
+                            <br/>
+                            <br/>
                         </Text>
                         
                     </Row>
                     <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
                             <Text2>
-                                El orgasmo será mucho más intenso que si hubiesen orgasmeado al principio del ejercicio.
-                                <br/>
-                                <br/>
-                                Cuando decidan terminar, dense el tiempo para apreciar y sentir las sensaciones en su cuerpo. La relajación, la excitación, sus latidos, la piel de su pareja y el momento presente…
+                                Cuando decidan terminar, dense el tiempo para apreciar y sentir las sensaciones en su cuerpo. La relajación, la excitación, sus latidos, la piel de su pareja y el momento presente …
                                 <br/>
                                 <br/>
                                 <span>Con placer,</span>
