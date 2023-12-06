@@ -310,6 +310,16 @@ const Guides = ({ guideData }) => {
                     </Col>
                 ))}
                 <Col lg="3" md="4" >
+                <Link href={guideMenoLink}>
+                    <GuideSquare>
+                        <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                            <AppImageGuia2 src="/img/premium-material/menopausia.png" className="img-fluid" alt='Logotipo Guía Menopausia WeSex'/>
+                            <h3>Menopausia</h3>
+                        </ContainerContentGuide>
+                    </GuideSquare>
+                    </Link>
+                </Col>
+                <Col lg="3" md="4" >
                 <Link href={guideMT2Link}>
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
