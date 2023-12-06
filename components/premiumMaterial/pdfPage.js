@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
+import { query_premium_guide } from '../../requests/premiumService';
 import CircularProgressBar from './Loader';
 import styled from '@emotion/styled';
 
@@ -31,8 +32,7 @@ const Background = styled.div`
 
 
 const PDFViewer = ({pdfItem, demo, setLoaded}) => {
-  //console.log(pdfItem);
-  const pdfUrl = "";
+  const [pdfUrl, setPdfUrl] = useState("");
   const containerwd = 1.5;
   const [isPhoneScreen, setIsPhoneScreen] = useState(false);
   const [hideGuide, setHideGuide] = useState(false);
@@ -58,21 +58,30 @@ const PDFViewer = ({pdfItem, demo, setLoaded}) => {
     };
   }, []);
 
+  const queryGuide = async () => {
+    const response = await query_premium_guide(pdfItem);
+    console.log(response);
+    if (response.status === 200) {
+      setPdfUrl(`https://we-sex-premium.s3.amazonaws.com/${response.data.pdf.key}`);
+      console.log(pdfUrl);
+    }
+  }
+
   
   if (pdfItem === 'guia-anal') {
-    pdfUrl = "https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68b3f67626bfe72c4ef30/guiasexoanal-WeSex-3_compressed.pdf";
+    setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68b3f67626bfe72c4ef30/guiasexoanal-WeSex-3_compressed.pdf");
     containerwd = 1.5;
   } 
   else if (pdfItem === 'guia-tantra') {
-    pdfUrl = "https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68b6167626bfe72c4ef36/Guia de tantra_Orgasmos mas profundos 1_compressed.pdf"
+    setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68b6167626bfe72c4ef36/Guia de tantra_Orgasmos mas profundos 1_compressed.pdf");
     containerwd = 1.5;
   }
   else if (pdfItem === 'guia-zonas-erogenas') {
-    pdfUrl = "https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68b8167626bfe72c4ef3c/Guia de zonas erogenas WeSex_compressed.pdf"
+    setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68b8167626bfe72c4ef3c/Guia de zonas erogenas WeSex_compressed.pdf");
     containerwd = 1.5;
   }
   else if (pdfItem === 'guia-salir-rutina') {
-    pdfUrl = "https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68cef67626bfe72c4ef48/Guía para salir de la rutina con tu pareja  WeSex_compressed.pdf"
+    setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68cef67626bfe72c4ef48/Guía para salir de la rutina con tu pareja  WeSex_compressed.pdf");
     if (isPhoneScreen) {
       // Execute your function specific to phone screens here
       containerwd = 1.3;
@@ -80,7 +89,7 @@ const PDFViewer = ({pdfItem, demo, setLoaded}) => {
       containerwd = 4.4;
     }
   } else if (pdfItem === 'guia-mt'){
-    pdfUrl = "https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64f7817a650421f970535baf/Guía Tantra y masturbación Parte 1_compressed.pdf"
+    setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64f7817a650421f970535baf/Guía Tantra y masturbación Parte 1_compressed.pdf");
     if (isPhoneScreen) {
       // Execute your function specific to phone screens here
       containerwd = 1.3;
@@ -88,7 +97,7 @@ const PDFViewer = ({pdfItem, demo, setLoaded}) => {
       containerwd = 4.4;
     }
   } else if (pdfItem === 'guia-mt2'){
-    pdfUrl = "https://we-sex-premium.s3.amazonaws.com/guides/pdfs/65300f3d8fdff02c326f1b83/Gui%CC%81a%20de%20masturbacio%CC%81n%20ta%CC%81ntrica%202%20masajes%20genitales%20nivel%20_compressed.pdf"
+    setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/65300f3d8fdff02c326f1b83/Gui%CC%81a%20de%20masturbacio%CC%81n%20ta%CC%81ntrica%202%20masajes%20genitales%20nivel%20_compressed.pdf");
     if (isPhoneScreen) {
       // Execute your function specific to phone screens here
       containerwd = 1.3;
@@ -96,13 +105,15 @@ const PDFViewer = ({pdfItem, demo, setLoaded}) => {
       containerwd = 4.4;
     }
   } else if (pdfItem === 'guia-meno'){
-    pdfUrl = "https://we-sex-premium.s3.amazonaws.com/guides/pdfs/65564615f94d0fa60f7c5d44/WeSex%20-%20Menogui%CC%81a%20Sexulidad&Menopausia%20%20(1)_compressed.pdf"
+    setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/65564615f94d0fa60f7c5d44/WeSex%20-%20Menogui%CC%81a%20Sexulidad&Menopausia%20%20(1)_compressed.pdf");
     if (isPhoneScreen) {
       // Execute your function specific to phone screens here
       containerwd = 1.3;
     } else {
       containerwd = 4.4;
     }
+  } else {
+    queryGuide();
   }
 
   const [numPages, setNumPages] = useState(null);

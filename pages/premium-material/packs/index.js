@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import PacksOrgasmicos from '../../../components/premiumMaterial/packsOrgasmicos'
 import Layout from '../../../components/general/Layout';
+import { query_packs } from '../../../requests/premiumService';
 
-export default function Packs() {
+export default function Packs({ packs }) {
   
   return (
     <>
@@ -20,9 +21,14 @@ export default function Packs() {
       
       <main>
       <Layout>
-        <PacksOrgasmicos />
+        <PacksOrgasmicos packs={packs} />
         </Layout>
       </main>
     </>
   )
+}
+
+export async function getServerSideProps() {
+  const response = await query_packs()
+  return { props: { packs: response.data } }
 }

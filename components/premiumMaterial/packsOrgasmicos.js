@@ -279,9 +279,8 @@ const ColHideOnPhone = styled(Col)`
   }
 `;
 
-// {}
+const Packs = ({ packs }) => {
 
-const Packs = () => {
 
   return (
     <Section id="guides">
@@ -292,6 +291,18 @@ const Packs = () => {
                     Páginas de sabiduría sexual para volverte un experto en el tema y poder aplicarlo en tu vida sexual.
                 </Text>
                 <Row data-aos="fade-left">
+                {packs.map((pack) => (
+                    <Col lg="3" md="4" key={pack._id}>
+                        <Link href={`/premium-material/packs/landing/${pack.name}`}>
+                            <GuideSquare>
+                                <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                                    <AppImagePack src="/img/premium-material/giftbox.png" className="img-fluid"/>
+                                    <TextPack dangerouslySetInnerHTML={{ __html: pack.title }}/>
+                                </ContainerContentGuide>
+                            </GuideSquare>
+                        </Link>
+                    </Col>
+                ))}
                 <Col lg="3" md="4" >
                     <Link href="/premium-material/packs/pack9-all-tantra">
                         <GuideSquare>
