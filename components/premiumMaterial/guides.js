@@ -299,7 +299,7 @@ const Guides = ({ guideData }) => {
                 <Row data-aos="fade-left">
                 {guideData.map((guide) => (
                     <Col lg="3" md="4" >
-                        <Link href={`${prefixUrl}/${guide._id}`}>
+                        <Link href={`${prefixUrl}/${guide.id}`}>
                             <GuideSquare>
                                 <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                                     <AppImageGuia2 src={`https://we-sex-premium.s3.amazonaws.com/${guide.coverImage.key}`} className="img-fluid"/>

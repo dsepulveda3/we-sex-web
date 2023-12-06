@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { query_guide } from '../../../../requests/premiumService'
+import { query_guide, query_referral } from '../../../../requests/premiumService'
 import FirstBannerUniversal from '../../../../components/premiumMaterial/firstBannerUniversal'
 import EsParaVosSiUniversal from '../../../../components/premiumMaterial/esParaVosSiUniversal'
 import ProfesionalesUniversal from '../../../../components/premiumMaterial/profesionalesUniversal'
@@ -11,6 +11,7 @@ import AfterDiv from '../../../../components/premiumMaterial/afterDiv'
 import AboutWeSex from '../../../../components/premiumMaterial/aboutWeSex'
 import Footer from '../../../../components/premiumMaterial/footer'
 import Layout from '../../../../components/general/Layout'
+import globalPrices from '../../../../utils/globalPrices'
 
 
 export default function GuideView({ guideData }) {
@@ -48,7 +49,7 @@ export default function GuideView({ guideData }) {
           <FirstBannerUniversal
             titleText={guideData.name.split(/\s*de\s*/)[0] + ' de'}
             titleSpan={guideData.name.split(/\s*de\s*/)[1]}
-            price={`AR$ ${guideData.priceARS}  /  U$D ${guideData.priceUSD}`}
+            price={`AR$ ${globalPrices.OneProductARS}  /  U$D ${globalPrices.OneProductUSD}`} 
             description1=""
             description2={guideData.description}
             imageVisibility={true}
@@ -114,8 +115,8 @@ export default function GuideView({ guideData }) {
             unit_price_mp={guideData.globalBuyData.unit_price_mp}
             quantity_mp={guideData.globalBuyData.quantity_mp}
             currency_id_mp={guideData.globalBuyData.currency_id_mp}
-            price_ARG={`AR$ ${guideData.priceARS}`}
-            price_USD={`U$D ${guideData.priceUSD}`}
+            price_ARG={`AR$ ${globalPrices.OneProductARS}`} 
+            price_USD={`U$D ${globalPrices.OneProductUSD}`} 
             redirection_succesful_mp={guideData.globalBuyData.redirection_succesful_mp}
             redirection_failed_mp={guideData.globalBuyData.redirection_failed_mp}
             link_payhip_usd={guideData.globalBuyData.link_payhip_usd}
@@ -140,10 +141,20 @@ export default function GuideView({ guideData }) {
 }
 
 export async function getServerSideProps(context) {
-  const { id } = context.query;
-  const response = await query_guide(id);
-
-  return {
-    props: { guideData: response.data },
+  const { id, referral } = context.query;
+  if (referral) {
+    const response = await query_referral(id, referral);
+    const guideData = {
+      ...response.data.referral,
+      ...response.data.guide
+    };  
+    return {
+      props: { guideData: guideData },
+    }
+  } else {
+    const response = await query_guide(id);
+    return {
+      props: { guideData: response.data },
+    }
   }
 }

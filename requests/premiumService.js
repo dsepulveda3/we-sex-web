@@ -53,6 +53,27 @@ export const query_guide = async (guide_id) => {
     return response;
 }
 
+export const query_referral = async (guide_id, referral_code) => {
+    const response = await basePremiumService.get(
+        `v1/Guide/referral?code=${referral_code}&guide_id=${guide_id}`
+    );
+    return response;
+}
+
+export const query_packs = async () => {
+    const response = await basePremiumService.get(
+        `v1/Guide/packs`
+    );
+    return response;
+}
+
+export const query_pack = async (pack_name) => {
+    const response = await basePremiumService.get(
+        `v1/Guide/pack?pack_name=${pack_name}`
+    );
+    return response;
+}
+
 export const query_premium_guide = async (guide_id) => {
     const response = await basePremiumService.get(
         `v1/Guide/premium/${guide_id}`
