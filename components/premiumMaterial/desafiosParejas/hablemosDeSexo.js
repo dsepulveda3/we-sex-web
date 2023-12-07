@@ -26,7 +26,7 @@ const Background = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    // min-height: 72vh;
+    min-height: 100vh;
     padding-top: 2rem;
     padding-bottom: 2rem;
     position: relative;
@@ -369,6 +369,8 @@ const HablemosDeSexo = () => {
                             <SubTitle><span>Hablemos de sexo</span></SubTitle>
                         </ContentTitle>
                         {/* <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle> */}
+
+                        <div style={{color: "white", paddingTop: "1rem", fontFamily: "Karla"}}>Este desafío fue creado por la <a style={{textDecoration: "underline"}}href="https://www.instagram.com/docbarbaragarcia/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==">Dra y Sexóloga Bárbara García.</a></div>
 
                         <Text>
                         Una de las claves para una relación sana, tanto sexual como vincular, es la comunicación. Por eso para este sábado los vamos a invitar a salir de cita y a charlar de sexo. Porque darse espacios para salir de cita en pareja es fundamental. 

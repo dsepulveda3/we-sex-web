@@ -219,17 +219,17 @@ const PopupContent = ({ closePopUp, surveyUrl_m1, surveyUrl_m2, setDone, type })
             )}
             {type !== "dosis" && (
                 <>
-                    <Instruction><span>Paso 2:</span> En pareja, ¿Como se sintieron? ¿Qué se llevaron de esta práctica?.</Instruction>
+                    <Instruction><span>Paso 2:</span> Diario sexual en pareja. Anoten su experiencia para registrarla en su diario.</Instruction>
                 </>
             )}
             {type === "dosis" && (
                 <>
-                    <Instruction>En pareja, ¿Como se sintieron? ¿Qué se llevaron de esta práctica?.</Instruction>
+                    <Instruction>Diario sexual en pareja. Anoten su experiencia para registrarla en su diario.</Instruction>
                 </>
             )}
                 
             <CommentInput
-                placeholder="Escriban sus aprendizajes..."
+                placeholder="Compartan sus pensamientos/sensaciones sobre este desafío"
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
             />

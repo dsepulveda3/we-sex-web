@@ -437,7 +437,7 @@ const TipsCP = () => {
                                 <CardHeader onClick={toggle} style={{backgroundColor: "white "}}>
                                 <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
                                     <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
-                                    <TitleQuestion>Tips expertos para chupar un pene. (pete): </TitleQuestion>
+                                    <TitleQuestion>Tips expertos para chupar un pene (pete). Presiona aquí </TitleQuestion>
                                 </div>
                                 <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
                                 </CardHeader>

@@ -344,17 +344,20 @@ const CenaMasajes = () => {
     const [isOriginRoute, setIsOriginRoute] = useState(false);
     const [origin, setOrigin] = useState(null);
 
+    const [member1, setMember1] = useState(null);
+    const [member2, setMember2] = useState(null);
+
+
     useEffect(() => {
         if (router.isReady){
+            setMember1(router.query.members.split('-')[0]);
+            setMember2(router.query.members.split('-')[1]);
           if (router.query.origin) {
             setIsOriginRoute(true);
             setOrigin(router.query.origin);
           }
         }
       }, [router.isReady, isOriginRoute]);
-
-    const members = router.query.members;
-    const [member1, member2] = members.split('-');
       
 
     const names = ["Quien presiono este botón", "Quien NO presionó este botón"]; // Add the names you want to choose from
