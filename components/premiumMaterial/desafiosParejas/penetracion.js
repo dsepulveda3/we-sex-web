@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styled from "@emotion/styled";
 import { Card, CardHeader, Collapse, CardBody } from "reactstrap";
-import Notificar from "./universals/notificar";
+import Notificar2 from "./universals/notificar2";
 import ArrowBack from './universals/arrowBack';
 import { useRouter } from 'next/router';
 import Feedback from './universals/feedback';
@@ -260,6 +260,9 @@ const Penetracion = () => {
           }
         }
       }, [router.isReady, isOriginRoute]);
+
+    const members = router.query.members;
+    const [member1, member2] = members.split('-');
 
     const generarNumeroAleatorio = () => {
         const nuevoNumero = Math.floor(Math.random() * 9) + 1;
@@ -619,8 +622,9 @@ const Penetracion = () => {
                 </>
             )}
             </Border>
-            
-            <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/qKMvzG2VYcKs2Cs98`}/>
+            <Notificar2 message='¡ Notificar que finalizamos el desafio !'
+             url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pagogjdOipeSiT5fQ?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}`}
+             url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pagogjdOipeSiT5fQ?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}`}/>
         </Background>
     )
 };

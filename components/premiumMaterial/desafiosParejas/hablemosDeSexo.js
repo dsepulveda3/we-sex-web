@@ -3,7 +3,7 @@ import {Row, Col, Container, Card, CardHeader, CardBody, Collapse, Button} from 
 import styled from '@emotion/styled';
 import * as PIXI from 'pixi.js';
 import santaUrl from '../../../public/img/rutina_bomba.png';
-import Notificar from './universals/notificar';
+import Notificar2 from './universals/notificar2';
 import ArrowBack from './universals/arrowBack';
 import { useRouter } from 'next/router';
 import Feedback from './universals/feedback';
@@ -326,102 +326,26 @@ const HablemosDeSexo = () => {
     const [showAnimation, setShowAnimation] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
-    const appRef = useRef(null); // Create a ref to hold the PIXI application
     const router = useRouter();
 
     const [isOriginRoute, setIsOriginRoute] = useState(false);
     const [origin, setOrigin] = useState(null);
 
+    const [member1, setMember1] = useState(null);
+    const [member2, setMember2] = useState(null);
+
+
     useEffect(() => {
         if (router.isReady){
+            setMember1(router.query.members.split('-')[0]);
+            setMember2(router.query.members.split('-')[1]);
           if (router.query.origin) {
             setIsOriginRoute(true);
             setOrigin(router.query.origin);
           }
         }
       }, [router.isReady, isOriginRoute]);
-
-    useEffect(() => {
-        let app = null;
-      
-        if (showAnimation) {
-          app = new PIXI.Application({ background: '#5f32a2', resizeTo: window });
-          document.body.appendChild(app.view);
-          appRef.current = app; // Save the PIXI application to the ref
-
-          
-          const style = new PIXI.TextStyle({
-            fontFamily: 'Arial Black',
-            fontSize: 30,
-            "fill": "#ffffff",
-            "wordWrap": false,
-            fontStyle: 'normal',
-            fontWeight: 'normal',
-            fontVariant: 'normal',
-            color: 'white'
-            
-          });
-    
-          const richText = new PIXI.Text('Cargando Desafio ...', style);
-          richText.x = 50;
-          richText.y = 220;
-          richText.anchor.set(0.5);
-          richText.x = app.screen.width / 2;
-          richText.y = app.screen.height / 2 - 180;
-          app.stage.addChild(richText);
-      
-          const container = new PIXI.Container();
-          app.stage.addChild(container);
-      
-          // Create a new texture
-          const texture = PIXI.Texture.from("../../img/frutilla.png");
-      
-          // Create a 5x5 grid of bunnies
-          for (let i = 0; i < 1; i++) {
-            const bunny = new PIXI.Sprite(texture);
-            bunny.scale.x = 0.25;
-            bunny.scale.y = 0.25;
-      
-            bunny.anchor.set(0.3);
-            bunny.x = (i % 5) * 40;
-            bunny.y = Math.floor(i / 5) * 40;
-            container.addChild(bunny);
-          }
-
-      
-          // Move container to the center
-          container.x = app.screen.width / 2;
-          container.y = app.screen.height / 2;
-      
-          // Center bunny sprite in local container coordinates
-          container.pivot.x = container.width / 2;
-          container.pivot.y = container.height / 2;
-      
-          // Listen for animate update
-          app.ticker.add((delta) => {
-            // rotate the container!
-            // use delta to create frame-independent transform
-            container.rotation -= 0.025 * delta;
-          });
-      
-          setTimeout(() => {
-            // Stop the animation and remove PIXI elements from the stage
-            container.removeChildren();
-            setShowAnimation(false);
-          }, 4000);
-        } else if (appRef.current) {
-          appRef.current.view.style.display = 'none'; // If showAnimation is false, hide the PIXI canvas
-        }
-      
-        return () => {
-          if (appRef.current) {
-            appRef.current.destroy({ children: true, texture: true, baseTexture: true });
-            appRef.current = null;
-          }
-        };
-      }, [showAnimation]);
-      
-      
+     
     
     
     
@@ -567,7 +491,9 @@ const HablemosDeSexo = () => {
                             </Text2>
                     </Row> */}
             </Container>
-            <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/8oW1tTcHAiryn7zW7`}/>
+            <Notificar2 message='¡ Notificar que finalizamos el desafio !' 
+            url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pagUFVhlMDky8SsbH?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}`}
+            url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pagUFVhlMDky8SsbH?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}`}/>
             </Background>
           )}
         </section>

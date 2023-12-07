@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import {Row, Col, Container, Card, CardHeader, CardBody, Collapse, Button} from 'reactstrap';
 import ArrowBack from './universals/arrowBack';
-import Notificar from './universals/notificar';
+import Notificar2 from './universals/notificar2';
 import styled from '@emotion/styled';
 import * as PIXI from 'pixi.js';
 import { useRouter } from 'next/router';
@@ -406,6 +406,9 @@ const Edging = () => {
             }
           }
         }, [router.isReady, isOriginRoute]);
+
+    const members = router.query.members;
+    const [member1, member2] = members.split('-');
       
       //console.log("printing origin");
       //console.log(origin);
@@ -570,8 +573,9 @@ const Edging = () => {
                             </Text2>
                     </Row>
             </Container>
-            
-            <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/YQYCzDz3RthXnG8C6`}/>
+            <Notificar2 message='¡ Notificar que finalizamos el desafio !'
+              url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pag9PXiMvFrNXO4GV?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}`}
+              url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pag9PXiMvFrNXO4GV?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}`}/>
 
             </Background>
           )}

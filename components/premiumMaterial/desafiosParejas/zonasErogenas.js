@@ -3,7 +3,7 @@ import {Row, Col, Container, Card, CardHeader, CardBody, Collapse, Button} from 
 import styled from '@emotion/styled';
 import * as PIXI from 'pixi.js';
 import santaUrl from '../../../public/img/rutina_bomba.png';
-import Notificar from './universals/notificar';
+import Notificar2 from './universals/notificar2';
 import ArrowBack from './universals/arrowBack';
 import { useRouter } from 'next/router';
 import Feedback from './universals/feedback';
@@ -339,6 +339,9 @@ const ZonasErogenas = () => {
         }
       }, [router.isReady, isOriginRoute]);
 
+    const members = router.query.members;
+    const [member1, member2] = members.split('-');
+
     useEffect(() => {
         let app = null;
       
@@ -512,7 +515,9 @@ const ZonasErogenas = () => {
                             </Text2>
                     </Row>
             </Container>
-            <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/5YiiW1dTRfy5D3vZA`}/>
+            <Notificar2 message='¡ Notificar que finalizamos el desafio !'
+             url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pagGaqcsCNinNq7yO?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}`}
+             url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pagGaqcsCNinNq7yO?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}`}/>
             </Background>
           )}
         </section>
