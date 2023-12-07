@@ -254,7 +254,6 @@ const Guides = ({ guideData }) => {
         if (!loading && authUser){
             checkSubscriptionStatus();
         }
-        console.log(guideData);
     }, [authUser, loading]);
 
     const prefixUrl = isSubscribed ? '/premium-material/guides/pdf-viewer/' : '/premium-material/guides/landing/';
@@ -298,7 +297,7 @@ const Guides = ({ guideData }) => {
                 </Text>
                 <Row data-aos="fade-left">
                 {guideData.map((guide) => (
-                    <Col lg="3" md="4" >
+                    <Col lg="3" md="4" key={guide.id}>
                         <Link href={`${prefixUrl}/${guide.id}`}>
                             <GuideSquare>
                                 <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">

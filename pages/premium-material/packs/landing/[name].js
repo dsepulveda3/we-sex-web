@@ -56,7 +56,8 @@ export default function Pack({ packData }) {
             videoVisibility={false} imageVisibility={false}/>
           <AfterDiv />
           {guides.map((guide) => (
-            <EsParaVosSiUniversal 
+            <EsParaVosSiUniversal
+              key={guide.id} 
               title1_1={`Esta ${guide.name} es `}
               title1Span="para ti"
               title1_2=" si buscas"
@@ -128,8 +129,6 @@ export default function Pack({ packData }) {
 export async function getServerSideProps(context) {
     const { name } = context.query;
     const response = await query_pack(name);
-
-    console.log(response);
 
     return {
       props: { packData: response.data },
