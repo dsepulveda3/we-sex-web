@@ -1,7 +1,7 @@
 import React from 'react';
 import {Row, Col, Container, Card, CardBody, CardTitle, CardText} from 'reactstrap';
 import styled from '@emotion/styled';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Background = styled.div`
     background-color: #f5f5f5;
@@ -60,11 +60,16 @@ const Redes = styled.div`
     }
 `;
 
-// {}
 const ProfesionalesUniversal = ({fabiVisibility, ceciliaVisibility, barbaraVisibility}) => {
   const [FabiIsVisible, setFabiIsVisible] = useState(fabiVisibility);
   const [CeciliaIsVisible, setCeciliaIsVisible] = useState(ceciliaVisibility);
   const [BarbaraIsVisible, setBarbaraIsVisible] = useState(barbaraVisibility);
+
+  useEffect(() => {
+    setFabiIsVisible(fabiVisibility);
+    setCeciliaIsVisible(ceciliaVisibility);
+    setBarbaraIsVisible(barbaraVisibility);
+  }, [fabiVisibility, ceciliaVisibility, barbaraVisibility]);
 
     return (
         <section id="profesional">

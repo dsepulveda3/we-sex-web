@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import Guides from '../../../components/premiumMaterial/guides'
 import Layout from '../../../components/general/Layout';
+import { query_guides } from '../../../requests/premiumService';
 
 
 
-export default function Home() {
-  
+export default function Home({ guides }) {
   return (
     <>
       <Head>
@@ -53,9 +53,14 @@ export default function Home() {
       />
       <main>
         <Layout>
-            <Guides />
+            <Guides guideData={guides} />
         </Layout>
       </main>
     </>
   )
+}
+
+export async function getServerSideProps() {
+  const response = await query_guides()
+  return { props: { guides: response.data } }
 }
