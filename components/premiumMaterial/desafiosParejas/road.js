@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from 'next/router';
 import styled from "@emotion/styled";
 import { get_couple } from "../../../requests/premiumService";
+import OtherChallenge from "./roadComponents/otherChallenge";
 
 const HeaderContainer = styled.div`
   background-color: #ebe4f8;
@@ -635,6 +636,7 @@ const Popup = ({
           <PopUpTitle>{title}</PopUpTitle>
           <PopUpSubTitle>{subtitle}</PopUpSubTitle>
           <ClockOrSubmit timestamp={timeStamps ? timeStamps.challengeLastUpdate : null} startTime={timeStamps ? timeStamps.currentTime : null} onClick={handleSubmit} />
+          <OtherChallenge name={title} type="challenge"/>
           </>
           : null}
           {status === 'next' && type === 'pill' ? 
@@ -642,6 +644,9 @@ const Popup = ({
           <PopUpTitle>{title}</PopUpTitle>
           <PopUpSubTitle>{subtitle}</PopUpSubTitle>
           <ClockOrSubmit timestamp={timeStamps ? timeStamps.pillLastUpdate : null} startTime={timeStamps ? timeStamps.currentTime : null} onClick={handleSubmit} />
+          
+          <OtherChallenge name={title} type="pill"/>
+
           </>
           : null}
           {status === 'done' && type === 'challenge' ? 
