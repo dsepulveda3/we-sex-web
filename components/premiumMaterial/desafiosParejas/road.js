@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import styled from "@emotion/styled";
 import { get_couple } from "../../../requests/premiumService";
 import OtherChallenge from "./roadComponents/otherChallenge";
+import { toast } from "react-toastify";
 
 const HeaderContainer = styled.div`
   background-color: #ebe4f8;
@@ -800,7 +801,12 @@ const Popup = ({
     useEffect(() => {
       const fetchData = async () => {
         const response = await get_couple(coupleName);
-        setCoupleData(response.data);
+        if (response.data.inactive){
+          toast.error('Tu subscripción no esta activa. Contactate con nosotros si deseas re-activarla y seguir donde dejaste tu viaje por los desafios!!');
+          router.push('/premium-material/desafios-para-parejas');
+        } else {
+          setCoupleData(response.data);
+        }
     
         // Calculate number of challenges in 'done' status and total available
         const responseChallengesDone = response.data.challenges.filter(
