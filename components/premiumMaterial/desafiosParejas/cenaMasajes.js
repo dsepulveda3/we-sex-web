@@ -610,8 +610,8 @@ const CenaMasajes = () => {
             </Container>
             
             <Notificar2 message='¡ Notificar que finalizamos el desafio !'
-             url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pagtvfxhjVWzgygcu?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}`}
-             url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pagtvfxhjVWzgygcu?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}`}/>
+             url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pagtvfxhjVWzgygcu/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}`}
+             url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pagtvfxhjVWzgygcu/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}`}/>
             </Background>
           )}
         </section>
