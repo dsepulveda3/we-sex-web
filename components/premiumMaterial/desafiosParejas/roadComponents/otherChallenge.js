@@ -30,9 +30,11 @@ const OtherChallenge = ({name, type}) => {
     
     const handleFeebackClick = () => {
         if (type === "challenge"){
-            window.open(`https://wa.me/5491140678698?text=Hola!%20Quiero%20solicitar%20otro%20desafío.%20Este%0Aa)%20Es%20muy%20largo,%20no%20tenemos%20tiempo.%0Ab)%20No%20es%20de%20nuestro%20gusto.%0Ac)%20Otra%20razón.%0A%0ADesafio%20actual:%20${name}`, "_blank");
+            window.open(`https://wa.me/5491140678698?text=Hola!%20Quiero%20solicitar%20otro%20desafío.%0ADesafío%20actual:%20${name}%0A---%0ASelecciona%20una%20de%20estas%203%20opciones:%0Aa)%20Es%20muy%20largo,%20no%20tenemos%20tiempo.%0Ab)%20No%20es%20de%20nuestro%20gusto.%0Ac)%20Otra%20razón.`, "_blank");
+            freshpaint.track("SOLICITAR NUEVO DESAFÍO");
         } else if (type === "pill") {
-            window.open(`https://wa.me/5491140678698?text=Hola!%20Quiero%20solicitar%20otra%20píldora.%20Esta%0Aa)%20Es%20muy%20largo,%20no%20tenemos%20tiempo.%0Ab)%20No%20es%20de%20nuestro%20gusto.%0Ac)%20Otra%20razón.%0A%0APíldora%20actual:%20${name}`, "_blank");
+            window.open(`https://wa.me/5491140678698?text=Hola!%20Quiero%20solicitar%20otra%20píldora.%0APíldora%20actual:%20${name}%0A---%0ASelecciona%20una%20de%20estas%203%20opciones:%0Aa)%20Es%20muy%20larga,%20no%20tenemos%20tiempo.%0Ab)%20No%20es%20de%20nuestro%20gusto.%0Ac)%20Otra%20razón.`, "_blank");
+            freshpaint.track("SOLICITAR NUEVA PÍLDORA");
         }
       };
 
