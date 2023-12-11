@@ -2,11 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from 'next/router';
 import styled from "@emotion/styled";
 import { get_couple } from "../../../requests/premiumService";
-<<<<<<< Updated upstream
 import OtherChallenge from "./roadComponents/otherChallenge";
-=======
 import { toast } from "react-toastify";
->>>>>>> Stashed changes
 
 const HeaderContainer = styled.div`
   background-color: #ebe4f8;
