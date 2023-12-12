@@ -112,9 +112,9 @@ export default function GuideView({ guideData }) {
 
           <ComprarUniversal
             title_mp={guideData.globalBuyData.title_mp}
-            unit_price_mp={guideData.globalBuyData.unit_price_mp}
-            quantity_mp={guideData.globalBuyData.quantity_mp}
-            currency_id_mp={guideData.globalBuyData.currency_id_mp}
+            unit_price_mp={globalPrices.OneProductARS}
+            quantity_mp={1}
+            currency_id_mp={'ARS'}
             price_ARG={`AR$ ${globalPrices.OneProductARS}`} 
             price_USD={`U$D ${globalPrices.OneProductUSD}`} 
             redirection_succesful_mp={guideData.globalBuyData.redirection_succesful_mp}

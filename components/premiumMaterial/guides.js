@@ -296,7 +296,7 @@ const Guides = ({ guideData }) => {
                     Páginas de sabiduría sexual para volverte un experto en cada tema.
                 </Text>
                 <Row data-aos="fade-left">
-                {guideData.map((guide) => (
+                {/* {guideData.map((guide) => (
                     <Col lg="3" md="4" key={guide.id}>
                         <Link href={`${prefixUrl}/${guide.id}`}>
                             <GuideSquare>
@@ -307,7 +307,7 @@ const Guides = ({ guideData }) => {
                             </GuideSquare>
                         </Link>
                     </Col>
-                ))}
+                ))} */}
                 <Col lg="3" md="4" >
                 <Link href={guideMenoLink}>
                     <GuideSquare>

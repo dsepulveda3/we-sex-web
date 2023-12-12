@@ -150,7 +150,15 @@ const Instruction = styled.div`
 
 const PopUpGeneral = ({setShowPopup}) => {
 
-    
+    const handleClickInstagram = () => {
+        window.open("https://www.instagram.com/docbarbaragarcia/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==", "_blank");
+        freshpaint.track("Page View - Instagram Doc");
+    }
+
+    const handleClickConsultas = () => {
+        window.open("https://www.picktime.com/DraBarbaraGarcia", "_blank");
+        freshpaint.track("Page View - Agenda tu hora Doc");
+    }
 
     return (
         <>
@@ -160,11 +168,11 @@ const PopUpGeneral = ({setShowPopup}) => {
                     <Title>
                         Agenda tu hora con la Dra Bárbara García
                     </Title>
-                    <BotonNotificarDone href="https://www.instagram.com/docbarbaragarcia/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==" target="_blank">
+                    <BotonNotificarDone onClick={handleClickInstagram}>
                         Instagram de la Doc
                     </BotonNotificarDone>
                 
-                    <BotonNotificarDone href="https://www.picktime.com/DraBarbaraGarcia" target="_blank">
+                    <BotonNotificarDone onClick={handleClickConsultas}>
                         Agenda tu hora
                     </BotonNotificarDone>
                 </PopupDialog>

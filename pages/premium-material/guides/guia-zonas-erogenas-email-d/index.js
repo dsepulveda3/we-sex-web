@@ -49,8 +49,11 @@ export default function Home() {
         <PackUniversal title1_1='2 x 3' title1_2={`Por AR$${globalPrices.ThreeProductARS} llevate 3 guías de WeSex: `}
         title1_3='Zonas Erógenas + Sexo Anal + Tantra' link_promo='/premium-material/packs/pack1-email-d' />
         <Regalar />
-        <ComprarUniversal title_mp='EMD - Guía Zonas Erógenas - WeSex' unit_price_mp= {globalPrices.OneProductARS} quantity_mp={1} currency_id_mp='ARS'
-          price_ARG={`AR$ ${globalPrices.OneProductARS}`} price_USD={`U$D ${globalPrices.OneProductUSD}`} redirection_succesful_mp='https://payhip.com/b/kcw3q' 
+        <ComprarUniversal title_mp='EMD - Guía Zonas Erógenas - WeSex' 
+          unit_price_mp= {globalPrices.OneProductARS} 
+          quantity_mp={1} currency_id_mp='ARS'
+          price_ARG={`AR$ ${globalPrices.OneProductARS}`} 
+          price_USD={`U$D ${globalPrices.OneProductUSD}`} redirection_succesful_mp='https://payhip.com/b/kcw3q' 
           redirection_failed_mp='https://www.we.sex/premium-material/guides/guia-zonas-erogenas-email-d'
           link_payhip_usd='https://payhip.com/b/1jCvi' has_promo={false}
           />
