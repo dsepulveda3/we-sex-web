@@ -65,7 +65,7 @@ export default function Deseo() {
         title1_3='Orgasmos profundos, Masturbación Tántrica 1, y Masturbación Tántrica 2.' link_promo='/premium-material/packs/pack9-all-tantra' /> */}
         <AfterDiv />
         {/* <DisclaimerTantra /> */}
-        <ProfesionalesUniversal fabiVisibility={true} ceciliaVisibility={true} barbaraVisibility={true}/>
+        <ProfesionalesUniversal fabiVisibility={false} laraVisibility={true} ceciliaVisibility={true} barbaraVisibility={true}/>
         <PackUniversal title1_1='' title1_2={`Por AR$${globalPrices.TwoProductARS} llevate 2 guías de WeSex: `}
         title1_3='Deseo + Salir de la rutina.' link_promo='/premium-material/packs/pack12-Deseo-SR' />
         <Regalar />
