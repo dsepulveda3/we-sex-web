@@ -150,8 +150,8 @@ const AutoresUniversal = ({fabiVisibility, ceciliaVisibility, barbaraVisibility,
                       }}
                     />
                     <CardBody style={{flexGrow: 1, display: "flex", flexDirection: "column", justifyContent: "flex-end"}}>
-                      <Name>Lara Castro-Grañen</Name>
-                      <SubTitle>Psicoterapeuta de Pareja, Sexóloga y CEO de Placer ConSentido. .</SubTitle>
+                      <Name>Lara Castro-Grañén</Name>
+                      <SubTitle>Psicóloga-Sexóloga y Terapeuta de Pareja.</SubTitle>
                       <div style={{marginTop: "auto"}}>
                         <Redes>
                           <a href="https://instagram.com/placerconsentido?igshid=YTQwZjQ0NmI0OA==" target="_blank">
