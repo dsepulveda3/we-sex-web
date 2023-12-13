@@ -58,8 +58,7 @@ export default function Deseo() {
           emoji3='💦' text3_1='' text3Span='Herramientas prácticas ' text3_2='para incrementar tu deseo sexual.' 
           emoji4='💗' text4_1 ='' text4Span='Aprender que cosas estimulan ' text4_2 = 'tu deseo sexual y cuales lo inhiben.'
           emoji5='👀' text5_1='' text5Span='Detectar tus zonas erógenas ' text5_2='preferidas.' 
-          emoji6='😋' text6_1='Encontrar la ' text6Span='frecuencia sexual perfecta ' text6_2='para tu relación.'
-          emoji7='🤟' text7_1='' text7Span='Cómo mantener encendido' text7_2=' tu deseo.' />
+          emoji6='😋' text6_1='Encontrar la ' text6Span='frecuencia sexual perfecta ' text6_2='para tu relación.' />
         <AfterDiv />
         {/* <PackUniversal title1_1='Llevate el pack Tántrico' title1_2='Por AR$5600 llevate las 3 guías tántricas de Fabi Villalba: ' 
         title1_3='Orgasmos profundos, Masturbación Tántrica 1, y Masturbación Tántrica 2.' link_promo='/premium-material/packs/pack9-all-tantra' /> */}
