@@ -40,8 +40,8 @@ export default function Pack12LARA() {
       <main>
       <Layout >
         <FirstBannerUniversal titleText='Guías' titleSpan='Deseo + Salir de la rutina' 
-          price_before={`AR$ ${globalPrices.OneProductARS*2}  /  U$D ${globalPrices.OneProductUSD*2}`}
-          price={`AR$ ${globalPrices.TwoProductARS}  /  U$D ${globalPrices.TwoProductUSD}`}
+          price_before={`U$D ${globalPrices.OneProductUSD*2}`}
+          price={`U$D ${globalPrices.TwoProductUSD}`}
           description1='' 
           description2='Compra el pack a un precio orgásmico.' 
           videoVisibility={false} imageVisibility={false}/>

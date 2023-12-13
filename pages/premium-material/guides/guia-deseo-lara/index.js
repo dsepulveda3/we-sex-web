@@ -47,7 +47,7 @@ export default function DeseoLara() {
       <main>
       <Layout>
         <FirstBannerUniversal titleText='Guía de' titleSpan=' Deseo Sexual' 
-          price={`AR$ ${globalPrices.OneProductARS}  /  U$D ${globalPrices.OneProductUSD}`} 
+          price={`USD$ ${globalPrices.OneProductUSD}`} 
           description1='' 
           description2='Cómo mantenerlo encendido.' imageVisibility={true} 
           videoVisibility={false} image='/img/premium-material/deseo-sexual.png' widthImage={'45%'}/>
@@ -65,8 +65,8 @@ export default function DeseoLara() {
         title1_3='Orgasmos profundos, Masturbación Tántrica 1, y Masturbación Tántrica 2.' link_promo='/premium-material/packs/pack9-all-tantra' /> */}
         <AfterDiv />
         {/* <DisclaimerTantra /> */}
-        <ProfesionalesUniversal fabiVisibility={true} ceciliaVisibility={true} barbaraVisibility={true}/>
-        <PackUniversal title1_1='' title1_2={`Por AR$${globalPrices.TwoProductARS} llevate 2 guías de WeSex: `}
+        <ProfesionalesUniversal fabiVisibility={false} laraVisibility={true} ceciliaVisibility={false} barbaraVisibility={false}/>
+        <PackUniversal title1_1='' title1_2={`Por USD$${globalPrices.TwoProductUSD} llevate 2 guías de WeSex: `}
         title1_3='Deseo + Salir de la rutina.' link_promo='/premium-material/packs/pack12-Deseo-SR-Lara' />
         <Regalar />
         <ComprarUniversal title_mp='Guía Deseo Sexual - WeSex' unit_price_mp= {globalPrices.OneProductARS} quantity_mp={1} currency_id_mp='ARS'
