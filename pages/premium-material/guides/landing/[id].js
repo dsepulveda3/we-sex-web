@@ -99,6 +99,7 @@ export default function GuideView({ guideData }) {
             fabiVisibility={guideData.proffesionals.includes('fabi')}
             ceciliaVisibility={guideData.proffesionals.includes('cecilia')}
             barbaraVisibility={guideData.proffesionals.includes('barbara')}
+            laraVisibility={guideData.proffesionals.includes('lara')}
           />
 
           <PackUniversal
