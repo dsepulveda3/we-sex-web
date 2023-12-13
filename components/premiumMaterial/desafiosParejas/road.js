@@ -768,11 +768,14 @@ const Popup = ({
     const [dosisDone, setDosisDone] = useState(0);
     const [totalDosis, setTotalDosis] = useState(0);
 
+    const [levelText, setLevelText] = useState("Nivel 1")
+
     useEffect(() => {
       if (router.isReady){
         if (router.query.origin) {
           setCoupleName(router.query.origin);
         }
+        
       }
     }, [router.isReady]);
 
@@ -806,6 +809,10 @@ const Popup = ({
           router.push('/premium-material/desafios-para-parejas');
         } else {
           setCoupleData(response.data);
+        }
+
+        if (coupleName === "Complices"){
+          setLevelText("Nivel 2");
         }
     
         // Calculate number of challenges in 'done' status and total available
@@ -849,6 +856,8 @@ const Popup = ({
     }
     return levelBoxes;
   };
+
+  console.log(coupleData);
     
     return (
         <>
@@ -886,7 +895,7 @@ const Popup = ({
             {/* {renderLevelBoxes()} */}
             <div style={{ paddingTop: '1rem', backgroundColor: '#ebe4f8' }}></div>
             <LevelBoxContainer>
-            <LevelBox>Nivel 1</LevelBox>
+            <LevelBox>{levelText}</LevelBox>
           </LevelBoxContainer>
             <div style={{paddingTop: "1rem", backgroundColor: "#ebe4f8"}}></div>
             <ChallengesAndDosisContainer>
