@@ -369,9 +369,9 @@ const Suscribed = () => {
                             <Text><span>Paso 2:</span> completen el siguiente formulario, para que los expertos de WeSex puedan personalizar sus desafios !
                             <br/>
                             <br/>
-                            <a href={`https://airtable.com/appVSREVOyy0SOY9u/pagDOyoXlPZ7vcdMg/form?prefill_Nombre+de+la+pareja=${coupleNickname}&prefill_Nombre+Miembro=${memberOne}`} target="_blank" style={{textDecoration: "underline"}}>Encuesta de {memberOne}</a>
+                            <a href={`https://airtable.com/appVSREVOyy0SOY9u/pagDOyoXlPZ7vcdMg/form?prefill_Nombre+de+la+pareja=${coupleNickname}&prefill_Nombre+Miembro=${memberOne}`} target="_blank" rel="noopener noreferrer" style={{textDecoration: "underline"}}>Encuesta de {memberOne}</a>
                             <br/>
-                            <a href={`https://airtable.com/appVSREVOyy0SOY9u/pagDOyoXlPZ7vcdMg/form?prefill_Nombre+de+la+pareja=${coupleNickname}&prefill_Nombre+Miembro=${memberTwo}`} target="_blank" style={{textDecoration: "underline"}}>Encuesta de {memberTwo}</a>
+                            <a href={`https://airtable.com/appVSREVOyy0SOY9u/pagDOyoXlPZ7vcdMg/form?prefill_Nombre+de+la+pareja=${coupleNickname}&prefill_Nombre+Miembro=${memberTwo}`} target="_blank" rel="noopener noreferrer" style={{textDecoration: "underline"}}>Encuesta de {memberTwo}</a>
                             </Text>
 
                             <Text><span>Paso 3:</span> Les dejamos el desafío 1 para este fin de semana 😎</Text>
