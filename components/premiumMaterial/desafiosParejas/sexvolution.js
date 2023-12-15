@@ -26,7 +26,7 @@ const Background = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    // min-height: 72vh;
+    min-height: 100vh;
     padding-top: 2rem;
     padding-bottom: 2rem;
     position: relative;
@@ -208,8 +208,8 @@ const AppImage = styled.img`
         margin-top: 1rem;
         margin-left: 0rem;
         margin-right: 0rem;
-        width: 18%;
-        height: 70%;
+        width: 15%;
+        height: 80%;
     }
     @media(min-width: 540px){
         margin-right: 2rem;
@@ -319,26 +319,17 @@ const FullscreenCanvas = styled.div`
   align-items: center;
 `;
 
-const BotonRandom = styled.a`
-    background-color: var(--violet);
-    color: white;
-    border: none;
-    border-radius: 10px; /* Make it rounded */
-    padding: 10px 20px;
-    cursor: pointer;
-    font-weight: bold;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a box shadow */
-`;
 
 
 
-
-const StreapDance = () => {
+const Sexvolution = () => {
     const [showAnimation, setShowAnimation] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
+    const [isOpen1, setIsOpen1] = useState(false);
+    const [isOpen2, setIsOpen2] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
-    const appRef = useRef(null); // Create a ref to hold the PIXI application
-
+    const toggle1 = () => setIsOpen1(!isOpen1);
+    const toggle2 = () => setIsOpen2(!isOpen2);
     const router = useRouter();
 
     const [isOriginRoute, setIsOriginRoute] = useState(false);
@@ -358,96 +349,7 @@ const StreapDance = () => {
           }
         }
       }, [router.isReady, isOriginRoute]);
-      
-
-    const names = ["Quien presiono este botón", "Quien NO presionó este botón"]; // Add the names you want to choose from
-    const [chosenName, setChosenName] = useState("");
-    const chooseRandomName = () => {
-        const randomIndex = Math.floor(Math.random() * names.length);
-        setChosenName(names[randomIndex]);
-      };
-
-    useEffect(() => {
-        let app = null;
-      
-        if (showAnimation) {
-          app = new PIXI.Application({ background: '#5f32a2', resizeTo: window });
-          document.body.appendChild(app.view);
-          appRef.current = app; // Save the PIXI application to the ref
-
-          
-          const style = new PIXI.TextStyle({
-            fontFamily: 'Arial Black',
-            fontSize: 30,
-            "fill": "#ffffff",
-            "wordWrap": false,
-            fontStyle: 'normal',
-            fontWeight: 'normal',
-            fontVariant: 'normal',
-            color: 'white'
-            
-          });
-    
-          const richText = new PIXI.Text('Cargando Desafio ...', style);
-          richText.x = 50;
-          richText.y = 220;
-          richText.anchor.set(0.5);
-          richText.x = app.screen.width / 2;
-          richText.y = app.screen.height / 2 - 180;
-          app.stage.addChild(richText);
-      
-          const container = new PIXI.Container();
-          app.stage.addChild(container);
-      
-          // Create a new texture
-          const texture = PIXI.Texture.from("../../img/frutilla.png");
-      
-          // Create a 5x5 grid of bunnies
-          for (let i = 0; i < 1; i++) {
-            const bunny = new PIXI.Sprite(texture);
-            bunny.scale.x = 0.25;
-            bunny.scale.y = 0.25;
-      
-            bunny.anchor.set(0.3);
-            bunny.x = (i % 5) * 40;
-            bunny.y = Math.floor(i / 5) * 40;
-            container.addChild(bunny);
-          }
-
-      
-          // Move container to the center
-          container.x = app.screen.width / 2;
-          container.y = app.screen.height / 2;
-      
-          // Center bunny sprite in local container coordinates
-          container.pivot.x = container.width / 2;
-          container.pivot.y = container.height / 2;
-      
-          // Listen for animate update
-          app.ticker.add((delta) => {
-            // rotate the container!
-            // use delta to create frame-independent transform
-            container.rotation -= 0.025 * delta;
-          });
-      
-          setTimeout(() => {
-            // Stop the animation and remove PIXI elements from the stage
-            container.removeChildren();
-            setShowAnimation(false);
-          }, 4000);
-        } else if (appRef.current) {
-          appRef.current.view.style.display = 'none'; // If showAnimation is false, hide the PIXI canvas
-        }
-      
-        return () => {
-          if (appRef.current) {
-            appRef.current.destroy({ children: true, texture: true, baseTexture: true });
-            appRef.current = null;
-          }
-        };
-      }, [showAnimation]);
-      
-      
+     
     
     
     
@@ -459,129 +361,180 @@ const StreapDance = () => {
       {!showAnimation && (
             <Background>
               <Container>
-                    <Header>
+                     <Header>
                         <ArrowBack url={`/premium-material/desafios-para-parejas/road?origin=${origin}`}/>
                         <TitleWeSex>WeSex</TitleWeSex>
-                        <Feedback challengeName={"Streap Dance"}/>
+                        <Feedback challengeName={"Hablemos de Sexo"}/>
                     </Header>
+                    
                     <Row className="justify-content-between">   
                         <ContentTitle>
-                            <Title>Desafío:</Title>
-                            <SubTitle><span>Streap Dance</span></SubTitle>
+                            <Title>Desafío</Title>
+                            <SubTitle><span>Sexvolution</span></SubTitle>
                         </ContentTitle>
                         {/* <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle> */}
 
+                        <div style={{color: "white", paddingTop: "1rem", fontFamily: "Karla"}}>Duración 1 hr.</div>
+
                         <Text>
-                        ¡Así es! ¡Llegó el turno del streap dance!
+                        Materiales:
+                        <br/>
+                        <ul>
+                            <li>
+                            Papel grande o cartulina.
+                            </li>
+                            <li>
+                            Lápices de colores.
+                            </li>
+                            <li>
+                            Reloj o temporizador.
+                            </li>
+                        </ul>
+                        <br/>
+                        Les invitamos a explorar la evolución de su relación a lo largo del tiempo.
                         <br/>
                         <br/>
-                        No importa si eres de los que mueren de la vergüenza o de los más experimentados en la práctica de desvestirse, te vamos a contar cómo agregarle valor y personalidad a tu streaptease.
+                        Las relaciones son dinámicas, cambiantes *y* democráticas.
                         <br/>
                         <br/>
-                        En el desafio de hoy, vamos a sortear quién se encargará de dar el streap dance, y quién de recibirlo ;)
-                        </Text>
-                        <Text style={{marginBottom: "0px"}}>
-                            Presiona el botón antes de leer las instrucciones.
-                            <br />
-                            <br />
-                            <BotonRandom onClick={chooseRandomName}>Botón sorteo</BotonRandom>
-                            <br/>
-                            <br/>
-                            {chosenName && <div>Le toca a: {chosenName}</div>}
+                        Para pasar del amor romántico y pasional (cóctel de hormonas cerebral que dura entre 6 meses a 3 años) al amor maduro sin caducidad, es importante darse espacio para analizar sus objetivos vinculares y reflexionar sobre ellos de manera constante.
+                        <br/>
+                        <br/>
+                        Ser amadxs, cuidadxs, sexuadxs es lo que las personas buscamos, por eso hoy investigaremos cómo comenzamos, y dónde estamos hoy.
                         </Text>
                         <Text>
-                            Tranqui, tenemos un paso a paso con varios tips para que la rompas toda. Léelos en secreto para sorprender a tu pareja 🤫🤭
+                        <span>Instrucciones:</span>
+                        <ul>
+                            <li>
+                                Hoy van a analizar su relación desde el principio hasta ahora, dividiendo todo su recorrido en tres etapas: PRINCIPIO, MITAD Y ACTUALIDAD.
+                            </li>
+                            <li>
+                                En cada etapa, van a pensar y escribir que porcentaje de atención han dedicado a cada area: Amor - Cuidados - Sexo.
+                            </li>
+                            <li>
+                                Les iremos guiando con preguntas en cada etapa. Comencemos:
+                            </li>
+                        </ul>
                         </Text>
-                        <Col xs="12" lg="12" md="3">
+                        <Col xs="12" lg="6" md="3">
                             <Card style={{margin:"10px 10px 10px 10px"}}>
                                 <CardHeader onClick={toggle} style={{backgroundColor: "white "}}>
                                 <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
-                                    
-                                    <TitleQuestion style={{marginLeft: '2rem'}}>Tips para streap dance 🔥</TitleQuestion>
+                                    <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
+                                    <TitleQuestion style={{fontSize: "1.4rem"}}>Principio</TitleQuestion>
                                 </div>
                                 <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
                                 </CardHeader>
                                 <Collapse isOpen={isOpen}>
                                     <CardBody>
                                         <AnswerQuestion>
-                                        <TextBombNormal style={{fontWeight: 'bold'}}>Primero que nada: créetela.</TextBombNormal>
-                                        Tienes que sentirte la persona más sexy del planeta en ese preciso instante. Si dudas, la situación pierde erotismo y credibilidad. Eres hermosx, sobre todo para tu pareja 😊.
-                                        <br/>
-                                        <br/>
-
-                                        <TextBombNormal style={{fontWeight: 'bold'}}>Planificar y prepararse suma: Ambienta el espacio con luz baja y/o velas.</TextBombNormal>
-                                        Puedes imaginarte la situación, definir qué lugar ocupará cada uno en el espacio y ensayar algunos pasos frente al espejo.
-                                        <br/>
-                                        <br/>
-
-                                        <TextBombNormal style={{fontWeight: 'bold'}}>Está bueno usar prendas con cierres y/o botones para que todo sea más lento.</TextBombNormal>
-                                        Ir bajando el cierre o desabrochando cada botón lentamente le agrega erotismo.
-                                        <br/>
-                                        <br/>
-
-                                        {/* <TextBombNormal style={{fontWeight: 'bold'}}>Si tienen lencería erótica, usenla.</TextBombNormal>
-                                        Sino, les dejamos un link para adquirirla con descuento wesexer.
-                                        <br/>
-                                        <br/> */}
-
-                                        <TextBombNormal style={{fontWeight: 'bold'}}>Todo suma.</TextBombNormal>
-                                        También suman los accesorios como la pluma o sogas para estimular la interacción, ampliar el espectro de la sensorialidad y elevar el nivel del juego.
-                                        <br/>
-                                        <br/>
-
-                                        <TextBombNormal style={{fontWeight: 'bold'}}>Sugiere antes de mostrar.</TextBombNormal>
-                                        Tómate el tiempo necesario para divertirte y divertir a tu pareja.
-                                        <br/>
-                                        <br/>
-
-                                        <TextBombNormal style={{fontWeight: 'bold'}}>Te recomendamos empezar de espaldas.</TextBombNormal>
-                                        Puedes bailar y hacer de cuenta que te vas a sacar una prenda para deternerte y hacerte desear.
-                                        <br/>
-                                        <br/>
-
-                                        <TextBombNormal style={{fontWeight: 'bold'}}>Una vez que estés en ropa interior acércate.</TextBombNormal>
-                                        Puedes corrertela antes de quitártela y permitir que el otrx espie.
-                                        <br/>
-                                        <br/>
-
-                                        <TextBombNormal style={{fontWeight: 'bold'}}>Ve de a poco.</TextBombNormal>
-                                        Ir estableciendo un leve contacto físico con tu pareja en el proceso de desvestirte también puede agregar excitación al acto.
-                                        <br/>
-                                        <br/>
-
-                                        <TextBombNormal style={{fontWeight: 'bold'}}>Para lxs más tímidxs lo mejor es que la situación suceda de la manera más natural posible.</TextBombNormal>
-                                        Los dos tips claves son  sacarte la ropa más lento que lo habitual y mantener contacto visual, hasta sentirte más cómodx con la práctica e ir soltandote. Déjate fluir y divertite.
-                                        <br/>
-                                        <br/>
-
-
+                                            <ul>
+                                                <li>
+                                                    Dediquen un tiempo a recordar cómo era su relación al principio. Les dejamos algunas preguntas de guía:
+                                                    <ul>
+                                                        <li>
+                                                            ¿Cómo se conocieron?
+                                                        </li>
+                                                        <li>
+                                                            ¿Qué era importante para ambxs en ese momento en términos de amor, cuidados y sexo?
+                                                        </li>
+                                                        <li>
+                                                            Anoten en una sección del papel qué porcentaje aproximado le asignarían a cada aspecto en esa etapa. Pueden armar un gráfico de torta como en este ejemplo:
+                                                            <img src='/img/premium-material/graphic.png' />
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
                                         </AnswerQuestion>
                                     </CardBody>
                                 </Collapse>
                             </Card>
                         </Col>
-                        <Text>
-                        Pueden armarse una playlist con esos temas que los encienden o recurrir a la playlist wesexer😉. Recomendación especial de temas para streap tease: De la canción 6 a la 12  de nuestra playlist.
-                        <br/>
-                        <a href="https://open.spotify.com/playlist/6ilE8ByVM6EmT3TCOHu1uy">Ir a playlist WeSex</a>
-                        </Text>
+                        <Col xs="12" lg="6" md="3">
+                            <Card style={{margin:"10px 10px 10px 10px"}}>
+                                <CardHeader onClick={toggle1} style={{backgroundColor: "white "}}>
+                                <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
+                                    <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
+                                    <TitleQuestion style={{fontSize: "1.4rem"}}>Mitad: Evolución y cambios</TitleQuestion>
+                                </div>
+                                <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
+                                </CardHeader>
+                                <Collapse isOpen={isOpen1}>
+                                    <CardBody>
+                                        <AnswerQuestion>
+                                            <ul>
+                                                <li>
+                                                    Luego, pasen a la etapa media y a la actual de la relación. ¿Cómo han cambiado las prioridades en términos de amor, cuidados y sexo?
+                                                </li>
+                                                <li>
+                                                    Dibujen un segundo y tercer gráfico de torta que represente el porcentaje que asignarían a cada aspecto de la relación en la mitad de su vínculo y en la actualidad.
+                                                </li>
+                                            </ul>
+                                        </AnswerQuestion>
+                                    </CardBody>
+                                </Collapse>
+                            </Card>
+                        </Col>
+                        <Col xs="12" lg="6" md="3">
+                            <Card style={{margin:"10px 10px 10px 10px"}}>
+                                <CardHeader onClick={toggle2} style={{backgroundColor: "white "}}>
+                                <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
+                                    <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
+                                    <TitleQuestion style={{fontSize: "1.4rem"}}>Actualidad: Puesta en común</TitleQuestion>
+                                </div>
+                                <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
+                                </CardHeader>
+                                <Collapse isOpen={isOpen2}>
+                                    <CardBody>
+                                        <AnswerQuestion>
+                                            <ul>
+                                                <li>
+                                                    Una vez que hayan completado sus gráficos, compartan sus dibujos y analizen las diferencias entre ambos momentos.
+                                                </li>
+                                                <li>
+                                                    Reflexionen sobre cómo han evolucionado en equipo, qué ha cambiado y por qué creen que esos cambios han ocurrido.
+                                                </li>
+                                            </ul>
+                                        </AnswerQuestion>
+                                    </CardBody>
+                                </Collapse>
+                            </Card>
+                        </Col>  
                     </Row>
+                    <Text>
+                    Consejos:
+                    <ul>
+                        <li>
+                            Pueden anotar al lado de cada gráfico recuerdos o momentos claves que sostengan esos porcentajes.
+                        </li>
+                        <li>
+                            Es importante durante todo el proceso animarse a la sinceridad y a la reflexión.
+                        </li>
+                        <li>
+                            No se trata de juzgar, sino de comprender cómo han cambiado las prioridades y la dinámica en su relación.
+                        </li>
+                    </ul>
+
+                    </Text>
                     <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
-                        <Text2>
-                            <span>Que disfruten,</span>
-                            <br/>
-                            <span>El equipo de WeSex.</span>
-                        </Text2>
-                </Row>
+                            <Text2>
+                                <span>Al final, es una oportunidad para celebrar el crecimiento y comprender mejor el viaje que han tenido juntxs.</span>
+                                <br/>
+                                <br/>
+                                <span>¡Que se disfruten!</span>
+                                <br/>
+                                <br/>
+                                <span>El equipo de WeSex</span>
+                            </Text2>
+                    </Row>
             </Container>
-            
-            <Notificar2 message='¡ Notificar que finalizamos el desafío !'
-             url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pag6peUS2RF0hQT3S/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}`}
-             url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pag6peUS2RF0hQT3S/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}`}/>
+            <Notificar2 message='¡ Notificar que finalizamos el desafio !' 
+            url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pagWSlKzdrClST31G/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}`}
+            url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pagWSlKzdrClST31G/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}`}/>
             </Background>
           )}
         </section>
       );
 }
  
-export default StreapDance;
+export default Sexvolution;
