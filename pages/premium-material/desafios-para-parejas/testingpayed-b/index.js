@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Layout from '../../../../components/general/Layout';
+import Intro from '../../../../components/premiumMaterial/desafiosParejas/intro';
 import IntroDiscount from '../../../../components/premiumMaterial/desafiosParejas/introDiscount';
 import Explicacion2 from '../../../../components/premiumMaterial/desafiosParejas/explicacion2'
 import Explicacion from '../../../../components/premiumMaterial/explicacion'
@@ -57,7 +58,7 @@ export default function TestingpayedB() {
       
       <main>
         <Layout>
-        <IntroDiscount subtitle1_1='Lleva la sexualidad con tu pareja' subtitle1_2='al máximo de placer' />
+        <Intro subtitle1_1='Lleva la sexualidad con tu pareja' subtitle1_2='al máximo de placer' />
         {/* <div style={{color: "black", textAlign: "center", fontSize: "3rem", fontWeight: "bold"}}>TESTING B</div> */}
         <Explicacion2 />
         <ComoFunciona />

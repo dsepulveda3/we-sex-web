@@ -4,11 +4,18 @@ import styled from "@emotion/styled";
 import { get_couple } from "../../../requests/premiumService";
 import OtherChallenge from "./roadComponents/otherChallenge";
 import { toast } from "react-toastify";
+import Diagnostic from "./roadComponents/Diagnostic";
 
 const HeaderContainer = styled.div`
   background-color: #ebe4f8;
+  position: fixed;
+  z-index: 999;
 `;
 
+
+const StickyComponent = styled.div`
+    height: 14vh;
+`;
 
 
 const LevelBox = styled.div`
@@ -33,7 +40,7 @@ const LevelBoxContainer = styled.div`
 
 const Header = styled.div`
     background-image: url("/img/landing/cta-bg.webp");
-    height: 10vh;
+    height: 9vh;
     width: 100%;
     font-weight: bold;
     border-radius: 20px; /* Apply border-radius to all corners */
@@ -49,12 +56,12 @@ const Title = styled.div`
     font-family: "Helvetica Neue", sans-serif;
     color: black;
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: white;
     justify-content: center;
 
     @media (max-width: 540px){
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 `;
 
@@ -62,12 +69,12 @@ const SubTitle = styled.div`
     font-family: "Helvetica Neue", sans-serif;
     color: black;
     font-weight: bold;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     color: white;
     justify-content: center;
 
     @media (max-width: 540px){
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 `;
 
@@ -862,6 +869,7 @@ const Popup = ({
     return (
         <>
           <HeaderContainer>
+            
             <ContainerData>
               <Level><span>NIVEL: CALENTAMIEMTO</span></Level>
 
@@ -878,7 +886,7 @@ const Popup = ({
             </ContainerData>
 
             <Header>
-              
+            
               {coupleData ? (
                 <Title>Desafíos {`${coupleData.coupleName}`}</Title>
               ) : (
@@ -889,9 +897,12 @@ const Popup = ({
               ) : (
                 <SubTitle>Loading...</SubTitle> // Or any loading indicator
               )}
+              {/* <Diagnostic /> */}
             </Header>
           </HeaderContainer>
           <Background>
+          <StickyComponent />
+          <Diagnostic />
             {/* {renderLevelBoxes()} */}
             <div style={{ paddingTop: '1rem', backgroundColor: '#ebe4f8' }}></div>
             <LevelBoxContainer>
