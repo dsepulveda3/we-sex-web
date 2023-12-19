@@ -10,11 +10,24 @@ const HeaderContainer = styled.div`
   background-color: #ebe4f8;
   position: fixed;
   z-index: 999;
+  width: 100%; /* Ensure the container spans the full width */
+
+  justify-content: space-between; /* Align items with space between */
+  padding: 0 10px;
+
+  @media (max-width: 540px){
+    padding: 0 5px;
+    height: 14vh;
+  }
+
 `;
 
-
 const StickyComponent = styled.div`
-    height: 14vh;
+    height: 17vh;
+
+    @media (max-width: 540px){
+      height: 14vh;
+  }
 `;
 
 
@@ -765,6 +778,7 @@ const Popup = ({
   const Road = () => {
     const router = useRouter();
     const [coupleName, setCoupleName] = useState("");
+    
   
     const [coupleData, setCoupleData] = useState(null);
     const [isPopupVisible, setPopupVisible] = useState(false); // State for controlling the popup
@@ -774,6 +788,8 @@ const Popup = ({
     const [totalChallenges, setTotalChallenges] = useState(0);
     const [dosisDone, setDosisDone] = useState(0);
     const [totalDosis, setTotalDosis] = useState(0);
+    const [showDiagnostico, setShowDiagnostico] = useState(false);
+    
 
     const [levelText, setLevelText] = useState("Nivel 1")
 
@@ -820,6 +836,10 @@ const Popup = ({
 
         if (coupleName === "Complices"){
           setLevelText("Nivel 2");
+        }
+
+        if (coupleName === "all"){
+          setShowDiagnostico(true);
         }
     
         // Calculate number of challenges in 'done' status and total available
@@ -885,8 +905,7 @@ const Popup = ({
               <div onClick={handleWarningSymbolClick} style={{textAlign: "right", padding: "0.5rem"}}>ℹ️</div>
             </ContainerData>
 
-            <Header>
-            
+            <Header>            
               {coupleData ? (
                 <Title>Desafíos {`${coupleData.coupleName}`}</Title>
               ) : (
@@ -902,7 +921,7 @@ const Popup = ({
           </HeaderContainer>
           <Background>
           <StickyComponent />
-          <Diagnostic />
+          {showDiagnostico && <Diagnostic origin={coupleName} />}
             {/* {renderLevelBoxes()} */}
             <div style={{ paddingTop: '1rem', backgroundColor: '#ebe4f8' }}></div>
             <LevelBoxContainer>

@@ -26,10 +26,10 @@ const BotonNotificarDone = styled.a`
 
 const Diagnostic = ({origin}) => {
     const router = useRouter();
-    const link = "www.we.sex"
+    const link = "profile"
 
     const handleClick = () => {
-        router.push(`${link}?origin=${origin}`);
+        router.push(`/premium-material/desafios-para-parejas/${link}?origin=${origin}`);
     }
     return(
         <>
