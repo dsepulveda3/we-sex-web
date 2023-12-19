@@ -37,6 +37,7 @@ export default function Instagram() {
 
         suscribirme='Suscribirme (mes gratis)'
         font_boton='1.2rem'
+        free_month="yes"
 
         price_mp_basic="15,600 ARS/pareja"
         

@@ -436,7 +436,7 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
     mp_basic, mp_estandar, mp_premium, stripe_basic, stripe_estandar, stripe_premium, discount, country='Argentina', argentina="yes", extra_countries='no', other_countries="yes",
     price_stripe_spain_basic, price_stripe_spain_estandar, price_stripe_spain_premium, stripe_basic_spain, stripe_estandar_spain, stripe_premium_spain,
     chile, price_stripe_chile_basic, price_stripe_chile_estandar, price_stripe_chile_premium, stripe_basic_chile, stripe_estandar_chile, stripe_premium_chile, 
-    suscribirme="Suscribirme", font_boton="1.8rem"}) => {
+    suscribirme="Suscribirme", font_boton="1.8rem", free_month="no"}) => {
 
     const [selectedOption, setSelectedOption] = useState(country);
     const [showPopup, setShowPopup] = useState(false);
@@ -486,7 +486,12 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
             <Container style={{paddingTop: "5rem", paddingBottom: "5rem"}}>
                 <Title><span>Precios</span></Title>
                 <SlideHeader>
-                    <SubTitle>Elige uno de nuestros 3 planes</SubTitle>
+                    {free_month === 'no' && (
+                        <SubTitle>Elige uno de nuestros 3 planes</SubTitle>
+                    )}
+                    {free_month === 'yes' && (
+                        <SubTitle>Elige uno de nuestros 3 planes <a style={{textDecoration: "underline"}}><strong>con el 1er mes GRATIS</strong></a></SubTitle>
+                    )}
                     <InfoButton onClick={() => setShowPopup(true)}>ℹ️</InfoButton>
                 </SlideHeader>
 

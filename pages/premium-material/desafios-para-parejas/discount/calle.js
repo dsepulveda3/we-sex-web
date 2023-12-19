@@ -38,6 +38,7 @@ export default function Calle() {
 
         suscribirme='Suscribirme (mes gratis)'
         font_boton='1.2rem'
+        free_month="yes"
 
         mp_basic="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b84cc76018b8cd899e7061b" 
         price_mp_estandar="20,000 ARS/pareja"

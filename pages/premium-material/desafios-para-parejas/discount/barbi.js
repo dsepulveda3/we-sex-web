@@ -37,7 +37,8 @@ export default function Barbi() {
 
         suscribirme='Suscribirme (mes gratis)'
         font_boton='1.2rem'
-        
+        free_month="yes"
+
         price_mp_basic="15,600 ARS/pareja"
         mp_basic="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b84cc76018b8cd6c8fc0618" 
         price_mp_estandar="20,000 ARS/pareja"

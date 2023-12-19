@@ -37,7 +37,8 @@ export default function Home() {
 
         suscribirme='Suscribirme (mes gratis)'
         font_boton='1.2rem'
-        
+        free_month="yes"
+
         price_mp_basic="15,600 ARS/pareja"
         
         mp_basic="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b62d290018b679bd9b50364" 
