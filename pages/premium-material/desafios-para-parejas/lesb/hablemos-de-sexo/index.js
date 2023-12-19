@@ -1,4 +1,4 @@
-import HablemosDeSexoL from "../../../../../components/premiumMaterial/desafiosParejas/lesb/hablemosDeSexoL";
+import HablemosDeSexoL from "../../../../../components/premiumMaterial/desafiosParejas/Lesb/hablemosDeSexoL";
 
 
 //
