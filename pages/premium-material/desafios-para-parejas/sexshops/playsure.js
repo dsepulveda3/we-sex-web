@@ -27,6 +27,10 @@ export default function Playsure() {
         discount="Mes gratis x Playsure"
         other_countries='no'
 
+        suscribirme='Suscribirme (mes gratis)'
+        font_boton='1.2rem'
+        free_month="yes"
+
         price_mp_basic="15,600 ARS/pareja"
         mp_basic="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848c44be6a018c45c276f500d3" 
         price_mp_estandar="26,600 ARS/pareja"
