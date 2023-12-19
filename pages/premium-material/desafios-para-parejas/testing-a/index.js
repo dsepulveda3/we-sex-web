@@ -69,11 +69,14 @@ export default function TestingA() {
         country={origin}
         chile="yes"
 
+        suscribirme='Suscribirme (mes gratis)'
+        font_boton='1.2rem'
+
         price_mp_basic="20,000 ARS/pareja"
         mp_basic="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b95ad95018ba6c9468709c0" 
-        price_mp_estandar="32,000 ARS/pareja"
+        price_mp_estandar="24,000 ARS/pareja"
         mp_estandar="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b95ad8a018ba6ca546e0a1a"
-        price_mp_premium="44,000 ARS/pareja"
+        price_mp_premium="26,000 ARS/pareja"
         mp_premium="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b95ad95018ba6cb937a09c4"
 
         price_stripe_basic="30 USD/pareja"

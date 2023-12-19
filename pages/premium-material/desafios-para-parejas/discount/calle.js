@@ -35,6 +35,10 @@ export default function Calle() {
         <PlansUniversal 
         discount="Incluye 1er mes gratis"
         price_mp_basic="15,600 ARS/pareja"
+
+        suscribirme='Suscribirme (mes gratis)'
+        font_boton='1.2rem'
+
         mp_basic="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b84cc76018b8cd899e7061b" 
         price_mp_estandar="20,000 ARS/pareja"
         mp_estandar="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b84cc76018b8ce9ec02062a"

@@ -34,6 +34,10 @@ export default function Master() {
         <Opinions />
         <PlansUniversal 
         discount="Incluye 1er mes gratis"
+
+        suscribirme='Suscribirme (mes gratis)'
+        font_boton='1.2rem'
+
         price_mp_basic="15,600 ARS/pareja"
         
         mp_basic="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b84cc99018b87da4f7702fe" 
