@@ -7,6 +7,7 @@ import ArrowBack from './universals/arrowBack';
 import { useRouter } from 'next/router';
 import Feedback from './universals/feedback';
 
+
 const Header = styled.div`
     display: flex;
     align-items: center; /* Vertically center the items */
@@ -113,6 +114,7 @@ const SubTitle= styled.div`
     // padding: 1rem;
 
     background-image: url("/img/landing/cta-bg.webp");
+    // background-color: var(--violet);
     height: 9vh;
     font-size: 1.5rem;
     width: 100%;
@@ -123,6 +125,14 @@ const SubTitle= styled.div`
     justify-content: center; /* Vertically center content */
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Increased spread and blur for more shadow */
+
+    span {
+        font-weight: bold;
+        font-family: "Averia Libre", sans-serif;
+        background-color: var(--violet); /* Set the background color to green */
+        padding: 0.5rem 1rem; /* Add padding to make the background visible */
+        color: white; /* Set the text color to white */
+    }
     
 `;
 
