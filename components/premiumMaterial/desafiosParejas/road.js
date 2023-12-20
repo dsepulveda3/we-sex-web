@@ -5,6 +5,7 @@ import { get_couple } from "../../../requests/premiumService";
 import OtherChallenge from "./roadComponents/otherChallenge";
 import { toast } from "react-toastify";
 import Diagnostic from "./roadComponents/Diagnostic";
+import Areas from "./roadComponents/areas";
 
 const HeaderContainer = styled.div`
   background-color: #ebe4f8;
@@ -867,22 +868,7 @@ const Popup = ({
       fetchData();
     }, [coupleName]);
 
-    
-  const renderLevelBoxes = () => {
-    const levelBoxes = [];
-    const numberOfLevels = Math.ceil(totalChallenges / 5); // Calculate the number of LevelBoxes required
 
-    for (let i = 1; i <= numberOfLevels; i++) {
-      levelBoxes.push(
-        <div key={i} style={{ paddingTop: '1rem', backgroundColor: '#ebe4f8' }}>
-          <LevelBoxContainer>
-            <LevelBox>{`Nivel ${i}`}</LevelBox>
-          </LevelBoxContainer>
-        </div>
-      );
-    }
-    return levelBoxes;
-  };
 
   console.log(coupleData);
     
@@ -892,6 +878,7 @@ const Popup = ({
             
             <ContainerData>
               <Level><span>NIVEL: CALENTAMIEMTO</span></Level>
+              {/* <Areas /> */}
 
               <SectionContainer>
                 <ImageDoneChallengeCounter src="/img/challenges/done_wesex.png" />

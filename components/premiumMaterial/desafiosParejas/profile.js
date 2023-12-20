@@ -6,7 +6,9 @@ import Notificar2 from "./universals/notificar2";
 import ArrowBack from './universals/arrowBack';
 import { useRouter } from 'next/router';
 import Feedback from './universals/feedback';
+import { get_couple } from '../../../requests/premiumService';
 
+//
 
 const Header = styled.div`
     display: flex;
@@ -269,17 +271,16 @@ const obtenerAccionAleatoria = () => {
 
 const Profile = () => {
 
-    const [selectedOption, setSelectedOption] = useState('op1');
-    const [numeroAleatorio, setNumeroAleatorio] = useState(null);
-    const [isOpen, setIsOpen] = useState(false);
-    const [isOpen2, setIsOpen2] = useState(false);
-    const toggle = () => setIsOpen(!isOpen);
-    const toggle2 = () => setIsOpen2(!isOpen2);
+    const [coupleName, setCoupleName] = useState("");
+    const [coupleData, setCoupleData] = useState(null);
+    
 
     const router = useRouter();
 
     const [isOriginRoute, setIsOriginRoute] = useState(false);
     const [origin, setOrigin] = useState(null);
+    const [urlDiagnostic, setUrlDiagnostic] = useState(null);
+    const [lastDateDiagnostic, setLastDateDiagnostic] = useState(null);
 
     const [member1, setMember1] = useState(null);
     const [member2, setMember2] = useState(null);
@@ -289,11 +290,30 @@ const Profile = () => {
         if (router.isReady){
             
           if (router.query.origin) {
+            setCoupleName(router.query.origin);
             setIsOriginRoute(true);
             setOrigin(router.query.origin);
           }
         }
       }, [router.isReady, isOriginRoute]);
+
+      useEffect(() => {
+        const fetchData = async () => {
+          const response = await get_couple(coupleName);
+          if (response.data.inactive){
+            toast.error('Tu subscripción no esta activa. Contactate con nosotros si deseas re-activarla y seguir donde dejaste tu viaje por los desafios!!');
+            router.push('/premium-material/desafios-para-parejas');
+          } else {
+            setCoupleData(response.data);
+            setUrlDiagnostic(response.data.graphImage.key);
+            setLastDateDiagnostic(response.data.graphUpdatedAt)
+          }
+        };
+        fetchData();
+      }, [coupleName]);
+
+      console.log("Data commming");
+      console.log(coupleData);
 
     const handleClick = () => {
         router.push(`https://wa.me/5491140678698?text=Hola!%20Queremos%20solicitar%20un%20nuevo%20diagnóstico`);
@@ -312,11 +332,25 @@ const Profile = () => {
             <Title>{origin}</Title> */}
             <SubTitle>DIAGNÓSTICO DE PAREJA</SubTitle>
             <ContainerImage>
-                        <PositionImg src='/img/challenges/GraficoParejaExample.png' />
+                {urlDiagnostic !== null ? (
+                    <PositionImg src={`https://we-sex-premium.s3.us-east-2.amazonaws.com/${urlDiagnostic}`} />
+                ) : (
+                    // <PositionImg src="/img/challenges/noDiagnostic2.jpeg" />
+                    <>
+                        <div style={{fontFamily: "Karla", fontWeight: "bold"}}>Aún no tienen diagnóstico.</div>
+                        <div style={{fontFamily: "Karla", fontWeight: "bold", fontSize: "1.4rem"}}>Soliciten uno con el botón de "Solicitar nuevo diagnóstico".</div>
+                    </>
+                )}
             </ContainerImage>
-            <Text>Último diagnóstico realizado el 09/10/2023</Text>
+            {lastDateDiagnostic !== null ? (
+                    <Text>{`Último diagnóstico realizado el ${lastDateDiagnostic}`}</Text>
+                ) : (
+                    <Text></Text>
+                )}
+   
+            
             <SelectorButtonContainer>
-                    <Button onClick={handleClick}>Solicitar nuevo diagníostico</Button>
+                    <Button onClick={handleClick}>Solicitar nuevo diagnóstico</Button>
             </SelectorButtonContainer>
             <ContainerInstructions>
                 ¿Qué significa cada área?

@@ -319,6 +319,7 @@ const PriceText = styled.div`
     background-color: var(--violet); /* Set the background color to green */
     padding: 0.5rem 4rem; /* Add padding to make the background visible */
     color: white; /* Set the text color to white */
+    font-size: 1.5rem;
 
     @media(max-width: 540px){
         margin-left: 0.7rem;

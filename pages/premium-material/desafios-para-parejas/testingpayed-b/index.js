@@ -68,18 +68,18 @@ export default function TestingpayedB() {
         discount=""
         country={origin}
 
-        price_mp_basic="10,000 ARS/pareja"
+        price_mp_basic="AR$ 10,000 mes/pareja"
         mp_basic="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848c7d075a018c7dfc870000f2" 
-        price_mp_estandar="21,000 ARS/pareja"
+        price_mp_estandar="AR$ 21,000 mes/pareja"
         mp_estandar="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848c7d0790018c7dfd1d3d00f4"
-        price_mp_premium="24,000 ARS/pareja"
+        price_mp_premium="AR$ 24,000 mes/pareja"
         mp_premium="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848c7d075a018c7dfddadf00f4"
 
-        price_stripe_basic="15 USD/pareja"
+        price_stripe_basic="U$D 15 mes/pareja"
         stripe_basic="https://buy.stripe.com/7sI16M1lnbH7gMMeWb"
-        price_stripe_estandar="19 USD/pareja"
+        price_stripe_estandar="U$D 19 mes/pareja"
         stripe_estandar="https://buy.stripe.com/eVa5n2d456mN2VW3dv"
-        price_stripe_premium="27 USD/pareja"
+        price_stripe_premium="U$D 27 mes/pareja"
         stripe_premium="https://buy.stripe.com/14kg1G4xz12teEEg0i"
 
         />
