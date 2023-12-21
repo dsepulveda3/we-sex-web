@@ -1,10 +1,11 @@
 import Road from "../../../../components/premiumMaterial/desafiosParejas/road";
+import NotificationButton from "../../../../components/webPush";
 
 
 const DesafioRoad = () => {
 
     return(
-        <Road />
+        <NotificationButton coupleName={"good"} />
     )
 };
 
