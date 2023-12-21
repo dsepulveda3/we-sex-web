@@ -338,7 +338,7 @@ const Profile = () => {
                     // <PositionImg src="/img/challenges/noDiagnostic2.jpeg" />
                     <>
                         <div style={{fontFamily: "Karla", fontWeight: "bold"}}>Aún no tienen diagnóstico.</div>
-                        <div style={{fontFamily: "Karla", fontWeight: "bold", fontSize: "1.4rem"}}>Soliciten uno con el botón de "Solicitar nuevo diagnóstico".</div>
+                        <div style={{fontFamily: "Karla", fontWeight: "bold", fontSize: "1.4rem"}}>Soliciten uno con el botón de &quot;Solicitar nuevo diagnóstico&quot;.</div>
                     </>
                 )}
             </ContainerImage>
