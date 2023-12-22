@@ -322,7 +322,7 @@ const FullscreenCanvas = styled.div`
 
 
 
-const Sexvolution = () => {
+const PicadaSensual = () => {
     const [showAnimation, setShowAnimation] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [isOpen1, setIsOpen1] = useState(false);
@@ -375,75 +375,54 @@ const Sexvolution = () => {
                         {/* <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle> */}
 
                         <div style={{color: "white", paddingTop: "1rem", fontFamily: "Karla"}}>Duración 1 hr.</div>
+                        <Text>Objetivo: Fomentar la exploración sensual y la intimidad entre la pareja fuera de la cama.</Text>
                         <Text>
                         Materiales:
                         <br/>
                         <ul>
                             <li>
-                            Papel grande o cartulina.
+                            Vendaje para los ojos o pañuelo.
                             </li>
                             <li>
-                            Lápices de colores.
-                            </li>
-                            <li>
-                            Reloj o temporizador.
+                            Alimentos simples:  Quesos, frutas, frutos secos, dulce de leche, chocolate, crema chantilly (con tener tres de estos elementos esta bien).
                             </li>
                         </ul>
-                        <br/>
-                        Les invitamos a explorar la evolución de su relación a lo largo del tiempo.
-                        <br/>
-                        <br/>
-                        Las relaciones son dinámicas, cambiantes *y* democráticas.
-                        <br/>
-                        <br/>
-                        Para pasar del amor romántico y pasional (cóctel de hormonas cerebral que dura entre 6 meses a 3 años) al amor maduro sin caducidad, es importante darse espacio para analizar sus objetivos vinculares y reflexionar sobre ellos de manera constante.
-                        <br/>
-                        <br/>
-                        Ser amadxs, cuidadxs, sexuadxs es lo que las personas buscamos, por eso hoy investigaremos cómo comenzamos, y dónde estamos hoy.
                         </Text>
                         <Text>
                         <span>Instrucciones:</span>
+                        El desafío de hoy va a constar de una serie de juegos para divertirse con la gastronomía e ir incrementando la temperatura, sumado a sugerencias de como explorar sexualmente la cocina 😉.
+                        <br/>
+                        La comida no es lo más importante, sino coquetearse en el proceso, que se miren, que se eroticen y calienten con la propuesta. Aunque esta combinación de placeres puede salir muy bien 👅.
+                        <br/>
+                        <br/>
+                        Preparativos:
                         <ul>
                             <li>
-                                Hoy van a analizar su relación desde el principio hasta ahora, dividiendo todo su recorrido en tres etapas: PRINCIPIO, MITAD Y ACTUALIDAD.
+                            Antes de comenzar el juego, deben preparar la cocina juntxs: encender velas, seleccionar música suave y preparar los ingredientes que vayan a utilizar
                             </li>
                             <li>
-                                En cada etapa, van a pensar y escribir que porcentaje de atención han dedicado a cada area: Amor - Cuidados - Sexo.
-                            </li>
-                            <li>
-                                Les iremos guiando con preguntas en cada etapa. Comencemos:
+                            Elección de Roles: Cada miembro de la pareja deberá elegir un personaje para interpretar durante la noche. Por ejemplo, pueden ser un cocinerx y su asistente, un crítico gastronómico y un chef famoso, entre otros.
+                            <br/>
+                            Es importante que mantengan el personaje. Como si no se conocieran o como si fueran compañerxs de trabajo reales. Esto es clave para encender el fuego, ser otras personas por un rato para permitirse jugar.
                             </li>
                         </ul>
+                        <br />
+                        <br/>
+                        Ahora si, ¡vamos a jugar!
                         </Text>
                         <Col xs="12" lg="12" md="12">
                             <Card style={{margin:"10px 10px 10px 10px"}}>
                                 <CardHeader onClick={toggle} style={{backgroundColor: "white "}}>
                                 <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
                                     <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
-                                    <TitleQuestion style={{fontSize: "1.4rem"}}>Principio</TitleQuestion>
+                                    <TitleQuestion style={{fontSize: "1.4rem"}}>Preparación Ciega</TitleQuestion>
                                 </div>
                                 <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
                                 </CardHeader>
                                 <Collapse isOpen={isOpen}>
                                     <CardBody>
                                         <AnswerQuestion>
-                                            <ul>
-                                                <li>
-                                                    Dediquen un tiempo a recordar cómo era su relación al principio. Les dejamos algunas preguntas de guía:
-                                                    <ul>
-                                                        <li>
-                                                            ¿Cómo se conocieron?
-                                                        </li>
-                                                        <li>
-                                                            ¿Qué era importante para ambxs en ese momento en términos de amor, cuidados y sexo?
-                                                        </li>
-                                                        <li>
-                                                            Anoten en una sección del papel qué porcentaje aproximado le asignarían a cada aspecto en esa etapa. Pueden armar un gráfico de torta como en este ejemplo:
-                                                            <img src='/img/premium-material/graphic.png' />
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
+                                            Una persona (con los ojos vendados) deberá preparar una receta simple mientras la otra le da instrucciones habladas. Esta receta simple puede ser la preparación de una picada, de un postre, o lo que deseen.
                                         </AnswerQuestion>
                                     </CardBody>
                                 </Collapse>
@@ -454,21 +433,19 @@ const Sexvolution = () => {
                                 <CardHeader onClick={toggle1} style={{backgroundColor: "white "}}>
                                 <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
                                     <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
-                                    <TitleQuestion style={{fontSize: "1.4rem"}}>Mitad: Evolución y cambios</TitleQuestion>
+                                    <TitleQuestion style={{fontSize: "1.4rem"}}>Cata a Ciegas</TitleQuestion>
                                 </div>
                                 <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
                                 </CardHeader>
                                 <Collapse isOpen={isOpen1}>
                                     <CardBody>
                                         <AnswerQuestion>
-                                            <ul>
-                                                <li>
-                                                    Luego, pasen a la etapa media y a la actual de la relación. ¿Cómo han cambiado las prioridades en términos de amor, cuidados y sexo?
-                                                </li>
-                                                <li>
-                                                    Dibujen un segundo y tercer gráfico de torta que represente el porcentaje que asignarían a cada aspecto de la relación en la mitad de su vínculo y en la actualidad.
-                                                </li>
-                                            </ul>
+                                        Ahora, preparen pequeñas porciones de alimentos que deban ser identificados por el sabor mientras alguien usa un vendaje para los ojos. Pueden combinar diferentes ingredientes y alimentos para incrementar la dificultad. La persona que este a ciegas deberá adivinar que ingredientes contiene lo que está probando.
+                                        <br/>
+                                        <br/>
+                                        <strong>Recompensas:</strong>
+                                        <br/>
+                                        Cada vez que la pareja acierte exitosamente puede otorgar recompensas. Por ejemplo: masajes, caricias o cualquier cosa que la pareja considere íntima y placentera. Es vital que después de cada desafío se premien con erotismo. Así su cerebro activa el círculo virtuoso del placer.
                                         </AnswerQuestion>
                                     </CardBody>
                                 </Collapse>
@@ -479,19 +456,26 @@ const Sexvolution = () => {
                                 <CardHeader onClick={toggle2} style={{backgroundColor: "white "}}>
                                 <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
                                     <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
-                                    <TitleQuestion style={{fontSize: "1.4rem"}}>Actualidad: Puesta en común</TitleQuestion>
+                                    <TitleQuestion style={{fontSize: "1.4rem"}}>Explorando la cocina</TitleQuestion>
                                 </div>
                                 <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
                                 </CardHeader>
                                 <Collapse isOpen={isOpen2}>
                                     <CardBody>
                                         <AnswerQuestion>
+                                        Luego de calentarse en los juegos previos, llego el momento del postre. Los invitamos a calentar más aun la situación en la cocina. Para eso, les dejamos algunas ideas de cómo aprovechar el espacio 😉.
                                             <ul>
                                                 <li>
-                                                    Una vez que hayan completado sus gráficos, compartan sus dibujos y analizen las diferencias entre ambos momentos.
+                                                    <strong>Postre time:</strong> Una persona se sube a la mesada y disfruta del placer oral que le estará dando su pareja
                                                 </li>
                                                 <li>
-                                                    Reflexionen sobre cómo han evolucionado en equipo, qué ha cambiado y por qué creen que esos cambios han ocurrido.
+                                                    <strong>Aprovechando los alimentos:</strong> Pueden untar dulce de leche o crema chantilly en los genitales de su pareja y luego disfrutar del postre (emoji de fuego)
+                                                </li>
+                                                <li>
+                                                    <strong>Penetración contra la heladera:</strong> Parados contra la heladera y ambos mirando hacia ella. Es que van a estar tan calientes que con algo los tenemos que enfriar.
+                                                </li>
+                                                <li>
+                                                    <strong>En el piso:</strong> Variar de vez en cuando es divertido, y ya que vamos a dejar la cama de lado…¿Porque no #acabar este desafío en el piso?
                                                 </li>
                                             </ul>
                                         </AnswerQuestion>
@@ -501,23 +485,20 @@ const Sexvolution = () => {
                         </Col>  
                     </Row>
                     <Text>
-                    Consejos:
+                    Notas Importantes:
                     <ul>
                         <li>
-                            Pueden anotar al lado de cada gráfico recuerdos o momentos claves que sostengan esos porcentajes.
+                        <strong>Comunicación:</strong> Es crucial establecer límites y mantener la comunicación abierta en todo momento. Si algo no se siente cómodo, detengan el juego de inmediato.
                         </li>
                         <li>
-                            Es importante durante todo el proceso animarse a la sinceridad y a la reflexión.
-                        </li>
-                        <li>
-                            No se trata de juzgar, sino de comprender cómo han cambiado las prioridades y la dinámica en su relación.
+                        <strong>Seguridad:</strong> Tengan cuidado con superficies calientes, objetos afilados o cualquier elemento peligroso en la cocina.
                         </li>
                     </ul>
 
                     </Text>
                     <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
                             <Text2>
-                                <span>Al final, es una oportunidad para celebrar el crecimiento y comprender mejor el viaje que han tenido juntxs.</span>
+                                <span>Este juego no solo fomentará la conexión emocional y física, sino que también puede agregar una dosis de diversión y espontaneidad a la relación. ¡Recuerden que el objetivo principal es disfrutar y fortalecer su complicidad!</span>
                                 <br/>
                                 <br/>
                                 <span>¡Que se disfruten!</span>
@@ -536,4 +517,4 @@ const Sexvolution = () => {
       );
 }
  
-export default Sexvolution;
+export default PicadaSensual;
