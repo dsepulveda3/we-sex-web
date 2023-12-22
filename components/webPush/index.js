@@ -17,7 +17,7 @@ const base64ToUint8Array = base64 => {
 }
 
 
-const NotificationButton = ({ coupleName }) => {
+const NotificationButton = ({ coupleName, index }) => {
     const [isSubscribed, setIsSubscribed] = useState(false)
     const [subscription, setSubscription] = useState(null)
     const [registration, setRegistration] = useState(null)
@@ -44,7 +44,7 @@ const NotificationButton = ({ coupleName }) => {
         userVisibleOnly: true,
         applicationServerKey: base64ToUint8Array(process.env.NEXT_PUBLIC_WEB_PUSH_PUBLIC_KEY)
       })
-      subscribe_to_notifications(sub, coupleName, 1);
+      subscribe_to_notifications(sub, coupleName, index);
       setSubscription(sub)
       setIsSubscribed(true)
     }
