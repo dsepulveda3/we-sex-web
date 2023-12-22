@@ -305,8 +305,11 @@ const Profile = () => {
             router.push('/premium-material/desafios-para-parejas');
           } else {
             setCoupleData(response.data);
-            setUrlDiagnostic(response.data.graphImage.key);
-            setLastDateDiagnostic(response.data.graphUpdatedAt)
+            if (response.data.graphImage && response.data.graphImage.key){
+                setUrlDiagnostic(response.data.graphImage.key);
+                setLastDateDiagnostic(response.data.graphUpdatedAt);
+            }
+            
           }
         };
         fetchData();
@@ -358,22 +361,22 @@ const Profile = () => {
                 <br/>
                 <ul>
                     <li>
-                        <strong>Área comunicación:</strong> texto texto texto texto texto texto texto texto texto
+                        <strong>Área comunicación:</strong> Esta área se centra en la interacción verbal y no verbal entre la pareja. Implica la capacidad de expresar pensamientos, sentimientos, preocupaciones y necesidades de manera abierta y efectiva, así como escuchar activamente al otro con empatía y comprensión.
                     </li>
                     <li>
-                        <strong>Área de control:</strong> texto texto texto texto texto texto texto texto texto
+                        <strong>Área de control:</strong> Refiere a la gestión de las decisiones, acciones y límites en la relación. Implica establecer acuerdos, respetar la autonomía del otro, evitar comportamientos controladores y mantener un equilibrio saludable en la toma de decisiones conjuntas.
                     </li>
                     <li>
-                        <strong>Área sexual:</strong> texto texto texto texto texto texto texto texto texto
+                        <strong>Área sexual:</strong> Engloba la intimidad física y emocional entre la pareja. Incluye la comunicación abierta sobre preferencias, la satisfacción sexual mutua, la conexión emocional durante la intimidad y la disposición para explorar y mantener una vida sexual saludable y satisfactoria.
                     </li>
                     <li>
-                        <strong>Área de afecto:</strong> texto texto texto texto texto texto texto texto texto
+                        <strong>Área de afecto:</strong> Se enfoca en la expresión y recepción de amor, afecto y cuidado en la relación. Comprende la demostración de aprecio, cariño, ternura y apoyo emocional hacia la pareja, promoviendo un ambiente de seguridad emocional y conexión afectiva.
                     </li>
                     <li>
-                        <strong>Área de influencia:</strong> texto texto texto texto texto texto texto texto texto
+                        <strong>Área de influencia:</strong> Hace referencia a la capacidad de cada miembro de la pareja para influir y ser influenciado por el otro en aspectos individuales y compartidos. Implica respetar las opiniones, valores y metas del otro, así como buscar un equilibrio en la toma de decisiones y la influencia mutua.
                     </li>
                     <li>
-                        <strong>Área de satisfacción:</strong> texto texto texto texto texto texto texto texto texto
+                        <strong>Área de satisfacción:</strong> Se relaciona con la percepción individual y compartida de la felicidad y la satisfacción en la relación. Incluye la evaluación de la calidad de la relación, la presencia de satisfacción emocional, la conexión y la presencia de objetivos compartidos y logros en común.
                     </li>
                 </ul>
                 </ContainerInstructions>

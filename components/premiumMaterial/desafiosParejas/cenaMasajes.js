@@ -478,7 +478,7 @@ const CenaMasajes = () => {
                         <span>Cena y cocina juntos:</span>
                         <br/>
                         <br/>
-                        <span>1:</span> Piensen en un plato que los identifique. Algún plato que les guste a ambos, que los remonte a un recuerdo, a una cita, a un viaje que hayan hecho.
+                        <span>1:</span> Piensen en un plato que los identifique. Algún plato que les guste a ambxs, que los remonte a un recuerdo, a una cita, a un viaje que hayan hecho.
                         <br/>
                         <br/>
                         <span>2:</span> Armen el listado de compras y vayan juntos a conseguir los ingredientes.
@@ -487,7 +487,7 @@ const CenaMasajes = () => {
                         <span>3:</span> Llegada la noche, el plan será cocinar, tomar algo y disfrutar de la cena.
                         <br/>
                         <br/>
-                        <span>4:</span> Asegúrense de poder tener esa noche solos.
+                        <span>4:</span> Asegúrense de poder tener esa noche solxs.
                         <br/>
                         <br/>
                         </Text>

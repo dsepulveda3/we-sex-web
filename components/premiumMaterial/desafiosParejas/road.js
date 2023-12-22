@@ -908,7 +908,8 @@ const Popup = ({
           </HeaderContainer>
           <Background>
           <StickyComponent />
-          {showDiagnostico && <Diagnostic origin={coupleName} />}
+          <Diagnostic origin={coupleName} />
+          {/* {showDiagnostico && <Diagnostic origin={coupleName} />} */}
             {/* {renderLevelBoxes()} */}
             <div style={{ paddingTop: '1rem', backgroundColor: '#ebe4f8' }}></div>
             <LevelBoxContainer>
