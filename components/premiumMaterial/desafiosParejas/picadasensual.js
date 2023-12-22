@@ -370,7 +370,7 @@ const PicadaSensual = () => {
                     <Row className="justify-content-between">   
                         <ContentTitle>
                             <Title>Desafío</Title>
-                            <SubTitle><span>Sexvolution</span></SubTitle>
+                            <SubTitle><span>Picada Sensual</span></SubTitle>
                         </ContentTitle>
                         {/* <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle> */}
 
