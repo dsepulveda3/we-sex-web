@@ -251,6 +251,13 @@ const Suscribed = () => {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [phoneNumberTwo, setPhoneNumberTwo] = useState('');
     const [step, setStep] = useState(1);
+    const currentDate = new Date();
+    const day = String(currentDate.getDate()).padStart(2, '0');
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+    const year = currentDate.getFullYear();
+
+    const formattedDate = `${day}/${month}/${year}`;
+    console.log(formattedDate);
 
     const isFormValid = 
         memberOne.length >= 3 && 
@@ -369,9 +376,9 @@ const Suscribed = () => {
                             <Text><span>Paso 2:</span> completen el siguiente formulario, para que los expertos de WeSex puedan personalizar sus desafios !
                             <br/>
                             <br/>
-                            <a href={`https://airtable.com/appVSREVOyy0SOY9u/pagDOyoXlPZ7vcdMg/form?prefill_Nombre+de+la+pareja=${coupleNickname}&prefill_Nombre+Miembro=${memberOne}`} target="_blank" rel="noopener noreferrer" style={{textDecoration: "underline"}}>Encuesta de {memberOne}</a>
+                            <a href={`https://airtable.com/appVSREVOyy0SOY9u/pagDOyoXlPZ7vcdMg/form?prefill_Nombre+de+la+pareja=${coupleNickname}&prefill_Nombre+Miembro=${memberOne}&prefill_Día+Actual=${formattedDate}`} target="_blank" rel="noopener noreferrer" style={{textDecoration: "underline"}}>Encuesta de {memberOne}</a>
                             <br/>
-                            <a href={`https://airtable.com/appVSREVOyy0SOY9u/pagDOyoXlPZ7vcdMg/form?prefill_Nombre+de+la+pareja=${coupleNickname}&prefill_Nombre+Miembro=${memberTwo}`} target="_blank" rel="noopener noreferrer" style={{textDecoration: "underline"}}>Encuesta de {memberTwo}</a>
+                            <a href={`https://airtable.com/appVSREVOyy0SOY9u/pagDOyoXlPZ7vcdMg/form?prefill_Nombre+de+la+pareja=${coupleNickname}&prefill_Nombre+Miembro=${memberTwo}&prefill_Día+Actual=${formattedDate}`} target="_blank" rel="noopener noreferrer" style={{textDecoration: "underline"}}>Encuesta de {memberTwo}</a>
                             </Text>
 
                             <Text><span>Paso 3:</span> Les dejamos el desafío 1 para este fin de semana 😎</Text>

@@ -361,7 +361,7 @@ const Profile = () => {
                 <br/>
                 <ul>
                     <li>
-                        <strong>Área comunicación:</strong> Esta área se centra en la interacción verbal y no verbal entre la pareja. Implica la capacidad de expresar pensamientos, sentimientos, preocupaciones y necesidades de manera abierta y efectiva, así como escuchar activamente al otro con empatía y comprensión.
+                        <strong>Área comunicación:</strong> Esta área se centra en la interacción verbal y no verbal entre la pareja. Implica la capacidad de expresar pensamientos, sentimientos, preocupaciones y necesidades de manera abierta y efectiva, así como escuchar activamente al otro con empatía y comprensión. Valora las reacciones en discusiones y la concreción de promesas.
                     </li>
                     <li>
                         <strong>Área de control:</strong> Refiere a la gestión de las decisiones, acciones y límites en la relación. Implica establecer acuerdos, respetar la autonomía del otro, evitar comportamientos controladores y mantener un equilibrio saludable en la toma de decisiones conjuntas.
