@@ -88,7 +88,7 @@ export default function TestingB() {
         price_stripe_estandar_discount="U$D 19 mes/pareja"
         price_stripe_estandar="U$D 0 primer mes"
         stripe_estandar="https://buy.stripe.com/bIY5n29RTeTj688eVY"
-        price_stripe_premium_discount="U$D 27 USD/pareja"
+        price_stripe_premium_discount="U$D 27 mes/pareja"
         price_stripe_premium="U$D 0 primer mes"
         stripe_premium="https://buy.stripe.com/14kaHm6FHbH7fIIdRV"
 

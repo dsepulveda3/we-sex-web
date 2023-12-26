@@ -793,6 +793,7 @@ const Popup = ({
     
 
     const [levelText, setLevelText] = useState("Nivel 1")
+    const [nameLevelText, setNameLevelText] = useState("NIVEL: CALENTAMIENTO")
 
     useEffect(() => {
       if (router.isReady){
@@ -837,6 +838,10 @@ const Popup = ({
 
         if (coupleName === "Complices"){
           setLevelText("Nivel 2");
+          setNameLevelText("NIVEL: EXPLORACIÓN");
+        } else if(coupleName === "julia-lucho"){
+          setLevelText("Nivel 2");
+          setNameLevelText("NIVEL: EXPLORACIÓN");
         }
 
         if (coupleName === "all"){
@@ -877,7 +882,7 @@ const Popup = ({
           <HeaderContainer>
             
             <ContainerData>
-              <Level><span>NIVEL: CALENTAMIEMTO</span></Level>
+              <Level><span>{nameLevelText}</span></Level>
               {/* <Areas /> */}
 
               <SectionContainer>
