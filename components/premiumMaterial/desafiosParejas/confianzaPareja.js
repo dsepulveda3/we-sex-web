@@ -322,14 +322,18 @@ const FullscreenCanvas = styled.div`
 
 
 
-const PicadaSensual = () => {
+const ConfianzaPareja = () => {
     const [showAnimation, setShowAnimation] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [isOpen1, setIsOpen1] = useState(false);
     const [isOpen2, setIsOpen2] = useState(false);
+    const [isOpen3, setIsOpen3] = useState(false);
+    const [isOpen4, setIsOpen4] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
     const toggle1 = () => setIsOpen1(!isOpen1);
     const toggle2 = () => setIsOpen2(!isOpen2);
+    const toggle3 = () => setIsOpen3(!isOpen3);
+    const toggle4 = () => setIsOpen4(!isOpen4);
     const router = useRouter();
 
     const [isOriginRoute, setIsOriginRoute] = useState(false);
@@ -370,82 +374,107 @@ const PicadaSensual = () => {
                     <Row className="justify-content-between">   
                         <ContentTitle>
                             <Title>Desafío</Title>
-                            <SubTitle><span>Picada Sensual</span></SubTitle>
+                            <SubTitle><span>Confianza en la pareja</span></SubTitle>
                         </ContentTitle>
                         {/* <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle> */}
 
                         <div style={{color: "white", paddingTop: "1rem", fontFamily: "Karla"}}>Duración 1 hr.</div>
-                        <Text>Objetivo: Fomentar la exploración sensual y la intimidad entre la pareja fuera de la cama.</Text>
-                        <Text>
-                        Materiales:
-                        <br/>
-                        <ul>
-                            <li>
-                            Vendaje para los ojos o pañuelo.
-                            </li>
-                            <li>
-                            Alimentos simples:  Quesos, frutas, frutos secos, dulce de leche, chocolate, crema chantilly (con tener tres de estos elementos esta bien).
-                            </li>
-                        </ul>
-                        </Text>
-                        <Text>
-                        <span>Instrucciones:</span>
-                        El desafío de hoy va a constar de una serie de juegos para divertirse con la gastronomía e ir incrementando la temperatura, sumado a sugerencias de como explorar sexualmente la cocina 😉.
-                        <br/>
-                        La comida no es lo más importante, sino coquetearse en el proceso, que se miren, que se eroticen y calienten con la propuesta. Aunque esta combinación de placeres puede salir muy bien 👅.
-                        <br/>
-                        <br/>
-                        Preparativos:
-                        <ul>
-                            <li>
-                            Antes de comenzar el juego, deben preparar la cocina juntxs: encender velas, seleccionar música suave y preparar los ingredientes que vayan a utilizar
-                            </li>
-                            <li>
-                            Elección de Roles: Cada miembro de la pareja deberá elegir un personaje para interpretar durante la noche. Por ejemplo, pueden ser un cocinerx y su asistente, un crítico gastronómico y un chef famoso, entre otros.
-                            <br/>
-                            Es importante que mantengan el personaje. Como si no se conocieran o como si fueran compañerxs de trabajo reales. Esto es clave para encender el fuego, ser otras personas por un rato para permitirse jugar.
-                            </li>
-                        </ul>
-                        <br />
-                        <br/>
-                        Ahora si, ¡vamos a jugar!
-                        </Text>
+                        <Text>¿Cómo profundizarla? Poder decir lo que nos pasa sin sentirnos en el banco de acusadxs en un juicio, es de vital importancia.</Text>
                         <Col xs="12" lg="12" md="12">
                             <Card style={{margin:"10px 10px 10px 10px"}}>
                                 <CardHeader onClick={toggle} style={{backgroundColor: "white "}}>
                                 <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
                                     <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
-                                    <TitleQuestion style={{fontSize: "1.4rem"}}>Preparación Ciega</TitleQuestion>
+                                    <TitleQuestion style={{fontSize: "1.4rem"}}>Tip para una correcta comunicación a la hora de expresarte con tu pareja </TitleQuestion>
                                 </div>
                                 <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
                                 </CardHeader>
                                 <Collapse isOpen={isOpen}>
                                     <CardBody>
                                         <AnswerQuestion>
-                                            Una persona (con los ojos vendados) deberá preparar una receta simple mientras la otra le da instrucciones habladas. Esta receta simple puede ser la preparación de una picada, de un postre, o lo que deseen.
+                                            <ul>
+                                                <li>
+                                                    Cuando surgen momentos en los que sientan inseguridad o incomodidad, prefieran abordarlos juntos para fortalecer su confianza.
+                                                </li>
+                                                <li>
+                                                    La idea es expresar sus sentimientos y necesidades en un tono amable y constructivo, proponiendo soluciones que podrían generar confianza y seguridad en la relación.
+                                                </li>
+                                                <li>
+                                                    Ejemplo generalizado de una buena manera de comunicar: “En situaciones similares a X, me sentiría mucho más cómodo/a si pudiéramos hacer que sucediera Y.”
+                                                </li>
+                                                <li>
+                                                    Ejemplo detallado de una buena manera de comunicar: “Cuando desapareces por un par de días, me sería de gran ayuda recibir algún mensaje tuyo para saber cómo estás o simplemente para decirme que estás ocupado/a con el trabajo. Respeto tu espacio, pero saber que estás bien sería reconfortante para mí y fortalecería nuestra conexión.”
+                                                </li>
+                                            </ul>
                                         </AnswerQuestion>
                                     </CardBody>
                                 </Collapse>
                             </Card>
                         </Col>
+                        <Text>
+                            Ahora, al desafío 😁. 
+                            <br/>
+                            Recuerden usar los tips a la hora de expresar propuestas de mejora.
+                            <br/>
+                            <br/>
+                            <span>Preguntas guiadas para profundizar, comunicar y mejorar la confianza.</span>
+                            <br/>
+                            <br/>
+                            <div style={{fontStyle: "italic", textAlign: "left"}}>Instrucciones</div>
+                            <ol>
+                                <li>
+                                    Espacio: Encuentren un espacio cómodo, libre de distracciones, donde puedan conversar con tranquilidad y sin interrupciones. Si es posible, estar sentados en el suelo les ayudará a relajarse y estar a la misma altura.
+                                </li>
+                                <li>
+                                    Materiales: Un temporizador o cronómetro.
+                                </li>
+                                <li>
+                                Reglas:
+                                    <ul>
+                                        <li>
+                                            La duración total será de 40 minutos.
+                                        </li>
+                                        <li>
+                                            Habrá 4 secciones de preguntas, cada una durará 10 minutos.
+                                        </li>
+                                        <li>
+                                            Por cada sección cada uno preguntará 5 minutos, y el otro responderá.
+                                        </li>
+                                        <li>
+                                            Se debe responder con honestidad y empatía.
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ol>
+
+                            Recuerden que generar acuerdos es clave. ¡Ahora enciendan su temporizador y vamos por ellos!
+                        </Text>
+                        <Text>
+                        <div style={{fontStyle: "italic", textAlign: "left"}}>Preguntas</div>
+                        </Text>
                         <Col xs="12" lg="12" md="12">
                             <Card style={{margin:"10px 10px 10px 10px"}}>
                                 <CardHeader onClick={toggle1} style={{backgroundColor: "white "}}>
                                 <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
                                     <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
-                                    <TitleQuestion style={{fontSize: "1.4rem"}}>Cata a Ciegas</TitleQuestion>
+                                    <TitleQuestion style={{fontSize: "1.4rem"}}>Ronda 1 - Preguntas de Conocimiento</TitleQuestion>
                                 </div>
                                 <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
                                 </CardHeader>
                                 <Collapse isOpen={isOpen1}>
                                     <CardBody>
                                         <AnswerQuestion>
-                                        Ahora, preparen pequeñas porciones de alimentos que deban ser identificados por el sabor mientras alguien usa un vendaje para los ojos. Pueden combinar diferentes ingredientes y alimentos para incrementar la dificultad. La persona que este a ciegas deberá adivinar que ingredientes contiene lo que está probando.
-                                        <br/>
-                                        <br/>
-                                        <strong>Recompensas:</strong>
-                                        <br/>
-                                        Cada vez que la pareja acierte exitosamente puede otorgar recompensas. Por ejemplo: masajes, caricias o cualquier cosa que la pareja considere íntima y placentera. Es vital que después de cada desafío se premien con erotismo. Así su cerebro activa el círculo virtuoso del placer.
+                                            <ul>
+                                                <li>
+                                                    ¿Qué fue lo que más te atrajo de mí cuando nos conocimos?
+                                                </li>
+                                                <li>
+                                                    ¿Cuál es tu recuerdo favorito de nuestra relación?
+                                                </li>
+                                                <li>
+                                                    ¿Hay algo en mi comportamiento que te haya desconcertado o te gustaría entender mejor?
+                                                </li>
+                                            </ul>
                                         </AnswerQuestion>
                                     </CardBody>
                                 </Collapse>
@@ -456,26 +485,78 @@ const PicadaSensual = () => {
                                 <CardHeader onClick={toggle2} style={{backgroundColor: "white "}}>
                                 <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
                                     <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
-                                    <TitleQuestion style={{fontSize: "1.4rem"}}>Explorando la cocina</TitleQuestion>
+                                    <TitleQuestion style={{fontSize: "1.4rem"}}>Ronda 2 - Preguntas de Emociones</TitleQuestion>
                                 </div>
                                 <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
                                 </CardHeader>
                                 <Collapse isOpen={isOpen2}>
                                     <CardBody>
                                         <AnswerQuestion>
-                                        Luego de calentarse en los juegos previos, llego el momento del postre. Los invitamos a calentar más aun la situación en la cocina. Para eso, les dejamos algunas ideas de cómo aprovechar el espacio 😉.
                                             <ul>
                                                 <li>
-                                                    <strong>Postre time:</strong> Una persona se sube a la mesada y disfruta del placer oral que le estará dando su pareja
+                                                    ¿Cuándo te sientes más cercano/a a mí?
                                                 </li>
                                                 <li>
-                                                    <strong>Aprovechando los alimentos:</strong> Pueden untar dulce de leche o crema chantilly en los genitales de su pareja y luego disfrutar del postre (emoji de fuego)
+                                                    ¿Hay algo que te preocupe o te genere ansiedad en nuestra relación? Qué cosas podríamos hacer para modificar esas sensaciones?
                                                 </li>
                                                 <li>
-                                                    <strong>Penetración contra la heladera:</strong> Parados contra la heladera y ambos mirando hacia ella. Es que van a estar tan calientes que con algo los tenemos que enfriar.
+                                                    ¿Qué puedo hacer para apoyarte mejor en momentos difíciles?
+                                                </li>
+                                            </ul>
+                                        </AnswerQuestion>
+                                    </CardBody>
+                                </Collapse>
+                            </Card>
+                        </Col>  
+                        <Col xs="12" lg="12" md="12">
+                            <Card style={{margin:"10px 10px 10px 10px"}}>
+                                <CardHeader onClick={toggle3} style={{backgroundColor: "white "}}>
+                                <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
+                                    <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
+                                    <TitleQuestion style={{fontSize: "1.4rem"}}>Ronda 3 - Preguntas de Sueños y Metas</TitleQuestion>
+                                </div>
+                                <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
+                                </CardHeader>
+                                <Collapse isOpen={isOpen3}>
+                                    <CardBody>
+                                        <AnswerQuestion>
+                                            <ul>
+                                                <li>
+                                                    ¿Qué objetivos personales te gustaría alcanzar en los próximos años?
                                                 </li>
                                                 <li>
-                                                    <strong>En el piso:</strong> Variar de vez en cuando es divertido, y ya que vamos a dejar la cama de lado…¿Porque no #acabar este desafío en el piso?
+                                                    ¿Cómo ves nuestra relación en el futuro?
+                                                </li>
+                                                <li>
+                                                    ¿Hay algo que siempre hayas querido hacer juntos y aún no hayamos intentado?
+                                                </li>
+                                            </ul>
+                                        </AnswerQuestion>
+                                    </CardBody>
+                                </Collapse>
+                            </Card>
+                        </Col>
+                        <Col xs="12" lg="12" md="12">
+                            <Card style={{margin:"10px 10px 10px 10px"}}>
+                                <CardHeader onClick={toggle4} style={{backgroundColor: "white "}}>
+                                <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
+                                    <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
+                                    <TitleQuestion style={{fontSize: "1.4rem"}}>Ronda 4 - Preguntas de Apreciación y Mejora</TitleQuestion>
+                                </div>
+                                <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
+                                </CardHeader>
+                                <Collapse isOpen={isOpen4}>
+                                    <CardBody>
+                                        <AnswerQuestion>
+                                            <ul>
+                                                <li>
+                                                    ¿Qué es lo que más valoras de nuestra comunicación?
+                                                </li>
+                                                <li>
+                                                    ¿Hay algo que sientas que necesitamos mejorar en nuestra relación?
+                                                </li>
+                                                <li>
+                                                    ¿Cómo podemos fortalecer nuestra confianza y conexión?
                                                 </li>
                                             </ul>
                                         </AnswerQuestion>
@@ -485,23 +566,26 @@ const PicadaSensual = () => {
                         </Col>  
                     </Row>
                     <Text>
-                    Notas Importantes:
+                    Ejercicio complementario
                     <ul>
                         <li>
-                        <strong>Comunicación:</strong> Es crucial establecer límites y mantener la comunicación abierta en todo momento. Si algo no se siente cómodo, detengan el juego de inmediato.
+                            Pueden hacer un listado en el papel de las prácticas/actividades o actitudes que les den desconfianza de su pareja. O que hacen que no se sientan cómodxs previo a hacer el ejercicio para ir con el análisis a fondo.
                         </li>
                         <li>
-                        <strong>Seguridad:</strong> Tengan cuidado con superficies calientes, objetos afilados o cualquier elemento peligroso en la cocina.
+                            Recuerden poner al lado de la situación cuál sería la forma de actuar ideal o que pudiera mejorar la otra persona para trabajar la desconfianza en esa situación.
+                        </li>
+                        <li>
+                            Atención: Sin limitar las actividades de la pareja, sino moldeando o sumando cosas que el otro puede hacer para que vos te sientes más cómodo/a/e.
                         </li>
                     </ul>
 
                     </Text>
                     <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
                             <Text2>
-                                <span>Este juego no solo fomentará la conexión emocional y física, sino que también puede agregar una dosis de diversión y espontaneidad a la relación. ¡Recuerden que el objetivo principal es disfrutar y fortalecer su complicidad!</span>
+                                <span>Recuerden que el objetivo es crear un espacio seguro y de apertura. Escuchar con empatía y sin juzgar es crucial. Si alguna pregunta genera incomodidad, tienen la libertad de cambiarla por otra que fomente la confianza y el entendimiento mutuo. </span>
                                 <br/>
                                 <br/>
-                                <span>¡Que se disfruten!</span>
+                                <span>¡Disfruten fortaleciendo su conexión!</span>
                                 <br/>
                                 <br/>
                                 <span>El equipo de WeSex</span>
@@ -509,12 +593,12 @@ const PicadaSensual = () => {
                     </Row>
             </Container>
             <Notificar2 message='¡ Notificar que finalizamos el desafio !' 
-            url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pag4gCzpd8mp7GwD9/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}`}
-            url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pag4gCzpd8mp7GwD9/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}`}/>
+            url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pagtcxqE0vYIvyNfX/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}`}
+            url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pagtcxqE0vYIvyNfX/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}`}/>
             </Background>
           )}
         </section>
       );
 }
  
-export default PicadaSensual;
+export default ConfianzaPareja;
