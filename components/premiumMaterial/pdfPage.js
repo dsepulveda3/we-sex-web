@@ -112,7 +112,17 @@ const PDFViewer = ({pdfItem, demo, setLoaded}) => {
     } else {
       containerwd = 4.4;
     }
-  } else {
+    // Arreglar con link correccto :)
+  } else if (pdfItem === 'guia-deseo'){
+    setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/65564615f94d0fa60f7c5d44/WeSex%20-%20Menogui%CC%81a%20Sexulidad&Menopausia%20%20(1)_compressed.pdf");
+    if (isPhoneScreen) {
+      // Execute your function specific to phone screens here
+      containerwd = 1.3;
+    } else {
+      containerwd = 4.4;
+    }
+  }
+  else {
     queryGuide();
   }
 

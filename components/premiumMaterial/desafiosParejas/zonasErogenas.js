@@ -451,7 +451,7 @@ const ZonasErogenas = () => {
                         {/* <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle> */}
 
                         <Text>
-                        Hoy los vamos a llevar por un viaje de zonas erógenas
+                        Hoy los vamos a llevar por un viaje de zonas erógenas.
                         <br/>
                         <br/>
                         <a href="https://payhip.com/b/FOwpx" target="_blank" style={{textDecoration: "underline"}}>El material complementario para explotar al máximo este desafío es la guía de zonas erógenas, en donde les explicamos cómo estimular cada parte del cuerpo &quot;Click aquí&quot;.</a>
@@ -470,7 +470,7 @@ const ZonasErogenas = () => {
                             </li>
                         </ul>
                         <br/>
-                        Hoy los invitamos a agarrarse algo que les guste de tomar y sentarse a colorear sus zonas erógenas. Así es, van a armar su mapa de placer corporal.
+                        Hoy les invitamos a agarrarse algo que les guste de tomar y sentarse a colorear sus zonas erógenas. Así es, van a armar su mapa de placer corporal.
                         <br/>
                         <br/>
                         En caso de que no tengan hojas o lápices, pueden sacarle un screenshot a estas dos ilustraciones, y las van a colorear por WhatsApp.
@@ -480,10 +480,13 @@ const ZonasErogenas = () => {
                         </div>
                         <br/>
                         <br/>
-                        La idea es que coloreen las zonas erógenas según cuánto te encienden cada una. Colorearán en verde las zonas que los calientan levemente, en amarillo las que los encienden con mayor intensidad y, en rojo, las partes que te prenden fuego. Pueden dibujar y usar lápices de colores o colorear los screenshots desde su celular.
+                        La idea es que coloreen las zonas erógenas según cuánto te encienden cada una. Colorearán en verde las zonas que les calientan levemente, en amarillo las que les encienden con mayor intensidad y, en rojo, las partes que les prenden fuego. Pueden dibujar y usar lápices de colores o colorear los screenshots desde su celular.
                         <br/>
                         <br/>
-                        Una vez que cada uno coloree sus zonas erógenas, pueden compartir sus mapas de placer con su pareja ;)
+                        Una vez que terminen de colorear sus zonas erógenas, pueden compartir sus mapas de placer con su pareja ;)
+                        <br/>
+                        <br/>
+                        Luego de haber pintado, es hora de ir a explorar esas zonas erógenas, y para eso les tenemos un juego:
                         </Text>
                     </Row>
                     <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
@@ -493,25 +496,26 @@ const ZonasErogenas = () => {
                             </ContentTitle2>
                         
                             <Text2>
-                                Por si la manija de este primer día los deja con ganas de más, les dejamos una propuesta para cuando se vayan del bar 😉 (O para cuando quieran):
                                 <br/>
                                 <br/>
                                 <span>La bomba del tiempo</span>
                                 <br/>
-                                <TextBombNormal>Este juego consiste en poner un temporizador, una cuenta regresiva, en la cual no podrán realizar penetración hasta que 
-                                la cuenta regresiva llegue a 0. Esto les ayudará a explorar otras prácticas y salir de la penetración. 
-                                Podrán explorar zonas erógenas, descubrir áreas de placer inesperadas y, además, aumentar la tensión y la excitación al jugar con el tiempo hasta llegar a 0.
+                                <TextBombNormal>
+                                    Este juego consiste en poner un temporizador. Una cuenta regresiva, en la cual no podrán realizar penetración/fricción genital hasta que la cuenta regresiva llegue a 0.
+                                    Pongan el temporizador de al menos 25 minutos. Esto les ayudará a explorar otras prácticas y salir de la genitalidad. 
+                                    Podrán explorar sus zonas erógenas, descubrir áreas de placer inesperadas y, además, aumentar la tensión y la excitación al jugar  con la cuenta regresiva.
                                 </TextBombNormal>
-                                <TextBombNormal style={{marginTop: "2rem", marginBottom:"2rem"}}><span>Claro, para eso les enviamos la guía de zonas erógenas. Ahí explicamos qué es el coitocentrismo y les enseñamos a 
-                                estimular cada zona del cuerpo. Así que no les van a faltar herramientas para disfrutar de este juego</span>
-                                </TextBombNormal>
-                                
-                                ¿Y AHORA? 
+                                <TextBombNormal style={{marginTop: "2rem", marginBottom:"2rem"}}>
+                                    
+                                    Les recomendamos estimular las zonas de su pareja de verde a rojo, es decir, de menor excitación a mayor excitación. 
                                 <br/>
-                                
-                                Cuando estén listos para empezar, pongan un temporizador de 30 minutos. Pueden jugar también a sostener la tensión, 
-                                sin llegar al orgasmo durante esos 30 minutos. Eso va a requerir mucha comunicación (ya sea verbal o corporal) para ir regulando cuándo seguir y cuándo frenar. 
-                                ¿Aguantarán la tensión sexual hasta que el cronómetro llegue a 0...?
+                                <br/>
+                                <span>
+                                WeSexer tip: En la guía adjunta al principio del desafío podrán ver tips para estimular cada una de las zonas que estén en el mapa de placer de su pareja.
+                                </span>
+                                </TextBombNormal>
+                                <br/>
+                                ¡Ahora sí, que empiece a correr el reloj!
                                 <br/>
                                 <br/>
                                 ¡Que se disfruten!
@@ -519,8 +523,8 @@ const ZonasErogenas = () => {
                     </Row>
             </Container>
             <Notificar2 message='¡ Notificar que finalizamos el desafio !'
-             url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pagGaqcsCNinNq7yO?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}`}
-             url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pagGaqcsCNinNq7yO?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}`}/>
+             url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pagGaqcsCNinNq7yO/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}`}
+             url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pagGaqcsCNinNq7yO/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}`}/>
             </Background>
           )}
         </section>

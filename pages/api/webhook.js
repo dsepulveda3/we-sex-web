@@ -384,11 +384,41 @@ export default async function handler(req, res) {
   productName === 'Guía Menopausia y Salir de la Rutina' ||
   productName ===
   '¡GRACIAS! PresionA el botón "Descargar ahora" para recibir la guía de menopausia y salir de la rutina por mail y empezar a disfrutar.' ||
-  productName === 'Guía Menopausia y Salir de la Rutina' ||
+  productName === 'NP - Guía Menopausia y Salir de la Rutina' ||
   productName === 
   'NP - ¡GRACIAS! PresionA el botón "Descargar ahora" para recibir la guía de menopausia y salir de la rutina por mail y empezar a disfrutar.'
 ) {
-  const listId = 97; // lista Perfit guía Menopausia
+  const listId = 97; // lista Perfit Pack Menopausia + Rutina
+  const contactData = {
+    email: email,
+  };
+
+  post_perfit(account, listId, contactData, axiosConfig);
+
+} else if (
+  productName === 'Guía Deseo Sexual' ||
+  productName ===
+  '¡GRACIAS! Presiona el botón "Descargar ahora" para recibir la guía de deseo sexual por mail y empezar a disfrutar.' ||
+  productName === 'LARA - Guía Deseo Sexual' ||
+  productName === 
+  'LARA - ¡GRACIAS! Presiona el botón "Descargar ahora" para recibir la guía de deseo sexual por mail y empezar a disfrutar.'
+) {
+  const listId = 98; // lista Perfit guía Deseo
+  const contactData = {
+    email: email,
+  };
+
+  post_perfit(account, listId, contactData, axiosConfig);
+
+} else if (
+  productName === 'Guía Deseo Sexual y Salir de la Rutina' ||
+  productName ===
+  '¡GRACIAS! PresionA el botón "Descargar ahora" para recibir la guía de deseo sexual y salir de la rutina por mail y empezar a disfrutar.' ||
+  productName === 'LARA - Guía Deseo Sexual y Salir de la Rutina' ||
+  productName === 
+  'LARA - ¡GRACIAS! PresionA el botón "Descargar ahora" para recibir la guía de deseo sexual y salir de la rutina por mail y empezar a disfrutar.'
+) {
+  const listId = 99; // lista Perfit guía Deseo + Rutina
   const contactData = {
     email: email,
   };

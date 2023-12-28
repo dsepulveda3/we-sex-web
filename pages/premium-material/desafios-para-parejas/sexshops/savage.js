@@ -7,8 +7,59 @@ import ComoFunciona from '../../../../components/premiumMaterial/desafiosParejas
 import Dudas from '../../../../components/premiumMaterial/dudas'
 import PlansUniversal from '../../../../components/premiumMaterial/desafiosParejas/plansUniversal'
 import Opinions from '../../../../components/premiumMaterial/desafiosParejas/opinions';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 export default function Home() {
+  const router = useRouter();
+  const [paymentMode, setPaymentMode] = useState();
+
+  useEffect(() => {
+    if (router.isReady){
+      setPaymentMode(router.query.pay);
+    }
+  }
+  );
+
+  const PlanComponentFuction = () => {
+    if (paymentMode === "freemonth"){
+      return <PlansUniversal 
+        discount="Mes gratis x Savage"
+        other_countries='no'
+
+        suscribirme='Suscribirme (mes gratis)'
+        font_boton='1.2rem'
+        free_month="yes"
+
+        price_mp_basic="15,600 ARS/pareja"
+        mp_basic="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848c83b4a7018c83dcd68b000f" 
+        price_mp_estandar="26,600 ARS/pareja"
+        mp_estandar="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848c83056f018c83e97f1200c1"
+        price_mp_premium="33,000 ARS/pareja"
+        mp_premium="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848c83b4ad018c83ea201d0017"
+
+        />
+    } else {
+      return <PlansUniversal 
+        discount="Referido por Savage"
+
+        price_mp_basic="15,600 ARS/pareja"
+        mp_basic="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b2a4548018b4843120714d7" 
+        price_mp_estandar="20,000 ARS/pareja"
+        mp_estandar="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b2a4561018b4844060814f9"
+        price_mp_premium="27,000 ARS/pareja"
+        mp_premium="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b2a4561018b4844addb14fa"
+
+        price_stripe_basic="30 USD/pareja"
+        stripe_basic="https://buy.stripe.com/4gwdTy0hj5iJ0NO9AO"
+        price_stripe_estandar="38 USD/pareja"
+        stripe_estandar="https://buy.stripe.com/14kdTye894eF8ggaET"
+        price_stripe_premium="54 USD/pareja"
+        stripe_premium="https://buy.stripe.com/aEU3eUc018uV68814k"
+        />
+    }
+  }
   
   return (
     <>
@@ -32,21 +83,7 @@ export default function Home() {
         <ComoFunciona />
         <Dudas />
         <Opinions />
-        <PlansUniversal 
-        discount="Referido por Savage"
-        price_mp_basic="15,600 ARS/pareja"
-        mp_basic="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b2a4548018b4843120714d7" 
-        price_mp_estandar="20,000 ARS/pareja"
-        mp_estandar="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b2a4561018b4844060814f9"
-        price_mp_premium="27,000 ARS/pareja"
-        mp_premium="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b2a4561018b4844addb14fa"
-        price_stripe_basic="30 USD/pareja"
-        stripe_basic="https://buy.stripe.com/4gwdTy0hj5iJ0NO9AO"
-        price_stripe_estandar="38 USD/pareja"
-        stripe_estandar="https://buy.stripe.com/14kdTye894eF8ggaET"
-        price_stripe_premium="54 USD/pareja"
-        stripe_premium="https://buy.stripe.com/aEU3eUc018uV68814k"
-        />
+        {PlanComponentFuction()}
         <Explicacion/>
         </Layout>
         

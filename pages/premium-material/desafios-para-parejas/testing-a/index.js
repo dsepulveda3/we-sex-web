@@ -65,29 +65,42 @@ export default function TestingA() {
         <Dudas />
         <Opinions />
         <PlansUniversal 
-        discount="Incluye 1er mes gratis"
+        discount="** desde el segundo mes"
         country={origin}
         chile="yes"
 
-        price_mp_basic="20,000 ARS/pareja"
-        mp_basic="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b95ad95018ba6c9468709c0" 
-        price_mp_estandar="32,000 ARS/pareja"
+        suscribirme='Suscribirme (mes gratis)'
+        font_boton='1.2rem'
+        free_month="yes"
+
+        price_mp_basic_discount="AR$20,000 mes/pareja"
+        price_mp_basic="AR$ 0 primer mes"
+        mp_basic="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b95ad95018ba6c9468709c0"
+        price_mp_estandar_discount="AR$ 24,000 mes/pareja"
+        price_mp_estandar="AR$ 0 primer mes"
         mp_estandar="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b95ad8a018ba6ca546e0a1a"
-        price_mp_premium="44,000 ARS/pareja"
+        price_mp_premium_discount="AR$ 26,000 mes/pareja"
+        price_mp_premium="AR$ 0 primer mes"
         mp_premium="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848b95ad95018ba6cb937a09c4"
 
-        price_stripe_basic="30 USD/pareja"
+        price_stripe_basic_discount="U$D 30 mes/pareja"
+        price_stripe_basic="U$D 0 primer mes"
         stripe_basic="https://buy.stripe.com/14kaHm5BDfXn1RSeVU"
-        price_stripe_estandar="38 USD/pareja"
+        price_stripe_estandar_discount="U$D 38 mes/pareja"
+        price_stripe_estandar="U$D 0 primer mes"
         stripe_estandar="https://buy.stripe.com/00gbLq7JLcLbeEE155"
-        price_stripe_premium="54 USD/pareja"
+        price_stripe_premium_discount="U$D 54 mes/pareja"
+        price_stripe_premium="U$D 0 primer mes"
         stripe_premium="https://buy.stripe.com/fZe9DiaVX26xdAA29a"
 
-        price_stripe_chile_basic="30.000 CLP/pareja"
+        price_stripe_chile_basic_discount="CLP 30.000 mes/pareja"
+        price_stripe_chile_basic="CLP 0 primer mes"
         stripe_basic_chile="https://buy.stripe.com/4gw3eU6FHdPf2VW016"
-        price_stripe_chile_estandar="38.000 CLP/pareja"
+        price_stripe_chile_estandar_discount="CLP 38.000 mes/pareja"
+        price_stripe_chile_estandar="CLP 0 primer mes"
         stripe_estandar_chile="https://buy.stripe.com/aEU2aQ7JLdPf544aFL"
-        price_stripe_chile_premium="54.000 CLP/pareja"
+        price_stripe_chile_premium_discount="CLP 54.000 mes/pareja"
+        price_stripe_chile_premium="CLP 0 primer mes"
         stripe_premium_chile="https://buy.stripe.com/28oeXC6FH5iJgMMg06"
 
        

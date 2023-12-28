@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Layout from '../../../components/general/Layout';
+import Intro from '../../../components/premiumMaterial/desafiosParejas/intro';
 import IntroDiscount from '../../../components/premiumMaterial/desafiosParejas/introDiscount';
 import Explicacion2 from '../../../components/premiumMaterial/desafiosParejas/explicacion2'
 import Explicacion from '../../../components/premiumMaterial/explicacion'
@@ -51,7 +52,7 @@ export default function TestingA() {
         <Layout>
           {isClient && (
             <>
-              <IntroDiscount subtitle1_1='' subtitle1_2='Desafios sexuales' subtitle1_3='para hacer en pareja'/>
+              <Intro subtitle1_1='' subtitle1_2='Desafios sexuales' subtitle1_3='para hacer en pareja'/>
               <Explicacion2 />
               <ComoFunciona />
               <Dudas />

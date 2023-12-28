@@ -60,16 +60,18 @@ const Redes = styled.div`
     }
 `;
 
-const ProfesionalesUniversal = ({fabiVisibility, ceciliaVisibility, barbaraVisibility}) => {
+const ProfesionalesUniversal = ({fabiVisibility, ceciliaVisibility, barbaraVisibility, laraVisibility}) => {
   const [FabiIsVisible, setFabiIsVisible] = useState(fabiVisibility);
   const [CeciliaIsVisible, setCeciliaIsVisible] = useState(ceciliaVisibility);
   const [BarbaraIsVisible, setBarbaraIsVisible] = useState(barbaraVisibility);
+  const [LaraIsVisible, setLaraIsVisible] = useState(laraVisibility);
 
   useEffect(() => {
     setFabiIsVisible(fabiVisibility);
     setCeciliaIsVisible(ceciliaVisibility);
     setBarbaraIsVisible(barbaraVisibility);
-  }, [fabiVisibility, ceciliaVisibility, barbaraVisibility]);
+    setLaraIsVisible(laraVisibility);
+  }, [fabiVisibility, ceciliaVisibility, barbaraVisibility, laraVisibility]);
 
     return (
         <section id="profesional">
@@ -136,6 +138,35 @@ const ProfesionalesUniversal = ({fabiVisibility, ceciliaVisibility, barbaraVisib
                 </Col>
                 )}
 
+                {LaraIsVisible && (
+                  <Col xl={4} lg={4} md={4} xs={12} sm={12} style={{marginBottom: "5rem"}}>
+                  <Card style={{borderRadius: "4rem", minHeight: "63.5vh", display: "flex", flexDirection: "column"}}>
+                    <img
+                      alt="Lara"
+                      src="/img/premium-material/lara-placer-consentido.jpeg"
+                      style={{
+                        borderTopLeftRadius: "4rem",
+                        borderTopRightRadius: "4rem"
+                      }}
+                    />
+                    <CardBody style={{flexGrow: 1, display: "flex", flexDirection: "column", justifyContent: "flex-end"}}>
+                      <Name>Lara Castro-Grañén</Name>
+                      <SubTitle>Psicóloga-Sexóloga y Terapeuta de Pareja.</SubTitle>
+                      <div style={{marginTop: "auto"}}>
+                        <Redes>
+                          <a href="https://instagram.com/placerconsentido?igshid=YTQwZjQ0NmI0OA==" target="_blank">
+                            <img src="/img/premium-material/instagram (1).png" alt="Instagram Logo" />
+                          </a>
+                          <a href="https://www.placerconsentido.com/psicologia-sexologia-y-terapia-de-pareja-online" target="_blank">
+                            <img src="/img/premium-material/website.png" alt="Website Logo" />
+                          </a>
+                        </Redes>
+                      </div>
+                    </CardBody>
+                  </Card>
+                </Col>
+                )}
+
                 {BarbaraIsVisible && (
                   <Col xl={4} lg={4} md={4} xs={12} sm={12} style={{marginBottom: "5rem"}}>
                   <Card style={{borderRadius: "4rem", minHeight: "63.5vh", display: "flex", flexDirection: "column"}}>
@@ -163,7 +194,7 @@ const ProfesionalesUniversal = ({fabiVisibility, ceciliaVisibility, barbaraVisib
                     </CardBody>
                   </Card>
                 </Col>
-                )}
+                )}  
                 </RowPers>
             </Container>
         </Background>

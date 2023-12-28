@@ -534,8 +534,8 @@ const QuieroLHNLH = () => {
                     </Row>
             </Container>
             <Notificar2 message='¡ Notificar que finalizamos el desafio !'
-             url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pag4Ymst17abujOPb?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}`}
-             url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pag4Ymst17abujOPb?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}`}/>
+             url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pag4Ymst17abujOPb/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}`}
+             url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pag4Ymst17abujOPb/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}`}/>
             </Background>
           )}
         </section>

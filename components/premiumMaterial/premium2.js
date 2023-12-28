@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { is_subscribed } from '../../requests/premiumService';
 import { useAuth } from '../../context/authUserContext';
 import Suscribe from '../../components/general/Suscribe';
+import PopUpGeneral from './popUpGeneral';
 
 const Background = styled.div`
     background-color: var(--violet);
@@ -246,6 +247,7 @@ const Guides = () => {
 
     const { authUser, loading } = useAuth();
     const [isSubscribed, setIsSubscribed] = useState(false);
+    const [showPopUp, setShowPopUp] = useState(false); // State to manage popup visibility
 
     const checkSubscriptionStatus = async () =>{
         const response = await is_subscribed(
@@ -264,6 +266,10 @@ const Guides = () => {
         checkSubscriptionStatus();
         }
     }, [authUser, loading]);
+
+    const handlePopUp = () => {
+        setShowPopUp(true); // Set state to show the popup
+    }
 
   return (
     <Section id="premium">
@@ -284,6 +290,15 @@ const Guides = () => {
                         </ContainerContentGuide>
                     </GuideSquare>
                     </Link>
+                </Col>
+                <Col lg="4" md="12">
+                    <GuideSquare onClick={handlePopUp}>
+                    <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                        <AppImageBomb src="/img/premium-material/barbipic.png" className="img-fluid" alt='Logotipo guias WeSex'/>
+                        <h3 style={{marginBottom: "2rem"}}>Consultas Sexología</h3>
+                    </ContainerContentGuide>
+                    </GuideSquare>
+                    {showPopUp && <PopUpGeneral setShowPopup={setShowPopUp}/>} {/* Render PopUpGeneral component conditionally */}
                 </Col>
                 <Col lg="4" md="12" >
                 <Link href="/premium-material/guides">

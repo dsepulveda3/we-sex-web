@@ -382,11 +382,12 @@ const Header = ({type, data}) => {
               )} */}
               
           </Collapse>
-          {loggedIn? <AuthToggleLinks setLoginStatus={setLoggedIn} /> : (
+          {/* {loggedIn? <AuthToggleLinks setLoginStatus={setLoggedIn} /> : (
                 <SingUpButton href='/login' onClick={handleLogin}>
                       Entrar
                 </SingUpButton>
-              )}
+              )} */}
+          <div style={{width: "100px", height: "10px"}}></div>
           
         </div>
         

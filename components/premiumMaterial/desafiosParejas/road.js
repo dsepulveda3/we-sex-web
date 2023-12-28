@@ -4,11 +4,32 @@ import styled from "@emotion/styled";
 import { get_couple } from "../../../requests/premiumService";
 import OtherChallenge from "./roadComponents/otherChallenge";
 import { toast } from "react-toastify";
+import Diagnostic from "./roadComponents/Diagnostic";
+import Areas from "./roadComponents/areas";
 
 const HeaderContainer = styled.div`
   background-color: #ebe4f8;
+  position: fixed;
+  z-index: 999;
+  width: 100%; /* Ensure the container spans the full width */
+
+  justify-content: space-between; /* Align items with space between */
+  padding: 0 10px;
+
+  @media (max-width: 540px){
+    padding: 0 5px;
+    height: 14vh;
+  }
+
 `;
 
+const StickyComponent = styled.div`
+    height: 17vh;
+
+    @media (max-width: 540px){
+      height: 14vh;
+  }
+`;
 
 
 const LevelBox = styled.div`
@@ -33,7 +54,7 @@ const LevelBoxContainer = styled.div`
 
 const Header = styled.div`
     background-image: url("/img/landing/cta-bg.webp");
-    height: 10vh;
+    height: 9vh;
     width: 100%;
     font-weight: bold;
     border-radius: 20px; /* Apply border-radius to all corners */
@@ -49,12 +70,12 @@ const Title = styled.div`
     font-family: "Helvetica Neue", sans-serif;
     color: black;
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: white;
     justify-content: center;
 
     @media (max-width: 540px){
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 `;
 
@@ -62,12 +83,12 @@ const SubTitle = styled.div`
     font-family: "Helvetica Neue", sans-serif;
     color: black;
     font-weight: bold;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     color: white;
     justify-content: center;
 
     @media (max-width: 540px){
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 `;
 
@@ -758,6 +779,7 @@ const Popup = ({
   const Road = () => {
     const router = useRouter();
     const [coupleName, setCoupleName] = useState("");
+    
   
     const [coupleData, setCoupleData] = useState(null);
     const [isPopupVisible, setPopupVisible] = useState(false); // State for controlling the popup
@@ -767,12 +789,18 @@ const Popup = ({
     const [totalChallenges, setTotalChallenges] = useState(0);
     const [dosisDone, setDosisDone] = useState(0);
     const [totalDosis, setTotalDosis] = useState(0);
+    const [showDiagnostico, setShowDiagnostico] = useState(false);
+    
+
+    const [levelText, setLevelText] = useState("Nivel 1")
+    const [nameLevelText, setNameLevelText] = useState("NIVEL: CALENTAMIENTO")
 
     useEffect(() => {
       if (router.isReady){
         if (router.query.origin) {
           setCoupleName(router.query.origin);
         }
+        
       }
     }, [router.isReady]);
 
@@ -807,6 +835,18 @@ const Popup = ({
         } else {
           setCoupleData(response.data);
         }
+
+        if (coupleName === "Complices"){
+          setLevelText("Nivel 2");
+          setNameLevelText("NIVEL: EXPLORACIÓN");
+        } else if(coupleName === "julia-lucho"){
+          setLevelText("Nivel 2");
+          setNameLevelText("NIVEL: EXPLORACIÓN");
+        }
+
+        if (coupleName === "all"){
+          setShowDiagnostico(true);
+        }
     
         // Calculate number of challenges in 'done' status and total available
         const responseChallengesDone = response.data.challenges.filter(
@@ -833,29 +873,16 @@ const Popup = ({
       fetchData();
     }, [coupleName]);
 
-    
-  const renderLevelBoxes = () => {
-    const levelBoxes = [];
-    const numberOfLevels = Math.ceil(totalChallenges / 5); // Calculate the number of LevelBoxes required
 
-    for (let i = 1; i <= numberOfLevels; i++) {
-      levelBoxes.push(
-        <div key={i} style={{ paddingTop: '1rem', backgroundColor: '#ebe4f8' }}>
-          <LevelBoxContainer>
-            <LevelBox>{`Nivel ${i}`}</LevelBox>
-          </LevelBoxContainer>
-        </div>
-      );
-    }
-    return levelBoxes;
-  };
+
+  console.log(coupleData);
     
     return (
         <>
           <HeaderContainer>
+            
             <ContainerData>
-              <Level><span>NIVEL: CALENTAMIEMTO</span></Level>
-
+              <Level><span>{nameLevelText}</span></Level>
               <SectionContainer>
                 <ImageDoneChallengeCounter src="/img/challenges/done_wesex.png" />
                 <ImageDoneChallengeCounterNumber>{`${challengesDone}/${totalChallenges}`}</ImageDoneChallengeCounterNumber>
@@ -868,8 +895,7 @@ const Popup = ({
               <div onClick={handleWarningSymbolClick} style={{textAlign: "right", padding: "0.5rem"}}>ℹ️</div>
             </ContainerData>
 
-            <Header>
-              
+            <Header>            
               {coupleData ? (
                 <Title>Desafíos {`${coupleData.coupleName}`}</Title>
               ) : (
@@ -880,13 +906,20 @@ const Popup = ({
               ) : (
                 <SubTitle>Loading...</SubTitle> // Or any loading indicator
               )}
+              {/* <Diagnostic /> */}
             </Header>
           </HeaderContainer>
           <Background>
+          <StickyComponent />
+          <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
+            {coupleName === "all" && <Areas />}
+            <Diagnostic origin={coupleName} />
+          </div>
+          {/* {showDiagnostico && <Diagnostic origin={coupleName} />} */}
             {/* {renderLevelBoxes()} */}
             <div style={{ paddingTop: '1rem', backgroundColor: '#ebe4f8' }}></div>
             <LevelBoxContainer>
-            <LevelBox>Nivel 1</LevelBox>
+            <LevelBox>{levelText}</LevelBox>
           </LevelBoxContainer>
             <div style={{paddingTop: "1rem", backgroundColor: "#ebe4f8"}}></div>
             <ChallengesAndDosisContainer>

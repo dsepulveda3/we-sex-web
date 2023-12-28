@@ -47,7 +47,6 @@ const ArrowBack = ({url, color = "green"}) => {
                 Atrás
             </BotonNotificarDone>
         </ContainerNotificarDone>
-
     );
 }
 

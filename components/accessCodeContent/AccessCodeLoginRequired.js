@@ -132,8 +132,7 @@ function AccessCodeLoginRequired ({setLostLink}) {
             <Hint>TIP: SI NO LO ENCUENTRAS, INGRESA EN EL BUSCADOR DE TU CORREO contacto@we.sex</Hint>
             <LostLink onClick={handleClick}>¿Perdiste tu código?</LostLink>
             <Boton
-                    href="https://wa.me/5491140678698?
-                    text=Hola!%20Tengo%20un%20problema%20con%20mi%20código%20de%20suscripción"
+                    href="https://wa.me/5491140678698?text=Hola!%20Tengo%20un%20problema%20con%20mi%20código%20de%20suscripción"
                     target="_blank"
                 >Contactar por WhatsApp</Boton>
         </TextContainer>

@@ -6,6 +6,7 @@ import styled from '@emotion/styled';
 
 const BotonClasico = styled.a`
     font-family: "Karla", sans-serif;
+    text-align: center;
     border-radius: 4rem;
     padding: 1rem 3rem;
     font-weight: bold;

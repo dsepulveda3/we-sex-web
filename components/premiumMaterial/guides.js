@@ -258,6 +258,10 @@ const Guides = ({ guideData }) => {
 
     const prefixUrl = isSubscribed ? '/premium-material/guides/pdf-viewer/' : '/premium-material/guides/landing/';
 
+    const guideDeseoLink = isSubscribed
+        ? `/premium-material/guides/pdf-viewer/${'guia-meno'}`// Link for subscribed user
+        : '/premium-material/guides/guia-deseo'; // Link for non-subscribed user
+
     const guideMenoLink = isSubscribed
         ? `/premium-material/guides/pdf-viewer/${'guia-meno'}`// Link for subscribed user
         : '/premium-material/guides/guia-monopausia'; // Link for non-subscribed user
@@ -296,7 +300,7 @@ const Guides = ({ guideData }) => {
                     Páginas de sabiduría sexual para volverte un experto en cada tema.
                 </Text>
                 <Row data-aos="fade-left">
-                {guideData.map((guide) => (
+                {/* {guideData.map((guide) => (
                     <Col lg="3" md="4" key={guide.id}>
                         <Link href={`${prefixUrl}/${guide.id}`}>
                             <GuideSquare>
@@ -307,7 +311,17 @@ const Guides = ({ guideData }) => {
                             </GuideSquare>
                         </Link>
                     </Col>
-                ))}
+                ))} */}
+                <Col lg="3" md="4" >
+                <Link href={guideDeseoLink}>
+                    <GuideSquare>
+                        <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                            <AppImageGuia2 src="/img/premium-material/deseo-sexual.png" className="img-fluid" alt='Logotipo Guía Deseo WeSex'/>
+                            <h3>Deseo Sexual</h3>
+                        </ContainerContentGuide>
+                    </GuideSquare>
+                    </Link>
+                </Col>
                 <Col lg="3" md="4" >
                 <Link href={guideMenoLink}>
                     <GuideSquare>
@@ -433,7 +447,30 @@ const Guides = ({ guideData }) => {
                         </ContainerContentGuide>
                     </GuideSquare>
                 </ColHideOnPhone>
-                
+                <ColHideOnPhone lg="3" md="4" >
+                    <GuideSquare>
+                        <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                            <AppImageGuiaQuestion src="/img/premium-material/question-mark-draw.png" className="img-fluid"/>
+                            <h3>Pronto</h3>
+                        </ContainerContentGuide>
+                    </GuideSquare>
+                </ColHideOnPhone>
+                <ColHideOnPhone lg="3" md="4" >
+                    <GuideSquare>
+                        <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                            <AppImageGuiaQuestion src="/img/premium-material/question-mark-draw.png" className="img-fluid"/>
+                            <h3>Pronto</h3>
+                        </ContainerContentGuide>
+                    </GuideSquare>
+                </ColHideOnPhone>
+                <ColHideOnPhone lg="3" md="4" >
+                    <GuideSquare>
+                        <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                            <AppImageGuiaQuestion src="/img/premium-material/question-mark-draw.png" className="img-fluid"/>
+                            <h3>Pronto</h3>
+                        </ContainerContentGuide>
+                    </GuideSquare>
+                </ColHideOnPhone>
             </Row>
                 </Container>
       </Background>
