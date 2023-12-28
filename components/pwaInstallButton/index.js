@@ -1,8 +1,52 @@
-import { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
+
+const Container = styled.div`
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Adjust the gap between buttons */
+  z-index: 1000;
+`;
+
+const SingUpButton = styled.a`
+  background-color: var(--green);
+  font-weight: bold;
+  border-radius: 30px;
+  padding: 10px 40px;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 2rem;
+
+  @media (max-width: 540px) {
+    font-size: 1.5rem;
+  }
+`;
+
+const CloseButton = styled.button`
+  background-color: black;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0;
+  width: 30px; /* Adjust the diameter as needed */
+  height: 30px; /* Equal to the width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem; /* Adjust the font size as needed */
+`;
 
 const InstallButton = () => {
     const router = useRouter();
+    const [visible, setVisible] = useState(true);
     const [deferredPrompt, setDeferredPrompt] = useState(null);
     const [isAppInstalled, setIsAppInstalled] = useState(false);
 
@@ -47,12 +91,22 @@ const InstallButton = () => {
         });
     };
 
-  // Render the "Install App" button if the app is not installed
+    const handleClose = () => {
+        setVisible(false);
+      };
+
     if (!isAppInstalled) {
         return (
-            <button onClick={handleInstallClick}>
-            Open in App
-            </button>
+            <>
+            {visible && (
+                <Container>
+                  <SingUpButton onClick={handleInstallClick}>
+                    Abrir en App
+                  </SingUpButton>
+                  <CloseButton onClick={handleClose}>X</CloseButton>
+                </Container>
+            )}
+            </>
         );
     }
 };

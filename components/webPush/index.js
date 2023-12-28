@@ -52,7 +52,6 @@ const NotificationButton = ({ coupleName, index }) => {
     const unsubscribeButtonOnClick = async event => {
       event.preventDefault()
       await subscription.unsubscribe()
-      // TODO: you should call your API to delete or invalidate subscription data on server
       setSubscription(null)
       setIsSubscribed(false)
       console.log('web push unsubscribed!')
