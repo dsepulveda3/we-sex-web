@@ -116,6 +116,13 @@ export const subscribe_to_notifications = async (subscription_data, couple_name,
         `v1/CoupleGame/subscribe-notifications/${couple_name}/${member_index}`,
         subscription_data
     );
-    console.log(response);
     return response;
 }
+
+export const get_web_push_data = async (couple_name) => {
+    const response = await basePremiumService.get(
+        `v1/CoupleGame/subscribe-notifications/${couple_name}`
+    );
+    return response;
+}
+    

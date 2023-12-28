@@ -1,11 +1,13 @@
 import Road from "../../../../components/premiumMaterial/desafiosParejas/road";
 import NotificationButton from "../../../../components/webPush";
 import InstallButton from "../../../../components/pwaInstallButton";
+import { get_web_push_data } from "../../../../requests/premiumService";
 import { useEffect, useState } from "react";
 
 
-const DesafioRoad = ({ coupleName, index }) => {
+const DesafioRoad = ({ coupleData, index }) => {
     const [isPwa, setIsPwa] = useState(false);
+    const [isVisible, setIsVisible] = useState(true);
 
     useEffect(() => {
         if (window.matchMedia('(display-mode: standalone)').matches) {
@@ -15,7 +17,7 @@ const DesafioRoad = ({ coupleName, index }) => {
 
     return(
         <>
-            <NotificationButton coupleName={coupleName} index={index} />
+            {isVisible && <NotificationButton coupleData={coupleData} setShowPopup={setIsVisible} />}
             {!isPwa? <InstallButton /> : null}
         </>
     )
@@ -24,12 +26,11 @@ const DesafioRoad = ({ coupleName, index }) => {
 export default DesafioRoad;
 
 export const getServerSideProps = async (context) => {
-    const { coupleName, index } = context.query;
-
+    const { coupleName } = context.query;
+    const response = await get_web_push_data(coupleName);
     return {
         props: {
-            coupleName,
-            index
+            coupleData: response.data,
         }
     }
 }
