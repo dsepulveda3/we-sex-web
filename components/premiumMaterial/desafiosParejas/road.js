@@ -883,8 +883,6 @@ const Popup = ({
             
             <ContainerData>
               <Level><span>{nameLevelText}</span></Level>
-              {/* <Areas /> */}
-
               <SectionContainer>
                 <ImageDoneChallengeCounter src="/img/challenges/done_wesex.png" />
                 <ImageDoneChallengeCounterNumber>{`${challengesDone}/${totalChallenges}`}</ImageDoneChallengeCounterNumber>
@@ -913,7 +911,10 @@ const Popup = ({
           </HeaderContainer>
           <Background>
           <StickyComponent />
-          <Diagnostic origin={coupleName} />
+          <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
+            {coupleName === "all" && <Areas />}
+            <Diagnostic origin={coupleName} />
+          </div>
           {/* {showDiagnostico && <Diagnostic origin={coupleName} />} */}
             {/* {renderLevelBoxes()} */}
             <div style={{ paddingTop: '1rem', backgroundColor: '#ebe4f8' }}></div>
