@@ -833,6 +833,17 @@ const Popup = ({
     const [nameLevelText, setNameLevelText] = useState("NIVEL: CALENTAMIENTO")
 
     useEffect(() => {
+      const challenges = document.querySelectorAll(".challenge-container");
+  
+      challenges.forEach((challenge) => {
+        if (challenge.dataset.status === "next") {
+          challenge.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    }, []);
+  
+
+    useEffect(() => {
       if (router.isReady){
         if (router.query.origin) {
           setCoupleName(router.query.origin);
@@ -872,6 +883,8 @@ const Popup = ({
         } else {
           setCoupleData(response.data);
         }
+        
+        
 
         if (coupleName === "Complices"){
           setLevelText("Nivel 2");
@@ -916,7 +929,6 @@ const Popup = ({
   const dosisGroups = coupleData
     ? chunkArray(coupleData.pills, 3)
     : [];
-
 
 
   console.log(coupleData);
