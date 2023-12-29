@@ -4,8 +4,8 @@ const withPWA = require('next-pwa')({
   importScripts: ['/worker.js'],
   // disable: process.env.NODE_ENV === 'development',
   register: true,
-  scope: '/app',
-  sw: 'service-worker.js',
+  // scope: '/app',
+  // sw: 'service-worker.js',
   //...
 })
 
