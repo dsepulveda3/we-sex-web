@@ -167,6 +167,12 @@ const NotificationButton = ({ coupleData, setShowPopup }) => {
                     {coupleData.coupleMemberTwo}
                   </BotonNotificarDone>
                 )}
+                <button onClick={unsubscribeButtonOnClick} disabled={!isSubscribed}>
+                  Unsubscribe
+                </button>
+                <button onClick={sendNotificationButtonOnClick} disabled={!isSubscribed}>
+                  Send Notification
+                </button>
             </PopupDialog>
         </PopupContainer>
       </>
