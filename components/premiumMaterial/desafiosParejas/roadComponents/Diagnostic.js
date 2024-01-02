@@ -7,6 +7,7 @@ const ContainerNotificarDone = styled.div`
     padding: 0.8rem;
     display: flex;
     justify-content: center;
+    margin-top: 0.5rem;
 
 `;
 

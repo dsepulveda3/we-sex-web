@@ -10,6 +10,7 @@ const ContainerNotificarDone = styled.div`
   padding: 0.8rem;
   display: flex;
   justify-content: center;
+  margin-top: 0.5rem;
 `;
 
 const BotonNotificarDone = styled.a`
@@ -40,7 +41,7 @@ const RoundedPopup = styled.div`
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   padding: 20px;
-  z-index: 1000;
+  z-index: 1;
 `;
 
 const CloseButton = styled.button`
@@ -125,7 +126,7 @@ const Areas = ({ origin }) => {
       </ContainerNotificarDone>
 
       <RoundedPopup visible={showPopup} ref={buttonRef}>
-        <Instruction><span>SELECCIONA EL ÁREA QUE DESEAS MEJORAR</span></Instruction>
+        <Instruction><span>SELECCIONA EL ÁREA QUE DESEAN MEJORAR</span></Instruction>
         {/* <CloseButton onClick={handleClose}>X</CloseButton> */}
         <PopupContent>
           <Square text="COM"/>

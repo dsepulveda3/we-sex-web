@@ -48,6 +48,8 @@ const LevelBox = styled.div`
 
 const LevelBoxContainer = styled.div`
   background-color: #ebe4f8;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
 `;
 
 
@@ -115,6 +117,7 @@ const ChallengesAndDosisContainer = styled.div`
     display: flex;
     flex-direction: row;
     height: 100%; /* Use full height */
+    justify-content: space-between;
    
     /* Other CSS styles for your container */
     
@@ -199,13 +202,16 @@ const ImageDoneChallengeCounterNumber = styled.div`
 
 const DosisContainer = styled.div`
     // border: 2px solid green;
+    margin-top: 8rem;
     flex: 1;
     height: 100%; /* Use full height */
+  
 
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Align at the top */
-    align-items: center; /* Center horizontally */
+    // justify-content: center; /* Align at the top */
+    // align-items: center; /* Center horizontally */
+    
  
 `;
 
@@ -509,6 +515,29 @@ const ClockSeparator = styled.span`
     color: var(--violet);
 `;
 
+const DoneChallengesMessage = styled.div`
+  color: black;
+  font-size: 1.5rem;
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  padding-left: 3rem;
+  margin-top: 1rem;
+  @media (max-width: 540px){
+    padding-left: 2rem;
+    font-size: 1.2rem;
+  }
+
+  span {
+    font-weight: bold;
+    font-family: "Averia Libre", sans-serif;
+    background-color: var(--green); /* Set the background color to green */
+    padding: 0.1rem 0.5rem; /* Add padding to make the background visible */
+    color: white; /* Set the text color to white */
+}
+  
+`;
+
+
 const ClockTimer = ({ timestamp, startTime }) => {
   const targetTime = new Date(new Date(timestamp).getTime() + 60 * 60 * 24 * 1000);
   const currentTime = new Date(startTime)
@@ -775,6 +804,14 @@ const Popup = ({
   
     return imageComponents[status] || null;
   };
+
+  const chunkArray = (array, size) => {
+    const chunkedArray = [];
+    for (let i = 0; i < array.length; i += size) {
+      chunkedArray.push(array.slice(i, i + size));
+    }
+    return chunkedArray;
+  };
   
   const Road = () => {
     const router = useRouter();
@@ -794,6 +831,17 @@ const Popup = ({
 
     const [levelText, setLevelText] = useState("Nivel 1")
     const [nameLevelText, setNameLevelText] = useState("NIVEL: CALENTAMIENTO")
+
+    useEffect(() => {
+      const challenges = document.querySelectorAll(".challenge-container");
+  
+      challenges.forEach((challenge) => {
+        if (challenge.dataset.status === "next") {
+          challenge.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    }, []);
+  
 
     useEffect(() => {
       if (router.isReady){
@@ -835,6 +883,8 @@ const Popup = ({
         } else {
           setCoupleData(response.data);
         }
+        
+        
 
         if (coupleName === "Complices"){
           setLevelText("Nivel 2");
@@ -873,6 +923,12 @@ const Popup = ({
       fetchData();
     }, [coupleName]);
 
+    const challengesGroups = coupleData
+    ? chunkArray(coupleData.challenges, 5)
+    : [];
+  const dosisGroups = coupleData
+    ? chunkArray(coupleData.pills, 3)
+    : [];
 
 
   console.log(coupleData);
@@ -918,40 +974,43 @@ const Popup = ({
           {/* {showDiagnostico && <Diagnostic origin={coupleName} />} */}
             {/* {renderLevelBoxes()} */}
             <div style={{ paddingTop: '1rem', backgroundColor: '#ebe4f8' }}></div>
-            <LevelBoxContainer>
-            <LevelBox>{levelText}</LevelBox>
-          </LevelBoxContainer>
-            <div style={{paddingTop: "1rem", backgroundColor: "#ebe4f8"}}></div>
-            <ChallengesAndDosisContainer>
-              <ChallengesContainer>
-                {coupleData ? (
-                coupleData.challenges.map((challenge, index) => (
-                    <ChallengeImage 
-                    key={index} 
-                    data={challenge} // Provide the entire challenge object as a prop
-                    index={index}
-                    onClick={handleStartChallengeClick} 
+            {challengesGroups.map((group, index) => (
+            <React.Fragment key={`challenge-group-${index}`}>
+              <LevelBoxContainer
+              >  
+                <LevelBox>{`Nivel ${index + 1}`}</LevelBox>
+              </LevelBoxContainer>
+              <ChallengesAndDosisContainer>
+                <ChallengesContainer>
+                  {group.map((challenge, i) => (
+                    <ChallengeImage
+                      key={`challenge-${index}-${i}`}
+                      data={challenge}
+                      index={i + index * 5}
+                      onClick={handleStartChallengeClick}
                     />
-                ))
-                ) : (
-                <div>No Challenges Available</div>
-                )}
-              </ChallengesContainer>
-              <DosisContainer>
-                {coupleData ? (
-                  coupleData.pills.map((dosis, index) => (
-                    <DosisImage
-                      key={index}
-                      data={dosis} // Provide the entire dosis object as a prop
-                      index={index}
-                      onClick={handleStartDosisClick}
-                    />
-                  ))
-                ) : (
-                  <div>No Dosis Available</div>
-                )}
-              </DosisContainer>
-            </ChallengesAndDosisContainer>
+                  ))}
+                </ChallengesContainer>
+                <DosisContainer>
+                  {dosisGroups[index] &&
+                    dosisGroups[index].map((dosis, i) => (
+                      <DosisImage
+                        key={`dosis-${index}-${i}`}
+                        data={dosis}
+                        index={i + index * 3}
+                        onClick={handleStartDosisClick}
+                      />
+                    ))}
+                </DosisContainer>
+              </ChallengesAndDosisContainer>
+            </React.Fragment>
+          ))}
+            {/* ... existing code ... */}
+            {challengesDone === totalChallenges && totalChallenges !== 0 && (
+              <DoneChallengesMessage>
+               <span>ESTAMOS TRABAJANDO EN SUS PRÓXIMOS DESAFÍOS 😊.<br/> 🔥🔥 AGUANTEN LA CALENTURA 🔥🔥</span>
+              </DoneChallengesMessage>
+            )}
           </Background>
         
           <Popup
