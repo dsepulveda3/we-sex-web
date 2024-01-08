@@ -94,18 +94,18 @@ const NotificationButton = ({ coupleData, setShowPopup }) => {
     const [subscription, setSubscription] = useState(null)
     const [registration, setRegistration] = useState(null)
 
-    useEffect(() => {
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker
-          .register('/worker.js')
-          .then((registration) => {
-            console.log('Service Worker registered with scope:', registration.scope);
-          })
-          .catch((error) => {
-            console.error('Service Worker registration failed:', error);
-          });
-      }
-    }, []);
+    // useEffect(() => {
+    //   if ('serviceWorker' in navigator) {
+    //     navigator.serviceWorker
+    //       .register('/worker.js')
+    //       .then((registration) => {
+    //         console.log('Service Worker registered with scope:', registration.scope);
+    //       })
+    //       .catch((error) => {
+    //         console.error('Service Worker registration failed:', error);
+    //       });
+    //   }
+    // }, []);
   
     useEffect(() => {
       if (typeof window !== 'undefined' && 'serviceWorker' in navigator && window.workbox !== undefined) {
