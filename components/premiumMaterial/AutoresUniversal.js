@@ -60,18 +60,20 @@ const Redes = styled.div`
     }
 `;
 
-const AutoresUniversal = ({fabiVisibility, ceciliaVisibility, barbaraVisibility, laraVisibility}) => {
+const AutoresUniversal = ({fabiVisibility, ceciliaVisibility, barbaraVisibility, laraVisibility, fernandaVisibility}) => {
   const [FabiIsVisible, setFabiIsVisible] = useState(fabiVisibility);
   const [CeciliaIsVisible, setCeciliaIsVisible] = useState(ceciliaVisibility);
   const [BarbaraIsVisible, setBarbaraIsVisible] = useState(barbaraVisibility);
   const [LaraIsVisible, setLaraIsVisible] = useState(laraVisibility);
+  const [FernandaIsVisible, setFernandaIsVisible] = useState(fernandaVisibility);
 
   useEffect(() => {
     setFabiIsVisible(fabiVisibility);
     setCeciliaIsVisible(ceciliaVisibility);
     setBarbaraIsVisible(barbaraVisibility);
     setLaraIsVisible(laraVisibility);
-  }, [fabiVisibility, ceciliaVisibility, barbaraVisibility, laraVisibility]);
+    setFernandaIsVisible(fernandaVisibility);
+  }, [fabiVisibility, ceciliaVisibility, barbaraVisibility, laraVisibility, fernandaVisibility]);
 
     return (
         <section id="profesional">
@@ -158,6 +160,35 @@ const AutoresUniversal = ({fabiVisibility, ceciliaVisibility, barbaraVisibility,
                             <img src="/img/premium-material/instagram (1).png" alt="Instagram Logo" />
                           </a>
                           <a href="https://www.placerconsentido.com/psicologia-sexologia-y-terapia-de-pareja-online" target="_blank">
+                            <img src="/img/premium-material/website.png" alt="Website Logo" />
+                          </a>
+                        </Redes>
+                      </div>
+                    </CardBody>
+                  </Card>
+                </Col>
+                )}
+
+              {FernandaIsVisible && (
+                  <Col xl={4} lg={4} md={4} xs={12} sm={12} style={{marginBottom: "5rem"}}>
+                  <Card style={{borderRadius: "4rem", minHeight: "63.5vh", display: "flex", flexDirection: "column"}}>
+                    <img
+                      alt="Lara"
+                      src="/img/premium-material/fernanda_ezq.jpg"
+                      style={{
+                        borderTopLeftRadius: "4rem",
+                        borderTopRightRadius: "4rem"
+                      }}
+                    />
+                    <CardBody style={{flexGrow: 1, display: "flex", flexDirection: "column", justifyContent: "flex-end"}}>
+                      <Name>Fernanda Ezquerro</Name>
+                      <SubTitle>Psicóloga clínica. Terapeuta sexual y de pareja.</SubTitle>
+                      <div style={{marginTop: "auto"}}>
+                        <Redes>
+                          <a href="https://www.instagram.com/lolayelsexo" target="_blank">
+                            <img src="/img/premium-material/instagram (1).png" alt="Instagram Logo" />
+                          </a>
+                          <a href="https://www.instagram.com/lolayelsexo" target="_blank">
                             <img src="/img/premium-material/website.png" alt="Website Logo" />
                           </a>
                         </Redes>

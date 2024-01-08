@@ -12,6 +12,7 @@ import AboutWeSex from '../../../../components/premiumMaterial/aboutWeSex'
 import Footer from '../../../../components/premiumMaterial/footer'
 import Layout from '../../../../components/general/Layout';
 import globalPrices from '../../../../utils/globalPrices'
+import AutoresUniversal from '../../../../components/premiumMaterial/AutoresUniversal'
 
 import DisclaimerTantra from '../../../../components/premiumMaterial/disclaimerTantra'
 
@@ -59,13 +60,13 @@ export default function ComunicacionFer() {
           emoji4='💖' text4_1 ='' text4Span='Potenciar la conexión emocional ' text4_2 = 'con tus vínculos.'
           emoji5='🙉' text5_1='Ser una persona que sabe ' text5Span='escuchar.' text5_2='' 
           emoji6='💦' text6_1='Fortalecer la ' text6Span='conexión sexual' text6_2=' con tus vínculos.'
-          emoji7='💫' text7_1='Fortalecer la ' text7Span='conexión sexual' text7_2=' con tus vínculos.' />
+          emoji7='💫' text7_1='Fomentar la empatía y ' text7Span='comprensión mutua.' text7_2='' />
         <AfterDiv />
         {/* <PackUniversal title1_1='Llevate el pack Tántrico' title1_2='Por AR$5600 llevate las 3 guías tántricas de Fabi Villalba: ' 
         title1_3='Orgasmos profundos, Masturbación Tántrica 1, y Masturbación Tántrica 2.' link_promo='/premium-material/packs/pack9-all-tantra' /> */}
         <AfterDiv />
         {/* <DisclaimerTantra /> */}
-        <ProfesionalesUniversal fabiVisibility={false} laraVisibility={true} ceciliaVisibility={false} barbaraVisibility={false}/>
+        <AutoresUniversal fabiVisibility={false} laraVisibility={false} ceciliaVisibility={false} barbaraVisibility={false} fernandaVisibility={true}/>
         <PackUniversal title1_1='' title1_2={`Por AR$${globalPrices.TwoProductARS} llevate las 8 guías de WeSex: `}
         title1_3='Comunicación + Deseo + Salir de la rutina + Orgasmos profundos + Tantra 1 + Tantra 2 + Zonas Erógenas + Sexo Anal.' 
         link_promo='/premium-material/packs/pack14-eight-guides-fer' />
@@ -77,7 +78,7 @@ export default function ComunicacionFer() {
           redirection_failed_mp='https://www.we.sex/premium-material/guides/guia-comunucacion-fer'
           link_payhip_usd='https://payhip.com/b/pzq3l'
           has_promo={true}
-          buy_just='Comprar guía Comunicación' reminder_buy_just='Estás comprando solo la guía de Comunicación' 
+          buy_just='Comprar guía de Comunicación' reminder_buy_just='Estás comprando solo la guía de Comunicación' 
           link_promo='' text_promo1_1=''
           text_promo1Span='' text_promo1_2=''
           link_promo2='/premium-material/packs/pack13-Comu-Deseo-SR-fer' text_promo2_1='O llevate la '

@@ -53,7 +53,7 @@ export default function Pack13Fer() {
           emoji4='💖' text4_1 ='' text4Span='Potenciar la conexión emocional ' text4_2 = 'con tus vínculos.'
           emoji5='🙉' text5_1='Ser una persona que sabe ' text5Span='escuchar.' text5_2='' 
           emoji6='💦' text6_1='Fortalecer la ' text6Span='conexión sexual' text6_2=' con tus vínculos.'
-          emoji7='💫' text7_1='Fortalecer la ' text7Span='conexión sexual' text7_2=' con tus vínculos.' />
+          emoji7='💫' text7_1='Fomentar la empatía y ' text7Span='comprensión mutua.' text7_2='' />
         <EsParaVosSiUniversal title1_1='Esta guía de Deseo es ' title1Span='para ti' title1_2=' si buscas' 
           emoji1='🧠' text1_1='Entender y ' text1Span='aceptar tu deseo sexual.' text1_2=''
           emoji2='✨' text2_1='' text2Span='Reavivar la pasión' text2_2=' en tu relación.' 

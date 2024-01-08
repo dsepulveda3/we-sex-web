@@ -885,7 +885,6 @@ const Popup = ({
         }
         
         
-
         if (coupleName === "Complices"){
           setLevelText("Nivel 2");
           setNameLevelText("NIVEL: EXPLORACIÓN");
