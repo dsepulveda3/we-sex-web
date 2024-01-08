@@ -14,7 +14,6 @@ const withPWA = require("next-pwa");
 module.exports = withPWA({
   pwa: {
     dest: "public",
-    importScripts: ['/worker.js'],
     register: true,
     scope: '/app',
     sw: 'service-worker.js',
