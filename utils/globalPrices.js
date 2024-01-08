@@ -10,7 +10,9 @@ const globalPrices = {
     FourProductARS: 8400,
     FourProductUSD: 18,
     FiveProductARS: 10000,
-    FiveProductUSD: 24
+    FiveProductUSD: 24,
+    EightProductARS: 16000,
+    EightProductUSD: 35
 };
   
   export default globalPrices;
