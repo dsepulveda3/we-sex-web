@@ -8,17 +8,23 @@ import { useEffect, useState } from "react";
 const DesafioRoad = ({ coupleData, index }) => {
     const [isPwa, setIsPwa] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
+    const [isLocalSide, setIsLocalSide] = useState(false);
 
     useEffect(() => {
         if (window.matchMedia('(display-mode: standalone)').matches) {
             setIsPwa(true);
         }
+        setIsLocalSide(true);
     }, []);
 
     return(
         <>
-            {isVisible && <NotificationButton coupleData={coupleData} setShowPopup={setIsVisible} />}
-            {!isPwa? <InstallButton /> : null}
+        {isLocalSide && (
+            <>
+                {isVisible && <NotificationButton coupleData={coupleData} setShowPopup={setIsVisible} />}
+                {!isPwa? <InstallButton /> : null}
+            </>
+        )}
         </>
     )
 };
