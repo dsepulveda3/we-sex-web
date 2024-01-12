@@ -127,6 +127,7 @@ const ChallengesContainer = styled.div`
     // border: 2px solid black;
     flex: 2;
     height: 100%; /* Use full height */
+    margin-top: 2rem;
 
     display: flex;
     flex-direction: column;
@@ -202,22 +203,28 @@ const ImageDoneChallengeCounterNumber = styled.div`
 
 const DosisContainer = styled.div`
     // border: 2px solid green;
-    margin-top: 8rem;
+    margin-top: 5rem;
     flex: 1;
     height: 100%; /* Use full height */
-  
+
 
     display: flex;
     flex-direction: column;
     // justify-content: center; /* Align at the top */
     // align-items: center; /* Center horizontally */
+
+    @media (max-width: 540px){
+      margin-top: 0rem;
+    }
+    
+
     
  
 `;
 
 const ImageDosis = styled.img`
-    height: 8%;
-    width: 13%;
+    height: 6%;
+    width: 10%;
     padding: 1rem;
     transform: rotate(0deg);
 
@@ -885,7 +892,6 @@ const Popup = ({
         }
         
         
-
         if (coupleName === "Complices"){
           setLevelText("Nivel 2");
           setNameLevelText("NIVEL: EXPLORACIÓN");
@@ -924,10 +930,10 @@ const Popup = ({
     }, [coupleName]);
 
     const challengesGroups = coupleData
-    ? chunkArray(coupleData.challenges, 5)
+    ? chunkArray(coupleData.challenges, 4)
     : [];
   const dosisGroups = coupleData
-    ? chunkArray(coupleData.pills, 3)
+    ? chunkArray(coupleData.pills, 5)
     : [];
 
 
@@ -986,7 +992,7 @@ const Popup = ({
                     <ChallengeImage
                       key={`challenge-${index}-${i}`}
                       data={challenge}
-                      index={i + index * 5}
+                      index={i + index * 4}
                       onClick={handleStartChallengeClick}
                     />
                   ))}
@@ -997,7 +1003,7 @@ const Popup = ({
                       <DosisImage
                         key={`dosis-${index}-${i}`}
                         data={dosis}
-                        index={i + index * 3}
+                        index={i + index * 2}
                         onClick={handleStartDosisClick}
                       />
                     ))}

@@ -114,7 +114,15 @@ const PDFViewer = ({pdfItem, demo, setLoaded}) => {
     }
     // Arreglar con link correccto :)
   } else if (pdfItem === 'guia-deseo'){
-    setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/65564615f94d0fa60f7c5d44/WeSex%20-%20Menogui%CC%81a%20Sexulidad&Menopausia%20%20(1)_compressed.pdf");
+    setPdfUrl("https://we-sex-premium.s3.us-east-2.amazonaws.com/guides/pdfs/Guia+Deseo+sexual++WeSex-alta_compressed.pdf");
+    if (isPhoneScreen) {
+      // Execute your function specific to phone screens here
+      containerwd = 1.3;
+    } else {
+      containerwd = 4.4;
+    }
+  } else if (pdfItem === 'guia-comunicacion'){
+    setPdfUrl("https://we-sex-premium.s3.us-east-2.amazonaws.com/guides/pdfs/WeSex++Guia+comunicacio%CC%81n+asertiva_compressed.pdf");
     if (isPhoneScreen) {
       // Execute your function specific to phone screens here
       containerwd = 1.3;

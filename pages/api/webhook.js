@@ -425,6 +425,51 @@ export default async function handler(req, res) {
 
   post_perfit(account, listId, contactData, axiosConfig);
 
+} else if (
+  productName === 'Guía Comunicación Asertiva' ||
+  productName ===
+  '¡GRACIAS! Presiona el botón "Descargar ahora" para recibir la guía de comunicación asertiva por mail y empezar a disfrutar.' ||
+  productName === 'FER - Guía Comunicación Asertiva' ||
+  productName === 
+  'FER - ¡GRACIAS! Presiona el botón "Descargar ahora" para recibir la guía de comunicación asertiva por mail y empezar a disfrutar.'
+) {
+  const listId = 100; // lista Perfit guía Comunicación
+  const contactData = {
+    email: email,
+  };
+
+  post_perfit(account, listId, contactData, axiosConfig);
+
+} else if (
+  productName === 'Guía Comunicación, Deseo Sexual y Salir de la Rutina' ||
+  productName ===
+  '¡GRACIAS! PresionA el botón "Descargar ahora" para recibir la guía de comunicación, deseo sexual y salir de la rutina por mail y empezar a disfrutar.' ||
+  productName === 'FER - Guía Comunicación, Deseo Sexual y Salir de la Rutina' ||
+  productName === 
+  'FER - ¡GRACIAS! PresionA el botón "Descargar ahora" para recibir la guía de comunicación, deseo sexual y salir de la rutina por mail y empezar a disfrutar.'
+) {
+  const listId = 101; // lista Perfit guía Comunicación + Deseo + Rutina
+  const contactData = {
+    email: email,
+  };
+
+  post_perfit(account, listId, contactData, axiosConfig);
+
+} else if (
+  productName === 'Guía Comunicación, Deseo Sexual, Salir de la Rutina, Orgasmos Profundos, Tantra 1, Tantra 2, Zonas Erógenas y Sexo Anal.' ||
+  productName ===
+  '¡GRACIAS! PresionA el botón "Descargar ahora" para recibir la guía de comunicación, deseo sexual, salir de la rutina, orgasmos profundos, tantra 1, tantra 2, zonas erógenas y sexo anal por mail y empezar a disfrutar.' ||
+  productName === 'FER - Guía Comunicación, Deseo Sexual, Salir de la Rutina, Orgasmos Profundos, Tantra 1, Tantra 2, Zonas Erógenas y Sexo Anal.' ||
+  productName === 
+  'FER - ¡GRACIAS! PresionA el botón "Descargar ahora" para recibir la guía de comunicación, deseo sexual, salir de la rutina, orgasmos profundos, tantra 1, tantra 2, zonas erógenas y sexo anal por mail y empezar a disfrutar.'
+) {
+  const listId = 102; // lista Perfit pack 8 guías
+  const contactData = {
+    email: email,
+  };
+
+  post_perfit(account, listId, contactData, axiosConfig);
+
 }
 
     //console.log('Successful request');

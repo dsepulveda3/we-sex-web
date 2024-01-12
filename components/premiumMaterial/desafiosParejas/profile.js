@@ -319,6 +319,7 @@ const Profile = () => {
       console.log(coupleData);
 
     const handleClick = () => {
+        freshpaint.track("BUTTON - SOLICITAR NUEVO DIAGNÓSTICO");
         router.push(`https://wa.me/5491140678698?text=Hola!%20Queremos%20solicitar%20un%20nuevo%20diagnóstico`);
     };
     

@@ -7,26 +7,32 @@ const SquareComponent = styled.button`
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   height: 50px;
-  transition: transform 0.2s ease-in-out; /* Add a transition for smooth scaling */
-
+  transition: transform 0.2s ease-in-out;
+  
   &:hover {
-    transform: scale(1.1); /* Scale up on hover */
+    transform: scale(1.1);
     background-color: var(--green);
     color: white;
+    cursor: pointer; /* Add pointer cursor on hover */
   }
 
   &:active {
-    transform: scale(0.9); /* Scale down a bit when clicked */
-    
+    transform: scale(0.9);
   }
 `;
 
 const Square = ({ text }) => {
 
-    return(
-        <SquareComponent>
-            {text}
-        </SquareComponent>
-    );
+
+    const handleClick = () => {
+        console.log("Button clicked!");
+      };
+
+  return (
+    <SquareComponent onClick={handleClick}>
+      {text}
+    </SquareComponent>
+  );
 };
+
 export default Square;
