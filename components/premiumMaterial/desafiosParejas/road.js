@@ -992,7 +992,7 @@ const Popup = ({
                     <ChallengeImage
                       key={`challenge-${index}-${i}`}
                       data={challenge}
-                      index={i + index * 5}
+                      index={i + index * 4}
                       onClick={handleStartChallengeClick}
                     />
                   ))}
@@ -1003,7 +1003,7 @@ const Popup = ({
                       <DosisImage
                         key={`dosis-${index}-${i}`}
                         data={dosis}
-                        index={i + index * 3}
+                        index={i + index * 2}
                         onClick={handleStartDosisClick}
                       />
                     ))}
