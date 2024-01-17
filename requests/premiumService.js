@@ -111,9 +111,9 @@ export const query_task = async (couple_name, task_type, task_index) => {
     return response;
 }
 
-export const subscribe_to_notifications = async (subscription_data, couple_name, member_index) => {
+export const subscribe_to_notifications = async (subscription_data, couple_name) => {
     const response = await basePremiumService.post(
-        `v1/CoupleGame/subscribe-notifications/${couple_name}/${member_index}`,
+        `v1/CoupleGame/subscribe-notifications/${couple_name}`,
         subscription_data
     );
     return response;

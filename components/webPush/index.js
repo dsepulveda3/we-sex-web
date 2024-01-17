@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from "react";
-import Head from "next/head";
 import { subscribe_to_notifications } from "../../requests/premiumService";
 import styled from "@emotion/styled";
 
-const BotonNotificarDone = styled.a`
+const BotonNotificarDone = styled.button`
     background-color: ${(props) => (props.color === "violet" ? "var(--violet)" : "var(--green)")};
     color: white;
     border: none;
@@ -94,18 +93,9 @@ const NotificationButton = ({ coupleData, setShowPopup }) => {
     const [subscription, setSubscription] = useState(null)
     const [registration, setRegistration] = useState(null)
 
-    // useEffect(() => {
-    //   if ('serviceWorker' in navigator) {
-    //     navigator.serviceWorker
-    //       .register('/worker.js')
-    //       .then((registration) => {
-    //         console.log('Service Worker registered with scope:', registration.scope);
-    //       })
-    //       .catch((error) => {
-    //         console.error('Service Worker registration failed:', error);
-    //       });
-    //   }
-    // }, []);
+    useEffect(() => {
+      setShowPopup(false);
+    }, [isSubscribed])
   
     useEffect(() => {
       if (typeof window !== 'undefined' && 'serviceWorker' in navigator && window.workbox !== undefined) {
