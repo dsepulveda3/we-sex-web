@@ -1,5 +1,4 @@
 import Road from "../../../../components/premiumMaterial/desafiosParejas/road";
-import NotificationButton from "../../../../components/webPush";
 import InstallButton from "../../../../components/pwaInstallButton";
 import NotificationComponent from "../../../../components/allowNotificationsPopUp";
 import { get_web_push_data } from "../../../../requests/premiumService";
@@ -11,10 +10,14 @@ const DesafioRoad = ({ coupleData }) => {
 
     useEffect(() => {
       const userAgent = window.navigator.userAgent;
+      console.log(userAgent);
   
-      const isMobileDevice = /Mobi|Android/i.test(userAgent);
+      const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+      const isMobileDevice = regex.test(userAgent);
+      console.log(isMobileDevice)
   
       const isInStandaloneMode = 'standalone' in window.navigator && window.navigator.standalone;
+      console.log(isInStandaloneMode)
   
       setIsMobile(isMobileDevice && !isInStandaloneMode);
     }, []);
@@ -23,7 +26,7 @@ const DesafioRoad = ({ coupleData }) => {
     return(
         <>
         <Road />
-        {!ismobile && <NotificationButton coupleData={coupleData} />}
+        {!ismobile && <NotificationComponent coupleData={coupleData} />}
         {ismobile && <InstallButton />}
         </>
     )
