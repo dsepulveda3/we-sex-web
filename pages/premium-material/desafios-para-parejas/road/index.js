@@ -3,7 +3,7 @@ import NotificationButton from "../../../../components/webPush";
 import InstallButton from "../../../../components/pwaInstallButton";
 import NotificationComponent from "../../../../components/allowNotificationsPopUp";
 import { get_web_push_data } from "../../../../requests/premiumService";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 
 const DesafioRoad = ({ coupleData }) => {
