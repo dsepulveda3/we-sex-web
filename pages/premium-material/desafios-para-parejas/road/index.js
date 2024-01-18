@@ -26,8 +26,9 @@ const DesafioRoad = ({ coupleData }) => {
     return(
         <>
         <Road />
-        {!ismobile && <NotificationComponent coupleData={coupleData} />}
-        {ismobile && <InstallButton />}
+        {/* {!ismobile && <NotificationComponent coupleData={coupleData} />}
+        {ismobile && <InstallButton />} */}
+        <NotificationComponent coupleData={coupleData} />
         </>
     )
 };
