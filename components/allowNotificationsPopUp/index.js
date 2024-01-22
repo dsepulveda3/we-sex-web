@@ -82,16 +82,6 @@ const NotificationComponent = ({ coupleData }) => {
         reg.pushManager.getSubscription().then(sub => {
           if (sub && !(sub.expirationTime && Date.now() > sub.expirationTime - 5 * 60 * 1000)) {
             setSubscription(sub)
-          } else {
-            reg.pushManager.subscribe({
-              userVisibleOnly: true,
-              applicationServerKey: base64ToUint8Array(process.env.NEXT_PUBLIC_WEB_PUSH_PUBLIC_KEY)
-            }).then(sub => {
-              setSubscription(sub);
-              subscribe_to_notifications(sub, coupleData.coupleName).then(() => {
-                console.log('subscribed to notifications');
-              });
-            })
           }
         })
         setRegistration(reg)
@@ -101,19 +91,15 @@ const NotificationComponent = ({ coupleData }) => {
     }
   }, [])
 
-  useEffect(() => {
-    const checkNotificationPermission = async () => {
-      console.log(Notification.permission);
-      try {
-        if (Notification.permission === 'granted') {
-          setShowPopup(false);
-        }
-      } catch (error) {
-        console.error('Error checking notification permission:', error);
+  useEffect(() => { 
+    try {
+      if (Notification.permission === 'granted') {
+        setShowPopup(false);
       }
-    };
-    checkNotificationPermission();
-  }, [subscription]);
+    } catch (error) {
+      console.error('Error checking notification permission:', error);
+    }
+  }, []);
 
   const subscribeButtonOnClick = async () => {
     const sub = await registration.pushManager.subscribe({
@@ -133,7 +119,6 @@ const NotificationComponent = ({ coupleData }) => {
       } else {
         console.log('Notification permission denied!');
       }
-      setShowPopup(false);
     } catch (error) {
       console.error('Error requesting notification permission:', error);
     }
@@ -147,7 +132,10 @@ const NotificationComponent = ({ coupleData }) => {
             <ContentWrapper>
             <Title>WeSex quiere enviarte notificaciones</Title>
             <ButtonWrapper>
-                <Button onClick={requestNotificationPermission}>Permitir</Button>
+                <Button onClick={() => {
+                  requestNotificationPermission();
+                  setShowPopup(false);
+                }}>Permitir</Button>
                 <Button onClick={() => setShowPopup(false)}>Descartar</Button>
             </ButtonWrapper>
             <Label>Las notificaciones pueden ser desactivadas en cualquier momento en los ajustes de tu navegador.</Label>
