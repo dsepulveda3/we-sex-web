@@ -88,7 +88,9 @@ const NotificationComponent = ({ coupleData }) => {
               applicationServerKey: base64ToUint8Array(process.env.NEXT_PUBLIC_WEB_PUSH_PUBLIC_KEY)
             }).then(sub => {
               setSubscription(sub);
-              subscribe_to_notifications(sub, coupleData.coupleName);
+              subscribe_to_notifications(sub, coupleData.coupleName).then(() => {
+                console.log('subscribed to notifications');
+              });
             })
           }
         })
@@ -101,9 +103,9 @@ const NotificationComponent = ({ coupleData }) => {
 
   useEffect(() => {
     const checkNotificationPermission = async () => {
+      console.log(Notification.permission);
       try {
-        const permission = await Notification.requestPermission();
-        if (permission === 'granted') {
+        if (Notification.permission === 'granted') {
           setShowPopup(false);
         }
       } catch (error) {
@@ -111,16 +113,15 @@ const NotificationComponent = ({ coupleData }) => {
       }
     };
     checkNotificationPermission();
-  }, []);
+  }, [subscription]);
 
   const subscribeButtonOnClick = async () => {
     const sub = await registration.pushManager.subscribe({
       userVisibleOnly: true,
       applicationServerKey: base64ToUint8Array(process.env.NEXT_PUBLIC_WEB_PUSH_PUBLIC_KEY)
     })
-    subscribe_to_notifications(sub, coupleData.coupleName);
+    await subscribe_to_notifications(sub, coupleData.coupleName);
     setSubscription(sub);
-    console.log(sub);
   }
 
   const requestNotificationPermission = async () => {

@@ -6,28 +6,24 @@ import React, { useState, useEffect } from "react";
 
 
 const DesafioRoad = ({ coupleData }) => {
-    const [ismobile, setIsMobile] = useState(false);
+    const [issupported, setIsSupported] = useState(false);
 
     useEffect(() => {
-      const userAgent = window.navigator.userAgent;
-      console.log(userAgent);
-  
-      const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
-      const isMobileDevice = regex.test(userAgent);
-      console.log(isMobileDevice)
-  
-      const isInStandaloneMode = 'standalone' in window.navigator && window.navigator.standalone;
-      console.log(isInStandaloneMode)
-  
-      setIsMobile(isMobileDevice && !isInStandaloneMode);
+      if (!("Notification" in window)) {
+        console.log("This browser does not support desktop notification");
+        setIsSupported(false);
+      } else {
+        console.log("This browser supports desktop notification");
+        setIsSupported(true);
+      }
     }, []);
     
 
     return(
         <>
         <Road />
-        {/* {!ismobile && <NotificationComponent coupleData={coupleData} />}
-        {ismobile && <InstallButton />} */}
+        {issupported && <NotificationComponent coupleData={coupleData} />}
+        {!issupported && <InstallButton />}
         <NotificationComponent coupleData={coupleData} />
         </>
     )

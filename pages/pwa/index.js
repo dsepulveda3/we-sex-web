@@ -83,7 +83,7 @@ const PwaEntryPoint = () => {
   return (
     <PageContainer>
       <Logo src="/img/wesex_logo_no_background.png" alt="Company Logo" />
-      <WelcomeMessage>Gracias por instalar la aplicación</WelcomeMessage>
+      <WelcomeMessage>Gracias por instalar la app de WeSex Couples</WelcomeMessage>
       <InputContainer>
         <LabelCoupleName htmlFor="coupleName">Ingresa el nombre de tu pareja:</LabelCoupleName>
         <CoupleNameInput type="text" id="coupleName" name="coupleName" value={coupleName} onChange={(e) => setCoupleName(e.target.value)} />
