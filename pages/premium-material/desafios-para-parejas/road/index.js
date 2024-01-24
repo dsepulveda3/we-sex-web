@@ -1,6 +1,6 @@
 import Road from "../../../../components/premiumMaterial/desafiosParejas/road";
-import InstallButton from "../../../../components/pwaInstallButton";
 import NotificationComponent from "../../../../components/allowNotificationsPopUp";
+import PwaInstallPopup from "../../../../components/pwaInstallButton";
 import { get_web_push_data } from "../../../../requests/premiumService";
 import React, { useState, useEffect } from "react";
 
@@ -23,8 +23,7 @@ const DesafioRoad = ({ coupleData }) => {
         <>
         <Road />
         {issupported && <NotificationComponent coupleData={coupleData} />}
-        {!issupported && <InstallButton />}
-        <NotificationComponent coupleData={coupleData} />
+        {!issupported && <PwaInstallPopup />}
         </>
     )
 };

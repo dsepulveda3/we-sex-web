@@ -73,8 +73,9 @@ const base64ToUint8Array = base64 => {
 
 const NotificationComponent = ({ coupleData }) => {
   const [showPopup, setShowPopup] = useState(true);
-  const [subscription, setSubscription] = useState(null)
-  const [registration, setRegistration] = useState(null)
+  const [acceptedNotifications, setAcceptedNotifications] = useState(false);
+  const [subscription, setSubscription] = useState(null);
+  const [registration, setRegistration] = useState(null);
 
   useEffect(() => {
     if (typeof window !== 'undefined' && 'serviceWorker' in navigator && window.workbox !== undefined) {
@@ -92,36 +93,47 @@ const NotificationComponent = ({ coupleData }) => {
   }, [])
 
   useEffect(() => { 
-    try {
-      if (Notification.permission === 'granted') {
-        setShowPopup(false);
+      Notification.requestPermission().then(permission => {
+      if (permission === 'granted') {
+        setShowAcc
+      }}).catch(error => {
+        console.error('Error requesting notification permission:', error);
       }
-    } catch (error) {
-      console.error('Error checking notification permission:', error);
-    }
+    )
   }, []);
 
-  const subscribeButtonOnClick = async () => {
-    const sub = await registration.pushManager.subscribe({
+  useEffect(() => {
+    if (acceptedNotifications){
+      setShowPopup(false);
+      requestNotificationPermission();
+    }
+  }, [acceptedNotifications]);
+
+  const subscribeButtonOnClick = () => {
+    registration.pushManager.subscribe({
       userVisibleOnly: true,
       applicationServerKey: base64ToUint8Array(process.env.NEXT_PUBLIC_WEB_PUSH_PUBLIC_KEY)
-    })
-    await subscribe_to_notifications(sub, coupleData.coupleName);
-    setSubscription(sub);
+    }).then( sub =>
+      {
+        setSubscription(sub);
+        subscribe_to_notifications(sub, coupleData.coupleName);
+      }
+    )
   }
 
-  const requestNotificationPermission = async () => {
-    try {
-      const permission = await Notification.requestPermission();
+  const requestNotificationPermission = (event) => {
+    event.preventDefault();
+    setShowPopup(false);
+    Notification.requestPermission().then(permission => {
       if (permission === 'granted') {
         console.log('Notification permission granted!');
-        await subscribeButtonOnClick();
+        subscribeButtonOnClick();
       } else {
         console.log('Notification permission denied!');
       }
-    } catch (error) {
+    }).catch(error => {
       console.error('Error requesting notification permission:', error);
-    }
+    })
   };
 
   if (showPopup) {
@@ -132,10 +144,7 @@ const NotificationComponent = ({ coupleData }) => {
             <ContentWrapper>
             <Title>WeSex quiere enviarte notificaciones</Title>
             <ButtonWrapper>
-                <Button onClick={() => {
-                  requestNotificationPermission();
-                  setShowPopup(false);
-                }}>Permitir</Button>
+                <Button onClick={() => setAcceptedNotifications(true)}>Permitir</Button>
                 <Button onClick={() => setShowPopup(false)}>Descartar</Button>
             </ButtonWrapper>
             <Label>Las notificaciones pueden ser desactivadas en cualquier momento en los ajustes de tu navegador.</Label>

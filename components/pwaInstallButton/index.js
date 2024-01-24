@@ -1,114 +1,98 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
-import { useRouter } from 'next/router';
+import AnimatedArrow from './AnimatedArrow';
 
-const Container = styled.div`
+const PopupContainer = styled.div`
   position: fixed;
-  bottom: 80px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 0px;
+  right: 0px; /* Position the container at the top right corner */
+  background-color: var(--violet);
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 10px; /* Adjust the gap between buttons */
   z-index: 1000;
 `;
 
-const SingUpButton = styled.a`
+const Logo = styled.img`
+  width: auto;
+  height: 50px; /* Adjust the size of your logo */
+`;
+
+const ArrowContainer = styled.div`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+`;
+
+const DismissButton = styled.button`
+  margin-top: 10px;
+  cursor: pointer;
   background-color: var(--green);
-  font-weight: bold;
-  border-radius: 30px;
-  padding: 10px 40px;
-  color: white;
-  cursor: pointer;
-  white-space: nowrap;
-  font-size: 2rem;
-
-  @media (max-width: 540px) {
-    font-size: 1.5rem;
-  }
-`;
-
-const CloseButton = styled.button`
-  background-color: black;
+  color: #fff;
   border: none;
-  color: white;
-  cursor: pointer;
-  border-radius: 50%;
-  padding: 0;
-  width: 30px; /* Adjust the diameter as needed */
-  height: 30px; /* Equal to the width */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem; /* Adjust the font size as needed */
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
 `;
 
-const InstallButton = () => {
-    const router = useRouter();
-    const [visible, setVisible] = useState(true);
-    const [deferredPrompt, setDeferredPrompt] = useState(null);
-    const [isAppInstalled, setIsAppInstalled] = useState(false);
+const TextContainer = styled.div`
+  white-space: pre-line;
+  text-align: center;
+`;
 
-    useEffect(() => {
-        const handleBeforeInstallPrompt = (event) => {
-            // Prevent the default behavior
-            event.preventDefault();
-            // Store the event for later use
-            setDeferredPrompt(event);
-        };
+const InstructionsList = styled.ol`
+  text-align: left;
+  margin-top: 10px;
+  padding-left: 20px;
+`;
 
-        // Listen for the beforeinstallprompt event
-        window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+const PwaInstallPopup = () => {
+  const [showPopup, setShowPopup] = useState(false);
 
-        return () => {
-            // Remove the event listener when the component unmounts
-            window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-        };
-    }, []);
-
-
-    const handleInstallClick = async () => {
-        // Show the install prompt
-        if (!deferredPrompt) {
-            console.log('Open in pwa')
-            return;
-        }
-        deferredPrompt.prompt();
-
-        // Wait for the user to respond to the prompt
-        deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-            console.log('User accepted the install prompt');
-            // The app is considered installed after the user accepts the prompt
-            setIsAppInstalled(true);
-        } else {
-            console.log('User dismissed the install prompt');
-        }
-
-        // Clear the deferredPrompt
-        setDeferredPrompt(null);
-        });
+  useEffect(() => {
+    const isPwaInstalled = () => {
+      return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
     };
 
-    const handleClose = () => {
-        setVisible(false);
-      };
+    const showInstallPopup = () => {
+      if (!isPwaInstalled() && !localStorage.getItem('dismissedPopup')) {
+        setShowPopup(true);
+      }
+    };
 
-    if (!isAppInstalled) {
-        return (
-            <>
-            {visible && (
-                <Container>
-                  <SingUpButton onClick={handleInstallClick}>
-                    Abrir en App
-                  </SingUpButton>
-                  <CloseButton onClick={handleClose}>X</CloseButton>
-                </Container>
-            )}
-            </>
-        );
-    }
+    showInstallPopup();
+  }, []);
+
+  const handleDismissClick = () => {
+    localStorage.setItem('dismissedPopup', 'true');
+    setShowPopup(false);
+  };
+
+  return (
+    <>
+      {showPopup && (
+        <PopupContainer>
+          <ArrowContainer>
+            <AnimatedArrow />
+          </ArrowContainer>
+          <Logo src="/img/wesex_logo_no_background.png" alt="WeSex Logo" />
+          <TextContainer>
+            <p>¡Gracias por usar WeSex!</p>
+            <p>Instala la aplicación para una mejor experiencia 💚</p>
+          </TextContainer>
+          <InstructionsList>
+            <li>Presiona "instalar app" o "agregar a inicio" en el menú de tu navegador.</li>
+            <li>Sigue las instrucciones de instalación.</li>
+            <li>¡Disfruta de tus desafíos de pareja!</li>
+          </InstructionsList>
+          <DismissButton onClick={handleDismissClick}>Más tarde</DismissButton>
+        </PopupContainer>
+      )}
+    </>
+  );
 };
 
-export default InstallButton;
+export default PwaInstallPopup;
