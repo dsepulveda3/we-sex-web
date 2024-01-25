@@ -62,8 +62,8 @@ const ContainerInfo = styled(Container)`
       }
 `;
 
-const Title = styled.h1`
-    font-size: 3.5rem;
+const Title = styled.div`
+    font-size: 2rem;
     font-family: "Karla", sans-serif;
     opacity: 1; /* adjust the opacity as needed */
     color: white;
@@ -75,9 +75,9 @@ const Title = styled.h1`
         }
     
     @media(max-width: 540px){
-        font-size: 4rem;
+        font-size: 3rem;
         padding-top: 4rem;
-        padding-bottom: 1rem;
+        padding-bottom: 0rem;
     }
 `;
 
@@ -215,6 +215,17 @@ const Input = styled.input`
   margin-bottom: 2rem;
 `;
 
+const Select = styled.select`
+  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid white;
+  ::placeholder {
+    color: ${(props) => (props.hasError ? '#FF9800' : 'initial')};
+  }
+  margin-bottom: 2rem;
+`;
+
 const NickNameInstruction = styled.div`
     font-size: 1.3rem;
     // font-weight: bold;
@@ -240,7 +251,7 @@ const AdressLabel = styled.div`
     font-style: italic;
     color:  white;
     margin-left: 0.5rem;
-    margin-top: 0.1rem;
+    margin-top: 2rem;
     margin-bottom: 0.5rem;
     span {
         font-weight: bold;
@@ -263,7 +274,7 @@ const InputPhoneNumber = styled.input`
   margin-bottom: 2rem;
 `;
 
-const Suscribed = () => {
+const SuscribedBox = () => {
     const router = useRouter();
     const [memberOne, setMemberOne] = useState('');
     const [memberTwo, setMemberTwo] = useState('');
@@ -271,6 +282,14 @@ const Suscribed = () => {
     const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [phoneNumberTwo, setPhoneNumberTwo] = useState('');
+
+    const [street, setStreet] = useState('');
+    const [typeHome, setTypeHome] = useState('');
+    const [postalCode, setPostalCode] = useState('');
+    const [localidad, setLocalidad] = useState('');
+
+
+
     const [step, setStep] = useState(1);
     const currentDate = new Date();
     const day = String(currentDate.getDate()).padStart(2, '0');
@@ -306,13 +325,17 @@ const Suscribed = () => {
             return;
         }
         try{
-            const response = await create_couple({
+            const response = await create_couple_box({
                 coupleName: coupleNickname,
                 coupleMemberOne: memberOne,
                 coupleMemberTwo: memberTwo,
                 email: email,
                 phoneNumber: phoneNumber,
                 phoneNumberTwo: phoneNumberTwo,
+                street: street,
+                typeHome: typeHome,
+                postalCode: postalCode,
+                localidad: localidad
             });
             if (response.status === 201){
                 setStep(2);
@@ -340,7 +363,7 @@ const Suscribed = () => {
 
             <Content>
                 <Title>
-                    <span>¡FELICITACIONES!</span> Ya están suscritos al programa para innovar en pareja.
+                    <span>¡FELICITACIONES!</span> Han adquirido su cajita WeSexer + desafíos asociados.
                 </Title>
                 <div style={{padding: "5rem", textAlign: "left"}}>
                     <Text><span>Sigue los siguientes pasos para comenzar :).</span></Text>
@@ -350,6 +373,37 @@ const Suscribed = () => {
                             <span>Paso 1:</span> Completen el siguiente formulario:
                         </Text>
                         <div>
+                        <AdressLabel><span>¡Rellena tu dirección donde quieras que llegue tu Cajita WeSexer!</span></AdressLabel>
+                            <br/>
+                            <Input
+                                type="text"
+                                placeholder="Calle y número"
+                                value={street}
+                                onChange={(e) => setStreet(e.target.value)}
+                            />
+                            <Select
+                            value={typeHome}
+                            onChange={(e) => setTypeHome(e.target.value)}
+                            >
+                            <option value="" disabled hidden>Tipo de Vivienda</option>
+                            <option value="casa">Casa</option>
+                            <option value="apartamento">Apartamento</option>
+                            </Select>
+                            <Input
+                                type="text"
+                                placeholder="Código postal"
+                                value={postalCode}
+                                onChange={(e) => setPostalCode(e.target.value)}
+                            />
+                            <Input
+                                type="text"
+                                placeholder="Provincia y Localidad o Comunica y Ciudad"
+                                value={localidad}
+                                onChange={(e) => setLocalidad(e.target.value)}
+                            />
+
+                            <AdressLabel><span>¡Ya estamos casi! Dejamos esta información para asigarle desafíos a tu Cajita</span></AdressLabel>
+                            <br/>
                             <Input
                                 type="text"
                                 placeholder="Miembro 1"
@@ -394,6 +448,7 @@ const Suscribed = () => {
                                 inputComponent={InputPhoneNumber}
                             />
 
+                            
                             <Text>
                                 ¡Revisa tu email una vez presionado continuar!
                             </Text>
@@ -404,15 +459,7 @@ const Suscribed = () => {
                     )}
                     {step === 2 && (
                         <div>
-                            <Text><span>Paso 2:</span> completen el siguiente formulario, para que los expertos de WeSex puedan personalizar sus desafios !
-                            <br/>
-                            <br/>
-                            <a href={`https://airtable.com/appVSREVOyy0SOY9u/pagDOyoXlPZ7vcdMg/form?prefill_Nombre+de+la+pareja=${coupleNickname}&prefill_Nombre+Miembro=${memberOne}&prefill_Día+Actual=${formattedDate}`} target="_blank" rel="noopener noreferrer" style={{textDecoration: "underline"}}>Encuesta de {memberOne}</a>
-                            <br/>
-                            <a href={`https://airtable.com/appVSREVOyy0SOY9u/pagDOyoXlPZ7vcdMg/form?prefill_Nombre+de+la+pareja=${coupleNickname}&prefill_Nombre+Miembro=${memberTwo}&prefill_Día+Actual=${formattedDate}`} target="_blank" rel="noopener noreferrer" style={{textDecoration: "underline"}}>Encuesta de {memberTwo}</a>
-                            </Text>
-
-                            <Text><span>Paso 3:</span> Les dejamos el desafío 1 para este fin de semana 😎</Text>
+                            <Text><span>Paso 2:</span> Les dejamos el desafío 1 para este fin de semana 😎</Text>
                             <BotonArs href={`/premium-material/desafios-para-parejas/road?origin=${coupleNickname}`} target="_blank">Acceder a los desafios !</BotonArs>
                             <br />
                             <br />
@@ -432,4 +479,4 @@ const Suscribed = () => {
     );
   };
   
-  export default Suscribed;
+  export default SuscribedBox;
