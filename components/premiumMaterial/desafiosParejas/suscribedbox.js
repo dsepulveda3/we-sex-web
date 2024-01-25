@@ -314,7 +314,10 @@ const SuscribedBox = () => {
         coupleNickname.length >= 3 && 
         email.length >= 3 && 
         phoneNumber.length >= 3 && 
-        phoneNumberTwo.length >= 3;
+        phoneNumberTwo.length >= 3 &&
+        street.length &&
+        postalCode.length &&
+        localidad.length;
 
     
 

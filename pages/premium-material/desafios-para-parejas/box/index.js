@@ -3,6 +3,7 @@ import Intro from "../../../../components/premiumMaterial/desafiosParejas/box/in
 import Carrusel from "../../../../components/premiumMaterial/desafiosParejas/box/carrusel";
 import ChallengeContent from "../../../../components/premiumMaterial/desafiosParejas/box/challengeContent";
 import BoxContent from "../../../../components/premiumMaterial/desafiosParejas/box/boxContent";
+import Comprar from "../../../../components/premiumMaterial/desafiosParejas/box/comprar";
 
 export default function DesafiosBox() {
 
@@ -28,6 +29,7 @@ export default function DesafiosBox() {
         <Carrusel/>
         <BoxContent />
         <ChallengeContent />
+        {/* <Comprar /> */}
         </>
     )
 }

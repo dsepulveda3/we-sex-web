@@ -194,8 +194,6 @@ const GuideSquare = styled.div`
 
 const Carrusel = ({subtitle1_1, subtitle1_2}) => {
     const [swiper, setSwiper] = useState(null);
-    const [showPopup, setShowPopup] = useState(false);
-    const [currentGuide, setCurrentGuide] = useState('')
 
 
     const handleNext = () => {
@@ -244,7 +242,7 @@ const Carrusel = ({subtitle1_1, subtitle1_2}) => {
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <GuideSquare>
-                                        <img src="/img/premium-material/example_box_2.jpeg" alt="Description of Image 4" />
+                                        <img src="/img/premium-material/example_box_2.jpeg" alt="Description of Image 4 " />
                                     </GuideSquare>
                                 </SwiperSlide>
                             </SwiperWrap>
@@ -254,9 +252,7 @@ const Carrusel = ({subtitle1_1, subtitle1_2}) => {
                     </VioletWrap>
                 </Container>
             </Background>
-            {showPopup && (
-                <PopUpPreview setShowPopup={setShowPopup} guideShown={currentGuide}/>
-            )}
+            
         </section>
     );
 }

@@ -129,8 +129,6 @@ const AppImage = styled.img`
         margin-right: 2rem;
         margin-top: 5rem;
     }
-
-    
 `;
 
 
