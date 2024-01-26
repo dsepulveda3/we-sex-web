@@ -338,6 +338,7 @@ const CenaMasajes = () => {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
     const appRef = useRef(null); // Create a ref to hold the PIXI application
+    const [challengeName, setChallengeName] = useState("Cena Masajes");
 
     const router = useRouter();
 
@@ -609,9 +610,9 @@ const CenaMasajes = () => {
                     </Row>
             </Container>
             
-            <Notificar2 message='¡ Notificar que finalizamos el desafio !'
-             url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pagtvfxhjVWzgygcu/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}`}
-             url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pagtvfxhjVWzgygcu/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}`}/>
+            <Notificar2 message='¡ Notificar que finalizamos el desafío !'
+             url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pagXuvS4lqdA03OGz/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}&prefill_Nombre+Desafio=${challengeName}`}
+             url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pagXuvS4lqdA03OGz/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}&prefill_Nombre+Desafio=${challengeName}`}/>
             </Background>
           )}
         </section>

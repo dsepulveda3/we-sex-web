@@ -328,6 +328,7 @@ const QuieroLHNLH = () => {
     const toggle = () => setIsOpen(!isOpen);
     const appRef = useRef(null); // Create a ref to hold the PIXI application
     const router = useRouter();
+    const [challengeName, setChallengeName] = useState("Quiero Lo haria No lo haria");
 
     const [isOriginRoute, setIsOriginRoute] = useState(false);
     const [origin, setOrigin] = useState(null);
@@ -533,9 +534,9 @@ const QuieroLHNLH = () => {
                         </Text>
                     </Row>
             </Container>
-            <Notificar2 message='¡ Notificar que finalizamos el desafio !'
-             url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pag4Ymst17abujOPb/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}`}
-             url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pag4Ymst17abujOPb/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}`}/>
+            <Notificar2 message='¡ Notificar que finalizamos el desafío !' 
+            url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pagXuvS4lqdA03OGz/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}&prefill_Nombre+Desafio=${challengeName}`}
+            url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pagXuvS4lqdA03OGz/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}&prefill_Nombre+Desafio=${challengeName}`}/>
             </Background>
           )}
         </section>

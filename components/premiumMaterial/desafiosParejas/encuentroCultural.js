@@ -322,12 +322,16 @@ const FullscreenCanvas = styled.div`
 
 
 
-const HablemosDeSexo = () => {
+const EncuentroCultural = () => {
     const [showAnimation, setShowAnimation] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
+    const [isOpen1, setIsOpen1] = useState(false);
+    const [isOpen2, setIsOpen2] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
+    const toggle1 = () => setIsOpen1(!isOpen1);
+    const toggle2 = () => setIsOpen2(!isOpen2);
     const router = useRouter();
-    const [challengeName, setChallengeName] = useState("Hablemos de sexo");
+    const [challengeName, setChallengeName] = useState("Encuentro Cultural");
 
     const [isOriginRoute, setIsOriginRoute] = useState(false);
     const [origin, setOrigin] = useState(null);
@@ -367,140 +371,102 @@ const HablemosDeSexo = () => {
                     <Row className="justify-content-between">   
                         <ContentTitle>
                             <Title>Desafío</Title>
-                            <SubTitle><span>Hablemos de sexo</span></SubTitle>
+                            <SubTitle><span>Encuentro Cultural</span></SubTitle>
                         </ContentTitle>
                         {/* <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle> */}
 
-                        <div style={{color: "white", paddingTop: "1rem", fontFamily: "Karla"}}>Este desafío fue creado por la <a style={{textDecoration: "underline"}}href="https://www.instagram.com/docbarbaragarcia/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==">Dra y Sexóloga Bárbara García.</a></div>
-
+                        <div style={{color: "white", paddingTop: "1rem", fontFamily: "Karla"}}>Duración 1 hr.</div>
                         <Text>
-                        Una de las claves para una relación sana, tanto sexual como vincular, es la comunicación. Por eso para este sábado los vamos a invitar a salir de cita y a charlar de sexo. Porque darse espacios para salir de cita en pareja es fundamental. 
-                        <br/>
-                        <br/>
-                        Nuestra única duda es si van a aguantar la calentura de hablar de sexo en el bar toda la noche.
-                        <br/>
-                        <br/>
-                        <span>Paso 1: Vístanse para una cita y salgan. ¿A dónde? A donde quieran. Les proponemos algún bar de la zona que les guste y tenga onda. Tal vez alguno que les traiga buenos recuerdos, que les divierta. También puede ser un café, una plaza o el lugar que deseen.</span>
-                        <br/>
-                        <br/>
-                        <span>Paso 2: Una vez lleguen al lugar elegido para la cita, el siguiente paso es jugar a un ping-pong de preguntas que les dejamos aquí abajo, creado por la Sexologa y Dra. Barbara García.</span>
-                        <br/>
-                        <br/>
-                        Tips PingPong sex: Dense tiempo para charlar. Dejen que la conversación fluya a donde tenga que ir, y siempre tendrán el listado de preguntas para volver a la siguiente.
+                            Este es un juego que fomenta la conexión a través de actividades culturales y juegos de roles para salir de la rutina e incrementar el deseo.
                         </Text>
-                        <Col xs="12" lg="6" md="3">
+                        <Text>
+                            <span>Objetivo:</span> Disfrutar de actividades culturales mientras experimentan la emoción de conocerse como "desconocidos".
+                        </Text>
+                        <Text>
+                        Materiales:
+                        <br/>
+                        <ul>
+                            <li>
+                                Tarjetas con roles (opcional).
+                            </li>
+                            <li>
+                                Lista de actividades culturales locales presenciales o virtuales (cine, galerías de arte, conciertos, exposiciones, bandas en vivo, stand up, etc).
+                            </li>
+                        </ul>
+                        </Text>
+                        <Col xs="12" lg="12" md="12">
                             <Card style={{margin:"10px 10px 10px 10px"}}>
                                 <CardHeader onClick={toggle} style={{backgroundColor: "white "}}>
                                 <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
                                     <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
-                                    <TitleQuestion>Presiona aquí para ver las preguntas</TitleQuestion>
+                                    <TitleQuestion style={{fontSize: "1.4rem"}}>Instrucciones</TitleQuestion>
                                 </div>
                                 <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
                                 </CardHeader>
                                 <Collapse isOpen={isOpen}>
                                     <CardBody>
                                         <AnswerQuestion>
-                                            1. ¿Luz prendida o apagada?
-                                            <br/>
-                                            2. ¿Besos en los testículos o en la cabeza del pene?
-                                            <br/>
-                                            3. ¿Depilación al 100%, bigotito o salvaje?
-                                            <br/>
-                                            4. Si no es adentro, ¿dónde te gusta más la eyaculación? Diga tres opciones.
-                                            <br/>
-                                            5. ¿Qué parte de TU cuerpo te gusta más?
-                                            <br/>
-                                            6. Lugares en casa (que no sea la cama) para hacerlo que te exciten. Diga tres.
-                                            <br/>
-                                            7. ¿Algún tema o banda en especial que te estimule más en las relaciones sexuales? Diga dos.
-                                            <br/>
-                                            8. ¿Qué material te excita más? Algodón, seda, cuero, encaje u otros.
-                                            <br/>
-                                            9. Menciona al menos dos frases al oído que te exciten.
-                                            <br/>
-                                            10. ¿Fantaseando... trío o swinger?
-                                            <br/>
-                                            11. ¿Mañanero, siestero o nochero?
-                                            <br/>
-                                            12. ¿Cuántas veces te autoestimulas a la semana?
-                                            <br/>
-                                            13. ¿Estimulantes/lubricantes: qué prefieres, efecto frío o calor?
-                                            <br/>
-                                            14. Del 1 al 10, ¿cuál es la importancia de las relaciones sexuales en tu vínculo?
-                                            <br/>
-                                            15. ¿Qué zona te gusta más estimular a tu pareja? Diga tres.
-                                            <br/>
-                                            16. ¿Qué zona te gusta más que te estimulen? Diga tres.
-                                            <br/>
-                                            17. ¿Prefieres sexo oral o que te masturben?
-                                            <br/>
-                                            18. ¿Qué posiciones te excitan más?
-                                            <br/>
-                                            19. ¿Qué parte del cuerpo de tu pareja te pone más 🔥?
-                                            <br/>
-                                            20. ¿De qué te disfrazarías o personificarías para excitar a tu pareja? Diga dos.
-                                            <br/>
-                                            21. ¿Cuál sería tu frecuencia sexual semanal óptima?
-                                            <br/>
-                                            22. ¿Qué te gustaría más hacerle a tu pareja, vendarle los ojos o atarle las manos?
-                                            <br/>
-                                            23. ¿Qué te gustaría más que te hagan de la pregunta anterior?
-                                            <br/>
-                                            24. ¿En silencio o a gritos?
-                                            <br/>
-                                            25. Elige de la vitrina de un sex shop un juguete para ambos... ¿Cuál sería?
-                                            <br/>
-                                            26. ¿Una fantasía sexual recurrente?
-                                            <br/>
-                                            27. ¿Si pudieses hacer cualquier cosa, qué te gustaría hacer con tu pareja ahora mismo?
-                                            <br/>
+                                            <ul>
+                                                <li>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>Selección de roles:</strong> Si optan por los roles, preparen tarjetas con personajes (ejemplo: turista curioso, artista en busca de inspiración, periodista cultural, etc) para interpretar durante el encuentro. Pueden ir juntos o separados, pero desde que llegan al evento tienen que estar en su nuevo rol.
+                                                        </li>
+                                                        <li>
+                                                            <strong>Planificación del encuentro:</strong> Elijan una actividad cultural de una lista predefinida o de acuerdo a lo que esté sucediendo en su área (puede ser una exhibición de arte, una pelicula indepediente, un concierto de música en vivo, etc).
+                                                        </li>
+                                                        <li>
+                                                            <strong>Rol interpretativo:</strong> Si deciden utilizar roles, representen esos personajes durante todo el encuentro. Tambien pueden ser ustedes mismos e interactuar como si fueran desconocidos que se encuentran por primera vez en eses contexto cultural.
+                                                        </li>
+                                                        <li>
+                                                            <strong>Desafíos de conquista:</strong> A lo largo de evento culural, establezcan desafíos divertidos y seductores, como enviar señales no verbales para encontrarse en un lugar en especifico, enviar mensajes misteriosos o jugar a descubrir intereses comunes sin revelar demasiado de sus verdaderas identidades.
+                                                        </li>
+                                                        <li>
+                                                            <strong>Citas romántica:</strong> Al finalizar la actividad cultural propongan una "cita romántica" inesperada. Puede ser una cena en un lugar especial, un paseo nocturno por la ciudad, o cualquier actividad que genere un momento más intimo y romántico. Aprovechen ese momento para cultivar su comunicación, charlen de lo que les generó la actividad cultural en sus emociones, qué fue lo que más disfrutaron de ese momento.
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
                                         </AnswerQuestion>
                                     </CardBody>
                                 </Collapse>
                             </Card>
                         </Col>
-
-                        
                     </Row>
-                    {/* <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
-                            <ContentTitle2>
-                                <Title2>BONUS</Title2>
-                                <AppImage src="../../img/bomb.png" alt="Bomba" />
-                            </ContentTitle2>
-                        
+                    <Text>
+                    Consejos Adicionales:
+                    <ul>
+                        <li>
+                            <strong>Inmersión en el rol:</strong> Si optan por los roles, sumérjanse por completo en sus personajes. La idea es crear una atmósfera lúdica y excitante.
+                        </li>
+                        <li>
+                            <strong>Comunicación y diversión:</strong> Mantengan la comunicación abierta y asegurense de disfrutar el juego sin presiones.
+                        </li>
+                    </ul>
+
+                    </Text>
+                    <Row className="justify-content-between" style={{backgroundColor: "var(--green)", marginTop: "2rem", marginBottom: "2rem", padding: "1rem"}}>  
                             <Text2>
-                                Por si la manija de este primer día los deja con ganas de más, les dejamos una propuesta para cuando se vayan del bar 😉 (O para cuando quieran):
+                                <span>Este juego les permitirá disfrutar de experiencias culurales mientras explotan nuevas facetas de su relación.</span>
                                 <br/>
                                 <br/>
-                                <span>La bomba del tiempo</span>
-                                <br/>
-                                <TextBombNormal>Este juego consiste en poner un temporizador, una cuenta regresiva, en la cual no podrán realizar penetración hasta que 
-                                la cuenta regresiva llegue a 0. Esto les ayudará a explorar otras prácticas y salir de la penetración. 
-                                Podrán explorar zonas erógenas, descubrir áreas de placer inesperadas y, además, aumentar la tensión y la excitación al jugar con el tiempo hasta llegar a 0.
-                                </TextBombNormal>
-                                <TextBombNormal style={{marginTop: "2rem", marginBottom:"2rem"}}><span>Claro, para eso les enviamos la guía de zonas erógenas. Ahí explicamos qué es el coitocentrismo y les enseñamos a 
-                                estimular cada zona del cuerpo. Así que no les van a faltar herramientas para disfrutar de este juego</span>
-                                </TextBombNormal>
-                                
-                                ¿Y AHORA? 
-                                <br/>
-                                
-                                Cuando estén listos para empezar, pongan un temporizador de 30 minutos. Pueden jugar también a sostener la tensión, 
-                                sin llegar al orgasmo durante esos 30 minutos. Eso va a requerir mucha comunicación (ya sea verbal o corporal) para ir regulando cuándo seguir y cuándo frenar. 
-                                ¿Aguantarán la tensión sexual hasta que el cronómetro llegue a 0...?
+                                <span>¡Que se disfruten!</span>
                                 <br/>
                                 <br/>
-                                ¡Que se disfruten!
+                                <span>El equipo de WeSex</span>
                             </Text2>
-                    </Row> */}
+                    </Row>
             </Container>
+
+            
             <Notificar2 message='¡ Notificar que finalizamos el desafío !' 
             url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pagXuvS4lqdA03OGz/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}&prefill_Nombre+Desafio=${challengeName}`}
             url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pagXuvS4lqdA03OGz/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}&prefill_Nombre+Desafio=${challengeName}`}/>
+            
             </Background>
           )}
         </section>
       );
 }
  
-export default HablemosDeSexo;
+export default EncuentroCultural;

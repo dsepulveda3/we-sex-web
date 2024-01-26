@@ -331,6 +331,7 @@ const Sexvolution = () => {
     const toggle1 = () => setIsOpen1(!isOpen1);
     const toggle2 = () => setIsOpen2(!isOpen2);
     const router = useRouter();
+    const [challengeName, setChallengeName] = useState("Sexvolution");
 
     const [isOriginRoute, setIsOriginRoute] = useState(false);
     const [origin, setOrigin] = useState(null);
@@ -364,7 +365,7 @@ const Sexvolution = () => {
                      <Header>
                         <ArrowBack url={`/premium-material/desafios-para-parejas/road?origin=${origin}`}/>
                         <TitleWeSex>WeSex</TitleWeSex>
-                        <Feedback challengeName={"Hablemos de Sexo"}/>
+                        <Feedback challengeName={"Sexvolution"}/>
                     </Header>
                     
                     <Row className="justify-content-between">   
@@ -527,9 +528,9 @@ const Sexvolution = () => {
                             </Text2>
                     </Row>
             </Container>
-            <Notificar2 message='¡ Notificar que finalizamos el desafio !' 
-            url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pagWSlKzdrClST31G/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}`}
-            url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pagWSlKzdrClST31G/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}`}/>
+            <Notificar2 message='¡ Notificar que finalizamos el desafío !' 
+            url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pagXuvS4lqdA03OGz/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}&prefill_Nombre+Desafio=${challengeName}`}
+            url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pagXuvS4lqdA03OGz/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}&prefill_Nombre+Desafio=${challengeName}`}/>
             </Background>
           )}
         </section>
