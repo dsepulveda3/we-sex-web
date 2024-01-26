@@ -331,7 +331,7 @@ const PicadaSensual = () => {
     const toggle1 = () => setIsOpen1(!isOpen1);
     const toggle2 = () => setIsOpen2(!isOpen2);
     const router = useRouter();
-    onst [challengeName, setChallengeName] = useState("Picada Sensual");
+    const [challengeName, setChallengeName] = useState("Picada Sensual");
 
     const [isOriginRoute, setIsOriginRoute] = useState(false);
     const [origin, setOrigin] = useState(null);

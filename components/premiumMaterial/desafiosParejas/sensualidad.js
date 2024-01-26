@@ -283,6 +283,20 @@ const Sensualidad = () => {
     const [isOriginRoute, setIsOriginRoute] = useState(false);
     const [origin, setOrigin] = useState(null);
 
+    const [member1, setMember1] = useState(null);
+    const [member2, setMember2] = useState(null);
+
+      useEffect(() => {
+        if (router.isReady){
+            setMember1(router.query.members.split('-')[0]);
+            setMember2(router.query.members.split('-')[1]);
+          if (router.query.origin) {
+            setIsOriginRoute(true);
+            setOrigin(router.query.origin);
+          }
+        }
+      }, [router.isReady, isOriginRoute]);
+
     const chooseRandomName = () => {
         const randomIndex = Math.floor(Math.random() * names.length);
         setChosenName(names[randomIndex]);
