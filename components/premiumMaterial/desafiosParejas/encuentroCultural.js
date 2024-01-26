@@ -357,7 +357,7 @@ const EncuentroCultural = () => {
       return (
         <section>
             <FullscreenCanvas style={{ zIndex: showAnimation ? 1 : -1 }}>
-        {/* Ship animation and PIXI canvas content here */}
+       
       </FullscreenCanvas>
       {!showAnimation && (
             <Background>
@@ -380,7 +380,7 @@ const EncuentroCultural = () => {
                             Este es un juego que fomenta la conexión a través de actividades culturales y juegos de roles para salir de la rutina e incrementar el deseo.
                         </Text>
                         <Text>
-                            <span>Objetivo:</span> Disfrutar de actividades culturales mientras experimentan la emoción de conocerse como "desconocidos".
+                            <span>Objetivo:</span> Disfrutar de actividades culturales mientras experimentan la emoción de conocerse como &quot;desconocidos&quot;.
                         </Text>
                         <Text>
                         Materiales:
@@ -422,7 +422,7 @@ const EncuentroCultural = () => {
                                                             <strong>Desafíos de conquista:</strong> A lo largo de evento culural, establezcan desafíos divertidos y seductores, como enviar señales no verbales para encontrarse en un lugar en especifico, enviar mensajes misteriosos o jugar a descubrir intereses comunes sin revelar demasiado de sus verdaderas identidades.
                                                         </li>
                                                         <li>
-                                                            <strong>Citas romántica:</strong> Al finalizar la actividad cultural propongan una "cita romántica" inesperada. Puede ser una cena en un lugar especial, un paseo nocturno por la ciudad, o cualquier actividad que genere un momento más intimo y romántico. Aprovechen ese momento para cultivar su comunicación, charlen de lo que les generó la actividad cultural en sus emociones, qué fue lo que más disfrutaron de ese momento.
+                                                            <strong>Citas romántica:</strong> Al finalizar la actividad cultural propongan una &quot;cita romántica&quot; inesperada. Puede ser una cena en un lugar especial, un paseo nocturno por la ciudad, o cualquier actividad que genere un momento más intimo y romántico. Aprovechen ese momento para cultivar su comunicación, charlen de lo que les generó la actividad cultural en sus emociones, qué fue lo que más disfrutaron de ese momento.
                                                         </li>
                                                     </ul>
                                                 </li>
@@ -462,7 +462,7 @@ const EncuentroCultural = () => {
             <Notificar2 message='¡ Notificar que finalizamos el desafío !' 
             url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pagXuvS4lqdA03OGz/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}&prefill_Nombre+Desafio=${challengeName}`}
             url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pagXuvS4lqdA03OGz/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}&prefill_Nombre+Desafio=${challengeName}`}/>
-            
+
             </Background>
           )}
         </section>
