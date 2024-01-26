@@ -332,7 +332,7 @@ const EncuentroCultural = () => {
     const toggle2 = () => setIsOpen2(!isOpen2);
     const router = useRouter();
     const [challengeName, setChallengeName] = useState("Encuentro Cultural");
-
+// hello
     const [isOriginRoute, setIsOriginRoute] = useState(false);
     const [origin, setOrigin] = useState(null);
 
