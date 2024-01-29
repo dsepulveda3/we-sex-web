@@ -95,19 +95,15 @@ const NotificationComponent = ({ coupleData }) => {
   useEffect(() => { 
       Notification.requestPermission().then(permission => {
       if (permission === 'granted') {
-        setShowAcc
+        setShowPopup(false);
+        if (!subscription && registration) {
+          subscribeButtonOnClick();
+        }
       }}).catch(error => {
         console.error('Error requesting notification permission:', error);
       }
     )
-  }, []);
-
-  useEffect(() => {
-    if (acceptedNotifications){
-      setShowPopup(false);
-      requestNotificationPermission();
-    }
-  }, [acceptedNotifications]);
+  }, [registration]);
 
   const subscribeButtonOnClick = () => {
     registration.pushManager.subscribe({
@@ -121,8 +117,7 @@ const NotificationComponent = ({ coupleData }) => {
     )
   }
 
-  const requestNotificationPermission = (event) => {
-    event.preventDefault();
+  const requestNotificationPermission = () => {
     setShowPopup(false);
     Notification.requestPermission().then(permission => {
       if (permission === 'granted') {
@@ -144,7 +139,7 @@ const NotificationComponent = ({ coupleData }) => {
             <ContentWrapper>
             <Title>WeSex quiere enviarte notificaciones</Title>
             <ButtonWrapper>
-                <Button onClick={() => setAcceptedNotifications(true)}>Permitir</Button>
+                <Button onClick={requestNotificationPermission}>Permitir</Button>
                 <Button onClick={() => setShowPopup(false)}>Descartar</Button>
             </ButtonWrapper>
             <Label>Las notificaciones pueden ser desactivadas en cualquier momento en los ajustes de tu navegador.</Label>

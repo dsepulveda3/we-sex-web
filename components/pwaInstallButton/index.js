@@ -84,7 +84,7 @@ const PwaInstallPopup = () => {
             <p>Instala la aplicación para una mejor experiencia 💚</p>
           </TextContainer>
           <InstructionsList>
-            <li>Presiona "instalar app" o "agregar a inicio" en el menú de tu navegador.</li>
+            <li>Presiona &rdquo;instalar app&rdquo; o &rdquo;agregar a inicio&rdquo; en el menú de tu navegador.</li>
             <li>Sigue las instrucciones de instalación.</li>
             <li>¡Disfruta de tus desafíos de pareja!</li>
           </InstructionsList>
