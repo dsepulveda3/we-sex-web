@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
-import AnimatedArrow from './AnimatedArrow';
+import AnimatedArrow from './AnimatedArrow.js';
 
 const PopupContainer = styled.div`
   position: fixed;
