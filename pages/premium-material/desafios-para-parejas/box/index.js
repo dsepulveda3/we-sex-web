@@ -4,6 +4,7 @@ import Carrusel from "../../../../components/premiumMaterial/desafiosParejas/box
 import ChallengeContent from "../../../../components/premiumMaterial/desafiosParejas/box/challengeContent";
 import BoxContent from "../../../../components/premiumMaterial/desafiosParejas/box/boxContent";
 import Comprar from "../../../../components/premiumMaterial/desafiosParejas/box/comprar";
+import Dudas from "../../../../components/premiumMaterial/dudas";
 
 export default function DesafiosBox() {
 
@@ -29,7 +30,8 @@ export default function DesafiosBox() {
         <Carrusel/>
         <BoxContent />
         <ChallengeContent />
-        {/* <Comprar /> */}
+        <Comprar />
+        <Dudas />
         </>
     )
 }

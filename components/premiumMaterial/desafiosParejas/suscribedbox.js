@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {Row, Col, Container, Button} from 'reactstrap';
 import styled from '@emotion/styled';
-import { create_couple } from '../../../requests/premiumService';
+import { create_couple_box } from '../../../requests/premiumService';
 import Dudas from '../dudas';
 import { toast } from 'react-toastify';
 import 'react-phone-number-input/style.css';
@@ -340,7 +340,7 @@ const SuscribedBox = () => {
                 postalCode: postalCode,
                 localidad: localidad
             });
-            if (response.status === 201){
+            if (response.status === 200){
                 setStep(2);
             } 
         } catch (error) {
@@ -400,7 +400,7 @@ const SuscribedBox = () => {
                             />
                             <Input
                                 type="text"
-                                placeholder="Provincia y Localidad o Comunica y Ciudad"
+                                placeholder="Provincia y Localidad o Comuna y Ciudad"
                                 value={localidad}
                                 onChange={(e) => setLocalidad(e.target.value)}
                             />

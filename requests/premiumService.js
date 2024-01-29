@@ -89,6 +89,14 @@ export const create_couple = async (data) => {
     return response;
 }
 
+export const create_couple_box = async (data) => {
+    const response = await basePremiumService.post(
+        `v1/CoupleGame/with-address`,
+        data
+    );
+    return response;
+}
+
 export const get_couple = async (couple_name) => {
     const response = await basePremiumService.get(
         `v1/CoupleGame/?couple_name=${couple_name}`

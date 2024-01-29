@@ -169,7 +169,7 @@ const Intro = ({subtitle1_1, subtitle1_2, subtitle1_3}) => {
             <Container>
                             <Content>
                                 <Title><span>Cajita WeSexer</span></Title>
-                                <SubTitle><span>Tenemos el regalo de san valentín que estabas buscando</span></SubTitle>
+                                <SubTitle><span>Tenemos el regalo de San Valentín que estabas buscando</span></SubTitle>
                                 {/* <SubTitle>Desafios para <span>reavivar la llama</span></SubTitle> */}
                                 {/* <Text>
                                 ¿Quieren experimentar la sexualidad juntos? ¿Probar nuevas cosas? ¿Están juntos desde hace mucho tiempo y quieren innovar en la cama (o en cualquier lado 😉)?
@@ -177,10 +177,10 @@ const Intro = ({subtitle1_1, subtitle1_2, subtitle1_3}) => {
                                 <Botones>
                                     <BotonArs
                                         href="#comprar"
-                                    >Comenzar</BotonArs>
-                                    <BotonUsd
+                                    >Comprar</BotonArs>
+                                    {/* <BotonUsd
                                         href="#queVoyAEncontrar"
-                                    >¿Cómo funciona?</BotonUsd>
+                                    >¿Cómo funciona?</BotonUsd> */}
                                 </Botones>
                             </Content>
                         

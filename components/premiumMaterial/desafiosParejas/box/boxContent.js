@@ -140,7 +140,7 @@ const BoxContent = () => {
                 <ContainerText2>
                     <AppImage src="/img/frutilla.png" alt="Frutilla" />
                     <Text2>
-                    <span>¿Qué contiene la caja we sexer?</span>
+                    <span>¿Qué contiene la caja WeSexer?</span>
                     <br />
                     <br />
                     <ul>
@@ -157,7 +157,7 @@ const BoxContent = () => {
                             Lubricante siempre para más placer.
                         </li>
                         <li>
-                            5 desafíos para combinar con los accesorios y explorar su sexualidad.
+                            5 desafíos para combinar con los accesorios y desbloquear sus fantasías :fuego:
                         </li>
                     </ul>
                     </Text2>

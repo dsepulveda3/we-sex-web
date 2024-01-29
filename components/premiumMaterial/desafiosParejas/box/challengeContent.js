@@ -148,7 +148,7 @@ const ChallengeContent = () => {
     return (
       <Background id="queVoyAEncontrar">
         <Container style={{ paddingTop: "5rem", paddingBottom: "5rem", textAlign: "center" }}>
-          <Title><span>¿Cómo son los desafios que vienen con la caja WesSexer?</span></Title>
+          <Title><span>¿Cómo son los desafios que vienen con la caja WeSexer?</span></Title>
           {/* <Text style={{ border: 'none' }}><span>&quot;Es como tener un plan armado por expertos en sexo, para follar mejor que nunca&quot;</span> - Camila, usuaria de WeSex. </Text> */}
           <Row className="justify-content-center">
             <Col xl={12} lg={12} md={12} xs={12} sm={12} className="align-items-center">
@@ -175,7 +175,7 @@ const ChallengeContent = () => {
                 <CenteredContainer>
                 <Circle>3</Circle> 
                 </CenteredContainer>
-                <span>Intro a BDSM:</span> Dominar o ser dominado? Te invitamos a descubrirlo en ESTE viaje por tus sentidos. 
+                <span>Intro a BDSM:</span> Dominar o ser dominado? Te invitamos a descubrirlo en este viaje por tus sentidos. 
               </Text>
             </Col>
             <Col xl={12} lg={12} md={12} xs={12} sm={12} className="align-items-center">
@@ -184,7 +184,7 @@ const ChallengeContent = () => {
                 <CenteredContainer>
                 <Circle>4</Circle> 
                 </CenteredContainer>
-                <span>Masturbación ideal:</span> Vivir tu paja ideal y que tu pareja sea quien la haga es una experiencia hermosa.
+                <span>Masturbación ideal:</span> Vivir tu paja ideal y que tu pareja sea quien la haga es una experiencia increíble.
               </Text>
             </Col>
             <Col xl={12} lg={12} md={12} xs={12} sm={12} className="align-items-center">
@@ -193,7 +193,7 @@ const ChallengeContent = () => {
                 <CenteredContainer>
                 <Circle>5</Circle> 
                 </CenteredContainer>
-                <span>Masajes eróticos:</span> Junto a un aceite para masajes, les damos tips para dar y recibir el mejor masaje de sus vidas. 
+                <span>Masajes eróticos:</span> Les damos tips para dar y recibir el mejor masaje se sus vidas.
               </Text>
             </Col>
             <Col xl={12} lg={12} md={12} xs={12} sm={12} className="align-items-center">
@@ -202,7 +202,7 @@ const ChallengeContent = () => {
                 <CenteredContainer>
                 <Circle>6</Circle> 
                 </CenteredContainer>
-                ¡Si alguno de los 5 desafíos no te gustan, nos escribes y nuestro equipo de sexólogas te enviara otro a medida! 
+                Si alguno de los 5 desafíos no te gustan, nos escribes y nuestro equipo de sexólogas te enviara otro a medida.
               </Text>
             </Col>
           </Row>
