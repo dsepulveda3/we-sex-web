@@ -9,8 +9,8 @@ const DesafioRoad = ({ coupleData }) => {
     const [issupported, setIsSupported] = useState(false);
 
     useEffect(() => {
-      if (!("Notification" in window)) {
-        console.log("This browser does not support desktop notification");
+      if (!("Notification" in window) || /android/i.test(navigator.userAgent)) {
+        console.log("This browser does not support desktop notification or is running on Android");
         setIsSupported(false);
       } else {
         console.log("This browser supports desktop notification");
