@@ -2,7 +2,7 @@
 const withPWA = require('next-pwa')({
   dest: 'public',
   importScripts: ['worker.js'],
-  register: false,
+  register: true,
 })
 
 module.exports = withPWA({
