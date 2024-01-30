@@ -8,7 +8,6 @@ const PopupContainer = styled.div`
   right: 0px; /* Position the container at the top right corner */
   background-color: var(--violet);
   padding: 10px;
-  border-radius: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
