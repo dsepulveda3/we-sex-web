@@ -9,8 +9,11 @@ const DesafioRoad = ({ coupleData }) => {
     const [issupported, setIsSupported] = useState(false);
 
     useEffect(() => {
-      if (!("Notification" in window) || /android/i.test(navigator.userAgent)) {
-        console.log("This browser does not support desktop notification or is running on Android");
+      const isAndroid = /android/i.test(navigator.userAgent);
+      const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+
+      if (!("Notification" in window) || (isAndroid && !isStandalone)) {
+        console.log("This browser does not support desktop notification or is running on Android in standalone mode (PWA)");
         setIsSupported(false);
       } else {
         console.log("This browser supports desktop notification");
