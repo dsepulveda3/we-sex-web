@@ -14,26 +14,19 @@ self.addEventListener('push', function (event) {
 })
 
 self.addEventListener('notificationclick', function (event) {
-  event.notification.close();
-  const notificationData = event.notification.data;
-
+  event.notification.close()
   event.waitUntil(
     clients.matchAll({ type: 'window', includeUncontrolled: true }).then(function (clientList) {
-      if (notificationData && notificationData.url) {
-        // Open /pwa if the URL is '/'
-        const urlToOpen = (notificationData.url === '/') ? '/pwa' : notificationData.url;
-        return clients.openWindow(urlToOpen);
-      } else if (clientList.length > 0) {
-        let client = clientList[0];
+      if (clientList.length > 0) {
+        let client = clientList[0]
         for (let i = 0; i < clientList.length; i++) {
           if (clientList[i].focused) {
-            client = clientList[i];
+            client = clientList[i]
           }
         }
-        return client.focus();
+        return client.focus()
       }
-      // If no clients are open, open the default URL
-      return clients.openWindow('/pwa');
+      return clients.openWindow('/pwa')
     })
-  );
-});
+  )
+})
