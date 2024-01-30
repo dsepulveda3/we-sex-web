@@ -19,6 +19,7 @@ const DesafioRoad = ({ coupleData }) => {
         console.log("This browser supports desktop notification");
         setIsSupported(true);
       }
+      localStorage.setItem('coupleName', coupleData.coupleName);
     }, []);
     
 

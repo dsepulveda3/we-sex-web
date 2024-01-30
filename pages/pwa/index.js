@@ -72,7 +72,6 @@ const PwaEntryPoint = () => {
       .then((res) => {
         router.push(`/premium-material/desafios-para-parejas/road?origin=${coupleName}`);
         toast.success('Bienvenidos de vuelta');
-        localStorage.setItem('coupleName', coupleName);
       })
       .catch((err) => {
         console.log(err);
