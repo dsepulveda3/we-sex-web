@@ -175,7 +175,7 @@ const ChallengeContent = () => {
                 <CenteredContainer>
                 <Circle>3</Circle> 
                 </CenteredContainer>
-                <span>Intro a BDSM:</span> Dominar o ser dominado? Te invitamos a descubrirlo en este viaje por tus sentidos. 
+                <span>Intro a BDSM:</span> ¿Dominar o ser dominado? Te invitamos a descubrirlo en este viaje por tus sentidos. 
               </Text>
             </Col>
             <Col xl={12} lg={12} md={12} xs={12} sm={12} className="align-items-center">

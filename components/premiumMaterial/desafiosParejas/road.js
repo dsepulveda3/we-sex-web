@@ -587,12 +587,15 @@ const ClockTimer = ({ timestamp, startTime }) => {
   );
 };
 
-const ClockOrSubmit = ({ timestamp, startTime, onClick }) => {
+const ClockOrSubmit = ({ timestamp, startTime, typeBuyer, onClick }) => {
   const targetTime = timestamp ?  new Date(new Date(timestamp).getTime() + 60 * 60 * 24 * 1000) : null;
   const currentTime = new Date(startTime)
   const timeDiff = targetTime ? targetTime - currentTime : null;
 
   const [timeRemaining, setTimeRemaining] = useState(timeDiff);
+
+  console.log("time");
+  console.log(timestamp);
 
   useEffect(() => {
     if (targetTime) {
@@ -618,6 +621,9 @@ const ClockOrSubmit = ({ timestamp, startTime, onClick }) => {
       </>
     );
   }
+
+  
+  
 
   return (
     <PopUpButton type="submit" onClick={onClick}>¡ Comenzar 😁 !</PopUpButton>
@@ -662,7 +668,8 @@ const Popup = ({
     coupleMembers, 
     challenges, 
     pills, 
-    timeStamps 
+    timeStamps,
+    typeBuyer
   }) => {
     const router = useRouter();
     const [isOriginRoute, setIsOriginRoute] = useState(false);
@@ -684,6 +691,10 @@ const Popup = ({
     const handleClose = () => {
       onClose();
     };
+
+    
+
+    
   
     return isVisible ? (
       <PopupCard onClick={handleClose}>
@@ -693,7 +704,9 @@ const Popup = ({
           <>
           <PopUpTitle>{title}</PopUpTitle>
           <PopUpSubTitle>{subtitle}</PopUpSubTitle>
-          <ClockOrSubmit timestamp={timeStamps ? timeStamps.challengeLastUpdate : null} startTime={timeStamps ? timeStamps.currentTime : null} onClick={handleSubmit} />
+          {typeBuyer === "box" ? <ClockOrSubmit timestamp={null} startTime={null}  onClick={handleSubmit} /> :   
+          <ClockOrSubmit timestamp={timeStamps ? timeStamps.challengeLastUpdate : null} startTime={timeStamps ? timeStamps.currentTime : null} typeBuyer={typeBuyer ? typeBuyer : null} onClick={handleSubmit} /> }
+        
           <OtherChallenge name={title} type="challenge"/>
           </>
           : null}
@@ -701,12 +714,16 @@ const Popup = ({
           <>
           <PopUpTitle>{title}</PopUpTitle>
           <PopUpSubTitle>{subtitle}</PopUpSubTitle>
-          <ClockOrSubmit timestamp={timeStamps ? timeStamps.pillLastUpdate : null} startTime={timeStamps ? timeStamps.currentTime : null} onClick={handleSubmit} />
+          {typeBuyer === "box" ? <ClockOrSubmit timestamp={null} startTime={null}  onClick={handleSubmit}/> : 
+          <ClockOrSubmit timestamp={timeStamps ? timeStamps.pillLastUpdate : null} startTime={timeStamps ? timeStamps.currentTime : null} onClick={handleSubmit} /> }
+          
+          
           
           <OtherChallenge name={title} type="pill"/>
 
           </>
           : null}
+          
           {status === 'done' && type === 'challenge' ? 
           <>
           <PopUpTitle>{title}</PopUpTitle>
@@ -890,6 +907,8 @@ const Popup = ({
         } else {
           setCoupleData(response.data);
         }
+
+       
         
         
         if (coupleName === "Complices"){
@@ -929,6 +948,8 @@ const Popup = ({
       fetchData();
     }, [coupleName]);
 
+    
+
     const challengesGroups = coupleData
     ? chunkArray(coupleData.challenges, 4)
     : [];
@@ -938,6 +959,7 @@ const Popup = ({
 
 
   console.log(coupleData);
+  
     
     return (
         <>
@@ -1033,6 +1055,8 @@ const Popup = ({
             challenges={coupleData ? [coupleData.challenges] : []}
             pills={coupleData ? [coupleData.pills] : []}
             timeStamps={coupleData? coupleData.timeStamps : null}
+            typeBuyer={coupleData? coupleData.type : null}
+
         />
         {/* Add the WarningPopup component here */}
        

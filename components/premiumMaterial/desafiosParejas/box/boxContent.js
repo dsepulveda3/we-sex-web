@@ -157,7 +157,7 @@ const BoxContent = () => {
                             Lubricante siempre para más placer.
                         </li>
                         <li>
-                            5 desafíos para combinar con los accesorios y desbloquear sus fantasías :fuego:
+                            5 desafíos para combinar con los accesorios y desbloquear sus fantasías 🔥.
                         </li>
                     </ul>
                     </Text2>

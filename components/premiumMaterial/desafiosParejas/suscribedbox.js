@@ -37,16 +37,18 @@ const Background = styled.div`
         padding-top: 0rem;
     }
 
-    @media(mix-width: 540px){
+    @media(min-width: 540px){
+
         
     }
 `;
 
 const Content = styled.div`
-    padding: 2rem;
+    padding: 0rem;
     display: flex;
     flex-direction: column;
-    align-items: center
+    align-items: center;
+
 `;
 
 const ContainerInfo = styled(Container)`
@@ -60,6 +62,8 @@ const ContainerInfo = styled(Container)`
         flex-direction: column;
         padding: 2rem;
       }
+
+    
 `;
 
 const Title = styled.div`
@@ -278,6 +282,8 @@ const SuscribedBox = () => {
     const router = useRouter();
     const [memberOne, setMemberOne] = useState('');
     const [memberTwo, setMemberTwo] = useState('');
+    const [memberOneAge, setMemberOneAge] = useState('');
+    const [memberTwoAge, setMemberTwoAge] = useState('');
     const [coupleNickname, setCoupleNickname] = useState('');
     const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
@@ -305,19 +311,21 @@ const SuscribedBox = () => {
     const isFormValid = 
         memberOne.length >= 3 && 
         memberTwo.length >= 3 && 
+        memberOneAge.length >= 2 && 
+        memberTwoAge.length >= 2 && 
         /^[a-zA-Z0-9-_]+$/.test(coupleNickname) && 
         email.length >= 3 && 
         phoneNumber.length >= 3 && 
-        phoneNumberTwo.length >= 3;
+        phoneNumberTwo.length >= 3; 
         memberOne.length >= 3 && 
         memberTwo.length >= 3 && 
         coupleNickname.length >= 3 && 
         email.length >= 3 && 
         phoneNumber.length >= 3 && 
-        phoneNumberTwo.length >= 3 &&
-        street.length &&
-        postalCode.length &&
-        localidad.length;
+        phoneNumberTwo.length >= 3 && 
+        street.length && 
+        postalCode.length && 
+        localidad.length; 
 
     
 
@@ -332,6 +340,8 @@ const SuscribedBox = () => {
                 coupleName: coupleNickname,
                 coupleMemberOne: memberOne,
                 coupleMemberTwo: memberTwo,
+                memberOneAge: memberOneAge,
+                memberTwoAge: memberTwoAge,
                 email: email,
                 phoneNumber: phoneNumber,
                 phoneNumberTwo: phoneNumberTwo,
@@ -366,7 +376,7 @@ const SuscribedBox = () => {
 
             <Content>
                 <Title>
-                    <span>¡FELICITACIONES!</span> Han adquirido su cajita WeSexer + desafíos asociados.
+                    <span>¡FELICITACIONES!</span> Han adquirido su cajita WeSexer + 5 desafíos del programa para innovar en pareja.
                 </Title>
                 <div style={{padding: "5rem", textAlign: "left"}}>
                     <Text><span>Sigue los siguientes pasos para comenzar :).</span></Text>
@@ -384,14 +394,12 @@ const SuscribedBox = () => {
                                 value={street}
                                 onChange={(e) => setStreet(e.target.value)}
                             />
-                            <Select
-                            value={typeHome}
-                            onChange={(e) => setTypeHome(e.target.value)}
-                            >
-                            <option value="" disabled hidden>Tipo de Vivienda</option>
-                            <option value="casa">Casa</option>
-                            <option value="apartamento">Apartamento</option>
-                            </Select>
+                            <Input
+                                type="text"
+                                placeholder="Casa o Apartamento"
+                                value={typeHome}
+                                onChange={(e) => setTypeHome(e.target.value)}
+                            />
                             <Input
                                 type="text"
                                 placeholder="Código postal"
@@ -400,7 +408,7 @@ const SuscribedBox = () => {
                             />
                             <Input
                                 type="text"
-                                placeholder="Provincia y Localidad o Comuna y Ciudad"
+                                placeholder="Provincia y Localidad"
                                 value={localidad}
                                 onChange={(e) => setLocalidad(e.target.value)}
                             />
@@ -418,6 +426,18 @@ const SuscribedBox = () => {
                                 placeholder="Miembro 2"
                                 value={memberTwo}
                                 onChange={(e) => setMemberTwo(e.target.value)}
+                            />
+                            <Input
+                                type="text"
+                                placeholder="Edad Miembro 1"
+                                value={memberOneAge}
+                                onChange={(e) => setMemberOneAge(e.target.value)}
+                            />
+                            <Input
+                                type="text"
+                                placeholder="Edad Miembro 2"
+                                value={memberTwoAge}
+                                onChange={(e) => setMemberTwoAge(e.target.value)}
                             />
                             <Input
                                 type="text"
@@ -462,6 +482,8 @@ const SuscribedBox = () => {
                     )}
                     {step === 2 && (
                         <div>
+                            <AdressLabel>El despacho se realizará en los próximos días. Les llegará un mensaje a su Whatsapp con el código de seguimiento una vez esté en camino :)</AdressLabel>
+                            <br/>
                             <Text><span>Paso 2:</span> Les dejamos el desafío 1 para este fin de semana 😎</Text>
                             <BotonArs href={`/premium-material/desafios-para-parejas/road?origin=${coupleNickname}`} target="_blank">Acceder a los desafios !</BotonArs>
                             <br />

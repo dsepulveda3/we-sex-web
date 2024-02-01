@@ -75,6 +75,7 @@ const Amount = styled.div`
 const Comprar = () => {
 
     return(
+        <section id="comprar">
         <Background>
         <Text><span>COMPRA LA CAJITA WESEXER</span></Text>
             <PriceContainer>
@@ -91,7 +92,7 @@ const Comprar = () => {
             </PriceContainer>
             <br/>
             <br/>
-            <PriceContainer style={{border: "2px solid black"}}>
+            {/* <PriceContainer style={{border: "2px solid black"}}>
                 <Amount style={{color: "black"}}>U$D 35</Amount>
                 <BotonUniversal
                 style={{fontSize: "2rem", margin: "1rem 0rem 0rem 2rem" }}
@@ -102,10 +103,11 @@ const Comprar = () => {
                 bgColorHover='var(--green)'
             />
             <ByLabel style={{color: "black"}}>By Stipe</ByLabel>
-            </PriceContainer>
+            </PriceContainer> */}
      
         
         </Background>
+        </section>
     )
 }
 

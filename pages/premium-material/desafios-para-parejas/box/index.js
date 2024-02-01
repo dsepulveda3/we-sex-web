@@ -5,6 +5,8 @@ import ChallengeContent from "../../../../components/premiumMaterial/desafiosPar
 import BoxContent from "../../../../components/premiumMaterial/desafiosParejas/box/boxContent";
 import Comprar from "../../../../components/premiumMaterial/desafiosParejas/box/comprar";
 import Dudas from "../../../../components/premiumMaterial/dudas";
+import FloatingWhatsApp from "../../../../components/premiumMaterial/desafiosParejas/box/floatingWhatsapp";
+import ComprarCheckOutPro from "../../../../components/premiumMaterial/desafiosParejas/box/comprarCheckOutPro";
 
 export default function DesafiosBox() {
 
@@ -30,8 +32,15 @@ export default function DesafiosBox() {
         <Carrusel/>
         <BoxContent />
         <ChallengeContent />
-        <Comprar />
+        <ComprarCheckOutPro 
+            title_mp='Cajita WeSexer (+5 desafíos)' 
+            unit_price_mp= {26000} 
+            quantity_mp={1} 
+            currency_id_mp='ARS'
+            redirection_succesful_mp='https://www.we.sex/premium-material/desafios-para-parejas/suscritobox' 
+            redirection_failed_mp='https://www.we.sex/premium-material/desafios-para-parejas/box' />
         <Dudas />
+        <FloatingWhatsApp />
         </>
     )
 }
