@@ -61,6 +61,9 @@ const PwaEntryPoint = () => {
 
   useEffect(() => {
     const savedCoupleName = localStorage.getItem('coupleName');
+    if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
+      localStorage.setItem('isPwaInstalled', true);
+    }
     if (savedCoupleName) {
       toast.success('Bienvenidos de vuelta');
       router.push(`/premium-material/desafios-para-parejas/road?origin=${savedCoupleName}`);

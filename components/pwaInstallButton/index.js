@@ -57,7 +57,11 @@ const PwaInstallPopup = () => {
     };
 
     const showInstallPopup = () => {
-      if (!isPwaInstalled() && !localStorage.getItem('dismissedPopup')) {
+      if (
+        !isPwaInstalled() && 
+        !localStorage.getItem('dismissedPopup') && 
+        !localStorage.getItem('isPwaInstalled')
+      ) {
         setShowPopup(true);
       }
     };
