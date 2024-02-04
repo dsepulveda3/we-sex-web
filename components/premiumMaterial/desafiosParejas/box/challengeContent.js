@@ -18,7 +18,7 @@ const Background = styled.div`
     @media(max-width: 540px){
         background-attachment: scroll;
         text-align: center;
-        padding-bottom:3rem;
+        padding-bottom: 0rem;
         padding-right: 0rem;
         padding-left: 0rem;
     }
@@ -208,13 +208,13 @@ const ChallengeContent = () => {
           </Row>
           {/* <Boton href="https://wa.me/5491140678698?
           text=Hola!%20Quiero%20más%20info%20sobre%20el%20programa%20para%20innovar%20en%20pareja">Quiero saber más</Boton> */}
-          <BotonUniversal link_redireccion='https://wa.me/5491140678698?
+          {/* <BotonUniversal link_redireccion='https://wa.me/5491140678698?
           text=Hola!%20Quiero%20más%20info%20sobre%20la%20cajita%20WeSexer%de%20San%20Valentín'
           text="Quiero empezar"
           textColor='white'
           bgColor='var(--green)'
           bgColorHover='var(--violet)'
-          />
+          /> */}
         </Container>
       </Background>
     );
