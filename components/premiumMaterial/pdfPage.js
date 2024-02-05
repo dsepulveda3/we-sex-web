@@ -36,6 +36,29 @@ const PDFViewer = ({pdfItem, demo, setLoaded}) => {
   const containerwd = 1.5;
   const [isPhoneScreen, setIsPhoneScreen] = useState(false);
   const [hideGuide, setHideGuide] = useState(false);
+  const [numPages, setNumPages] = useState(null);
+  const [containerWidth, setContainerWidth] = useState(0);
+  const [pageHeight, setPageHeight] = useState(0);
+  const [loadProgress, setLoadProgress] = useState(0);
+
+
+  useEffect(() => {
+    setContainerWidth(window.innerWidth);
+    const handleResize = () => {
+      setContainerWidth(window.innerWidth);
+      setPageHeight(window.innerHeight / 2);
+    };
+
+    if (typeof window !== 'undefined') {
+      setPageHeight(window.innerHeight / 2);
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
+
+  const onDocumentLoadSuccess = ({ numPages }) => {
+    setNumPages(numPages);
+  };
   
   useEffect(() => {
     if (demo === 'true'){
@@ -67,96 +90,73 @@ const PDFViewer = ({pdfItem, demo, setLoaded}) => {
     }
   }
 
-  
-  if (pdfItem === 'guia-anal') {
-    setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68b3f67626bfe72c4ef30/guiasexoanal-WeSex-3_compressed.pdf");
-    containerwd = 1.5;
-  } 
-  else if (pdfItem === 'guia-tantra') {
-    setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68b6167626bfe72c4ef36/Guia de tantra_Orgasmos mas profundos 1_compressed.pdf");
-    containerwd = 1.5;
-  }
-  else if (pdfItem === 'guia-zonas-erogenas') {
-    setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68b8167626bfe72c4ef3c/Guia de zonas erogenas WeSex_compressed.pdf");
-    containerwd = 1.5;
-  }
-  else if (pdfItem === 'guia-salir-rutina') {
-    setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68cef67626bfe72c4ef48/Guía para salir de la rutina con tu pareja  WeSex_compressed.pdf");
-    if (isPhoneScreen) {
-      // Execute your function specific to phone screens here
-      containerwd = 1.3;
-    } else {
-      containerwd = 4.4;
-    }
-  } else if (pdfItem === 'guia-mt'){
-    setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64f7817a650421f970535baf/Guía Tantra y masturbación Parte 1_compressed.pdf");
-    if (isPhoneScreen) {
-      // Execute your function specific to phone screens here
-      containerwd = 1.3;
-    } else {
-      containerwd = 4.4;
-    }
-  } else if (pdfItem === 'guia-mt2'){
-    setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/65300f3d8fdff02c326f1b83/Gui%CC%81a%20de%20masturbacio%CC%81n%20ta%CC%81ntrica%202%20masajes%20genitales%20nivel%20_compressed.pdf");
-    if (isPhoneScreen) {
-      // Execute your function specific to phone screens here
-      containerwd = 1.3;
-    } else {
-      containerwd = 4.4;
-    }
-  } else if (pdfItem === 'guia-meno'){
-    setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/65564615f94d0fa60f7c5d44/WeSex%20-%20Menogui%CC%81a%20Sexulidad&Menopausia%20%20(1)_compressed.pdf");
-    if (isPhoneScreen) {
-      // Execute your function specific to phone screens here
-      containerwd = 1.3;
-    } else {
-      containerwd = 4.4;
-    }
-    // Arreglar con link correccto :)
-  } else if (pdfItem === 'guia-deseo'){
-    setPdfUrl("https://we-sex-premium.s3.us-east-2.amazonaws.com/guides/pdfs/Guia+Deseo+sexual++WeSex-alta_compressed.pdf");
-    if (isPhoneScreen) {
-      // Execute your function specific to phone screens here
-      containerwd = 1.3;
-    } else {
-      containerwd = 4.4;
-    }
-  } else if (pdfItem === 'guia-comunicacion'){
-    setPdfUrl("https://we-sex-premium.s3.us-east-2.amazonaws.com/guides/pdfs/WeSex++Guia+comunicacio%CC%81n+asertiva_compressed.pdf");
-    if (isPhoneScreen) {
-      // Execute your function specific to phone screens here
-      containerwd = 1.3;
-    } else {
-      containerwd = 4.4;
-    }
-  }
-  else {
-    queryGuide();
-  }
-
-  const [numPages, setNumPages] = useState(null);
-  const [containerWidth, setContainerWidth] = useState(0);
-  const [pageHeight, setPageHeight] = useState(0);
-  const [loadProgress, setLoadProgress] = useState(0);
-
-
   useEffect(() => {
-    setContainerWidth(window.innerWidth);
-    const handleResize = () => {
-      setContainerWidth(window.innerWidth);
-      setPageHeight(window.innerHeight / 2);
-    };
-
-    if (typeof window !== 'undefined') {
-      setPageHeight(window.innerHeight / 2);
-      window.addEventListener('resize', handleResize);
-      return () => window.removeEventListener('resize', handleResize);
+    if (pdfItem === 'guia-anal') {
+      setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68b3f67626bfe72c4ef30/guiasexoanal-WeSex-3_compressed.pdf");
+      containerwd = 1.5;
+    } 
+    else if (pdfItem === 'guia-tantra') {
+      setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68b6167626bfe72c4ef36/Guia de tantra_Orgasmos mas profundos 1_compressed.pdf");
+      containerwd = 1.5;
     }
-  }, []);
-
-  const onDocumentLoadSuccess = ({ numPages }) => {
-    setNumPages(numPages);
-  };
+    else if (pdfItem === 'guia-zonas-erogenas') {
+      setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68b8167626bfe72c4ef3c/Guia de zonas erogenas WeSex_compressed.pdf");
+      containerwd = 1.5;
+    }
+    else if (pdfItem === 'guia-salir-rutina') {
+      setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68cef67626bfe72c4ef48/Guía para salir de la rutina con tu pareja  WeSex_compressed.pdf");
+      if (isPhoneScreen) {
+        // Execute your function specific to phone screens here
+        containerwd = 1.3;
+      } else {
+        containerwd = 4.4;
+      }
+    } else if (pdfItem === 'guia-mt'){
+      setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64f7817a650421f970535baf/Guía Tantra y masturbación Parte 1_compressed.pdf");
+      if (isPhoneScreen) {
+        // Execute your function specific to phone screens here
+        containerwd = 1.3;
+      } else {
+        containerwd = 4.4;
+      }
+    } else if (pdfItem === 'guia-mt2'){
+      setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/65300f3d8fdff02c326f1b83/Gui%CC%81a%20de%20masturbacio%CC%81n%20ta%CC%81ntrica%202%20masajes%20genitales%20nivel%20_compressed.pdf");
+      if (isPhoneScreen) {
+        // Execute your function specific to phone screens here
+        containerwd = 1.3;
+      } else {
+        containerwd = 4.4;
+      }
+    } else if (pdfItem === 'guia-meno'){
+      setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/65564615f94d0fa60f7c5d44/WeSex%20-%20Menogui%CC%81a%20Sexulidad&Menopausia%20%20(1)_compressed.pdf");
+      if (isPhoneScreen) {
+        // Execute your function specific to phone screens here
+        containerwd = 1.3;
+      } else {
+        containerwd = 4.4;
+      }
+      // Arreglar con link correccto :)
+    } else if (pdfItem === 'guia-deseo'){
+      setPdfUrl("https://we-sex-premium.s3.us-east-2.amazonaws.com/guides/pdfs/Guia+Deseo+sexual++WeSex-alta_compressed.pdf");
+      if (isPhoneScreen) {
+        // Execute your function specific to phone screens here
+        containerwd = 1.3;
+      } else {
+        containerwd = 4.4;
+      }
+    } else if (pdfItem === 'guia-comunicacion'){
+      setPdfUrl("https://we-sex-premium.s3.us-east-2.amazonaws.com/guides/pdfs/WeSex++Guia+comunicacio%CC%81n+asertiva_compressed.pdf");
+      if (isPhoneScreen) {
+        // Execute your function specific to phone screens here
+        containerwd = 1.3;
+      } else {
+        containerwd = 4.4;
+      }
+    }
+    else {
+      queryGuide();
+    }
+  }, [pdfItem])
 
   return (
     <Background paddingTop={demo? '0': '6rem'} minHeight={demo? '0': '100vh'}>
@@ -206,8 +206,7 @@ const PDFViewer = ({pdfItem, demo, setLoaded}) => {
               </div>
             ))
           )}
-</div>
-
+        </div>
         </Document>
       </div>
 
@@ -273,4 +272,135 @@ const PDFViewer = ({pdfItem, demo, setLoaded}) => {
   );
 };
 
+// const PDFViewer = ({pdfItem, demo, setLoaded}) => {
+//   const [pdfUrl, setPdfUrl] = useState("");
+//   const containerwd = 1.5;
+//   const [isPhoneScreen, setIsPhoneScreen] = useState(false);
+//   const [hideGuide, setHideGuide] = useState(false);
+//   const [numPages, setNumPages] = useState(null);
+//   const [containerWidth, setContainerWidth] = useState(0);
+//   const [pageHeight, setPageHeight] = useState(0);
+//   const [loadProgress, setLoadProgress] = useState(0);
+
+
+//   // useEffect(() => {
+//   //   setContainerWidth(window.innerWidth);
+//   //   const handleResize = () => {
+//   //     setContainerWidth(window.innerWidth);
+//   //     setPageHeight(window.innerHeight / 2);
+//   //   };
+
+//   //   if (typeof window !== 'undefined') {
+//   //     setPageHeight(window.innerHeight / 2);
+//   //     window.addEventListener('resize', handleResize);
+//   //     return () => window.removeEventListener('resize', handleResize);
+//   //   }
+//   // }, []);
+
+//   // const onDocumentLoadSuccess = ({ numPages }) => {
+//   //   setNumPages(numPages);
+//   // };
+  
+//   // useEffect(() => {
+//   //   if (demo === 'true'){
+//   //     setHideGuide(true);
+//   //   }
+//   // }, [])
+  
+
+//   // useEffect(() => {
+//   //   const handleResize = () => {
+//   //     const screenWidth = window.innerWidth;
+//   //     setIsPhoneScreen(screenWidth < 540); // Adjust the breakpoint as needed
+//   //   };
+
+//   //   handleResize(); // Initial check
+//   //   window.addEventListener('resize', handleResize);
+
+//   //   return () => {
+//   //     window.removeEventListener('resize', handleResize);
+//   //   };
+//   // }, []);
+
+//   // const queryGuide = async () => {
+//   //   const response = await query_premium_guide(pdfItem);
+//   //   console.log(response);
+//   //   if (response.status === 200) {
+//   //     setPdfUrl(`https://we-sex-premium.s3.amazonaws.com/${response.data.pdf.key}`);
+//   //     console.log(pdfUrl);
+//   //   }
+//   // }
+
+//   useEffect(() => {
+//     if (pdfItem === 'guia-anal') {
+//       setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68b3f67626bfe72c4ef30/guiasexoanal-WeSex-3_compressed.pdf");
+//       containerwd = 1.5;
+//     } 
+//     else if (pdfItem === 'guia-tantra') {
+//       setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68b6167626bfe72c4ef36/Guia de tantra_Orgasmos mas profundos 1_compressed.pdf");
+//       containerwd = 1.5;
+//     }
+//     else if (pdfItem === 'guia-zonas-erogenas') {
+//       setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68b8167626bfe72c4ef3c/Guia de zonas erogenas WeSex_compressed.pdf");
+//       containerwd = 1.5;
+//     }
+//     else if (pdfItem === 'guia-salir-rutina') {
+//       setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64e68cef67626bfe72c4ef48/Guía para salir de la rutina con tu pareja  WeSex_compressed.pdf");
+//       if (isPhoneScreen) {
+//         // Execute your function specific to phone screens here
+//         containerwd = 1.3;
+//       } else {
+//         containerwd = 4.4;
+//       }
+//     } else if (pdfItem === 'guia-mt'){
+//       setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/64f7817a650421f970535baf/Guía Tantra y masturbación Parte 1_compressed.pdf");
+//       if (isPhoneScreen) {
+//         // Execute your function specific to phone screens here
+//         containerwd = 1.3;
+//       } else {
+//         containerwd = 4.4;
+//       }
+//     } else if (pdfItem === 'guia-mt2'){
+//       setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/65300f3d8fdff02c326f1b83/Gui%CC%81a%20de%20masturbacio%CC%81n%20ta%CC%81ntrica%202%20masajes%20genitales%20nivel%20_compressed.pdf");
+//       if (isPhoneScreen) {
+//         // Execute your function specific to phone screens here
+//         containerwd = 1.3;
+//       } else {
+//         containerwd = 4.4;
+//       }
+//     } else if (pdfItem === 'guia-meno'){
+//       setPdfUrl("https://we-sex-premium.s3.amazonaws.com/guides/pdfs/65564615f94d0fa60f7c5d44/WeSex%20-%20Menogui%CC%81a%20Sexulidad&Menopausia%20%20(1)_compressed.pdf");
+//       if (isPhoneScreen) {
+//         // Execute your function specific to phone screens here
+//         containerwd = 1.3;
+//       } else {
+//         containerwd = 4.4;
+//       }
+//       // Arreglar con link correccto :)
+//     } else if (pdfItem === 'guia-deseo'){
+//       setPdfUrl("https://we-sex-premium.s3.us-east-2.amazonaws.com/guides/pdfs/Guia+Deseo+sexual++WeSex-alta_compressed.pdf");
+//       if (isPhoneScreen) {
+//         // Execute your function specific to phone screens here
+//         containerwd = 1.3;
+//       } else {
+//         containerwd = 4.4;
+//       }
+//     } else if (pdfItem === 'guia-comunicacion'){
+//       setPdfUrl("https://we-sex-premium.s3.us-east-2.amazonaws.com/guides/pdfs/WeSex++Guia+comunicacio%CC%81n+asertiva_compressed.pdf");
+//       if (isPhoneScreen) {
+//         // Execute your function specific to phone screens here
+//         containerwd = 1.3;
+//       } else {
+//         containerwd = 4.4;
+//       }
+//     }
+//     else {
+//       queryGuide();
+//     }
+//   }, [])
+
+//   return (
+//     <h1>SOMETHING</h1>
+//   );
+// }
 export default PDFViewer;
