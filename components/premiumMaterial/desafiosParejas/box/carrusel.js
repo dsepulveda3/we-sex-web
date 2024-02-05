@@ -227,22 +227,27 @@ const Carrusel = ({subtitle1_1, subtitle1_2}) => {
                             >
                                 <SwiperSlide>
                                     <GuideSquare>
-                                        <img src="/img/premium-material/example_box_2.jpeg" alt="Description of Image 1" />
+                                        <img src="/img/box/bala.jpeg" alt="Description of Image 1" />
                                     </GuideSquare>
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <GuideSquare>
-                                        <img src="/img/premium-material/example_box_2.jpeg" alt="Description of Image 2" />
+                                        <img src="/img/box/antifaz.jpeg" alt="Description of Image 2" />
                                     </GuideSquare>
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <GuideSquare>
-                                        <img src="/img/premium-material/example_box_2.jpeg" alt="Description of Image 3" />
+                                        <img src="/img/box/lubri.jpeg" alt="Description of Image 3" />
                                     </GuideSquare>
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <GuideSquare>
-                                        <img src="/img/premium-material/example_box_2.jpeg" alt="Description of Image 4 " />
+                                        <img src="/img/box/esposas.jpeg" alt="Description of Image 4 " />
+                                    </GuideSquare>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <GuideSquare>
+                                        <img src="/img/box/all.jpeg" alt="Description of Image 4 " />
                                     </GuideSquare>
                                 </SwiperSlide>
                             </SwiperWrap>
