@@ -4,6 +4,9 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 import { is_subscribed } from '../../requests/premiumService';
 import { useAuth } from '../../context/authUserContext';
+import { useRouter } from 'next/router';
+import { use } from 'react';
+import { set } from 'nprogress';
 
 const Background = styled.div`
     background-color: var(--violet);
@@ -238,6 +241,7 @@ const PLAN_ID = process.env.NEXT_PUBLIC_PLAN_ID;
 const Guides = ({ guideData }) => {
     const { authUser, loading } = useAuth();
     const [isSubscribed, setIsSubscribed] = useState(false);
+    const router = useRouter();
 
     const checkSubscriptionStatus = async () =>{
         const response = await is_subscribed(
@@ -246,7 +250,7 @@ const Guides = ({ guideData }) => {
         //console.log("reading request")
         //console.log(response);
         if (response.status === 200){
-        setIsSubscribed(true);
+            setIsSubscribed(true);
         }
 
     }
@@ -256,42 +260,49 @@ const Guides = ({ guideData }) => {
         }
     }, [authUser, loading]);
 
+    useEffect(() => {
+        if (router.query.origin){
+            setIsSubscribed(true);
+        }
+    }, [])
+
     const prefixUrl = isSubscribed ? '/premium-material/guides/pdf-viewer/' : '/premium-material/guides/landing/';
+    const addOrigin = router.query.origin ? `?origin=${router.query.origin}` : '';
 
     const guideDeseoLink = isSubscribed
-        ? `/premium-material/guides/pdf-viewer/${'guia-meno'}`// Link for subscribed user
+        ? `/premium-material/guides/pdf-viewer/${'guia-meno'}` + addOrigin// Link for subscribed user
         : '/premium-material/guides/guia-deseo'; // Link for non-subscribed user
 
     const guideMenoLink = isSubscribed
-        ? `/premium-material/guides/pdf-viewer/${'guia-meno'}`// Link for subscribed user
+        ? `/premium-material/guides/pdf-viewer/${'guia-meno'}` + addOrigin// Link for subscribed user
         : '/premium-material/guides/guia-monopausia'; // Link for non-subscribed user
 
     const guideMT2Link = isSubscribed
-        ? `/premium-material/guides/pdf-viewer/${'guia-mt2'}`// Link for subscribed user
+        ? `/premium-material/guides/pdf-viewer/${'guia-mt2'}` + addOrigin// Link for subscribed user
         : '/premium-material/guides/guia-masturbacion-tantrica-2'; // Link for non-subscribed user
 
     const guideMTLink = isSubscribed
-        ? `/premium-material/guides/pdf-viewer/${'guia-mt'}`// Link for subscribed user
+        ? `/premium-material/guides/pdf-viewer/${'guia-mt'}` + addOrigin// Link for subscribed user
         : '/premium-material/guides/guia-masturbacion-tantrica'; // Link for non-subscribed user
 
     const guideAnalLink = isSubscribed
-        ? `/premium-material/guides/pdf-viewer/${'guia-anal'}`// Link for subscribed user
+        ? `/premium-material/guides/pdf-viewer/${'guia-anal'}` + addOrigin// Link for subscribed user
         : '/premium-material/guides/guia-sexo-anal'; // Link for non-subscribed user
 
     const guideTantraLink = isSubscribed
-        ? `/premium-material/guides/pdf-viewer/${'guia-tantra'}`// Link for subscribed user
+        ? `/premium-material/guides/pdf-viewer/${'guia-tantra'}` + addOrigin// Link for subscribed user
         : '/premium-material/guides/guia-tantra'; // Link for non-subscribed user
 
     const guideZonasLink = isSubscribed
-        ? `/premium-material/guides/pdf-viewer/${'guia-zonas-erogenas'}`// Link for subscribed user
+        ? `/premium-material/guides/pdf-viewer/${'guia-zonas-erogenas'}` + addOrigin// Link for subscribed user
         : '/premium-material/guides/guia-zonas-erogenas'; // Link for non-subscribed user
 
     const guideRutinaLink = isSubscribed
-        ? `/premium-material/guides/pdf-viewer/${'guia-salir-rutina'}`// Link for subscribed user
+        ? `/premium-material/guides/pdf-viewer/${'guia-salir-rutina'}` + addOrigin// Link for subscribed user
         : '/premium-material/guides/guia-salir-rutina'; // Link for non-subscribed user
 
     const guideComunicacionLink = isSubscribed
-    ? `/premium-material/guides/pdf-viewer/${'guia-comunicacion'}`// Link for subscribed user
+    ? `/premium-material/guides/pdf-viewer/${'guia-comunicacion'}` + addOrigin// Link for subscribed user
     : '/premium-material/guides/guia-comunicacion'; // Link for non-subscribed user
 
 

@@ -316,16 +316,16 @@ const SuscribedBox = () => {
         /^[a-zA-Z0-9-_]+$/.test(coupleNickname) && 
         email.length >= 3 && 
         phoneNumber.length >= 3 && 
-        phoneNumberTwo.length >= 3; 
+        phoneNumberTwo.length >= 3 && 
         memberOne.length >= 3 && 
         memberTwo.length >= 3 && 
         coupleNickname.length >= 3 && 
         email.length >= 3 && 
         phoneNumber.length >= 3 && 
         phoneNumberTwo.length >= 3 && 
-        street.length && 
-        postalCode.length && 
-        localidad.length; 
+        street.length >= 3 && 
+        postalCode.length >= 3 && 
+        localidad.length >= 3; 
 
     
 

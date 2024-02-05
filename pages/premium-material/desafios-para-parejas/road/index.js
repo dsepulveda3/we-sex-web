@@ -1,10 +1,14 @@
 import Road from "../../../../components/premiumMaterial/desafiosParejas/road";
+import MobileNavigation from "../../../../components/general/MobileNavigation";
 
 
 const DesafioRoad = () => {
 
     return(
-        <Road />
+        <>
+            <Road />
+            <MobileNavigation type="road" />
+        </>
     )
 };
 

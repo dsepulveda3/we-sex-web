@@ -2,10 +2,12 @@ import Head from 'next/head'
 import Guides from '../../../components/premiumMaterial/guides'
 import Layout from '../../../components/general/Layout';
 import { query_guides } from '../../../requests/premiumService';
+import { useRouter } from 'next/router';
 
 
 
 export default function Home({ guides }) {
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -52,7 +54,7 @@ export default function Home({ guides }) {
         }}
       />
       <main>
-        <Layout>
+        <Layout type={router.query.origin ? 'road' : null}>
             <Guides guideData={guides} />
         </Layout>
       </main>

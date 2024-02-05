@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Layout from '../../../../components/general/Layout';
 import PDF from '../../../../components/premiumMaterial/pdfPage';
-
+import React, {useState, useEffect} from 'react';
 import styled from '@emotion/styled';
 
 const CenteredContainer = styled.div`
@@ -25,6 +25,7 @@ const CenteredContainer = styled.div`
 export default function PDFViewer() {
   const router = useRouter();
   const { pdfItem } = router.query; // Access the dynamic parameter
+
   
   return (
     <>
@@ -41,7 +42,7 @@ export default function PDFViewer() {
       </Head>
 
       <main>
-        <Layout>
+        <Layout type={router.query.origin ? 'road' : null}>
             <CenteredContainer>
               <PDF pdfItem={pdfItem}/>
             </CenteredContainer>

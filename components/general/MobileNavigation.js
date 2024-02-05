@@ -67,12 +67,14 @@ const MobileNavigation = ({type}) => {
       debates: router.pathname === '/debates',
       articulos: router.pathname === '/articulos',
       premium: router.pathname === '/premium-material',
+      road: router.pathname === '/premium-material/desafios-para-parejas/road',
+      coupleGuides: router.pathname.includes('/premium-material/guides'),
     }));
   }, [router.pathname]);
 
   return (
     <>
-    { type === 'landing' ? (<></>): (
+    { type === 'landing' && type !== 'road' ? (<></>): (
       <Fondo className="hide-desktop">
       <Container>
         <Row className="pb-1 pt-1">
@@ -114,7 +116,31 @@ const MobileNavigation = ({type}) => {
       </Container>
     </Fondo>
     )}
-    
+    { type === 'road' ? (
+      <Fondo className="hide-desktop">
+        <Container>
+          <Row className="pb-1 pt-1">
+            <Col xs={6} sm={6}>
+              <Link href={`/premium-material/desafios-para-parejas/road?origin=${router.query.origin}`}>
+                <a onClick={() => handleIconClick(`/premium-material/desafios-para-parejas/road?origin=${router.query.origin}`, 'road')}>
+                  <Icon src={clickedIcons.road ? '/img/icons/home2-icon-black.svg' : '/img/icons/home2-icon-white.svg'} active={activeLink === '/premium-material/desafios-para-parejas/road'} alt='home-logo'/>
+                  {activeLink === '/premium-material/desafios-para-parejas/road' ? <BoldText>Inicio</BoldText> : 'Inicio'}
+                </a>
+              </Link>
+            </Col>
+            <Col xs={6} sm={6}>
+              <Link href={`/premium-material/guides?origin=${router.query.origin}`}>
+                <a onClick={() => handleIconClick(`/premium-material/guides?origin=${router.query.origin}`, 'coupleGuides')}>
+                  {/* <a onClick={() => handleIconClick('/buscar?autofocus=true', 'premium')}> */}
+                    <Icon src={clickedIcons.coupleGuides ? '/img/icons/open-book.svg' : '/img/icons/open-book_unfilled.svg'} active={activeLink.includes('/premium-material/guides')} alt='premium-material-logo' />
+                    {activeLink.includes('/premium-material/guides') ? <BoldText>Premium</BoldText> : 'Premium'}
+                  </a>
+                </Link>
+            </Col>
+          </Row>
+        </Container>
+      </Fondo>) : (<></>)
+    }
     </>
   );
 };
