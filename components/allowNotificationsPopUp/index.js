@@ -111,6 +111,7 @@ const NotificationComponent = ({ coupleData }) => {
       applicationServerKey: base64ToUint8Array(process.env.NEXT_PUBLIC_WEB_PUSH_PUBLIC_KEY)
     }).then( sub =>
       {
+        console.log("sub", sub);
         setSubscription(sub);
         subscribe_to_notifications(sub, coupleData.coupleName);
       }
