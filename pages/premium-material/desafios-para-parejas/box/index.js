@@ -34,7 +34,7 @@ export default function DesafiosBox() {
         <ChallengeContent />
         <ComprarCheckOutPro 
             title_mp='Cajita WeSexer (+5 desafíos)' 
-            unit_price_mp= {26000} 
+            unit_price_mp= {28000} 
             quantity_mp={1} 
             currency_id_mp='ARS'
             redirection_succesful_mp='https://www.we.sex/premium-material/desafios-para-parejas/suscritobox' 

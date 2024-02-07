@@ -21,7 +21,7 @@ const Text = styled.div`
     font-weigth: bold;
     text-align: center;
     color: white;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 
     span {
         font-family: "Averia Libre", sans-serif;
@@ -222,9 +222,13 @@ const Amount = styled.div`
         <section id="comprar">
             <Background>
 
-            <Text><span>COMPRA LA CAJITA WESEXER</span></Text>
+            <Text><span>¡COMPRA LA CAJITA WESEXER Y RECIBELA EN 48 HRS!</span></Text>
                 {/* <PriceContainer> */}
-                    <Amount style={{color: "#00AEEF"}}>AR$ 26.000</Amount>
+                    
+                    <ByLabel>Despues del pago, solicitaremos tu dirección.</ByLabel>
+                    <br/>
+                    <Amount style={{color: "#00AEEF"}}>AR$ 28.000</Amount>
+                    
                     <Container style={{paddingTop: "0rem", paddingBottom: "0rem", textAlign: "center"}}>
                         <button className ="pagoMP" id="wallet_container" data-href={initPoint}></button>
                     </Container>   
