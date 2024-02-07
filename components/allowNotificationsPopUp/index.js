@@ -92,18 +92,18 @@ const NotificationComponent = ({ coupleData }) => {
     }
   }, [])
 
-  useEffect(() => { 
-      Notification.requestPermission().then(permission => {
-      if (permission === 'granted') {
-        setShowPopup(false);
-        if (!subscription && registration) {
-          subscribeButtonOnClick();
-        }
-      }}).catch(error => {
-        console.error('Error requesting notification permission:', error);
-      }
-    )
-  }, [registration]);
+  // useEffect(() => { 
+  //     Notification.requestPermission().then(permission => {
+  //     if (permission === 'granted') {
+  //       setShowPopup(false);
+  //       if (!subscription && registration) {
+  //         subscribeButtonOnClick();
+  //       }
+  //     }}).catch(error => {
+  //       console.error('Error requesting notification permission:', error);
+  //     }
+  //   )
+  // }, [registration]);
 
   const subscribeButtonOnClick = () => {
     registration.pushManager.subscribe({
