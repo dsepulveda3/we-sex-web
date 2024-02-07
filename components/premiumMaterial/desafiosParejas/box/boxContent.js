@@ -160,7 +160,7 @@ const BoxContent = () => {
                             5 desafíos para combinar con los accesorios y desbloquear sus fantasías 🔥.
                         </li>
                     </ul>
-                    ¡Recibela en 48 horas!
+                    ¡Recibíla en 48 horas!
                     </Text2>
                 </ContainerText2>
             </Container>
