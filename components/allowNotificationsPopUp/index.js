@@ -92,30 +92,38 @@ const NotificationComponent = ({ coupleData }) => {
     }
   }, [])
 
-  // useEffect(() => { 
-  //     Notification.requestPermission().then(permission => {
-  //     if (permission === 'granted') {
-  //       setShowPopup(false);
-  //       if (!subscription && registration) {
-  //         subscribeButtonOnClick();
-  //       }
-  //     }}).catch(error => {
-  //       console.error('Error requesting notification permission:', error);
-  //     }
-  //   )
-  // }, [registration]);
+  useEffect(() => { 
+      if (Notification.permission === 'granted') {
+        setShowPopup(false);
+        if (!subscription && registration) {
+          subscribeButtonOnClick();
+        }
+      }
+    //   Notification.requestPermission().then(permission => {
+    //   if (permission === 'granted') {
+    //     setShowPopup(false);
+    //     if (!subscription && registration) {
+    //       subscribeButtonOnClick();
+    //     }
+    //   }}).catch(error => {
+    //     console.error('Error requesting notification permission:', error);
+    //   }
+    // )
+  }, [registration]);
 
   const subscribeButtonOnClick = () => {
-    registration.pushManager.subscribe({
-      userVisibleOnly: true,
-      applicationServerKey: base64ToUint8Array(process.env.NEXT_PUBLIC_WEB_PUSH_PUBLIC_KEY)
-    }).then( sub =>
-      {
-        console.log("sub", sub);
-        setSubscription(sub);
-        subscribe_to_notifications(sub, coupleData.coupleName);
-      }
-    )
+    navigator.serviceWorker.ready.then(reg => {
+      reg.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: base64ToUint8Array(process.env.NEXT_PUBLIC_WEB_PUSH_PUBLIC_KEY)
+      }).then( sub =>
+        {
+          console.log("sub", sub);
+          setSubscription(sub);
+          subscribe_to_notifications(sub, coupleData.coupleName);
+        }
+      )
+    })
   }
 
   const requestNotificationPermission = () => {
