@@ -350,7 +350,8 @@ const JuegoRoles = () => {
     const [member1, setMember1] = useState(null);
     const [member2, setMember2] = useState(null);
 
-
+    //
+    
     useEffect(() => {
         if (router.isReady){
             setMember1(router.query.members.split('-')[0]);
