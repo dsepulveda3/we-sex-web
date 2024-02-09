@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
-import AnimatedArrow from '../AnimatedArrow';
+import { useRouter } from 'next/router';
 
 const PopupContainer = styled.div`
   position: fixed;
@@ -48,8 +48,16 @@ const InstructionsList = styled.ol`
   padding-left: 20px;
 `;
 
+const DismissButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%; /* Ensure the container takes up the full width */
+  margin-top: 10px;
+`;
+
 const PwaInstallPopup = () => {
   const [showPopup, setShowPopup] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const isPwaInstalled = () => {
@@ -74,13 +82,16 @@ const PwaInstallPopup = () => {
     setShowPopup(false);
   };
 
+  const handleAskForHelpClick = () => {
+    handleDismissClick();
+    router.push('https://wa.me/5491140678698?text=Hola!%20Necesito%20ayuda%20instalando%20la%20app');
+  }
+    
+
   return (
     <>
       {showPopup && (
         <PopupContainer>
-          <ArrowContainer>
-            <AnimatedArrow />
-          </ArrowContainer>
           <Logo src="/img/wesex_logo_no_background.png" alt="WeSex Logo" />
           <TextContainer>
             <p>¡Gracias por usar WeSex!</p>
@@ -91,7 +102,10 @@ const PwaInstallPopup = () => {
             <li>Sigue las instrucciones de instalación.</li>
             <li>¡Disfruta de tus desafíos de pareja!</li>
           </InstructionsList>
-          <DismissButton onClick={handleDismissClick}>Más tarde</DismissButton>
+          <DismissButtonContainer>
+            <DismissButton onClick={handleDismissClick}>Más tarde</DismissButton>
+            <DismissButton onClick={handleAskForHelpClick}>¿Necesitas ayuda?</DismissButton>
+          </DismissButtonContainer>
         </PopupContainer>
       )}
     </>
