@@ -354,7 +354,7 @@ const Header = ({type, data}) => {
 
             
 
-            <NavbarText style={{ width: 300, marginLeft: 20, marginRight: 20 }}>
+            {/* <NavbarText style={{ width: 300, marginLeft: 20, marginRight: 20 }}>
                 <Search
                   items={itemsToSearch}
                   maxResults={15}
@@ -373,7 +373,7 @@ const Header = ({type, data}) => {
                     
                   }} 
                 />
-              </NavbarText>
+              </NavbarText> */}
 
               {/* {loggedIn? <AuthToggleLinks setLoginStatus={setLoggedIn} /> : (
                 <SingUpButton href='/login' onClick={handleLogin}>
