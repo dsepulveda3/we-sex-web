@@ -73,7 +73,6 @@ const base64ToUint8Array = base64 => {
 
 const NotificationComponent = ({ coupleData }) => {
   const [showPopup, setShowPopup] = useState(true);
-  const [acceptedNotifications, setAcceptedNotifications] = useState(false);
   const [subscription, setSubscription] = useState(null);
   const [registration, setRegistration] = useState(null);
 
@@ -93,22 +92,19 @@ const NotificationComponent = ({ coupleData }) => {
   }, [])
 
   useEffect(() => { 
-      if (Notification.permission === 'granted') {
-        setShowPopup(false);
-        if (!subscription && registration) {
-          subscribeButtonOnClick();
+    const userAgent = navigator.userAgent;
+    if (!userAgent.includes('iPhone')) {
+        Notification.requestPermission().then(permission => {
+        if (permission === 'granted') {
+          setShowPopup(false);
+          if (!subscription && registration) {
+            subscribeButtonOnClick();
+          }
+        }}).catch(error => {
+          console.error('Error requesting notification permission:', error);
         }
-      }
-    //   Notification.requestPermission().then(permission => {
-    //   if (permission === 'granted') {
-    //     setShowPopup(false);
-    //     if (!subscription && registration) {
-    //       subscribeButtonOnClick();
-    //     }
-    //   }}).catch(error => {
-    //     console.error('Error requesting notification permission:', error);
-    //   }
-    // )
+      )
+    }
   }, [registration]);
 
   const subscribeButtonOnClick = () => {
@@ -118,7 +114,6 @@ const NotificationComponent = ({ coupleData }) => {
         applicationServerKey: base64ToUint8Array(process.env.NEXT_PUBLIC_WEB_PUSH_PUBLIC_KEY)
       }).then( sub =>
         {
-          console.log("sub", sub);
           setSubscription(sub);
           subscribe_to_notifications(sub, coupleData.coupleName);
         }
