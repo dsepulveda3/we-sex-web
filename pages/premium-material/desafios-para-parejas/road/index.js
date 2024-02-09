@@ -26,9 +26,8 @@ const DesafioRoad = ({ coupleData }) => {
     return(
         <>
         <Road />
-        {/* {issupported && <NotificationComponent coupleData={coupleData} />}
-        {!issupported && <PwaInstallPopup />} */}
-        <PwaInstallPopup />
+        {issupported && <NotificationComponent coupleData={coupleData} />}
+        {!issupported && <PwaInstallPopup />}
         </>
     )
 };
