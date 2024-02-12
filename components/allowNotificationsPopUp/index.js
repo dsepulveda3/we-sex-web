@@ -91,6 +91,12 @@ const NotificationComponent = ({ coupleData }) => {
     }
   }, [])
 
+  useEffect(() => {
+    if (localStorage.getItem('notificationPermission') === 'granted') {
+      setShowPopup(false);
+    }
+  }, []);
+
   useEffect(() => { 
     const userAgent = navigator.userAgent;
     if (!userAgent.includes('iPhone')) {
@@ -124,6 +130,7 @@ const NotificationComponent = ({ coupleData }) => {
 
   const requestNotificationPermission = () => {
     setShowPopup(false);
+    localStorage.setItem('notificationPermission', 'granted');
     Notification.requestPermission().then(permission => {
       if (permission === 'granted') {
         console.log('Notification permission granted!');
