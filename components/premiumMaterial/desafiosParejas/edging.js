@@ -308,6 +308,7 @@ const Edging = () => {
     const toggle2 = () => setIsOpen2(!isOpen2);
     const appRef = useRef(null); // Create a ref to hold the PIXI application
     const router = useRouter();
+    const [challengeName, setChallengeName] = useState("Edging");
 
     const [isOriginRoute, setIsOriginRoute] = useState(false);
     const [origin, setOrigin] = useState(null);
@@ -576,9 +577,9 @@ const Edging = () => {
                             </Text2>
                     </Row>
             </Container>
-            <Notificar2 message='¡ Notificar que finalizamos el desafio !'
-              url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pag9PXiMvFrNXO4GV/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}`}
-              url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pag9PXiMvFrNXO4GV/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}`}/>
+            <Notificar2 message='¡ Notificar que finalizamos el desafío !'
+              url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pagXuvS4lqdA03OGz/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}&prefill_Nombre+Desafio=${challengeName}`}
+              url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pagXuvS4lqdA03OGz/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}&prefill_Nombre+Desafio=${challengeName}`}/>
 
             </Background>
           )}

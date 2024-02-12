@@ -3,6 +3,7 @@ import NotificationComponent from "../../../../components/allowNotificationsPopU
 import PwaInstallPopup from "../../../../components/pwaInstallButton";
 import { get_web_push_data } from "../../../../requests/premiumService";
 import React, { useState, useEffect } from "react";
+import MobileNavigation from "../../../../components/general/MobileNavigation";
 
 
 const DesafioRoad = ({ coupleData }) => {
@@ -26,6 +27,7 @@ const DesafioRoad = ({ coupleData }) => {
     return(
         <>
         <Road />
+        <MobileNavigation type="road" />
         {issupported && <NotificationComponent coupleData={coupleData} />}
         {!issupported && <PwaInstallPopup />}
         </>

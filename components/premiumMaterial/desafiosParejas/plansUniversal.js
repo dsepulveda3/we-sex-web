@@ -364,6 +364,16 @@ const ByLabel = styled.div`
     color:  #00AEEF;
 `;
 
+const ByLabel2 = styled.div`
+    font-size: 1.3rem;
+    margin-left: 0.5rem;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 0.2rem;
+    color: white;
+    background-color: var(--green); /* Change 'lime' to your desired shade of green */
+`;
+
 
 const InfoButton = styled.a`
     font-size: 20px;
@@ -462,7 +472,8 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
     price_mp_basic_discount, price_mp_estandar_discount, price_mp_premium_discount, 
     price_stripe_basic_discount, price_stripe_estandar_discount, price_stripe_premium_discount,
     price_stripe_spain_basic_discount, price_stripe_spain_estandar_discount, price_stripe_spain_premium_discount,
-    price_stripe_chile_basic_discount, price_stripe_chile_estandar_discount, price_stripe_chile_premium_discount
+    price_stripe_chile_basic_discount, price_stripe_chile_estandar_discount, price_stripe_chile_premium_discount,
+    beca_text_basic, beca_text_estandar, beca_text_premium
 
     }) => {
 
@@ -558,6 +569,8 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                 <SlideTitle>Básico</SlideTitle>
                                 <InfoButton onClick={() => setShowPopup(true)}>ℹ️</InfoButton>
                             </SlideHeader>
+                            <ByLabel2 style={{color: "white", marginTop: "1rem"}}>{beca_text_basic}</ByLabel2>
+
                             <ContainerInsideText>
                                 <InsideText>
                                     <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
@@ -589,11 +602,13 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                         <PriceText>{price_mp_basic}</PriceText>
                                         <PriceTextDiscount>{price_mp_basic_discount}</PriceTextDiscount>
                                         <ByLabel style={{color: "black"}}>{discount}</ByLabel>
-
+                                        
                                         <BotonUniversal 
                                         style={{fontSize: font_boton, margin: "1rem 0rem 0rem 2rem" }}
                                         link_redireccion={mp_basic}
                                         text={suscribirme}
+                                        
+                                        
                                         textColor='white'
                                         bgColor='#00AEEF'
                                         bgColorHover='var(--green)'
@@ -604,6 +619,7 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                         <PriceText>{price_stripe_basic}</PriceText>
                                         <PriceTextDiscount>{price_stripe_basic_discount}</PriceTextDiscount>
                                         <ByLabel style={{color: "black"}}>{discount}</ByLabel>
+                                        
                                         <BotonUniversal
                                         style={{fontSize: font_boton, margin: "1rem 0rem 0rem 2rem" }}
                                         link_redireccion={stripe_basic}
@@ -618,6 +634,7 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                         <PriceText>{price_stripe_spain_basic}</PriceText>
                                         <PriceTextDiscount>{price_stripe_spain_basic_discount}</PriceTextDiscount>
                                         <ByLabel style={{color: "black"}}>{discount}</ByLabel>
+
                                         <BotonUniversal
                                         style={{fontSize: font_boton, margin: "1rem 0rem 0rem 2rem" }}
                                         link_redireccion={stripe_basic_spain}
@@ -633,6 +650,7 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                         <PriceText>{price_stripe_chile_basic}</PriceText>
                                         <PriceTextDiscount>{price_stripe_chile_basic_discount}</PriceTextDiscount>
                                         <ByLabel style={{color: "black"}}>{discount}</ByLabel>
+
                                         <BotonUniversal
                                         style={{fontSize: font_boton, margin: "1rem 0rem 0rem 2rem" }}
                                         link_redireccion={stripe_basic_chile}
@@ -658,6 +676,8 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                 <SlideTitle>Cajita WeSexer</SlideTitle>
                                 <InfoButton onClick={() => setShowPopup(true)}>ℹ️</InfoButton>
                             </SlideHeader>
+                            <ByLabel2 style={{color: "white", marginTop: "1rem"}}>{beca_text_estandar}</ByLabel2>
+
                             <ContainerInsideText>
                                 <InsideText>
                                     <AppImageChecksito src="/img/icons/checksito (1).png" className="img-fluid" alt="" />
@@ -690,7 +710,6 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                         <PriceTextDiscount>{price_mp_estandar_discount}</PriceTextDiscount>
                                         <ByLabel style={{color: "black"}}>{discount}</ByLabel>
 
-
                                         <BotonUniversal 
                                         style={{fontSize: font_boton, margin: "1rem 0rem 0rem 2rem" }}
                                         link_redireccion={mp_estandar}
@@ -720,6 +739,7 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                         <PriceText>{price_stripe_spain_estandar}</PriceText>
                                         <PriceTextDiscount>{price_stripe_spain_estandar_discount}</PriceTextDiscount>
                                         <ByLabel style={{color: "black"}}>{discount}</ByLabel>
+
                                         <BotonUniversal
                                         style={{fontSize: font_boton, margin: "1rem 0rem 0rem 2rem" }}
                                         link_redireccion={stripe_estandar_spain}
@@ -735,6 +755,7 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                         <PriceText>{price_stripe_chile_estandar}</PriceText>
                                         <PriceTextDiscount>{price_stripe_chile_estandar_discount}</PriceTextDiscount>
                                         <ByLabel style={{color: "black"}}>{discount}</ByLabel>
+
                                         <BotonUniversal
                                         style={{fontSize: font_boton, margin: "1rem 0rem 0rem 2rem" }}
                                         link_redireccion={stripe_estandar_chile}
@@ -756,6 +777,7 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                 <SlideTitle>Premium</SlideTitle>
                                 <InfoButton onClick={() => setShowPopup(true)}>ℹ️</InfoButton>
                             </SlideHeader>
+                            <ByLabel2 style={{color: "white", marginTop: "1rem"}}>{beca_text_premium}</ByLabel2>
                             
                             <ContainerInsideText>
                                 <InsideText>
@@ -818,6 +840,7 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                         <PriceText>{price_stripe_spain_premium}</PriceText>
                                         <PriceTextDiscount>{price_stripe_spain_premium_discount}</PriceTextDiscount>
                                         <ByLabel style={{color: "black"}}>{discount}</ByLabel>
+
                                         <BotonUniversal
                                         style={{fontSize: font_boton, margin: "1rem 0rem 0rem 2rem" }}
                                         link_redireccion={stripe_premium_spain}
@@ -833,6 +856,7 @@ const PlansUniversal = ({price_mp_basic, price_mp_estandar, price_mp_premium, pr
                                         <PriceText>{price_stripe_chile_premium}</PriceText>
                                         <PriceTextDiscount>{price_stripe_chile_premium_discount}</PriceTextDiscount>
                                         <ByLabel style={{color: "black"}}>{discount}</ByLabel>
+
                                         <BotonUniversal
                                         style={{fontSize: font_boton, margin: "1rem 0rem 0rem 2rem" }}
                                         link_redireccion={stripe_premium_chile}

@@ -335,6 +335,7 @@ const ConfianzaPareja = () => {
     const toggle3 = () => setIsOpen3(!isOpen3);
     const toggle4 = () => setIsOpen4(!isOpen4);
     const router = useRouter();
+    const [challengeName, setChallengeName] = useState("Confianza Pareja");
 
     const [isOriginRoute, setIsOriginRoute] = useState(false);
     const [origin, setOrigin] = useState(null);
@@ -368,7 +369,7 @@ const ConfianzaPareja = () => {
                      <Header>
                         <ArrowBack url={`/premium-material/desafios-para-parejas/road?origin=${origin}`}/>
                         <TitleWeSex>WeSex</TitleWeSex>
-                        <Feedback challengeName={"Hablemos de Sexo"}/>
+                        <Feedback challengeName={"Confianza en la pareja"}/>
                     </Header>
                     
                     <Row className="justify-content-between">   
@@ -592,9 +593,9 @@ const ConfianzaPareja = () => {
                             </Text2>
                     </Row>
             </Container>
-            <Notificar2 message='¡ Notificar que finalizamos el desafio !' 
-            url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pagtcxqE0vYIvyNfX/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}`}
-            url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pagtcxqE0vYIvyNfX/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}`}/>
+            <Notificar2 message='¡ Notificar que finalizamos el desafío !' 
+            url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pagXuvS4lqdA03OGz/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}&prefill_Nombre+Desafio=${challengeName}`}
+            url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pagXuvS4lqdA03OGz/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}&prefill_Nombre+Desafio=${challengeName}`}/>
             </Background>
           )}
         </section>

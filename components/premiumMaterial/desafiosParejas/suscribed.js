@@ -6,6 +6,9 @@ import Dudas from '../dudas';
 import { toast } from 'react-toastify';
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
+import { useRouter } from 'next/router';  
+import { geocodeAddress } from '../../../utils/geocodeAddress';
+import { getPlaceSuggestions } from '../../../utils/getPlaceSuggestions';
 
 const Background = styled.div`
 
@@ -231,6 +234,23 @@ const PhonenumberLabel = styled.div`
     margin-top: 0.1rem;
 `;
 
+const AdressLabel = styled.div`
+    font-size: 1.5rem;
+    // font-weight: bold;
+    font-style: italic;
+    color:  white;
+    margin-left: 0.5rem;
+    margin-top: 0.1rem;
+    margin-bottom: 0.5rem;
+    span {
+        font-weight: bold;
+        font-family: "Averia Libre", sans-serif;
+        background-color: var(--green); /* Set the background color to green */
+        padding: 0.5rem 1rem; /* Add padding to make the background visible */
+        color: white; /* Set the text color to white */
+    }
+`;
+
 const InputPhoneNumber = styled.input`
   width: 100%;
   padding: 1rem;
@@ -244,6 +264,7 @@ const InputPhoneNumber = styled.input`
 `;
 
 const Suscribed = () => {
+    const router = useRouter();
     const [memberOne, setMemberOne] = useState('');
     const [memberTwo, setMemberTwo] = useState('');
     const [coupleNickname, setCoupleNickname] = useState('');
@@ -259,6 +280,9 @@ const Suscribed = () => {
     const formattedDate = `${day}/${month}/${year}`;
     console.log(formattedDate);
 
+    
+
+
     const isFormValid = 
         memberOne.length >= 3 && 
         memberTwo.length >= 3 && 
@@ -272,6 +296,9 @@ const Suscribed = () => {
         email.length >= 3 && 
         phoneNumber.length >= 3 && 
         phoneNumberTwo.length >= 3;
+
+    
+
 
     const handleStepOneSubmit = async () => {
         if (!isFormValid) {
@@ -300,6 +327,8 @@ const Suscribed = () => {
             }
         }
     };
+
+
 
     return (
       <section id="hola">
@@ -364,12 +393,14 @@ const Suscribed = () => {
                                 onChange={setPhoneNumberTwo}
                                 inputComponent={InputPhoneNumber}
                             />
+
                             <Text>
                                 ¡Revisa tu email una vez presionado continuar!
                             </Text>
                             <BotonArs onClick={handleStepOneSubmit} disabled={!isFormValid}>¡Continuar!</BotonArs>
                         </div>
                         </div>
+                        
                     )}
                     {step === 2 && (
                         <div>

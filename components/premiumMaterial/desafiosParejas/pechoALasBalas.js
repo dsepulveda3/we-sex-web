@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import * as PIXI from 'pixi.js';
 import santaUrl from '../../../public/img/rutina_bomba.png';
 import Notificar from './universals/notificar';
+import Notificar2 from './universals/notificar2';
 import ArrowBack from './universals/arrowBack';
 import { useRouter } from 'next/router';
 import Feedback from './universals/feedback';
@@ -328,6 +329,7 @@ const PechoALasBalas = () => {
     const toggle = () => setIsOpen(!isOpen);
     const appRef = useRef(null); // Create a ref to hold the PIXI application
     const router = useRouter();
+    const [challengeName, setChallengeName] = useState("Pecho a las balas");
 
     const [isOriginRoute, setIsOriginRoute] = useState(false);
     const [origin, setOrigin] = useState(null);
@@ -420,6 +422,20 @@ const PechoALasBalas = () => {
           }
         };
       }, [showAnimation]);
+
+      const [member1, setMember1] = useState(null);
+    const [member2, setMember2] = useState(null);
+
+      useEffect(() => {
+        if (router.isReady){
+            setMember1(router.query.members.split('-')[0]);
+            setMember2(router.query.members.split('-')[1]);
+          if (router.query.origin) {
+            setIsOriginRoute(true);
+            setOrigin(router.query.origin);
+          }
+        }
+      }, [router.isReady, isOriginRoute]);
       
       
     
@@ -436,7 +452,7 @@ const PechoALasBalas = () => {
                      <Header>
                         <ArrowBack url={`/premium-material/desafios-para-parejas/road?origin=${origin}`}/>
                         <TitleWeSex>WeSex</TitleWeSex>
-                        <Feedback challengeName={"Hablemos de Sexo"}/>
+                        <Feedback challengeName={"Pecho a las balas"}/>
                     </Header>
                     
                     <Row className="justify-content-between">   
@@ -541,7 +557,9 @@ const PechoALasBalas = () => {
                         </Text2>
                 </Row>
             </Container>
-            <Notificar message='¡ Notificar que finalizamos el desafio !' url={`https://forms.gle/Ssbou7gLatTsoPwH7`}/>
+            <Notificar2 message='¡ Notificar que finalizamos el desafío !' 
+            url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pagXuvS4lqdA03OGz/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}&prefill_Nombre+Desafio=${challengeName}`}
+            url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pagXuvS4lqdA03OGz/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}&prefill_Nombre+Desafio=${challengeName}`}/>
             </Background>
           )}
         </section>

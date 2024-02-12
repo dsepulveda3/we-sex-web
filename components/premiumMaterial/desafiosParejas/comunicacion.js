@@ -342,6 +342,7 @@ const Comunicacion = () => {
     const toggle2 = () => setIsOpen2(!isOpen2);
     const appRef = useRef(null); // Create a ref to hold the PIXI application
     const router = useRouter();
+    const [challengeName, setChallengeName] = useState("Comunicacion");
 
     const [isOriginRoute, setIsOriginRoute] = useState(false);
     const [origin, setOrigin] = useState(null);
