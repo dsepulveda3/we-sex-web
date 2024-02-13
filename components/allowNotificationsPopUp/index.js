@@ -128,6 +128,7 @@ const NotificationComponent = ({ coupleData }) => {
     })
   }
 
+  //request notification permission
   const requestNotificationPermission = () => {
     setShowPopup(false);
     localStorage.setItem('notificationPermission', 'granted');
