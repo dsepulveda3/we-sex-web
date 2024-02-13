@@ -118,3 +118,19 @@ export const query_task = async (couple_name, task_type, task_index) => {
     );
     return response;
 }
+
+export const subscribe_to_notifications = async (subscription_data, couple_name) => {
+    const response = await basePremiumService.post(
+        `v1/CoupleGame/subscribe-notifications/${couple_name}`,
+        subscription_data
+    );
+    return response;
+}
+
+export const get_web_push_data = async (couple_name) => {
+    const response = await basePremiumService.get(
+        `v1/CoupleGame/subscribe-notifications/${couple_name}`
+    );
+    return response;
+}
+    

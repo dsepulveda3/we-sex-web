@@ -1,7 +1,7 @@
 
 {
-    "name": "WeSex",
-    "short_name": "WeSex",
+    "name": "WeSex Couples",
+    "short_name": "WeSexCouples",
     "icons": [
       {
         "src": "/img/favicon/android-chrome-192x192.png",
@@ -18,7 +18,7 @@
     ],
     "theme_color": "#FFFFFF",
     "background_color": "#FFFFFF",
-    "start_url": "/",
+    "start_url": "/pwa",
     "display": "standalone",
     "orientation": "portrait"
   }

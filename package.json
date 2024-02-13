@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "vapid": "web-push generate-vapid-keys"
   },
   "dependencies": {
     "@emotion/core": "10",
@@ -32,7 +33,7 @@
     "mercadopago": "^1.5.15",
     "net": "^1.0.2",
     "next": "12.2.5",
-    "next-pwa": "^5.6.0",
+    "next-pwa": "5.6.0",
     "nextjs-progressbar": "^0.0.16",
     "nodemon": "^2.0.19",
     "pdfjs-dist": "^3.9.179",
