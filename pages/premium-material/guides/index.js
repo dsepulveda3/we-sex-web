@@ -54,6 +54,9 @@ export default function Home({ guides }) {
         }}
       />
       <main>
+        {/* <Layout type={router.query.origin ? 'road' : null}>
+            <Guides guideData={guides} />
+        </Layout> */}
         <Layout type={router.query.origin ? 'road' : null}>
             <Guides guideData={guides} />
         </Layout>
