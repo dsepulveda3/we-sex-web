@@ -851,6 +851,7 @@ const Popup = ({
     const [dosisDone, setDosisDone] = useState(0);
     const [totalDosis, setTotalDosis] = useState(0);
     const [showDiagnostico, setShowDiagnostico] = useState(false);
+    const [selected, setSelected] = useState("REC");
     
 
     const [levelText, setLevelText] = useState("Nivel 1")
@@ -996,7 +997,7 @@ const Popup = ({
           <Background>
           <StickyComponent />
           <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
-            {coupleName === "all" && <Areas />}
+            {coupleName === "all" && <Areas setSelected={setSelected} selected={selected} />}
             <Diagnostic origin={coupleName} />
           </div>
           {/* {showDiagnostico && <Diagnostic origin={coupleName} />} */}

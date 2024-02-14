@@ -91,7 +91,7 @@ const Instruction = styled.div`
 
 `;
 
-const Areas = ({ origin }) => {
+const Areas = ({ origin, setSelected, selected }) => {
   const [showPopup, setShowPopup] = useState(false);
   const buttonRef = useRef(null);
 
@@ -128,15 +128,15 @@ const Areas = ({ origin }) => {
         <Instruction><span>SELECCIONA EL ÁREA QUE DESEAS MEJORAR</span></Instruction>
         {/* <CloseButton onClick={handleClose}>X</CloseButton> */}
         <PopupContent>
-          <Square text="COM"/>
-          <Square text="CON"/>
-          <Square text="SEX"/>
-          <Square text="AFE"/>
-          <Square text="INF"/>
-          <Square text="SAT"/>
+          <Square text="COM" setSelected={setSelected} isSelected={selected === "COM"}/>
+          <Square text="CON" setSelected={setSelected} isSelected={selected === "CON"}/>
+          <Square text="SEX" setSelected={setSelected} isSelected={selected === "SEX"}/>
+          <Square text="AFE" setSelected={setSelected} isSelected={selected === "AFE"}/>
+          <Square text="INF" setSelected={setSelected} isSelected={selected === "INF"}/>
+          <Square text="SAT" setSelected={setSelected} isSelected={selected === "SAT"}/>
+          <Square text="REC" style={{ gridColumn: "span 3" }} setSelected={setSelected} isSelected={selected === "REC"}/>
         </PopupContent>
       </RoundedPopup>
-
       <ContainerPopUp visible={showPopup} />
     </Container>
   );
