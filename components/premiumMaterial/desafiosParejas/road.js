@@ -452,6 +452,7 @@ const Learning = styled.div`
       text-align: left;
       align-items: left;
       justify-content: left;
+      margin-bottom: 7rem;
       
       span {
         font-weight: bold;
