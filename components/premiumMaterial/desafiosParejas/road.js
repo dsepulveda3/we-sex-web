@@ -669,7 +669,8 @@ const Popup = ({
     challenges, 
     pills, 
     timeStamps,
-    typeBuyer
+    typeBuyer,
+    selected_road
   }) => {
     const router = useRouter();
     const [isOriginRoute, setIsOriginRoute] = useState(false);
@@ -685,7 +686,7 @@ const Popup = ({
       }, [router.isReady, isOriginRoute]);
 
     const handleSubmit = () => {
-        router.push(`${link}?origin=${origin}&type=${type}&index=${index}&members=${coupleMembers.join('-')}`);
+        router.push(`${link}?origin=${origin}&type=${type}&index=${index}&members=${coupleMembers.join('-')}&road=${selected_road}`);
     }
 
     const handleClose = () => {
@@ -877,16 +878,16 @@ const Popup = ({
       }
     }, [router.isReady]);
 
-    const handleStartChallengeClick = ({ title, subtitle, link, status, index }) => {
+    const handleStartChallengeClick = ({ title, subtitle, link, status, index, selected_road }) => {
         if (title && subtitle && link) {
-          setPopupContent({ title, subtitle, link, status, type: 'challenge', index: index }); // Store the challenge data in state
+          setPopupContent({ title, subtitle, link, status, type: 'challenge', index: index, selected_road: selected_road }); // Store the challenge data in state
           setPopupVisible(true); // Open the popup
         }
       };
 
-    const handleStartDosisClick = ({ title, link, status, index }) => {
+    const handleStartDosisClick = ({ title, link, status, index, selected_road }) => {
       if (title && link) {
-        setPopupContent({ title, link, status, type: 'pill', index: index }); // Store the dosis data in state
+        setPopupContent({ title, link, status, type: 'pill', index: index, selected_road: selected_road}); // Store the dosis data in state
         setPopupVisible(true); // Open the popup
       }
     };
@@ -901,7 +902,7 @@ const Popup = ({
   
     useEffect(() => {
       const fetchData = async () => {
-        const response = await get_couple(coupleName);
+        const response = await get_couple(coupleName, selected);
         if (response.data.inactive){
           toast.error('Tu subscripción no esta activa. Contactate con nosotros si deseas re-activarla y seguir donde dejaste tu viaje por los desafios!!');
           router.push('/premium-material/desafios-para-parejas');
@@ -947,7 +948,7 @@ const Popup = ({
       };
     
       fetchData();
-    }, [coupleName]);
+    }, [coupleName, selected]);
 
     
 
@@ -997,7 +998,7 @@ const Popup = ({
           <Background>
           <StickyComponent />
           <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
-            {coupleName === "all" && <Areas setSelected={setSelected} selected={selected} />}
+            <Areas setSelected={setSelected} selected={selected} />
             <Diagnostic origin={coupleName} />
           </div>
           {/* {showDiagnostico && <Diagnostic origin={coupleName} />} */}
@@ -1057,7 +1058,7 @@ const Popup = ({
             pills={coupleData ? [coupleData.pills] : []}
             timeStamps={coupleData? coupleData.timeStamps : null}
             typeBuyer={coupleData? coupleData.type : null}
-
+            selected_road={selected}
         />
         {/* Add the WarningPopup component here */}
        
