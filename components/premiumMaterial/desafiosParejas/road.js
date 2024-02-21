@@ -6,6 +6,7 @@ import OtherChallenge from "./roadComponents/otherChallenge";
 import { toast } from "react-toastify";
 import Diagnostic from "./roadComponents/Diagnostic";
 import Areas from "./roadComponents/areas";
+import InconstructionPopup from "./roadComponents/InconstructionPopup";
 
 const HeaderContainer = styled.div`
   background-color: #ebe4f8;
@@ -853,6 +854,7 @@ const Popup = ({
     const [totalDosis, setTotalDosis] = useState(0);
     const [showDiagnostico, setShowDiagnostico] = useState(false);
     const [selected, setSelected] = useState("REC");
+    const [isReleasedArea, setIsReleasedArea] = useState(true);
     
 
     const [levelText, setLevelText] = useState("Nivel 1")
@@ -998,7 +1000,7 @@ const Popup = ({
           <Background>
           <StickyComponent />
           <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
-            <Areas setSelected={setSelected} selected={selected} />
+            <Areas setSelected={setSelected} selected={selected} setReleased={setIsReleasedArea} />
             <Diagnostic origin={coupleName} />
           </div>
           {/* {showDiagnostico && <Diagnostic origin={coupleName} />} */}
@@ -1038,9 +1040,10 @@ const Popup = ({
             {/* ... existing code ... */}
             {challengesDone === totalChallenges && totalChallenges !== 0 && (
               <DoneChallengesMessage>
-               <span>ESTAMOS TRABAJANDO EN SUS PRÓXIMOS DESAFÍOS 😊.<br/> 🔥🔥 AGUANTEN LA CALENTURA 🔥🔥</span>
+                <span>ESTAMOS TRABAJANDO EN SUS PRÓXIMOS DESAFÍOS 😊.<br/> 🔥🔥 AGUANTEN LA CALENTURA 🔥🔥</span>
               </DoneChallengesMessage>
             )}
+            {!isReleasedArea && (<InconstructionPopup />)}
           </Background>
         
           <Popup
