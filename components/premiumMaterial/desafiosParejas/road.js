@@ -1040,7 +1040,7 @@ const Popup = ({
                       <DosisImage
                         key={`dosis-${index}-${i}`}
                         data={dosis}
-                        index={i + index * 2}
+                        index={i + index * 5}
                         onClick={handleStartDosisClick}
                       />
                     ))}
