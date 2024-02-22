@@ -22,12 +22,13 @@ const SquareComponent = styled.button`
   }
 `;
 
-const Square = ({ text, displayText, style=null, setSelected, isSelected, released, setReleased }) => {
+const Square = ({ text, displayText, style=null, setSelected, isSelected, released, setReleased, setClose }) => {
 
 
     const handleClick = () => {
         setSelected(text);
         setReleased(released);
+        setClose();
       };
 
   return (

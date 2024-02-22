@@ -127,13 +127,13 @@ const Areas = ({ origin, setSelected, selected, setReleased }) => {
         <Instruction><span>SELECCIONA EL ÁREA QUE DESEAS MEJORAR</span></Instruction>
         {/* <CloseButton onClick={handleClose}>X</CloseButton> */}
         <PopupContent>
-          <Square text="COM" displayText="Comunicación" released={true} setSelected={setSelected} isSelected={selected === "COM"} setReleased={setReleased}/>
-          <Square text="CON" displayText="Control" released={false} setSelected={setSelected} isSelected={selected === "CON"} setReleased={setReleased}/>
-          <Square text="SEX" displayText="Sexual" released={true} setSelected={setSelected} isSelected={selected === "SEX"} setReleased={setReleased}/>
-          <Square text="AFE" displayText="Afecto" released={true} setSelected={setSelected} isSelected={selected === "AFE"} setReleased={setReleased}/>
-          <Square text="INF" displayText="Influencia" released={false} setSelected={setSelected} isSelected={selected === "INF"} setReleased={setReleased}/>
-          <Square text="SAT" displayText="Satisfacción" released={false} setSelected={setSelected} isSelected={selected === "SAT"} setReleased={setReleased}/>
-          <Square text="REC" displayText="Recomendada" released={false} setSelected={setSelected} isSelected={selected === "REC"} setReleased={setReleased}/>
+          <Square text="COM" displayText="Comunicación" released={true} setSelected={setSelected} isSelected={selected === "COM"} setReleased={setReleased} setClose={handleClose}/>
+          <Square text="CON" displayText="Control" released={false} setSelected={setSelected} isSelected={selected === "CON"} setReleased={setReleased} setClose={handleClose}/>
+          <Square text="SEX" displayText="Sexual" released={true} setSelected={setSelected} isSelected={selected === "SEX"} setReleased={setReleased} setClose={handleClose}/>
+          <Square text="AFE" displayText="Afecto" released={true} setSelected={setSelected} isSelected={selected === "AFE"} setReleased={setReleased} setClose={handleClose}/>
+          <Square text="INF" displayText="Influencia" released={false} setSelected={setSelected} isSelected={selected === "INF"} setReleased={setReleased} setClose={handleClose}/>
+          <Square text="SAT" displayText="Satisfacción" released={false} setSelected={setSelected} isSelected={selected === "SAT"} setReleased={setReleased} setClose={handleClose}/>
+          <Square text="REC" displayText="Recomendada" released={false} setSelected={setSelected} isSelected={selected === "REC"} setReleased={setReleased} setClose={handleClose}/>
         </PopupContent>
       </RoundedPopup>
       <ContainerPopUp visible={showPopup} />

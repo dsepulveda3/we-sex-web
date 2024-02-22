@@ -157,8 +157,6 @@ const ImageStartoDoChallenge = styled.img`
     padding: 0.5rem;
     border-radius: 50%; /* Ensures the image itself is round */
 
-    /* Apply box-shadow for a rounded shadow */
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), inset 3px 3px 5px rgba(0, 0, 0, 0.3);
 
     @media (max-width: 540px){
         height: 20%;
