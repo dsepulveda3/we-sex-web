@@ -5,8 +5,8 @@ import { get_couple } from "../../../requests/premiumService";
 import OtherChallenge from "./roadComponents/otherChallenge";
 import { toast } from "react-toastify";
 import Diagnostic from "./roadComponents/Diagnostic";
+import InConstructionPopup from "./InConstructionPopup";
 import Areas from "./roadComponents/areas";
-import InconstructionPopup from "./roadComponents/InconstructionPopup";
 
 const HeaderContainer = styled.div`
   background-color: #ebe4f8;
@@ -1043,7 +1043,7 @@ const Popup = ({
                 <span>ESTAMOS TRABAJANDO EN SUS PRÓXIMOS DESAFÍOS 😊.<br/> 🔥🔥 AGUANTEN LA CALENTURA 🔥🔥</span>
               </DoneChallengesMessage>
             )}
-            {!isReleasedArea && (<InconstructionPopup />)}
+            {!isReleasedArea && (<InConstructionPopup />)}
           </Background>
         
           <Popup
