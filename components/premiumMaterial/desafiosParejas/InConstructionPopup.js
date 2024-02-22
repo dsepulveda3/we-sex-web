@@ -2,8 +2,10 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 const PopupContainer = styled.div`
-  position: fixed;
-  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   background-color: #fff;

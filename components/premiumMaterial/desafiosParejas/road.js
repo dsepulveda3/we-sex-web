@@ -861,7 +861,7 @@ const Popup = ({
     const names_hashmap = {
       "COM": "Comunicación",
       "CON": "Control",
-      "SEX": "Sexualidad",
+      "SEX": "Sexual",
       "AFE": "Afecto",
       "INF": "Influencia",
       "SAT": "Satisfacción",
