@@ -10,6 +10,7 @@ const ContainerNotificarDone = styled.div`
   padding: 0.8rem;
   display: flex;
   justify-content: center;
+  margin-top: 0.5rem;
 `;
 
 const BotonNotificarDone = styled.a`
@@ -67,8 +68,6 @@ const ContainerPopUp = styled.div`
 
 const PopupContent = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
   gap: 10px;
 `;
 
@@ -91,7 +90,7 @@ const Instruction = styled.div`
 
 `;
 
-const Areas = ({ origin }) => {
+const Areas = ({ origin, setSelected, selected, setReleased }) => {
   const [showPopup, setShowPopup] = useState(false);
   const buttonRef = useRef(null);
 
@@ -128,15 +127,15 @@ const Areas = ({ origin }) => {
         <Instruction><span>SELECCIONA EL ÁREA QUE DESEAS MEJORAR</span></Instruction>
         {/* <CloseButton onClick={handleClose}>X</CloseButton> */}
         <PopupContent>
-          <Square text="COM"/>
-          <Square text="CON"/>
-          <Square text="SEX"/>
-          <Square text="AFE"/>
-          <Square text="INF"/>
-          <Square text="SAT"/>
+          <Square text="COM" displayText="Comunicación" released={true} setSelected={setSelected} isSelected={selected === "COM"} setReleased={setReleased}/>
+          <Square text="CON" displayText="Control" released={false} setSelected={setSelected} isSelected={selected === "CON"} setReleased={setReleased}/>
+          <Square text="SEX" displayText="Sexual" released={true} setSelected={setSelected} isSelected={selected === "SEX"} setReleased={setReleased}/>
+          <Square text="AFE" displayText="Afecto" released={true} setSelected={setSelected} isSelected={selected === "AFE"} setReleased={setReleased}/>
+          <Square text="INF" displayText="Influencia" released={false} setSelected={setSelected} isSelected={selected === "INF"} setReleased={setReleased}/>
+          <Square text="SAT" displayText="Satisfacción" released={false} setSelected={setSelected} isSelected={selected === "SAT"} setReleased={setReleased}/>
+          <Square text="REC" displayText="Recomendada" released={false} setSelected={setSelected} isSelected={selected === "REC"} setReleased={setReleased}/>
         </PopupContent>
       </RoundedPopup>
-
       <ContainerPopUp visible={showPopup} />
     </Container>
   );

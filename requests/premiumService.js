@@ -97,9 +97,9 @@ export const create_couple_box = async (data) => {
     return response;
 }
 
-export const get_couple = async (couple_name) => {
+export const get_couple = async (couple_name, selected_area="REC") => {
     const response = await basePremiumService.get(
-        `v1/CoupleGame/?couple_name=${couple_name}`
+        `v1/CoupleGame/?couple_name=${couple_name}&selected_area=${selected_area}`
     );
     return response;
 }
@@ -112,9 +112,9 @@ export const done_task = async (data) => {
     return response;
 }
 
-export const query_task = async (couple_name, task_type, task_index) => {
+export const query_task = async (couple_name, task_type, task_index, selected_area) => {
     const response = await basePremiumService.get(
-        `v1/CoupleGame/task?coupleName=${couple_name}&taskType=${task_type}&taskIndex=${task_index}`
+        `v1/CoupleGame/task?coupleName=${couple_name}&taskType=${task_type}&taskIndex=${task_index}&selected_area=${selected_area}`
     );
     return response;
 }

@@ -5,6 +5,7 @@ import { get_couple } from "../../../requests/premiumService";
 import OtherChallenge from "./roadComponents/otherChallenge";
 import { toast } from "react-toastify";
 import Diagnostic from "./roadComponents/Diagnostic";
+import InConstructionPopup from "./InConstructionPopup";
 import Areas from "./roadComponents/areas";
 
 const HeaderContainer = styled.div`
@@ -103,12 +104,12 @@ const Background = styled.div`
 
     @media (min-width: 540px){
         padding: 0rem 10rem 20rem 10rem;
-        min-height: 100%;
+        min-height: 100vh;
     }
 
     @media (max-width: 540px){
         padding: 0rem 1rem 20rem 1rem;
-        min-height: 100%;
+        min-height: 100vh;
     }
 `;
 
@@ -525,14 +526,14 @@ const ClockSeparator = styled.span`
 
 const DoneChallengesMessage = styled.div`
   color: black;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-family: "Karla", sans-serif;
   font-weight: bold;
   padding-left: 3rem;
   margin-top: 1rem;
   @media (max-width: 540px){
     padding-left: 2rem;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 
   span {
@@ -592,7 +593,6 @@ const ClockOrSubmit = ({ timestamp, startTime, typeBuyer, onClick }) => {
   const targetTime = timestamp ?  new Date(new Date(timestamp).getTime() + 60 * 60 * 24 * 1000) : null;
   const currentTime = new Date(startTime)
   const timeDiff = targetTime ? targetTime - currentTime : null;
-
   const [timeRemaining, setTimeRemaining] = useState(timeDiff);
 
   console.log("time");
@@ -670,7 +670,8 @@ const Popup = ({
     challenges, 
     pills, 
     timeStamps,
-    typeBuyer
+    typeBuyer,
+    selected_road
   }) => {
     const router = useRouter();
     const [isOriginRoute, setIsOriginRoute] = useState(false);
@@ -686,7 +687,7 @@ const Popup = ({
       }, [router.isReady, isOriginRoute]);
 
     const handleSubmit = () => {
-        router.push(`${link}?origin=${origin}&type=${type}&index=${index}&members=${coupleMembers.join('-')}`);
+        router.push(`${link}?origin=${origin}&type=${type}&index=${index}&members=${coupleMembers.join('-')}&road=${selected_road}`);
     }
 
     const handleClose = () => {
@@ -852,10 +853,22 @@ const Popup = ({
     const [dosisDone, setDosisDone] = useState(0);
     const [totalDosis, setTotalDosis] = useState(0);
     const [showDiagnostico, setShowDiagnostico] = useState(false);
+    const [selected, setSelected] = useState("REC");
+    const [isReleasedArea, setIsReleasedArea] = useState(true);
     
 
-    const [levelText, setLevelText] = useState("Nivel 1")
-    const [nameLevelText, setNameLevelText] = useState("NIVEL: CALENTAMIENTO")
+    const [levelText, setLevelText] = useState("Nivel 1");
+    const [nameLevelText, setNameLevelText] = useState("NIVEL: CALENTAMIENTO");
+
+    const names_hashmap = {
+      "COM": "Comunicación",
+      "CON": "Control",
+      "SEX": "Sexualidad",
+      "AFE": "Afecto",
+      "INF": "Influencia",
+      "SAT": "Satisfacción",
+      "REC": "Recomendada"
+    };
 
     useEffect(() => {
       const challenges = document.querySelectorAll(".challenge-container");
@@ -877,16 +890,16 @@ const Popup = ({
       }
     }, [router.isReady]);
 
-    const handleStartChallengeClick = ({ title, subtitle, link, status, index }) => {
+    const handleStartChallengeClick = ({ title, subtitle, link, status, index, selected_road }) => {
         if (title && subtitle && link) {
-          setPopupContent({ title, subtitle, link, status, type: 'challenge', index: index }); // Store the challenge data in state
+          setPopupContent({ title, subtitle, link, status, type: 'challenge', index: index, selected_road: selected_road }); // Store the challenge data in state
           setPopupVisible(true); // Open the popup
         }
       };
 
-    const handleStartDosisClick = ({ title, link, status, index }) => {
+    const handleStartDosisClick = ({ title, link, status, index, selected_road }) => {
       if (title && link) {
-        setPopupContent({ title, link, status, type: 'pill', index: index }); // Store the dosis data in state
+        setPopupContent({ title, link, status, type: 'pill', index: index, selected_road: selected_road}); // Store the dosis data in state
         setPopupVisible(true); // Open the popup
       }
     };
@@ -901,7 +914,7 @@ const Popup = ({
   
     useEffect(() => {
       const fetchData = async () => {
-        const response = await get_couple(coupleName);
+        const response = await get_couple(coupleName, selected);
         if (response.data.inactive){
           toast.error('Tu subscripción no esta activa. Contactate con nosotros si deseas re-activarla y seguir donde dejaste tu viaje por los desafios!!');
           router.push('/premium-material/desafios-para-parejas');
@@ -947,7 +960,7 @@ const Popup = ({
       };
     
       fetchData();
-    }, [coupleName]);
+    }, [coupleName, selected]);
 
     
 
@@ -997,9 +1010,12 @@ const Popup = ({
           <Background>
           <StickyComponent />
           <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
-            {coupleName === "all" && <Areas />}
+            <Areas setSelected={setSelected} selected={selected} setReleased={setIsReleasedArea} />
             <Diagnostic origin={coupleName} />
           </div>
+          <DoneChallengesMessage>
+                <span>Mejorando Área: 🔥🔥 {names_hashmap[selected]} 🔥🔥</span>
+          </DoneChallengesMessage>
           {/* {showDiagnostico && <Diagnostic origin={coupleName} />} */}
             {/* {renderLevelBoxes()} */}
             <div style={{ paddingTop: '1rem', backgroundColor: '#ebe4f8' }}></div>
@@ -1037,9 +1053,10 @@ const Popup = ({
             {/* ... existing code ... */}
             {challengesDone === totalChallenges && totalChallenges !== 0 && (
               <DoneChallengesMessage>
-               <span>ESTAMOS TRABAJANDO EN SUS PRÓXIMOS DESAFÍOS 😊.<br/> 🔥🔥 AGUANTEN LA CALENTURA 🔥🔥</span>
+                <span>ESTAMOS TRABAJANDO EN SUS PRÓXIMOS DESAFÍOS 😊.<br/> 🔥🔥 AGUANTEN LA CALENTURA 🔥🔥</span>
               </DoneChallengesMessage>
             )}
+            {!isReleasedArea && (<InConstructionPopup />)}
           </Background>
         
           <Popup
@@ -1057,7 +1074,7 @@ const Popup = ({
             pills={coupleData ? [coupleData.pills] : []}
             timeStamps={coupleData? coupleData.timeStamps : null}
             typeBuyer={coupleData? coupleData.type : null}
-
+            selected_road={selected}
         />
         {/* Add the WarningPopup component here */}
        

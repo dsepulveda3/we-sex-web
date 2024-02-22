@@ -178,7 +178,7 @@ const PopupContent = ({ closePopUp, surveyUrl_m1, surveyUrl_m2, setDone, type })
     };
 
     const handleSubmit = async () => {
-        const { origin, type, index } = query;
+        const { origin, type, index, road } = query;
 
         try{
             const response = await done_task({
@@ -186,6 +186,7 @@ const PopupContent = ({ closePopUp, surveyUrl_m1, surveyUrl_m2, setDone, type })
                 completedTaskType: type,
                 completedTaskIndex: index,
                 comment: comment,
+                selected_area: road,
             });
             if (response.status === 200) {
                 toast.success("Tarea completada!!");
@@ -329,9 +330,9 @@ const Notificar2 = ({ message, url_m1, url_m2, color = "green", type }) => {
     }, [query, completed]);
 
     const load_task = async () => {
-        const { origin, type, index } = query;
+        const { origin, type, index, road } = query;
         try {
-            const response = await query_task(origin, type, index);
+            const response = await query_task(origin, type, index, road);
             setTask(response.data);
             console.log("Data task");
             console.log(task);

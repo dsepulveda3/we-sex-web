@@ -325,9 +325,9 @@ const Notificar = ({ message, url, color = "green", type }) => {
     }, [query, completed]);
 
     const load_task = async () => {
-        const { origin, type, index } = query;
+        const { origin, type, index, road } = query;
         try {
-            const response = await query_task(origin, type, index);
+            const response = await query_task(origin, type, index, road);
             setTask(response.data);
             console.log("Data task");
             console.log(task);
