@@ -104,12 +104,12 @@ const Background = styled.div`
 
     @media (min-width: 540px){
         padding: 0rem 10rem 20rem 10rem;
-        min-height: 100%;
+        min-height: 100vh;
     }
 
     @media (max-width: 540px){
         padding: 0rem 1rem 20rem 1rem;
-        min-height: 100%;
+        min-height: 100vh;
     }
 `;
 
@@ -525,14 +525,14 @@ const ClockSeparator = styled.span`
 
 const DoneChallengesMessage = styled.div`
   color: black;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-family: "Karla", sans-serif;
   font-weight: bold;
   padding-left: 3rem;
   margin-top: 1rem;
   @media (max-width: 540px){
     padding-left: 2rem;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 
   span {
@@ -592,7 +592,6 @@ const ClockOrSubmit = ({ timestamp, startTime, typeBuyer, onClick }) => {
   const targetTime = timestamp ?  new Date(new Date(timestamp).getTime() + 60 * 60 * 24 * 1000) : null;
   const currentTime = new Date(startTime)
   const timeDiff = targetTime ? targetTime - currentTime : null;
-
   const [timeRemaining, setTimeRemaining] = useState(timeDiff);
 
   console.log("time");
@@ -857,8 +856,18 @@ const Popup = ({
     const [isReleasedArea, setIsReleasedArea] = useState(true);
     
 
-    const [levelText, setLevelText] = useState("Nivel 1")
-    const [nameLevelText, setNameLevelText] = useState("NIVEL: CALENTAMIENTO")
+    const [levelText, setLevelText] = useState("Nivel 1");
+    const [nameLevelText, setNameLevelText] = useState("NIVEL: CALENTAMIENTO");
+
+    const names_hashmap = {
+      "COM": "Comunicación",
+      "CON": "Control",
+      "SEX": "Sexualidad",
+      "AFE": "Afecto",
+      "INF": "Influencia",
+      "SAT": "Satisfacción",
+      "REC": "Recomendada"
+    };
 
     useEffect(() => {
       const challenges = document.querySelectorAll(".challenge-container");
@@ -1003,6 +1012,9 @@ const Popup = ({
             <Areas setSelected={setSelected} selected={selected} setReleased={setIsReleasedArea} />
             <Diagnostic origin={coupleName} />
           </div>
+          <DoneChallengesMessage>
+                <span>Mejorando Área: 🔥🔥 {names_hashmap[selected]} 🔥🔥</span>
+          </DoneChallengesMessage>
           {/* {showDiagnostico && <Diagnostic origin={coupleName} />} */}
             {/* {renderLevelBoxes()} */}
             <div style={{ paddingTop: '1rem', backgroundColor: '#ebe4f8' }}></div>
