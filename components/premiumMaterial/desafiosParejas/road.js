@@ -6,7 +6,9 @@ import OtherChallenge from "./roadComponents/otherChallenge";
 import { toast } from "react-toastify";
 import Diagnostic from "./roadComponents/Diagnostic";
 import InConstructionPopup from "./InConstructionPopup";
+import ConfirmationPopup from "./ConfirmationPopup";
 import Areas from "./roadComponents/areas";
+import { accept_task } from "../../../requests/premiumService";
 
 const HeaderContainer = styled.div`
   background-color: #ebe4f8;
@@ -669,7 +671,10 @@ const Popup = ({
     pills, 
     timeStamps,
     typeBuyer,
-    selected_road
+    selected_road,
+    openNext,
+    selectedChallenge,
+    selectedPill
   }) => {
     const router = useRouter();
     const [isOriginRoute, setIsOriginRoute] = useState(false);
@@ -685,10 +690,13 @@ const Popup = ({
       }, [router.isReady, isOriginRoute]);
 
     const handleSubmit = () => {
-        router.push(`${link}?origin=${origin}&type=${type}&index=${index}&members=${coupleMembers.join('-')}&road=${selected_road}`);
+        //router.push(`${link}?origin=${origin}&type=${type}&index=${index}&members=${coupleMembers.join('-')}&road=${selected_road}`);
+      openNext(true);
     }
 
     const handleClose = () => {
+      console.log(index);
+      console.log(selectedPill);
       onClose();
     };
 
@@ -700,30 +708,43 @@ const Popup = ({
       <PopupCard onClick={handleClose}>
         <PopupDialog onClick={(e) => e.stopPropagation()}>
           <CloseButton onClick={handleClose}>✕</CloseButton>
-          {status === 'next' && type=== 'challenge' ? 
+          {status === 'next' && type === 'challenge' ?
           <>
-          <PopUpTitle>{title}</PopUpTitle>
-          <PopUpSubTitle>{subtitle}</PopUpSubTitle>
-          {typeBuyer === "box" ? <ClockOrSubmit timestamp={null} startTime={null}  onClick={handleSubmit} /> :   
-          <ClockOrSubmit timestamp={timeStamps ? timeStamps.challengeLastUpdate : null} startTime={timeStamps ? timeStamps.currentTime : null} typeBuyer={typeBuyer ? typeBuyer : null} onClick={handleSubmit} /> }
-        
-          <OtherChallenge name={title} type="challenge"/>
+            {selectedChallenge === null | selectedChallenge === index ? 
+            <>
+              <PopUpTitle>{title}</PopUpTitle>
+              <PopUpSubTitle>{subtitle}</PopUpSubTitle>
+              {typeBuyer === "box" ? <ClockOrSubmit timestamp={null} startTime={null}  onClick={handleSubmit} /> :   
+              <ClockOrSubmit timestamp={timeStamps ? timeStamps.challengeLastUpdate : null} startTime={timeStamps ? timeStamps.currentTime : null} typeBuyer={typeBuyer ? typeBuyer : null} onClick={handleSubmit} /> }
+            
+              <OtherChallenge name={title} type="challenge"/>
+            </>
+            : 
+            <>
+              <PopUpTitle>{title}</PopUpTitle>
+              <PopUpSubTitle>Debes terminar el desafio ya elegido para comenzar uno nuevo</PopUpSubTitle>
+            </>
+            }
           </>
           : null}
           {status === 'next' && type === 'pill' ? 
           <>
-          <PopUpTitle>{title}</PopUpTitle>
-          <PopUpSubTitle>{subtitle}</PopUpSubTitle>
-          {typeBuyer === "box" ? <ClockOrSubmit timestamp={null} startTime={null}  onClick={handleSubmit}/> : 
-          <ClockOrSubmit timestamp={timeStamps ? timeStamps.pillLastUpdate : null} startTime={timeStamps ? timeStamps.currentTime : null} onClick={handleSubmit} /> }
-          
-          
-          
-          <OtherChallenge name={title} type="pill"/>
-
+            {selectedPill === null | selectedPill === index ?
+              <>
+              <PopUpTitle>{title}</PopUpTitle>
+              <PopUpSubTitle>{subtitle}</PopUpSubTitle>
+              {typeBuyer === "box" ? <ClockOrSubmit timestamp={null} startTime={null}  onClick={handleSubmit}/> : 
+              <ClockOrSubmit timestamp={timeStamps ? timeStamps.pillLastUpdate : null} startTime={timeStamps ? timeStamps.currentTime : null} onClick={handleSubmit} /> }
+              <OtherChallenge name={title} type="pill"/>
+              </>
+            : 
+            <>
+              <PopUpTitle>{title}</PopUpTitle>
+              <PopUpSubTitle>Debes terminar la dosis ya elegida para comenzar una nueva</PopUpSubTitle>
+            </>
+            }
           </>
           : null}
-          
           {status === 'done' && type === 'challenge' ? 
           <>
           <PopUpTitle>{title}</PopUpTitle>
@@ -853,6 +874,7 @@ const Popup = ({
     const [showDiagnostico, setShowDiagnostico] = useState(false);
     const [selected, setSelected] = useState("REC");
     const [isReleasedArea, setIsReleasedArea] = useState(true);
+    const [youSure, setYouSure] = useState(false);
     
 
     const [levelText, setLevelText] = useState("Nivel 1");
@@ -960,7 +982,17 @@ const Popup = ({
       fetchData();
     }, [coupleName, selected]);
 
-    
+    const onSubmitYouSure = () => {
+      accept_task(coupleName, popupContent.type, popupContent.index, selected).then(() => {
+        router.push(`${popupContent.link}?origin=${router.query.origin}&type=${popupContent.type}&index=${popupContent.index}&members=${[coupleData.coupleMemberOne, coupleData.coupleMemberTwo].join('-')}&road=${selected}`);
+      });
+    };
+
+    const onCloseYouSure = () => {
+      setShowPopup(false);
+      setYouSure(false);
+    };
+
 
     const challengesGroups = coupleData
     ? chunkArray(coupleData.challenges, 4)
@@ -1055,6 +1087,7 @@ const Popup = ({
               </DoneChallengesMessage>
             )}
             {!isReleasedArea && (<InConstructionPopup />)}
+            {youSure && (<ConfirmationPopup onCancel={onCloseYouSure} onConfirm={onSubmitYouSure}/>)}
           </Background>
         
           <Popup
@@ -1073,6 +1106,9 @@ const Popup = ({
             timeStamps={coupleData? coupleData.timeStamps : null}
             typeBuyer={coupleData? coupleData.type : null}
             selected_road={selected}
+            openNext={setYouSure}
+            selectedChallenge={coupleData ? coupleData.selected_challenge : null}
+            selectedPill={coupleData ? coupleData.selected_pill : null}
         />
         {/* Add the WarningPopup component here */}
        
