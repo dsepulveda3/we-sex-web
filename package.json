@@ -64,6 +64,7 @@
     "sweetalert2": "^11.4.33",
     "swiper": "^9.3.2",
     "tls": "^0.0.1",
+    "update-browserslist-db": "^1.0.13",
     "yup": "^1.2.0"
   },
   "devDependencies": {
