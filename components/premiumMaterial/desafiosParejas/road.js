@@ -347,6 +347,14 @@ const PopUpSubTitle = styled.div`
   font-family: "Karla", sans-serif;
   font-weight: bold;
   font-size: 1.6rem;
+
+  span {
+    font-weight: bold;
+    font-family: "Averia Libre", sans-serif;
+    background-color: var(--green); /* Set the background color to green */
+    padding: 0.5rem 1rem; /* Add padding to make the background visible */
+    color: white; /* Set the text color to white */
+  }
 `;
 
 
@@ -546,6 +554,54 @@ const DoneChallengesMessage = styled.div`
   
 `;
 
+const Icon = styled.img`
+  width: 55px;
+  margin-top: 2rem;
+`;
+
+const ImageWithText = styled.div`
+  position: relative;
+  display: inline-block;
+`;
+
+const ImageWithTextDosis = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: left;
+`;
+
+const TextOverlay = styled.div`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    background-color: var(--green);
+    border-radius: 10px;
+    padding: 3px;
+`;
+
+const TextOverlayDosis = styled.div`
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    background-color: var(--green);
+    border-radius: 10px;
+    padding: 3px;
+    @media (max-width: 540px) {
+      top: 50%;
+      left: 18%;
+    }
+`;
+
 
 const ClockTimer = ({ timestamp, startTime }) => {
   const targetTime = new Date(new Date(timestamp).getTime() + 60 * 60 * 24 * 1000);
@@ -589,7 +645,7 @@ const ClockTimer = ({ timestamp, startTime }) => {
   );
 };
 
-const ClockOrSubmit = ({ timestamp, startTime, typeBuyer, onClick }) => {
+const ClockOrSubmit = ({ timestamp, startTime, typeBuyer, onClick, selected=false }) => {
   const targetTime = timestamp ?  new Date(new Date(timestamp).getTime() + 60 * 60 * 24 * 1000) : null;
   const currentTime = new Date(startTime)
   const timeDiff = targetTime ? targetTime - currentTime : null;
@@ -624,7 +680,11 @@ const ClockOrSubmit = ({ timestamp, startTime, typeBuyer, onClick }) => {
   }
 
   
-  
+  if (selected){
+    return (
+      <PopUpButton type="submit" onClick={onClick}>¡ Continuar 😁 !</PopUpButton>
+    );
+  }
 
   return (
     <PopUpButton type="submit" onClick={onClick}>¡ Comenzar 😁 !</PopUpButton>
@@ -690,19 +750,18 @@ const Popup = ({
       }, [router.isReady, isOriginRoute]);
 
     const handleSubmit = () => {
-        //router.push(`${link}?origin=${origin}&type=${type}&index=${index}&members=${coupleMembers.join('-')}&road=${selected_road}`);
-      openNext(true);
+      if (type === "challenge" && selectedChallenge === index){
+        router.push(`${link}?origin=${origin}&type=${type}&index=${index}&members=${coupleMembers.join('-')}&road=${selected_road}`);
+      } else if (type === "pill" && selectedPill === index){
+        router.push(`${link}?origin=${origin}&type=${type}&index=${index}&members=${coupleMembers.join('-')}&road=${selected_road}`);
+      } else {
+        openNext(true);
+      }
     }
 
     const handleClose = () => {
-      console.log(index);
-      console.log(selectedPill);
       onClose();
     };
-
-    
-
-    
   
     return isVisible ? (
       <PopupCard onClick={handleClose}>
@@ -715,14 +774,15 @@ const Popup = ({
               <PopUpTitle>{title}</PopUpTitle>
               <PopUpSubTitle>{subtitle}</PopUpSubTitle>
               {typeBuyer === "box" ? <ClockOrSubmit timestamp={null} startTime={null}  onClick={handleSubmit} /> :   
-              <ClockOrSubmit timestamp={timeStamps ? timeStamps.challengeLastUpdate : null} startTime={timeStamps ? timeStamps.currentTime : null} typeBuyer={typeBuyer ? typeBuyer : null} onClick={handleSubmit} /> }
+              <ClockOrSubmit timestamp={timeStamps ? timeStamps.challengeLastUpdate : null} startTime={timeStamps ? timeStamps.currentTime : null} typeBuyer={typeBuyer ? typeBuyer : null} onClick={handleSubmit} selected={index === selectedChallenge} /> }
             
               <OtherChallenge name={title} type="challenge"/>
             </>
             : 
             <>
               <PopUpTitle>{title}</PopUpTitle>
-              <PopUpSubTitle>Debes terminar el desafio ya elegido para comenzar uno nuevo</PopUpSubTitle>
+              <PopUpSubTitle><span>Debes terminar el desafio ya elegido para comenzar uno nuevo</span></PopUpSubTitle>
+              <Icon src="/img/challenges/danger.svg" alt="Not available" />
             </>
             }
           </>
@@ -734,13 +794,14 @@ const Popup = ({
               <PopUpTitle>{title}</PopUpTitle>
               <PopUpSubTitle>{subtitle}</PopUpSubTitle>
               {typeBuyer === "box" ? <ClockOrSubmit timestamp={null} startTime={null}  onClick={handleSubmit}/> : 
-              <ClockOrSubmit timestamp={timeStamps ? timeStamps.pillLastUpdate : null} startTime={timeStamps ? timeStamps.currentTime : null} onClick={handleSubmit} /> }
+              <ClockOrSubmit timestamp={timeStamps ? timeStamps.pillLastUpdate : null} startTime={timeStamps ? timeStamps.currentTime : null} onClick={handleSubmit} selected={index === selectedPill} /> }
               <OtherChallenge name={title} type="pill"/>
               </>
             : 
             <>
               <PopUpTitle>{title}</PopUpTitle>
-              <PopUpSubTitle>Debes terminar la dosis ya elegida para comenzar una nueva</PopUpSubTitle>
+              <PopUpSubTitle><span>Debes terminar la dosis ya elegida para comenzar una nueva</span></PopUpSubTitle>
+              <Icon src="/img/challenges/danger.svg" alt="Not available" />
             </>
             }
           </>
@@ -788,10 +849,20 @@ const Popup = ({
   };
   
 
-  const ChallengeImage = ({ data, index, onClick }) => {
+  const ChallengeImage = ({ data, index, onClick, selected }) => {
     const { status, challenge  } = data;
     const { title, subtitle, link } = challenge;
     const { ML, MR } = GetMargin(index);
+
+    const smallScreenStyle = {
+      height: "20%",
+      width: "35%",
+    };
+    
+    const normalScreenStyle = {
+      height: "18%",
+      width: "18%",
+    };
   
     // Map the challenge status to the corresponding image component
     const imageComponents = {
@@ -816,13 +887,32 @@ const Popup = ({
           onClick={() => onClick({ title, subtitle, link, status, index })}
         />
       ),
+      selected: (
+        <>
+          <ImageWithText onClick={() => onClick({ title, subtitle, link, status, index })} style={{ marginLeft: ML, marginRight: MR }}>
+            <ImageStartoDoChallenge
+              src="/img/challenges/next.png"
+              style={
+                window.innerWidth <= 548
+                  ? smallScreenStyle
+                  : normalScreenStyle
+              }
+            />
+            <TextOverlay>En Curso</TextOverlay>
+          </ImageWithText>
+        </>
+      ),
     };
+
+    if (selected){
+      return imageComponents["selected"];
+    }
   
     // Render the appropriate image component based on the status
     return imageComponents[status] || null;
   };
 
-  const DosisImage = ({ data, index, onClick }) => {
+  const DosisImage = ({ data, index, onClick, selected }) => {
     const { status, pill } = data;
     const { title, link } = pill;
   
@@ -845,7 +935,21 @@ const Popup = ({
           onClick={() => onClick({ title, link, status, index })}
         />
       ),
+      selected: (
+        <>
+          <ImageWithTextDosis onClick={() => onClick({ title, link, status, index })}>
+            <ImageDosis
+              src="/img/challenges/WeSex_PastiColor.png"
+            />
+            <TextOverlayDosis>En Curso</TextOverlayDosis>
+          </ImageWithTextDosis>
+        </>
+      ),
     };
+
+    if (selected){
+      return imageComponents["selected"];
+    }
   
     return imageComponents[status] || null;
   };
@@ -1063,6 +1167,7 @@ const Popup = ({
                       data={challenge}
                       index={i + index * 4}
                       onClick={handleStartChallengeClick}
+                      selected={coupleData.selected_challenge === index * 4 + i}
                     />
                   ))}
                 </ChallengesContainer>
@@ -1074,6 +1179,7 @@ const Popup = ({
                         data={dosis}
                         index={i + index * 5}
                         onClick={handleStartDosisClick}
+                        selected={coupleData.selected_pill === index * 5 + i}
                       />
                     ))}
                 </DosisContainer>
