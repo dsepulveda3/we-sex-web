@@ -134,3 +134,9 @@ export const get_web_push_data = async (couple_name) => {
     return response;
 }
     
+export const accept_task = async (couple_name, task_type, task_index, selected_area) => {
+    const response = await basePremiumService.put(
+        `v1/CoupleGame/select-task?coupleName=${couple_name}&taskType=${task_type}&taskIndex=${task_index}&selected_area=${selected_area}`
+    );
+    return response;
+}
