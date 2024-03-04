@@ -4,13 +4,14 @@ import axios from 'axios';
 function post_get_response(account, listId, contactData, axiosConfig) {
   axios
           .post(
-            `https://api.getresponse.com/v3/custom-fields/Zyc9P`,
+            `https://api.getresponse.com/v3/contacts`,
             contactData,
             axiosConfig
           )
           .then((response) => {
             const contact = response.data.data;
             //console.log('Contacto creado/actualizado', contact);
+            console.log(contact);
           })
           .catch((error) => {
             console.error('Error creating/updating contact:', error);
@@ -59,6 +60,9 @@ export default async function handler(req, res) {
     const listId = 71; // lista Perfit guía Zonas Erógenas
     const contactData = {
       email: email,
+      campaign: {
+        campaignId: "312450203"
+      }
     };
 
     post_get_response(account, listId, contactData, axiosConfig);
