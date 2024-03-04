@@ -151,7 +151,7 @@ const ArticleDetail = () => {
                         <Col lg={4}>
                             <Published>
                                 Publicado el 15 de septiembre por<br/>
-                                <Link href={`/perfil/${"asanacup"}`}>
+                                <Link legacyBehavior href={`/perfil/${"asanacup"}`}>
                                     <a>@asanacup</a>
                                 </Link>
                             </Published>

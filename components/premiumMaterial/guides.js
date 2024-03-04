@@ -328,7 +328,7 @@ const Guides = ({ guideData }) => {
                     </Col>
                 ))} */}
                  <Col lg="3" md="4" >
-                <Link href={guideComunicacionLink}>
+                <Link legacyBehavior href={guideComunicacionLink}>
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageGuia2 src="/img/premium-material/comunicacion.png" className="img-fluid" alt='Logotipo Guía Deseo WeSex'/>
@@ -338,7 +338,7 @@ const Guides = ({ guideData }) => {
                     </Link>
                 </Col>
                 <Col lg="3" md="4" >
-                <Link href={guideDeseoLink}>
+                <Link legacyBehavior href={guideDeseoLink}>
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageGuia2 src="/img/premium-material/deseo-sexual.png" className="img-fluid" alt='Logotipo Guía Deseo WeSex'/>
@@ -348,7 +348,7 @@ const Guides = ({ guideData }) => {
                     </Link>
                 </Col>
                 <Col lg="3" md="4" >
-                <Link href={guideMenoLink}>
+                <Link legacyBehavior href={guideMenoLink}>
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageGuia2 src="/img/premium-material/menopausia.png" className="img-fluid" alt='Logotipo Guía Menopausia WeSex'/>
@@ -358,7 +358,7 @@ const Guides = ({ guideData }) => {
                     </Link>
                 </Col>
                 <Col lg="3" md="4" >
-                <Link href={guideMT2Link}>
+                <Link legacyBehavior href={guideMT2Link}>
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageGuia2 src="/img/premium-material/masturbacion2.png" className="img-fluid" alt='Logotipo Guía Masturbación Tantrica 2 WeSex'/>
@@ -369,7 +369,7 @@ const Guides = ({ guideData }) => {
                 </Col>
                 
                 <Col lg="3" md="4" >
-                <Link href={guideMTLink}>
+                <Link legacyBehavior href={guideMTLink}>
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageGuia2 src="/img/premium-material/Masturbacion_tantrica.png" className="img-fluid" alt='Logotipo Guía Masturbación Tantrica 1 WeSex'/>
@@ -380,7 +380,7 @@ const Guides = ({ guideData }) => {
                 </Col>
 
                 <Col lg="3" md="4" >
-                <Link href={guideRutinaLink}>
+                <Link legacyBehavior href={guideRutinaLink}>
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageGuia2 src="/img/premium-material/salir_rutina.png" className="img-fluid" alt='Logotipo Guía Salir de la rutina WeSex'/>
@@ -391,7 +391,7 @@ const Guides = ({ guideData }) => {
                 </Col>
 
                 <Col lg="3" md="4" >
-                    <Link href={guideZonasLink}>
+                    <Link legacyBehavior href={guideZonasLink}>
                         <GuideSquare>
                             <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                                 <AppImageGuia3 src="/img/premium-material/2ZonasErogenas (1).png" className="img-fluid" alt='Logotipo Guía Zonas Erógenas Wesex'/>
@@ -401,7 +401,7 @@ const Guides = ({ guideData }) => {
                     </Link>
                 </Col>
                 <Col lg="3" md="4" >
-                    <Link href={guideTantraLink}>
+                    <Link legacyBehavior href={guideTantraLink}>
                         <GuideSquare>
                             <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                                 <AppImageGuia2 src="/img/premium-material/Tantra (1).png" className="img-fluid" alt='Logotipo Guía Tantra Wesex'/>
@@ -411,7 +411,7 @@ const Guides = ({ guideData }) => {
                     </Link>
                 </Col>
                 <Col lg="3" md="4" >
-                <Link href={guideAnalLink}>
+                <Link legacyBehavior href={guideAnalLink}>
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageGuia1 src="/img/premium-material/como-nunca-antes-gozado.png" className="img-fluid" alt='Logotipo Guía Sexo Anal Wesex'/>

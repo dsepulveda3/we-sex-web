@@ -169,7 +169,7 @@ const DiscussionDetail = () => {
                 
                 <ArticleTitle>
                     <span className="hide-mobile">Debate de la categoría</span> 
-                    <Link href="/debates?categoria=habitos-sexuales">
+                    <Link legacyBehavior href="/debates?categoria=habitos-sexuales">
                         <a>Hábitos sexuales</a>
                     </Link>
                 </ArticleTitle>

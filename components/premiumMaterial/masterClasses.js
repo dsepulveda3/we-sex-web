@@ -186,7 +186,7 @@ const Masterclasses = () => {
                 </Text>
                 <Row data-aos="fade-left">
                 <Col lg="3" md="4" >
-                <Link href="/premium-material/masters/masterclass-1">
+                <Link legacyBehavior href="/premium-material/masters/masterclass-1">
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageGuia1 src="/img/premium-material/Masterclass (1).png" className="img-fluid" alt='Imagen MasterClass 1 WeSex'/>

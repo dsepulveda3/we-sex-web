@@ -339,7 +339,7 @@ const ArticleDetail = ({ articleItem }) => {
         <ContainerAll >
         <ArticleTitle>
           <span>Articulo de la categoría </span>
-          <Link
+          <Link legacyBehavior
             href={`/articulos?categoria=${articleItem?.category.toLowerCase()}`}
           >
             <a>{articlesCategoriesTitle[articleItem?.category]}</a>

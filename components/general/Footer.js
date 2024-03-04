@@ -95,19 +95,19 @@ const Footer = () => {
             <Col xs={12} sm={6} md={6} lg={3}>
               <Title>Recomendado</Title>
               <div style={{ display: 'grid' }}>
-                <Link href='/articulos?categoria=techniques'>
+                <Link legacyBehavior href='/articulos?categoria=techniques'>
                   <WebLink>😍 Técnicas</WebLink>
                 </Link>
-                <Link href='/articulos?categoria=sex-toys'>
+                <Link legacyBehavior href='/articulos?categoria=sex-toys'>
                   <WebLink>🧸 Juguetes Sexuales</WebLink>
                 </Link>
-                <Link href='/debates?categoria=hot'>
+                <Link legacyBehavior href='/debates?categoria=hot'>
                   <WebLink>🔥 Debates Hot</WebLink>
                 </Link>
-                <Link href='/debates?categoria=fantasy'>
+                <Link legacyBehavior href='/debates?categoria=fantasy'>
                   <WebLink>💭 Fantasías</WebLink>
                 </Link>
-                <Link href='/debates?categoria=bizarre'>
+                <Link legacyBehavior href='/debates?categoria=bizarre'>
                   <WebLink>🐙 Debates bizarros</WebLink>
                 </Link>
               </div>
@@ -115,19 +115,19 @@ const Footer = () => {
             <Col xs={12} sm={6} md={6} lg={3}>
               <Title>Secciones</Title>
               <div style={{ display: 'grid' }}>
-                <Link href='/articulos'>
+                <Link legacyBehavior href='/articulos'>
                   <WebLink>🍑 Artículos</WebLink>
                 </Link>
-                <Link href='/debates'>
+                <Link legacyBehavior href='/debates'>
                   <WebLink>😎 Debates</WebLink>
                 </Link>
-                <Link href='/sexionario'>
+                <Link legacyBehavior href='/sexionario'>
                   <WebLink>📖 Sexionario</WebLink>
                 </Link>
-                <Link href='/sexfaqs'>
+                <Link legacyBehavior href='/sexfaqs'>
                   <WebLink>🧿 SexFaqs</WebLink>
                 </Link>
-                <Link href='/descargar'>
+                <Link legacyBehavior href='/descargar'>
                   <WebLink>🚀 Descargar App</WebLink>
                 </Link>
               </div>
@@ -136,16 +136,16 @@ const Footer = () => {
             <Col xs={12} sm={12} md={6} lg={3}>
               <Title>Profesionales</Title>
               <div style={{ display: 'grid' }}>
-                <Link href='/perfil/lic.ceciliace'>
+                <Link legacyBehavior href='/perfil/lic.ceciliace'>
                   <WebLink>👅 Lic. Cecilia Ce</WebLink>
                 </Link>
-                <Link href='/perfil/sexualidadeslibres'>
+                <Link legacyBehavior href='/perfil/sexualidadeslibres'>
                   <WebLink>👅 Dra. Bárbara García</WebLink>
                 </Link>
-                <Link href='/perfil/voicesofbrotherhood'>
+                <Link legacyBehavior href='/perfil/voicesofbrotherhood'>
                   <WebLink>👅 Ricardo Rivera</WebLink>
                 </Link>
-                <Link href='/perfil/perezjose'>
+                <Link legacyBehavior href='/perfil/perezjose'>
                   <WebLink>👅 Josë Perez</WebLink>
                 </Link>
               </div>
@@ -161,10 +161,10 @@ const Footer = () => {
           padding: '.5rem',
         }}
       >
-        <Link href='/politicas-de-privacidad'>
+        <Link legacyBehavior href='/politicas-de-privacidad'>
           <a>Politicas de Privacidad.</a>
         </Link>
-        <Link href='/'>
+        <Link legacyBehavior href='/'>
           <a style={{ marginLeft: '0.5rem' }}>Todos los derechos reservados.</a>
         </Link>
       </div>

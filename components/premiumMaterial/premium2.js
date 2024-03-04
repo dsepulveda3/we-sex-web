@@ -282,7 +282,7 @@ const Guides = () => {
                 <Row data-aos="fade-left">
                 {/* <Col lg="4" md="12" > */}
                 <Col lg="4" md="12" >
-                <Link href="/premium-material/desafios-para-parejas/testing?origin=Argentina">
+                <Link legacyBehavior href="/premium-material/desafios-para-parejas/testing?origin=Argentina">
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageBomb src="/img/premium-material/rutina_bomba.png" className="img-fluid" alt='Logotipo guias WeSex'/>
@@ -301,7 +301,7 @@ const Guides = () => {
                     {showPopUp && <PopUpGeneral setShowPopup={setShowPopUp}/>} {/* Render PopUpGeneral component conditionally */}
                 </Col>
                 <Col lg="4" md="12" >
-                <Link href="/premium-material/guides">
+                <Link legacyBehavior href="/premium-material/guides">
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageGuia1 src="/img/premium-material/GuiasGeneral (1).png" className="img-fluid" alt='Logotipo guias WeSex'/>
@@ -312,7 +312,7 @@ const Guides = () => {
                 </Col>
                 {/* <Col lg="4" md="12" > */}
                 <Col lg="4" md="12" >
-                <Link href="/premium-material/masters">
+                <Link legacyBehavior href="/premium-material/masters">
                     <GuideSquare>
                         <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageGuia2 src="/img/premium-material/MasterGeneral (1).png" className="img-fluid" alt='Logotipo MasterClasses WeSex'/>
@@ -323,7 +323,7 @@ const Guides = () => {
                 </Col>
                 {isSubscribed ? null : (  // Conditionally render based on isSubscribed
                 <Col lg="4" md="12">
-                    <Link href="/premium-material/packs">
+                    <Link legacyBehavior href="/premium-material/packs">
                     <GuideSquare>
                     <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageGuia2 src="/img/premium-material/packs (1).png" className="img-fluid" alt='Logotipo Packs Orgásmicos WeSex'/>
@@ -335,7 +335,7 @@ const Guides = () => {
                 )}
                 {!isSubscribed ? null : (  // Conditionally render based on isSubscribed
                 <Col lg="4" md="12">
-                    <Link href="/premium-material/benefits">
+                    <Link legacyBehavior href="/premium-material/benefits">
                     <GuideSquare>
                     <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                             <AppImageGuia3 src="/img/premium-material/cupon.png" className="img-fluid"/>

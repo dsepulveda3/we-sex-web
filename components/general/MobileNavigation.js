@@ -79,7 +79,7 @@ const MobileNavigation = ({type}) => {
       <Container>
         <Row className="pb-1 pt-1">
           <Col xs={3} sm={3}>
-            <Link href="/">
+            <Link legacyBehavior href="/">
               <a onClick={() => handleIconClick('/', 'inicio')}>
                 <Icon src={clickedIcons.home ? '/img/icons/home2-icon-black.svg' : '/img/icons/home2-icon-white.svg'} active={activeLink === '/'} alt='home-logo'/>
                 {activeLink === '/' ? <BoldText>Inicio</BoldText> : 'Inicio'}
@@ -87,7 +87,7 @@ const MobileNavigation = ({type}) => {
             </Link>
           </Col>
           <Col xs={3} sm={3}>
-            <Link href="/debates">
+            <Link legacyBehavior href="/debates">
               <a onClick={() => handleIconClick('/debates', 'debates')}>
                 <Icon src={clickedIcons.debates ? '/img/icons/debate2-icon-black.svg' : '/img/icons/debate2-icon-white.svg'} active={activeLink === '/debates'} alt='discussions-logo' />
                 {activeLink === '/debates' ? <BoldText>Debates</BoldText> : 'Debates'}
@@ -95,7 +95,7 @@ const MobileNavigation = ({type}) => {
             </Link>
           </Col>
           <Col xs={3} sm={3}>
-            <Link href="/articulos">
+            <Link legacyBehavior href="/articulos">
               <a onClick={() => handleIconClick('/articulos', 'articulos')}>
                 <Icon src={clickedIcons.articulos ? '/img/icons/article2-icon-black.svg' : '/img/icons/article2-icon-white.svg'} active={activeLink === '/articulos'} alt='articles-logo' />
                 {activeLink === '/articulos' ? <BoldText>Artículos</BoldText> : 'Artículos'}
@@ -103,7 +103,7 @@ const MobileNavigation = ({type}) => {
             </Link>
           </Col>
           <Col xs={3} sm={3}>
-          <Link href="/premium-material">
+          <Link legacyBehavior href="/premium-material">
             {/* <Link href="/buscar?autofocus=true"> */}
             <a onClick={() => handleIconClick('/premium-material', 'premium-material')}>
               {/* <a onClick={() => handleIconClick('/buscar?autofocus=true', 'premium')}> */}
@@ -121,7 +121,7 @@ const MobileNavigation = ({type}) => {
         <Container>
           <Row className="pb-1 pt-1">
             <Col xs={6} sm={6}>
-              <Link href={`/premium-material/desafios-para-parejas/road?origin=${router.query.origin}`}>
+              <Link legacyBehavior href={`/premium-material/desafios-para-parejas/road?origin=${router.query.origin}`}>
                 <a onClick={() => handleIconClick(`/premium-material/desafios-para-parejas/road?origin=${router.query.origin}`, 'road')}>
                   <Icon src={clickedIcons.road ? '/img/icons/home2-icon-black.svg' : '/img/icons/home2-icon-white.svg'} active={activeLink === '/premium-material/desafios-para-parejas/road'} alt='home-logo'/>
                   {activeLink === '/premium-material/desafios-para-parejas/road' ? <BoldText>Inicio</BoldText> : 'Inicio'}
@@ -129,7 +129,7 @@ const MobileNavigation = ({type}) => {
               </Link>
             </Col>
             <Col xs={6} sm={6}>
-              <Link href={`/premium-material/guides?origin=${router.query.origin}`}>
+              <Link legacyBehavior href={`/premium-material/guides?origin=${router.query.origin}`}>
                 <a onClick={() => handleIconClick(`/premium-material/guides?origin=${router.query.origin}`, 'coupleGuides')}>
                   {/* <a onClick={() => handleIconClick('/buscar?autofocus=true', 'premium')}> */}
                     <Icon src={clickedIcons.coupleGuides ? '/img/icons/open-book.svg' : '/img/icons/open-book_unfilled.svg'} active={activeLink.includes('/premium-material/guides')} alt='premium-material-logo' />

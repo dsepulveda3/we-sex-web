@@ -80,7 +80,7 @@ const Comment = ({ comment }) => {
             src='/img/articles/article-background.jpg'
             alt='Profile picture'
           />
-          <Link href={`/perfil/${comment?.user?.user}`}>
+          <Link legacyBehavior href={`/perfil/${comment?.user?.user}`}>
             <a>@{comment?.user?.user}</a>
           </Link>
         </Col>

@@ -293,7 +293,7 @@ const Packs = ({ packs }) => {
                 <Row data-aos="fade-left">
                 {packs.map((pack) => (
                     <Col lg="3" md="4" key={pack._id}>
-                        <Link href={`/premium-material/packs/landing/${pack.name}`}>
+                        <Link legacyBehavior href={`/premium-material/packs/landing/${pack.name}`}>
                             <GuideSquare>
                                 <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                                     <AppImagePack src="/img/premium-material/giftbox.png" className="img-fluid"/>
@@ -304,7 +304,7 @@ const Packs = ({ packs }) => {
                     </Col>
                 ))}
                 <Col lg="3" md="4" >
-                    <Link href="/premium-material/packs/pack9-all-tantra">
+                    <Link legacyBehavior href="/premium-material/packs/pack9-all-tantra">
                         <GuideSquare>
                             <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                                 <AppImagePack src="/img/premium-material/giftbox.png" className="img-fluid"/>
@@ -314,7 +314,7 @@ const Packs = ({ packs }) => {
                     </Link>
                 </Col>
                 <Col lg="3" md="4" >
-                    <Link href="/premium-material/packs/pack8-MT-R-Z-T-A">
+                    <Link legacyBehavior href="/premium-material/packs/pack8-MT-R-Z-T-A">
                         <GuideSquare>
                             <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                                 <AppImagePack src="/img/premium-material/giftbox.png" className="img-fluid"/>
@@ -325,7 +325,7 @@ const Packs = ({ packs }) => {
                 </Col>
 
                 <Col lg="3" md="4" >
-                    <Link href="/premium-material/packs/pack6-rutina-zonas-tantra-anal">
+                    <Link legacyBehavior href="/premium-material/packs/pack6-rutina-zonas-tantra-anal">
                         <GuideSquare>
                             <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                                 <AppImagePack src="/img/premium-material/giftbox.png" className="img-fluid"/>
@@ -336,7 +336,7 @@ const Packs = ({ packs }) => {
                 </Col>
                     
                 <Col lg="3" md="4" >
-                    <Link href="/premium-material/packs/pack5-rutina-zonas">
+                    <Link legacyBehavior href="/premium-material/packs/pack5-rutina-zonas">
                         <GuideSquare>
                             <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                                 <AppImagePack src="/img/premium-material/giftbox.png" className="img-fluid"/>
@@ -347,7 +347,7 @@ const Packs = ({ packs }) => {
                 </Col>
 
                 <Col lg="3" md="4" >
-                    <Link href="/premium-material/packs/pack4-rutina-tantra-anal">
+                    <Link legacyBehavior href="/premium-material/packs/pack4-rutina-tantra-anal">
                         <GuideSquare>
                             <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                                 <AppImagePack src="/img/premium-material/giftbox.png" className="img-fluid"/>
@@ -358,7 +358,7 @@ const Packs = ({ packs }) => {
                 </Col>
 
                 <Col lg="3" md="4" >
-                    <Link href="/premium-material/packs/pack1">
+                    <Link legacyBehavior href="/premium-material/packs/pack1">
                         <GuideSquare>
                             <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                                 <AppImagePack src="/img/premium-material/giftbox.png" className="img-fluid"/>
@@ -369,7 +369,7 @@ const Packs = ({ packs }) => {
                     </Link>
                 </Col>
                 <Col lg="3" md="4" >
-                    <Link href="/premium-material/packs/pack2">
+                    <Link legacyBehavior href="/premium-material/packs/pack2">
                         <GuideSquare>
                             <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                                 <AppImagePack src="/img/premium-material/giftbox.png" className="img-fluid"/>
@@ -390,7 +390,7 @@ const Packs = ({ packs }) => {
                     </Link>
                 </Col> */}
                 <Col lg="3" md="4" >
-                    <Link href="/premium-material/packs/pack3">
+                    <legacyBehavior href="/premium-material/packs/pack3">
                         <GuideSquare>
                             <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                                 <AppImageGiftBox src="/img/premium-material/giftbox.png" className="img-fluid"/>

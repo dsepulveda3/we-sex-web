@@ -355,10 +355,10 @@ const BotonVerde = styled(Boton)`
             {showPopup && (
                 <PopUpSubscription setShowPopup={setShowPopup} />
             )}
-            <Link href={link_promo}>
+            <Link legacyBehavior href={link_promo}>
               <Text3>{text_promo1_1}<span>{text_promo1Span}</span> {text_promo1_2}</Text3>
             </Link>
-            <Link href={link_promo2}>
+            <Link legacyBehavior href={link_promo2}>
               <Text3>{text_promo2_1}<span>{text_promo2Span}</span> {text_promo2_2}</Text3>
             </Link>
           </Container>

@@ -337,7 +337,7 @@ const GuidesList = () => {
                 <Row data-aos="fade-left">
                   {guides.map((guide, index) => (
                       <Col lg="3" md="4" key={index} >
-                      <Link href={`${isSubscribedUrlPrefix}/${guide._id}`}>
+                      <Link legacyBehavior href={`${isSubscribedUrlPrefix}/${guide._id}`}>
                           <GuideSquare>
                               <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                                   {guideImageSizeParser(guide.alternativeTitle, `https://we-sex-premium.s3.amazonaws.com/${guide.coverImage.key}`)}
