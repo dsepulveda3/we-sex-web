@@ -17,7 +17,24 @@ function post_perfit(account, listId, contactData, axiosConfig) {
           });
 };
 
+function post_get_response(account, listId, contactData, axiosConfig) {
+  axios
+          .post(
+            `https://api.myperfit.com/v2/${account}/lists/${listId}/contacts`,
+            contactData,
+            axiosConfig
+          )
+          .then((response) => {
+            const contact = response.data.data;
+            //console.log('Contacto creado/actualizado', contact);
+          })
+          .catch((error) => {
+            console.error('Error creating/updating contact:', error);
+          });
+};
+
 export default async function handler(req, res) {
+  
   if (req.method === 'POST') {
     const payload = req.body;
     
