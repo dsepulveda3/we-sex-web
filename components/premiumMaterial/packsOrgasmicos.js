@@ -390,7 +390,7 @@ const Packs = ({ packs }) => {
                     </Link>
                 </Col> */}
                 <Col lg="3" md="4" >
-                    <legacyBehavior href="/premium-material/packs/pack3">
+                    <Link legacyBehavior href="/premium-material/packs/pack3">
                         <GuideSquare>
                             <ContainerContentGuide className="icon-box" data-aos="zoom-in" data-aos-delay="50">
                                 <AppImageGiftBox src="/img/premium-material/giftbox.png" className="img-fluid"/>
