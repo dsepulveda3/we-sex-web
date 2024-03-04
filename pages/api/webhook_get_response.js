@@ -61,7 +61,7 @@ export default async function handler(req, res) {
     const contactData = {
       email: email,
       campaign: {
-        campaignId: "312450203"
+        campaignId: "Zyc9P"
       }
     };
 
