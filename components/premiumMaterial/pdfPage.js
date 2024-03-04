@@ -33,7 +33,7 @@ const Background = styled.div`
 
 const PDFViewer = ({pdfItem, demo, setLoaded}) => {
   const [pdfUrl, setPdfUrl] = useState("");
-  const containerwd = 1.5;
+  var containerwd = 1.5;
   const [isPhoneScreen, setIsPhoneScreen] = useState(false);
   const [hideGuide, setHideGuide] = useState(false);
   const [numPages, setNumPages] = useState(null);
