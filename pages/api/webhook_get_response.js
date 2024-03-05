@@ -1,7 +1,7 @@
 import crypto from 'crypto';
 import axios from 'axios';
 
-function post_get_response(account, listId, contactData, axiosConfig) {
+function post_get_response(contactData, axiosConfig) {
   axios
           .post(
             `https://api.getresponse.com/v3/contacts`,
@@ -26,9 +26,9 @@ export default async function handler(req, res) {
     // const payload = JSON.parse(req.body);
     
     // const apiKeyPayHip = 'e8d8578359860447414fbcaefec9fd179fb48de5'; // Replace with your actual API key
-    const account = 'wesex';
+    // const account = 'wesex';
     const apiKeyGetResponse = 'qigcpuw4jm34wrukx4s72lx9agems0si';
-    const axiosConfig = { headers: { Authorization: `Bearer ${apiKeyGetResponse}` } };
+    const axiosConfig = { headers: { "X-Auth-Token": `api-key ${apiKeyGetResponse}` } };
 
     //console.log('Body', payload);
     //console.log('Email:', payload.email);
@@ -57,7 +57,7 @@ export default async function handler(req, res) {
     productName === 
       'EMD - ¡GRACIAS! Presiona el botón "Descargar ahora" para recibir la guía de zonas erógenas por mail y empezar a disfrutar.'
   ) {
-    const listId = 71; // lista Perfit guía Zonas Erógenas
+    // const listId = 71; // lista Perfit guía Zonas Erógenas
     const contactData = {
       email: email,
       campaign: {
@@ -65,7 +65,7 @@ export default async function handler(req, res) {
       }
     };
 
-    post_get_response(account, listId, contactData, axiosConfig);
+    post_get_response(contactData, axiosConfig);
 
   }
   
