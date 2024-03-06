@@ -442,7 +442,7 @@ const NuestroReflejo = () => {
                                 <CardHeader onClick={toggle1} style={{backgroundColor: "white "}}>
                                 <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
                                     <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
-                                    <TitleQuestion style={{fontSize: "1.4rem"}}>Paso 1</TitleQuestion>
+                                    <TitleQuestion style={{fontSize: "1.4rem"}}>Paso 1 - Incrementando la calentura</TitleQuestion>
                                 </div>
                                 <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
                                 </CardHeader>
@@ -460,7 +460,7 @@ const NuestroReflejo = () => {
                                 <CardHeader onClick={toggle2} style={{backgroundColor: "white "}}>
                                 <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
                                     <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
-                                    <TitleQuestion style={{fontSize: "1.4rem"}}>Paso 2</TitleQuestion>
+                                    <TitleQuestion style={{fontSize: "1.4rem"}}>Paso 2 - Sacandonos la ropa</TitleQuestion>
                                 </div>
                                 <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
                                 </CardHeader>
@@ -478,7 +478,7 @@ const NuestroReflejo = () => {
                                 <CardHeader onClick={toggle3} style={{backgroundColor: "white "}}>
                                 <div className="icon-box" style={{ display: "flex", alignItems: "center" }} data-aos="zoom-in" data-aos-delay="50">
                                     <AppImageDudasFrecuentes src="img/ico/Dudas_frecuentes.png" className="img-fluid" alt="" />
-                                    <TitleQuestion style={{fontSize: "1.4rem"}}>Paso 3</TitleQuestion>
+                                    <TitleQuestion style={{fontSize: "1.4rem"}}>Paso 3 - Acariciandonos desnudos</TitleQuestion>
                                 </div>
                                 <i className={isOpen ? 'bx bx-chevron-up icon-close' : 'bx bx-chevron-down icon-show'}></i>
                                 </CardHeader>
@@ -501,7 +501,7 @@ const NuestroReflejo = () => {
                             </Text2>
                     </Row>
             </Container>
-            <BotonNotificarDone> ¡Notificar que terminamos el desafío! </BotonNotificarDone>
+            <BotonNotificarDone href="https://airtable.com/appVSREVOyy0SOY9u/pagAK6kk9eoYtFocV/form" target="_blank"> ¡Notificar que terminamos el desafío! </BotonNotificarDone>
             {/* <Notificar2 message='¡ Notificar que finalizamos el desafío !' 
             url_m1={`https://airtable.com/appVSREVOyy0SOY9u/pagXuvS4lqdA03OGz/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member1}&prefill_Nombre+Desafio=${challengeName}`}
             url_m2={`https://airtable.com/appVSREVOyy0SOY9u/pagXuvS4lqdA03OGz/form?prefill_Nombre+de+la+pareja=${origin}&prefill_Nombre+Miembro=${member2}&prefill_Nombre+Desafio=${challengeName}`}/> */}
