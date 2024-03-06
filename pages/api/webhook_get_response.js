@@ -37,6 +37,7 @@ export default async function handler(req, res) {
     // Example: Accessing the email and product name
     const email = payload.email;
     const productName = payload.items[0].product_name;
+    console.log(productName);
 
     // const email = "diegosepulv5@gmail.com"
     // const productName = "Guía Zonas Erógenas - Aprende a dar placer"
@@ -70,7 +71,7 @@ export default async function handler(req, res) {
     };
 
 
-    await post_get_response(contactData, axiosConfig);
+    post_get_response(contactData, axiosConfig);
   
 
   // }
@@ -78,7 +79,8 @@ export default async function handler(req, res) {
   
 
     //console.log('Successful request');
-    res.status(200).end(); // Return a 200 status code to acknowledge the webhook request
+    // res.status(200).end(); // Return a 200 status code to acknowledge the webhook request
+    res.status(200).json(payload);
   } else {
     //console.log('Unsupported method');
     res.status(405).json({ message: 'Unsupported method' });
