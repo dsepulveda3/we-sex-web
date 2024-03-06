@@ -734,7 +734,9 @@ const Popup = ({
     selected_road,
     openNext,
     selectedChallenge,
-    selectedPill
+    selectedPill,
+    selected_challenge_on,
+    selected_pill_on
   }) => {
     const router = useRouter();
     const [isOriginRoute, setIsOriginRoute] = useState(false);
@@ -769,7 +771,7 @@ const Popup = ({
           <CloseButton onClick={handleClose}>✕</CloseButton>
           {status === 'next' && type === 'challenge' ?
           <>
-            {selectedChallenge === null | selectedChallenge === index ? 
+            {selectedChallenge === null || (selectedChallenge === index && selected_challenge_on === selected_road) ? 
             <>
               <PopUpTitle>{title}</PopUpTitle>
               <PopUpSubTitle>{subtitle}</PopUpSubTitle>
@@ -789,7 +791,7 @@ const Popup = ({
           : null}
           {status === 'next' && type === 'pill' ? 
           <>
-            {selectedPill === null | selectedPill === index ?
+            {selectedPill === null || (selectedPill === index && selected_pill_on === selected_road) ?
               <>
               <PopUpTitle>{title}</PopUpTitle>
               <PopUpSubTitle>{subtitle}</PopUpSubTitle>
@@ -849,7 +851,7 @@ const Popup = ({
   };
   
 
-  const ChallengeImage = ({ data, index, onClick, selected }) => {
+  const ChallengeImage = ({ data, index, onClick, selected, selected_road, choosen_road }) => {
     const { status, challenge  } = data;
     const { title, subtitle, link } = challenge;
     const { ML, MR } = GetMargin(index);
@@ -904,7 +906,7 @@ const Popup = ({
       ),
     };
 
-    if (selected){
+    if (selected && selected_road === choosen_road){
       return imageComponents["selected"];
     }
   
@@ -912,7 +914,7 @@ const Popup = ({
     return imageComponents[status] || null;
   };
 
-  const DosisImage = ({ data, index, onClick, selected }) => {
+  const DosisImage = ({ data, index, onClick, selected, selected_road, choosen_road }) => {
     const { status, pill } = data;
     const { title, link } = pill;
   
@@ -947,7 +949,7 @@ const Popup = ({
       ),
     };
 
-    if (selected){
+    if (selected && selected_road === choosen_road){
       return imageComponents["selected"];
     }
   
@@ -1168,6 +1170,8 @@ const Popup = ({
                       index={i + index * 4}
                       onClick={handleStartChallengeClick}
                       selected={coupleData.selected_challenge === index * 4 + i}
+                      selected_road={coupleData.selected_challenge_area}
+                      choosen_road={selected}
                     />
                   ))}
                 </ChallengesContainer>
@@ -1180,6 +1184,8 @@ const Popup = ({
                         index={i + index * 5}
                         onClick={handleStartDosisClick}
                         selected={coupleData.selected_pill === index * 5 + i}
+                        selected_road={coupleData.selected_pill_area}
+                        choosen_road={selected}
                       />
                     ))}
                 </DosisContainer>
@@ -1215,6 +1221,8 @@ const Popup = ({
             openNext={setYouSure}
             selectedChallenge={coupleData ? coupleData.selected_challenge : null}
             selectedPill={coupleData ? coupleData.selected_pill : null}
+            selected_challenge_on={coupleData ? coupleData.selected_challenge_area : null}
+            selected_pill_on={coupleData ? coupleData.selected_pill_area : null}
         />
         {/* Add the WarningPopup component here */}
        
