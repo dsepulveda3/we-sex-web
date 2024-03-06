@@ -44,23 +44,23 @@ export default async function handler(req, res) {
 
   
 
-  if (
-    productName === 'Guía Zonas Erógenas - Aprende a dar placer' ||
-    productName ===
-      '¡GRACIAS! Presioná el botón "Descargar ahora" para recibir la guía de zonas erógenas por mail y empezar a disfrutar.' ||
-    productName === 'EMA - Guía Zonas Erógenas - Aprende a dar placer' ||
-    productName === 
-      'EMA - ¡GRACIAS! Presioná el botón "Descargar ahora" para recibir la guía de zonas erógenas por mail y empezar a disfrutar.' ||
-    productName === 'EMB - Guía Zonas Erógenas - Aprende a dar placer' ||
-    productName === 
-      'EMB - ¡GRACIAS! Presiona el botón "Descargar ahora" para recibir la guía de zonas erógenas por mail y empezar a disfrutar.' ||
-    productName === 'EMC - Guía Zonas Erógenas - Aprende a dar placer' ||
-    productName === 
-      'EMC - ¡GRACIAS! Presiona el botón "Descargar ahora" para recibir la guía de zonas erógenas por mail y empezar a disfrutar.' ||
-    productName === 'EMD - Guía Zonas Erógenas - Aprende a dar placer' ||
-    productName === 
-      'EMD - ¡GRACIAS! Presiona el botón "Descargar ahora" para recibir la guía de zonas erógenas por mail y empezar a disfrutar.'
-  ) {
+  // if (
+  //   productName === 'Guía Zonas Erógenas - Aprende a dar placer' ||
+  //   productName ===
+  //     '¡GRACIAS! Presioná el botón "Descargar ahora" para recibir la guía de zonas erógenas por mail y empezar a disfrutar.' ||
+  //   productName === 'EMA - Guía Zonas Erógenas - Aprende a dar placer' ||
+  //   productName === 
+  //     'EMA - ¡GRACIAS! Presioná el botón "Descargar ahora" para recibir la guía de zonas erógenas por mail y empezar a disfrutar.' ||
+  //   productName === 'EMB - Guía Zonas Erógenas - Aprende a dar placer' ||
+  //   productName === 
+  //     'EMB - ¡GRACIAS! Presiona el botón "Descargar ahora" para recibir la guía de zonas erógenas por mail y empezar a disfrutar.' ||
+  //   productName === 'EMC - Guía Zonas Erógenas - Aprende a dar placer' ||
+  //   productName === 
+  //     'EMC - ¡GRACIAS! Presiona el botón "Descargar ahora" para recibir la guía de zonas erógenas por mail y empezar a disfrutar.' ||
+  //   productName === 'EMD - Guía Zonas Erógenas - Aprende a dar placer' ||
+  //   productName === 
+  //     'EMD - ¡GRACIAS! Presiona el botón "Descargar ahora" para recibir la guía de zonas erógenas por mail y empezar a disfrutar.'
+  // ) {
     // const listId = 71; // lista Perfit guía Zonas Erógenas
     const contactData = {
       email: email,
@@ -73,7 +73,7 @@ export default async function handler(req, res) {
     await post_get_response(contactData, axiosConfig);
   
 
-  }
+  // }
   
   
 
