@@ -761,6 +761,11 @@ const Popup = ({
       }
     }
 
+    const handleReSee = () => {
+      router.push(`${link}?origin=${origin}&type=${type}&index=${index}&members=${coupleMembers.join('-')}&road=${selected_road}`);
+    };
+
+
     const handleClose = () => {
       onClose();
     };
@@ -813,7 +818,7 @@ const Popup = ({
           <PopUpTitle>{title}</PopUpTitle>
           <PopUpSubTitle>{subtitle}</PopUpSubTitle>
           <PopUpDone style={{marginTop: "1rem"}}> YA COMPLETASTE ESTE DESAFÍO :)</PopUpDone>
-          <PopUpDoAnyways onClick={handleSubmit}>Quiero verlo de todas formas</PopUpDoAnyways>
+          <PopUpDoAnyways onClick={handleReSee}>Quiero verlo de todas formas</PopUpDoAnyways>
           <br/>
           <Learning style={{marginTop: "1rem"}}> <span>Aprendizaje de pareja: </span>
        
@@ -826,7 +831,7 @@ const Popup = ({
           <PopUpTitle>{title}</PopUpTitle>
           <PopUpSubTitle>{subtitle}</PopUpSubTitle>
           <PopUpDone style={{marginTop: "1rem"}}> YA COMPLETASTE ESTA DOSIS :)</PopUpDone>
-          <PopUpDoAnyways onClick={handleSubmit}>Quiero verlo de todas formas</PopUpDoAnyways>
+          <PopUpDoAnyways onClick={handleReSee}>Quiero verlo de todas formas</PopUpDoAnyways>
           <br />
           <Learning style={{marginTop: "1rem"}}><span>Aprendizaje de pareja: </span>{pills[0][index].comment}</Learning>
           
