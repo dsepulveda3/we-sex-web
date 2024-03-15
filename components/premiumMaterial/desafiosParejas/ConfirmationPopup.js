@@ -85,7 +85,7 @@ const ConfirmationPopup = ({ onCancel, onConfirm }) => {
         <ContentContainer>
           <Icon src="/img/challenges/task.svg" alt="Under construction" />
           <DoneChallengesMessage>
-            <span>¿Están seguros? Seleccionar una actividad bloquea las demas hasta que este completada</span>
+            <span>¿Deseas comenzar la actividad? Podrás continuar con las siguientes una vez esta haya sido completada</span>
           </DoneChallengesMessage>
         </ContentContainer>
         <div>
