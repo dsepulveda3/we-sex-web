@@ -179,10 +179,12 @@ const FirstBanner = ({titleText, titleSpan, titleText2, titleSpan2, price_before
                         <Col lg={7} className="align-items-center">
                             <Content>
                                 <Title>{titleText} <span>{titleSpan}</span> {titleText2} <span>{titleSpan2}</span></Title>
-                                <Text style={{fontWeight: "bold", textDecoration: "underline"}}>¡Descuento 50%OFF solo x hoy!</Text>
+                                <Text style={{fontWeight: "bold", textDecoration: "underline", fontSize: "3rem"}}>¡Descuento 50%OFF solo x hoy!</Text>
                                 <Text>
                                     <span><strong>{price}</strong></span> <br/>
+                                    <PriceBefore>AR$ 5.600 / U$D 12  </PriceBefore>
                                     {description1} <PriceBefore>{price_before}  </PriceBefore>
+                                    
                                 </Text>
                                 <Text>
                                     <span>{descriptionSpan}</span>
