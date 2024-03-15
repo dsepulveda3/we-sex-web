@@ -335,7 +335,9 @@ const BotonVerde = styled(Boton)`
 
         {hasPromo && (
           <Container style={{ paddingBottom: "6rem", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center"}}>
+            
             <Text4>Cualquier producto comprado será enviado a tu email</Text4>
+            <Text style={{fontWeight: "bold", textDecoration: "underline"}}>¡Descuento 50%OFF solo x hoy!</Text>
             {!isVisible && (
                 <BotonVerde onClick={handleClick}>{buy_just}</BotonVerde>
             )}
