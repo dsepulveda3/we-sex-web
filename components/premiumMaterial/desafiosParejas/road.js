@@ -64,10 +64,22 @@ const Header = styled.div`
     font-weight: bold;
     border-radius: 20px; /* Apply border-radius to all corners */
     display: flex;
-    flex-direction: column;
-    justify-content: center; /* Vertically center content */
-    align-items: center;
+    justify-content: space-between; /* Evenly distribute space between children */
+    align-items: center; /* Vertically center content */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Increased spread and blur for more shadow */
+`;
+
+const Part1Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto; /* Center horizontally */
+`;
+
+const ImageInfo = styled.img`
+    height: 30%;
+    filter: invert(100%);
+    margin-right: 1rem;
 `;
 
 
@@ -202,6 +214,19 @@ const ImageDoneChallengeCounterNumber = styled.div`
   }
 `;
 
+const ImageDoneChallengeDefinition = styled.img`
+    height: 11%;
+    width: 9%;
+    padding: 0rem;
+
+    @media (max-width: 540px){
+        height: 20%;
+        width: 20%;
+        padding: 0.9rem;
+    }
+`;
+
+
 const DosisContainer = styled.div`
     // border: 2px solid green;
     margin-top: 5rem;
@@ -246,6 +271,19 @@ const ImageDosisCounter = styled.img`
         height: 31%;
         width: 31%;
         padding: 0.9rem;
+    }
+`;
+
+const ImageDosisCounterDefinition = styled.img`
+    height: 9%;
+    width: 9%;
+    padding: 0.3rem;
+    transform: rotate(0deg);
+
+    @media (max-width: 540px){
+        height: 15%;
+        width: 15%;
+        margin-left: 0.5rem;
     }
 `;
 
@@ -707,6 +745,29 @@ const PopupContent2 = () => {
   );
 };
 
+const PopupContent3 = () => {
+
+  return (
+    <>
+      <br />
+      
+      <InfoText>
+      <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
+        <ImageDoneChallengeDefinition src="/img/challenges/done_wesex.png" />
+        <div style={{fontWeight:"bold", marginLeft: "1rem" }}><span>Desafios:</span></div> Los desafios, ubicados al lado izquierdo de la pantalla, tienen una duración de entre 40 y 1hr de realización.
+      </div>
+      <br/>
+      <br/>
+      <ImageDosisCounterDefinition src="/img/challenges/WeSex_PastiColor.png" />
+       Hellooo 3rd popUp
+      </InfoText>
+    
+      
+      {/* Add more content as needed */}
+    </>
+  );
+};
+
 const GetMargin = (index) => {
   const sequence = [
     {MR: '0px', ML: '0px'}, 
@@ -978,6 +1039,7 @@ const Popup = ({
     const [isPopupVisible, setPopupVisible] = useState(false); // State for controlling the popup
     const [popupContent, setPopupContent] = useState(null); 
     const [showPopup, setShowPopup] = useState(false);
+    const [showPopup2, setShowPopup2] = useState(false);
     const [challengesDone, setChallengesDone] = useState(0);
     const [totalChallenges, setTotalChallenges] = useState(0);
     const [dosisDone, setDosisDone] = useState(0);
@@ -1041,6 +1103,10 @@ const Popup = ({
 
     const handleWarningSymbolClick = () => {
       setShowPopup(true); // Show the warning popup when the warning symbol is clicked
+    };
+
+    const handleWarningSymbolClick2 = () => {
+      setShowPopup2(true); // Show the warning popup when the warning symbol is clicked
     };
   
     useEffect(() => {
@@ -1108,7 +1174,7 @@ const Popup = ({
     const challengesGroups = coupleData
     ? chunkArray(coupleData.challenges, 4)
     : [];
-  const dosisGroups = coupleData
+    const dosisGroups = coupleData
     ? chunkArray(coupleData.pills, 5)
     : [];
 
@@ -1134,18 +1200,21 @@ const Popup = ({
               <div onClick={handleWarningSymbolClick} style={{textAlign: "right", padding: "0.5rem"}}>ℹ️</div>
             </ContainerData>
 
-            <Header>            
-              {coupleData ? (
-                <Title>Desafíos {`${coupleData.coupleName}`}</Title>
-              ) : (
-                <Title>Loading...</Title> // Or any loading indicator
-              )}
-              {coupleData ? (
-                <SubTitle>{coupleData.coupleMemberOne} y {coupleData.coupleMemberTwo}</SubTitle>
-              ) : (
-                <SubTitle>Loading...</SubTitle> // Or any loading indicator
-              )}
-              {/* <Diagnostic /> */}
+            <Header>
+            <Part1Container>
+        {coupleData ? (
+            <Title>Desafíos {`${coupleData.coupleName}`}</Title>
+        ) : (
+            <Title>Loading...</Title> // Or any loading indicator
+        )}
+        {coupleData ? (
+            <SubTitle>{coupleData.coupleMemberOne} y {coupleData.coupleMemberTwo}</SubTitle>
+        ) : (
+            <SubTitle>Loading...</SubTitle> // Or any loading indicator
+        )}
+        {/* <Diagnostic /> */}
+    </Part1Container>
+    <ImageInfo onClick={handleWarningSymbolClick2} src="/img/icons/acerca-de.png"/>
             </Header>
           </HeaderContainer>
           <Background>
@@ -1243,7 +1312,17 @@ const Popup = ({
                     </PopupDialog2>
                 </PopupContainer2>
             )}
+        {showPopup2 && (
+              <PopupContainer2 onClick={() => setShowPopup2(false)}>
+                  <PopupDialog2 onClick={(e) => e.stopPropagation()}>
+                      <CloseButton2 onClick={() => setShowPopup2(false)}>✕</CloseButton2>
+                      <PopupContent3 />
+                  </PopupDialog2>
+              </PopupContainer2>
+          )}
+        
         </>
+        
       );
     };
   
