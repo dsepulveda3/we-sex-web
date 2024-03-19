@@ -1214,7 +1214,7 @@ const Popup = ({
         )}
         {/* <Diagnostic /> */}
     </Part1Container>
-    <ImageInfo onClick={handleWarningSymbolClick2} src="/img/icons/acerca-de.png"/>
+    {/* <ImageInfo onClick={handleWarningSymbolClick2} src="/img/icons/acerca-de.png"/> */}
             </Header>
           </HeaderContainer>
           <Background>
