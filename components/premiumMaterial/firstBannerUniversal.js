@@ -153,7 +153,7 @@ const PriceBefore = styled.span`
 `;
 
 const FirstBanner = ({titleText, titleSpan, titleText2, titleSpan2, price_before, price, description1, 
-    descriptionSpan, description2, image, widthImage, imageVisibility, video, videoVisibility, isEmbedded, buyVisibility=true}) => {
+    descriptionSpan, description2, image, widthImage, imageVisibility, video, videoVisibility, isEmbedded, buyVisibility=true, text_discount}) => {
     const [imageIsVisible, setImageIsVisible] = useState(imageVisibility);
     const [videoIsVisible, setVideoIsVisible] = useState(videoVisibility);
     const [isEmbeddedVideo, setIsEmbeddedVideo] = useState(isEmbedded);
@@ -179,10 +179,10 @@ const FirstBanner = ({titleText, titleSpan, titleText2, titleSpan2, price_before
                         <Col lg={7} className="align-items-center">
                             <Content>
                                 <Title>{titleText} <span>{titleSpan}</span> {titleText2} <span>{titleSpan2}</span></Title>
-                                <Text style={{fontWeight: "bold", textDecoration: "underline", fontSize: "3rem"}}>¡Descuento 50%OFF solo x hoy!</Text>
+                                <Text style={{fontWeight: "bold", textDecoration: "underline", fontSize: "3rem"}}>{text_discount}</Text>
                                 <Text>
                                     <span><strong>{price}</strong></span> <br/>
-                                    <PriceBefore>AR$ 6.400 / U$D 12  </PriceBefore>
+                                    {/* <PriceBefore>AR$ 6.400 / U$D 12  </PriceBefore> */}
                                     {description1} <PriceBefore>{price_before}  </PriceBefore>
                                     
                                 </Text>
