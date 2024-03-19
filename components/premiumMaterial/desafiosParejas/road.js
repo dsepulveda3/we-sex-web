@@ -1150,13 +1150,17 @@ const Popup = ({
           </HeaderContainer>
           <Background>
           <StickyComponent />
-          <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
-            <Areas setSelected={setSelected} selected={selected} setReleased={setIsReleasedArea} />
-            <Diagnostic origin={coupleName} />
-          </div>
-          <DoneChallengesMessage>
-                <span>Mejorando Área: 🔥🔥 {names_hashmap[selected]} 🔥🔥</span>
-          </DoneChallengesMessage>
+          {coupleData && coupleData.type !== "box" && (
+            <>
+            <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
+              <Areas setSelected={setSelected} selected={selected} setReleased={setIsReleasedArea} />
+              <Diagnostic origin={coupleName} />
+            </div>
+            <DoneChallengesMessage>
+              <span>Mejorando Área: 🔥🔥 {names_hashmap[selected]} 🔥🔥</span>
+            </DoneChallengesMessage>
+            </>
+          )}
           {/* {showDiagnostico && <Diagnostic origin={coupleName} />} */}
             {/* {renderLevelBoxes()} */}
             <div style={{ paddingTop: '1rem', backgroundColor: '#ebe4f8' }}></div>

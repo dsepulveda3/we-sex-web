@@ -5,6 +5,15 @@ import Footer from './Footer';
 import MobileNavigation from './MobileNavigation';
 
 const Layout = ({children, type}) => {
+    if (type === 'road') {
+        return (
+            <> 
+                {children}
+                <MobileNavigation type={type}/>
+            </>
+        );
+    }
+
     return (
         <> 
             <HeadInfo />
