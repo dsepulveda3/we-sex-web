@@ -215,8 +215,8 @@ const ImageDoneChallengeCounterNumber = styled.div`
 `;
 
 const ImageDoneChallengeDefinition = styled.img`
-    height: 11%;
-    width: 9%;
+    height: 8%;
+    width: 7%;
     padding: 0rem;
 
     @media (max-width: 540px){
@@ -275,8 +275,8 @@ const ImageDosisCounter = styled.img`
 `;
 
 const ImageDosisCounterDefinition = styled.img`
-    height: 9%;
-    width: 9%;
+    height: 6%;
+    width: 6%;
     padding: 0.3rem;
     transform: rotate(0deg);
 
@@ -754,12 +754,20 @@ const PopupContent3 = () => {
       <InfoText>
       <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
         <ImageDoneChallengeDefinition src="/img/challenges/done_wesex.png" />
-        <div style={{fontWeight:"bold", marginLeft: "1rem" }}><span>Desafios:</span></div> Los desafios, ubicados al lado izquierdo de la pantalla, tienen una duración de entre 40 y 1hr de realización.
+        <div style={{fontWeight:"bold", marginLeft: "1rem" }}><span>Desafios:</span>Los desafios, ubicados al lado izquierdo de la pantalla, tienen una duración de entre 40 y 1hr de realización.</div>
       </div>
       <br/>
       <br/>
-      <ImageDosisCounterDefinition src="/img/challenges/WeSex_PastiColor.png" />
-       Hellooo 3rd popUp
+      <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
+        <ImageDosisCounterDefinition src="/img/challenges/WeSex_PastiColor.png" />
+        <div style={{fontWeight:"bold", marginLeft: "1rem" }}><span>Pildoras:</span>Las pildoras, ubicadas al lado derecho de la pantalla, tienen una duración de entre 5 y 10 minutos de realización.</div>
+      </div>
+      <br/>
+      <br/>
+      <div>
+      Terminos y condiciones: al acceder a &quot;desafios para parejas&quot; aceptas los <a style={{fontSize: "1.5rem", textDecoration: "underline"}} href={'/privacy-policy'}>términos y condiciones.</a>
+      </div>
+
       </InfoText>
     
       
@@ -1197,7 +1205,7 @@ const Popup = ({
               <ImageDosisCounter src="/img/challenges/WeSex_PastiColor.png" />
               <ImageDosisCounterNumber>{`${dosisDone}/${totalDosis}`}</ImageDosisCounterNumber>
               </SectionContainer>
-              <div onClick={handleWarningSymbolClick} style={{textAlign: "right", padding: "0.5rem"}}>ℹ️</div>
+              {/* <div onClick={handleWarningSymbolClick} style={{textAlign: "right", padding: "0.5rem"}}>ℹ️</div> */}
             </ContainerData>
 
             <Header>
@@ -1214,7 +1222,7 @@ const Popup = ({
         )}
         {/* <Diagnostic /> */}
     </Part1Container>
-    {/* <ImageInfo onClick={handleWarningSymbolClick2} src="/img/icons/acerca-de.png"/> */}
+    <ImageInfo onClick={handleWarningSymbolClick2} src="/img/icons/acerca-de.png"/>
             </Header>
           </HeaderContainer>
           <Background>
