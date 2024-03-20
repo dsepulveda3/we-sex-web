@@ -993,7 +993,7 @@ const Popup = ({
       ),
       next: (
         <ImageDosis
-          src="/img/challenges/WeSex_PastiColor.png"
+          src="/img/challenges/WeSex_PastiNoColor.png"
           onClick={() => onClick({ title, link, status, index })}
         />
       ),
