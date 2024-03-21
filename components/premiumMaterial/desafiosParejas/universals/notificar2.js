@@ -169,6 +169,7 @@ const StarContainer = styled.div`
 const PopupContent = ({ closePopUp, surveyUrl_m1, surveyUrl_m2, setDone, type }) => {
     const router = useRouter();
     const [query, setQuery] = useState(null);
+    const [comment, setComment] = useState("");
     const [commentOne, setCommentOne] = useState("");
     const [commentTwo, setCommentTwo] = useState("");
     const [starsOne, setStarsOne] = useState(0);
@@ -205,6 +206,7 @@ const PopupContent = ({ closePopUp, surveyUrl_m1, surveyUrl_m2, setDone, type })
                 coupleName: origin,
                 completedTaskType: type,
                 completedTaskIndex: index,
+                comment: comment,
                 commentOne: commentOne,
                 commentTwo: commentTwo,
                 ratingOne: starsOne,
@@ -230,7 +232,24 @@ const PopupContent = ({ closePopUp, surveyUrl_m1, surveyUrl_m2, setDone, type })
 
             {step === 1 && (
                 <>
-                    <Instruction><span>Paso 1/3:</span> {router.query.members.split("-")[0]} danos tu opinión sobre esta tarea</Instruction>    
+                    <Instruction><span>Paso 1/3:</span> ¿Quien inicio esta tarea?</Instruction>   
+                    <Dropdown options={[
+                        { label: router.query.members.split("-")[0], value: router.query.members.split("-")[0] },
+                        { label: router.query.members.split("-")[1], value: router.query.members.split("-")[1] }
+                    ]} 
+                    onSelect={setInitiator} />
+                    <Instruction>Diario sexual en pareja. Anoten su experiencia para registrarla en su diario.</Instruction>
+                    <CommentInput
+                        placeholder="Compartan sus pensamientos/sensaciones sobre este desafío"
+                        value={comment}
+                        onChange={(e) => setComment(e.target.value)}
+                    />
+                </>
+            )}
+
+            {step === 2 && (
+                <>
+                    <Instruction><span>Paso 2/3:</span> {router.query.members.split("-")[0]} danos tu opinión sobre esta tarea</Instruction>    
                     <StarContainer>
                         <StarRating totalStars={5} setStars={setStarsOne} />
                     </StarContainer>
@@ -242,9 +261,9 @@ const PopupContent = ({ closePopUp, surveyUrl_m1, surveyUrl_m2, setDone, type })
                 </>
             )}
 
-            {step === 2 && (
+            {step === 3 && (
                 <>
-                    <Instruction><span>Paso 2/3:</span> {router.query.members.split("-")[1]} danos tu opinión sobre esta tarea</Instruction>    
+                    <Instruction><span>Paso 3/3:</span> {router.query.members.split("-")[1]} danos tu opinión sobre esta tarea</Instruction>    
                     <StarContainer>
                         <StarRating totalStars={5} setStars={setStarsTwo} />
                     </StarContainer>
@@ -256,16 +275,7 @@ const PopupContent = ({ closePopUp, surveyUrl_m1, surveyUrl_m2, setDone, type })
                 </>
             )}
 
-            {step === 3 && (
-                <>
-                    <Instruction><span>Paso 3/3:</span> ¿Quien inicio esta tarea?</Instruction>   
-                    <Dropdown options={[
-                        { label: query.members.split("-")[0], value: query.members.split("-")[0] },
-                        { label: query.members.split("-")[1], value: query.members.split("-")[1] }
-                    ]} 
-                    onSelect={setInitiator} />
-                </>
-            )}
+
 
             <ContainerNotificarDone>
                 {step !== 3 ? (
