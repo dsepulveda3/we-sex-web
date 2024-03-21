@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { useRouter } from "next/router";
 import { done_task, query_task } from "../../../../requests/premiumService";
 import { toast } from "react-toastify";
-import StarRating from "./starRating.js";
+import StarRating from "./StarRating.js";
 import Dropdown from "./Dropdown.js";
 
 const ContainerNotificarDone = styled.div`
