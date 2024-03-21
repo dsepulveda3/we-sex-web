@@ -3,6 +3,8 @@ import styled from "@emotion/styled";
 import { useRouter } from "next/router";
 import { done_task, query_task } from "../../../../requests/premiumService";
 import { toast } from "react-toastify";
+import StarRating from "./starRating";
+import Dropdown from "./Dropdown";
 
 const ContainerNotificarDone = styled.div`
     padding: 1rem;
@@ -155,11 +157,29 @@ const DescriptionInstruction = styled.div`
 
 `;
 
+const StarContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100%;
+    margin-top: 1rem;
+`;
+
 
 const PopupContent = ({ closePopUp, surveyUrl_m1, surveyUrl_m2, setDone, type }) => {
     const router = useRouter();
     const [query, setQuery] = useState(null);
-    const [comment, setComment] = useState("");
+    const [commentOne, setCommentOne] = useState("");
+    const [commentTwo, setCommentTwo] = useState("");
+    const [starsOne, setStarsOne] = useState(0);
+    const [starsTwo, setStarsTwo] = useState(0);
+    const [step, setStep] = useState(1);
+    const [initiator, setInitiator] = useState(null);
+
+    const handleNextStep = () => {
+        setStep(step + 1);
+    };
+
 
     useEffect(() => {
         if (router.isReady){
@@ -169,13 +189,13 @@ const PopupContent = ({ closePopUp, surveyUrl_m1, surveyUrl_m2, setDone, type })
         }
     }, [router.isReady]);
 
-    const handleNewWindowM1 = () => {
-        window.open(surveyUrl_m1, "_blank");
-    };
+    // const handleNewWindowM1 = () => {
+    //     window.open(surveyUrl_m1, "_blank");
+    // };
 
-    const handleNewWindowM2 = () => {
-        window.open(surveyUrl_m2, "_blank");
-    };
+    // const handleNewWindowM2 = () => {
+    //     window.open(surveyUrl_m2, "_blank");
+    // };
 
     const handleSubmit = async () => {
         const { origin, type, index, road } = query;
@@ -185,7 +205,11 @@ const PopupContent = ({ closePopUp, surveyUrl_m1, surveyUrl_m2, setDone, type })
                 coupleName: origin,
                 completedTaskType: type,
                 completedTaskIndex: index,
-                comment: comment,
+                commentOne: commentOne,
+                commentTwo: commentTwo,
+                ratingOne: starsOne,
+                ratingTwo: starsTwo,
+                initiatedBy: initiator.value,
                 selected_area: road,
             });
             if (response.status === 200) {
@@ -203,44 +227,102 @@ const PopupContent = ({ closePopUp, surveyUrl_m1, surveyUrl_m2, setDone, type })
             <TitleContainer>
                 <Title>Notificar</Title>
             </TitleContainer>
-                
 
-            {type !== "dosis" && (
+            {step === 1 && (
                 <>
-                    <Instruction><span>Paso 1:</span> Rellenen los formularios cada uno de manera individual.</Instruction>
-                    <ContainerNotificarDone>
-                        {query && (
-                            <SurveyLink onClick={handleNewWindowM1}>Encuesta {query.members.split('-')[0]} </SurveyLink>
-                        )}
-                        {query && (
-                            <SurveyLink onClick={handleNewWindowM2}>Encuesta {query.members.split('-')[1]} </SurveyLink>
-                        )}
-                    </ContainerNotificarDone>
+                    <Instruction><span>Paso 1/3:</span> {router.query.members.split("-")[0]} danos tu opinión sobre esta tarea</Instruction>    
+                    <StarContainer>
+                        <StarRating totalStars={5} setStars={setStarsOne} />
+                    </StarContainer>
+                    <CommentInput
+                        placeholder="Comparte tus pensamientos/sensaciones sobre este desafío"
+                        value={commentOne}
+                        onChange={(e) => setCommentOne(e.target.value)}
+                    />
                 </>
             )}
-            {type !== "dosis" && (
+
+            {step === 2 && (
                 <>
-                    <Instruction><span>Paso 2:</span> Diario sexual en pareja. Anoten su experiencia para registrarla en su diario.</Instruction>
+                    <Instruction><span>Paso 2/3:</span> {router.query.members.split("-")[1]} danos tu opinión sobre esta tarea</Instruction>    
+                    <StarContainer>
+                        <StarRating totalStars={5} setStars={setStarsTwo} />
+                    </StarContainer>
+                    <CommentInput
+                        placeholder="Comparte tus pensamientos/sensaciones sobre este desafío"
+                        value={commentTwo}
+                        onChange={(e) => setCommentTwo(e.target.value)}
+                    />
                 </>
             )}
-            {type === "dosis" && (
+
+            {step === 3 && (
                 <>
-                    <Instruction>Diario sexual en pareja. Anoten su experiencia para registrarla en su diario.</Instruction>
+                    <Instruction><span>Paso 3/3:</span> ¿Quien inicio esta tarea?</Instruction>   
+                    <Dropdown options={[
+                        { label: query.members.split("-")[0], value: query.members.split("-")[0] },
+                        { label: query.members.split("-")[1], value: query.members.split("-")[1] }
+                    ]} 
+                    onSelect={setInitiator} />
                 </>
             )}
-                
-            <CommentInput
-                placeholder="Compartan sus pensamientos/sensaciones sobre este desafío"
-                value={comment}
-                onChange={(e) => setComment(e.target.value)}
-            />
+
             <ContainerNotificarDone>
-            <BotonNotificarDone color="green" onClick={handleSubmit} >
-                Finalizar
-            </BotonNotificarDone>
+                {step !== 3 ? (
+                    <BotonNotificarDone color="green" onClick={handleNextStep}>
+                        Siguiente
+                    </BotonNotificarDone>
+                ) : (
+                    <BotonNotificarDone color="green" onClick={handleSubmit}>
+                        Finalizar
+                    </BotonNotificarDone>
+                )}
             </ContainerNotificarDone>
         </InfoText>
     );
+
+    // return (
+    //     <InfoText>
+    //         <TitleContainer>
+    //             <Title>Notificar</Title>
+    //         </TitleContainer>
+
+    //         {type !== "dosis" && (
+    //             <>
+    //                 <Instruction><span>Paso 1:</span> Rellenen los formularios cada uno de manera individual.</Instruction>
+    //                 <ContainerNotificarDone>
+    //                     {query && (
+    //                         <SurveyLink onClick={handleNewWindowM1}>Encuesta {query.members.split('-')[0]} </SurveyLink>
+    //                     )}
+    //                     {query && (
+    //                         <SurveyLink onClick={handleNewWindowM2}>Encuesta {query.members.split('-')[1]} </SurveyLink>
+    //                     )}
+    //                 </ContainerNotificarDone>
+    //             </>
+    //         )}
+    //         {type !== "dosis" && (
+    //             <>
+    //                 <Instruction><span>Paso 2:</span> Diario sexual en pareja. Anoten su experiencia para registrarla en su diario.</Instruction>
+    //             </>
+    //         )}
+    //         {type === "dosis" && (
+    //             <>
+    //                 <Instruction>Diario sexual en pareja. Anoten su experiencia para registrarla en su diario.</Instruction>
+    //             </>
+    //         )}
+                
+    //         <CommentInput
+    //             placeholder="Compartan sus pensamientos/sensaciones sobre este desafío"
+    //             value={comment}
+    //             onChange={(e) => setComment(e.target.value)}
+    //         />
+    //         <ContainerNotificarDone>
+    //         <BotonNotificarDone color="green" onClick={handleSubmit} >
+    //             Finalizar
+    //         </BotonNotificarDone>
+    //         </ContainerNotificarDone>
+    //     </InfoText>
+    // );
 };
 
 const NotDoneTask = ({ message, url_m1, url_m2, color = "green", setDone, type }) => {
