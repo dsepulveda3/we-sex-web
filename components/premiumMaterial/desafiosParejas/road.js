@@ -845,7 +845,7 @@ const Popup = ({
           <CloseButton onClick={handleClose}>✕</CloseButton>
           {status === 'next' && type === 'challenge' ?
           <>
-            {selectedChallenge === null || (selectedChallenge === index && selected_challenge_on === selected_road) ? 
+            {selectedChallenge === null || selectedChallenge === -1 || (selectedChallenge === index && selected_challenge_on === selected_road) ? 
             <>
               <PopUpTitle>{title}</PopUpTitle>
               <PopUpSubTitle>{subtitle}</PopUpSubTitle>
@@ -865,7 +865,7 @@ const Popup = ({
           : null}
           {status === 'next' && type === 'pill' ? 
           <>
-            {selectedPill === null || (selectedPill === index && selected_pill_on === selected_road) ?
+            {selectedPill === null || selectedPill === -1 || (selectedPill === index && selected_pill_on === selected_road) ?
               <>
               <PopUpTitle>{title}</PopUpTitle>
               <PopUpSubTitle>{subtitle}</PopUpSubTitle>

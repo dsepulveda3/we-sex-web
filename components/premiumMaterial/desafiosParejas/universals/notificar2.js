@@ -211,7 +211,7 @@ const PopupContent = ({ closePopUp, surveyUrl_m1, surveyUrl_m2, setDone, type })
                 commentTwo: commentTwo,
                 ratingOne: starsOne,
                 ratingTwo: starsTwo,
-                initiatedBy: initiator.value,
+                initiatedBy: initiator? initiator.value : null,
                 selected_area: road,
             });
             if (response.status === 200) {
@@ -221,6 +221,7 @@ const PopupContent = ({ closePopUp, surveyUrl_m1, surveyUrl_m2, setDone, type })
             }
         } catch (error) {
             toast.error("Error al notificar");
+            console.log(error);
         }
     };
 
