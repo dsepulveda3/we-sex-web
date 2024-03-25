@@ -11,6 +11,7 @@ const DropdownHeader = styled.div`
   border: 1px solid #ccc;
   padding: 10px;
   cursor: pointer;
+  color: #333;
 `;
 
 const DropdownList = styled.ul`
@@ -30,6 +31,7 @@ const DropdownList = styled.ul`
 const DropdownListItem = styled.li`
   padding: 10px;
   cursor: pointer;
+  color: #333;
 
   &:hover {
     background-color: #f0f0f0;

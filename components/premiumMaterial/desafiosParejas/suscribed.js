@@ -9,6 +9,7 @@ import PhoneInput from 'react-phone-number-input';
 import { useRouter } from 'next/router';  
 import { geocodeAddress } from '../../../utils/geocodeAddress';
 import { getPlaceSuggestions } from '../../../utils/getPlaceSuggestions';
+import Dropdown from './universals/Dropdown.js';
 
 const Background = styled.div`
 
@@ -272,6 +273,7 @@ const Suscribed = () => {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [phoneNumberTwo, setPhoneNumberTwo] = useState('');
     const [step, setStep] = useState(1);
+    const [originFrom, setOriginFrom] = useState(null);
     const currentDate = new Date();
     const day = String(currentDate.getDate()).padStart(2, '0');
     const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are zero-based
@@ -295,7 +297,40 @@ const Suscribed = () => {
         coupleNickname.length >= 3 && 
         email.length >= 3 && 
         phoneNumber.length >= 3 && 
-        phoneNumberTwo.length >= 3;
+        phoneNumberTwo.length >= 3 &&
+        originFrom !== null;
+
+
+    const optionsDropdown = [
+        {
+            label: 'Email',
+            value: 'Email',
+        },
+        {
+            label: 'Instagram',
+            value: 'Instagram',
+        },
+        {
+            label: 'Un amigo',
+            value: 'Friend',
+        },
+        {
+            label: 'Masterclass',
+            value: 'Masterclass',
+        },
+        {
+            label: 'Sexshop',
+            value: 'Sexshop',
+        },
+        {
+            label: 'Sexóloga/Psicóloga',
+            value: 'Professional',
+        },
+        {
+            label: 'Otro',
+            value: 'Other',
+        }
+    ];
 
     
 
@@ -313,6 +348,7 @@ const Suscribed = () => {
                 email: email,
                 phoneNumber: phoneNumber,
                 phoneNumberTwo: phoneNumberTwo,
+                originedFrom: originFrom.value,
             });
             if (response.status === 201){
                 setStep(2);
@@ -393,7 +429,8 @@ const Suscribed = () => {
                                 onChange={setPhoneNumberTwo}
                                 inputComponent={InputPhoneNumber}
                             />
-
+                            <PhonenumberLabel>¿Cómo encontraste la app?</PhonenumberLabel>
+                            <Dropdown options={optionsDropdown} onSelect={setOriginFrom} />
                             <Text>
                                 ¡Revisa tu email una vez presionado continuar!
                             </Text>
