@@ -1227,7 +1227,7 @@ const Popup = ({
           </HeaderContainer>
           <Background>
           <StickyComponent />
-          {coupleData && coupleData.type !== "box" && (
+          {coupleData && coupleData.type !== "free_tier" && coupleData.type !== "box" && (
             <>
             <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
               <Areas setSelected={setSelected} selected={selected} setReleased={setIsReleasedArea} />
@@ -1279,9 +1279,19 @@ const Popup = ({
             </React.Fragment>
           ))}
             {/* ... existing code ... */}
-            {challengesDone === totalChallenges && totalChallenges !== 0 && (
+            {challengesDone === totalChallenges && totalChallenges !== 0 && coupleData && coupleData.type !== "box" && coupleData.type !== "free_tier" && (
               <DoneChallengesMessage>
                 <span>ESTAMOS TRABAJANDO EN SUS PRÓXIMOS DESAFÍOS 😊.<br/> 🔥🔥 AGUANTEN LA CALENTURA 🔥🔥</span>
+              </DoneChallengesMessage>
+            )}
+            {challengesDone === totalChallenges && totalChallenges !== 0 && coupleData && coupleData.type === "box" && (
+              <DoneChallengesMessage>
+                <span><a href={"https://wa.me/5491140678698?text=Hola!%20Vengo%20de%20la%20prueba%20gratuita.%20Me%20gustaría%20saber%20más%20de%20la%20suscripción"}>DEBES SUSCRIBIRTE AL PROGRAMA PARA OBTENER DESAFÍOS ILIMITADOS 😊.</a><br/></span>
+              </DoneChallengesMessage>
+            )}
+            {challengesDone === totalChallenges && totalChallenges !== 0 && coupleData && coupleData.type === "free_tier" && (
+              <DoneChallengesMessage>
+                <span><a href={"https://wa.me/5491140678698?text=Hola!%20Vengo%20de%20la%20prueba%20gratuita.%20Me%20gustaría%20saber%20más%20de%20la%20suscripción"}>DEBES SUSCRIBIRTE AL PROGRAMA PARA OBTENER DESAFÍOS ILIMITADOS 😊.</a><br/></span>
               </DoneChallengesMessage>
             )}
             {!isReleasedArea && (<InConstructionPopup />)}

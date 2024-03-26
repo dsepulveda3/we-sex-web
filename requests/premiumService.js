@@ -97,6 +97,14 @@ export const create_couple_box = async (data) => {
     return response;
 }
 
+export const create_couple_free_trial = async (data) => {
+    const response = await basePremiumService.post(
+        `v1/CoupleGame/free-trial`,
+        data
+    );
+    return response;
+}
+
 export const get_couple = async (couple_name, selected_area="REC") => {
     const response = await basePremiumService.get(
         `v1/CoupleGame/?couple_name=${couple_name}&selected_area=${selected_area}`
