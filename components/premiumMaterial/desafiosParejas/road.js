@@ -355,7 +355,7 @@ const PopupDialog = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
-    height: 40%;
+    height: 45%;
   }
 
   @media (min-width: 768px) {
@@ -480,6 +480,21 @@ const CloseButton2 = styled.button`
 const InfoText = styled.div`
     color: black;
     font-size: 1.3rem;
+    font-family: "Averia Libre", sans-serif;
+    text-align: left;
+
+    span {
+        font-weight: bold;
+        font-family: "Averia Libre", sans-serif;
+        background-color: var(--green); /* Set the background color to green */
+        padding: 0.5rem 1rem; /* Add padding to make the background visible */
+        color: white; /* Set the text color to white */
+    }
+`;
+
+const InfoText2 = styled.div`
+    color: black;
+    font-size: 1.8rem;
     font-family: "Averia Libre", sans-serif;
     text-align: left;
 
@@ -910,40 +925,24 @@ const Popup = ({
           : null}
           {status === 'to_do' && type === 'challenge' ? 
           <>
-          <PopUpToDo> 
             <>
             <PopUpTitle>{title}</PopUpTitle>
             <PopUpSubTitle>{subtitle}</PopUpSubTitle>
-            <PopUpDone style={{marginTop: "1rem"}}> PARA ACCEDER A ESTE DESAFIO...</PopUpDone>
-              <br />
-              <BotonUniversal 
-                text={"Suscribete"} 
-                bgColor={'var(--green)'} 
-                textColor={'white'}
-                bgColorHover={'var(--violet)'}
-                link_redireccion={"https://wa.me/5491140678698?text=Hola!%20Vengo%20de%20mi%20prueba%20gratuita.%20Me%20gustaría%20saber%20más%20de%20la%20suscripción"}
-              />
+            <br />
+            <PopUpSubTitle><span>¡Suscríbete al programa para parejas y accede a TODOS los desafíos!</span></PopUpSubTitle>
+            <PopUpButton type="submit" href="https://wa.me/5491140678698?text=Hola!%20Vengo%20de%20mi%20prueba%20gratuita.%20Me%20gustaría%20saber%20más%20de%20la%20suscripción">¡ Acceder 😁 !</PopUpButton>
             </>
-          </PopUpToDo>
           {/* <PopUpButton type="submit" onClick={handleSubmit}>¡ Comenzar 😁 !</PopUpButton> */}
           </>
           : null}
           {status === 'to_do' && type === 'pill' ? 
           <>
           <PopUpToDo> 
-            <>
               <PopUpTitle>{title}</PopUpTitle>
               <PopUpSubTitle>{subtitle}</PopUpSubTitle>
-              <PopUpDone style={{marginTop: "1rem"}}> PARA ACCEDER A ESTA PILDORA...</PopUpDone>
               <br />
-              <BotonUniversal 
-                text={"Suscribete"} 
-                bgColor={'var(--green)'} 
-                textColor={'white'}
-                bgColorHover={'var(--violet)'}
-                link_redireccion={"https://wa.me/5491140678698?text=Hola!%20Vengo%20de%20mi%20prueba%20gratuita.%20Me%20gustaría%20saber%20más%20de%20la%20suscripción"}
-              />
-            </>
+              <PopUpSubTitle><span>¡Suscríbete al programa para parejas y accede a TODAS las píldoras!</span></PopUpSubTitle>
+            <PopUpButton type="submit" href="https://wa.me/5491140678698?text=Hola!%20Vengo%20de%20mi%20prueba%20gratuita.%20Me%20gustaría%20saber%20más%20de%20la%20suscripción">¡ Acceder 😁 !</PopUpButton>
           </PopUpToDo>
           {/* <PopUpButton type="submit" onClick={handleSubmit}>¡ Comenzar 😁 !</PopUpButton> */}
           </>
