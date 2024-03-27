@@ -9,6 +9,7 @@ import InConstructionPopup from "./InConstructionPopup";
 import ConfirmationPopup from "./ConfirmationPopup";
 import Areas from "./roadComponents/areas";
 import { accept_task } from "../../../requests/premiumService";
+import BotonUniversal from "../botonUniversal";
 
 const HeaderContainer = styled.div`
   background-color: #ebe4f8;
@@ -909,13 +910,41 @@ const Popup = ({
           : null}
           {status === 'to_do' && type === 'challenge' ? 
           <>
-          <PopUpToDo> DEBES COMPLETAR TU ÚLTIMO DESAFIO PARA PODER DESBLOQUEAR EL PRÓXIMO</PopUpToDo>
+          <PopUpToDo> 
+            <>
+            <PopUpTitle>{title}</PopUpTitle>
+            <PopUpSubTitle>{subtitle}</PopUpSubTitle>
+            <PopUpDone style={{marginTop: "1rem"}}> PARA ACCEDER A ESTE DESAFIO...</PopUpDone>
+              <br />
+              <BotonUniversal 
+                text={"Suscribete"} 
+                bgColor={'var(--green)'} 
+                textColor={'white'}
+                bgColorHover={'var(--violet)'}
+                link_redireccion={"https://wa.me/5491140678698?text=Hola!%20Vengo%20de%20mi%20prueba%20gratuita.%20Me%20gustaría%20saber%20más%20de%20la%20suscripción"}
+              />
+            </>
+          </PopUpToDo>
           {/* <PopUpButton type="submit" onClick={handleSubmit}>¡ Comenzar 😁 !</PopUpButton> */}
           </>
           : null}
           {status === 'to_do' && type === 'pill' ? 
           <>
-          <PopUpToDo> DEBES COMPLETAR TU ÚLTIMA DOSIS PARA PODER DESBLOQUEAR LA PRÓXIMO</PopUpToDo>
+          <PopUpToDo> 
+            <>
+              <PopUpTitle>{title}</PopUpTitle>
+              <PopUpSubTitle>{subtitle}</PopUpSubTitle>
+              <PopUpDone style={{marginTop: "1rem"}}> PARA ACCEDER A ESTA PILDORA...</PopUpDone>
+              <br />
+              <BotonUniversal 
+                text={"Suscribete"} 
+                bgColor={'var(--green)'} 
+                textColor={'white'}
+                bgColorHover={'var(--violet)'}
+                link_redireccion={"https://wa.me/5491140678698?text=Hola!%20Vengo%20de%20mi%20prueba%20gratuita.%20Me%20gustaría%20saber%20más%20de%20la%20suscripción"}
+              />
+            </>
+          </PopUpToDo>
           {/* <PopUpButton type="submit" onClick={handleSubmit}>¡ Comenzar 😁 !</PopUpButton> */}
           </>
           : null}

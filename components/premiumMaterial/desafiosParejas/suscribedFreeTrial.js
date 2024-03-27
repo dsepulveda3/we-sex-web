@@ -334,6 +334,12 @@ const SuscribedFreeTrial = () => {
 
     
 
+    const handleAttemptSubmit = async () => {
+        if (!isFormValid) {
+            toast.error('Completa los campos para continuar. Deben tener al menos 3 caracteres en cada campo.');
+            return;
+        }
+    };
 
     const handleStepOneSubmit = async () => {
         if (!isFormValid) {
@@ -434,7 +440,9 @@ const SuscribedFreeTrial = () => {
                             <Text>
                                 ¡Revisa tu email una vez presionado continuar!
                             </Text>
-                            <BotonArs onClick={handleStepOneSubmit} disabled={!isFormValid}>¡Continuar!</BotonArs>
+                            <div onClick={handleAttemptSubmit}>
+                                <BotonArs onClick={handleStepOneSubmit} disabled={!isFormValid}>¡Continuar!</BotonArs>
+                            </div>
                         </div>
                         </div>
                         

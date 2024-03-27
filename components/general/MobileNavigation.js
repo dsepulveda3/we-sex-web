@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Row, Col, Container } from 'reactstrap';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
+import BotonUniversal from '../premiumMaterial/botonUniversal';
 
 const Fondo = styled.div`
   position: fixed;
@@ -36,11 +37,82 @@ const Icon = styled.img`
 `;
 
 const BoldText = styled.span`
+  color: black;
   font-weight: bold;
 `;
 
-const MobileNavigation = ({type}) => {
+const PopupContainer2 = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Ensure the pop-up is on top of other elements */
+`;
+
+const PopupDialog2 = styled.div`
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+  position: relative; /* Added to position the CloseButton */
+`;
+
+const CloseButton2 = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+`;
+
+const InfoText = styled.div`
+    color: black;
+    font-size: 1.3rem;
+    font-family: "Averia Libre", sans-serif;
+    text-align: left;
+
+    span {
+        font-weight: bold;
+        font-family: "Averia Libre", sans-serif;
+        background-color: var(--green); /* Set the background color to green */
+        padding: 0.2rem;
+        color: white; /* Set the text color to white */
+    }
+`;
+
+const InfoText2 = styled.div`
+    color: black;
+`;
+
+const PopupContent3 = () => {
+
+  return (
+    <>
+      <InfoText><span>Debes estar suscrito para acceder a todo el material premium</span></InfoText>
+      <br />
+      <BotonUniversal 
+        text={"Suscribete"} 
+        bgColor={'var(--green)'} 
+        textColor={'white'}
+        bgColorHover={'var(--violet)'}
+        link_redireccion={"https://wa.me/5491140678698?text=Hola!%20Vengo%20de%20mi%20prueba%20gratuita.%20Me%20gustaría%20saber%20más%20de%20la%20suscripción"}
+      />
+    </>
+  );
+};
+
+const MobileNavigation = ({ type, coupleType }) => {
   const [activeLink, setActiveLink] = useState('/');
+  const [showPopup, setShowPopup] = useState(false);
   const [clickedIcons, setClickedIcons] = useState({
     home: false,
     debates: false,
@@ -49,13 +121,24 @@ const MobileNavigation = ({type}) => {
   });
   const router = useRouter();
 
+  const handleShowPopup = () => {
+    setShowPopup(true);
+  };
+
   const handleIconClick = (link, iconName) => {
-    setActiveLink(link);
-    router.push(link);
-    setClickedIcons(prevState => ({
-      ...prevState,
-      [iconName]: true,
-    }));
+    if (coupleType === 'free_tier' || coupleType === 'box') {
+      console.log("here");
+      handleShowPopup();
+      return;
+    } else {
+      console.log("NOT HERE");
+      setActiveLink(link);
+      router.push(link);
+      setClickedIcons(prevState => ({
+        ...prevState,
+        [iconName]: true,
+      }));
+    }
   };
 
   useEffect(() => {
@@ -129,18 +212,24 @@ const MobileNavigation = ({type}) => {
               </Link>
             </Col>
             <Col xs={6} sm={6}>
-              <Link legacyBehavior href={`/premium-material/guides?origin=${router.query.origin}`}>
                 <a onClick={() => handleIconClick(`/premium-material/guides?origin=${router.query.origin}`, 'coupleGuides')}>
                   {/* <a onClick={() => handleIconClick('/buscar?autofocus=true', 'premium')}> */}
                     <Icon src={clickedIcons.coupleGuides ? '/img/icons/open-book.svg' : '/img/icons/open-book_unfilled.svg'} active={activeLink.includes('/premium-material/guides')} alt='premium-material-logo' />
-                    {activeLink.includes('/premium-material/guides') ? <BoldText>Premium</BoldText> : 'Premium'}
+                    {activeLink.includes('/premium-material/guides') ? <BoldText>Premium</BoldText> : <InfoText2>Premium</InfoText2>}
                   </a>
-                </Link>
             </Col>
           </Row>
         </Container>
       </Fondo>) : (<></>)
     }
+    {showPopup && (
+              <PopupContainer2 onClick={() => setShowPopup(false)}>
+                  <PopupDialog2 onClick={(e) => e.stopPropagation()}>
+                      <CloseButton2 onClick={() => setShowPopup(false)}>✕</CloseButton2>
+                      <PopupContent3 />
+                  </PopupDialog2>
+              </PopupContainer2>
+    )}
     </>
   );
 };

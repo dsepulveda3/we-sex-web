@@ -104,7 +104,7 @@ const PwaInstallPopup = () => {
           </InstructionsList>
           <DismissButtonContainer>
             <DismissButton onClick={handleDismissClick}>Más tarde</DismissButton>
-            <DismissButton onClick={handleAskForHelpClick}>¿Necesitas ayuda?</DismissButton>
+            <DismissButton onClick={handleAskForHelpClick}>Instalar App</DismissButton>
           </DismissButtonContainer>
         </PopupContainer>
       )}

@@ -327,12 +327,18 @@ const SuscribedBox = () => {
         postalCode.length >= 3 && 
         localidad.length >= 3; 
 
-    
+
+    const handleAttemptSubmit = async () => {
+        if (!isFormValid) {
+            toast.error('Completa los campos para continuar. Deben tener al menos 3 caracteres en cada campo.');
+            return;
+        }
+    };
 
 
     const handleStepOneSubmit = async () => {
         if (!isFormValid) {
-            toast.error('Completa los campos para continuar.');
+            toast.error('Completa los campos para continuar. Deben tener al menos 3 caracteres en cada campo.');
             return;
         }
         try{
@@ -475,7 +481,9 @@ const SuscribedBox = () => {
                             <Text>
                                 ¡Revisa tu email una vez presionado continuar!
                             </Text>
-                            <BotonArs onClick={handleStepOneSubmit} disabled={!isFormValid}>¡Continuar!</BotonArs>
+                            <div onClick={handleAttemptSubmit}>
+                                <BotonArs onClick={handleStepOneSubmit} disabled={!isFormValid}>¡Continuar!</BotonArs>
+                            </div>
                         </div>
                         </div>
                         
