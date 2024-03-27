@@ -98,10 +98,10 @@ const PopupContent3 = () => {
   return (
     <>
       <br />
-      <InfoText><span>Para acceder a todo el contenido premium suscribete al programa para innovar en pareja.</span></InfoText>
+      <InfoText><span>Para acceder a todo el contenido premium suscríbete al programa para innovar en pareja.</span></InfoText>
       <br />
       <BotonUniversal 
-        text={"Suscribete"} 
+        text={"Suscríbete"} 
         bgColor={'var(--green)'} 
         textColor={'white'}
         bgColorHover={'var(--violet)'}
