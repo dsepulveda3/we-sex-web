@@ -97,7 +97,8 @@ const PopupContent3 = () => {
 
   return (
     <>
-      <InfoText><span>Debes estar suscrito para acceder a todo el material premium</span></InfoText>
+      <br />
+      <InfoText><span>Para acceder a todo el contenido premium suscribete al programa para innovar en pareja.</span></InfoText>
       <br />
       <BotonUniversal 
         text={"Suscribete"} 
