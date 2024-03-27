@@ -112,6 +112,11 @@ function MyApp({ Component, pageProps }) {
         />
       </noscript>
       {/* End Meta Pixel Code */}
+
+      {/* Many Chats Code */}
+      <script src="//widget.manychat.com/1145679_068ff.js" defer="defer"></script>
+      <script src="https://mccdn.me/assets/js/widget.js" defer="defer"></script>
+      {/* End Many Chats Code */}
         
       </Head>
       <AuthUserProvider>
