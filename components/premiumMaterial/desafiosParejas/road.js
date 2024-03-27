@@ -937,13 +937,11 @@ const Popup = ({
           : null}
           {status === 'to_do' && type === 'pill' ? 
           <>
-          <PopUpToDo> 
               <PopUpTitle>{title}</PopUpTitle>
               <PopUpSubTitle>{subtitle}</PopUpSubTitle>
               <br />
               <PopUpSubTitle><span>¡Suscríbete al programa para parejas y accede a TODAS las píldoras!</span></PopUpSubTitle>
             <PopUpButton type="submit" href="https://wa.me/5491140678698?text=Hola!%20Vengo%20de%20mi%20prueba%20gratuita.%20Me%20gustaría%20saber%20más%20de%20la%20suscripción">¡ Acceder 😁 !</PopUpButton>
-          </PopUpToDo>
           {/* <PopUpButton type="submit" onClick={handleSubmit}>¡ Comenzar 😁 !</PopUpButton> */}
           </>
           : null}
